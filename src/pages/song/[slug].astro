@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+type Song = {
+  title: string;
+  slug: string;
+  artist: string;
+  estimated_revenue: string;
+};
+
+type Artist = {
+  name: string;
+  slug: string;
+  estimated_income: string;
+  top_songs: string[];
+};
+
+export function getStaticPaths() {
+  const songModules = import.meta.glob("../../data/songs/*.json", { eager: true });
+  const songs = Object.values(songModules).map((module) => module.default as Song);
+
+  return songs.map((song) => ({
+    params: { slug: song.slug },
+    props: { song }
+  }));
+}
+
+const artistModules = import.meta.glob("../../data/artists/*.json", { eager: true });
+const artists = Object.values(artistModules).map((module) => module.default as Artist);
+
+const { song } = Astro.props as { song: Song };
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const artist = artists.find((entry) => entry.slug === song.artist);
+---
+
+<BaseLayout
+  title={`${song.title} | Artist Money`}
+  description={`${song.title} revenue estimate and artist details on Artist Money.`}
+>
+  <article>
+    <p class="eyebrow">Song</p>
+    <h1>{song.title}</h1>
+    <ul class="meta-list">
+      <li>
+        Artist:
+        {" "}
+        {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : song.artist}
+      </li>
+      <li>Estimated revenue: {song.estimated_revenue}</li>
+    </ul>
+  </article>
+</BaseLayout>

@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+type Artist = {
+  name: string;
+  slug: string;
+  estimated_income: string;
+  top_songs: string[];
+};
+
+const artistModules = import.meta.glob("../data/artists/*.json", { eager: true });
+const artists = Object.values(artistModules)
+  .map((module) => module.default as Artist)
+  .sort((left, right) => left.name.localeCompare(right.name));
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout
+  title="Artist Money | Artist Income Estimates"
+  description="Browse artist profiles and simple estimated income snapshots on Artist Money."
+>
+  <section>
+    <p class="eyebrow">Artists</p>
+    <h1>Estimated artist income, organized into simple profile pages.</h1>
+    <p>
+      Artist Money is a lightweight static directory of artist pages and song revenue estimates.
+    </p>
+  </section>
+
+  <section aria-labelledby="artist-list-title">
+    <h2 id="artist-list-title">Featured artists</h2>
+    <div class="card-grid">
+      {artists.map((artist) => (
+        <article class="card">
+          <h3>
+            <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+          </h3>
+          <p>Estimated income: {artist.estimated_income}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
