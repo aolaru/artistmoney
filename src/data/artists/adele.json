@@ -2,5 +2,16 @@
   "name": "Adele",
   "slug": "adele",
   "estimated_income": "$10M-$40M/year",
-  "top_songs": ["someone-like-you", "hello"]
+  "top_songs": ["someone-like-you", "hello"],
+  "genre": "Pop / Soul",
+  "country": "United Kingdom",
+  "active_since": "2008",
+  "bio": "Adele's catalog is built around emotionally direct ballads that continue to monetize at a high level across streaming and global recognition.",
+  "notable_for": "Power ballads, elite vocal identity, and catalog songs with broad emotional replay value.",
+  "career_highlight": "Her biggest singles remain among the most replayed modern pop ballads years after release.",
+  "revenue_drivers": [
+    "Streaming remains strong because her songs fit heartbreak and vocal-focused playlists.",
+    "Global familiarity gives her catalog strong long-tail demand.",
+    "Prestige and emotional recognition increase sync and catalog value."
+  ]
 }

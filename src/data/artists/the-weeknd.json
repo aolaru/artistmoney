@@ -2,5 +2,16 @@
   "name": "The Weeknd",
   "slug": "the-weeknd",
   "estimated_income": "$20M-$70M/year",
-  "top_songs": ["blinding-lights", "starboy"]
+  "top_songs": ["blinding-lights", "starboy"],
+  "genre": "Pop / R&B",
+  "country": "Canada",
+  "active_since": "2011",
+  "bio": "The Weeknd has built one of modern pop's most valuable catalogs through global streaming, hit density, and crossover brand power.",
+  "notable_for": "Dark pop aesthetics, massive streaming scale, and international hit consistency.",
+  "career_highlight": "His catalog operates at global playlist scale, with songs that remain dominant long after release.",
+  "revenue_drivers": [
+    "Billions of annual streams drive premium recurring income.",
+    "Global playlists keep catalog tracks visible across markets.",
+    "Brand partnerships and sync opportunities amplify music earnings."
+  ]
 }

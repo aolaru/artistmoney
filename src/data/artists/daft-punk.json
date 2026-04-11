@@ -2,5 +2,16 @@
   "name": "Daft Punk",
   "slug": "daft-punk",
   "estimated_income": "$5M-$15M/year",
-  "top_songs": ["get-lucky", "one-more-time"]
+  "top_songs": ["get-lucky", "one-more-time"],
+  "genre": "Electronic / House",
+  "country": "France",
+  "active_since": "1993",
+  "bio": "Daft Punk built one of electronic music's most commercially durable catalogs, balancing underground credibility with crossover pop reach.",
+  "notable_for": "Helmet-era visual identity, festival-scale dance records, and cross-generational catalog appeal.",
+  "career_highlight": "Even after retirement, their songs remain staples of streaming, sync, and catalog discovery.",
+  "revenue_drivers": [
+    "Streaming stays strong because the catalog works across pop, dance, and nostalgia playlists.",
+    "Licensing remains valuable thanks to their distinctive sound and brand recognition.",
+    "Catalog sales and reissues continue to monetize the duo after retirement."
+  ]
 }

@@ -8,6 +8,13 @@ type Artist = {
   slug: string;
   estimated_income: string;
   top_songs: string[];
+  genre?: string;
+  country?: string;
+  active_since?: string;
+  bio?: string;
+  notable_for?: string;
+  career_highlight?: string;
+  revenue_drivers?: string[];
 };
 
 type Song = {
@@ -72,9 +79,16 @@ const article = artistArticles[artist.slug];
     <section aria-labelledby="overview-title">
       <h2 id="overview-title">Overview</h2>
       <p>
-        {artist.name} has a catalog that keeps attracting attention through streaming, replay
-        value, and long-term listener interest.
+        {artist.bio ??
+          `${artist.name} has a catalog that keeps attracting attention through streaming, replay value, and long-term listener interest.`}
       </p>
+      {(artist.genre || artist.country || artist.active_since) && (
+        <ul class="meta-list">
+          {artist.genre && <li><strong>Genre:</strong> {artist.genre}</li>}
+          {artist.country && <li><strong>Country:</strong> {artist.country}</li>}
+          {artist.active_since && <li><strong>Active since:</strong> {artist.active_since}</li>}
+        </ul>
+      )}
     </section>
 
     {article && (
@@ -116,11 +130,25 @@ const article = artistArticles[artist.slug];
     <section aria-labelledby="strategy-title">
       <h2 id="strategy-title">Revenue Strategy</h2>
       <ul class="meta-list">
-        <li>Catalog income keeps older songs active long after release.</li>
-        <li>Streaming creates steady long-tail revenue from repeat listening.</li>
-        <li>Licensing can turn a familiar song into a fresh earnings spike.</li>
+        {(artist.revenue_drivers ?? [
+          "Catalog income keeps older songs active long after release.",
+          "Streaming creates steady long-tail revenue from repeat listening.",
+          "Licensing can turn a familiar song into a fresh earnings spike."
+        ]).map((point) => (
+          <li>{point}</li>
+        ))}
       </ul>
     </section>
+
+    {(artist.notable_for || artist.career_highlight) && (
+      <section aria-labelledby="highlights-title">
+        <h2 id="highlights-title">Key Career Highlights</h2>
+        <ul class="meta-list">
+          {artist.notable_for && <li><strong>Known for:</strong> {artist.notable_for}</li>}
+          {artist.career_highlight && <li><strong>Highlight:</strong> {artist.career_highlight}</li>}
+        </ul>
+      </section>
+    )}
 
     {article && (
       <section aria-labelledby="insight-title">

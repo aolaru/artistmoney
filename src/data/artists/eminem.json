@@ -2,5 +2,16 @@
   "name": "Eminem",
   "slug": "eminem",
   "estimated_income": "$10M-$30M/year",
-  "top_songs": ["lose-yourself", "stan"]
+  "top_songs": ["lose-yourself", "stan"],
+  "genre": "Hip-hop",
+  "country": "United States",
+  "active_since": "1999",
+  "bio": "Eminem built one of rap's most replayed catalogs, with songs that continue to generate streams, sync value, and cultural rediscovery.",
+  "notable_for": "Lyrical intensity, blockbuster singles, and multi-generational catalog staying power.",
+  "career_highlight": "His early 2000s material still performs at mainstream scale decades after release.",
+  "revenue_drivers": [
+    "Evergreen streaming from major singles keeps the catalog active year-round.",
+    "Publishing and master rights on landmark tracks continue to generate revenue.",
+    "Film and nostalgia-driven sync usage help iconic songs keep earning."
+  ]
 }

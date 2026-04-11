@@ -2,5 +2,16 @@
   "name": "Coldplay",
   "slug": "coldplay",
   "estimated_income": "$20M-$60M/year",
-  "top_songs": ["fix-you", "yellow"]
+  "top_songs": ["fix-you", "yellow"],
+  "genre": "Alternative rock / Pop",
+  "country": "United Kingdom",
+  "active_since": "2000",
+  "bio": "Coldplay has a globally durable catalog built on emotionally direct songwriting, stadium-scale recognition, and constant playlist presence.",
+  "notable_for": "Arena-ready hooks, emotional choruses, and broad international replay value.",
+  "career_highlight": "Songs from multiple eras continue to perform across streaming, live culture, and sync use.",
+  "revenue_drivers": [
+    "Global streaming gives the band dependable catalog income.",
+    "Emotional songs like ballads and anthem records fit long-tail playlists.",
+    "Live relevance and broad brand familiarity increase licensing value."
+  ]
 }

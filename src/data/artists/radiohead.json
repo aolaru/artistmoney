@@ -2,5 +2,16 @@
   "name": "Radiohead",
   "slug": "radiohead",
   "estimated_income": "$5M-$20M/year",
-  "top_songs": ["creep", "karma-police"]
+  "top_songs": ["creep", "karma-police"],
+  "genre": "Alternative rock",
+  "country": "United Kingdom",
+  "active_since": "1992",
+  "bio": "Radiohead's catalog monetizes through deep listener loyalty, critical status, and songs that remain central to alternative-rock playlists.",
+  "notable_for": "Art-rock experimentation, cult loyalty, and one of the strongest alternative catalogs of the modern era.",
+  "career_highlight": "Their songs continue to earn through a combination of classic hits, album-driven listening, and long-tail discovery.",
+  "revenue_drivers": [
+    "Deep catalog listening supports steady streaming income.",
+    "Classic tracks remain central to alternative and mood playlists.",
+    "Prestige catalog status helps keep the band relevant for long-term licensing."
+  ]
 }

@@ -2,5 +2,16 @@
   "name": "Oasis",
   "slug": "oasis",
   "estimated_income": "$2M-$6M/year",
-  "top_songs": ["wonderwall", "dont-look-back-in-anger", "champagne-supernova"]
+  "top_songs": ["wonderwall", "dont-look-back-in-anger", "champagne-supernova"],
+  "genre": "Britpop / Rock",
+  "country": "United Kingdom",
+  "active_since": "1994",
+  "bio": "Oasis became one of the defining British bands of the 1990s, turning singalong rock songs into a globally durable catalog.",
+  "notable_for": "Anthemic choruses, Britpop-era dominance, and long-tail catalog demand.",
+  "career_highlight": "Their 1990s catalog still drives global streaming, nostalgia demand, and licensing value.",
+  "revenue_drivers": [
+    "Catalog streaming continues to monetize Oasis long after the original release cycle.",
+    "Nostalgia playlists keep their biggest songs in constant rotation.",
+    "Licensing and sports/event usage reinforce the band's anthem-like tracks."
+  ]
 }

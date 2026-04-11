@@ -2,5 +2,16 @@
   "name": "Mobb Deep",
   "slug": "mobb-deep",
   "estimated_income": "$300K-$1.2M/year",
-  "top_songs": []
+  "top_songs": ["shook-ones-pt-ii", "survival-of-the-fittest"],
+  "genre": "Hip-hop",
+  "country": "United States",
+  "active_since": "1993",
+  "bio": "Mobb Deep's catalog remains one of East Coast rap's most durable assets, driven by classic production and continued discovery by new listeners.",
+  "notable_for": "Hard-edged New York rap storytelling and foundational 1990s catalog status.",
+  "career_highlight": "Their best-known records still circulate through rap playlists, documentaries, and soundtrack-style usage.",
+  "revenue_drivers": [
+    "Streaming catalog demand keeps their core songs active.",
+    "Publishing royalties continue from songwriting ownership.",
+    "Film, documentary, and cultural references keep the catalog commercially relevant."
+  ]
 }
