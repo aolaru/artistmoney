@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { createArtistArtwork } from "../../lib/artistArtwork";
+import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
 
 type Artist = {
   name: string;
@@ -34,6 +34,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const artistSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
+const artistPhoto = getArtistPhoto(artist.slug);
 ---
 
 <BaseLayout
@@ -44,15 +45,25 @@ const artistSongs = songs.filter((song) => artist.top_songs.includes(song.slug))
     <div class="artist-hero">
       <img
         class="artist-profile-image"
-        src={createArtistArtwork(artist.name, artist.slug)}
-        alt={`Artwork for ${artist.name}`}
+        src={artistPhoto?.src ?? createArtistArtwork(artist.name, artist.slug)}
+        alt={artistPhoto?.alt ?? `Artwork for ${artist.name}`}
         width="1200"
         height="900"
+        referrerpolicy="no-referrer"
       />
       <div class="artist-hero-copy">
         <p class="eyebrow">Artist</p>
         <h1>{artist.name}</h1>
         <p>Estimated annual income: {artist.estimated_income}</p>
+        {artistPhoto && (
+          <p class="image-credit">
+            {artistPhoto.credit}. License:
+            {" "}
+            <a href={artistPhoto.licenseUrl} rel="noreferrer" target="_blank">{artistPhoto.license}</a>
+            {" · "}
+            <a href={artistPhoto.sourceUrl} rel="noreferrer" target="_blank">source</a>
+          </p>
+        )}
       </div>
     </div>
 

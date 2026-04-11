@@ -1,11 +1,20 @@
 const palettes = [
-  ["#0f1b2e", "#2c5f8a", "#9ed8ff"],
-  ["#1f0f27", "#8a355c", "#f8b4d9"],
-  ["#17231b", "#3d7a4c", "#d6f0a2"],
-  ["#2a160f", "#b6582f", "#ffd394"],
-  ["#1a1531", "#5461c8", "#c7c5ff"],
-  ["#1d2026", "#6d7586", "#f2e6c9"]
+  ["#dfe7f2", "#8ea4bf", "#f8fbff"],
+  ["#ece4e8", "#b88ba1", "#fffafb"],
+  ["#e5ece4", "#8aa485", "#fbfdf9"],
+  ["#f1e6da", "#c79d72", "#fffaf4"],
+  ["#e8e6f4", "#8d88bb", "#fbfaff"],
+  ["#e7eaee", "#9aa7b4", "#fbfcfd"]
 ];
+
+type ArtistPhoto = {
+  alt: string;
+  src: string;
+  sourceUrl: string;
+  credit: string;
+  license: string;
+  licenseUrl: string;
+};
 
 function hashValue(input: string) {
   return [...input].reduce((total, char) => total + char.charCodeAt(0), 0);
@@ -23,8 +32,8 @@ function getInitials(name: string) {
 export function createArtistArtwork(name: string, slug: string) {
   const hash = hashValue(slug);
   const [dark, mid, light] = palettes[hash % palettes.length];
-  const rotation = 18 + (hash % 40);
-  const orbit = 40 + (hash % 70);
+  const rotation = 8 + (hash % 18);
+  const orbit = 26 + (hash % 30);
   const initials = getInitials(name);
   const label = name.toUpperCase();
 
@@ -36,23 +45,97 @@ export function createArtistArtwork(name: string, slug: string) {
           <stop offset="55%" stop-color="${mid}" />
           <stop offset="100%" stop-color="${light}" />
         </linearGradient>
-        <filter id="blur">
-          <feGaussianBlur stdDeviation="40" />
-        </filter>
       </defs>
       <rect width="1200" height="900" fill="url(#bg)" rx="54" />
-      <circle cx="250" cy="220" r="${orbit}" fill="${light}" opacity="0.35" filter="url(#blur)" />
-      <circle cx="920" cy="180" r="${orbit + 40}" fill="${mid}" opacity="0.28" filter="url(#blur)" />
-      <circle cx="860" cy="680" r="${orbit + 10}" fill="${light}" opacity="0.25" filter="url(#blur)" />
+      <circle cx="250" cy="220" r="${orbit}" fill="white" opacity="0.34" />
+      <circle cx="920" cy="180" r="${orbit + 26}" fill="${mid}" opacity="0.18" />
+      <circle cx="860" cy="680" r="${orbit + 12}" fill="white" opacity="0.18" />
       <g transform="translate(600 450) rotate(${rotation})">
-        <rect x="-280" y="-280" width="560" height="560" rx="68" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="10" />
-        <rect x="-220" y="-220" width="440" height="440" rx="54" fill="rgba(255,255,255,0.08)" />
+        <rect x="-280" y="-280" width="560" height="560" rx="68" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="8" />
+        <rect x="-220" y="-220" width="440" height="440" rx="54" fill="rgba(255,255,255,0.18)" />
       </g>
-      <text x="88" y="136" fill="rgba(255,255,255,0.76)" font-family="Georgia, serif" font-size="34" letter-spacing="8">${label}</text>
-      <text x="88" y="760" fill="white" font-family="Georgia, serif" font-size="260" font-weight="700">${initials}</text>
-      <path d="M88 792 H540" stroke="rgba(255,255,255,0.72)" stroke-width="10" stroke-linecap="round" />
+      <text x="88" y="136" fill="rgba(27,41,58,0.46)" font-family="Georgia, serif" font-size="28" letter-spacing="6">${label}</text>
+      <text x="88" y="750" fill="rgba(20,31,45,0.82)" font-family="Georgia, serif" font-size="232" font-weight="700">${initials}</text>
+      <path d="M88 784 H430" stroke="rgba(20,31,45,0.44)" stroke-width="8" stroke-linecap="round" />
     </svg>
   `;
 
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+
+const commonsRedirect = (fileName: string) =>
+  `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(fileName)}`;
+
+const artistPhotos: Record<string, ArtistPhoto> = {
+  oasis: {
+    alt: "Oasis performing in Cardiff in 2025",
+    src: commonsRedirect("OasisCardiff040725-26 - 54640463214 (cropped).jpg"),
+    sourceUrl:
+      "https://commons.wikimedia.org/wiki/File:OasisCardiff040725-26_-_54640463214_(cropped).jpg",
+    credit: "Photo by Raph_PH via Wikimedia Commons",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "led-zeppelin": {
+    alt: "Led Zeppelin on stage in Chicago in 1975",
+    src: commonsRedirect("Led zeppelin (1264206320).jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Led_zeppelin_(1264206320).jpg",
+    credit: "Photo by Tony Morelli via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  "pink-floyd": {
+    alt: "Pink Floyd promotional group photo from 1971",
+    src: commonsRedirect("Pink Floyd, 1971 (cropped).jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Pink_Floyd,_1971_(cropped).jpg",
+    credit: "Capitol Records promotional image via Wikimedia Commons",
+    license: "Public domain in the U.S.",
+    licenseUrl:
+      "https://commons.wikimedia.org/wiki/File:Pink_Floyd,_1971_(cropped).jpg"
+  },
+  "the-beatles": {
+    alt: "The Beatles in Treslong in 1964",
+    src: commonsRedirect("The Beatles in Treslong.JPG"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Beatles_in_Treslong.JPG",
+    credit: "Noord-Hollands Archief / Fotoburo de Boer via Wikimedia Commons",
+    license: "CC0 1.0",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  nirvana: {
+    alt: "Nirvana in a 1989 publicity photo",
+    src: commonsRedirect("Nirvana in 1989 (cropped).jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Nirvana_in_1989_(cropped).jpg",
+    credit: "Publicity photo via Wikimedia Commons",
+    license: "Public domain in the U.S. (no notice)",
+    licenseUrl:
+      "https://commons.wikimedia.org/wiki/File:Nirvana_in_1989_(cropped).jpg"
+  },
+  "2pac": {
+    alt: "Tupac Shakur passport photo from 1995",
+    src: commonsRedirect("Tupac Shakur.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Tupac_Shakur.jpg",
+    credit: "Public domain U.S. passport image via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Tupac_Shakur.jpg"
+  },
+  "the-cure": {
+    alt: "The Cure performing in Santiago in 2013",
+    src: commonsRedirect("The Cure 2013.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Cure_2013.jpg",
+    credit: "Photo by Christian Cordova via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
+  },
+  "aphex-twin": {
+    alt: "Aphex Twin performing in Turin in 2007",
+    src: commonsRedirect("Aphex Twin 2.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Aphex_Twin_2.jpg",
+    credit: "Photo by clattimo via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
+  }
+};
+
+export function getArtistPhoto(slug: string) {
+  return artistPhotos[slug];
 }
