@@ -16,7 +16,13 @@
 }
 
 html {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    "Inter",
+    "SF Pro Text",
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at top left, rgba(139, 94, 60, 0.08), transparent 28%),
@@ -65,8 +71,8 @@ a {
   color: var(--text);
   text-decoration: none;
   font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-weight: 650;
+  letter-spacing: -0.01em;
 }
 
 .site-header nav {
@@ -83,6 +89,7 @@ h2,
 h3 {
   line-height: 1.1;
   margin: 0 0 1rem;
+  letter-spacing: -0.03em;
 }
 
 h1 {
@@ -96,11 +103,13 @@ h2 {
 
 h3 {
   font-size: 1.35rem;
+  font-weight: 650;
 }
 
 p {
   color: var(--muted);
   line-height: 1.7;
+  font-size: 1rem;
 }
 
 .card-grid {
@@ -120,9 +129,9 @@ p {
 .eyebrow {
   margin-bottom: 0.5rem;
   color: var(--accent-strong);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
