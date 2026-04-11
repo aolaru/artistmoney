@@ -16,6 +16,8 @@ type ArtistPhoto = {
   licenseUrl: string;
 };
 
+export type { ArtistPhoto };
+
 function hashValue(input: string) {
   return [...input].reduce((total, char) => total + char.charCodeAt(0), 0);
 }
@@ -138,4 +140,8 @@ const artistPhotos: Record<string, ArtistPhoto> = {
 
 export function getArtistPhoto(slug: string) {
   return artistPhotos[slug];
+}
+
+export function getArtistPhotos() {
+  return artistPhotos;
 }

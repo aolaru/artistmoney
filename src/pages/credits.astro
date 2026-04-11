@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getArtistPhotos } from "../lib/artistArtwork";
+
+const photos = Object.entries(getArtistPhotos()).sort((left, right) => left[0].localeCompare(right[0]));
+---
+
+<BaseLayout
+  title="Credits | Artist Money"
+  description="Image credits and licenses for Artist Money."
+>
+  <section>
+    <p class="eyebrow">Credits</p>
+    <h1>Image credits and licenses</h1>
+    <p>
+      Artist Money uses a mix of generated artwork and a small set of real artist photos sourced
+      from Wikimedia Commons. The entries below list the credit line, source page, and license.
+    </p>
+  </section>
+
+  <section aria-labelledby="credits-list-title">
+    <h2 id="credits-list-title">Wikimedia Commons images</h2>
+    <ul class="meta-list">
+      {photos.map(([slug, photo]) => (
+        <li>
+          <strong>{slug.replaceAll("-", " ")}</strong>
+          <span class="meta-inline"> · {photo.credit}</span>
+          <br />
+          <a href={photo.sourceUrl} rel="noreferrer" target="_blank">Source</a>
+          <span class="meta-inline"> · </span>
+          <a href={photo.licenseUrl} rel="noreferrer" target="_blank">{photo.license}</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
+import { artistMetadata } from "../data/artistMetadata";
 
 type Artist = {
   name: string;
@@ -12,7 +13,13 @@ type Artist = {
 const artistModules = import.meta.glob("../data/artists/*.json", { eager: true });
 const artists = Object.values(artistModules)
   .map((module) => module.default as Artist)
+  .map((artist) => ({
+    ...artist,
+    ...artistMetadata[artist.slug]
+  }))
   .sort((left, right) => left.name.localeCompare(right.name));
+const genres = [...new Set(artists.map((artist) => artist.genre))].sort();
+const countries = [...new Set(artists.map((artist) => artist.country))].sort();
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
@@ -39,9 +46,35 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
 
   <section aria-labelledby="artist-list-title">
     <h2 id="artist-list-title">Featured artists</h2>
+    <div class="filters" aria-label="Artist filters">
+      <label class="filter-field">
+        <span>Search</span>
+        <input id="artist-search" type="search" placeholder="Search artists" />
+      </label>
+      <label class="filter-field">
+        <span>Genre</span>
+        <select id="genre-filter">
+          <option value="">All genres</option>
+          {genres.map((genre) => <option value={genre}>{genre}</option>)}
+        </select>
+      </label>
+      <label class="filter-field">
+        <span>Country</span>
+        <select id="country-filter">
+          <option value="">All countries</option>
+          {countries.map((country) => <option value={country}>{country}</option>)}
+        </select>
+      </label>
+    </div>
+    <p class="results-note" id="results-count">Showing {artists.length} artists</p>
     <div class="card-grid">
       {artists.map((artist) => (
-        <article class="card artist-card">
+        <article
+          class="card artist-card"
+          data-name={artist.name.toLowerCase()}
+          data-genre={artist.genre}
+          data-country={artist.country}
+        >
           <img
             class="artist-card-image"
             src={getArtistPhoto(artist.slug)?.src ?? createArtistArtwork(artist.name, artist.slug)}
@@ -52,14 +85,50 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
             referrerpolicy="no-referrer"
           />
           <div class="artist-card-body">
-            <p class="eyebrow">{artist.slug.replaceAll("-", " ")}</p>
+            <p class="eyebrow">{artist.genre}</p>
             <h3>
               <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
             </h3>
+            <p class="artist-card-meta">{artist.country} · Since {artist.activeSince}</p>
             <p>Estimated income: {artist.estimated_income}</p>
           </div>
         </article>
       ))}
     </div>
   </section>
+
+  <script is:inline>
+    const searchInput = document.querySelector("#artist-search");
+    const genreFilter = document.querySelector("#genre-filter");
+    const countryFilter = document.querySelector("#country-filter");
+    const cards = Array.from(document.querySelectorAll(".artist-card"));
+    const resultsCount = document.querySelector("#results-count");
+
+    const applyFilters = () => {
+      const query = (searchInput?.value ?? "").trim().toLowerCase();
+      const genre = genreFilter?.value ?? "";
+      const country = countryFilter?.value ?? "";
+
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const matchesQuery = !query || (card.dataset.name ?? "").includes(query);
+        const matchesGenre = !genre || (card.dataset.genre ?? "") === genre;
+        const matchesCountry = !country || (card.dataset.country ?? "") === country;
+        const show = matchesQuery && matchesGenre && matchesCountry;
+
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+
+      if (resultsCount) {
+        resultsCount.textContent = `Showing ${visible} artist${visible === 1 ? "" : "s"}`;
+      }
+    };
+
+    [searchInput, genreFilter, countryFilter].forEach((element) => {
+      element?.addEventListener("input", applyFilters);
+      element?.addEventListener("change", applyFilters);
+    });
+  </script>
 </BaseLayout>

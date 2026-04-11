@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
+import { artistMetadata } from "../../data/artistMetadata";
+import { songMetadata } from "../../data/songMetadata";
 
 type Artist = {
   name: string;
@@ -33,7 +35,13 @@ const { artist } = Astro.props as { artist: Artist };
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const artistSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
+const artistDetails = artistMetadata[artist.slug];
+const artistSongs = songs
+  .filter((song) => artist.top_songs.includes(song.slug))
+  .map((song) => ({
+    ...song,
+    ...songMetadata[song.slug]
+  }));
 const artistPhoto = getArtistPhoto(artist.slug);
 ---
 
@@ -55,6 +63,16 @@ const artistPhoto = getArtistPhoto(artist.slug);
         <p class="eyebrow">Artist</p>
         <h1>{artist.name}</h1>
         <p>Estimated annual income: {artist.estimated_income}</p>
+        {artistDetails && (
+          <>
+            <p>{artistDetails.summary}</p>
+            <ul class="stat-list">
+              <li><strong>Genre</strong> {artistDetails.genre}</li>
+              <li><strong>Country</strong> {artistDetails.country}</li>
+              <li><strong>Active since</strong> {artistDetails.activeSince}</li>
+            </ul>
+          </>
+        )}
         {artistPhoto && (
           <p class="image-credit">
             {artistPhoto.credit}. License:
@@ -73,6 +91,7 @@ const artistPhoto = getArtistPhoto(artist.slug);
         {artistSongs.map((song) => (
           <li>
             <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+            {song.album && <span class="meta-inline"> · {song.album} ({song.year})</span>}
           </li>
         ))}
       </ul>
