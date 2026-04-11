@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { createArtistArtwork } from "../lib/artistArtwork";
 
 type Artist = {
   name: string;
@@ -21,23 +22,41 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   title="Artist Money | Artist Income Estimates"
   description="Browse artist profiles and simple estimated income snapshots on Artist Money."
 >
-  <section>
-    <p class="eyebrow">Artists</p>
-    <h1>Estimated artist income, organized into simple profile pages.</h1>
-    <p>
-      Artist Money is a lightweight static directory of artist pages and song revenue estimates.
-    </p>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Artist Money</p>
+      <h1>Music catalog pages with a sharper visual identity and revenue snapshots.</h1>
+      <p>
+        Browse artist profiles, jump into song-level estimates, and explore a growing static library
+        generated from JSON.
+      </p>
+    </div>
+    <div class="hero-panel" aria-label="Site summary">
+      <strong>{artists.length}</strong>
+      <span>artists live in the catalog</span>
+    </div>
   </section>
 
   <section aria-labelledby="artist-list-title">
     <h2 id="artist-list-title">Featured artists</h2>
     <div class="card-grid">
       {artists.map((artist) => (
-        <article class="card">
-          <h3>
-            <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
-          </h3>
-          <p>Estimated income: {artist.estimated_income}</p>
+        <article class="card artist-card">
+          <img
+            class="artist-card-image"
+            src={createArtistArtwork(artist.name, artist.slug)}
+            alt={`Artwork for ${artist.name}`}
+            loading="lazy"
+            width="1200"
+            height="900"
+          />
+          <div class="artist-card-body">
+            <p class="eyebrow">{artist.slug.replaceAll("-", " ")}</p>
+            <h3>
+              <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+            </h3>
+            <p>Estimated income: {artist.estimated_income}</p>
+          </div>
         </article>
       ))}
     </div>

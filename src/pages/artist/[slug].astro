@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { createArtistArtwork } from "../../lib/artistArtwork";
 
 type Artist = {
   name: string;
@@ -39,10 +40,21 @@ const artistSongs = songs.filter((song) => artist.top_songs.includes(song.slug))
   title={`${artist.name} | Artist Money`}
   description={`${artist.name} artist profile with estimated income and songs on Artist Money.`}
 >
-  <article>
-    <p class="eyebrow">Artist</p>
-    <h1>{artist.name}</h1>
-    <p>Estimated annual income: {artist.estimated_income}</p>
+  <article class="artist-profile">
+    <div class="artist-hero">
+      <img
+        class="artist-profile-image"
+        src={createArtistArtwork(artist.name, artist.slug)}
+        alt={`Artwork for ${artist.name}`}
+        width="1200"
+        height="900"
+      />
+      <div class="artist-hero-copy">
+        <p class="eyebrow">Artist</p>
+        <h1>{artist.name}</h1>
+        <p>Estimated annual income: {artist.estimated_income}</p>
+      </div>
+    </div>
 
     <section aria-labelledby="songs-title">
       <h2 id="songs-title">Songs</h2>
