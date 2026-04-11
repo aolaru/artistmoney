@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
-import { artistMetadata } from "../../data/artistMetadata";
-import { songMetadata } from "../../data/songMetadata";
+import { artistArticles } from "../../data/artistArticles";
 
 type Artist = {
   name: string;
@@ -35,19 +34,14 @@ const { artist } = Astro.props as { artist: Artist };
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const artistDetails = artistMetadata[artist.slug];
-const artistSongs = songs
-  .filter((song) => artist.top_songs.includes(song.slug))
-  .map((song) => ({
-    ...song,
-    ...songMetadata[song.slug]
-  }));
+const artistSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
 const artistPhoto = getArtistPhoto(artist.slug);
+const article = artistArticles[artist.slug];
 ---
 
 <BaseLayout
-  title={`${artist.name} | Artist Money`}
-  description={`${artist.name} artist profile with estimated income and songs on Artist Money.`}
+  title={article?.seoTitle ?? `${artist.name} | Artist Money`}
+  description={article?.shortAnswer ?? `${artist.name} artist page with income estimates, songs, and revenue strategy on Artist Money.`}
 >
   <article class="artist-profile">
     <div class="artist-hero">
@@ -62,17 +56,7 @@ const artistPhoto = getArtistPhoto(artist.slug);
       <div class="artist-hero-copy">
         <p class="eyebrow">Artist</p>
         <h1>{artist.name}</h1>
-        <p>Estimated annual income: {artist.estimated_income}</p>
-        {artistDetails && (
-          <>
-            <p>{artistDetails.summary}</p>
-            <ul class="stat-list">
-              <li><strong>Genre</strong> {artistDetails.genre}</li>
-              <li><strong>Country</strong> {artistDetails.country}</li>
-              <li><strong>Active since</strong> {artistDetails.activeSince}</li>
-            </ul>
-          </>
-        )}
+        <p>Artist pages combine meaning, catalog value, and simple money signals.</p>
         {artistPhoto && (
           <p class="image-credit">
             {artistPhoto.credit}. License:
@@ -85,16 +69,64 @@ const artistPhoto = getArtistPhoto(artist.slug);
       </div>
     </div>
 
+    <section aria-labelledby="overview-title">
+      <h2 id="overview-title">Overview</h2>
+      <p>
+        {artist.name} has a catalog that keeps attracting attention through streaming, replay
+        value, and long-term listener interest.
+      </p>
+    </section>
+
+    {article && (
+      <>
+        <section aria-labelledby="short-answer-title">
+          <h2 id="short-answer-title">Short Answer</h2>
+          <p><strong>{article.shortAnswer}</strong></p>
+        </section>
+
+        <section aria-labelledby="sources-title">
+          <h2 id="sources-title">Sources</h2>
+          <ul class="meta-list">
+            {article.sources.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+        </section>
+      </>
+    )}
+
+    <section aria-labelledby="income-title">
+      <h2 id="income-title">Estimated Income</h2>
+      <ul class="meta-list">
+        <li>{artist.estimated_income}</li>
+      </ul>
+    </section>
+
     <section aria-labelledby="songs-title">
-      <h2 id="songs-title">Songs</h2>
+      <h2 id="songs-title">Top Songs</h2>
       <ul class="meta-list">
         {artistSongs.map((song) => (
           <li>
             <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
-            {song.album && <span class="meta-inline"> · {song.album} ({song.year})</span>}
           </li>
         ))}
       </ul>
     </section>
+
+    <section aria-labelledby="strategy-title">
+      <h2 id="strategy-title">Revenue Strategy</h2>
+      <ul class="meta-list">
+        <li>Catalog income keeps older songs active long after release.</li>
+        <li>Streaming creates steady long-tail revenue from repeat listening.</li>
+        <li>Licensing can turn a familiar song into a fresh earnings spike.</li>
+      </ul>
+    </section>
+
+    {article && (
+      <section aria-labelledby="insight-title">
+        <h2 id="insight-title">Insight</h2>
+        <p>{article.insight}</p>
+      </section>
+    )}
   </article>
 </BaseLayout>

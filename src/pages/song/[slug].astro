@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { artistMetadata } from "../../data/artistMetadata";
-import { songMetadata } from "../../data/songMetadata";
+import { songArticles } from "../../data/songArticles";
 
 type Song = {
   title: string;
@@ -27,6 +26,8 @@ export function getStaticPaths() {
   }));
 }
 
+const songModules = import.meta.glob("../../data/songs/*.json", { eager: true });
+const songs = Object.values(songModules).map((module) => module.default as Song);
 const artistModules = import.meta.glob("../../data/artists/*.json", { eager: true });
 const artists = Object.values(artistModules).map((module) => module.default as Artist);
 
@@ -35,26 +36,89 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const artist = artists.find((entry) => entry.slug === song.artist);
-const artistDetails = artist ? artistMetadata[artist.slug] : undefined;
-const songDetails = songMetadata[song.slug];
+const relatedSongs = songs.filter((entry) => entry.artist === song.artist && entry.slug !== song.slug).slice(0, 3);
+const article = songArticles[song.slug];
 ---
 
 <BaseLayout
-  title={`${song.title} | Artist Money`}
-  description={`${song.title} revenue estimate and artist details on Artist Money.`}
+  title={article?.seoTitle ?? `${song.title} | Artist Money`}
+  description={article?.shortAnswer ?? `${song.title} meaning, earnings, and insights on Artist Money.`}
 >
   <article>
     <p class="eyebrow">Song</p>
     <h1>{song.title}</h1>
-    {songDetails && <p>{songDetails.album} · {songDetails.year}</p>}
-    <ul class="meta-list">
-      <li>
-        Artist:
-        {" "}
+
+    <section aria-labelledby="song-artist-title">
+      <h2 id="song-artist-title">Artist</h2>
+      <p>
         {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : song.artist}
-      </li>
-      {artistDetails && <li>Genre: {artistDetails.genre}</li>}
-      <li>Estimated revenue: {song.estimated_revenue}</li>
-    </ul>
+      </p>
+    </section>
+
+    <section aria-labelledby="meaning-title">
+      <h2 id="meaning-title">Meaning</h2>
+      <p>This song explores themes of emotion, memory, and loss.</p>
+    </section>
+
+    <section aria-labelledby="short-answer-title">
+      <h2 id="short-answer-title">Short Answer</h2>
+      <p><strong>{article?.shortAnswer ?? `Estimated earnings: ${song.estimated_revenue}.`}</strong></p>
+    </section>
+
+    <section aria-labelledby="breakdown-title">
+      <h2 id="breakdown-title">Earnings Breakdown</h2>
+      <ul class="meta-list">
+        {(article?.breakdown ?? [
+          "Streaming is usually the largest recurring revenue source.",
+          "Social exposure helps songs keep finding new listeners.",
+          "Licensing can create sharp revenue spikes."
+        ]).map((point) => (
+          <li>{point}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="lifetime-title">
+      <h2 id="lifetime-title">Lifetime Earnings</h2>
+      <p><strong>{article?.lifetimeEstimate ?? "A durable catalog song can earn significant long-tail revenue over many years."}</strong></p>
+    </section>
+
+    <section aria-labelledby="earnings-title">
+      <h2 id="earnings-title">Estimated Earnings</h2>
+      <ul class="meta-list">
+        <li>{song.estimated_revenue}</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="money-title">
+      <h2 id="money-title">Why It Still Makes Money</h2>
+      <ul class="meta-list">
+        {(article?.whyItStillMakesMoney ?? [
+          "Songs keep earning when they stay culturally recognizable.",
+          "Playlist fit helps keep repeat listening active.",
+          "Catalog familiarity supports sync and rediscovery."
+        ]).map((point) => (
+          <li>{point}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="insight-title">
+      <h2 id="insight-title">Insight</h2>
+      <p>{article?.insight ?? "What artists can learn from this song: clear emotion and replay value travel longer than hype."}</p>
+    </section>
+
+    {relatedSongs.length > 0 && (
+      <section aria-labelledby="related-title">
+        <h2 id="related-title">Related Songs</h2>
+        <ul class="meta-list">
+          {relatedSongs.map((relatedSong) => (
+            <li>
+              <a href={`${baseUrl}song/${relatedSong.slug}/`}>{relatedSong.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
   </article>
 </BaseLayout>
