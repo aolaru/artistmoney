@@ -135,6 +135,54 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     credit: "Photo by clattimo via Wikimedia Commons",
     license: "CC BY-SA 2.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  eminem: {
+    alt: "Eminem backstage in Munich in 1999",
+    src: commonsRedirect("Eminem (cropped).jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Eminem_(cropped).jpg",
+    credit: "Photo by Mika-photography via Wikimedia Commons",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "dr-dre": {
+    alt: "Dr. Dre backstage in Los Angeles",
+    src: commonsRedirect("Dr. Dre.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Dr._Dre.jpg",
+    credit: "Photo by Ed Kavishe via Wikimedia Commons",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  adele: {
+    alt: "Adele performing in London in 2007",
+    src: commonsRedirect("Adele.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Adele.jpg",
+    credit: "Photo by Mpawsey via Wikimedia Commons",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  coldplay: {
+    alt: "Coldplay at BBC Broadcasting House in 2021",
+    src: commonsRedirect("ColdplayBBC071221 (cropped).jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:ColdplayBBC071221_(cropped).jpg",
+    credit: "Photo by Raph_PH via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
+  },
+  "kanye-west": {
+    alt: "Kanye West performing at Glastonbury in 2015",
+    src: commonsRedirect("Kanye West (18653258244).jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Kanye_West_(18653258244).jpg",
+    credit: "Photo by Simon Godley via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  "snoop-dogg": {
+    alt: "Snoop Dogg at Coachella in 2012",
+    src: commonsRedirect("Snoop Dogg Coachella-07.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Snoop_Dogg_Coachella-07.jpg",
+    credit: "Photo by Jason Persse via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
   }
 };
 
