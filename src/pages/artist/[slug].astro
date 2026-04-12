@@ -8,6 +8,20 @@ type Artist = {
   slug: string;
   estimated_income: string;
   top_songs: string[];
+  earnings?: {
+    gross_catalog_revenue?: string;
+    artist_or_estate_share?: string;
+    label_share?: string;
+    publisher_share?: string;
+    writer_share?: string;
+    assumptions?: string;
+  };
+  ownership?: {
+    master_owner?: string;
+    publishing_owner?: string;
+    catalog_sale_status?: string;
+    notes?: string;
+  };
   genre?: string;
   country?: string;
   active_since?: string;
@@ -44,6 +58,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
 const artistSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
 const artistPhoto = getArtistPhoto(artist.slug);
 const article = artistArticles[artist.slug];
+const hasDetailedEarnings = Boolean(artist.earnings || artist.ownership);
 ---
 
 <BaseLayout
@@ -110,11 +125,61 @@ const article = artistArticles[artist.slug];
     )}
 
     <section aria-labelledby="income-title">
-      <h2 id="income-title">Estimated Income</h2>
+      <h2 id="income-title">Estimated Artist-Side Annual Earnings</h2>
       <ul class="meta-list">
-        <li>{artist.estimated_income}</li>
+        <li>{artist.earnings?.artist_or_estate_share ?? artist.estimated_income}</li>
       </ul>
     </section>
+
+    {hasDetailedEarnings && (
+      <>
+        {artist.earnings && (
+          <section aria-labelledby="breakdown-title">
+            <h2 id="breakdown-title">Revenue Breakdown</h2>
+            <ul class="meta-list">
+              {artist.earnings.gross_catalog_revenue && (
+                <li><strong>Estimated gross catalog revenue:</strong> {artist.earnings.gross_catalog_revenue}</li>
+              )}
+              {artist.earnings.artist_or_estate_share && (
+                <li><strong>Estimated artist or estate cut:</strong> {artist.earnings.artist_or_estate_share}</li>
+              )}
+              {artist.earnings.label_share && (
+                <li><strong>Estimated label share:</strong> {artist.earnings.label_share}</li>
+              )}
+              {artist.earnings.publisher_share && (
+                <li><strong>Estimated publisher share:</strong> {artist.earnings.publisher_share}</li>
+              )}
+              {artist.earnings.writer_share && (
+                <li><strong>Estimated writer share:</strong> {artist.earnings.writer_share}</li>
+              )}
+              {artist.earnings.assumptions && (
+                <li><strong>Assumptions:</strong> {artist.earnings.assumptions}</li>
+              )}
+            </ul>
+          </section>
+        )}
+
+        {artist.ownership && (
+          <section aria-labelledby="ownership-title">
+            <h2 id="ownership-title">Ownership and Catalog Status</h2>
+            <ul class="meta-list">
+              {artist.ownership.master_owner && (
+                <li><strong>Masters:</strong> {artist.ownership.master_owner}</li>
+              )}
+              {artist.ownership.publishing_owner && (
+                <li><strong>Publishing:</strong> {artist.ownership.publishing_owner}</li>
+              )}
+              {artist.ownership.catalog_sale_status && (
+                <li><strong>Catalog sale status:</strong> {artist.ownership.catalog_sale_status}</li>
+              )}
+              {artist.ownership.notes && (
+                <li><strong>Notes:</strong> {artist.ownership.notes}</li>
+              )}
+            </ul>
+          </section>
+        )}
+      </>
+    )}
 
     <section aria-labelledby="songs-title">
       <h2 id="songs-title">Top Songs</h2>

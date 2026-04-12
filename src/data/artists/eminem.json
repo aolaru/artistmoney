@@ -3,6 +3,20 @@
   "slug": "eminem",
   "estimated_income": "$10M-$30M/year",
   "top_songs": ["lose-yourself", "stan"],
+  "earnings": {
+    "gross_catalog_revenue": "$18M-$45M/year",
+    "artist_or_estate_share": "$10M-$30M/year",
+    "label_share": "$4M-$10M/year",
+    "publisher_share": "$2M-$6M/year",
+    "writer_share": "$2M-$7M/year",
+    "assumptions": "Estimate assumes heavy evergreen streaming and meaningful writer participation on core songs, offset by major-label master splits on parts of the catalog."
+  },
+  "ownership": {
+    "master_owner": "Mix of label-controlled masters and artist-affiliated royalty participation",
+    "publishing_owner": "Writing and publishing participation appears to remain a major value driver",
+    "catalog_sale_status": "No full catalog sale assumed in this estimate",
+    "notes": "For major catalogs like Eminem's, the difference between gross music revenue and artist-side take-home can be large, but songwriter economics materially improve the artist cut."
+  },
   "genre": "Hip-hop",
   "country": "United States",
   "active_since": "1999",

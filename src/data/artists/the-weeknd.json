@@ -3,6 +3,20 @@
   "slug": "the-weeknd",
   "estimated_income": "$20M-$70M/year",
   "top_songs": ["blinding-lights", "starboy"],
+  "earnings": {
+    "gross_catalog_revenue": "$35M-$90M/year",
+    "artist_or_estate_share": "$20M-$70M/year",
+    "label_share": "$8M-$20M/year",
+    "publisher_share": "$3M-$10M/year",
+    "writer_share": "$4M-$12M/year",
+    "assumptions": "Estimate assumes very high global streaming volume, strong writer participation, and modern superstar economics that are more favorable than legacy catalog deals."
+  },
+  "ownership": {
+    "master_owner": "Mix of label and artist-affiliated rights participation",
+    "publishing_owner": "Writer and publishing participation appears to be a major income lever",
+    "catalog_sale_status": "No full catalog sale assumed in this estimate",
+    "notes": "Modern hitmakers with strong negotiating leverage often keep a larger artist-side share than older acts, even when labels still participate heavily."
+  },
   "genre": "Pop / R&B",
   "country": "Canada",
   "active_since": "2011",

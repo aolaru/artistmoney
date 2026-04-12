@@ -3,6 +3,20 @@
   "slug": "mobb-deep",
   "estimated_income": "$300K-$1.2M/year",
   "top_songs": ["shook-ones-pt-ii", "survival-of-the-fittest"],
+  "earnings": {
+    "gross_catalog_revenue": "$700K-$1.8M/year",
+    "artist_or_estate_share": "$300K-$1M/year",
+    "label_share": "$200K-$600K/year",
+    "publisher_share": "$100K-$300K/year",
+    "writer_share": "$80K-$250K/year",
+    "assumptions": "Estimate assumes catalog streaming, soundtrack-style placements, and writer royalties, with artist cash flow depending on how royalties are shared between the surviving estate, members, and label-side contracts."
+  },
+  "ownership": {
+    "master_owner": "Masters appear largely label-controlled, with royalty participation for the group and estates",
+    "publishing_owner": "Publishing income appears to remain the clearest artist-side royalty stream",
+    "catalog_sale_status": "No broad catalog sale assumed in this estimate",
+    "notes": "Classic hip-hop catalogs can look large at the gross level while delivering meaningfully smaller artist-side payouts after label and publishing splits."
+  },
   "genre": "Hip-hop",
   "country": "United States",
   "active_since": "1993",

@@ -2,5 +2,19 @@
   "name": "Coolio",
   "slug": "coolio",
   "estimated_income": "$500K-$2M/year",
-  "top_songs": ["gangstas-paradise"]
+  "top_songs": ["gangstas-paradise"],
+  "earnings": {
+    "gross_catalog_revenue": "$900K-$2.5M/year",
+    "artist_or_estate_share": "$350K-$1.1M/year",
+    "label_share": "$250K-$900K/year",
+    "publisher_share": "$150K-$450K/year",
+    "writer_share": "$100K-$500K/year",
+    "assumptions": "Estimate assumes durable streaming and sync value around Gangsta's Paradise, with legacy-contract label splits reducing the artist-side cut."
+  },
+  "ownership": {
+    "master_owner": "Primarily label-controlled masters with estate participation in royalties",
+    "publishing_owner": "Songwriting and publishing income appears split across rightsholders",
+    "catalog_sale_status": "No major full-catalog sale reflected in this estimate",
+    "notes": "For legacy rap catalogs, artist or estate cash flow can be materially lower than gross revenue because masters and publishing are often split."
+  }
 }

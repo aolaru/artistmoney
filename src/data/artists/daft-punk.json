@@ -3,6 +3,20 @@
   "slug": "daft-punk",
   "estimated_income": "$5M-$15M/year",
   "top_songs": ["get-lucky", "one-more-time"],
+  "earnings": {
+    "gross_catalog_revenue": "$10M-$25M/year",
+    "artist_or_estate_share": "$5M-$15M/year",
+    "label_share": "$2M-$6M/year",
+    "publisher_share": "$1M-$3M/year",
+    "writer_share": "$1M-$4M/year",
+    "assumptions": "Estimate assumes strong global streaming, continued sync demand, and broad catalog ownership participation by the duo, which supports a higher artist-side share than many legacy acts."
+  },
+  "ownership": {
+    "master_owner": "Mix of label-controlled and artist-controlled interests depending on release era",
+    "publishing_owner": "Publishing appears materially tied to the creators and their entities",
+    "catalog_sale_status": "No full catalog exit assumed in this estimate",
+    "notes": "Daft Punk likely captures a larger share of catalog economics than older acts signed on more restrictive historic contracts."
+  },
   "genre": "Electronic / House",
   "country": "France",
   "active_since": "1993",

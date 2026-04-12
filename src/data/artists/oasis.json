@@ -3,6 +3,20 @@
   "slug": "oasis",
   "estimated_income": "$2M-$6M/year",
   "top_songs": ["wonderwall", "dont-look-back-in-anger", "champagne-supernova"],
+  "earnings": {
+    "gross_catalog_revenue": "$5M-$12M/year",
+    "artist_or_estate_share": "$2M-$6M/year",
+    "label_share": "$1.5M-$4M/year",
+    "publisher_share": "$700K-$2M/year",
+    "writer_share": "$800K-$2.5M/year",
+    "assumptions": "Estimate assumes outsized writer economics around Noel Gallagher-led composition plus continued streaming, live-culture nostalgia, and sync demand."
+  },
+  "ownership": {
+    "master_owner": "Masters appear substantially label-controlled on the core catalog",
+    "publishing_owner": "Publishing value is concentrated around songwriter-controlled interests",
+    "catalog_sale_status": "No confirmed full catalog sale assumed in this estimate",
+    "notes": "Oasis likely earns a meaningful songwriter-side cut even where label participation remains strong on the master side."
+  },
   "genre": "Britpop / Rock",
   "country": "United Kingdom",
   "active_since": "1994",

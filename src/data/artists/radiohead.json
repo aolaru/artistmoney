@@ -3,6 +3,20 @@
   "slug": "radiohead",
   "estimated_income": "$5M-$20M/year",
   "top_songs": ["creep", "karma-police"],
+  "earnings": {
+    "gross_catalog_revenue": "$8M-$22M/year",
+    "artist_or_estate_share": "$5M-$20M/year",
+    "label_share": "$2M-$6M/year",
+    "publisher_share": "$800K-$2.5M/year",
+    "writer_share": "$1M-$4M/year",
+    "assumptions": "Estimate assumes a mature alternative catalog with stable streaming, strong vinyl and reissue demand, and relatively favorable long-term artist economics."
+  },
+  "ownership": {
+    "master_owner": "Ownership is mixed across eras, with some releases carrying more artist leverage than major-label peers",
+    "publishing_owner": "Publishing value remains meaningful because core songs continue to travel across generations",
+    "catalog_sale_status": "No broad catalog sale assumed in this estimate",
+    "notes": "Radiohead likely captures more downside protection from catalog economics than many older acts because of stronger long-term leverage."
+  },
   "genre": "Alternative rock",
   "country": "United Kingdom",
   "active_since": "1992",

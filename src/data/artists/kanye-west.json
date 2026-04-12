@@ -2,5 +2,16 @@
   "name": "Kanye West",
   "slug": "kanye-west",
   "estimated_income": "$10M-$50M/year",
-  "top_songs": ["stronger", "power"]
+  "top_songs": ["stronger", "power"],
+  "genre": "Hip-hop / Pop",
+  "country": "United States",
+  "active_since": "2004",
+  "bio": "Kanye West's catalog continues to generate significant income through streaming scale, producer-led catalog depth, and enduring cultural recognition.",
+  "notable_for": "Beat-driven reinvention, major catalog reach, and songs that remain central to 2000s and 2010s hip-hop playlists.",
+  "career_highlight": "His best-known records still perform at global playlist scale years after release.",
+  "revenue_drivers": [
+    "Large streaming volumes keep flagship songs earning continuously.",
+    "Production and songwriting legacy increase catalog depth beyond the obvious hits.",
+    "Cultural familiarity sustains long-tail demand and sync value."
+  ]
 }

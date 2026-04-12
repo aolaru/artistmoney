@@ -3,6 +3,20 @@
   "slug": "adele",
   "estimated_income": "$10M-$40M/year",
   "top_songs": ["someone-like-you", "hello"],
+  "earnings": {
+    "gross_catalog_revenue": "$18M-$50M/year",
+    "artist_or_estate_share": "$10M-$40M/year",
+    "label_share": "$4M-$12M/year",
+    "publisher_share": "$2M-$6M/year",
+    "writer_share": "$2M-$8M/year",
+    "assumptions": "Estimate assumes large recurring streaming, premium catalog value for evergreen ballads, and substantial songwriter participation on major records."
+  },
+  "ownership": {
+    "master_owner": "Mix of label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing appears partly tied to songwriter-side interests",
+    "catalog_sale_status": "No confirmed full catalog sale assumed in this estimate",
+    "notes": "For global pop catalogs with strong composition involvement, the artist-side cut can stay high even while labels retain large master interests."
+  },
   "genre": "Pop / Soul",
   "country": "United Kingdom",
   "active_since": "2008",
