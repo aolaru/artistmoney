@@ -52,7 +52,7 @@ const getArtistName = (slug: string) => artists.find((artist) => artist.slug ===
     </div>
   </section>
 
-  <section aria-labelledby="trending-title">
+  <section id="songs" aria-labelledby="trending-title">
     <h2 id="trending-title">Trending Songs</h2>
     <div class="card-grid">
       {trendingSongs.map((song) => (
@@ -84,7 +84,7 @@ const getArtistName = (slug: string) => artists.find((artist) => artist.slug ===
     </div>
   </section>
 
-  <section aria-labelledby="artists-title">
+  <section id="artists" aria-labelledby="artists-title">
     <h2 id="artists-title">Still Making Money</h2>
     <div class="card-grid">
       {stillMakingMoneyArtists.map((artist) => (
