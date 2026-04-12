@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
+
+type Artist = {
+  name: string;
+  slug: string;
+  estimated_income: string;
+  top_songs: string[];
+};
+
+type Song = {
+  title: string;
+  slug: string;
+  artist: string;
+  estimated_revenue: string;
+};
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const artistModules = import.meta.glob("../data/artists/*.json", { eager: true });
+const songModules = import.meta.glob("../data/songs/*.json", { eager: true });
+
+const artists = Object.values(artistModules).map((module) => module.default as Artist);
+const songs = Object.values(songModules)
+  .map((module) => module.default as Song)
+  .sort((left, right) => left.title.localeCompare(right.title));
+
+const getArtist = (slug: string) => artists.find((artist) => artist.slug === slug);
+---
+
+<BaseLayout
+  title="Songs | Artist Money"
+  description="Browse all songs tracked on Artist Money."
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Songs</p>
+      <h1>All songs in the catalog</h1>
+      <p>Browse the full song index and jump into earnings-focused song pages.</p>
+    </div>
+    <div class="hero-panel" aria-label="Song count">
+      <strong>{songs.length}</strong>
+      <span>songs in Artist Money</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="all-songs-title">
+    <h2 id="all-songs-title">Song Directory</h2>
+    <div class="card-grid">
+      {songs.map((song) => {
+        const artist = getArtist(song.artist);
+        const artistName = artist?.name ?? song.artist;
+
+        return (
+          <article class="card artist-card">
+            <img
+              class="artist-card-image"
+              src={getArtistPhoto(song.artist)?.src ?? createArtistArtwork(artistName, song.artist)}
+              alt={getArtistPhoto(song.artist)?.alt ?? `Artwork for ${artistName}`}
+              loading="lazy"
+              width="1200"
+              height="900"
+              referrerpolicy="no-referrer"
+            />
+            <div class="artist-card-body">
+              <p class="eyebrow">Song</p>
+              <h3>
+                <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+              </h3>
+              <p class="artist-card-meta">
+                By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
+              </p>
+              <p>Estimated revenue: {song.estimated_revenue}</p>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
