@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
+
+type Artist = {
+  name: string;
+  slug: string;
+  estimated_income: string;
+  top_songs: string[];
+};
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const artistModules = import.meta.glob("../data/artists/*.json", { eager: true });
+const artists = Object.values(artistModules)
+  .map((module) => module.default as Artist)
+  .sort((left, right) => left.name.localeCompare(right.name));
+---
+
+<BaseLayout
+  title="Artists | Artist Money"
+  description="Browse all artists tracked on Artist Money."
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Artists</p>
+      <h1>All artists in the catalog</h1>
+      <p>Browse the full artist index and jump into income-focused artist pages.</p>
+    </div>
+    <div class="hero-panel" aria-label="Artist count">
+      <strong>{artists.length}</strong>
+      <span>artists in Artist Money</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="all-artists-title">
+    <h2 id="all-artists-title">Artist Directory</h2>
+    <div class="card-grid">
+      {artists.map((artist) => (
+        <article class="card artist-card">
+          <img
+            class="artist-card-image"
+            src={getArtistPhoto(artist.slug)?.src ?? createArtistArtwork(artist.name, artist.slug)}
+            alt={getArtistPhoto(artist.slug)?.alt ?? `Artwork for ${artist.name}`}
+            loading="lazy"
+            width="1200"
+            height="900"
+            referrerpolicy="no-referrer"
+          />
+          <div class="artist-card-body">
+            <p class="eyebrow">Artist</p>
+            <h3>
+              <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+            </h3>
+            <p>Estimated income: {artist.estimated_income}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
