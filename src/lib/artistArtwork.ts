@@ -14,6 +14,8 @@ type ArtistPhoto = {
   credit: string;
   license: string;
   licenseUrl: string;
+  localPath: string;
+  personalityRightsWarning?: string;
 };
 
 export type { ArtistPhoto };
@@ -65,196 +67,133 @@ export function createArtistArtwork(name: string, slug: string) {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
-const commonsRedirect = (fileName: string) =>
-  `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(fileName)}`;
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const localPhoto = (fileName: string) => `${baseUrl}images/artists/${fileName}`;
 
 const artistPhotos: Record<string, ArtistPhoto> = {
   oasis: {
     alt: "Oasis performing in Cardiff in 2025",
-    src: commonsRedirect("OasisCardiff040725-26 - 54640463214 (cropped).jpg"),
+    src: localPhoto("oasis.jpg"),
     sourceUrl:
       "https://commons.wikimedia.org/wiki/File:OasisCardiff040725-26_-_54640463214_(cropped).jpg",
     credit: "Photo by Raph_PH via Wikimedia Commons",
     license: "CC BY 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by/4.0/"
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    localPath: "/images/artists/oasis.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   "led-zeppelin": {
     alt: "Led Zeppelin on stage in Chicago in 1975",
-    src: commonsRedirect("Led zeppelin (1264206320).jpg"),
+    src: localPhoto("led-zeppelin.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Led_zeppelin_(1264206320).jpg",
     credit: "Photo by Tony Morelli via Wikimedia Commons",
     license: "CC BY-SA 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/led-zeppelin.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Editorial use is generally safer than endorsement or advertising use."
   },
   "pink-floyd": {
     alt: "Pink Floyd promotional group photo from 1971",
-    src: commonsRedirect("Pink Floyd, 1971 (cropped).jpg"),
+    src: localPhoto("pink-floyd.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Pink_Floyd,_1971_(cropped).jpg",
     credit: "Capitol Records promotional image via Wikimedia Commons",
     license: "Public domain in the U.S.",
     licenseUrl:
-      "https://commons.wikimedia.org/wiki/File:Pink_Floyd,_1971_(cropped).jpg"
+      "https://commons.wikimedia.org/wiki/File:Pink_Floyd,_1971_(cropped).jpg",
+    localPath: "/images/artists/pink-floyd.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
   },
   "the-beatles": {
     alt: "The Beatles in Treslong in 1964",
-    src: commonsRedirect("The Beatles in Treslong.JPG"),
+    src: localPhoto("the-beatles.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Beatles_in_Treslong.JPG",
     credit: "Noord-Hollands Archief / Fotoburo de Boer via Wikimedia Commons",
     license: "CC0 1.0",
-    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/"
-  },
-  nirvana: {
-    alt: "Nirvana in a 1989 publicity photo",
-    src: commonsRedirect("Nirvana in 1989 (cropped).jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Nirvana_in_1989_(cropped).jpg",
-    credit: "Publicity photo via Wikimedia Commons",
-    license: "Public domain in the U.S. (no notice)",
-    licenseUrl:
-      "https://commons.wikimedia.org/wiki/File:Nirvana_in_1989_(cropped).jpg"
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    localPath: "/images/artists/the-beatles.jpg",
+    personalityRightsWarning: "Living band members are identifiable. CC0 status does not remove publicity or personality-rights considerations."
   },
   "2pac": {
     alt: "Tupac Shakur passport photo from 1995",
-    src: commonsRedirect("Tupac Shakur.jpg"),
+    src: localPhoto("2pac.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Tupac_Shakur.jpg",
     credit: "Public domain U.S. passport image via Wikimedia Commons",
     license: "Public domain",
-    licenseUrl: "https://commons.wikimedia.org/wiki/File:Tupac_Shakur.jpg"
-  },
-  "the-cure": {
-    alt: "The Cure performing in Santiago in 2013",
-    src: commonsRedirect("The Cure 2013.jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Cure_2013.jpg",
-    credit: "Photo by Christian Cordova via Wikimedia Commons",
-    license: "CC BY 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Tupac_Shakur.jpg",
+    localPath: "/images/artists/2pac.jpg"
   },
   "aphex-twin": {
     alt: "Aphex Twin performing in Turin in 2007",
-    src: commonsRedirect("Aphex Twin 2.jpg"),
+    src: localPhoto("aphex-twin.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Aphex_Twin_2.jpg",
     credit: "Photo by clattimo via Wikimedia Commons",
     license: "CC BY-SA 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/aphex-twin.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   "alice-in-chains": {
     alt: "Alice In Chains performing at Rock am Ring in 2019",
-    src: commonsRedirect("Alice in Chains 2019.jpg"),
+    src: localPhoto("alice-in-chains.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Alice_in_Chains_2019.jpg",
     credit: "Photo by Sven Mandel via Wikimedia Commons",
     license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/alice-in-chains.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   beyonce: {
     alt: "Beyonce performing in Munich in 2007",
-    src: commonsRedirect("Beyonce.jpg"),
+    src: localPhoto("beyonce.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Beyonce.jpg",
     credit: "Photo by Jen Keys via Wikimedia Commons",
     license: "Public domain",
-    licenseUrl: "https://commons.wikimedia.org/wiki/File:Beyonce.jpg"
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Beyonce.jpg",
+    localPath: "/images/artists/beyonce.jpg",
+    personalityRightsWarning: "Living artist depicted. Public-domain status does not remove publicity or personality-rights considerations."
   },
   "brian-eno": {
     alt: "Brian Eno in Naples in 2008",
-    src: commonsRedirect("Brian Eno 2008.jpg"),
+    src: localPhoto("brian-eno.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Brian_Eno_2008.jpg",
     credit: "Photo by cosciansky via Wikimedia Commons",
     license: "CC BY 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
-  },
-  eminem: {
-    alt: "Eminem backstage in Munich in 1999",
-    src: commonsRedirect("Eminem (cropped).jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Eminem_(cropped).jpg",
-    credit: "Photo by Mika-photography via Wikimedia Commons",
-    license: "CC BY-SA 3.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/brian-eno.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   "dr-dre": {
     alt: "Dr. Dre backstage in Los Angeles",
-    src: commonsRedirect("Dr. Dre.jpg"),
+    src: localPhoto("dr-dre.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Dr._Dre.jpg",
     credit: "Photo by Ed Kavishe via Wikimedia Commons",
     license: "CC BY-SA 3.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    localPath: "/images/artists/dr-dre.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   adele: {
     alt: "Adele performing in London in 2007",
-    src: commonsRedirect("Adele.jpg"),
+    src: localPhoto("adele.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Adele.jpg",
     credit: "Photo by Mpawsey via Wikimedia Commons",
     license: "CC BY-SA 3.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/"
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    localPath: "/images/artists/adele.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   coldplay: {
     alt: "Coldplay at BBC Broadcasting House in 2021",
-    src: commonsRedirect("ColdplayBBC071221 (cropped).jpg"),
+    src: localPhoto("coldplay.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:ColdplayBBC071221_(cropped).jpg",
     credit: "Photo by Raph_PH via Wikimedia Commons",
     license: "CC BY 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
-  },
-  "kanye-west": {
-    alt: "Kanye West performing at Glastonbury in 2015",
-    src: commonsRedirect("Kanye West (18653258244).jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Kanye_West_(18653258244).jpg",
-    credit: "Photo by Simon Godley via Wikimedia Commons",
-    license: "CC BY-SA 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
-  },
-  "kendrick-lamar": {
-    alt: "Kendrick Lamar at the 2018 Pulitzer Prize ceremony",
-    src: commonsRedirect("Pulitzer2018-portraits-kendrick-lamar.jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Pulitzer2018-portraits-kendrick-lamar.jpg",
-    credit: "Photo by Fuzheado via Wikimedia Commons",
-    license: "CC BY-SA 4.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
-  },
-  "snoop-dogg": {
-    alt: "Snoop Dogg at Coachella in 2012",
-    src: commonsRedirect("Snoop Dogg Coachella-07.jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Snoop_Dogg_Coachella-07.jpg",
-    credit: "Photo by Jason Persse via Wikimedia Commons",
-    license: "CC BY-SA 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
-  },
-  "pearl-jam": {
-    alt: "Pearl Jam performing in Providence in 1991",
-    src: commonsRedirect("Pearl Jam 1991.jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Pearl_Jam_1991.jpg",
-    credit: "Photo by perfectrx via Wikimedia Commons",
-    license: "CC BY 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
-  },
-  radiohead: {
-    alt: "Thom Yorke and Ed O'Brien of Radiohead in concert in 2006",
-    src: commonsRedirect("Thomed.jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Thomed.jpg",
-    credit: "Photo by ErleGrey via Wikimedia Commons",
-    license: "Public domain",
-    licenseUrl: "https://commons.wikimedia.org/wiki/File:Thomed.jpg"
-  },
-  rem: {
-    alt: "R.E.M. performing in Padova in 2003",
-    src: commonsRedirect("Padova REM concert July 22 2003 blue.jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Padova_REM_concert_July_22_2003_blue.jpg",
-    credit: "Photo by Stark (Stefano Andreoli) via Wikimedia Commons",
-    license: "CC BY-SA 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
-  },
-  rihanna: {
-    alt: "Rihanna performing in Sydney in 2011",
-    src: commonsRedirect("Rihanna (6777063482).jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Rihanna_(6777063482).jpg",
-    credit: "Photo by Eva Rinaldi via Wikimedia Commons",
-    license: "CC BY-SA 2.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
-  },
-  "taylor-swift": {
-    alt: "Taylor Swift performing in Santa Maria in 2006",
-    src: commonsRedirect("Taylor Swift.jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Taylor_Swift.jpg",
-    credit: "Photo by Dwight McCann via Wikimedia Commons",
-    license: "CC BY-SA 2.5",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.5/"
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/coldplay.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
   }
 };
 

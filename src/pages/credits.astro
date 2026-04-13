@@ -2,35 +2,77 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getArtistPhotos } from "../lib/artistArtwork";
 
+const titleize = (slug: string) =>
+  slug
+    .split("-")
+    .map((part) => (part.length <= 3 ? part.toUpperCase() : part[0].toUpperCase() + part.slice(1)))
+    .join(" ");
+
 const photos = Object.entries(getArtistPhotos()).sort((left, right) => left[0].localeCompare(right[0]));
 ---
 
 <BaseLayout
   title="Credits | Artist Money"
-  description="Image credits and licenses for Artist Money."
+  description="Image credits, local hosting details, licenses, and rights warnings for Artist Money."
 >
   <section>
     <p class="eyebrow">Credits</p>
-    <h1>Image credits and licenses</h1>
+    <h1>Image licensing and hosting</h1>
     <p>
-      Artist Money uses a mix of generated artwork and a small set of real artist photos sourced
-      from Wikimedia Commons. The entries below list the credit line, source page, and license.
+      Artist Money uses a mix of generated artwork and a curated set of self-hosted artist photos
+      sourced from Wikimedia Commons. Each image below lists the original source page, the license,
+      the local hosted file path, and whether personality-rights caution still applies.
     </p>
   </section>
 
   <section aria-labelledby="credits-list-title">
-    <h2 id="credits-list-title">Wikimedia Commons images</h2>
+    <h2 id="credits-list-title">Self-hosted Wikimedia Commons images</h2>
+    <ul class="meta-list">
+      <li>
+        <strong>License scope:</strong> These files are reused under the license shown on each
+        Wikimedia Commons file page. Attribution and license links should stay attached to the
+        reuse context.
+      </li>
+      <li>
+        <strong>Personality rights:</strong> Some photos depict living identifiable people. That
+        can still matter even when copyright reuse is allowed, especially for promotional or
+        endorsement-like use.
+      </li>
+      <li>
+        <strong>Hosting:</strong> Approved files are stored locally under
+        <span class="meta-inline"> /public/images/artists</span> so the site no longer depends on
+        live Commons redirects.
+      </li>
+    </ul>
+
     <ul class="meta-list">
       {photos.map(([slug, photo]) => (
         <li>
-          <strong>{slug.replaceAll("-", " ")}</strong>
+          <strong>{titleize(slug)}</strong>
           <span class="meta-inline"> · {photo.credit}</span>
           <br />
-          <a href={photo.sourceUrl} rel="noreferrer" target="_blank">Source</a>
+          <span class="meta-inline">Local file: {photo.localPath}</span>
+          <br />
+          <a href={photo.sourceUrl} rel="noreferrer" target="_blank">Original source page</a>
           <span class="meta-inline"> · </span>
           <a href={photo.licenseUrl} rel="noreferrer" target="_blank">{photo.license}</a>
+          {photo.personalityRightsWarning && (
+            <>
+              <br />
+              <strong>Rights warning:</strong>
+              <span class="meta-inline"> {photo.personalityRightsWarning}</span>
+            </>
+          )}
         </li>
       ))}
     </ul>
+  </section>
+
+  <section aria-labelledby="fallback-title">
+    <h2 id="fallback-title">Generated artwork fallback</h2>
+    <p>
+      Artists without an approved self-hosted Commons photo use generated SVG artwork. That keeps
+      the catalog visually complete without introducing uncertain third-party image rights.
+    </p>
   </section>
 </BaseLayout>
