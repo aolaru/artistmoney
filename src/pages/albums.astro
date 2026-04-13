@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
+import { albums } from "../lib/catalog";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(album.year / 10) * 10}s` : null)).filter(Boolean))].sort();
+---
+
+<BaseLayout
+  title="Albums | Artist Money"
+  description="Browse albums tracked on Artist Money and explore their linked songs."
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Albums</p>
+      <h1>Albums in the catalog</h1>
+      <p>Browse albums derived from the tracked song catalog and jump into linked song pages.</p>
+    </div>
+    <div class="hero-panel" aria-label="Album count">
+      <strong>{albums.length}</strong>
+      <span>albums with tracked songs</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="all-albums-title">
+    <h2 id="all-albums-title">Album Directory</h2>
+    <div class="filters" data-filter-root="albums">
+      <label class="filter-field">
+        <span>Search</span>
+        <input id="album-search" type="search" placeholder="Search albums or artists" />
+      </label>
+      <label class="filter-field">
+        <span>Decade</span>
+        <select id="album-decade">
+          <option value="">All decades</option>
+          {decades.map((decade) => (
+            <option value={decade}>{decade}</option>
+          ))}
+        </select>
+      </label>
+    </div>
+    <p class="results-note" id="album-results-note">Showing {albums.length} albums</p>
+    <div class="card-grid">
+      {albums.map((album) => {
+        const decade = album.year ? `${Math.floor(album.year / 10) * 10}s` : "";
+        return (
+          <article
+            class="card artist-card"
+            data-album-card
+            data-search={`${album.title} ${album.artistName}`.toLowerCase()}
+            data-decade={decade}
+          >
+            <img
+              class="artist-card-image"
+              src={getArtistPhoto(album.artistSlug)?.src ?? createArtistArtwork(album.artistName, album.artistSlug)}
+              alt={getArtistPhoto(album.artistSlug)?.alt ?? `Artwork for ${album.artistName}`}
+              loading="lazy"
+              width="1200"
+              height="900"
+              referrerpolicy="no-referrer"
+            />
+            <div class="artist-card-body">
+              <p class="eyebrow">Album</p>
+              <h3>
+                <a href={`${baseUrl}album/${album.slug}/`}>{album.title}</a>
+              </h3>
+              <p class="artist-card-meta">
+                By <a href={`${baseUrl}artist/${album.artistSlug}/`}>{album.artistName}</a>
+              </p>
+              <p class="artist-card-meta">
+                {[album.year, `${album.trackedSongCount} tracked song${album.trackedSongCount === 1 ? "" : "s"}`]
+                  .filter(Boolean)
+                  .join(" · ")}
+              </p>
+              {album.estimatedRevenue && <p>Tracked song revenue: {album.estimatedRevenue}</p>}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  const albumSearchInput = document.querySelector("#album-search");
+  const albumDecadeSelect = document.querySelector("#album-decade");
+  const albumCards = [...document.querySelectorAll("[data-album-card]")];
+  const albumNote = document.querySelector("#album-results-note");
+
+  const applyAlbumFilters = () => {
+    const query = (albumSearchInput?.value ?? "").trim().toLowerCase();
+    const decade = albumDecadeSelect?.value ?? "";
+
+    let visible = 0;
+
+    albumCards.forEach((card) => {
+      const matchesQuery = !query || card.dataset.search?.includes(query);
+      const matchesDecade = !decade || card.dataset.decade === decade;
+      const show = Boolean(matchesQuery && matchesDecade);
+
+      card.classList.toggle("is-hidden", !show);
+      if (show) visible += 1;
+    });
+
+    if (albumNote) albumNote.textContent = `Showing ${visible} album${visible === 1 ? "" : "s"}`;
+  };
+
+  [albumSearchInput, albumDecadeSelect].forEach((element) => {
+    element?.addEventListener("input", applyAlbumFilters);
+    element?.addEventListener("change", applyAlbumFilters);
+  });
+</script>

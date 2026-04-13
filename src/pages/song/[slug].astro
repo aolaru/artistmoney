@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { songArticles } from "../../data/songArticles";
 import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
-import { getArtist, songs, type Song } from "../../lib/catalog";
+import { getAlbum, getAlbumSlug, getArtist, songs, type Song } from "../../lib/catalog";
 
 export function getStaticPaths() {
   return songs.map((song) => ({
@@ -16,6 +16,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const artist = getArtist(song.artist);
+const album = song.album ? getAlbum(getAlbumSlug(song.artist, song.album)) : undefined;
 const relatedSongs = (song.related_songs?.length
   ? song.related_songs
       .map((slug) => songs.find((entry) => entry.slug === slug))
@@ -65,7 +66,12 @@ const songSchema = {
 
     {(song.album || song.year) && (
       <ul class="meta-list">
-        {song.album && <li><strong>Album:</strong> {song.album}</li>}
+        {song.album && (
+          <li>
+            <strong>Album:</strong>{" "}
+            {album ? <a href={`${baseUrl}album/${album.slug}/`}>{song.album}</a> : song.album}
+          </li>
+        )}
         {song.year && <li><strong>Released:</strong> {song.year}</li>}
       </ul>
     )}

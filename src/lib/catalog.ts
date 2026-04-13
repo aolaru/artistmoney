@@ -98,6 +98,17 @@ export type Song = SongJson & {
   related_songs?: string[];
 };
 
+export type Album = {
+  title: string;
+  slug: string;
+  artistSlug: string;
+  artistName: string;
+  year?: number;
+  songs: Song[];
+  trackedSongCount: number;
+  estimatedRevenue?: string;
+};
+
 export const artists: Artist[] = parsedArtists
   .map((artist) => {
     const supplemental = artistMetadata[artist.slug];
@@ -130,10 +141,115 @@ export const songs: Song[] = parsedSongs
 export const artistMap = new Map(artists.map((artist) => [artist.slug, artist]));
 export const songMap = new Map(songs.map((song) => [song.slug, song]));
 
+export function slugifyAlbumTitle(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+export function getAlbumSlug(artistSlug: string, albumTitle: string) {
+  return `${artistSlug}-${slugifyAlbumTitle(albumTitle)}`;
+}
+
+function parseRevenueValue(token: string) {
+  const match = token.trim().match(/^\$?([\d.]+)\s*([KMB])?$/i);
+
+  if (!match) return null;
+
+  const value = Number(match[1]);
+  const unit = match[2]?.toUpperCase();
+  const multiplier =
+    unit === "B" ? 1_000_000_000 :
+    unit === "M" ? 1_000_000 :
+    unit === "K" ? 1_000 :
+    1;
+
+  return value * multiplier;
+}
+
+function parseRevenueRange(input: string) {
+  const normalized = input.replace(/\/year/i, "").trim();
+  const parts = normalized.split("-").map((part) => parseRevenueValue(part));
+
+  if (parts.length !== 2 || parts[0] == null || parts[1] == null) return null;
+
+  return { min: parts[0], max: parts[1] };
+}
+
+function formatRevenueValue(value: number) {
+  if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(1).replace(/\.0$/, "")}B`;
+  if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1).replace(/\.0$/, "")}M`;
+  if (value >= 1_000) return `$${(value / 1_000).toFixed(1).replace(/\.0$/, "")}K`;
+  return `$${Math.round(value)}`;
+}
+
+function summarizeRevenue(songs: Song[]) {
+  const totals = songs.reduce(
+    (accumulator, song) => {
+      const range = parseRevenueRange(song.estimated_revenue);
+
+      if (!range) return accumulator;
+
+      return {
+        min: accumulator.min + range.min,
+        max: accumulator.max + range.max,
+        count: accumulator.count + 1
+      };
+    },
+    { min: 0, max: 0, count: 0 }
+  );
+
+  if (!totals.count) return undefined;
+
+  return `${formatRevenueValue(totals.min)}-${formatRevenueValue(totals.max)}/year`;
+}
+
+const albumEntries = new Map<string, Album>();
+
+songs.forEach((song) => {
+  if (!song.album) return;
+
+  const artist = getArtist(song.artist);
+  const slug = getAlbumSlug(song.artist, song.album);
+  const existing = albumEntries.get(slug);
+
+  if (existing) {
+    existing.songs.push(song);
+    existing.trackedSongCount += 1;
+    if (!existing.year && song.year) existing.year = song.year;
+    existing.estimatedRevenue = summarizeRevenue(existing.songs);
+    return;
+  }
+
+  albumEntries.set(slug, {
+    title: song.album,
+    slug,
+    artistSlug: song.artist,
+    artistName: artist?.name ?? song.artist,
+    year: song.year,
+    songs: [song],
+    trackedSongCount: 1,
+    estimatedRevenue: summarizeRevenue([song])
+  });
+});
+
+export const albums = [...albumEntries.values()].sort((left, right) => {
+  if (left.title === right.title) return left.artistName.localeCompare(right.artistName);
+  return left.title.localeCompare(right.title);
+});
+
+export const albumMap = new Map(albums.map((album) => [album.slug, album]));
+
 export function getArtist(slug: string) {
   return artistMap.get(slug);
 }
 
 export function getSong(slug: string) {
   return songMap.get(slug);
+}
+
+export function getAlbum(slug: string) {
+  return albumMap.get(slug);
 }

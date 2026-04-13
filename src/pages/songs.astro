@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
-import { artists, getArtist, songs } from "../lib/catalog";
+import { artists, getAlbumSlug, getArtist, songs } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -85,7 +85,13 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
                 By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
               </p>
               {(song.album || song.year) && (
-                <p class="artist-card-meta">{[song.album, song.year].filter(Boolean).join(" · ")}</p>
+                <p class="artist-card-meta">
+                  {song.album && (
+                    <a href={`${baseUrl}album/${getAlbumSlug(song.artist, song.album)}/`}>{song.album}</a>
+                  )}
+                  {song.album && song.year && " · "}
+                  {song.year}
+                </p>
               )}
               <p>Estimated revenue: {song.estimated_revenue}</p>
             </div>
