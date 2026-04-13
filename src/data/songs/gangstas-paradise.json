@@ -2,5 +2,19 @@
   "title": "Gangsta's Paradise",
   "slug": "gangstas-paradise",
   "artist": "coolio",
-  "estimated_revenue": "$200K-$800K/year"
+  "estimated_revenue": "$200K-$800K/year",
+  "earnings": {
+    "gross_track_revenue": "$500K-$1.4M/year",
+    "artist_or_estate_share": "$200K-$800K/year",
+    "label_master_share": "$150K-$450K/year",
+    "publishing_share": "$80K-$250K/year",
+    "songwriter_share": "$70K-$220K/year",
+    "assumptions": "Estimate assumes continued streaming, soundtrack memory, and legacy-rights splits that reduce the artist-side take."
+  },
+  "ownership": {
+    "master_owner": "Primarily label-controlled master with artist or estate royalty participation",
+    "publishing_owner": "Publishing appears split across songwriters and rightsholders",
+    "catalog_sale_status": "No full catalog sale assumed at the song level",
+    "notes": "This is a gross-to-net estimate, not a public royalty statement."
+  }
 }

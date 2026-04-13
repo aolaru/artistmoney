@@ -2,5 +2,19 @@
   "title": "Black Hole Sun",
   "slug": "black-hole-sun",
   "artist": "soundgarden",
-  "estimated_revenue": "$400K-$1M/year"
+  "estimated_revenue": "$400K-$1M/year",
+  "earnings": {
+    "gross_track_revenue": "$900K-$2M/year",
+    "artist_or_estate_share": "$400K-$1M/year",
+    "label_master_share": "$220K-$600K/year",
+    "publishing_share": "$100K-$300K/year",
+    "songwriter_share": "$120K-$350K/year",
+    "assumptions": "Estimate assumes strong cross-generational rock streaming, sync familiarity, and songwriter-side participation."
+  },
+  "ownership": {
+    "master_owner": "Likely legacy label-controlled masters with royalty participation",
+    "publishing_owner": "Publishing value appears tied to songwriter-side rights",
+    "catalog_sale_status": "No sale assumption baked in",
+    "notes": "For major 1990s rock recordings, the artist-side share can be materially lower than gross listener demand suggests."
+  }
 }

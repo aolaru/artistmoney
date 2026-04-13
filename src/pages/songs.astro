@@ -1,34 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
-
-type Artist = {
-  name: string;
-  slug: string;
-  estimated_income: string;
-  top_songs: string[];
-};
-
-type Song = {
-  title: string;
-  slug: string;
-  artist: string;
-  estimated_revenue: string;
-};
+import { artists, getArtist, songs } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-
-const artistModules = import.meta.glob("../data/artists/*.json", { eager: true });
-const songModules = import.meta.glob("../data/songs/*.json", { eager: true });
-
-const artists = Object.values(artistModules).map((module) => module.default as Artist);
-const songs = Object.values(songModules)
-  .map((module) => module.default as Song)
-  .sort((left, right) => left.title.localeCompare(right.title));
-
-const getArtist = (slug: string) => artists.find((artist) => artist.slug === slug);
+const artistOptions = artists.map((artist) => ({ slug: artist.slug, name: artist.name }));
+const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.year / 10) * 10}s` : null)).filter(Boolean))].sort();
 ---
 
 <BaseLayout
@@ -49,13 +28,45 @@ const getArtist = (slug: string) => artists.find((artist) => artist.slug === slu
 
   <section aria-labelledby="all-songs-title">
     <h2 id="all-songs-title">Song Directory</h2>
+    <div class="filters" data-filter-root="songs">
+      <label class="filter-field">
+        <span>Search</span>
+        <input id="song-search" type="search" placeholder="Search songs or albums" />
+      </label>
+      <label class="filter-field">
+        <span>Artist</span>
+        <select id="song-artist">
+          <option value="">All artists</option>
+          {artistOptions.map((artist) => (
+            <option value={artist.slug}>{artist.name}</option>
+          ))}
+        </select>
+      </label>
+      <label class="filter-field">
+        <span>Decade</span>
+        <select id="song-decade">
+          <option value="">All decades</option>
+          {decades.map((decade) => (
+            <option value={decade}>{decade}</option>
+          ))}
+        </select>
+      </label>
+    </div>
+    <p class="results-note" id="song-results-note">Showing {songs.length} songs</p>
     <div class="card-grid">
       {songs.map((song) => {
         const artist = getArtist(song.artist);
         const artistName = artist?.name ?? song.artist;
+        const decade = song.year ? `${Math.floor(song.year / 10) * 10}s` : "";
 
         return (
-          <article class="card artist-card">
+          <article
+            class="card artist-card"
+            data-song-card
+            data-search={`${song.title} ${artistName} ${song.album ?? ""}`.toLowerCase()}
+            data-artist={song.artist}
+            data-decade={decade}
+          >
             <img
               class="artist-card-image"
               src={getArtistPhoto(song.artist)?.src ?? createArtistArtwork(artistName, song.artist)}
@@ -73,6 +84,9 @@ const getArtist = (slug: string) => artists.find((artist) => artist.slug === slu
               <p class="artist-card-meta">
                 By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
               </p>
+              {(song.album || song.year) && (
+                <p class="artist-card-meta">{[song.album, song.year].filter(Boolean).join(" · ")}</p>
+              )}
               <p>Estimated revenue: {song.estimated_revenue}</p>
             </div>
           </article>
@@ -81,3 +95,36 @@ const getArtist = (slug: string) => artists.find((artist) => artist.slug === slu
     </div>
   </section>
 </BaseLayout>
+
+<script is:inline>
+  const songSearchInput = document.querySelector("#song-search");
+  const songArtistSelect = document.querySelector("#song-artist");
+  const songDecadeSelect = document.querySelector("#song-decade");
+  const songCards = [...document.querySelectorAll("[data-song-card]")];
+  const songNote = document.querySelector("#song-results-note");
+
+  const applySongFilters = () => {
+    const query = (songSearchInput?.value ?? "").trim().toLowerCase();
+    const artist = songArtistSelect?.value ?? "";
+    const decade = songDecadeSelect?.value ?? "";
+
+    let visible = 0;
+
+    songCards.forEach((card) => {
+      const matchesQuery = !query || card.dataset.search?.includes(query);
+      const matchesArtist = !artist || card.dataset.artist === artist;
+      const matchesDecade = !decade || card.dataset.decade === decade;
+      const show = Boolean(matchesQuery && matchesArtist && matchesDecade);
+
+      card.classList.toggle("is-hidden", !show);
+      if (show) visible += 1;
+    });
+
+    if (songNote) songNote.textContent = `Showing ${visible} song${visible === 1 ? "" : "s"}`;
+  };
+
+  [songSearchInput, songArtistSelect, songDecadeSelect].forEach((element) => {
+    element?.addEventListener("input", applySongFilters);
+    element?.addEventListener("change", applySongFilters);
+  });
+</script>

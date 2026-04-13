@@ -2,54 +2,14 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
 import { artistArticles } from "../../data/artistArticles";
-
-type Artist = {
-  name: string;
-  slug: string;
-  estimated_income: string;
-  top_songs: string[];
-  earnings?: {
-    gross_catalog_revenue?: string;
-    artist_or_estate_share?: string;
-    label_share?: string;
-    publisher_share?: string;
-    writer_share?: string;
-    assumptions?: string;
-  };
-  ownership?: {
-    master_owner?: string;
-    publishing_owner?: string;
-    catalog_sale_status?: string;
-    notes?: string;
-  };
-  genre?: string;
-  country?: string;
-  active_since?: string;
-  bio?: string;
-  notable_for?: string;
-  career_highlight?: string;
-  revenue_drivers?: string[];
-};
-
-type Song = {
-  title: string;
-  slug: string;
-  artist: string;
-  estimated_revenue: string;
-};
+import { artists, songs, type Artist } from "../../lib/catalog";
 
 export function getStaticPaths() {
-  const artistModules = import.meta.glob("../../data/artists/*.json", { eager: true });
-  const artists = Object.values(artistModules).map((module) => module.default as Artist);
-
   return artists.map((artist) => ({
     params: { slug: artist.slug },
     props: { artist }
   }));
 }
-
-const songModules = import.meta.glob("../../data/songs/*.json", { eager: true });
-const songs = Object.values(songModules).map((module) => module.default as Song);
 
 const { artist } = Astro.props as { artist: Artist };
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
@@ -59,17 +19,39 @@ const artistSongs = songs.filter((song) => artist.top_songs.includes(song.slug))
 const artistPhoto = getArtistPhoto(artist.slug);
 const article = artistArticles[artist.slug];
 const hasDetailedEarnings = Boolean(artist.earnings || artist.ownership);
+const imageSrc = artistPhoto?.src ?? createArtistArtwork(artist.name, artist.slug);
+const artistSchema = {
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  name: artist.name,
+  url: new URL(`${baseUrl}artist/${artist.slug}/`, Astro.site).toString(),
+  image: imageSrc,
+  genre: artist.genre,
+  foundingLocation: artist.country,
+  description:
+    artist.bio ??
+    `${artist.name} artist page with income estimates, songs, and revenue strategy on Artist Money.`,
+  track: artistSongs.map((song) => ({
+    "@type": "MusicRecording",
+    name: song.title,
+    url: new URL(`${baseUrl}song/${song.slug}/`, Astro.site).toString()
+  }))
+};
 ---
 
 <BaseLayout
   title={article?.seoTitle ?? `${artist.name} | Artist Money`}
   description={article?.shortAnswer ?? `${artist.name} artist page with income estimates, songs, and revenue strategy on Artist Money.`}
+  image={imageSrc}
+  imageAlt={artistPhoto?.alt ?? `Artwork for ${artist.name}`}
+  type="article"
+  jsonLd={artistSchema}
 >
   <article class="artist-profile">
     <div class="artist-hero">
       <img
         class="artist-profile-image"
-        src={artistPhoto?.src ?? createArtistArtwork(artist.name, artist.slug)}
+        src={imageSrc}
         alt={artistPhoto?.alt ?? `Artwork for ${artist.name}`}
         width="1200"
         height="900"
@@ -187,6 +169,12 @@ const hasDetailedEarnings = Boolean(artist.earnings || artist.ownership);
         {artistSongs.map((song) => (
           <li>
             <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+            {(song.album || song.year) && (
+              <span class="meta-inline">
+                {" "}
+                · {[song.album, song.year].filter(Boolean).join(" · ")}
+              </span>
+            )}
           </li>
         ))}
       </ul>

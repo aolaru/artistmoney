@@ -2,5 +2,19 @@
   "title": "Someone Like You",
   "slug": "someone-like-you",
   "artist": "adele",
-  "estimated_revenue": "$900K-$2.8M/year"
+  "estimated_revenue": "$900K-$2.8M/year",
+  "earnings": {
+    "gross_track_revenue": "$2M-$5M/year",
+    "artist_or_estate_share": "$900K-$2.8M/year",
+    "label_master_share": "$500K-$1.4M/year",
+    "publishing_share": "$250K-$700K/year",
+    "songwriter_share": "$250K-$900K/year",
+    "assumptions": "Estimate assumes very strong long-tail ballad streaming, playlist longevity, and significant songwriter participation."
+  },
+  "ownership": {
+    "master_owner": "Mix of label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing value appears materially tied to the songwriting side",
+    "catalog_sale_status": "No sale assumption baked in",
+    "notes": "Ballads with broad emotional recall often keep earning through mood playlists long after peak chart life."
+  }
 }

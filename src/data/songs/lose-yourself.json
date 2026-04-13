@@ -2,5 +2,19 @@
   "title": "Lose Yourself",
   "slug": "lose-yourself",
   "artist": "eminem",
-  "estimated_revenue": "$1.3M-$4M/year"
+  "estimated_revenue": "$1.3M-$4M/year",
+  "earnings": {
+    "gross_track_revenue": "$2M-$6M/year",
+    "artist_or_estate_share": "$1.3M-$4M/year",
+    "label_master_share": "$500K-$1.6M/year",
+    "publishing_share": "$250K-$900K/year",
+    "songwriter_share": "$300K-$1.1M/year",
+    "assumptions": "Estimate assumes evergreen streaming, 8 Mile soundtrack value, and strong songwriter participation."
+  },
+  "ownership": {
+    "master_owner": "Master revenue appears shared between label-side rights and artist participation",
+    "publishing_owner": "Songwriter and publisher economics remain a major value driver",
+    "catalog_sale_status": "No sale assumption baked in",
+    "notes": "For iconic soundtrack songs, licensing and cultural reuse can be as important as pure streaming."
+  }
 }

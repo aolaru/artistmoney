@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aolaru.github.io/artistmoney/sitemap-index.xml

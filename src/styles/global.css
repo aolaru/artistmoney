@@ -202,6 +202,14 @@ p {
   color: var(--muted);
 }
 
+.results-note {
+  margin: 0 0 1rem;
+}
+
+.is-hidden {
+  display: none;
+}
+
 .artist-card {
   display: grid;
   grid-template-rows: auto 1fr;

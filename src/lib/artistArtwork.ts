@@ -136,6 +136,30 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     license: "CC BY-SA 2.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
   },
+  "alice-in-chains": {
+    alt: "Alice In Chains performing at Rock am Ring in 2019",
+    src: commonsRedirect("Alice in Chains 2019.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Alice_in_Chains_2019.jpg",
+    credit: "Photo by Sven Mandel via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  beyonce: {
+    alt: "Beyonce performing in Munich in 2007",
+    src: commonsRedirect("Beyonce.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Beyonce.jpg",
+    credit: "Photo by Jen Keys via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Beyonce.jpg"
+  },
+  "brian-eno": {
+    alt: "Brian Eno in Naples in 2008",
+    src: commonsRedirect("Brian Eno 2008.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Brian_Eno_2008.jpg",
+    credit: "Photo by cosciansky via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
+  },
   eminem: {
     alt: "Eminem backstage in Munich in 1999",
     src: commonsRedirect("Eminem (cropped).jpg"),
@@ -176,6 +200,14 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     license: "CC BY-SA 2.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
   },
+  "kendrick-lamar": {
+    alt: "Kendrick Lamar at the 2018 Pulitzer Prize ceremony",
+    src: commonsRedirect("Pulitzer2018-portraits-kendrick-lamar.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Pulitzer2018-portraits-kendrick-lamar.jpg",
+    credit: "Photo by Fuzheado via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
   "snoop-dogg": {
     alt: "Snoop Dogg at Coachella in 2012",
     src: commonsRedirect("Snoop Dogg Coachella-07.jpg"),
@@ -183,6 +215,46 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     credit: "Photo by Jason Persse via Wikimedia Commons",
     license: "CC BY-SA 2.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  "pearl-jam": {
+    alt: "Pearl Jam performing in Providence in 1991",
+    src: commonsRedirect("Pearl Jam 1991.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Pearl_Jam_1991.jpg",
+    credit: "Photo by perfectrx via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/"
+  },
+  radiohead: {
+    alt: "Thom Yorke and Ed O'Brien of Radiohead in concert in 2006",
+    src: commonsRedirect("Thomed.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Thomed.jpg",
+    credit: "Photo by ErleGrey via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Thomed.jpg"
+  },
+  rem: {
+    alt: "R.E.M. performing in Padova in 2003",
+    src: commonsRedirect("Padova REM concert July 22 2003 blue.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Padova_REM_concert_July_22_2003_blue.jpg",
+    credit: "Photo by Stark (Stefano Andreoli) via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  rihanna: {
+    alt: "Rihanna performing in Sydney in 2011",
+    src: commonsRedirect("Rihanna (6777063482).jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Rihanna_(6777063482).jpg",
+    credit: "Photo by Eva Rinaldi via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/"
+  },
+  "taylor-swift": {
+    alt: "Taylor Swift performing in Santa Maria in 2006",
+    src: commonsRedirect("Taylor Swift.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Taylor_Swift.jpg",
+    credit: "Photo by Dwight McCann via Wikimedia Commons",
+    license: "CC BY-SA 2.5",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.5/"
   }
 };
 

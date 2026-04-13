@@ -2,5 +2,19 @@
   "title": "In This Shirt",
   "slug": "in-this-shirt",
   "artist": "the-irrepressibles",
-  "estimated_revenue": "$60K-$150K/year"
+  "estimated_revenue": "$60K-$150K/year",
+  "earnings": {
+    "gross_track_revenue": "$120K-$300K/year",
+    "artist_or_estate_share": "$60K-$150K/year",
+    "label_master_share": "$20K-$70K/year",
+    "publishing_share": "$15K-$45K/year",
+    "songwriter_share": "$15K-$50K/year",
+    "assumptions": "Estimate assumes TikTok-led streaming reactivation, playlist longevity, and independent-leaning economics that leave a healthier artist-side share."
+  },
+  "ownership": {
+    "master_owner": "Likely artist or artist-affiliated control with distribution-side participation",
+    "publishing_owner": "Likely closely held around the songwriting side",
+    "catalog_sale_status": "No catalog sale assumed",
+    "notes": "Smaller catalogs can produce modest gross revenue but a relatively efficient artist-side cut."
+  }
 }

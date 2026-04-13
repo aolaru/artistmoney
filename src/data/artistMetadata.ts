@@ -42,11 +42,59 @@ export const artistMetadata: Record<string, ArtistMetadata> = {
     activeSince: "2015",
     summary: "Billie Eilish's streaming-heavy audience and soundtrack placements make her one of the strongest young catalog acts."
   },
+  adele: {
+    genre: "Pop / Soul",
+    country: "United Kingdom",
+    activeSince: "2008",
+    summary: "Adele's catalog is built around emotionally direct ballads with unusual long-tail replay value."
+  },
+  "alice-in-chains": {
+    genre: "Grunge / Alternative Metal",
+    country: "United States",
+    activeSince: "1987",
+    summary: "Alice In Chains remains one of the most durable heavy-rock catalogs from the grunge era."
+  },
+  autechre: {
+    genre: "Electronic / IDM",
+    country: "United Kingdom",
+    activeSince: "1987",
+    summary: "Autechre monetizes through specialist electronic demand, reissues, and deep catalog listening."
+  },
+  "boards-of-canada": {
+    genre: "Electronic / IDM",
+    country: "United Kingdom",
+    activeSince: "1986",
+    summary: "Boards of Canada continue to earn through cult demand, album-driven listening, and reissue-friendly catalog depth."
+  },
+  "brian-eno": {
+    genre: "Ambient / Art Rock",
+    country: "United Kingdom",
+    activeSince: "1971",
+    summary: "Brian Eno's catalog spans ambient classics and art-rock touchpoints that keep earning through mood-based listening."
+  },
   coolio: {
     genre: "Hip-hop",
     country: "United States",
     activeSince: "1994",
     summary: "Coolio's catalog remains driven by one of the most recognizable soundtrack-era rap singles of the 1990s."
+  },
+  coldplay: {
+    genre: "Pop / Rock",
+    country: "United Kingdom",
+    activeSince: "2000",
+    summary: "Coldplay's catalog performs at global playlist scale with broad cross-generational reach."
+  },
+  "daft-punk": {
+    genre: "Electronic / House",
+    country: "France",
+    activeSince: "1993",
+    summary: "Daft Punk pair mainstream streaming power with unusually durable catalog identity."
+  },
+  "dr-dre": {
+    genre: "Hip-hop",
+    country: "United States",
+    activeSince: "1992",
+    summary: "Dr. Dre's catalog monetizes through producer-led classics, evergreen singles, and cross-generational rap discovery."
   },
   drake: {
     genre: "Hip-hop / Pop",
@@ -59,6 +107,12 @@ export const artistMetadata: Record<string, ArtistMetadata> = {
     country: "United States",
     activeSince: "1999",
     summary: "Eminem's back catalog performs across multiple generations, anchored by viral rediscovery and evergreen singles."
+  },
+  "kanye-west": {
+    genre: "Hip-hop / Pop",
+    country: "United States",
+    activeSince: "2004",
+    summary: "Kanye West's catalog stays commercially significant through scale, influence, and repeat playlist demand."
   },
   "kendrick-lamar": {
     genre: "Hip-hop",
@@ -96,11 +150,29 @@ export const artistMetadata: Record<string, ArtistMetadata> = {
     activeSince: "1994",
     summary: "Oasis remains one of the most replayed Britpop catalogs, led by stadium-ready singalong tracks."
   },
+  "pearl-jam": {
+    genre: "Rock / Grunge",
+    country: "United States",
+    activeSince: "1990",
+    summary: "Pearl Jam's core catalog remains one of the strongest long-tail rock assets of the 1990s."
+  },
   "pink-floyd": {
     genre: "Progressive rock",
     country: "United Kingdom",
     activeSince: "1965",
     summary: "Pink Floyd's earnings are driven by canonical albums, premium catalog positioning, and strong multigenerational listening."
+  },
+  radiohead: {
+    genre: "Alternative rock",
+    country: "United Kingdom",
+    activeSince: "1992",
+    summary: "Radiohead's catalog keeps earning through critical prestige, fan loyalty, and deep album listening."
+  },
+  rem: {
+    genre: "Alternative Rock",
+    country: "United States",
+    activeSince: "1980",
+    summary: "R.E.M. continues to monetize a foundational alternative catalog with strong emotional replay value."
   },
   rihanna: {
     genre: "Pop / R&B",
@@ -113,6 +185,12 @@ export const artistMetadata: Record<string, ArtistMetadata> = {
     country: "United States",
     activeSince: "1993",
     summary: "Snoop Dogg combines legacy catalog strength with wide licensing, branding, and entertainment visibility."
+  },
+  soundgarden: {
+    genre: "Grunge / Hard Rock",
+    country: "United States",
+    activeSince: "1984",
+    summary: "Soundgarden remain commercially relevant through grunge-catalog demand and enduring recognition around their biggest songs."
   },
   "taylor-swift": {
     genre: "Pop",

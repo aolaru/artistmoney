@@ -2,5 +2,19 @@
   "title": "Blinding Lights",
   "slug": "blinding-lights",
   "artist": "the-weeknd",
-  "estimated_revenue": "$2M-$6M/year"
+  "estimated_revenue": "$2M-$6M/year",
+  "earnings": {
+    "gross_track_revenue": "$6M-$14M/year",
+    "artist_or_estate_share": "$2M-$6M/year",
+    "label_master_share": "$1.5M-$4M/year",
+    "publishing_share": "$700K-$2M/year",
+    "songwriter_share": "$900K-$2.5M/year",
+    "assumptions": "Estimate assumes one of the largest modern streaming footprints in pop plus strong songwriter economics."
+  },
+  "ownership": {
+    "master_owner": "Mix of label and artist-affiliated participation",
+    "publishing_owner": "Writer and publisher splits materially affect final take-home",
+    "catalog_sale_status": "No sale assumption baked in",
+    "notes": "Modern superstar songs can produce very high gross revenue, but label and publishing splits still matter."
+  }
 }

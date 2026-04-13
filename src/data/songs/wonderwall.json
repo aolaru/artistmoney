@@ -2,5 +2,19 @@
   "title": "Wonderwall",
   "slug": "wonderwall",
   "artist": "oasis",
-  "estimated_revenue": "$700K-$2.1M/year"
+  "estimated_revenue": "$700K-$2.1M/year",
+  "earnings": {
+    "gross_track_revenue": "$1.4M-$3.2M/year",
+    "artist_or_estate_share": "$700K-$2.1M/year",
+    "label_master_share": "$400K-$1.1M/year",
+    "publishing_share": "$180K-$500K/year",
+    "songwriter_share": "$220K-$700K/year",
+    "assumptions": "Estimate assumes massive long-tail streaming, strong singalong culture, and concentrated songwriter economics."
+  },
+  "ownership": {
+    "master_owner": "Masters appear substantially label-controlled on the core recording",
+    "publishing_owner": "Songwriter-side publishing likely captures a meaningful share of the economics",
+    "catalog_sale_status": "No full sale assumption baked in",
+    "notes": "Songs with dominant songwriter credit can have a very different split from the headline streaming number."
+  }
 }

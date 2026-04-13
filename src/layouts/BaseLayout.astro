@@ -4,17 +4,29 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  imageAlt?: string;
+  type?: "website" | "article";
+  jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 const {
   title,
-  description = "Artist Money tracks artist and song pages with simple estimated earnings data."
+  description = "Artist Money tracks artist and song pages with simple estimated earnings data.",
+  image,
+  imageAlt = title,
+  type = "website",
+  jsonLd
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const socialImage = image ? new URL(image, Astro.url).toString() : null;
+const jsonLdPayload = jsonLd
+  ? JSON.stringify(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
+  : null;
 ---
 
 <!doctype html>
@@ -24,7 +36,25 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl.toString()} />
+    <meta property="og:site_name" content="Artist Money" />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && (
+      <>
+        <meta property="og:image" content={socialImage} />
+        <meta property="og:image:alt" content={imageAlt} />
+        <meta name="twitter:image" content={socialImage} />
+      </>
+    )}
     <title>{title}</title>
+    {jsonLdPayload && (
+      <script type="application/ld+json" set:html={jsonLdPayload} />
+    )}
   </head>
   <body>
     <header class="site-header">

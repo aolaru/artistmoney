@@ -1,39 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
-
-type Artist = {
-  name: string;
-  slug: string;
-  estimated_income: string;
-  top_songs: string[];
-};
-
-type Song = {
-  title: string;
-  slug: string;
-  artist: string;
-  estimated_revenue: string;
-};
+import { artists, getArtist, songs } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
-const artistModules = import.meta.glob("../data/artists/*.json", { eager: true });
-const songModules = import.meta.glob("../data/songs/*.json", { eager: true });
+const featuredSongSlugs = ["blinding-lights", "gangstas-paradise", "in-this-shirt"];
+const featuredArtistSlugs = ["the-weeknd", "daft-punk", "oasis"];
 
-const artists = Object.values(artistModules)
-  .map((module) => module.default as Artist)
-  .sort((left, right) => left.name.localeCompare(right.name));
+const featuredSongs = featuredSongSlugs
+  .map((slug) => songs.find((song) => song.slug === slug))
+  .filter(Boolean);
 
-const songs = Object.values(songModules)
-  .map((module) => module.default as Song)
-  .sort((left, right) => left.title.localeCompare(right.title));
+const featuredArtists = featuredArtistSlugs
+  .map((slug) => artists.find((artist) => artist.slug === slug))
+  .filter(Boolean);
 
-const trendingSongs = songs.slice(0, 3);
-const stillMakingMoneyArtists = artists.slice(0, 3);
-const getArtistName = (slug: string) => artists.find((artist) => artist.slug === slug)?.name ?? slug;
+const insightLinks = [
+  {
+    label: "Why songs go viral",
+    href: `${baseUrl}song/in-this-shirt/`,
+    detail: "A slow-burn song with viral rediscovery and long-tail streaming."
+  },
+  {
+    label: "How artists make money",
+    href: `${baseUrl}artist/daft-punk/`,
+    detail: "A catalog page with artist-side share, label splits, and ownership context."
+  }
+];
 ---
 
 <BaseLayout
@@ -45,6 +41,10 @@ const getArtistName = (slug: string) => artists.find((artist) => artist.slug ===
       <p class="eyebrow">Artist Money</p>
       <h1>Artist Money</h1>
       <p>Understand music — emotionally and financially</p>
+      <p>
+        Artist Money breaks down what songs and catalogs may generate, what artists likely keep,
+        and why certain recordings keep earning years after release.
+      </p>
     </div>
     <div class="hero-panel" aria-label="Site summary">
       <strong>{songs.length}</strong>
@@ -54,16 +54,21 @@ const getArtistName = (slug: string) => artists.find((artist) => artist.slug ===
 
   <section id="songs" aria-labelledby="trending-title">
     <h2 id="trending-title">Trending Songs</h2>
+    <p class="results-note">Featured songs with strong replay value, cultural memory, or unusual catalog strength.</p>
     <div class="card-grid">
-      {trendingSongs.map((song) => (
+      {featuredSongs.map((song) => {
+        const artist = getArtist(song.artist);
+        const artistName = artist?.name ?? song.artist;
+
+        return (
         <article class="card artist-card">
           <img
             class="artist-card-image"
             src={
               getArtistPhoto(song.artist)?.src ??
-              createArtistArtwork(getArtistName(song.artist), song.artist)
+              createArtistArtwork(artistName, song.artist)
             }
-            alt={getArtistPhoto(song.artist)?.alt ?? `Artwork for ${getArtistName(song.artist)}`}
+            alt={getArtistPhoto(song.artist)?.alt ?? `Artwork for ${artistName}`}
             loading="lazy"
             width="1200"
             height="900"
@@ -75,19 +80,24 @@ const getArtistName = (slug: string) => artists.find((artist) => artist.slug ===
               <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
             </h3>
             <p class="artist-card-meta">
-              By <a href={`${baseUrl}artist/${song.artist}/`}>{getArtistName(song.artist)}</a>
+              By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
             </p>
+            {(song.album || song.year) && (
+              <p class="artist-card-meta">{[song.album, song.year].filter(Boolean).join(" · ")}</p>
+            )}
             <p>Estimated revenue: {song.estimated_revenue}</p>
           </div>
         </article>
-      ))}
+        );
+      })}
     </div>
   </section>
 
   <section id="artists" aria-labelledby="artists-title">
     <h2 id="artists-title">Still Making Money</h2>
+    <p class="results-note">Featured artists with durable catalogs, recurring streaming income, or unusually strong long-tail economics.</p>
     <div class="card-grid">
-      {stillMakingMoneyArtists.map((artist) => (
+      {featuredArtists.map((artist) => (
         <article class="card artist-card">
           <img
             class="artist-card-image"
@@ -103,6 +113,9 @@ const getArtistName = (slug: string) => artists.find((artist) => artist.slug ===
             <h3>
               <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
             </h3>
+            {(artist.genre || artist.country) && (
+              <p class="artist-card-meta">{[artist.genre, artist.country].filter(Boolean).join(" · ")}</p>
+            )}
             <p>Estimated income: {artist.estimated_income}</p>
           </div>
         </article>
@@ -113,12 +126,12 @@ const getArtistName = (slug: string) => artists.find((artist) => artist.slug ===
   <section aria-labelledby="insights-title">
     <h2 id="insights-title">Insights</h2>
     <ul class="meta-list">
-      <li>
-        <a href={`${baseUrl}song/${trendingSongs[0]?.slug ?? ""}/`}>Why songs go viral</a>
-      </li>
-      <li>
-        <a href={`${baseUrl}artist/${stillMakingMoneyArtists[0]?.slug ?? ""}/`}>How artists make money</a>
-      </li>
+      {insightLinks.map((link) => (
+        <li>
+          <a href={link.href}>{link.label}</a>
+          <span class="meta-inline"> {" "}· {link.detail}</span>
+        </li>
+      ))}
     </ul>
   </section>
 </BaseLayout>
