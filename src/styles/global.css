@@ -84,6 +84,38 @@ main.container {
   padding: 3rem 0 5rem;
 }
 
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: rgba(250, 248, 243, 0.82);
+  margin-top: 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 1.75rem 0 2.5rem;
+}
+
+.footer-heading {
+  color: var(--text);
+  font-weight: 650;
+  margin: 0 0 0.75rem;
+}
+
+.footer-nav {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.footer-nav a {
+  text-decoration: none;
+}
+
+.footer-note {
+  margin: 0 0 0.75rem;
+}
+
 h1,
 h2,
 h3 {

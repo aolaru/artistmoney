@@ -72,5 +72,36 @@ const jsonLdPayload = jsonLd
     <main class="container">
       <slot />
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="eyebrow">Artist Money</p>
+          <p>
+            Music earnings, catalog value, and artist-side estimates presented as editorial
+            research.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer-heading">Browse</p>
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <a href={baseUrl}>Home</a>
+            <a href={`${baseUrl}artists/`}>Artists</a>
+            <a href={`${baseUrl}songs/`}>Songs</a>
+            <a href={`${baseUrl}credits/`}>Credits</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer-heading">Notes</p>
+          <p class="footer-note">
+            Earnings are estimates, not public royalty statements. Image licenses and rights notes
+            are listed on the credits page.
+          </p>
+          <p class="footer-note">© 2026 Artist Money</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
