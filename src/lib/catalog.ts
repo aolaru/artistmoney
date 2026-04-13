@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { albumMetadata } from "../data/albumMetadata";
 import { artistMetadata } from "../data/artistMetadata";
+import { songPlayerMetadata } from "../data/songPlayerMetadata";
 import { songMetadata } from "../data/songMetadata";
 
 const artistEarningsSchema = z.object({
@@ -97,6 +98,16 @@ export type Song = SongJson & {
   meaning_summary?: string;
   revenue_drivers?: string[];
   related_songs?: string[];
+  player?: {
+    previewUrl?: string;
+    appleMusic?: string;
+    artwork?: string;
+    links?: {
+      appleMusic?: string;
+      spotify?: string;
+      youtubeMusic?: string;
+    };
+  };
 };
 
 export type Album = {
@@ -143,7 +154,8 @@ export const songs: Song[] = parsedSongs
       year: song.year ?? supplemental?.year,
       meaning_summary: song.meaning_summary ?? supplemental?.meaningSummary,
       revenue_drivers: song.revenue_drivers ?? supplemental?.revenueDrivers,
-      related_songs: song.related_songs ?? supplemental?.relatedSongs
+      related_songs: song.related_songs ?? supplemental?.relatedSongs,
+      player: songPlayerMetadata[song.slug]
     };
   })
   .sort((left, right) => left.title.localeCompare(right.title));

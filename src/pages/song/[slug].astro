@@ -25,6 +25,7 @@ const relatedSongs = (song.related_songs?.length
 const article = songArticles[song.slug];
 const hasDetailedEarnings = Boolean(song.earnings || song.ownership);
 const imageSrc = artist ? getArtistPhoto(song.artist)?.src ?? createArtistArtwork(artist.name, artist.slug) : undefined;
+const playerLinks = Object.entries(song.player?.links ?? {}).filter(([, url]) => url) as Array<[string, string]>;
 const songSchema = {
   "@context": "https://schema.org",
   "@type": "MusicRecording",
@@ -82,6 +83,31 @@ const songSchema = {
         {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : song.artist}
       </p>
     </section>
+
+    {(song.player?.previewUrl || playerLinks.length > 0) && (
+      <section aria-labelledby="player-title">
+        <h2 id="player-title">Listen</h2>
+        {song.player?.previewUrl ? (
+          <>
+            <p class="results-note">Official Apple Music preview.</p>
+            <audio class="song-player" controls preload="none" src={song.player.previewUrl}>
+              Your browser does not support the audio element.
+            </audio>
+          </>
+        ) : (
+          <p class="results-note">Preview audio is not available for this song right now.</p>
+        )}
+        {playerLinks.length > 0 && (
+          <div class="external-links">
+            {playerLinks.map(([platform, url]) => (
+              <a class="external-link" href={url} rel="noreferrer" target="_blank">
+                {platform === "appleMusic" ? "Apple Music" : platform === "youtubeMusic" ? "YouTube Music" : "Spotify"}
+              </a>
+            ))}
+          </div>
+        )}
+      </section>
+    )}
 
     <section aria-labelledby="meaning-title">
       <h2 id="meaning-title">Meaning</h2>
