@@ -1,0 +1,35 @@
+{
+  "name": "Depeche Mode",
+  "slug": "depeche-mode",
+  "estimated_income": "$2M-$6M/year",
+  "top_songs": [
+    "enjoy-the-silence",
+    "personal-jesus"
+  ],
+  "genre": "Synth-pop / Alternative / Electronic Rock",
+  "country": "United Kingdom",
+  "active_since": "1980",
+  "bio": "Depeche Mode built one of the most durable synth-pop catalogs in popular music, with songs that still travel across streaming, sync, and nostalgia listening decades after release.",
+  "notable_for": "Dark synth-pop crossover, global catalog longevity, and unusually durable live-era recognition.",
+  "career_highlight": "The band's late-1980s and early-1990s catalog remains commercially active through streaming, playlisting, and recurring media usage.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "playlist longevity",
+    "sync licensing",
+    "global nostalgia audience"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$4M-$10M/year",
+    "artist_or_estate_share": "$2M-$6M/year",
+    "label_share": "$1M-$3M/year",
+    "publisher_share": "$400K-$1.2M/year",
+    "writer_share": "$600K-$1.8M/year",
+    "assumptions": "Estimate assumes strong long-tail streaming around signature singles, recurring sync value, and meaningful creator participation in the songwriting side of the catalog."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing appears strongly tied to songwriter-side participation",
+    "catalog_sale_status": "No major catalog sale adjustment is assumed here",
+    "notes": "A large legacy catalog can generate substantial gross revenue even when master ownership stays label-heavy."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Tears for Fears",
+  "slug": "tears-for-fears",
+  "estimated_income": "$1M-$4M/year",
+  "top_songs": [
+    "everybody-wants-to-rule-the-world",
+    "shout"
+  ],
+  "genre": "New Wave / Pop Rock / Synth-pop",
+  "country": "United Kingdom",
+  "active_since": "1981",
+  "bio": "Tears for Fears built a catalog of 1980s songs that continues to perform well across streaming, nostalgia playlists, sync usage, and cross-generational rediscovery.",
+  "notable_for": "Big melodic hooks, 1980s crossover staying power, and evergreen playlist visibility.",
+  "career_highlight": "Songs from Songs from the Big Chair remain among the most commercially durable pop-rock recordings of the decade.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "nostalgia playlists",
+    "sync licensing",
+    "cross-generational rediscovery"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$2M-$6M/year",
+    "artist_or_estate_share": "$1M-$4M/year",
+    "label_share": "$500K-$1.8M/year",
+    "publisher_share": "$250K-$800K/year",
+    "writer_share": "$350K-$1.2M/year",
+    "assumptions": "Estimate assumes durable streaming around the major singles, strong nostalgia-playlist support, and ongoing sync utility for the best-known songs."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing appears materially tied to songwriter-side participation",
+    "catalog_sale_status": "No major catalog sale adjustment is assumed here",
+    "notes": "Classic pop-rock catalogs often retain strong songwriter economics even when label-side master ownership remains significant."
+  }
+}

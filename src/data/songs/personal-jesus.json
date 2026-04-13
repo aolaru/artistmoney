@@ -1,0 +1,31 @@
+{
+  "title": "Personal Jesus",
+  "slug": "personal-jesus",
+  "artist": "depeche-mode",
+  "estimated_revenue": "$200K-$700K/year",
+  "album": "Violator",
+  "year": 1989,
+  "meaning_summary": "Personal Jesus still earns because its riff and title remain culturally sticky, making it one of Depeche Mode's most reusable songs across catalog listening and media placement.",
+  "revenue_drivers": [
+    "Alternative and classic-synth playlists keep the song in regular circulation.",
+    "Its recognizable riff and title support strong long-tail recall.",
+    "Sync and cover-culture relevance help maintain commercial value."
+  ],
+  "related_songs": [
+    "enjoy-the-silence"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$470K-$1.6M/year",
+    "artist_or_estate_share": "$200K-$700K/year",
+    "label_master_share": "$120K-$450K/year",
+    "publishing_share": "$70K-$220K/year",
+    "songwriter_share": "$80K-$280K/year",
+    "assumptions": "Estimate infers current annual earnings from long-tail streaming, catalog replay value, and sync utility, using typical major-label legacy rights splits."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing appears strongly tied to songwriter-side participation",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on current catalog behavior, not a public royalty statement."
+  }
+}

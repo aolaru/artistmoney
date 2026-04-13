@@ -55,5 +55,35 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "Catalog recognition and licensing demand keep the Dre-era sound commercially relevant."
     ],
     insight: "Producer ownership and writing participation can make classic catalogs far more valuable than simple performer royalties suggest."
+  },
+  enigma: {
+    seoTitle: "Does Enigma still make money from old tracks?",
+    shortAnswer: "Yes — estimated $500K-$2M/year.",
+    sources: [
+      "Global streaming continues to support the project's best-known crossover singles.",
+      "Mood, ambient, and nostalgia playlist placement keeps long-tail listening active.",
+      "Creator-led songwriting and production participation can improve the retained share versus performer-only catalogs."
+    ],
+    insight: "Atmospheric crossover catalogs can keep earning for decades when they remain distinctive enough for both playlists and sync-style use."
+  },
+  "depeche-mode": {
+    seoTitle: "Does Depeche Mode still make money from its catalog?",
+    shortAnswer: "Yes — estimated $2M-$6M/year.",
+    sources: [
+      "Enjoy the Silence and Personal Jesus continue to stream at global legacy-catalog scale.",
+      "The catalog remains sync-friendly because the songs are both recognizable and tonally distinctive.",
+      "Songwriter participation materially improves the retained value of the band's best-known recordings."
+    ],
+    insight: "Catalogs with distinctive sound design and strong hooks age unusually well because they remain easy to place, remember, and replay."
+  },
+  "tears-for-fears": {
+    seoTitle: "Do Tears for Fears still make money from old songs?",
+    shortAnswer: "Yes — estimated $1M-$4M/year.",
+    sources: [
+      "Everybody Wants to Rule the World remains one of the strongest evergreen songs of the 1980s on streaming platforms.",
+      "Shout and other crossover hits continue to perform through nostalgia playlists and media reuse.",
+      "Writer-side participation strengthens artist economics even when master ownership remains label-heavy."
+    ],
+    insight: "Big melodic pop songs can keep earning for decades when they remain broad enough for playlists and specific enough to stay memorable."
   }
 };

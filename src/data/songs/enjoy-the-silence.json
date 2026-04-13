@@ -1,0 +1,31 @@
+{
+  "title": "Enjoy the Silence",
+  "slug": "enjoy-the-silence",
+  "artist": "depeche-mode",
+  "estimated_revenue": "$250K-$800K/year",
+  "album": "Violator",
+  "year": 1990,
+  "meaning_summary": "Enjoy the Silence keeps earning because its melody, mood, and iconic hook still feel modern enough for streaming while remaining deeply tied to Depeche Mode's core catalog identity.",
+  "revenue_drivers": [
+    "Global playlist usage across alternative, synth-pop, and nostalgia listening.",
+    "The song's signature status keeps it active in catalog discovery and repeat listening.",
+    "Strong sync value comes from its instantly recognizable atmosphere and chorus."
+  ],
+  "related_songs": [
+    "personal-jesus"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$600K-$1.9M/year",
+    "artist_or_estate_share": "$250K-$800K/year",
+    "label_master_share": "$150K-$500K/year",
+    "publishing_share": "$80K-$260K/year",
+    "songwriter_share": "$100K-$320K/year",
+    "assumptions": "Estimate infers current annual earnings from large-scale catalog streaming, sync utility, and songwriter participation typical for a major legacy hit."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing appears strongly tied to songwriter-side participation",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on current catalog behavior, not a public royalty statement."
+  }
+}

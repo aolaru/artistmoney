@@ -1,0 +1,35 @@
+{
+  "name": "Enigma",
+  "slug": "enigma",
+  "estimated_income": "$500K-$2M/year",
+  "top_songs": [
+    "sadness-part-i",
+    "return-to-innocence"
+  ],
+  "genre": "New Age / Ambient Pop / Electronic",
+  "country": "Germany",
+  "active_since": "1990",
+  "bio": "Enigma is Michael Cretu's studio project, known for turning atmospheric production, chant sampling, and crossover pop into a catalog that still travels across streaming and sync contexts.",
+  "notable_for": "Ambient-pop crossover, global catalog longevity, and cinematic mood-driven listening.",
+  "career_highlight": "The project's early 1990s breakthroughs created a catalog that still earns through streaming, nostalgia, and visual-media compatibility.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "playlist longevity",
+    "sync-style ambient usage",
+    "global nostalgia audience"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$1M-$3M/year",
+    "artist_or_estate_share": "$500K-$2M/year",
+    "label_share": "$200K-$800K/year",
+    "publisher_share": "$120K-$450K/year",
+    "writer_share": "$180K-$700K/year",
+    "assumptions": "Estimate assumes continued streaming around the best-known singles, international catalog demand, and creator-side participation through the studio-project structure."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and creator-affiliated royalty participation",
+    "publishing_owner": "Publishing appears tied closely to songwriter and producer interests",
+    "catalog_sale_status": "No major catalog sale adjustment is assumed here",
+    "notes": "As a studio-led catalog, Enigma may retain better creator economics than a typical performer-only legacy act."
+  }
+}

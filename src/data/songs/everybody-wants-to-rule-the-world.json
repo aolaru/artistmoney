@@ -1,0 +1,31 @@
+{
+  "title": "Everybody Wants to Rule the World",
+  "slug": "everybody-wants-to-rule-the-world",
+  "artist": "tears-for-fears",
+  "estimated_revenue": "$300K-$900K/year",
+  "album": "Songs from the Big Chair",
+  "year": 1985,
+  "meaning_summary": "Everybody Wants to Rule the World remains one of the strongest evergreen pop songs of the 1980s because it still fits mainstream streaming, film/TV nostalgia, and daily playlist listening.",
+  "revenue_drivers": [
+    "Major placement across 1980s, pop, and mood playlists keeps the song active at scale.",
+    "Its broad familiarity supports repeat listening across generations.",
+    "The track remains highly useful for sync and cultural recall."
+  ],
+  "related_songs": [
+    "shout"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$700K-$2.1M/year",
+    "artist_or_estate_share": "$300K-$900K/year",
+    "label_master_share": "$170K-$560K/year",
+    "publishing_share": "$100K-$300K/year",
+    "songwriter_share": "$120K-$360K/year",
+    "assumptions": "Estimate infers current annual earnings from large-scale nostalgia streaming, long-term playlist fit, and recurring sync utility."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing appears materially tied to songwriter-side participation",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on current catalog behavior, not a public royalty statement."
+  }
+}
