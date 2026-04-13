@@ -15,7 +15,11 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const artist = getArtist(album.artistSlug);
-const imageSrc = createAlbumArtwork(album.title, album.artistName, album.slug);
+const imageSrc = createAlbumArtwork(album.title, album.artistName, album.slug, {
+  releaseDate: album.releaseDate,
+  label: album.label,
+  trackCount: album.trackCount
+});
 const albumSchema = {
   "@context": "https://schema.org",
   "@type": "MusicAlbum",
@@ -27,7 +31,8 @@ const albumSchema = {
     name: album.artistName,
     url: new URL(`${baseUrl}artist/${album.artistSlug}/`, Astro.site).toString()
   },
-  datePublished: album.year ? `${album.year}` : undefined,
+  datePublished: album.releaseDate ?? (album.year ? `${album.year}` : undefined),
+  numTracks: album.trackCount,
   track: album.trackListing.map((song) => ({
     "@type": "MusicRecording",
     name: song.title,
@@ -60,7 +65,10 @@ const albumSchema = {
           {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : album.artistName}
         </p>
         <ul class="stat-list">
-          {album.year && <li><strong>Released:</strong> {album.year}</li>}
+          {album.releaseDate && <li><strong>Released:</strong> {album.releaseDate}</li>}
+          {!album.releaseDate && album.year && <li><strong>Released:</strong> {album.year}</li>}
+          {album.label && <li><strong>Label:</strong> {album.label}</li>}
+          {album.trackCount && <li><strong>Album track count:</strong> {album.trackCount}</li>}
           <li><strong>Tracked songs:</strong> {album.trackedSongCount}</li>
           {album.estimatedRevenue && <li><strong>Tracked revenue:</strong> {album.estimatedRevenue}</li>}
         </ul>
@@ -71,13 +79,24 @@ const albumSchema = {
       <h2 id="album-overview-title">Overview</h2>
       <p>
         This album page groups the songs currently tracked from <strong>{album.title}</strong>,
-        shows the release year, and presents a usable tracklisting from the songs already in the catalog.
+        adds release metadata where available, and separates full-album context from the songs currently tracked in the catalog.
       </p>
+    </section>
+
+    <section aria-labelledby="album-metadata-title">
+      <h2 id="album-metadata-title">Album Metadata</h2>
+      <ul class="meta-list">
+        <li><strong>Artist:</strong> {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : album.artistName}</li>
+        <li><strong>Release date:</strong> {album.releaseDate ?? album.year ?? "Unknown"}</li>
+        <li><strong>Label:</strong> {album.label ?? "Not yet added"}</li>
+        <li><strong>Album track count:</strong> {album.trackCount ?? "Not yet added"}</li>
+        <li><strong>Tracked on Artist Money:</strong> {album.trackedSongCount} song{album.trackedSongCount === 1 ? "" : "s"}</li>
+      </ul>
     </section>
 
     <section aria-labelledby="album-tracklisting-title">
       <h2 id="album-tracklisting-title">Tracklisting</h2>
-      <p class="results-note">This tracklisting reflects the songs currently tracked on Artist Money for this album.</p>
+      <p class="results-note">This tracklisting reflects the songs currently tracked on Artist Money for this album, not necessarily the complete commercial release sequence.</p>
       <ul class="meta-list">
         {album.trackListing.map((song, index) => (
           <li>
@@ -90,7 +109,7 @@ const albumSchema = {
     </section>
 
     <section aria-labelledby="album-links-title">
-      <h2 id="album-links-title">Related Links</h2>
+      <h2 id="album-links-title">Listen and Explore</h2>
       <ul class="meta-list">
         <li>
           Artist page: <a href={`${baseUrl}artist/${album.artistSlug}/`}>{album.artistName}</a>
@@ -98,6 +117,27 @@ const albumSchema = {
         <li>
           Browse all albums: <a href={`${baseUrl}albums/`}>Albums</a>
         </li>
+        {album.links?.appleMusic && (
+          <li>
+            Apple Music:
+            {" "}
+            <a href={album.links.appleMusic} rel="noreferrer" target="_blank">Open album</a>
+          </li>
+        )}
+        {album.links?.spotify && (
+          <li>
+            Spotify:
+            {" "}
+            <a href={album.links.spotify} rel="noreferrer" target="_blank">Search album</a>
+          </li>
+        )}
+        {album.links?.youtubeMusic && (
+          <li>
+            YouTube Music:
+            {" "}
+            <a href={album.links.youtubeMusic} rel="noreferrer" target="_blank">Search album</a>
+          </li>
+        )}
       </ul>
     </section>
   </article>

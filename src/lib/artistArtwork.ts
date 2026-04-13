@@ -67,13 +67,23 @@ export function createArtistArtwork(name: string, slug: string) {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
-export function createAlbumArtwork(title: string, artistName: string, slug: string) {
+export function createAlbumArtwork(
+  title: string,
+  artistName: string,
+  slug: string,
+  metadata?: { releaseDate?: string; label?: string; trackCount?: number }
+) {
   const hash = hashValue(slug);
   const [dark, mid, light] = palettes[(hash + 2) % palettes.length];
   const accent = palettes[(hash + 4) % palettes.length][1];
   const displayTitle = title.toUpperCase();
   const displayArtist = artistName.toUpperCase();
   const angle = -16 + (hash % 32);
+  const year = metadata?.releaseDate?.slice(0, 4) ?? "";
+  const footer = [metadata?.label, metadata?.trackCount ? `${metadata.trackCount} tracks` : ""]
+    .filter(Boolean)
+    .join(" · ")
+    .toUpperCase();
 
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="${title} by ${artistName}">
@@ -86,15 +96,22 @@ export function createAlbumArtwork(title: string, artistName: string, slug: stri
       <rect width="1200" height="1200" fill="url(#album-bg)" rx="64" />
       <circle cx="972" cy="238" r="168" fill="${mid}" opacity="0.22" />
       <circle cx="254" cy="922" r="122" fill="white" opacity="0.12" />
+      <rect x="84" y="84" width="1032" height="1032" rx="52" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="6" />
       <g transform="translate(600 612) rotate(${angle})">
         <rect x="-318" y="-318" width="636" height="636" rx="48" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.32)" stroke-width="8" />
         <circle cx="0" cy="0" r="176" fill="rgba(19,29,39,0.18)" />
         <circle cx="0" cy="0" r="56" fill="${accent}" opacity="0.8" />
         <circle cx="0" cy="0" r="18" fill="white" opacity="0.85" />
       </g>
+      ${year ? `<text x="1020" y="122" text-anchor="end" fill="rgba(20,31,45,0.58)" font-family="Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="4">${year}</text>` : ""}
       <text x="86" y="122" fill="rgba(20,31,45,0.58)" font-family="Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="30" letter-spacing="6">${displayArtist}</text>
-      <text x="86" y="972" fill="rgba(20,31,45,0.92)" font-family="Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="92" font-weight="700">${displayTitle}</text>
-      <path d="M88 1012 H870" stroke="rgba(20,31,45,0.36)" stroke-width="8" stroke-linecap="round" />
+      <foreignObject x="84" y="846" width="860" height="190">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif; font-size: 90px; font-weight: 700; line-height: 1.02; color: rgba(20,31,45,0.92); letter-spacing: -0.04em;">
+          ${displayTitle}
+        </div>
+      </foreignObject>
+      <path d="M88 1044 H870" stroke="rgba(20,31,45,0.36)" stroke-width="8" stroke-linecap="round" />
+      ${footer ? `<text x="88" y="1088" fill="rgba(20,31,45,0.56)" font-family="Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="26" letter-spacing="3">${footer}</text>` : ""}
     </svg>
   `;
 

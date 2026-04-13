@@ -56,7 +56,11 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
           >
             <img
               class="artist-card-image album-cover-image"
-              src={createAlbumArtwork(album.title, album.artistName, album.slug)}
+              src={createAlbumArtwork(album.title, album.artistName, album.slug, {
+                releaseDate: album.releaseDate,
+                label: album.label,
+                trackCount: album.trackCount
+              })}
               alt={`Cover artwork for ${album.title} by ${album.artistName}`}
               loading="lazy"
               width="1200"
@@ -71,12 +75,14 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
                 By <a href={`${baseUrl}artist/${album.artistSlug}/`}>{album.artistName}</a>
               </p>
               <p class="artist-card-meta">
-                {[album.year, `${album.trackedSongCount} tracked song${album.trackedSongCount === 1 ? "" : "s"}`]
+                {[album.releaseDate ?? album.year, album.trackCount ? `${album.trackCount} tracks` : "", `${album.trackedSongCount} tracked song${album.trackedSongCount === 1 ? "" : "s"}`]
                   .filter(Boolean)
                   .join(" · ")}
               </p>
               {album.estimatedRevenue && <p>Tracked song revenue: {album.estimatedRevenue}</p>}
-              <p class="artist-card-meta">Tracklisting available on album page</p>
+              <p class="artist-card-meta">
+                {album.label ?? "Label metadata still partial"} · Tracklisting available on album page
+              </p>
             </div>
           </article>
         );

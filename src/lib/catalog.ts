@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { albumMetadata } from "../data/albumMetadata";
 import { artistMetadata } from "../data/artistMetadata";
 import { songMetadata } from "../data/songMetadata";
 
@@ -104,6 +105,14 @@ export type Album = {
   artistSlug: string;
   artistName: string;
   year?: number;
+  releaseDate?: string;
+  label?: string;
+  trackCount?: number;
+  links?: {
+    spotify?: string;
+    appleMusic?: string;
+    youtubeMusic?: string;
+  };
   songs: Song[];
   trackListing: Song[];
   trackedSongCount: number;
@@ -242,6 +251,10 @@ export const albums = [...albumEntries.values()].sort((left, right) => {
   return left.title.localeCompare(right.title);
 }).map((album) => ({
   ...album,
+  releaseDate: albumMetadata[album.slug]?.releaseDate,
+  label: albumMetadata[album.slug]?.label,
+  trackCount: albumMetadata[album.slug]?.trackCount,
+  links: albumMetadata[album.slug]?.links,
   trackListing: [...album.songs].sort((left, right) => {
     if (left.year && right.year && left.year !== right.year) return left.year - right.year;
     return left.title.localeCompare(right.title);
