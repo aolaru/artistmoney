@@ -1,0 +1,31 @@
+{
+  "title": "Unfinished Sympathy",
+  "slug": "unfinished-sympathy",
+  "artist": "massive-attack",
+  "estimated_revenue": "$180K-$650K/year",
+  "album": "Blue Lines",
+  "year": 1991,
+  "meaning_summary": "Unfinished Sympathy still earns because it remains one of the defining recordings of trip-hop and retains strong sync and catalog value.",
+  "revenue_drivers": [
+    "Trip-hop canon status supports continuing catalog discovery.",
+    "Its orchestral scale and emotional clarity make it highly reusable in media contexts.",
+    "The song stays active through playlist and editorial placement."
+  ],
+  "related_songs": [
+    "teardrop"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$420K-$1.5M/year",
+    "artist_or_estate_share": "$180K-$650K/year",
+    "label_master_share": "$100K-$410K/year",
+    "publishing_share": "$60K-$180K/year",
+    "songwriter_share": "$70K-$240K/year",
+    "assumptions": "Estimate infers current annual earnings from long-tail streaming, strong sync utility, and durable writer-side value."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing appears materially tied to writer-side participation",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on current catalog behavior, not a public royalty statement."
+  }
+}

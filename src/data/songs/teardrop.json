@@ -1,0 +1,31 @@
+{
+  "title": "Teardrop",
+  "slug": "teardrop",
+  "artist": "massive-attack",
+  "estimated_revenue": "$250K-$900K/year",
+  "album": "Mezzanine",
+  "year": 1998,
+  "meaning_summary": "Teardrop remains one of Massive Attack's strongest long-tail earners because it works across streaming, sync, and mood-driven playlist listening.",
+  "revenue_drivers": [
+    "Its association with film, TV, and prestige-drama culture keeps the song visible.",
+    "Trip-hop and downtempo playlists create steady catalog demand.",
+    "The track remains one of the most recognizable songs in the Massive Attack catalog."
+  ],
+  "related_songs": [
+    "unfinished-sympathy"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$600K-$2M/year",
+    "artist_or_estate_share": "$250K-$900K/year",
+    "label_master_share": "$150K-$550K/year",
+    "publishing_share": "$80K-$260K/year",
+    "songwriter_share": "$100K-$330K/year",
+    "assumptions": "Estimate infers current annual earnings from high replay value, sync utility, and durable streaming around a canonical trip-hop recording."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing appears materially tied to writer-side participation",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on current catalog behavior, not a public royalty statement."
+  }
+}

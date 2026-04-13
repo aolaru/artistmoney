@@ -1,0 +1,31 @@
+{
+  "title": "Dark & Long (Dark Train)",
+  "slug": "dark-and-long-dark-train",
+  "artist": "underworld",
+  "estimated_revenue": "$40K-$160K/year",
+  "album": "Dubnobasswithmyheadman",
+  "year": 1994,
+  "meaning_summary": "Dark & Long (Dark Train) earns at a smaller scale than Born Slippy but remains important in Underworld's club-canon and long-tail electronic catalog.",
+  "revenue_drivers": [
+    "Specialist electronic playlists sustain long-form listening.",
+    "Club-culture recognition keeps the track active among core audiences.",
+    "Catalog discovery around Underworld's better-known material creates spillover value."
+  ],
+  "related_songs": [
+    "born-slippy-nuxx"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$90K-$340K/year",
+    "artist_or_estate_share": "$40K-$160K/year",
+    "label_master_share": "$25K-$100K/year",
+    "publishing_share": "$12K-$45K/year",
+    "songwriter_share": "$16K-$55K/year",
+    "assumptions": "Estimate infers current annual earnings from specialist streaming depth and long-tail electronic-catalog behavior."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and creator royalty participation",
+    "publishing_owner": "Publishing appears materially tied to songwriter-side participation",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on current catalog behavior, not a public royalty statement."
+  }
+}

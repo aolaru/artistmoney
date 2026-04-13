@@ -1,0 +1,35 @@
+{
+  "name": "Moby",
+  "slug": "moby",
+  "estimated_income": "$2M-$8M/year",
+  "top_songs": [
+    "porcelain",
+    "natural-blues"
+  ],
+  "genre": "Electronic / Downtempo / Ambient Pop",
+  "country": "United States",
+  "active_since": "1989",
+  "bio": "Moby's catalog continues to earn through streaming, licensing, and long-tail discovery, with Play-era songs still functioning as major commercial assets.",
+  "notable_for": "Play-era sync dominance, durable crossover electronic catalog, and creator-led rights participation.",
+  "career_highlight": "Play became one of the defining catalog-licensing success stories in electronic music.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "sync licensing",
+    "playlist longevity",
+    "creator-side rights participation"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$4M-$10M/year",
+    "artist_or_estate_share": "$2M-$8M/year",
+    "label_share": "$700K-$2.2M/year",
+    "publisher_share": "$300K-$1M/year",
+    "writer_share": "$450K-$1.4M/year",
+    "assumptions": "Estimate assumes continued streaming and licensing around Play-era songs and stronger-than-average creator-side economics."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled rights and meaningful creator-side participation",
+    "publishing_owner": "Publishing appears materially tied to writer-side interests",
+    "catalog_sale_status": "No major catalog sale adjustment is assumed here",
+    "notes": "Moby's catalog economics are likely stronger than a typical performer-only catalog because licensing and authorship matter heavily."
+  }
+}

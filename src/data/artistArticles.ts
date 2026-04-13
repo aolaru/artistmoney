@@ -85,5 +85,45 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "Writer-side participation strengthens artist economics even when master ownership remains label-heavy."
     ],
     insight: "Big melodic pop songs can keep earning for decades when they remain broad enough for playlists and specific enough to stay memorable."
+  },
+  "tim-hecker": {
+    seoTitle: "Does Tim Hecker still make money from ambient records?",
+    shortAnswer: "Yes — estimated $150K-$600K/year.",
+    sources: [
+      "Specialist streaming and critical-canon discovery keep key ambient records active.",
+      "Vinyl, reissues, and deep-listening audiences support long-tail value.",
+      "Creator-leaning rights participation improves economics versus a performer-only model."
+    ],
+    insight: "Ambient catalogs monetize depth and permanence, not mainstream scale."
+  },
+  underworld: {
+    seoTitle: "Does Underworld still make money from old tracks?",
+    shortAnswer: "Yes — estimated $1M-$4M/year.",
+    sources: [
+      "Born Slippy (Nuxx) continues to earn at outsized scale because of its Trainspotting legacy.",
+      "Electronic nostalgia and playlist use keep the catalog active.",
+      "Creator participation and film-linked visibility improve long-tail economics."
+    ],
+    insight: "One truly iconic soundtrack-linked track can keep an electronic catalog commercially alive for decades."
+  },
+  "massive-attack": {
+    seoTitle: "Does Massive Attack still make money from trip-hop classics?",
+    shortAnswer: "Yes — estimated $1M-$4M/year.",
+    sources: [
+      "Teardrop and Unfinished Sympathy still stream at strong long-tail catalog scale.",
+      "Trip-hop's cinematic usefulness keeps the catalog sync-friendly.",
+      "Writer-side participation strengthens retained value across key recordings."
+    ],
+    insight: "Catalogs with strong atmosphere and sync value often outperform their niche genre label."
+  },
+  moby: {
+    seoTitle: "Does Moby still make money from Play-era songs?",
+    shortAnswer: "Yes — estimated $2M-$8M/year.",
+    sources: [
+      "Porcelain and Natural Blues still stream and license well decades after release.",
+      "The Play catalog remains one of electronic music's strongest sync-driven commercial assets.",
+      "Creator-side authorship and catalog recognition improve the retained share."
+    ],
+    insight: "When a catalog becomes licensing infrastructure, its earning life extends far beyond its chart cycle."
   }
 };

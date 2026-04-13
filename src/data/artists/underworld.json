@@ -1,0 +1,35 @@
+{
+  "name": "Underworld",
+  "slug": "underworld",
+  "estimated_income": "$1M-$4M/year",
+  "top_songs": [
+    "born-slippy-nuxx",
+    "dark-and-long-dark-train"
+  ],
+  "genre": "Electronic / Techno / Progressive House",
+  "country": "United Kingdom",
+  "active_since": "1987",
+  "bio": "Underworld's catalog still earns through club-culture longevity, film association, and deep electronic listening, with a few key tracks carrying disproportionate long-tail value.",
+  "notable_for": "Rave-era crossover, cult electronic longevity, and film-linked catalog visibility.",
+  "career_highlight": "Born Slippy (Nuxx) remains one of the defining electronic tracks of the 1990s and still drives catalog discovery.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "film association",
+    "playlist longevity",
+    "club-culture nostalgia"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$2M-$5M/year",
+    "artist_or_estate_share": "$1M-$4M/year",
+    "label_share": "$400K-$1.4M/year",
+    "publisher_share": "$180K-$600K/year",
+    "writer_share": "$220K-$700K/year",
+    "assumptions": "Estimate assumes strong long-tail streaming around Born Slippy, durable film-linked visibility, and meaningful creator participation."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and creator royalty participation",
+    "publishing_owner": "Publishing appears materially tied to songwriter-side participation",
+    "catalog_sale_status": "No major catalog sale adjustment is assumed here",
+    "notes": "Electronic catalogs with strong film association can stay commercially active far beyond their original release cycle."
+  }
+}

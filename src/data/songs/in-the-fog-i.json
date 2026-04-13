@@ -1,0 +1,31 @@
+{
+  "title": "In the Fog I",
+  "slug": "in-the-fog-i",
+  "artist": "tim-hecker",
+  "estimated_revenue": "$15K-$60K/year",
+  "album": "Harmony in Ultraviolet",
+  "year": 2006,
+  "meaning_summary": "In the Fog I keeps earning as part of Tim Hecker's long-tail ambient catalog, where listener depth matters more than mass scale.",
+  "revenue_drivers": [
+    "Specialist streaming continues through experimental and ambient listening contexts.",
+    "Long-form album discovery supports deep-catalog replay.",
+    "The track benefits from sustained critical and community recognition."
+  ],
+  "related_songs": [
+    "virginal-i"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$28K-$100K/year",
+    "artist_or_estate_share": "$15K-$60K/year",
+    "label_master_share": "$6K-$20K/year",
+    "publishing_share": "$4K-$16K/year",
+    "songwriter_share": "$5K-$18K/year",
+    "assumptions": "Estimate infers current annual earnings from niche streaming depth and creator-leaning experimental-catalog economics."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-side distribution and creator-affiliated control",
+    "publishing_owner": "Publishing appears concentrated around the composer side",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on current catalog behavior, not a public royalty statement."
+  }
+}

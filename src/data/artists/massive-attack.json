@@ -1,0 +1,35 @@
+{
+  "name": "Massive Attack",
+  "slug": "massive-attack",
+  "estimated_income": "$1M-$4M/year",
+  "top_songs": [
+    "teardrop",
+    "unfinished-sympathy"
+  ],
+  "genre": "Trip-Hop / Electronic / Downtempo",
+  "country": "United Kingdom",
+  "active_since": "1988",
+  "bio": "Massive Attack built one of the most commercially durable trip-hop catalogs, with songs that continue to earn through streaming, sync use, and mood-driven listening.",
+  "notable_for": "Trip-hop canon status, cinematic catalog value, and long-tail sync relevance.",
+  "career_highlight": "Teardrop and Unfinished Sympathy remain foundational tracks for both streaming-era discovery and media placement.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "sync licensing",
+    "playlist longevity",
+    "cross-generational discovery"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$2M-$5M/year",
+    "artist_or_estate_share": "$1M-$4M/year",
+    "label_share": "$350K-$1.3M/year",
+    "publisher_share": "$180K-$650K/year",
+    "writer_share": "$220K-$750K/year",
+    "assumptions": "Estimate assumes durable streaming around key trip-hop staples, substantial sync utility, and meaningful writer-side participation."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing appears materially tied to writer-side participation",
+    "catalog_sale_status": "No major catalog sale adjustment is assumed here",
+    "notes": "Trip-hop catalogs often outperform their niche genre status because they remain highly usable in visual media."
+  }
+}

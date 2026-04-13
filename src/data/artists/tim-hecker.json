@@ -1,0 +1,35 @@
+{
+  "name": "Tim Hecker",
+  "slug": "tim-hecker",
+  "estimated_income": "$150K-$600K/year",
+  "top_songs": [
+    "virginal-i",
+    "in-the-fog-i"
+  ],
+  "genre": "Ambient / Experimental / Drone",
+  "country": "Canada",
+  "active_since": "2001",
+  "bio": "Tim Hecker builds dense ambient records that keep earning through specialist streaming, sync-adjacent use, and deep catalog listening rather than mainstream hit volume.",
+  "notable_for": "Immersive ambient composition, critical acclaim, and durable specialist-audience engagement.",
+  "career_highlight": "Albums like Virgins and Ravedeath, 1972 turned abstract sound design into a durable long-tail catalog.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "niche audience depth",
+    "sync-style ambient usage",
+    "vinyl and reissue demand"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$300K-$1M/year",
+    "artist_or_estate_share": "$150K-$600K/year",
+    "label_share": "$60K-$220K/year",
+    "publisher_share": "$40K-$150K/year",
+    "writer_share": "$50K-$180K/year",
+    "assumptions": "Estimate assumes creator-leaning rights participation, strong specialist streaming depth, and modest but durable licensing-style value."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-side distribution and creator-affiliated control",
+    "publishing_owner": "Publishing appears concentrated around the composer side",
+    "catalog_sale_status": "No major catalog sale adjustment is assumed here",
+    "notes": "Experimental ambient catalogs tend to monetize depth and long-term specialist use rather than mainstream scale."
+  }
+}
