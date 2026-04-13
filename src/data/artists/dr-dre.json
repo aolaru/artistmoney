@@ -2,5 +2,30 @@
   "name": "Dr. Dre",
   "slug": "dr-dre",
   "estimated_income": "$5M-$20M/year",
-  "top_songs": ["still-dre", "the-next-episode"]
+  "top_songs": ["still-dre", "the-next-episode"],
+  "earnings": {
+    "gross_catalog_revenue": "$10M-$28M/year",
+    "artist_or_estate_share": "$5M-$20M/year",
+    "label_share": "$2M-$7M/year",
+    "publisher_share": "$900K-$3M/year",
+    "writer_share": "$1M-$3.5M/year",
+    "assumptions": "Estimate assumes strong evergreen streaming around the 2001-era catalog, producer and writer participation, and legacy label economics on the master side."
+  },
+  "ownership": {
+    "master_owner": "Mix of label-controlled masters and artist-affiliated royalty participation",
+    "publishing_owner": "Publishing and writer participation remain a meaningful part of the economics",
+    "catalog_sale_status": "No full catalog sale assumed in this estimate",
+    "notes": "For producer-led catalogs, artist-side economics can remain strong because writing, production, and master participation all matter."
+  },
+  "genre": "Hip-hop",
+  "country": "United States",
+  "active_since": "1992",
+  "bio": "Dr. Dre's catalog continues to earn through producer-led classics, enduring West Coast rap staples, and one of the strongest long-tail brands in hip-hop.",
+  "notable_for": "Producer-driven rap classics, Dre-era sonic identity, and high-value catalog recognition across generations.",
+  "career_highlight": "Still D.R.E. and The Next Episode remain anchor songs for 2000s rap playlists, nostalgia listening, and long-tail licensing value.",
+  "revenue_drivers": [
+    "Producer-led catalog songs remain heavily replayed across rap and workout playlists.",
+    "Writing and production participation can materially improve the artist-side cut beyond performer royalties alone.",
+    "The catalog benefits from long-term cultural recognition and premium nostalgia demand."
+  ]
 }

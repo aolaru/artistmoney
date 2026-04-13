@@ -2,5 +2,19 @@
   "title": "Shake It Off",
   "slug": "shake-it-off",
   "artist": "taylor-swift",
-  "estimated_revenue": "$1.7M-$5M/year"
+  "estimated_revenue": "$1.7M-$5M/year",
+  "earnings": {
+    "gross_track_revenue": "$3.4M-$10M/year",
+    "artist_or_estate_share": "$1.7M-$5M/year",
+    "label_master_share": "$765K-$2.3M/year",
+    "publishing_share": "$544K-$1.6M/year",
+    "songwriter_share": "$544K-$1.6M/year",
+    "assumptions": "Estimate infers current annual earnings from large-scale streaming, catalog replay value, and typical superstar-era rights participation."
+  },
+  "ownership": {
+    "master_owner": "Mix of label-controlled masters and meaningful artist-side royalty participation",
+    "publishing_owner": "Publishing appears shared across creators, producers, and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
+    "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
+  }
 }

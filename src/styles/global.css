@@ -256,6 +256,10 @@ p {
   object-fit: cover;
 }
 
+.album-cover-image {
+  aspect-ratio: 1 / 1;
+}
+
 .artist-card-body {
   padding: 1.1rem;
 }

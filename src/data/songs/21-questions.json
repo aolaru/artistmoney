@@ -2,5 +2,19 @@
   "title": "21 Questions",
   "slug": "21-questions",
   "artist": "50-cent",
-  "estimated_revenue": "$500K-$1.7M/year"
+  "estimated_revenue": "$500K-$1.7M/year",
+  "earnings": {
+    "gross_track_revenue": "$1.2M-$4M/year",
+    "artist_or_estate_share": "$500K-$1.7M/year",
+    "label_master_share": "$350K-$1.2M/year",
+    "publishing_share": "$160K-$544K/year",
+    "songwriter_share": "$140K-$476K/year",
+    "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
+  },
+  "ownership": {
+    "master_owner": "Usually split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing is typically shared across writers, producers, and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
+    "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
+  }
 }

@@ -2,5 +2,8 @@
   "name": "The Irrepressibles",
   "slug": "the-irrepressibles",
   "estimated_income": "$100K-$300K/year",
-  "top_songs": ["in-this-shirt"]
+  "top_songs": [
+    "in-this-shirt",
+    "two-men-in-love"
+  ]
 }

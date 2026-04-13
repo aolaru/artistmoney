@@ -1,0 +1,31 @@
+{
+  "title": "Two Men in Love",
+  "slug": "two-men-in-love",
+  "artist": "the-irrepressibles",
+  "estimated_revenue": "$20K-$70K/year",
+  "album": "Nude",
+  "year": 2012,
+  "meaning_summary": "Two Men in Love has smaller scale than In This Shirt, but its emotional directness gives it durable niche streaming and sync-style value.",
+  "revenue_drivers": [
+    "Loyal niche listeners keep the song active beyond release-era attention.",
+    "Its emotional framing makes it suitable for mood-driven discovery.",
+    "Catalog listening around In This Shirt creates spillover value."
+  ],
+  "related_songs": [
+    "in-this-shirt"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$34K-$119K/year",
+    "artist_or_estate_share": "$20K-$70K/year",
+    "label_master_share": "$4.4K-$15K/year",
+    "publishing_share": "$4.4K-$15K/year",
+    "songwriter_share": "$4.4K-$15K/year",
+    "assumptions": "Estimate infers current annual earnings from niche streaming depth, catalog replay value, and selective licensing, using creator-leaning rights splits."
+  },
+  "ownership": {
+    "master_owner": "Likely split between artist-affiliated control and distribution-side participation",
+    "publishing_owner": "Publishing appears concentrated on the writer or small rightsholder group",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on niche catalog behavior, not a public royalty statement."
+  }
+}

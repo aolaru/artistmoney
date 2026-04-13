@@ -2,5 +2,19 @@
   "title": "HUMBLE.",
   "slug": "humble",
   "artist": "kendrick-lamar",
-  "estimated_revenue": "$800K-$2.4M/year"
+  "estimated_revenue": "$800K-$2.4M/year",
+  "earnings": {
+    "gross_track_revenue": "$1.6M-$4.8M/year",
+    "artist_or_estate_share": "$800K-$2.4M/year",
+    "label_master_share": "$360K-$1.1M/year",
+    "publishing_share": "$256K-$768K/year",
+    "songwriter_share": "$256K-$768K/year",
+    "assumptions": "Estimate infers current annual earnings from large-scale streaming, catalog replay value, and typical superstar-era rights participation."
+  },
+  "ownership": {
+    "master_owner": "Mix of label-controlled masters and meaningful artist-side royalty participation",
+    "publishing_owner": "Publishing appears shared across creators, producers, and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
+    "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
+  }
 }

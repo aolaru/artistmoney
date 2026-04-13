@@ -2,5 +2,19 @@
   "title": "ROYGBIV",
   "slug": "roygbiv",
   "artist": "boards-of-canada",
-  "estimated_revenue": "$100K-$300K/year"
+  "estimated_revenue": "$100K-$300K/year",
+  "earnings": {
+    "gross_track_revenue": "$170K-$510K/year",
+    "artist_or_estate_share": "$100K-$300K/year",
+    "label_master_share": "$22K-$66K/year",
+    "publishing_share": "$22K-$66K/year",
+    "songwriter_share": "$22K-$66K/year",
+    "assumptions": "Estimate infers current annual earnings from niche streaming depth, catalog replay value, and selective licensing, using creator-leaning rights splits."
+  },
+  "ownership": {
+    "master_owner": "Likely split between artist-affiliated control and distribution-side participation",
+    "publishing_owner": "Publishing appears concentrated on the writer or small rightsholder group",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on niche catalog behavior, not a public royalty statement."
+  }
 }

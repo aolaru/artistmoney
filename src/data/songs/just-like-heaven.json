@@ -2,5 +2,19 @@
   "title": "Just Like Heaven",
   "slug": "just-like-heaven",
   "artist": "the-cure",
-  "estimated_revenue": "$220K-$800K/year"
+  "estimated_revenue": "$220K-$800K/year",
+  "earnings": {
+    "gross_track_revenue": "$517K-$1.9M/year",
+    "artist_or_estate_share": "$220K-$800K/year",
+    "label_master_share": "$154K-$560K/year",
+    "publishing_share": "$70K-$256K/year",
+    "songwriter_share": "$62K-$224K/year",
+    "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
+  },
+  "ownership": {
+    "master_owner": "Usually split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing is typically shared across writers, producers, and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
+    "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
+  }
 }

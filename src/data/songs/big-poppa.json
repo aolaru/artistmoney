@@ -2,5 +2,19 @@
   "title": "Big Poppa",
   "slug": "big-poppa",
   "artist": "notorious-big",
-  "estimated_revenue": "$450K-$1.5M/year"
+  "estimated_revenue": "$450K-$1.5M/year",
+  "earnings": {
+    "gross_track_revenue": "$1.1M-$3.5M/year",
+    "artist_or_estate_share": "$450K-$1.5M/year",
+    "label_master_share": "$315K-$1.1M/year",
+    "publishing_share": "$144K-$480K/year",
+    "songwriter_share": "$126K-$420K/year",
+    "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
+  },
+  "ownership": {
+    "master_owner": "Usually split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing is typically shared across writers, producers, and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
+    "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
+  }
 }

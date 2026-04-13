@@ -2,5 +2,19 @@
   "title": "Dayvan Cowboy",
   "slug": "dayvan-cowboy",
   "artist": "boards-of-canada",
-  "estimated_revenue": "$120K-$350K/year"
+  "estimated_revenue": "$120K-$350K/year",
+  "earnings": {
+    "gross_track_revenue": "$204K-$595K/year",
+    "artist_or_estate_share": "$120K-$350K/year",
+    "label_master_share": "$26K-$77K/year",
+    "publishing_share": "$26K-$77K/year",
+    "songwriter_share": "$26K-$77K/year",
+    "assumptions": "Estimate infers current annual earnings from niche streaming depth, catalog replay value, and selective licensing, using creator-leaning rights splits."
+  },
+  "ownership": {
+    "master_owner": "Likely split between artist-affiliated control and distribution-side participation",
+    "publishing_owner": "Publishing appears concentrated on the writer or small rightsholder group",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on niche catalog behavior, not a public royalty statement."
+  }
 }

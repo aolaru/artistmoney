@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
+import { createAlbumArtwork } from "../../lib/artistArtwork";
 import { albums, getArtist, type Album } from "../../lib/catalog";
 
 export function getStaticPaths() {
@@ -15,7 +15,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const artist = getArtist(album.artistSlug);
-const imageSrc = getArtistPhoto(album.artistSlug)?.src ?? createArtistArtwork(album.artistName, album.artistSlug);
+const imageSrc = createAlbumArtwork(album.title, album.artistName, album.slug);
 const albumSchema = {
   "@context": "https://schema.org",
   "@type": "MusicAlbum",
@@ -28,7 +28,7 @@ const albumSchema = {
     url: new URL(`${baseUrl}artist/${album.artistSlug}/`, Astro.site).toString()
   },
   datePublished: album.year ? `${album.year}` : undefined,
-  track: album.songs.map((song) => ({
+  track: album.trackListing.map((song) => ({
     "@type": "MusicRecording",
     name: song.title,
     url: new URL(`${baseUrl}song/${song.slug}/`, Astro.site).toString()
@@ -47,12 +47,11 @@ const albumSchema = {
   <article class="artist-profile">
     <div class="artist-hero">
       <img
-        class="artist-profile-image"
+        class="artist-profile-image album-cover-image"
         src={imageSrc}
-        alt={getArtistPhoto(album.artistSlug)?.alt ?? `Artwork for ${album.artistName}`}
+        alt={`Cover artwork for ${album.title} by ${album.artistName}`}
         width="1200"
-        height="900"
-        referrerpolicy="no-referrer"
+        height="1200"
       />
       <div class="artist-hero-copy">
         <p class="eyebrow">Album</p>
@@ -60,36 +59,29 @@ const albumSchema = {
         <p>
           {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : album.artistName}
         </p>
-        <p>
-          {[album.year, `${album.trackedSongCount} tracked song${album.trackedSongCount === 1 ? "" : "s"}`]
-            .filter(Boolean)
-            .join(" · ")}
-        </p>
+        <ul class="stat-list">
+          {album.year && <li><strong>Released:</strong> {album.year}</li>}
+          <li><strong>Tracked songs:</strong> {album.trackedSongCount}</li>
+          {album.estimatedRevenue && <li><strong>Tracked revenue:</strong> {album.estimatedRevenue}</li>}
+        </ul>
       </div>
     </div>
 
     <section aria-labelledby="album-overview-title">
       <h2 id="album-overview-title">Overview</h2>
       <p>
-        This album page groups the songs currently tracked from <strong>{album.title}</strong> and
-        connects them back to the artist catalog.
+        This album page groups the songs currently tracked from <strong>{album.title}</strong>,
+        shows the release year, and presents a usable tracklisting from the songs already in the catalog.
       </p>
     </section>
 
-    {album.estimatedRevenue && (
-      <section aria-labelledby="album-revenue-title">
-        <h2 id="album-revenue-title">Tracked Song Revenue</h2>
-        <ul class="meta-list">
-          <li>{album.estimatedRevenue}</li>
-        </ul>
-      </section>
-    )}
-
-    <section aria-labelledby="album-songs-title">
-      <h2 id="album-songs-title">Songs on Artist Money</h2>
+    <section aria-labelledby="album-tracklisting-title">
+      <h2 id="album-tracklisting-title">Tracklisting</h2>
+      <p class="results-note">This tracklisting reflects the songs currently tracked on Artist Money for this album.</p>
       <ul class="meta-list">
-        {album.songs.map((song) => (
+        {album.trackListing.map((song, index) => (
           <li>
+            <strong>{index + 1}.</strong>{" "}
             <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
             <span class="meta-inline"> · {song.estimated_revenue}</span>
           </li>

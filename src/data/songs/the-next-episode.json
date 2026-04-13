@@ -2,5 +2,19 @@
   "title": "The Next Episode",
   "slug": "the-next-episode",
   "artist": "dr-dre",
-  "estimated_revenue": "$800K-$2.4M/year"
+  "estimated_revenue": "$800K-$2.4M/year",
+  "earnings": {
+    "gross_track_revenue": "$1.9M-$5.6M/year",
+    "artist_or_estate_share": "$800K-$2.4M/year",
+    "label_master_share": "$560K-$1.7M/year",
+    "publishing_share": "$256K-$768K/year",
+    "songwriter_share": "$224K-$672K/year",
+    "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
+  },
+  "ownership": {
+    "master_owner": "Usually split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing is typically shared across writers, producers, and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
+    "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
+  }
 }

@@ -45,5 +45,15 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "Catalog sales and re-engagement keep revenue flowing after retirement."
     ],
     insight: "Retired artists can still earn massive passive income."
+  },
+  "dr-dre": {
+    seoTitle: "Does Dr. Dre still make money from his catalog?",
+    shortAnswer: "Yes — estimated $5M-$20M/year.",
+    sources: [
+      "Still D.R.E. and The Next Episode continue to stream at evergreen rap-catalog scale.",
+      "Producer and songwriter participation can materially improve artist-side economics.",
+      "Catalog recognition and licensing demand keep the Dre-era sound commercially relevant."
+    ],
+    insight: "Producer ownership and writing participation can make classic catalogs far more valuable than simple performer royalties suggest."
   }
 };

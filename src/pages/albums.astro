@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
+import { createAlbumArtwork } from "../lib/artistArtwork";
 import { albums } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
@@ -55,13 +55,12 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
             data-decade={decade}
           >
             <img
-              class="artist-card-image"
-              src={getArtistPhoto(album.artistSlug)?.src ?? createArtistArtwork(album.artistName, album.artistSlug)}
-              alt={getArtistPhoto(album.artistSlug)?.alt ?? `Artwork for ${album.artistName}`}
+              class="artist-card-image album-cover-image"
+              src={createAlbumArtwork(album.title, album.artistName, album.slug)}
+              alt={`Cover artwork for ${album.title} by ${album.artistName}`}
               loading="lazy"
               width="1200"
-              height="900"
-              referrerpolicy="no-referrer"
+              height="1200"
             />
             <div class="artist-card-body">
               <p class="eyebrow">Album</p>
@@ -77,6 +76,7 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
                   .join(" · ")}
               </p>
               {album.estimatedRevenue && <p>Tracked song revenue: {album.estimatedRevenue}</p>}
+              <p class="artist-card-meta">Tracklisting available on album page</p>
             </div>
           </article>
         );

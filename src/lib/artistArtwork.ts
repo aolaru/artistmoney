@@ -67,6 +67,40 @@ export function createArtistArtwork(name: string, slug: string) {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
+export function createAlbumArtwork(title: string, artistName: string, slug: string) {
+  const hash = hashValue(slug);
+  const [dark, mid, light] = palettes[(hash + 2) % palettes.length];
+  const accent = palettes[(hash + 4) % palettes.length][1];
+  const displayTitle = title.toUpperCase();
+  const displayArtist = artistName.toUpperCase();
+  const angle = -16 + (hash % 32);
+
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="${title} by ${artistName}">
+      <defs>
+        <linearGradient id="album-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="${dark}" />
+          <stop offset="100%" stop-color="${light}" />
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="1200" fill="url(#album-bg)" rx="64" />
+      <circle cx="972" cy="238" r="168" fill="${mid}" opacity="0.22" />
+      <circle cx="254" cy="922" r="122" fill="white" opacity="0.12" />
+      <g transform="translate(600 612) rotate(${angle})">
+        <rect x="-318" y="-318" width="636" height="636" rx="48" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.32)" stroke-width="8" />
+        <circle cx="0" cy="0" r="176" fill="rgba(19,29,39,0.18)" />
+        <circle cx="0" cy="0" r="56" fill="${accent}" opacity="0.8" />
+        <circle cx="0" cy="0" r="18" fill="white" opacity="0.85" />
+      </g>
+      <text x="86" y="122" fill="rgba(20,31,45,0.58)" font-family="Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="30" letter-spacing="6">${displayArtist}</text>
+      <text x="86" y="972" fill="rgba(20,31,45,0.92)" font-family="Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="92" font-weight="700">${displayTitle}</text>
+      <path d="M88 1012 H870" stroke="rgba(20,31,45,0.36)" stroke-width="8" stroke-linecap="round" />
+    </svg>
+  `;
+
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;

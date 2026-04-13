@@ -2,5 +2,19 @@
   "title": "Comfortably Numb",
   "slug": "comfortably-numb",
   "artist": "pink-floyd",
-  "estimated_revenue": "$400K-$1.4M/year"
+  "estimated_revenue": "$400K-$1.4M/year",
+  "earnings": {
+    "gross_track_revenue": "$940K-$3.3M/year",
+    "artist_or_estate_share": "$400K-$1.4M/year",
+    "label_master_share": "$280K-$980K/year",
+    "publishing_share": "$128K-$448K/year",
+    "songwriter_share": "$112K-$392K/year",
+    "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
+  },
+  "ownership": {
+    "master_owner": "Usually split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing is typically shared across writers, producers, and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
+    "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
+  }
 }

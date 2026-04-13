@@ -2,5 +2,19 @@
   "title": "Gantz Graf",
   "slug": "gantz-graf",
   "artist": "autechre",
-  "estimated_revenue": "$70K-$220K/year"
+  "estimated_revenue": "$70K-$220K/year",
+  "earnings": {
+    "gross_track_revenue": "$119K-$374K/year",
+    "artist_or_estate_share": "$70K-$220K/year",
+    "label_master_share": "$15K-$48K/year",
+    "publishing_share": "$15K-$48K/year",
+    "songwriter_share": "$15K-$48K/year",
+    "assumptions": "Estimate infers current annual earnings from niche streaming depth, catalog replay value, and selective licensing, using creator-leaning rights splits."
+  },
+  "ownership": {
+    "master_owner": "Likely split between artist-affiliated control and distribution-side participation",
+    "publishing_owner": "Publishing appears concentrated on the writer or small rightsholder group",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred gross-to-net range based on niche catalog behavior, not a public royalty statement."
+  }
 }

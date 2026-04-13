@@ -105,6 +105,7 @@ export type Album = {
   artistName: string;
   year?: number;
   songs: Song[];
+  trackListing: Song[];
   trackedSongCount: number;
   estimatedRevenue?: string;
 };
@@ -230,6 +231,7 @@ songs.forEach((song) => {
     artistName: artist?.name ?? song.artist,
     year: song.year,
     songs: [song],
+    trackListing: [song],
     trackedSongCount: 1,
     estimatedRevenue: summarizeRevenue([song])
   });
@@ -238,7 +240,13 @@ songs.forEach((song) => {
 export const albums = [...albumEntries.values()].sort((left, right) => {
   if (left.title === right.title) return left.artistName.localeCompare(right.artistName);
   return left.title.localeCompare(right.title);
-});
+}).map((album) => ({
+  ...album,
+  trackListing: [...album.songs].sort((left, right) => {
+    if (left.year && right.year && left.year !== right.year) return left.year - right.year;
+    return left.title.localeCompare(right.title);
+  })
+}));
 
 export const albumMap = new Map(albums.map((album) => [album.slug, album]));
 

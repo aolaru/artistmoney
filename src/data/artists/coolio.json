@@ -2,7 +2,10 @@
   "name": "Coolio",
   "slug": "coolio",
   "estimated_income": "$500K-$2M/year",
-  "top_songs": ["gangstas-paradise"],
+  "top_songs": [
+    "gangstas-paradise",
+    "fantastic-voyage"
+  ],
   "earnings": {
     "gross_catalog_revenue": "$900K-$2.5M/year",
     "artist_or_estate_share": "$350K-$1.1M/year",

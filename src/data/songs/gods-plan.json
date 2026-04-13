@@ -2,5 +2,19 @@
   "title": "God's Plan",
   "slug": "gods-plan",
   "artist": "drake",
-  "estimated_revenue": "$1.5M-$4M/year"
+  "estimated_revenue": "$1.5M-$4M/year",
+  "earnings": {
+    "gross_track_revenue": "$3M-$8M/year",
+    "artist_or_estate_share": "$1.5M-$4M/year",
+    "label_master_share": "$675K-$1.8M/year",
+    "publishing_share": "$480K-$1.3M/year",
+    "songwriter_share": "$480K-$1.3M/year",
+    "assumptions": "Estimate infers current annual earnings from large-scale streaming, catalog replay value, and typical superstar-era rights participation."
+  },
+  "ownership": {
+    "master_owner": "Mix of label-controlled masters and meaningful artist-side royalty participation",
+    "publishing_owner": "Publishing appears shared across creators, producers, and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
+    "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
+  }
 }
