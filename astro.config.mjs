@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   integrations: [sitemap()],
-  site: "https://aolaru.github.io",
-  base: "/artistmoney",
+  site: "https://howmuchmusic.com",
+  base: "/",
   output: "static"
 });
