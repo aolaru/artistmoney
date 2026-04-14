@@ -52,6 +52,15 @@ const jsonLdPayload = jsonLd
         <meta name="twitter:image" content={socialImage} />
       </>
     )}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8WMBDVPWEG"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-8WMBDVPWEG");
+    </script>
     <title>{title}</title>
     {jsonLdPayload && (
       <script type="application/ld+json" set:html={jsonLdPayload} />
