@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
 import { artistArticles } from "../../data/artistArticles";
 import { artists, songs, type Artist } from "../../lib/catalog";
+import { getArtistEditorial } from "../../lib/editorial";
 
 export function getStaticPaths() {
   return artists.map((artist) => ({
@@ -20,6 +22,7 @@ const artistPhoto = getArtistPhoto(artist.slug);
 const article = artistArticles[artist.slug];
 const hasDetailedEarnings = Boolean(artist.earnings || artist.ownership);
 const imageSrc = artistPhoto?.src ?? createArtistArtwork(artist.name, artist.slug);
+const editorial = getArtistEditorial(artist, artistSongs);
 const artistSchema = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
@@ -48,6 +51,12 @@ const artistSchema = {
   jsonLd={artistSchema}
 >
   <article class="artist-profile">
+    <Breadcrumbs items={[
+      { label: "Home", href: baseUrl },
+      { label: "Artists", href: `${baseUrl}artists/` },
+      { label: artist.name }
+    ]} />
+
     <div class="artist-hero">
       <img
         class="artist-profile-image"
@@ -76,8 +85,7 @@ const artistSchema = {
     <section aria-labelledby="overview-title">
       <h2 id="overview-title">Overview</h2>
       <p>
-        {artist.bio ??
-          `${artist.name} has a catalog that keeps attracting attention through streaming, replay value, and long-term listener interest.`}
+        {editorial.overview}
       </p>
       {(artist.genre || artist.country || artist.active_since) && (
         <ul class="meta-list">
@@ -106,11 +114,23 @@ const artistSchema = {
       </>
     )}
 
+    {!article && (
+      <section aria-labelledby="sources-title">
+        <h2 id="sources-title">Sources</h2>
+        <ul class="meta-list">
+          {editorial.sources.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+      </section>
+    )}
+
     <section aria-labelledby="income-title">
       <h2 id="income-title">Estimated Artist-Side Annual Earnings</h2>
       <ul class="meta-list">
         <li>{artist.earnings?.artist_or_estate_share ?? artist.estimated_income}</li>
       </ul>
+      {!article && <p>{editorial.shortAnswer}</p>}
     </section>
 
     {hasDetailedEarnings && (
@@ -183,11 +203,7 @@ const artistSchema = {
     <section aria-labelledby="strategy-title">
       <h2 id="strategy-title">Revenue Strategy</h2>
       <ul class="meta-list">
-        {(artist.revenue_drivers ?? [
-          "Catalog income keeps older songs active long after release.",
-          "Streaming creates steady long-tail revenue from repeat listening.",
-          "Licensing can turn a familiar song into a fresh earnings spike."
-        ]).map((point) => (
+        {editorial.revenueStrategy.map((point) => (
           <li>{point}</li>
         ))}
       </ul>
@@ -207,6 +223,13 @@ const artistSchema = {
       <section aria-labelledby="insight-title">
         <h2 id="insight-title">Insight</h2>
         <p>{article.insight}</p>
+      </section>
+    )}
+
+    {!article && (
+      <section aria-labelledby="insight-title">
+        <h2 id="insight-title">Insight</h2>
+        <p>{editorial.insight}</p>
       </section>
     )}
   </article>

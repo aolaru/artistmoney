@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { createAlbumArtwork } from "../lib/artistArtwork";
 import { rankedAlbums } from "../lib/catalog";
 
@@ -13,6 +14,11 @@ const entries = rankedAlbums.filter((entry) => entry.revenueRange).slice(0, 25);
   title="Top Catalogs | Artist Money"
   description="Ranked albums and catalogs by the modeled revenue of tracked songs."
 >
+  <Breadcrumbs items={[
+    { label: "Home", href: baseUrl },
+    { label: "Top Catalogs" }
+  ]} />
+
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Rankings</p>
@@ -21,6 +27,7 @@ const entries = rankedAlbums.filter((entry) => entry.revenueRange).slice(0, 25);
         This ranking aggregates the annual revenue estimates of songs currently tracked on each
         album page. It is a catalog proxy, not a full royalty statement for the entire release.
       </p>
+      <p><a href={`${baseUrl}insights/methodology/`}>Read the ranking methodology</a></p>
     </div>
     <div class="hero-panel" aria-label="Ranked catalog count">
       <strong>{entries.length}</strong>

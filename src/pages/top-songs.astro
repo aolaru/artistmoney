@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
 import { getArtist, rankedSongs } from "../lib/catalog";
 
@@ -13,6 +14,11 @@ const entries = rankedSongs.filter((entry) => entry.revenueRange).slice(0, 30);
   title="Top Earning Songs | Artist Money"
   description="Ranked songs by estimated annual revenue range."
 >
+  <Breadcrumbs items={[
+    { label: "Home", href: baseUrl },
+    { label: "Top Songs" }
+  ]} />
+
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Rankings</p>
@@ -21,6 +27,7 @@ const entries = rankedSongs.filter((entry) => entry.revenueRange).slice(0, 30);
         These rankings sort by the midpoint of each song's annual revenue estimate. They are useful
         for relative comparison, not as audited payout figures.
       </p>
+      <p><a href={`${baseUrl}insights/methodology/`}>Read the ranking methodology</a></p>
     </div>
     <div class="hero-panel" aria-label="Ranked song count">
       <strong>{entries.length}</strong>

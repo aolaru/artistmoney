@@ -88,6 +88,10 @@ function scoreAlbumMatch(result, albumTitle, artistName, expectedYear) {
   return score;
 }
 
+function isEditionVariant(title = "") {
+  return /(deluxe|expanded|anniversary|edition|remaster(ed)?|bonus|complete recordings?|amended version)/i.test(title);
+}
+
 async function fetchJson(url) {
   for (let attempt = 0; attempt < 5; attempt += 1) {
     const response = await fetch(url, {
@@ -164,7 +168,10 @@ async function fetchAlbumMetadata(album) {
   const ranked = (search.results ?? [])
     .map((result) => ({ result, score: scoreAlbumMatch(result, album.title, album.artistName, album.year) }))
     .sort((left, right) => right.score - left.score);
-  const best = ranked[0];
+  const best =
+    ranked.find(({ result, score }) => score >= 90 && !isEditionVariant(result.collectionName)) ??
+    ranked.find(({ score }) => score >= 90) ??
+    ranked[0];
 
   const metadata = {
     releaseDate: album.year ? `${album.year}` : undefined,
@@ -189,7 +196,7 @@ async function fetchAlbumMetadata(album) {
   metadata.trackCount = matched.trackCount;
   metadata.links.appleMusic = matched.collectionViewUrl;
 
-  if (/(deluxe|expanded|anniversary|edition|remaster|complete recordings?)/i.test(matched.collectionName ?? "")) {
+  if (isEditionVariant(matched.collectionName ?? "")) {
     metadata.editionNote = matched.collectionName;
   }
 

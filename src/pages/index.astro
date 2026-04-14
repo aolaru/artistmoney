@@ -53,6 +53,19 @@ const rankingLinks = [
     detail: "Ranked by aggregated tracked-song revenue."
   }
 ];
+
+const discoveryLinks = [
+  {
+    label: "Browse by genre",
+    href: `${baseUrl}genres/`,
+    detail: "Group artists by genre and compare catalog economics within similar audiences."
+  },
+  {
+    label: "Browse by decade",
+    href: `${baseUrl}decades/`,
+    detail: "See which release eras still produce the strongest long-tail song value."
+  }
+];
 ---
 
 <BaseLayout
@@ -162,6 +175,18 @@ const rankingLinks = [
     <h2 id="rankings-title">Rankings</h2>
     <ul class="meta-list">
       {rankingLinks.map((link) => (
+        <li>
+          <a href={link.href}>{link.label}</a>
+          <span class="meta-inline"> {" "}· {link.detail}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="discovery-title">
+    <h2 id="discovery-title">Discovery</h2>
+    <ul class="meta-list">
+      {discoveryLinks.map((link) => (
         <li>
           <a href={link.href}>{link.label}</a>
           <span class="meta-inline"> {" "}· {link.detail}</span>

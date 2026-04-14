@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
+import { artists } from "../../lib/catalog";
+
+export function getStaticPaths() {
+  const genreMap = new Map<string, string[]>();
+
+  artists.forEach((artist) => {
+    if (!artist.genre) return;
+    const slug = artist.genre
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+    const existing = genreMap.get(slug) ?? [];
+    if (!existing.includes(artist.genre)) existing.push(artist.genre);
+    genreMap.set(slug, existing);
+  });
+
+  return [...genreMap.entries()].map(([slug, names]) => ({
+    params: { slug },
+    props: { genre: { slug, names } }
+  }));
+}
+
+const { genre } = Astro.props as { genre: { slug: string; names: string[] } };
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const genreArtists = artists.filter((artist) => artist.genre && genre.names.includes(artist.genre));
+const genreLabel = genre.names[0];
+---
+
+<BaseLayout title={`${genreLabel} | Artist Money`} description={`Artists and catalog pages in ${genreLabel}.`}>
+  <Breadcrumbs items={[
+    { label: "Home", href: baseUrl },
+    { label: "Genres", href: `${baseUrl}genres/` },
+    { label: genreLabel }
+  ]} />
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Genre</p>
+      <h1>{genreLabel}</h1>
+      <p>
+        Explore artists in this genre and compare how catalog age, replay value, and licensing
+        potential shape earnings across similar audiences.
+      </p>
+      {genre.names.length > 1 && <p>Also grouped here: {genre.names.slice(1).join(" · ")}</p>}
+    </div>
+    <div class="hero-panel" aria-label="Genre artist count">
+      <strong>{genreArtists.length}</strong>
+      <span>artists in this genre</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="genre-artists-title">
+    <h2 id="genre-artists-title">Artists in {genreLabel}</h2>
+    <div class="card-grid">
+      {genreArtists.map((artist) => (
+        <article class="card artist-card">
+          <img
+            class="artist-card-image"
+            src={getArtistPhoto(artist.slug)?.src ?? createArtistArtwork(artist.name, artist.slug)}
+            alt={getArtistPhoto(artist.slug)?.alt ?? `Artwork for ${artist.name}`}
+            loading="lazy"
+            width="1200"
+            height="900"
+            referrerpolicy="no-referrer"
+          />
+          <div class="artist-card-body">
+            <p class="eyebrow">Artist</p>
+            <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
+            {(artist.country || artist.active_since) && (
+              <p class="artist-card-meta">{[artist.country, artist.active_since ? `Active since ${artist.active_since}` : ""].filter(Boolean).join(" · ")}</p>
+            )}
+            <p>Estimated income: {artist.estimated_income}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

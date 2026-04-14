@@ -365,6 +365,7 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     "releaseDate": "2003-02-06",
     "label": "Shady Records/Aftermath Records/Interscope Records",
     "trackCount": 18,
+    "editionNote": "Get Rich or Die Tryin' (Bonus Track Version)",
     "fullTracklist": [
       {
         "discNumber": 1,
@@ -3728,99 +3729,104 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     }
   },
   "notorious-big-life-after-death": {
-    "releaseDate": "1997-03-25",
-    "label": "Bad Boy/Atlantic Records. Marketed By Rhino Entertainment Company",
-    "trackCount": 14,
-    "editionNote": "Life After Death [Amended Version] (2014 Remaster)",
+    "releaseDate": "2022-11-11",
+    "label": "CMG",
+    "trackCount": 18,
     "fullTracklist": [
       {
         "discNumber": 1,
         "number": 1,
-        "title": "Hypnotize [Amended]",
-        "durationMs": 237493
+        "title": "Help Is On The Way (Maybe Midnight)",
+        "durationMs": 181520
       },
       {
         "discNumber": 1,
         "number": 2,
-        "title": "Notorious Thugs [Amended]",
-        "durationMs": 372973
+        "title": "The Goodness",
+        "durationMs": 225240
       },
       {
         "discNumber": 1,
         "number": 3,
-        "title": "I Love the Dough (feat. JAŸ-Z & Angela Winbush) [Amended]",
-        "durationMs": 340173
+        "title": "Deeper",
+        "durationMs": 194947
       },
       {
         "discNumber": 1,
         "number": 4,
-        "title": "B.I.G. (Interlude) [Amended]",
-        "durationMs": 48267
+        "title": "Show Up Choose Love",
+        "durationMs": 200896
       },
       {
         "discNumber": 1,
         "number": 5,
-        "title": "Miss U [Amended]",
-        "durationMs": 245893
+        "title": "Promised Land (Collab OG)",
+        "durationMs": 210733
       },
       {
         "discNumber": 1,
         "number": 6,
-        "title": "Mo Money Mo Problems (feat. Ma$e & Puff Daddy) [Amended]",
-        "durationMs": 257787
+        "title": "Everything About You",
+        "durationMs": 207627
       },
       {
         "discNumber": 1,
         "number": 7,
-        "title": "Playa Hater [Amended]",
-        "durationMs": 239760
+        "title": "Life On It",
+        "durationMs": 219373
       },
       {
         "discNumber": 1,
         "number": 8,
-        "title": "Another (feat. Lil' Kim) [Amendedd]",
-        "durationMs": 262400
+        "title": "Faithfully",
+        "durationMs": 166920
       },
       {
         "discNumber": 1,
         "number": 9,
-        "title": "Ten Crack Commandments [Amended]",
-        "durationMs": 204547
+        "title": "Cornerstone (feat. Zach Williams)",
+        "durationMs": 219267
       },
       {
         "discNumber": 1,
         "number": 10,
-        "title": "Nasty Boy [Amended]",
-        "durationMs": 231627
+        "title": "Found",
+        "durationMs": 209973
       },
       {
         "discNumber": 1,
         "number": 11,
-        "title": "Sky's the Limit (feat. 112) [Amended]",
-        "durationMs": 277133
+        "title": "Fire's Burnin'",
+        "durationMs": 184027
       },
       {
         "discNumber": 1,
         "number": 12,
-        "title": "Going Back to Cali [Amended]",
-        "durationMs": 235187
+        "title": "Space",
+        "durationMs": 184747
       },
       {
         "discNumber": 1,
         "number": 13,
-        "title": "You're Nobody (Til Somebody Kills You) [Amended]",
-        "durationMs": 292360
+        "title": "21 Years",
+        "durationMs": 243000
       },
       {
         "discNumber": 1,
         "number": 14,
-        "title": "F!*@ You Tonight (feat. R. Kelly) [Amended]",
-        "durationMs": 342800
+        "title": "I’m Sorry (a lament)",
+        "durationMs": 263747
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Rest",
+        "durationMs": 139325
       }
     ],
     "links": {
       "spotify": "https://open.spotify.com/search/The%20Notorious%20B.I.G.%20Life%20After%20Death",
-      "appleMusic": "https://music.apple.com/us/album/life-after-death-amended-version-2014-remaster/906586710?uo=4",
+      "appleMusic": "https://music.apple.com/us/album/life-after-death/1652915746?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Notorious%20B.I.G.%20Life%20After%20Death"
     }
   },

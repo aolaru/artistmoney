@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
 import { rankedArtists } from "../lib/catalog";
 
@@ -13,6 +14,11 @@ const entries = rankedArtists.filter((entry) => entry.revenueRange).slice(0, 25)
   title="Top Earning Artists | Artist Money"
   description="Ranked artist pages by estimated annual artist-side earnings."
 >
+  <Breadcrumbs items={[
+    { label: "Home", href: baseUrl },
+    { label: "Top Artists" }
+  ]} />
+
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Rankings</p>
@@ -21,6 +27,7 @@ const entries = rankedArtists.filter((entry) => entry.revenueRange).slice(0, 25)
         These rankings use the midpoint of each artist's modeled annual earnings range. They are
         editorial estimates, not public royalty statements.
       </p>
+      <p><a href={`${baseUrl}insights/methodology/`}>Read the ranking methodology</a></p>
     </div>
     <div class="hero-panel" aria-label="Ranked artist count">
       <strong>{entries.length}</strong>

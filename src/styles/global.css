@@ -234,6 +234,32 @@ p {
   color: var(--muted);
 }
 
+.breadcrumbs {
+  margin: 0 0 1rem;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  color: rgba(31, 35, 41, 0.35);
+}
+
 .results-note {
   margin: 0 0 1rem;
 }

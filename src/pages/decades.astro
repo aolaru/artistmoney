@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { songs } from "../lib/catalog";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.year / 10) * 10}s` : null)).filter(Boolean))]
+  .sort()
+  .map((decade) => ({
+    name: decade as string,
+    slug: (decade as string).replace(/[^0-9]/g, ""),
+    count: songs.filter((song) => song.year && `${Math.floor(song.year / 10) * 10}s` === decade).length
+  }));
+---
+
+<BaseLayout title="Decades | Artist Money" description="Browse Artist Money by release decade.">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Discovery</p>
+      <h1>Browse the catalog by decade</h1>
+      <p>Decade pages surface which eras still produce the strongest long-tail streaming and catalog value.</p>
+    </div>
+    <div class="hero-panel" aria-label="Decade count">
+      <strong>{decades.length}</strong>
+      <span>release decades in the catalog</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="decades-title">
+    <h2 id="decades-title">Decades</h2>
+    <div class="card-grid">
+      {decades.map((decade) => (
+        <article class="card">
+          <div class="artist-card-body">
+            <p class="eyebrow">Decade</p>
+            <h3><a href={`${baseUrl}decade/${decade.slug}/`}>{decade.name}</a></h3>
+            <p>{decade.count} tracked song{decade.count === 1 ? "" : "s"}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

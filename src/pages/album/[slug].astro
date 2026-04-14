@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createAlbumArtwork } from "../../lib/artistArtwork";
 import { albums, getArtist, type Album } from "../../lib/catalog";
 
@@ -60,6 +61,12 @@ const albumSchema = {
   jsonLd={albumSchema}
 >
   <article class="artist-profile">
+    <Breadcrumbs items={[
+      { label: "Home", href: baseUrl },
+      { label: "Albums", href: `${baseUrl}albums/` },
+      { label: album.title }
+    ]} />
+
     <div class="artist-hero">
       <img
         class="artist-profile-image album-cover-image"
@@ -148,6 +155,9 @@ const albumSchema = {
         </li>
         <li>
           Browse all albums: <a href={`${baseUrl}albums/`}>Albums</a>
+        </li>
+        <li>
+          Methodology: <a href={`${baseUrl}insights/methodology/`}>How Artist Money models revenue</a>
         </li>
         {album.links?.appleMusic && (
           <li>

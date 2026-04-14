@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout
+  title="Methodology | Artist Money"
+  description="How Artist Money models earnings ranges, rankings, and ownership assumptions."
+  type="article"
+>
+  <Breadcrumbs items={[
+    { label: "Home", href: baseUrl },
+    { label: "Insights", href: `${baseUrl}insights/` },
+    { label: "Methodology" }
+  ]} />
+
+  <section>
+    <p class="eyebrow">Methodology</p>
+    <h1>How Artist Money models earnings</h1>
+    <p>
+      Artist Money publishes modeled ranges, not audited royalty statements. The goal is to make
+      catalog economics legible without pretending to have access to private contracts.
+    </p>
+  </section>
+
+  <section>
+    <h2>What the estimates represent</h2>
+    <ul class="meta-list">
+      <li>Artist and song pages use annual earnings ranges as editorial estimates.</li>
+      <li>Where possible, pages separate gross catalog revenue from the artist-side retained share.</li>
+      <li>Ownership notes explain when labels, publishers, estates, or catalog buyers likely absorb a large part of the revenue.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How rankings work</h2>
+    <ul class="meta-list">
+      <li>Rankings use the midpoint of the displayed revenue range.</li>
+      <li>Album rankings aggregate the tracked songs currently modeled on the site, not the whole commercial album unless every track is covered.</li>
+      <li>That makes the rankings useful for comparison, not as a substitute for accounting data.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What still introduces uncertainty</h2>
+    <ul class="meta-list">
+      <li>Legacy contract terms are rarely public.</li>
+      <li>Catalog-sale details can materially alter the performer or estate share.</li>
+      <li>Streaming mix, geography, and licensing activity change over time.</li>
+    </ul>
+  </section>
+</BaseLayout>

@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
+import { getArtist, songs } from "../../lib/catalog";
+
+export function getStaticPaths() {
+  return [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.year / 10) * 10}s` : null)).filter(Boolean))]
+    .sort()
+    .map((decade) => ({ name: decade as string, slug: (decade as string).replace(/[^0-9]/g, "") }))
+    .map((decade) => ({
+    params: { slug: decade.slug },
+    props: { decade }
+  }));
+}
+
+const { decade } = Astro.props as { decade: { name: string; slug: string } };
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const decadeSongs = songs.filter((song) => song.year && `${Math.floor(song.year / 10) * 10}s` === decade.name);
+const artistSlugs = [...new Set(decadeSongs.map((song) => song.artist))];
+const decadeArtists = artistSlugs.map((slug) => getArtist(slug)).filter(Boolean).sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<BaseLayout title={`${decade.name} Songs | Artist Money`} description={`Songs and artists in the ${decade.name} catalog.`}>
+  <Breadcrumbs items={[
+    { label: "Home", href: baseUrl },
+    { label: "Decades", href: `${baseUrl}decades/` },
+    { label: decade.name }
+  ]} />
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Decade</p>
+      <h1>{decade.name}</h1>
+      <p>
+        Browse the songs and artists from this release era and compare which recordings still hold
+        long-tail streaming or licensing value.
+      </p>
+    </div>
+    <div class="hero-panel" aria-label="Decade song count">
+      <strong>{decadeSongs.length}</strong>
+      <span>songs from this decade</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="decade-artists-title">
+    <h2 id="decade-artists-title">Artists active in this release slice</h2>
+    <div class="card-grid">
+      {decadeArtists.map((artist) => (
+        <article class="card artist-card">
+          <img
+            class="artist-card-image"
+            src={getArtistPhoto(artist.slug)?.src ?? createArtistArtwork(artist.name, artist.slug)}
+            alt={getArtistPhoto(artist.slug)?.alt ?? `Artwork for ${artist.name}`}
+            loading="lazy"
+            width="1200"
+            height="900"
+            referrerpolicy="no-referrer"
+          />
+          <div class="artist-card-body">
+            <p class="eyebrow">Artist</p>
+            <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
+            <p>Estimated income: {artist.estimated_income}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section aria-labelledby="decade-songs-title">
+    <h2 id="decade-songs-title">Songs released in the {decade.name}</h2>
+    <ul class="meta-list">
+      {decadeSongs.map((song) => (
+        <li>
+          <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+          <span class="meta-inline"> · {song.year} · {getArtist(song.artist)?.name ?? song.artist} · {song.estimated_revenue}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

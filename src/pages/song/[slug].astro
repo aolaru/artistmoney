@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { songArticles } from "../../data/songArticles";
 import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
 import { getAlbum, getAlbumSlug, getArtist, songs, type Song } from "../../lib/catalog";
+import { getSongEditorial } from "../../lib/editorial";
 
 export function getStaticPaths() {
   return songs.map((song) => ({
@@ -26,6 +28,7 @@ const article = songArticles[song.slug];
 const hasDetailedEarnings = Boolean(song.earnings || song.ownership);
 const imageSrc = artist ? getArtistPhoto(song.artist)?.src ?? createArtistArtwork(artist.name, artist.slug) : undefined;
 const playerLinks = Object.entries(song.player?.links ?? {}).filter(([, url]) => url) as Array<[string, string]>;
+const editorial = getSongEditorial(song, artist);
 const songSchema = {
   "@context": "https://schema.org",
   "@type": "MusicRecording",
@@ -62,6 +65,12 @@ const songSchema = {
   jsonLd={songSchema}
 >
   <article>
+    <Breadcrumbs items={[
+      { label: "Home", href: baseUrl },
+      { label: "Songs", href: `${baseUrl}songs/` },
+      { label: song.title }
+    ]} />
+
     <p class="eyebrow">Song</p>
     <h1>{song.title}</h1>
 
@@ -111,12 +120,12 @@ const songSchema = {
 
     <section aria-labelledby="meaning-title">
       <h2 id="meaning-title">Meaning</h2>
-      <p>{song.meaning_summary ?? "This song explores themes of emotion, memory, and loss."}</p>
+      <p>{song.meaning_summary ?? editorial.meaning}</p>
     </section>
 
     <section aria-labelledby="short-answer-title">
       <h2 id="short-answer-title">Short Answer</h2>
-      <p><strong>{article?.shortAnswer ?? `Estimated artist-side earnings: ${song.earnings?.artist_or_estate_share ?? song.estimated_revenue}.`}</strong></p>
+      <p><strong>{article?.shortAnswer ?? editorial.shortAnswer}</strong></p>
     </section>
 
     {hasDetailedEarnings ? (
@@ -180,9 +189,7 @@ const songSchema = {
           <h2 id="breakdown-title">Earnings Breakdown</h2>
           <ul class="meta-list">
             {(article?.breakdown ?? [
-              "Streaming is usually the largest recurring revenue source.",
-              "Social exposure helps songs keep finding new listeners.",
-              "Licensing can create sharp revenue spikes."
+              ...editorial.breakdown
             ]).map((point) => (
               <li>{point}</li>
             ))}
@@ -200,16 +207,14 @@ const songSchema = {
 
     <section aria-labelledby="lifetime-title">
       <h2 id="lifetime-title">Lifetime Earnings</h2>
-      <p><strong>{article?.lifetimeEstimate ?? "A durable catalog song can earn significant long-tail revenue over many years."}</strong></p>
+      <p><strong>{article?.lifetimeEstimate ?? editorial.lifetime}</strong></p>
     </section>
 
     <section aria-labelledby="money-title">
       <h2 id="money-title">Why It Still Makes Money</h2>
       <ul class="meta-list">
         {(song.revenue_drivers ?? article?.whyItStillMakesMoney ?? [
-          "Songs keep earning when they stay culturally recognizable.",
-          "Playlist fit helps keep repeat listening active.",
-          "Catalog familiarity supports sync and rediscovery."
+          ...editorial.why
         ]).map((point) => (
           <li>{point}</li>
         ))}
@@ -218,7 +223,7 @@ const songSchema = {
 
     <section aria-labelledby="insight-title">
       <h2 id="insight-title">Insight</h2>
-      <p>{article?.insight ?? "What artists can learn from this song: clear emotion and replay value travel longer than hype."}</p>
+      <p>{article?.insight ?? editorial.insight}</p>
     </section>
 
     {relatedSongs.length > 0 && (
@@ -233,5 +238,13 @@ const songSchema = {
         </ul>
       </section>
     )}
+
+    <section aria-labelledby="methodology-title">
+      <h2 id="methodology-title">Methodology</h2>
+      <p>
+        These earnings figures are editorial estimates based on streaming scale, ownership context,
+        and long-tail catalog behavior. <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
+      </p>
+    </section>
   </article>
 </BaseLayout>
