@@ -245,6 +245,285 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
     localPath: "/images/artists/coldplay.jpg",
     personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "depeche-mode": {
+    alt: "Depeche Mode group photo from 2006",
+    src: localPhoto("depeche-mode.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Depeche_Mode_in_2006.jpg",
+    credit: "Photo by Ro hie via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/depeche-mode.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "tears-for-fears": {
+    alt: "Tears for Fears performing in Hanover in 2008",
+    src: localPhoto("tears-for-fears.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Tears_for_Fears_2008.jpg",
+    credit: "Photo by KWa via Wikimedia Commons",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    localPath: "/images/artists/tears-for-fears.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "pearl-jam": {
+    alt: "Pearl Jam performing with Chris Cornell in 2011",
+    src: localPhoto("pearl-jam.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Pearl_Jam_%26_Chris_Cornell.jpg",
+    credit: "Photo by David Silverman via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/pearl-jam.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "snoop-dogg": {
+    alt: "Snoop Dogg at Ottawa Bluesfest in 2008",
+    src: localPhoto("snoop-dogg.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Snoop_Dogg_2008.jpg",
+    credit: "Photo by Ceedub13 via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/snoop-dogg.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  rem: {
+    alt: "R.E.M. 1985 press photo",
+    src: localPhoto("rem.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:R.E.M._1985_press_photo.jpg",
+    credit: "I.R.S. Records press photo via Wikimedia Commons",
+    license: "Public domain in the U.S.",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:R.E.M._1985_press_photo.jpg",
+    localPath: "/images/artists/rem.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  soundgarden: {
+    alt: "Soundgarden Sub Pop promotional photo from 1987",
+    src: localPhoto("soundgarden.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Soundgarden_(1987_Sub_Pop_promo_photo).jpg",
+    credit: "Sub Pop promotional image via Wikimedia Commons",
+    license: "Public domain in the U.S.",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Soundgarden_(1987_Sub_Pop_promo_photo).jpg",
+    localPath: "/images/artists/soundgarden.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  "the-cure": {
+    alt: "The Cure performing in Santiago in 2013",
+    src: localPhoto("the-cure.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Cure_2013.jpg",
+    credit: "Photo by Christian Cordova via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/the-cure.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "50-cent": {
+    alt: "50 Cent visiting Barksdale Air Force Base",
+    src: localPhoto("50-cent.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Curtis_%2250_Cent%22_Jackson_visits_Barksdale_AFB_(5)_(cropped).jpg",
+    credit: "Photo by Senior Airman Nia Jacobs via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Curtis_%2250_Cent%22_Jackson_visits_Barksdale_AFB_(5)_(cropped).jpg",
+    localPath: "/images/artists/50-cent.jpg",
+    personalityRightsWarning: "Living artist depicted. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  "arctic-monkeys": {
+    alt: "Arctic Monkeys performing at Roskilde Festival in 2014",
+    src: localPhoto("arctic-monkeys.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Arctic_Monkeys_-_Orange_Stage_-_Roskilde_Festival_2014.jpg",
+    credit: "Photo by Bill Ebbesen via Wikimedia Commons",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    localPath: "/images/artists/arctic-monkeys.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  autechre: {
+    alt: "Autechre performing live",
+    src: localPhoto("autechre.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Autechre_(cropped).jpg",
+    credit: "Photo by Pablo Sanz Almoguera via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/autechre.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "billie-eilish": {
+    alt: "Billie Eilish performing in 2025",
+    src: localPhoto("billie-eilish.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:BillieEilishO2140725-39_-_54665577407_(cropped).jpg",
+    credit: "Photo by Raph_PH via Wikimedia Commons",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    localPath: "/images/artists/billie-eilish.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "boards-of-canada": {
+    alt: "Boards of Canada at the Warp Lighthouse Party in 1999",
+    src: localPhoto("boards-of-canada.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Boards_of_Canada_Warp_Lighthouse_Party_1999_(cropped).jpg",
+    credit: "Photo via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/boards-of-canada.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  coolio: {
+    alt: "Coolio portrait",
+    src: localPhoto("coolio.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Coolio.jpg",
+    credit: "Public-domain image via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Coolio.jpg",
+    localPath: "/images/artists/coolio.jpg"
+  },
+  "daft-punk": {
+    alt: "Daft Punk in 2013",
+    src: localPhoto("daft-punk.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Daft_Punk_in_2013_2-_centered.jpg",
+    credit: "Sony Music Entertainment, additional editing by W.carter via Wikimedia Commons",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    localPath: "/images/artists/daft-punk.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  drake: {
+    alt: "Drake at The Carter Effect premiere in 2017",
+    src: localPhoto("drake.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Drake_at_The_Carter_Effect_2017_(36818935200)_(cropped).jpg",
+    credit: "Photo by GabboT via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/drake.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  eminem: {
+    alt: "Eminem in 2021",
+    src: localPhoto("eminem.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Eminem_2021_Color_Corrected.jpg",
+    credit: "Photo by Brendan_linden via Wikimedia Commons",
+    license: "CC0 1.0",
+    licenseUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    localPath: "/images/artists/eminem.jpg",
+    personalityRightsWarning: "Living artist depicted. CC0 status does not remove publicity or personality-rights considerations."
+  },
+  "kendrick-lamar": {
+    alt: "Kendrick Lamar performing in 2025",
+    src: localPhoto("kendrick-lamar.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:KendrickSZASPurs230725-144_(cropped)_desaturated.jpg",
+    credit: "Photo by Raph_PH via Wikimedia Commons",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    localPath: "/images/artists/kendrick-lamar.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "massive-attack": {
+    alt: "Massive Attack performing in Saint Petersburg in 2010",
+    src: localPhoto("massive-attack.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Massive_Attack,_Saint-Petersburg,_2010-09-26_(cropped).jpg",
+    credit: "Photo by Platonova Alina via Wikimedia Commons",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    localPath: "/images/artists/massive-attack.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "mobb-deep": {
+    alt: "Mobb Deep performing at Out4Fame Festival in 2015",
+    src: localPhoto("mobb-deep.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Out4Fame-Festival_2015_-_Mobb_Deep_(cropped).JPG",
+    credit: "Photo by Lipstar & Fred Production via Wikimedia Commons",
+    license: "CC BY-SA 2.5",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.5/",
+    localPath: "/images/artists/mobb-deep.jpg",
+    personalityRightsWarning: "Identifiable performers are depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  moby: {
+    alt: "Moby in 2018",
+    src: localPhoto("moby.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Moby_12_17_2018_-16_(31743191557).jpg",
+    credit: "Photo by Justin Higuchi via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/moby.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  radiohead: {
+    alt: "Radiohead composite performance photo",
+    src: localPhoto("radiohead.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:RadioheadO2211125_composite.jpg",
+    credit: "Photo by Raph_PH via Wikimedia Commons",
+    license: "CC BY 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
+    localPath: "/images/artists/radiohead.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Editorial use is generally safer than endorsement or advertising use."
+  },
+  rihanna: {
+    alt: "Rihanna in 2018",
+    src: localPhoto("rihanna.png"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Rihanna_Fenty_2018.png",
+    credit: "Photo by SIGMA via Wikimedia Commons",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    localPath: "/images/artists/rihanna.png",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "taylor-swift": {
+    alt: "Taylor Swift at the 2023 MTV Video Music Awards",
+    src: localPhoto("taylor-swift.png"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_(3).png",
+    credit: "Photo by iHeartRadioCA via Wikimedia Commons",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    localPath: "/images/artists/taylor-swift.png",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "the-weeknd": {
+    alt: "The Weeknd portrait",
+    src: localPhoto("the-weeknd.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Weeknd_Portrait_by_Brian_Ziff.jpg",
+    credit: "Photo by Brian Ziff via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/the-weeknd.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "tim-hecker": {
+    alt: "Tim Hecker live at A-Visions",
+    src: localPhoto("tim-hecker.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Tim_Hecker_-_A-Visions_4_(4690826583).jpg",
+    credit: "Photo by basic_sounds via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/tim-hecker.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  underworld: {
+    alt: "Underworld performing in 2017",
+    src: localPhoto("underworld.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:UW_AllyPally_2017_(cropped).jpg",
+    credit: "Photo by Torrensmike via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/underworld.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  nirvana: {
+    alt: "Nirvana around 1992",
+    src: localPhoto("nirvana.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Nirvana_around_1992_(high_quality)_(cropped).jpg",
+    credit: "Photo by P.B. Rage via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/nirvana.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "kanye-west": {
+    alt: "Kanye West at the 2009 Tribeca Film Festival",
+    src: localPhoto("kanye-west.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Kanye_West_at_the_2009_Tribeca_Film_Festival_(crop_2).jpg",
+    credit: "Photo by David Shankbone via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Kanye_West_at_the_2009_Tribeca_Film_Festival_(crop_2).jpg",
+    localPath: "/images/artists/kanye-west.jpg",
+    personalityRightsWarning: "Living artist depicted. Public-domain status does not remove publicity or personality-rights considerations."
   }
 };
 

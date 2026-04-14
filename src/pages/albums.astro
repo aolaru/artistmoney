@@ -81,7 +81,7 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
               </p>
               {album.estimatedRevenue && <p>Tracked song revenue: {album.estimatedRevenue}</p>}
               <p class="artist-card-meta">
-                {album.label ?? "Label metadata still partial"} · Tracklisting available on album page
+                {album.label ?? "Label metadata still partial"} · {album.fullTracklist?.length ? "Full tracklist on album page" : "Tracklist still partial"}
               </p>
             </div>
           </article>

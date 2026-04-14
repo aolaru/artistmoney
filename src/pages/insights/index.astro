@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const explainers = [
+  {
+    slug: "streaming-payouts",
+    title: "How streaming payouts work",
+    detail: "Why a stream does not map cleanly to one fixed payout."
+  },
+  {
+    slug: "catalog-ownership",
+    title: "What catalog ownership means",
+    detail: "How masters, publishing, and catalog sales change who actually gets paid."
+  },
+  {
+    slug: "sync-licensing",
+    title: "Why sync licensing matters",
+    detail: "Why film, TV, trailers, and ads can reshape a catalog's economics."
+  },
+  {
+    slug: "evergreen-songs",
+    title: "Why old songs still make money",
+    detail: "How nostalgia, playlists, and catalog depth keep older recordings alive."
+  }
+];
+---
+
+<BaseLayout
+  title="Insights | Artist Money"
+  description="Editorial explainers about music earnings, streaming, catalog ownership, and sync licensing."
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Insights</p>
+      <h1>Editorial explainers for music earnings</h1>
+      <p>
+        These pages explain the mechanics behind the estimates on Artist Money: streaming payout
+        logic, ownership splits, licensing, and why some catalogs stay commercially alive for decades.
+      </p>
+    </div>
+    <div class="hero-panel" aria-label="Explainer count">
+      <strong>{explainers.length}</strong>
+      <span>editorial explainers</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="insights-directory-title">
+    <h2 id="insights-directory-title">Insights Directory</h2>
+    <div class="card-grid">
+      {explainers.map((explainer) => (
+        <article class="card">
+          <div class="artist-card-body">
+            <p class="eyebrow">Explainer</p>
+            <h3><a href={`${baseUrl}insights/${explainer.slug}/`}>{explainer.title}</a></h3>
+            <p>{explainer.detail}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

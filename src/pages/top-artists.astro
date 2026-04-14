@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
+import { rankedArtists } from "../lib/catalog";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const entries = rankedArtists.filter((entry) => entry.revenueRange).slice(0, 25);
+---
+
+<BaseLayout
+  title="Top Earning Artists | Artist Money"
+  description="Ranked artist pages by estimated annual artist-side earnings."
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Rankings</p>
+      <h1>Top earning artists in the catalog</h1>
+      <p>
+        These rankings use the midpoint of each artist's modeled annual earnings range. They are
+        editorial estimates, not public royalty statements.
+      </p>
+    </div>
+    <div class="hero-panel" aria-label="Ranked artist count">
+      <strong>{entries.length}</strong>
+      <span>artists with structured revenue ranges</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="top-artists-title">
+    <h2 id="top-artists-title">Artist Ranking</h2>
+    <div class="card-grid">
+      {entries.map(({ artist, revenueRange }, index) => (
+        <article class="card artist-card ranked-card">
+          <img
+            class="artist-card-image"
+            src={getArtistPhoto(artist.slug)?.src ?? createArtistArtwork(artist.name, artist.slug)}
+            alt={getArtistPhoto(artist.slug)?.alt ?? `Artwork for ${artist.name}`}
+            loading="lazy"
+            width="1200"
+            height="900"
+            referrerpolicy="no-referrer"
+          />
+          <div class="artist-card-body">
+            <p class="rank-badge">#{index + 1}</p>
+            <p class="eyebrow">Artist</p>
+            <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
+            {(artist.genre || artist.country) && (
+              <p class="artist-card-meta">{[artist.genre, artist.country].filter(Boolean).join(" · ")}</p>
+            )}
+            <p>Estimated artist-side annual earnings: {artist.estimated_income}</p>
+            {revenueRange && (
+              <p class="artist-card-meta">
+                Modeled midpoint: {Math.round((revenueRange.min + revenueRange.max) / 2).toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })}
+              </p>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

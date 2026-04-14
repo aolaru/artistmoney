@@ -247,6 +247,29 @@ p {
   grid-template-rows: auto 1fr;
 }
 
+.artist-card-body {
+  padding: 1.1rem 1.1rem 1.25rem;
+}
+
+.ranked-card {
+  position: relative;
+}
+
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  margin: 0 0 0.75rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .artist-card-image,
 .artist-profile-image {
   display: block;

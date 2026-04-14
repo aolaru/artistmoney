@@ -20,14 +20,37 @@ const featuredArtists = featuredArtistSlugs
 
 const insightLinks = [
   {
-    label: "Why songs go viral",
-    href: `${baseUrl}song/in-this-shirt/`,
-    detail: "A slow-burn song with viral rediscovery and long-tail streaming."
+    label: "How streaming payouts work",
+    href: `${baseUrl}insights/streaming-payouts/`,
+    detail: "Why per-stream revenue is a range, not one clean universal number."
   },
   {
-    label: "How artists make money",
-    href: `${baseUrl}artist/daft-punk/`,
-    detail: "A catalog page with artist-side share, label splits, and ownership context."
+    label: "What catalog ownership means",
+    href: `${baseUrl}insights/catalog-ownership/`,
+    detail: "How masters, publishing, and catalog sales change who actually gets paid."
+  },
+  {
+    label: "Why sync licensing matters",
+    href: `${baseUrl}insights/sync-licensing/`,
+    detail: "How placements in film, TV, trailers, and ads reset catalog economics."
+  }
+];
+
+const rankingLinks = [
+  {
+    label: "Top artists",
+    href: `${baseUrl}top-artists/`,
+    detail: "Ranked by modeled annual artist-side earnings."
+  },
+  {
+    label: "Top songs",
+    href: `${baseUrl}top-songs/`,
+    detail: "Ranked by modeled annual song revenue."
+  },
+  {
+    label: "Top catalogs",
+    href: `${baseUrl}catalogs/`,
+    detail: "Ranked by aggregated tracked-song revenue."
   }
 ];
 ---
@@ -127,6 +150,18 @@ const insightLinks = [
     <h2 id="insights-title">Insights</h2>
     <ul class="meta-list">
       {insightLinks.map((link) => (
+        <li>
+          <a href={link.href}>{link.label}</a>
+          <span class="meta-inline"> {" "}· {link.detail}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="rankings-title">
+    <h2 id="rankings-title">Rankings</h2>
+    <ul class="meta-list">
+      {rankingLinks.map((link) => (
         <li>
           <a href={link.href}>{link.label}</a>
           <span class="meta-inline"> {" "}· {link.detail}</span>

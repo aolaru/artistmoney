@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
+import { getArtist, rankedSongs } from "../lib/catalog";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const entries = rankedSongs.filter((entry) => entry.revenueRange).slice(0, 30);
+---
+
+<BaseLayout
+  title="Top Earning Songs | Artist Money"
+  description="Ranked songs by estimated annual revenue range."
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Rankings</p>
+      <h1>Top earning songs in the catalog</h1>
+      <p>
+        These rankings sort by the midpoint of each song's annual revenue estimate. They are useful
+        for relative comparison, not as audited payout figures.
+      </p>
+    </div>
+    <div class="hero-panel" aria-label="Ranked song count">
+      <strong>{entries.length}</strong>
+      <span>songs with structured revenue ranges</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="top-songs-title">
+    <h2 id="top-songs-title">Song Ranking</h2>
+    <div class="card-grid">
+      {entries.map(({ song, revenueRange }, index) => {
+        const artist = getArtist(song.artist);
+        const artistName = artist?.name ?? song.artist;
+
+        return (
+          <article class="card artist-card ranked-card">
+            <img
+              class="artist-card-image"
+              src={getArtistPhoto(song.artist)?.src ?? createArtistArtwork(artistName, song.artist)}
+              alt={getArtistPhoto(song.artist)?.alt ?? `Artwork for ${artistName}`}
+              loading="lazy"
+              width="1200"
+              height="900"
+              referrerpolicy="no-referrer"
+            />
+            <div class="artist-card-body">
+              <p class="rank-badge">#{index + 1}</p>
+              <p class="eyebrow">Song</p>
+              <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
+              <p class="artist-card-meta">
+                By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
+              </p>
+              {(song.album || song.year) && (
+                <p class="artist-card-meta">{[song.album, song.year].filter(Boolean).join(" · ")}</p>
+              )}
+              <p>Estimated annual revenue: {song.estimated_revenue}</p>
+              {revenueRange && (
+                <p class="artist-card-meta">
+                  Modeled midpoint: {Math.round((revenueRange.min + revenueRange.max) / 2).toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })}
+                </p>
+              )}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>

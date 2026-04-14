@@ -20,6 +20,20 @@ const imageSrc = createAlbumArtwork(album.title, album.artistName, album.slug, {
   label: album.label,
   trackCount: album.trackCount
 });
+const schemaTracks = (album.fullTracklist?.length ? album.fullTracklist : album.trackListing).map((entry) => {
+  if ("slug" in entry) {
+    return {
+      "@type": "MusicRecording",
+      name: entry.title,
+      url: new URL(`${baseUrl}song/${entry.slug}/`, Astro.site).toString()
+    };
+  }
+
+  return {
+    "@type": "MusicRecording",
+    name: entry.title
+  };
+});
 const albumSchema = {
   "@context": "https://schema.org",
   "@type": "MusicAlbum",
@@ -33,11 +47,7 @@ const albumSchema = {
   },
   datePublished: album.releaseDate ?? (album.year ? `${album.year}` : undefined),
   numTracks: album.trackCount,
-  track: album.trackListing.map((song) => ({
-    "@type": "MusicRecording",
-    name: song.title,
-    url: new URL(`${baseUrl}song/${song.slug}/`, Astro.site).toString()
-  }))
+  track: schemaTracks
 };
 ---
 
@@ -69,6 +79,7 @@ const albumSchema = {
           {!album.releaseDate && album.year && <li><strong>Released:</strong> {album.year}</li>}
           {album.label && <li><strong>Label:</strong> {album.label}</li>}
           {album.trackCount && <li><strong>Album track count:</strong> {album.trackCount}</li>}
+          {album.editionNote && <li><strong>Matched edition:</strong> {album.editionNote}</li>}
           <li><strong>Tracked songs:</strong> {album.trackedSongCount}</li>
           {album.estimatedRevenue && <li><strong>Tracked revenue:</strong> {album.estimatedRevenue}</li>}
         </ul>
@@ -90,13 +101,34 @@ const albumSchema = {
         <li><strong>Release date:</strong> {album.releaseDate ?? album.year ?? "Unknown"}</li>
         <li><strong>Label:</strong> {album.label ?? "Not yet added"}</li>
         <li><strong>Album track count:</strong> {album.trackCount ?? "Not yet added"}</li>
+        {album.editionNote && <li><strong>Matched edition:</strong> {album.editionNote}</li>}
         <li><strong>Tracked on Artist Money:</strong> {album.trackedSongCount} song{album.trackedSongCount === 1 ? "" : "s"}</li>
       </ul>
     </section>
 
     <section aria-labelledby="album-tracklisting-title">
-      <h2 id="album-tracklisting-title">Tracklisting</h2>
-      <p class="results-note">This tracklisting reflects the songs currently tracked on Artist Money for this album, not necessarily the complete commercial release sequence.</p>
+      <h2 id="album-tracklisting-title">Full Tracklist</h2>
+      <p class="results-note">
+        {album.fullTracklist?.length
+          ? "This full tracklist comes from the matched release edition used for this album page."
+          : "A full tracklist is not available yet for this album."}
+      </p>
+      <ul class="meta-list">
+        {(album.fullTracklist ?? []).map((track) => (
+          <li>
+            <strong>
+              {track.discNumber ? `Disc ${track.discNumber} · ` : ""}
+              {track.number ?? "?"}.
+            </strong>{" "}
+            {track.title}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="tracked-songs-title">
+      <h2 id="tracked-songs-title">Tracked Songs on Artist Money</h2>
+      <p class="results-note">These are the songs from this album that currently have dedicated earnings pages in the catalog.</p>
       <ul class="meta-list">
         {album.trackListing.map((song, index) => (
           <li>
