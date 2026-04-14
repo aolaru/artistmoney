@@ -9,6 +9,8 @@ const rootDir = path.resolve(__dirname, "..");
 const songsDir = path.join(rootDir, "src", "data", "songs");
 const artistsDir = path.join(rootDir, "src", "data", "artists");
 const outputPath = path.join(rootDir, "src", "data", "albumMetadata.ts");
+const MINIMUM_METADATA_SCORE = 100;
+const MINIMUM_FULL_TRACKLIST_SCORE = 140;
 
 function slugifyAlbumTitle(title) {
   return title
@@ -18,7 +20,7 @@ function slugifyAlbumTitle(title) {
     .replace(/^-+|-+$/g, "");
 }
 
-function getAlbumSlug(artistSlug, albumTitle) {
+export function getAlbumSlug(artistSlug, albumTitle) {
   return `${artistSlug}-${slugifyAlbumTitle(albumTitle)}`;
 }
 
@@ -115,7 +117,7 @@ async function fetchJson(url) {
   throw new Error(`Request failed (429) for ${url}`);
 }
 
-async function buildAlbums() {
+export async function buildAlbums() {
   const [artistFiles, songFiles] = await Promise.all([
     fs.readdir(artistsDir),
     fs.readdir(songsDir)
@@ -161,7 +163,7 @@ async function buildAlbums() {
   return [...albums.values()].sort((left, right) => left.slug.localeCompare(right.slug));
 }
 
-async function fetchAlbumMetadata(album) {
+export async function fetchAlbumMetadata(album) {
   const query = `${album.artistName} ${album.title}`;
   const searchUrl = `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=album&limit=10`;
   const search = await fetchJson(searchUrl);
@@ -186,7 +188,7 @@ async function fetchAlbumMetadata(album) {
     }
   };
 
-  if (!best || best.score < 90) {
+  if (!best || best.score < MINIMUM_METADATA_SCORE) {
     return metadata;
   }
 
@@ -200,7 +202,7 @@ async function fetchAlbumMetadata(album) {
     metadata.editionNote = matched.collectionName;
   }
 
-  if (matched.collectionId) {
+  if (matched.collectionId && best.score >= MINIMUM_FULL_TRACKLIST_SCORE && !isEditionVariant(matched.collectionName ?? "")) {
     const lookup = await fetchJson(`https://itunes.apple.com/lookup?id=${matched.collectionId}&entity=song`);
     const tracks = (lookup.results ?? [])
       .filter((entry) => entry.wrapperType === "track" && entry.kind === "song")
@@ -224,7 +226,7 @@ async function fetchAlbumMetadata(album) {
   return metadata;
 }
 
-function renderFile(metadataEntries) {
+export function renderFile(metadataEntries) {
   const body = JSON.stringify(metadataEntries, null, 2);
 
   return `export type AlbumTrack = {
@@ -251,13 +253,19 @@ export const albumMetadata: Record<string, AlbumMetadata> = ${body} as const;
 `;
 }
 
-const albums = await buildAlbums();
-const metadata = {};
+async function main() {
+  const albums = await buildAlbums();
+  const metadata = {};
 
-for (const album of albums) {
-  metadata[album.slug] = await fetchAlbumMetadata(album);
-  await new Promise((resolve) => setTimeout(resolve, 250));
+  for (const album of albums) {
+    metadata[album.slug] = await fetchAlbumMetadata(album);
+    await new Promise((resolve) => setTimeout(resolve, 250));
+  }
+
+  await fs.writeFile(outputPath, renderFile(metadata), "utf8");
+  console.log(`Wrote album metadata for ${albums.length} albums to ${outputPath}`);
 }
 
-await fs.writeFile(outputPath, renderFile(metadata), "utf8");
-console.log(`Wrote album metadata for ${albums.length} albums to ${outputPath}`);
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  await main();
+}

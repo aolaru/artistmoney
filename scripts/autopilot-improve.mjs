@@ -1,23 +1,47 @@
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { albumMetadata } from "../src/data/albumMetadata.ts";
+import { buildAlbums, fetchAlbumMetadata, renderFile } from "./generate-album-metadata.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const artistDir = path.join(rootDir, "src", "data", "artists");
 const songDir = path.join(rootDir, "src", "data", "songs");
+const albumMetadataPath = path.join(rootDir, "src", "data", "albumMetadata.ts");
+const statePath = path.join(rootDir, "data", "autopilot-state.json");
 const summaryDir = path.join(rootDir, ".autopilot");
 const summaryPath = path.join(summaryDir, "summary.md");
 const outputPath = path.join(summaryDir, "result.json");
 
 const artistMissingFields = ["bio", "notable_for", "career_highlight", "revenue_drivers"];
 const songMissingFields = ["meaning_summary", "revenue_drivers", "related_songs"];
+const albumMissingFields = ["fullTracklist"];
 const bannedPhrases = [
   "catalog catalog",
   "durable durable",
   "long-tail long-tail",
   "easy to revisit, emotionally legible, and well-suited to long-tail catalog listening"
 ];
+const MAX_CHANGES_PER_RUN = 3;
+const COOLDOWN_HOURS = 72;
+
+function defaultState() {
+  return {
+    version: 1,
+    cursors: {
+      artist: 0,
+      song: 0,
+      album: 0
+    },
+    lastTouched: {
+      artist: {},
+      song: {},
+      album: {}
+    },
+    recentRuns: []
+  };
+}
 
 function titleizeSlug(slug) {
   return slug
@@ -56,6 +80,50 @@ function pickRotatingEntry(entries, predicate, seed) {
   const matches = entries.filter(predicate).sort((left, right) => left.file.localeCompare(right.file));
   if (matches.length === 0) return null;
   return matches[seed % matches.length];
+}
+
+function pickRotatingValue(values, seed) {
+  const sorted = [...values].sort((left, right) => String(left.slug ?? left).localeCompare(String(right.slug ?? right)));
+  if (sorted.length === 0) return null;
+  return sorted[seed % sorted.length];
+}
+
+async function readState() {
+  try {
+    const raw = await readFile(statePath, "utf8");
+    const parsed = JSON.parse(raw);
+    return {
+      ...defaultState(),
+      ...parsed,
+      cursors: { ...defaultState().cursors, ...(parsed.cursors ?? {}) },
+      lastTouched: { ...defaultState().lastTouched, ...(parsed.lastTouched ?? {}) },
+      recentRuns: Array.isArray(parsed.recentRuns) ? parsed.recentRuns : []
+    };
+  } catch (error) {
+    if (error.code === "ENOENT") return defaultState();
+    throw error;
+  }
+}
+
+async function writeState(state) {
+  await writeFile(statePath, `${JSON.stringify(state, null, 2)}\n`, "utf8");
+}
+
+function isOnCooldown(lastTouchedAt, now) {
+  if (!lastTouchedAt) return false;
+  const lastTouched = new Date(lastTouchedAt).getTime();
+  if (Number.isNaN(lastTouched)) return false;
+  return now - lastTouched < COOLDOWN_HOURS * 60 * 60 * 1000;
+}
+
+function pickByCursor(entries, cursor) {
+  if (entries.length === 0) return null;
+  return entries[cursor % entries.length];
+}
+
+function advanceCursor(current, poolSize) {
+  if (poolSize <= 0) return current;
+  return (current + 1) % poolSize;
 }
 
 function compactSentence(text) {
@@ -323,6 +391,7 @@ async function writeSummary(result) {
     "# Autopilot run summary",
     "",
     `- Rotation seed: \`${result.seed}\``,
+    `- Cursor state: artist=\`${result.cursors.artist}\`, song=\`${result.cursors.song}\`, album=\`${result.cursors.album}\``,
     `- Changed files: ${result.changes.length ? result.changes.length : 0}`,
     `- Validation: ${result.validation}`,
     ""
@@ -339,12 +408,33 @@ async function writeSummary(result) {
     lines.push("## Changes", "", "- No missing editorial fields were found in scope.", "");
   }
 
+  lines.push("## Guardrails", "");
+  lines.push(`- Max changes per run: ${MAX_CHANGES_PER_RUN}`);
+  lines.push(`- Cooldown window: ${COOLDOWN_HOURS} hours`);
+  lines.push("");
+
+  if (result.skipped.length > 0) {
+    lines.push("## Skipped", "");
+    for (const skipped of result.skipped) {
+      lines.push(`- \`${skipped.kind}\` \`${skipped.slug}\`: ${skipped.reason}`);
+    }
+    lines.push("");
+  }
+
+  if (result.recentRuns.length > 0) {
+    lines.push("## Recent runs", "");
+    for (const run of result.recentRuns) {
+      lines.push(`- ${run.timestamp}: ${run.summary}`);
+    }
+    lines.push("");
+  }
+
   lines.push(
     "## Scope",
     "",
-    "- Existing artists and songs only",
+    "- Existing artists, songs, and albums only",
     "- No new files should be created by the updater",
-    "- Build must pass before a PR is opened",
+    "- Build must pass before changes are published",
     ""
   );
 
@@ -352,12 +442,14 @@ async function writeSummary(result) {
   await writeFile(outputPath, `${JSON.stringify(result, null, 2)}\n`, "utf8");
 }
 
-async function main() {
+export async function main() {
+  const state = await readState();
   const artistFiles = await readJsonCollection(artistDir);
   const songFiles = await readJsonCollection(songDir);
   const songMap = new Map(songFiles.map((entry) => [entry.data.slug, entry.data]));
   const artistMap = new Map(artistFiles.map((entry) => [entry.data.slug, entry.data]));
   const songsByArtist = new Map();
+  const now = Date.now();
 
   for (const entry of songFiles) {
     const existing = songsByArtist.get(entry.data.artist) ?? [];
@@ -367,13 +459,28 @@ async function main() {
 
   const seed = getRotationSeed();
   const changes = [];
+  const skipped = [];
 
-  const artistEntry = pickRotatingEntry(artistFiles, (entry) => hasAnyMissingFields(entry.data, artistMissingFields), seed);
+  const candidateArtists = artistFiles
+    .filter((entry) => hasAnyMissingFields(entry.data, artistMissingFields))
+    .sort((left, right) => left.file.localeCompare(right.file));
+  const eligibleArtists = candidateArtists.filter((entry) => !isOnCooldown(state.lastTouched.artist[entry.data.slug], now));
+  const artistEntry = pickByCursor(eligibleArtists, state.cursors.artist);
+  state.cursors.artist = advanceCursor(state.cursors.artist, eligibleArtists.length);
+
+  if (!artistEntry && candidateArtists.length > 0) {
+    skipped.push({
+      kind: "artist",
+      slug: candidateArtists[0].data.slug,
+      reason: `all candidates are on cooldown for ${COOLDOWN_HOURS} hours`
+    });
+  }
   if (artistEntry) {
     const nextArtist = mergeArtistBackfill(artistEntry.data, songMap);
     if (nextArtist) {
       validateArtistRecord(nextArtist);
       await writeFile(artistEntry.path, `${JSON.stringify(nextArtist, null, 2)}\n`, "utf8");
+      state.lastTouched.artist[nextArtist.slug] = new Date(now).toISOString();
       changes.push({
         kind: "artist",
         slug: nextArtist.slug,
@@ -383,7 +490,20 @@ async function main() {
     }
   }
 
-  const songEntry = pickRotatingEntry(songFiles, (entry) => hasAnyMissingFields(entry.data, songMissingFields), seed + 17);
+  const candidateSongs = songFiles
+    .filter((entry) => hasAnyMissingFields(entry.data, songMissingFields))
+    .sort((left, right) => left.file.localeCompare(right.file));
+  const eligibleSongs = candidateSongs.filter((entry) => !isOnCooldown(state.lastTouched.song[entry.data.slug], now));
+  const songEntry = pickByCursor(eligibleSongs, state.cursors.song);
+  state.cursors.song = advanceCursor(state.cursors.song, eligibleSongs.length);
+
+  if (!songEntry && candidateSongs.length > 0) {
+    skipped.push({
+      kind: "song",
+      slug: candidateSongs[0].data.slug,
+      reason: `all candidates are on cooldown for ${COOLDOWN_HOURS} hours`
+    });
+  }
   if (songEntry) {
     const artist = artistMap.get(songEntry.data.artist);
     const relatedSongs = (songsByArtist.get(songEntry.data.artist) ?? []).filter((entry) => entry.slug !== songEntry.data.slug);
@@ -391,6 +511,7 @@ async function main() {
     if (nextSong) {
       validateSongRecord(nextSong, songMap);
       await writeFile(songEntry.path, `${JSON.stringify(nextSong, null, 2)}\n`, "utf8");
+      state.lastTouched.song[nextSong.slug] = new Date(now).toISOString();
       changes.push({
         kind: "song",
         slug: nextSong.slug,
@@ -400,10 +521,86 @@ async function main() {
     }
   }
 
+  const albums = await buildAlbums();
+  const incompleteAlbums = albums.filter((album) => {
+    const existing = albumMetadata[album.slug];
+    return !existing?.fullTracklist?.length;
+  });
+  const eligibleAlbums = incompleteAlbums.filter((album) => !isOnCooldown(state.lastTouched.album[album.slug], now));
+  const albumEntry = pickByCursor(eligibleAlbums, state.cursors.album);
+  state.cursors.album = advanceCursor(state.cursors.album, eligibleAlbums.length);
+
+  if (!albumEntry && incompleteAlbums.length > 0) {
+    skipped.push({
+      kind: "album",
+      slug: incompleteAlbums[0].slug,
+      reason: `all candidates are on cooldown for ${COOLDOWN_HOURS} hours`
+    });
+  }
+
+  if (albumEntry) {
+    const nextAlbumMetadata = await fetchAlbumMetadata(albumEntry);
+    if (nextAlbumMetadata.fullTracklist?.length) {
+      const mergedAlbumMetadata = {
+        ...albumMetadata,
+        [albumEntry.slug]: {
+          ...(albumMetadata[albumEntry.slug] ?? {}),
+          ...nextAlbumMetadata
+        }
+      };
+
+      await writeFile(albumMetadataPath, renderFile(mergedAlbumMetadata), "utf8");
+      state.lastTouched.album[albumEntry.slug] = new Date(now).toISOString();
+      changes.push({
+        kind: "album",
+        slug: albumEntry.slug,
+        file: path.relative(rootDir, albumMetadataPath),
+        fields: ["releaseDate", "label", "trackCount", "fullTracklist", "links"].filter((field) => {
+          const previous = albumMetadata[albumEntry.slug]?.[field];
+          const next = mergedAlbumMetadata[albumEntry.slug]?.[field];
+          return JSON.stringify(previous) !== JSON.stringify(next);
+        })
+      });
+    } else {
+      skipped.push({
+        kind: "album",
+        slug: albumEntry.slug,
+        reason: "no high-confidence full tracklist match was found"
+      });
+    }
+  }
+
+  if (changes.length > MAX_CHANGES_PER_RUN) {
+    throw new Error(`Autopilot produced ${changes.length} changes, exceeding the cap of ${MAX_CHANGES_PER_RUN}.`);
+  }
+
+  const uniqueFiles = new Set(changes.map((change) => change.file));
+  if (uniqueFiles.size !== changes.length) {
+    throw new Error("Autopilot attempted to modify the same file more than once in a single run.");
+  }
+
+  const recentRuns = [
+    {
+      timestamp: new Date(now).toISOString(),
+      summary: changes.length > 0
+        ? changes.map((change) => `${change.kind}:${change.slug}`).join(", ")
+        : skipped.length > 0
+          ? `no changes; skipped ${skipped.length} candidate${skipped.length === 1 ? "" : "s"}`
+          : "no changes"
+    },
+    ...state.recentRuns
+  ].slice(0, 10);
+  state.recentRuns = recentRuns;
+
+  await writeState(state);
+
   const result = {
     seed,
+    cursors: state.cursors,
     validation: "passed",
-    changes
+    changes,
+    skipped,
+    recentRuns
   };
 
   await writeSummary(result);
@@ -416,9 +613,11 @@ async function main() {
   console.log(`Updated ${changes.map((change) => `${change.kind}:${change.slug}`).join(", ")}`);
 }
 
-main().catch(async (error) => {
-  await mkdir(summaryDir, { recursive: true });
-  await writeFile(summaryPath, `# Autopilot run summary\n\n- Validation: failed\n- Error: ${error.message}\n`, "utf8");
-  console.error(error);
-  process.exit(1);
-});
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch(async (error) => {
+    await mkdir(summaryDir, { recursive: true });
+    await writeFile(summaryPath, `# Autopilot run summary\n\n- Validation: failed\n- Error: ${error.message}\n`, "utf8");
+    console.error(error);
+    process.exit(1);
+  });
+}

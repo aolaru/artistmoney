@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "cursors": {
+    "artist": 0,
+    "song": 0,
+    "album": 0
+  },
+  "lastTouched": {
+    "artist": {},
+    "song": {},
+    "album": {}
+  },
+  "recentRuns": []
+}

@@ -2,13 +2,12 @@ name: Autopilot Improvements
 
 on:
   schedule:
-    # GitHub Actions cron uses UTC. These run at 06:00 and 18:00 UTC.
-    - cron: "0 6,18 * * *"
+    # GitHub Actions cron uses UTC. Run every 2 hours.
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
-  pull-requests: write
 
 concurrency:
   group: autopilot-improvements
@@ -40,19 +39,48 @@ jobs:
           changed=$(node -e 'const fs=require("fs"); const data=JSON.parse(fs.readFileSync(".autopilot/result.json","utf8")); process.stdout.write(data.changes.length ? "true" : "false")')
           echo "changed=$changed" >> "$GITHUB_OUTPUT"
 
+      - name: Upload autopilot report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: autopilot-report
+          path: |
+            .autopilot/summary.md
+            .autopilot/result.json
+          if-no-files-found: ignore
+
       - name: Validate build
         run: npm run build
         if: steps.autopilot.outputs.changed == 'true'
 
-      - name: Create pull request
+      - name: Inspect diff
+        id: diff
         if: steps.autopilot.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v7
-        with:
-          branch: automation/how-much-music-upkeep
-          delete-branch: true
-          commit-message: "Backfill existing page content"
-          title: "Autopilot: improve existing pages"
-          body-path: .autopilot/summary.md
-          labels: |
-            automation
-            content
+        run: |
+          files=$(git diff --name-only -- src/data/artists src/data/songs src/data/albumMetadata.ts data/autopilot-state.json | wc -l | tr -d ' ')
+          stats=$(git diff --numstat -- src/data/artists src/data/songs src/data/albumMetadata.ts data/autopilot-state.json)
+          added=$(printf "%s\n" "$stats" | awk '{sum += $1} END {print sum + 0}')
+          deleted=$(printf "%s\n" "$stats" | awk '{sum += $2} END {print sum + 0}')
+          total=$((added + deleted))
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "added=$added" >> "$GITHUB_OUTPUT"
+          echo "deleted=$deleted" >> "$GITHUB_OUTPUT"
+          echo "total=$total" >> "$GITHUB_OUTPUT"
+
+      - name: Enforce diff guardrails
+        if: steps.autopilot.outputs.changed == 'true'
+        run: |
+          test "${{ steps.diff.outputs.files }}" -le 4 || (echo "Too many files changed: ${{ steps.diff.outputs.files }}" && exit 1)
+          test "${{ steps.diff.outputs.total }}" -le 900 || (echo "Diff too large: ${{ steps.diff.outputs.total }} lines" && exit 1)
+
+      - name: Commit changes
+        if: steps.autopilot.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/artists src/data/songs src/data/albumMetadata.ts data/autopilot-state.json
+          git commit -m "Backfill existing page content"
+
+      - name: Push to main
+        if: steps.autopilot.outputs.changed == 'true'
+        run: git push origin HEAD:main
