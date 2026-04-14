@@ -1,0 +1,20 @@
+{
+  "name": "New Order",
+  "slug": "new-order",
+  "estimated_income": "$3M-$9M/year",
+  "top_songs": [
+    "blue-monday",
+    "bizarre-love-triangle"
+  ],
+  "genre": "Synth-pop / Alternative Dance",
+  "country": "United Kingdom",
+  "active_since": "1980",
+  "bio": "New Order built a catalog that still monetizes through club culture, streaming, and decades of influence across pop and electronic music.",
+  "notable_for": "Electronic crossover songs with exceptional long-tail playlist and club-life durability.",
+  "career_highlight": "Songs like Blue Monday remain unusually resilient for both mainstream and niche catalog economics.",
+  "revenue_drivers": [
+    "Playlist and club-oriented listening keep the catalog active.",
+    "Cross-generational discovery supports long-tail streaming.",
+    "Licensing and documentary use reinforce their catalog relevance."
+  ]
+}
