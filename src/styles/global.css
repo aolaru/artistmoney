@@ -264,13 +264,14 @@ p {
   margin: 0 0 1rem;
 }
 
-.is-hidden {
-  display: none;
-}
-
 .artist-card {
   display: grid;
   grid-template-rows: auto 1fr;
+}
+
+.artist-card.is-hidden,
+.card.is-hidden {
+  display: none;
 }
 
 .artist-card-body {
