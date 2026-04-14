@@ -1,6 +1,6 @@
 [
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Madonna",
       "slug": "madonna",
@@ -56,10 +56,11 @@
           "like-a-prayer"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "New Order",
       "slug": "new-order",
@@ -115,10 +116,11 @@
           "blue-monday"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Air",
       "slug": "air",
@@ -174,7 +176,8 @@
           "sexy-boy"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
     "checked": false,
