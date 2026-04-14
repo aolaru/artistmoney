@@ -1,0 +1,22 @@
+{
+  "title": "Frontin'",
+  "slug": "frontin",
+  "artist": "pharrell-williams",
+  "estimated_revenue": "$250K-$900K/year",
+  "album": "The Neptunes Present... Clones",
+  "year": 2003,
+  "earnings": {
+    "gross_track_revenue": "$500K-$1.6M/year",
+    "artist_or_estate_share": "$250K-$900K/year",
+    "label_master_share": "$140K-$420K/year",
+    "publishing_share": "$100K-$320K/year",
+    "songwriter_share": "$100K-$320K/year",
+    "assumptions": "Estimate infers current value from long-tail playlist inclusion, producer prestige, and writer participation."
+  },
+  "ownership": {
+    "master_owner": "Likely label-controlled master with featured-artist participation",
+    "publishing_owner": "Publishing appears split among writers and producers",
+    "catalog_sale_status": "No sale adjustment is modeled",
+    "notes": "Catalog estimate based on recurring streaming and writer-side economics."
+  }
+}

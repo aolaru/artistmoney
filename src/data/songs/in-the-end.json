@@ -1,0 +1,22 @@
+{
+  "title": "In the End",
+  "slug": "in-the-end",
+  "artist": "linkin-park",
+  "estimated_revenue": "$1.5M-$4.5M/year",
+  "album": "Hybrid Theory",
+  "year": 2000,
+  "earnings": {
+    "gross_track_revenue": "$3M-$8M/year",
+    "artist_or_estate_share": "$1.5M-$4.5M/year",
+    "label_master_share": "$700K-$2M/year",
+    "publishing_share": "$480K-$1.4M/year",
+    "songwriter_share": "$480K-$1.4M/year",
+    "assumptions": "Estimate models very large ongoing streaming volume, gaming-era nostalgia, and durable rock-catalog playlist demand."
+  },
+  "ownership": {
+    "master_owner": "Major-label master ownership with artist-side royalty participation",
+    "publishing_owner": "Publishing appears split among band writers and publishers",
+    "catalog_sale_status": "No song-specific sale adjustment is modeled",
+    "notes": "Modeled annual range based on current streaming and legacy rock-catalog economics."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "We Belong Together",
+  "slug": "we-belong-together",
+  "artist": "mariah-carey",
+  "estimated_revenue": "$700K-$2.4M/year",
+  "album": "The Emancipation of Mimi",
+  "year": 2005,
+  "earnings": {
+    "gross_track_revenue": "$1.4M-$4.2M/year",
+    "artist_or_estate_share": "$700K-$2.4M/year",
+    "label_master_share": "$360K-$1.2M/year",
+    "publishing_share": "$220K-$760K/year",
+    "songwriter_share": "$220K-$760K/year",
+    "assumptions": "Estimate reflects major streaming durability, recurrent R&B-pop playlist placement, and songwriter participation."
+  },
+  "ownership": {
+    "master_owner": "Major-label master ownership with artist-side participation",
+    "publishing_owner": "Publishing appears shared with meaningful writer-side economics",
+    "catalog_sale_status": "No song-specific sale adjustment is assumed",
+    "notes": "Modeled from long-tail hit-song behavior, not public royalty disclosures."
+  }
+}

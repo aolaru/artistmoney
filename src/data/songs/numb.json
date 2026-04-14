@@ -1,0 +1,22 @@
+{
+  "title": "Numb",
+  "slug": "numb",
+  "artist": "linkin-park",
+  "estimated_revenue": "$1.2M-$3.8M/year",
+  "album": "Meteora",
+  "year": 2003,
+  "earnings": {
+    "gross_track_revenue": "$2.5M-$6.8M/year",
+    "artist_or_estate_share": "$1.2M-$3.8M/year",
+    "label_master_share": "$620K-$1.7M/year",
+    "publishing_share": "$400K-$1.2M/year",
+    "songwriter_share": "$400K-$1.2M/year",
+    "assumptions": "Estimate reflects global long-tail streaming, playlist persistence, and strong catalog replay inside 2000s rock and alternative listening."
+  },
+  "ownership": {
+    "master_owner": "Major-label master ownership with artist-side participation",
+    "publishing_owner": "Publishing appears split among band writers and publishers",
+    "catalog_sale_status": "No sale adjustment is assumed",
+    "notes": "Inferred current earnings range from streaming and catalog behavior."
+  }
+}

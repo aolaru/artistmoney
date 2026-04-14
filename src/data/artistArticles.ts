@@ -185,5 +185,85 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "Brand visibility and collaboration effects amplify song-level economics."
     ],
     insight: "At streaming scale, a small number of giant records can dominate an artist's annual earnings profile."
+  },
+  "jay-z": {
+    seoTitle: "Does Jay-Z still make money from his catalog?",
+    shortAnswer: "Yes — estimated $20M-$60M/year.",
+    sources: [
+      "Empire State of Mind and 99 Problems continue to stream at elite legacy rap scale.",
+      "Writer and ownership participation can materially improve retained earnings.",
+      "Catalog recognition and licensing keep his best-known songs commercially active."
+    ],
+    insight: "Ownership plus hit density is how superstar rap catalogs compound over time."
+  },
+  "pharrell-williams": {
+    seoTitle: "Does Pharrell Williams still make money from old hits?",
+    shortAnswer: "Yes — estimated $10M-$35M/year.",
+    sources: [
+      "Happy remains one of the most reusable global pop songs of the 2010s.",
+      "Producer and songwriter participation creates more durable economics than performer-only catalogs.",
+      "Cross-catalog visibility from solo, featured, and production work strengthens annual earnings."
+    ],
+    insight: "Producer-writers can monetize the same catalog from more than one side of the rights stack."
+  },
+  "justin-timberlake": {
+    seoTitle: "Does Justin Timberlake still make money from his solo catalog?",
+    shortAnswer: "Yes — estimated $8M-$25M/year.",
+    sources: [
+      "Cry Me a River and SexyBack remain strong 2000s streaming staples.",
+      "Broad playlist fit keeps the catalog visible across pop and nostalgia listening.",
+      "Hit density still matters decades later when the songs remain culturally familiar."
+    ],
+    insight: "Mainstream pop catalogs earn best when the biggest songs stay playlist-usable across generations."
+  },
+  "nelly-furtado": {
+    seoTitle: "Does Nelly Furtado still make money from Loose-era hits?",
+    shortAnswer: "Yes — estimated $2M-$8M/year.",
+    sources: [
+      "Promiscuous and Say It Right still perform strongly on streaming platforms.",
+      "Mid-2000s pop nostalgia keeps the catalog active in curated playlists.",
+      "Short-form rediscovery helps reset demand for older crossover songs."
+    ],
+    insight: "A small cluster of durable crossover hits can keep a catalog commercially alive for years."
+  },
+  timbaland: {
+    seoTitle: "Does Timbaland still make money from old hits?",
+    shortAnswer: "Yes — estimated $6M-$20M/year.",
+    sources: [
+      "The Way I Are and Give It to Me still generate meaningful streaming activity.",
+      "Producer and songwriter participation improve the retained value of hits.",
+      "Catalog economics strengthen when the same creator appears in performance, writing, and production credits."
+    ],
+    insight: "Producer-led catalogs age well when the producer also participates in the publishing upside."
+  },
+  "alicia-keys": {
+    seoTitle: "Does Alicia Keys still make money from her catalog?",
+    shortAnswer: "Yes — estimated $6M-$18M/year.",
+    sources: [
+      "Fallin' and No One still perform well through streaming and recurrent playlist use.",
+      "Songwriter participation strengthens the artist-side economics of major crossover records.",
+      "Adult-contemporary and pop-soul longevity keep the catalog useful well beyond its chart window."
+    ],
+    insight: "Writer-led crossover songs usually retain value longer than trend-driven singles."
+  },
+  "mariah-carey": {
+    seoTitle: "How much does Mariah Carey still make from her catalog?",
+    shortAnswer: "Estimated $15M-$45M/year.",
+    sources: [
+      "All I Want for Christmas Is You resets annual earnings every holiday season.",
+      "We Belong Together and other major hits continue to stream at high legacy-pop scale.",
+      "Songwriter participation materially increases the value of perennial songs."
+    ],
+    insight: "A single truly evergreen seasonal song can transform a catalog into an annual cash-flow engine."
+  },
+  "linkin-park": {
+    seoTitle: "Does Linkin Park still make money from old songs?",
+    shortAnswer: "Yes — estimated $8M-$25M/year.",
+    sources: [
+      "In the End and Numb remain two of the strongest long-tail rock songs of the 2000s.",
+      "Cross-generational streaming and nostalgia keep the catalog active.",
+      "Large-scale rock hits with strong replay value can earn at levels closer to mainstream pop than most legacy rock catalogs."
+    ],
+    insight: "The rare rock catalog that crosses into mass streaming culture keeps compounding long after release."
   }
 };

@@ -1,0 +1,22 @@
+{
+  "title": "SexyBack",
+  "slug": "sexyback",
+  "artist": "justin-timberlake",
+  "estimated_revenue": "$700K-$2.2M/year",
+  "album": "FutureSex/LoveSounds",
+  "year": 2006,
+  "earnings": {
+    "gross_track_revenue": "$1.4M-$4M/year",
+    "artist_or_estate_share": "$700K-$2.2M/year",
+    "label_master_share": "$360K-$1.1M/year",
+    "publishing_share": "$220K-$760K/year",
+    "songwriter_share": "$220K-$760K/year",
+    "assumptions": "Estimate models enduring hit-song streaming, dance-playlist relevance, and strong 2000s catalog replay."
+  },
+  "ownership": {
+    "master_owner": "Major-label master ownership with artist-side participation",
+    "publishing_owner": "Publishing appears split among writers and producers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is modeled",
+    "notes": "Annual range is inferred from current hit-catalog behavior."
+  }
+}

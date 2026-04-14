@@ -1,0 +1,22 @@
+{
+  "title": "No One",
+  "slug": "no-one",
+  "artist": "alicia-keys",
+  "estimated_revenue": "$450K-$1.5M/year",
+  "album": "As I Am",
+  "year": 2007,
+  "earnings": {
+    "gross_track_revenue": "$900K-$2.7M/year",
+    "artist_or_estate_share": "$450K-$1.5M/year",
+    "label_master_share": "$220K-$760K/year",
+    "publishing_share": "$170K-$520K/year",
+    "songwriter_share": "$170K-$520K/year",
+    "assumptions": "Estimate reflects stable streaming, broad adult-contemporary replay value, and writer-driven catalog economics."
+  },
+  "ownership": {
+    "master_owner": "Major-label master ownership with artist-side participation",
+    "publishing_owner": "Publishing appears shared with strong songwriter participation",
+    "catalog_sale_status": "No sale adjustment is modeled",
+    "notes": "Inferred annual range from current catalog and playlist behavior."
+  }
+}

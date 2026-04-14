@@ -1,0 +1,22 @@
+{
+  "title": "Say It Right",
+  "slug": "say-it-right",
+  "artist": "nelly-furtado",
+  "estimated_revenue": "$700K-$2.1M/year",
+  "album": "Loose",
+  "year": 2006,
+  "earnings": {
+    "gross_track_revenue": "$1.4M-$3.8M/year",
+    "artist_or_estate_share": "$700K-$2.1M/year",
+    "label_master_share": "$350K-$1M/year",
+    "publishing_share": "$230K-$760K/year",
+    "songwriter_share": "$230K-$760K/year",
+    "assumptions": "Estimate reflects streaming durability, playlist longevity, and high replay value relative to mid-2000s pop peers."
+  },
+  "ownership": {
+    "master_owner": "Major-label master ownership with artist-side participation",
+    "publishing_owner": "Publishing appears shared among writers and publishers",
+    "catalog_sale_status": "No song-specific sale adjustment is assumed",
+    "notes": "Modeled from song-level streaming and catalog usage patterns."
+  }
+}

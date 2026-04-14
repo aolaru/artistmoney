@@ -1,0 +1,22 @@
+{
+  "title": "Fallin'",
+  "slug": "fallin",
+  "artist": "alicia-keys",
+  "estimated_revenue": "$350K-$1.2M/year",
+  "album": "Songs in A Minor",
+  "year": 2001,
+  "earnings": {
+    "gross_track_revenue": "$700K-$2.2M/year",
+    "artist_or_estate_share": "$350K-$1.2M/year",
+    "label_master_share": "$180K-$620K/year",
+    "publishing_share": "$140K-$460K/year",
+    "songwriter_share": "$140K-$460K/year",
+    "assumptions": "Estimate models enduring crossover streaming, writer-led participation, and recurrent use in piano-ballad playlists."
+  },
+  "ownership": {
+    "master_owner": "Label-controlled master with artist-side royalty participation",
+    "publishing_owner": "Publishing appears valuable because of songwriter participation",
+    "catalog_sale_status": "No song-specific sale adjustment is assumed",
+    "notes": "Modeled from current long-tail streaming and catalog behavior."
+  }
+}

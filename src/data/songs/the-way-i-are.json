@@ -1,0 +1,22 @@
+{
+  "title": "The Way I Are",
+  "slug": "the-way-i-are",
+  "artist": "timbaland",
+  "estimated_revenue": "$400K-$1.4M/year",
+  "album": "Shock Value",
+  "year": 2007,
+  "earnings": {
+    "gross_track_revenue": "$800K-$2.5M/year",
+    "artist_or_estate_share": "$400K-$1.4M/year",
+    "label_master_share": "$220K-$720K/year",
+    "publishing_share": "$150K-$520K/year",
+    "songwriter_share": "$150K-$520K/year",
+    "assumptions": "Estimate models ongoing 2000s-hit streaming plus producer and songwriter participation."
+  },
+  "ownership": {
+    "master_owner": "Label-controlled master with producer-performer participation",
+    "publishing_owner": "Publishing appears split across multiple writers and producers",
+    "catalog_sale_status": "No catalog sale adjustment is included",
+    "notes": "Modeled estimate based on catalog replay and writer-producer economics."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Promiscuous",
+  "slug": "promiscuous",
+  "artist": "nelly-furtado",
+  "estimated_revenue": "$500K-$1.8M/year",
+  "album": "Loose",
+  "year": 2006,
+  "earnings": {
+    "gross_track_revenue": "$1M-$3.2M/year",
+    "artist_or_estate_share": "$500K-$1.8M/year",
+    "label_master_share": "$260K-$900K/year",
+    "publishing_share": "$180K-$620K/year",
+    "songwriter_share": "$180K-$620K/year",
+    "assumptions": "Estimate is based on durable 2000s-pop demand, throwback playlist use, and repeated short-form rediscovery."
+  },
+  "ownership": {
+    "master_owner": "Label-controlled master with artist participation",
+    "publishing_owner": "Publishing appears shared among creators and publishers",
+    "catalog_sale_status": "No catalog sale adjustment is applied",
+    "notes": "Modeled annual range derived from current streaming and catalog behavior."
+  }
+}

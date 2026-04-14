@@ -1,0 +1,22 @@
+{
+  "title": "Empire State of Mind",
+  "slug": "empire-state-of-mind",
+  "artist": "jay-z",
+  "estimated_revenue": "$800K-$2.5M/year",
+  "album": "The Blueprint 3",
+  "year": 2009,
+  "earnings": {
+    "gross_track_revenue": "$1.6M-$4.5M/year",
+    "artist_or_estate_share": "$800K-$2.5M/year",
+    "label_master_share": "$400K-$1.1M/year",
+    "publishing_share": "$250K-$900K/year",
+    "songwriter_share": "$250K-$900K/year",
+    "assumptions": "Estimate models current earnings from large-scale streaming, New York anthem replay value, and ongoing playlist and cultural reuse."
+  },
+  "ownership": {
+    "master_owner": "Primarily label-controlled masters with meaningful artist-side royalty participation",
+    "publishing_owner": "Publishing appears split among writers and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is applied here",
+    "notes": "This is a modeled revenue split, not a published royalty statement."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Happy",
+  "slug": "happy",
+  "artist": "pharrell-williams",
+  "estimated_revenue": "$1.5M-$4M/year",
+  "album": "G I R L",
+  "year": 2013,
+  "earnings": {
+    "gross_track_revenue": "$3M-$7M/year",
+    "artist_or_estate_share": "$1.5M-$4M/year",
+    "label_master_share": "$700K-$1.8M/year",
+    "publishing_share": "$500K-$1.4M/year",
+    "songwriter_share": "$500K-$1.4M/year",
+    "assumptions": "Estimate is based on global evergreen streaming, sync friendliness, family-playlist demand, and songwriter participation."
+  },
+  "ownership": {
+    "master_owner": "Label-distributed master with strong artist-side participation",
+    "publishing_owner": "Publishing appears valuable because of writer-led participation",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed",
+    "notes": "Modeled annual range, not a public settlement of master and publishing receipts."
+  }
+}

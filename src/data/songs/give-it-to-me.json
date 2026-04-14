@@ -1,0 +1,22 @@
+{
+  "title": "Give It to Me",
+  "slug": "give-it-to-me",
+  "artist": "timbaland",
+  "estimated_revenue": "$300K-$1.1M/year",
+  "album": "Shock Value",
+  "year": 2007,
+  "earnings": {
+    "gross_track_revenue": "$650K-$2M/year",
+    "artist_or_estate_share": "$300K-$1.1M/year",
+    "label_master_share": "$180K-$560K/year",
+    "publishing_share": "$120K-$430K/year",
+    "songwriter_share": "$120K-$430K/year",
+    "assumptions": "Estimate reflects long-tail streaming and recurring recognition from one of Timbaland's biggest crossover records."
+  },
+  "ownership": {
+    "master_owner": "Label-controlled master with featured-artist and producer participation",
+    "publishing_owner": "Publishing appears split across writers and producers",
+    "catalog_sale_status": "No song-specific sale adjustment is modeled",
+    "notes": "Inferred annual earnings range, not a published royalty breakdown."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Cry Me a River",
+  "slug": "cry-me-a-river",
+  "artist": "justin-timberlake",
+  "estimated_revenue": "$450K-$1.6M/year",
+  "album": "Justified",
+  "year": 2002,
+  "earnings": {
+    "gross_track_revenue": "$900K-$2.8M/year",
+    "artist_or_estate_share": "$450K-$1.6M/year",
+    "label_master_share": "$220K-$800K/year",
+    "publishing_share": "$170K-$560K/year",
+    "songwriter_share": "$170K-$560K/year",
+    "assumptions": "Estimate reflects durable 2000s-pop streaming, recurrent playlist placement, and mixed writer/producer participation."
+  },
+  "ownership": {
+    "master_owner": "Major-label master ownership with artist royalty participation",
+    "publishing_owner": "Publishing appears split across writers and producers",
+    "catalog_sale_status": "No song-specific sale adjustment is assumed",
+    "notes": "Modeled from long-tail catalog behavior and not from public royalty statements."
+  }
+}
