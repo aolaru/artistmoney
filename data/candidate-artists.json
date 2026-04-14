@@ -1,0 +1,356 @@
+[
+  {
+    "checked": false,
+    "artist": {
+      "name": "Madonna",
+      "slug": "madonna",
+      "estimated_income": "$15M-$45M/year",
+      "top_songs": [
+        "like-a-prayer",
+        "vogue"
+      ],
+      "genre": "Pop / Dance-pop",
+      "country": "United States",
+      "active_since": "1982",
+      "bio": "Madonna built one of pop's most durable catalogs, with decades of streaming, sync demand, and global catalog recognition still driving music earnings.",
+      "notable_for": "Reinvention, massive pop reach, and a catalog that continues to monetize across generations.",
+      "career_highlight": "Her core singles remain heavily replayed and continue to anchor long-tail catalog value.",
+      "revenue_drivers": [
+        "Global catalog streaming keeps Madonna's biggest singles commercially active.",
+        "Sync and fashion or culture-adjacent placements help extend the value of the catalog.",
+        "Multi-decade listener familiarity supports long-tail playlist and catalog performance."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Like a Prayer",
+        "slug": "like-a-prayer",
+        "artist": "madonna",
+        "estimated_revenue": "$700K-$2M/year",
+        "album": "Like a Prayer",
+        "year": 1989,
+        "meaning_summary": "This song blends spiritual imagery with pop drama, which helps explain its replay value and continued cultural relevance.",
+        "revenue_drivers": [
+          "Catalog streaming remains the main long-tail revenue driver.",
+          "Pop-culture recognition and playlist recurrence keep the song commercially active.",
+          "Sync and documentary or retrospective usage can reactivate audience demand."
+        ],
+        "related_songs": [
+          "vogue"
+        ]
+      },
+      {
+        "title": "Vogue",
+        "slug": "vogue",
+        "artist": "madonna",
+        "estimated_revenue": "$500K-$1.6M/year",
+        "album": "I'm Breathless",
+        "year": 1990,
+        "meaning_summary": "This track remains commercially strong because it is rhythmically immediate, culturally iconic, and easy to rediscover.",
+        "revenue_drivers": [
+          "Catalog streaming and workout or dance playlist use support ongoing revenue.",
+          "Strong cultural recall gives the song long-tail reuse value.",
+          "Fashion, film, and documentary contexts help renew catalog attention."
+        ],
+        "related_songs": [
+          "like-a-prayer"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "New Order",
+      "slug": "new-order",
+      "estimated_income": "$3M-$9M/year",
+      "top_songs": [
+        "blue-monday",
+        "bizarre-love-triangle"
+      ],
+      "genre": "Synth-pop / Alternative Dance",
+      "country": "United Kingdom",
+      "active_since": "1980",
+      "bio": "New Order built a catalog that still monetizes through club culture, streaming, and decades of influence across pop and electronic music.",
+      "notable_for": "Electronic crossover songs with exceptional long-tail playlist and club-life durability.",
+      "career_highlight": "Songs like Blue Monday remain unusually resilient for both mainstream and niche catalog economics.",
+      "revenue_drivers": [
+        "Playlist and club-oriented listening keep the catalog active.",
+        "Cross-generational discovery supports long-tail streaming.",
+        "Licensing and documentary use reinforce their catalog relevance."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Blue Monday",
+        "slug": "blue-monday",
+        "artist": "new-order",
+        "estimated_revenue": "$450K-$1.4M/year",
+        "album": "Power, Corruption & Lies",
+        "year": 1983,
+        "meaning_summary": "The track's mechanical groove and iconic synth structure make it exceptionally durable in both memory and commercial reuse.",
+        "revenue_drivers": [
+          "Long-tail streaming and dance playlist inclusion support recurring revenue.",
+          "Club-culture legacy keeps the track commercially relevant.",
+          "Film, TV, and archival cultural use reinforce long-term demand."
+        ],
+        "related_songs": [
+          "bizarre-love-triangle"
+        ]
+      },
+      {
+        "title": "Bizarre Love Triangle",
+        "slug": "bizarre-love-triangle",
+        "artist": "new-order",
+        "estimated_revenue": "$250K-$900K/year",
+        "album": "Brotherhood",
+        "year": 1986,
+        "meaning_summary": "Its melodic tension and emotional clarity help give the song unusually strong replay value decades after release.",
+        "revenue_drivers": [
+          "Streaming and alternative dance playlists sustain long-tail listening.",
+          "The song's emotional immediacy supports rediscovery across generations.",
+          "Sync opportunities and retrospective programming help extend earnings."
+        ],
+        "related_songs": [
+          "blue-monday"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Air",
+      "slug": "air",
+      "estimated_income": "$1M-$4M/year",
+      "top_songs": [
+        "sexy-boy",
+        "all-i-need-air"
+      ],
+      "genre": "Electronic / Downtempo",
+      "country": "France",
+      "active_since": "1995",
+      "bio": "Air's catalog retains value through mood-driven streaming, soundtrack-like listening habits, and steady rediscovery in film and lifestyle contexts.",
+      "notable_for": "Atmospheric electronic songs with durable sync and playlist appeal.",
+      "career_highlight": "Moon Safari-era recordings continue to drive long-tail catalog listening and licensing value.",
+      "revenue_drivers": [
+        "Mood and chill playlist listening keep the catalog active over time.",
+        "Instrumental and soundtrack-adjacent qualities support sync value.",
+        "Long-tail listener loyalty strengthens catalog stability."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Sexy Boy",
+        "slug": "sexy-boy",
+        "artist": "air",
+        "estimated_revenue": "$180K-$650K/year",
+        "album": "Moon Safari",
+        "year": 1998,
+        "meaning_summary": "This recording remains commercially durable because its texture and mood are instantly recognizable and easy to revisit.",
+        "revenue_drivers": [
+          "Streaming playlists and mood-based listening drive recurring plays.",
+          "The song's sonic identity supports strong long-tail recall.",
+          "Sync opportunities help renew interest in the catalog."
+        ],
+        "related_songs": [
+          "all-i-need-air"
+        ]
+      },
+      {
+        "title": "All I Need",
+        "slug": "all-i-need-air",
+        "artist": "air",
+        "estimated_revenue": "$140K-$500K/year",
+        "album": "Moon Safari",
+        "year": 1998,
+        "meaning_summary": "Its gentle melody and mood-centered pacing make it well suited to repeat listening and long-tail catalog use.",
+        "revenue_drivers": [
+          "Chill and downtempo playlist usage sustains long-tail streaming.",
+          "Its soundtrack-like mood gives it durable reuse value.",
+          "Catalog discovery through films, playlists, and recommendations extends earnings."
+        ],
+        "related_songs": [
+          "sexy-boy"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "The Prodigy",
+      "slug": "the-prodigy",
+      "estimated_income": "$2M-$7M/year",
+      "top_songs": [
+        "firestarter",
+        "breathe-the-prodigy"
+      ],
+      "genre": "Electronic / Big Beat",
+      "country": "United Kingdom",
+      "active_since": "1990",
+      "bio": "The Prodigy keep earning through high-recognition catalog tracks that still fit sports, action, gaming, and adrenaline-focused listening contexts.",
+      "notable_for": "Aggressive electronic crossover tracks with unusually strong cultural memory.",
+      "career_highlight": "Their biggest singles continue to benefit from streaming, sync demand, and high-energy playlist use.",
+      "revenue_drivers": [
+        "High-energy playlist inclusion supports recurring streaming.",
+        "Sports, trailers, and action-focused sync demand reinforce catalog value.",
+        "Strong cultural memory keeps the core catalog commercially alive."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Firestarter",
+        "slug": "firestarter",
+        "artist": "the-prodigy",
+        "estimated_revenue": "$220K-$800K/year",
+        "album": "The Fat of the Land",
+        "year": 1996,
+        "meaning_summary": "Its confrontational energy and instantly recognizable hook make it durable in both streaming and sync-heavy contexts.",
+        "revenue_drivers": [
+          "Workout and high-energy playlists create repeat listening.",
+          "Its aggressive identity supports sync and trailer value.",
+          "Catalog familiarity keeps the track discoverable years after release."
+        ],
+        "related_songs": [
+          "breathe-the-prodigy"
+        ]
+      },
+      {
+        "title": "Breathe",
+        "slug": "breathe-the-prodigy",
+        "artist": "the-prodigy",
+        "estimated_revenue": "$170K-$650K/year",
+        "album": "The Fat of the Land",
+        "year": 1996,
+        "meaning_summary": "This track keeps its value through a hard-edged mood, durable identity, and strong fit for energetic playlist use.",
+        "revenue_drivers": [
+          "Long-tail streaming remains the core earnings driver.",
+          "The track's tone makes it useful for sport, gaming, and action contexts.",
+          "Catalog recognition helps sustain replay across generations."
+        ],
+        "related_songs": [
+          "firestarter"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Sade",
+      "slug": "sade",
+      "estimated_income": "$4M-$12M/year",
+      "top_songs": [
+        "smooth-operator",
+        "no-ordinary-love"
+      ],
+      "genre": "Soul / Sophisti-pop",
+      "country": "United Kingdom",
+      "active_since": "1982",
+      "bio": "Sade's catalog continues to monetize through calm-playlist dominance, enduring vocal recognition, and deep catalog loyalty across decades.",
+      "notable_for": "Elegant recordings with exceptional long-tail replay value.",
+      "career_highlight": "Signature songs continue to perform strongly across streaming, late-night playlists, and sync-sensitive use cases.",
+      "revenue_drivers": [
+        "Streaming playlists focused on calm, soul, and late-night listening support recurring revenue.",
+        "Cross-generational listener familiarity keeps the core catalog active.",
+        "Selective sync use and prestige cultural placement support long-tail value."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Smooth Operator",
+        "slug": "smooth-operator",
+        "artist": "sade",
+        "estimated_revenue": "$260K-$900K/year",
+        "album": "Diamond Life",
+        "year": 1984,
+        "meaning_summary": "Its elegance, melodic restraint, and unmistakable vocal performance help explain why it remains commercially durable.",
+        "revenue_drivers": [
+          "Soul and easy-listening playlist placement sustains long-tail streams.",
+          "The song's recognizable vocal identity makes it easy to rediscover.",
+          "Catalog and sync usage support recurring attention."
+        ],
+        "related_songs": [
+          "no-ordinary-love"
+        ]
+      },
+      {
+        "title": "No Ordinary Love",
+        "slug": "no-ordinary-love",
+        "artist": "sade",
+        "estimated_revenue": "$220K-$780K/year",
+        "album": "Love Deluxe",
+        "year": 1992,
+        "meaning_summary": "This recording stays valuable because it combines emotional clarity with a mood that still fits modern playlist listening.",
+        "revenue_drivers": [
+          "Mood and soul playlists provide steady repeat listening.",
+          "Strong emotional recognition keeps the song relevant over time.",
+          "Prestige sync and cultural retrospectives extend the song's commercial life."
+        ],
+        "related_songs": [
+          "smooth-operator"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Burial",
+      "slug": "burial",
+      "estimated_income": "$500K-$2M/year",
+      "top_songs": [
+        "archangel",
+        "shell-of-light"
+      ],
+      "genre": "Electronic / UK Garage / Ambient",
+      "country": "United Kingdom",
+      "active_since": "2005",
+      "bio": "Burial monetizes through a deep-listening catalog that benefits from loyal streaming audiences, critical stature, and long-tail electronic discovery.",
+      "notable_for": "Atmospheric electronic tracks that reward repeat listening and sustained fan attention.",
+      "career_highlight": "Untrue-era songs remain central to Burial's enduring catalog identity and streaming value.",
+      "revenue_drivers": [
+        "Dedicated listener loyalty sustains long-tail streaming.",
+        "Electronic and ambient playlist use supports catalog discovery.",
+        "Critical status and catalog depth keep the music commercially durable in niche terms."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Archangel",
+        "slug": "archangel",
+        "artist": "burial",
+        "estimated_revenue": "$90K-$320K/year",
+        "album": "Untrue",
+        "year": 2007,
+        "meaning_summary": "Its fragmented vocal treatment and immersive atmosphere give it unusual replay depth for a niche electronic catalog track.",
+        "revenue_drivers": [
+          "Niche but loyal streaming demand supports recurring revenue.",
+          "Atmospheric playlist use keeps the song discoverable.",
+          "Critical recognition helps sustain long-tail catalog attention."
+        ],
+        "related_songs": [
+          "shell-of-light"
+        ]
+      },
+      {
+        "title": "Shell of Light",
+        "slug": "shell-of-light",
+        "artist": "burial",
+        "estimated_revenue": "$70K-$260K/year",
+        "album": "Untrue",
+        "year": 2007,
+        "meaning_summary": "This song remains durable because its mood and texture invite repeat listening rather than one-time consumption.",
+        "revenue_drivers": [
+          "Ambient and electronic playlists provide steady discovery.",
+          "Listener depth and repeat listening help extend catalog value.",
+          "Critical stature supports long-tail niche demand."
+        ],
+        "related_songs": [
+          "archangel"
+        ]
+      }
+    ]
+  }
+]
