@@ -2,8 +2,19 @@
   "name": "Rakim",
   "slug": "rakim",
   "estimated_income": "$300K-$1.2M/year",
-  "top_songs": ["paid-in-full", "when-i-b-on-tha-mic"],
+  "top_songs": [
+    "paid-in-full",
+    "when-i-b-on-tha-mic"
+  ],
   "genre": "Hip-Hop",
   "country": "United States",
-  "active_since": "1985"
+  "active_since": "1985",
+  "bio": "Rakim has a durable hip-hop catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Rakim remains closely associated with Paid in Full and When I B on tha Mic, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Paid in Full and When I B on tha Mic still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps legacy rap records active long after their original chart run.",
+    "Playlist placement and cultural recognition help the biggest songs sustain repeat listening.",
+    "Licensing, sampling, and nostalgia-driven discovery continue to support long-tail earnings."
+  ]
 }
