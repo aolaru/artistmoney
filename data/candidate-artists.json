@@ -352,5 +352,1067 @@
         ]
       }
     ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "George Michael",
+      "slug": "george-michael",
+      "estimated_income": "$4M-$12M/year",
+      "top_songs": [
+        "careless-whisper",
+        "faith"
+      ],
+      "genre": "Pop / Soul",
+      "country": "United Kingdom",
+      "active_since": "1981",
+      "bio": "George Michael retains a valuable catalog through enduring pop recognition, steady streaming, and recurring sync or nostalgia-driven discovery.",
+      "notable_for": "Soulful pop songwriting with unusually durable crossover catalog value.",
+      "career_highlight": "Core singles from the 1980s and 1990s continue to anchor long-tail earnings decades later.",
+      "revenue_drivers": [
+        "Global catalog streaming keeps his biggest songs commercially active.",
+        "Playlist familiarity and seasonal or nostalgia listening support repeat demand.",
+        "Film, television, and retrospective programming help renew catalog attention."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Careless Whisper",
+        "slug": "careless-whisper",
+        "artist": "george-michael",
+        "estimated_revenue": "$450K-$1.4M/year",
+        "album": "Make It Big",
+        "year": 1984,
+        "meaning_summary": "This song remains commercially durable because its melody, sax lead, and emotional directness make it instantly recognizable and highly replayable.",
+        "revenue_drivers": [
+          "Catalog streaming remains the largest recurring revenue driver.",
+          "Strong cultural memory keeps the song active across playlists and rediscovery.",
+          "Sync and retrospective use help renew audience demand."
+        ],
+        "related_songs": [
+          "faith"
+        ]
+      },
+      {
+        "title": "Faith",
+        "slug": "faith",
+        "artist": "george-michael",
+        "estimated_revenue": "$300K-$1M/year",
+        "album": "Faith",
+        "year": 1987,
+        "meaning_summary": "Its rhythm, vocal confidence, and broad familiarity help the track keep earning long after its original chart run.",
+        "revenue_drivers": [
+          "Long-tail streaming and playlist inclusion support steady replay.",
+          "Cross-generational familiarity keeps the catalog commercially active.",
+          "Licensing and cultural retrospectives help sustain interest."
+        ],
+        "related_songs": [
+          "careless-whisper"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Michael Jackson",
+      "slug": "michael-jackson",
+      "estimated_income": "$20M-$60M/year",
+      "top_songs": [
+        "billie-jean",
+        "beat-it"
+      ],
+      "genre": "Pop / R&B",
+      "country": "United States",
+      "active_since": "1964",
+      "bio": "Michael Jackson's catalog remains one of the most commercially durable in music, with massive streaming reach, recurring licensing, and global long-tail demand.",
+      "notable_for": "Iconic crossover pop songs with exceptional multi-generational catalog power.",
+      "career_highlight": "Thriller-era recordings continue to generate outsized long-tail music earnings worldwide.",
+      "revenue_drivers": [
+        "Global catalog streaming keeps his core songs at large recurring scale.",
+        "Licensing, documentaries, and media reuse reinforce catalog economics.",
+        "Cultural ubiquity and playlist familiarity support ongoing replay value."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Billie Jean",
+        "slug": "billie-jean",
+        "artist": "michael-jackson",
+        "estimated_revenue": "$900K-$2.8M/year",
+        "album": "Thriller",
+        "year": 1982,
+        "meaning_summary": "This song keeps its value because the groove, hook, and cultural recognition remain unusually strong even decades after release.",
+        "revenue_drivers": [
+          "Large-scale catalog streaming drives recurring annual revenue.",
+          "Global familiarity keeps the song active across playlists and catalog listening.",
+          "Sync, documentary, and event-driven usage support long-tail earnings."
+        ],
+        "related_songs": [
+          "beat-it"
+        ]
+      },
+      {
+        "title": "Beat It",
+        "slug": "beat-it",
+        "artist": "michael-jackson",
+        "estimated_revenue": "$700K-$2.1M/year",
+        "album": "Thriller",
+        "year": 1982,
+        "meaning_summary": "Its crossover energy and instantly recognizable arrangement make it durable in both nostalgia listening and commercial reuse.",
+        "revenue_drivers": [
+          "Streaming and classic pop playlist use sustain long-tail demand.",
+          "Broad cultural recall keeps the song commercially relevant.",
+          "Sports, film, and documentary contexts help reactivate audience attention."
+        ],
+        "related_songs": [
+          "billie-jean"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Elton John",
+      "slug": "elton-john",
+      "estimated_income": "$15M-$40M/year",
+      "top_songs": [
+        "rocket-man",
+        "tiny-dancer"
+      ],
+      "genre": "Pop / Rock",
+      "country": "United Kingdom",
+      "active_since": "1969",
+      "bio": "Elton John's catalog keeps earning through classic-rock streaming, film and documentary usage, and strong songbook familiarity across generations.",
+      "notable_for": "Piano-led pop classics with deep songwriter and catalog value.",
+      "career_highlight": "His best-known recordings continue to deliver unusually stable long-tail income.",
+      "revenue_drivers": [
+        "Catalog streaming and songwriter value remain core revenue drivers.",
+        "Film, documentary, and tribute use keep the catalog highly visible.",
+        "Cross-generational recognition supports repeat listening and discovery."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Rocket Man",
+        "slug": "rocket-man",
+        "artist": "elton-john",
+        "estimated_revenue": "$350K-$1.1M/year",
+        "album": "Honky Chateau",
+        "year": 1972,
+        "meaning_summary": "Its reflective lyric and durable chorus keep the song emotionally legible and commercially resilient over time.",
+        "revenue_drivers": [
+          "Classic catalog streaming creates the core recurring revenue base.",
+          "The song's cultural familiarity supports playlist and catalog discovery.",
+          "Film, TV, and documentary usage help renew demand."
+        ],
+        "related_songs": [
+          "tiny-dancer"
+        ]
+      },
+      {
+        "title": "Tiny Dancer",
+        "slug": "tiny-dancer",
+        "artist": "elton-john",
+        "estimated_revenue": "$320K-$1M/year",
+        "album": "Madman Across the Water",
+        "year": 1971,
+        "meaning_summary": "This recording remains durable because its build, melody, and emotional payoff continue to reward repeat listening.",
+        "revenue_drivers": [
+          "Long-tail streaming and classic pop playlists sustain catalog value.",
+          "Scene-setting sync use and film association keep the song discoverable.",
+          "Listener familiarity across generations helps maintain replay demand."
+        ],
+        "related_songs": [
+          "rocket-man"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Cyndi Lauper",
+      "slug": "cyndi-lauper",
+      "estimated_income": "$2M-$7M/year",
+      "top_songs": [
+        "girls-just-want-to-have-fun",
+        "time-after-time"
+      ],
+      "genre": "Pop / New Wave",
+      "country": "United States",
+      "active_since": "1983",
+      "bio": "Cyndi Lauper's catalog retains value through 1980s playlist strength, recurring sync use, and durable pop recognition.",
+      "notable_for": "Distinctive pop songs that continue to travel well across nostalgia and catalog listening.",
+      "career_highlight": "Her biggest singles remain highly visible across streaming and sync-led discovery.",
+      "revenue_drivers": [
+        "Nostalgia playlists keep the core catalog active.",
+        "Strong pop recognition supports long-tail streaming.",
+        "Film, TV, and event-driven placements help refresh catalog value."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Girls Just Want to Have Fun",
+        "slug": "girls-just-want-to-have-fun",
+        "artist": "cyndi-lauper",
+        "estimated_revenue": "$260K-$820K/year",
+        "album": "She's So Unusual",
+        "year": 1983,
+        "meaning_summary": "Its celebratory hook and instantly recognizable chorus keep it commercially durable across decades of replay.",
+        "revenue_drivers": [
+          "Playlist recurrence sustains long-tail streaming.",
+          "The song's cultural familiarity helps maintain replay value.",
+          "Sync and event-driven usage create recurring attention spikes."
+        ],
+        "related_songs": [
+          "time-after-time"
+        ]
+      },
+      {
+        "title": "Time After Time",
+        "slug": "time-after-time",
+        "artist": "cyndi-lauper",
+        "estimated_revenue": "$220K-$700K/year",
+        "album": "She's So Unusual",
+        "year": 1983,
+        "meaning_summary": "Its emotional clarity and melodic simplicity help the song remain easy to revisit and commercially stable over time.",
+        "revenue_drivers": [
+          "Catalog streaming drives repeat listening and steady long-tail value.",
+          "Its emotional accessibility supports rediscovery across generations.",
+          "Film and television placements help extend its commercial life."
+        ],
+        "related_songs": [
+          "girls-just-want-to-have-fun"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Lady Gaga",
+      "slug": "lady-gaga",
+      "estimated_income": "$15M-$45M/year",
+      "top_songs": [
+        "bad-romance",
+        "poker-face"
+      ],
+      "genre": "Pop / Dance-pop",
+      "country": "United States",
+      "active_since": "2008",
+      "bio": "Lady Gaga's catalog continues to monetize through global streaming, broad playlist reach, and repeated sync or event-driven reuse.",
+      "notable_for": "Big-chorus pop records with strong global replay and branding value.",
+      "career_highlight": "Her biggest late-2000s and 2010s singles remain durable revenue generators.",
+      "revenue_drivers": [
+        "Global streaming scale keeps the catalog commercially active.",
+        "Large playlist presence supports consistent repeat listening.",
+        "Film, event, and brand-adjacent usage reinforce long-tail value."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Bad Romance",
+        "slug": "bad-romance",
+        "artist": "lady-gaga",
+        "estimated_revenue": "$600K-$1.9M/year",
+        "album": "The Fame Monster",
+        "year": 2009,
+        "meaning_summary": "This track remains commercially durable because its hook, production, and cultural imprint still feel immediate years later.",
+        "revenue_drivers": [
+          "Streaming scale and playlist inclusion sustain recurring revenue.",
+          "High recognizability keeps the song active in pop catalog listening.",
+          "Event and sync usage help renew audience demand."
+        ],
+        "related_songs": [
+          "poker-face"
+        ]
+      },
+      {
+        "title": "Poker Face",
+        "slug": "poker-face",
+        "artist": "lady-gaga",
+        "estimated_revenue": "$550K-$1.7M/year",
+        "album": "The Fame",
+        "year": 2008,
+        "meaning_summary": "Its clean pop structure and enduring familiarity make it easy to replay and commercially resilient.",
+        "revenue_drivers": [
+          "Global streaming remains the primary earnings source.",
+          "Pop playlist longevity supports repeat listening over time.",
+          "Strong cultural recall keeps the catalog visible."
+        ],
+        "related_songs": [
+          "bad-romance"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Gwen Stefani",
+      "slug": "gwen-stefani",
+      "estimated_income": "$3M-$9M/year",
+      "top_songs": [
+        "hollaback-girl",
+        "what-you-waiting-for"
+      ],
+      "genre": "Pop / Alternative Pop",
+      "country": "United States",
+      "active_since": "1992",
+      "bio": "Gwen Stefani keeps earning through pop-catalog streaming, strong solo-era recognition, and ongoing playlist or sync relevance.",
+      "notable_for": "Distinctive solo pop records with durable replay value.",
+      "career_highlight": "Her biggest solo singles still hold long-tail value across streaming and media use.",
+      "revenue_drivers": [
+        "Pop catalog streaming provides recurring income.",
+        "High-recognition hooks support playlist longevity.",
+        "Sync and fashion-adjacent media use help sustain visibility."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Hollaback Girl",
+        "slug": "hollaback-girl",
+        "artist": "gwen-stefani",
+        "estimated_revenue": "$250K-$850K/year",
+        "album": "Love. Angel. Music. Baby.",
+        "year": 2004,
+        "meaning_summary": "Its chant-driven hook and cultural familiarity help explain why it remains commercially active over time.",
+        "revenue_drivers": [
+          "Streaming and party-playlist use drive recurring plays.",
+          "Strong pop-culture recall keeps the track commercially visible.",
+          "Film, television, and short-form media can reactivate demand."
+        ],
+        "related_songs": [
+          "what-you-waiting-for"
+        ]
+      },
+      {
+        "title": "What You Waiting For?",
+        "slug": "what-you-waiting-for",
+        "artist": "gwen-stefani",
+        "estimated_revenue": "$150K-$520K/year",
+        "album": "Love. Angel. Music. Baby.",
+        "year": 2004,
+        "meaning_summary": "The song keeps value through a recognizable vocal identity and a pop structure that remains easy to revisit.",
+        "revenue_drivers": [
+          "Catalog streaming remains the baseline revenue source.",
+          "Pop playlist use supports steady repeat listening.",
+          "Strong artist identity helps sustain long-tail discovery."
+        ],
+        "related_songs": [
+          "hollaback-girl"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "No Doubt",
+      "slug": "no-doubt",
+      "estimated_income": "$3M-$10M/year",
+      "top_songs": [
+        "dont-speak",
+        "just-a-girl"
+      ],
+      "genre": "Alternative Rock / Pop",
+      "country": "United States",
+      "active_since": "1986",
+      "bio": "No Doubt's catalog remains durable through 1990s alt-pop nostalgia, strong streaming recognition, and sync-friendly singles.",
+      "notable_for": "Crossover alternative-pop songs with continued replay and nostalgia value.",
+      "career_highlight": "The core singles remain highly recognizable and commercially durable decades after release.",
+      "revenue_drivers": [
+        "Nostalgia-driven streaming supports long-tail revenue.",
+        "Playlist familiarity keeps the catalog active.",
+        "Film and television placements help extend song value."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Don't Speak",
+        "slug": "dont-speak",
+        "artist": "no-doubt",
+        "estimated_revenue": "$260K-$900K/year",
+        "album": "Tragic Kingdom",
+        "year": 1995,
+        "meaning_summary": "Its emotional directness and instantly memorable chorus keep the song commercially durable over time.",
+        "revenue_drivers": [
+          "Catalog streaming and 1990s playlisting drive recurring listens.",
+          "Strong emotional recall supports rediscovery across generations.",
+          "Film and TV usage can renew long-tail demand."
+        ],
+        "related_songs": [
+          "just-a-girl"
+        ]
+      },
+      {
+        "title": "Just a Girl",
+        "slug": "just-a-girl",
+        "artist": "no-doubt",
+        "estimated_revenue": "$220K-$780K/year",
+        "album": "Tragic Kingdom",
+        "year": 1995,
+        "meaning_summary": "Its attitude, hook, and cultural identity keep the song easy to revisit and commercially durable.",
+        "revenue_drivers": [
+          "Alternative and nostalgia playlists keep the song active.",
+          "Strong cultural familiarity supports long-tail replay.",
+          "Sync use in film and TV helps sustain catalog attention."
+        ],
+        "related_songs": [
+          "dont-speak"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Christina Aguilera",
+      "slug": "christina-aguilera",
+      "estimated_income": "$4M-$12M/year",
+      "top_songs": [
+        "genie-in-a-bottle",
+        "fighter"
+      ],
+      "genre": "Pop / R&B",
+      "country": "United States",
+      "active_since": "1999",
+      "bio": "Christina Aguilera's catalog keeps earning through playlist familiarity, vocal-led ballad streaming, and long-tail pop discovery.",
+      "notable_for": "Big vocal pop records with durable catalog visibility.",
+      "career_highlight": "Her early flagship singles continue to support long-tail earnings and broad recognition.",
+      "revenue_drivers": [
+        "Pop catalog streaming creates consistent recurring value.",
+        "Signature vocal performances help sustain replay demand.",
+        "Playlist and media reuse keep the catalog visible."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Genie in a Bottle",
+        "slug": "genie-in-a-bottle",
+        "artist": "christina-aguilera",
+        "estimated_revenue": "$200K-$650K/year",
+        "album": "Christina Aguilera",
+        "year": 1999,
+        "meaning_summary": "Its hook-driven structure and enduring familiarity make it commercially durable in long-tail pop listening.",
+        "revenue_drivers": [
+          "Catalog streaming remains the primary recurring revenue driver.",
+          "Pop playlist use sustains replay value.",
+          "Nostalgia-led rediscovery helps maintain audience demand."
+        ],
+        "related_songs": [
+          "fighter"
+        ]
+      },
+      {
+        "title": "Fighter",
+        "slug": "fighter",
+        "artist": "christina-aguilera",
+        "estimated_revenue": "$160K-$520K/year",
+        "album": "Stripped",
+        "year": 2002,
+        "meaning_summary": "Its assertive message and strong vocal identity help the song remain easy to revisit and commercially useful.",
+        "revenue_drivers": [
+          "Streaming and empowerment-playlist use support recurring plays.",
+          "Strong vocal recognition keeps the track memorable.",
+          "Media and event usage can reactivate attention."
+        ],
+        "related_songs": [
+          "genie-in-a-bottle"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Shakira",
+      "slug": "shakira",
+      "estimated_income": "$10M-$30M/year",
+      "top_songs": [
+        "hips-dont-lie",
+        "whenever-wherever"
+      ],
+      "genre": "Pop / Latin Pop",
+      "country": "Colombia",
+      "active_since": "1991",
+      "bio": "Shakira's catalog continues to monetize globally through streaming, multilingual crossover appeal, and persistent playlist demand.",
+      "notable_for": "Worldwide pop songs with durable rhythmic identity and replay value.",
+      "career_highlight": "Her crossover catalog remains one of the strongest long-tail assets in modern Latin-pop adjacent music.",
+      "revenue_drivers": [
+        "Global streaming keeps core singles active across markets.",
+        "Dance and workout playlists support repeat listening.",
+        "International recognition helps maintain long-tail demand."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Hips Don't Lie",
+        "slug": "hips-dont-lie",
+        "artist": "shakira",
+        "estimated_revenue": "$450K-$1.5M/year",
+        "album": "Oral Fixation, Vol. 2",
+        "year": 2006,
+        "meaning_summary": "Its rhythm, vocal identity, and global familiarity make it one of those songs that stays commercially alive through repeat listening.",
+        "revenue_drivers": [
+          "Streaming scale and playlist placement drive recurring revenue.",
+          "Global familiarity supports long-tail replay across territories.",
+          "Dance, event, and sync usage renew attention."
+        ],
+        "related_songs": [
+          "whenever-wherever"
+        ]
+      },
+      {
+        "title": "Whenever, Wherever",
+        "slug": "whenever-wherever",
+        "artist": "shakira",
+        "estimated_revenue": "$320K-$1.1M/year",
+        "album": "Laundry Service",
+        "year": 2001,
+        "meaning_summary": "This song remains durable because its melodic identity and crossover appeal still fit modern playlist and catalog listening.",
+        "revenue_drivers": [
+          "Global catalog streaming supports long-tail earnings.",
+          "Cross-market familiarity keeps the song active in discovery flows.",
+          "Sync and event usage help sustain commercial visibility."
+        ],
+        "related_songs": [
+          "hips-dont-lie"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Katy Perry",
+      "slug": "katy-perry",
+      "estimated_income": "$8M-$25M/year",
+      "top_songs": [
+        "firework",
+        "teenage-dream"
+      ],
+      "genre": "Pop",
+      "country": "United States",
+      "active_since": "2008",
+      "bio": "Katy Perry's catalog keeps earning through large-scale pop streaming, enduring playlist visibility, and event-driven replay around her biggest singles.",
+      "notable_for": "Big-chorus pop songs with strong long-tail streaming value.",
+      "career_highlight": "Her peak-era singles remain commercially durable across global pop platforms.",
+      "revenue_drivers": [
+        "Global streaming and playlist placement support recurring revenue.",
+        "Signature hooks keep the catalog easy to rediscover.",
+        "Event, sports, and media usage can amplify replay cycles."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Firework",
+        "slug": "firework",
+        "artist": "katy-perry",
+        "estimated_revenue": "$350K-$1.2M/year",
+        "album": "Teenage Dream",
+        "year": 2010,
+        "meaning_summary": "Its uplifting hook and broad familiarity help the song remain commercially durable and widely replayed.",
+        "revenue_drivers": [
+          "Streaming and motivational playlist use support repeat listening.",
+          "Its emotional clarity helps sustain long-tail relevance.",
+          "Event and media placements renew audience attention."
+        ],
+        "related_songs": [
+          "teenage-dream"
+        ]
+      },
+      {
+        "title": "Teenage Dream",
+        "slug": "teenage-dream",
+        "artist": "katy-perry",
+        "estimated_revenue": "$280K-$950K/year",
+        "album": "Teenage Dream",
+        "year": 2010,
+        "meaning_summary": "The song stays valuable because its melodic lift and emotional nostalgia make it easy to revisit over time.",
+        "revenue_drivers": [
+          "Pop catalog streaming remains the baseline earnings driver.",
+          "Nostalgia and playlist familiarity support long-tail demand.",
+          "Film, TV, and social reuse help sustain visibility."
+        ],
+        "related_songs": [
+          "firework"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Janet Jackson",
+      "slug": "janet-jackson",
+      "estimated_income": "$5M-$18M/year",
+      "top_songs": [
+        "together-again",
+        "rhythm-nation"
+      ],
+      "genre": "Pop / R&B",
+      "country": "United States",
+      "active_since": "1982",
+      "bio": "Janet Jackson's catalog continues to monetize through streaming, late-1980s and 1990s playlist strength, and durable pop-R&B recognition.",
+      "notable_for": "Precision pop-R&B songs with long-tail cultural and streaming value.",
+      "career_highlight": "Core catalog recordings remain durable across playlists, sync, and retrospective listening.",
+      "revenue_drivers": [
+        "Catalog streaming keeps the best-known singles active.",
+        "Pop and R&B playlist familiarity supports repeat listening.",
+        "Documentary, fashion, and retrospective use help extend catalog value."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Together Again",
+        "slug": "together-again",
+        "artist": "janet-jackson",
+        "estimated_revenue": "$240K-$820K/year",
+        "album": "The Velvet Rope",
+        "year": 1997,
+        "meaning_summary": "Its emotional warmth and pop clarity help it remain commercially durable well beyond its original release cycle.",
+        "revenue_drivers": [
+          "Streaming and feel-good playlist use support ongoing replay.",
+          "Long-term listener familiarity keeps the song active.",
+          "Retrospective media use helps sustain catalog attention."
+        ],
+        "related_songs": [
+          "rhythm-nation"
+        ]
+      },
+      {
+        "title": "Rhythm Nation",
+        "slug": "rhythm-nation",
+        "artist": "janet-jackson",
+        "estimated_revenue": "$220K-$760K/year",
+        "album": "Janet Jackson's Rhythm Nation 1814",
+        "year": 1989,
+        "meaning_summary": "Its message, rhythm, and visual legacy give the song unusual long-tail value in both cultural memory and streaming.",
+        "revenue_drivers": [
+          "Catalog streaming remains the main recurring source.",
+          "Strong cultural recognition supports sustained replay.",
+          "Documentary and media reuse help keep the track commercially visible."
+        ],
+        "related_songs": [
+          "together-again"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Erasure",
+      "slug": "erasure",
+      "estimated_income": "$1M-$4M/year",
+      "top_songs": [
+        "a-little-respect",
+        "sometimes-erasure"
+      ],
+      "genre": "Synth-pop",
+      "country": "United Kingdom",
+      "active_since": "1985",
+      "bio": "Erasure continue to earn through synth-pop playlist strength, loyal catalog listening, and durable alternative-pop recognition.",
+      "notable_for": "Synth-pop songs that remain highly replayable across nostalgia and alternative playlists.",
+      "career_highlight": "Their best-known tracks still hold steady long-tail value decades after release.",
+      "revenue_drivers": [
+        "Catalog streaming and synth-pop playlists support recurring plays.",
+        "Dedicated fan listening helps stabilize long-tail catalog value.",
+        "Media reuse and retrospective programming renew attention."
+      ]
+    },
+    "songs": [
+      {
+        "title": "A Little Respect",
+        "slug": "a-little-respect",
+        "artist": "erasure",
+        "estimated_revenue": "$110K-$360K/year",
+        "album": "The Innocents",
+        "year": 1988,
+        "meaning_summary": "Its melody and emotional clarity help the song remain commercially durable across decades of replay.",
+        "revenue_drivers": [
+          "Streaming and synth-pop playlists provide recurring demand.",
+          "Strong chorus recognition supports long-tail discovery.",
+          "Film and TV reuse can reactivate catalog attention."
+        ],
+        "related_songs": [
+          "sometimes-erasure"
+        ]
+      },
+      {
+        "title": "Sometimes",
+        "slug": "sometimes-erasure",
+        "artist": "erasure",
+        "estimated_revenue": "$90K-$300K/year",
+        "album": "The Circus",
+        "year": 1986,
+        "meaning_summary": "This song keeps value through its clear melodic shape, emotional immediacy, and fit with long-tail synth-pop listening.",
+        "revenue_drivers": [
+          "Streaming and catalog listening create steady replay.",
+          "Alternative and nostalgia playlists support visibility.",
+          "Fan-driven rediscovery helps extend long-tail earnings."
+        ],
+        "related_songs": [
+          "a-little-respect"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "A-ha",
+      "slug": "a-ha",
+      "estimated_income": "$2M-$6M/year",
+      "top_songs": [
+        "take-on-me",
+        "the-sun-always-shines-on-tv"
+      ],
+      "genre": "Synth-pop / New Wave",
+      "country": "Norway",
+      "active_since": "1982",
+      "bio": "A-ha's catalog still earns through 1980s playlist dominance, durable video-era recognition, and long-tail global streaming.",
+      "notable_for": "Synth-pop recordings with unusually strong visual and melodic recall.",
+      "career_highlight": "Their signature songs still generate significant long-tail replay decades later.",
+      "revenue_drivers": [
+        "Global nostalgia playlists support recurring streams.",
+        "Iconic video-era recognition helps sustain catalog demand.",
+        "Film, documentary, and media reuse keep the songs visible."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Take On Me",
+        "slug": "take-on-me",
+        "artist": "a-ha",
+        "estimated_revenue": "$320K-$1M/year",
+        "album": "Hunting High and Low",
+        "year": 1985,
+        "meaning_summary": "Its melody, vocal leap, and iconic identity keep the song commercially durable across generations.",
+        "revenue_drivers": [
+          "Streaming and nostalgia playlists sustain repeat listening.",
+          "Its instantly recognizable identity keeps it highly discoverable.",
+          "Sync and documentary use help renew demand."
+        ],
+        "related_songs": [
+          "the-sun-always-shines-on-tv"
+        ]
+      },
+      {
+        "title": "The Sun Always Shines on T.V.",
+        "slug": "the-sun-always-shines-on-tv",
+        "artist": "a-ha",
+        "estimated_revenue": "$90K-$320K/year",
+        "album": "Hunting High and Low",
+        "year": 1985,
+        "meaning_summary": "This song remains durable because of its emotional scale, melodic clarity, and long-tail appeal to synth-pop listeners.",
+        "revenue_drivers": [
+          "Catalog streaming provides the recurring revenue base.",
+          "Synth-pop discovery and nostalgia playlists support replay.",
+          "Visual-era recognition helps maintain long-tail interest."
+        ],
+        "related_songs": [
+          "take-on-me"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Duran Duran",
+      "slug": "duran-duran",
+      "estimated_income": "$3M-$9M/year",
+      "top_songs": [
+        "hungry-like-the-wolf",
+        "ordinary-world"
+      ],
+      "genre": "New Wave / Pop Rock",
+      "country": "United Kingdom",
+      "active_since": "1978",
+      "bio": "Duran Duran's catalog remains commercially durable through streaming, 1980s nostalgia, and recurring sync-friendly singles.",
+      "notable_for": "Video-era pop-rock songs with long-tail replay value.",
+      "career_highlight": "Their best-known singles still anchor strong long-tail catalog economics.",
+      "revenue_drivers": [
+        "Catalog streaming and nostalgia playlists keep the songs active.",
+        "Strong visual-era recognition helps sustain replay value.",
+        "Film and television usage support catalog rediscovery."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Hungry Like the Wolf",
+        "slug": "hungry-like-the-wolf",
+        "artist": "duran-duran",
+        "estimated_revenue": "$160K-$540K/year",
+        "album": "Rio",
+        "year": 1982,
+        "meaning_summary": "Its rhythm and instantly recognizable chorus help the song keep earning through long-tail replay and rediscovery.",
+        "revenue_drivers": [
+          "Streaming and nostalgia playlist use support recurring plays.",
+          "Strong cultural familiarity keeps the song easy to rediscover.",
+          "Sync and media reuse help sustain commercial visibility."
+        ],
+        "related_songs": [
+          "ordinary-world"
+        ]
+      },
+      {
+        "title": "Ordinary World",
+        "slug": "ordinary-world",
+        "artist": "duran-duran",
+        "estimated_revenue": "$140K-$480K/year",
+        "album": "Duran Duran (The Wedding Album)",
+        "year": 1993,
+        "meaning_summary": "Its emotional directness and mature pop structure help it remain commercially resilient over time.",
+        "revenue_drivers": [
+          "Catalog streaming provides the main long-tail value.",
+          "Pop-rock playlists support repeat listening.",
+          "Retrospective media use helps renew demand."
+        ],
+        "related_songs": [
+          "hungry-like-the-wolf"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "INXS",
+      "slug": "inxs",
+      "estimated_income": "$2M-$7M/year",
+      "top_songs": [
+        "need-you-tonight",
+        "never-tear-us-apart"
+      ],
+      "genre": "Rock / New Wave",
+      "country": "Australia",
+      "active_since": "1977",
+      "bio": "INXS continue to earn through durable 1980s and 1990s catalog listening, streaming, and recurring sync-friendly singles.",
+      "notable_for": "Rhythm-driven rock songs with strong long-tail replay and broad familiarity.",
+      "career_highlight": "Their signature songs continue to support solid catalog economics decades later.",
+      "revenue_drivers": [
+        "Streaming and nostalgia playlist use sustain catalog demand.",
+        "Strong vocal and groove identity keeps key songs easy to revisit.",
+        "Film and television use can reactivate long-tail interest."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Need You Tonight",
+        "slug": "need-you-tonight",
+        "artist": "inxs",
+        "estimated_revenue": "$150K-$520K/year",
+        "album": "Kick",
+        "year": 1987,
+        "meaning_summary": "Its groove, vocal character, and compact hook help the song stay commercially durable over time.",
+        "revenue_drivers": [
+          "Catalog streaming remains the main recurring source.",
+          "Playlist familiarity supports repeat listening.",
+          "Media reuse and nostalgia discovery help extend earnings."
+        ],
+        "related_songs": [
+          "never-tear-us-apart"
+        ]
+      },
+      {
+        "title": "Never Tear Us Apart",
+        "slug": "never-tear-us-apart",
+        "artist": "inxs",
+        "estimated_revenue": "$130K-$460K/year",
+        "album": "Kick",
+        "year": 1987,
+        "meaning_summary": "Its romantic emotional core and broad familiarity help keep it active in long-tail streaming and sync use.",
+        "revenue_drivers": [
+          "Streaming and emotional playlist use support recurring replay.",
+          "The song's strong identity helps sustain rediscovery.",
+          "Film and TV placements can renew audience demand."
+        ],
+        "related_songs": [
+          "need-you-tonight"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Vangelis",
+      "slug": "vangelis",
+      "estimated_income": "$1M-$4M/year",
+      "top_songs": [
+        "chariots-of-fire",
+        "blade-runner-blues"
+      ],
+      "genre": "Electronic / Ambient",
+      "country": "Greece",
+      "active_since": "1970",
+      "bio": "Vangelis keeps earning through soundtrack-driven catalog value, ambient listening, and recurring film-world cultural interest.",
+      "notable_for": "Electronic and cinematic compositions with strong long-tail cultural value.",
+      "career_highlight": "His best-known soundtrack works remain commercially relevant through sync legacy and streaming discovery.",
+      "revenue_drivers": [
+        "Soundtrack-driven streaming and playlist use support recurring value.",
+        "Film legacy keeps the catalog culturally visible.",
+        "Ambient and focus listening extend long-tail demand."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Chariots of Fire",
+        "slug": "chariots-of-fire",
+        "artist": "vangelis",
+        "estimated_revenue": "$100K-$340K/year",
+        "album": "Chariots of Fire",
+        "year": 1981,
+        "meaning_summary": "Its cinematic build and broad recognition make it easy to revisit and commercially useful well beyond its original context.",
+        "revenue_drivers": [
+          "Streaming and soundtrack playlist use support recurring listens.",
+          "Film legacy keeps the composition highly recognizable.",
+          "Sports and documentary contexts can renew catalog attention."
+        ],
+        "related_songs": [
+          "blade-runner-blues"
+        ]
+      },
+      {
+        "title": "Blade Runner Blues",
+        "slug": "blade-runner-blues",
+        "artist": "vangelis",
+        "estimated_revenue": "$70K-$240K/year",
+        "album": "Blade Runner",
+        "year": 1982,
+        "meaning_summary": "Its atmospheric depth gives the track unusual durability in ambient listening and long-tail soundtrack discovery.",
+        "revenue_drivers": [
+          "Ambient and cinematic playlists support steady replay.",
+          "Film-world recognition helps sustain discovery.",
+          "Long-tail listener depth keeps catalog value alive."
+        ],
+        "related_songs": [
+          "chariots-of-fire"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Jean-Michel Jarre",
+      "slug": "jean-michel-jarre",
+      "estimated_income": "$1M-$5M/year",
+      "top_songs": [
+        "oxygene-iv",
+        "equinoxe-part-4"
+      ],
+      "genre": "Electronic / Synth",
+      "country": "France",
+      "active_since": "1972",
+      "bio": "Jean-Michel Jarre's catalog continues to monetize through electronic-music discovery, ambient playlist listening, and long-tail instrumental demand.",
+      "notable_for": "Foundational synth works with durable niche and catalog value.",
+      "career_highlight": "His flagship instrumental pieces still attract new listeners and maintain long-tail earnings.",
+      "revenue_drivers": [
+        "Ambient and electronic playlist use supports recurring streams.",
+        "Catalog depth and genre influence help sustain rediscovery.",
+        "Instrumental listening contexts extend long-tail commercial life."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Oxygene IV",
+        "slug": "oxygene-iv",
+        "artist": "jean-michel-jarre",
+        "estimated_revenue": "$80K-$280K/year",
+        "album": "Oxygene",
+        "year": 1976,
+        "meaning_summary": "Its synth motif and strong atmospheric identity help the composition remain commercially durable in long-tail electronic listening.",
+        "revenue_drivers": [
+          "Ambient and synth playlists support ongoing discovery.",
+          "Instrumental listening habits create steady replay.",
+          "Genre influence helps maintain long-tail relevance."
+        ],
+        "related_songs": [
+          "equinoxe-part-4"
+        ]
+      },
+      {
+        "title": "Equinoxe Part 4",
+        "slug": "equinoxe-part-4",
+        "artist": "jean-michel-jarre",
+        "estimated_revenue": "$60K-$220K/year",
+        "album": "Equinoxe",
+        "year": 1978,
+        "meaning_summary": "Its texture and melodic patience make it well suited to repeat listening and durable catalog value.",
+        "revenue_drivers": [
+          "Electronic and focus playlists support recurring streaming.",
+          "Long-tail listener depth helps extend catalog economics.",
+          "Instrumental replay habits create stable niche demand."
+        ],
+        "related_songs": [
+          "oxygene-iv"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "My Bloody Valentine",
+      "slug": "my-bloody-valentine",
+      "estimated_income": "$700K-$3M/year",
+      "top_songs": [
+        "only-shallow",
+        "when-you-sleep"
+      ],
+      "genre": "Alternative Rock / Shoegaze",
+      "country": "Ireland",
+      "active_since": "1983",
+      "bio": "My Bloody Valentine keeps earning through deep catalog listening, genre influence, and steady long-tail discovery among alternative listeners.",
+      "notable_for": "Shoegaze recordings with unusually strong replay depth and critic-driven longevity.",
+      "career_highlight": "Loveless-era tracks remain core reference points in alternative catalog listening.",
+      "revenue_drivers": [
+        "Dedicated fan listening sustains long-tail streaming.",
+        "Critical stature and genre influence help maintain discovery.",
+        "Alternative and mood-based playlists extend catalog life."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Only Shallow",
+        "slug": "only-shallow",
+        "artist": "my-bloody-valentine",
+        "estimated_revenue": "$70K-$240K/year",
+        "album": "Loveless",
+        "year": 1991,
+        "meaning_summary": "Its texture, impact, and emotional haze make it unusually durable for niche long-tail listening.",
+        "revenue_drivers": [
+          "Alternative and shoegaze playlist use supports recurring replay.",
+          "Critical recognition keeps the track discoverable.",
+          "Dedicated listener depth helps extend catalog value."
+        ],
+        "related_songs": [
+          "when-you-sleep"
+        ]
+      },
+      {
+        "title": "When You Sleep",
+        "slug": "when-you-sleep",
+        "artist": "my-bloody-valentine",
+        "estimated_revenue": "$70K-$250K/year",
+        "album": "Loveless",
+        "year": 1991,
+        "meaning_summary": "Its balance of melody and distortion keeps it highly replayable for both niche listeners and newer catalog explorers.",
+        "revenue_drivers": [
+          "Shoegaze and alternative playlists sustain discovery.",
+          "Long-tail fan listening keeps the song active over time.",
+          "Genre influence helps maintain ongoing catalog relevance."
+        ],
+        "related_songs": [
+          "only-shallow"
+        ]
+      }
+    ]
   }
 ]
