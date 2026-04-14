@@ -23,7 +23,7 @@ const artistSlugs = [...new Set(decadeSongs.map((song) => song.artist))];
 const decadeArtists = artistSlugs.map((slug) => getArtist(slug)).filter(Boolean).sort((a, b) => a.name.localeCompare(b.name));
 ---
 
-<BaseLayout title={`${decade.name} Songs | Artist Money`} description={`Songs and artists in the ${decade.name} catalog.`}>
+<BaseLayout title={`${decade.name} Songs | How Much Music`} description={`Songs and artists in the ${decade.name} catalog.`}>
   <Breadcrumbs items={[
     { label: "Home", href: baseUrl },
     { label: "Decades", href: `${baseUrl}decades/` },

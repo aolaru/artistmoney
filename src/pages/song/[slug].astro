@@ -52,13 +52,13 @@ const songSchema = {
   description:
     song.meaning_summary ??
     article?.shortAnswer ??
-    `${song.title} song page with earnings estimates and catalog insights on Artist Money.`
+    `${song.title} song page with earnings estimates and catalog insights on How Much Music.`
 };
 ---
 
 <BaseLayout
-  title={article?.seoTitle ?? `${song.title} | Artist Money`}
-  description={article?.shortAnswer ?? `${song.title} meaning, earnings, and insights on Artist Money.`}
+  title={article?.seoTitle ?? `${song.title} | How Much Music`}
+  description={article?.shortAnswer ?? `${song.title} meaning, earnings, and insights on How Much Music.`}
   image={imageSrc}
   imageAlt={artist ? `${song.title} by ${artist.name}` : song.title}
   type="article"

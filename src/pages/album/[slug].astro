@@ -53,8 +53,8 @@ const albumSchema = {
 ---
 
 <BaseLayout
-  title={`${album.title} | Artist Money`}
-  description={`${album.title} album page with linked songs, artist details, and tracked song revenue on Artist Money.`}
+  title={`${album.title} | How Much Music`}
+  description={`${album.title} album page with linked songs, artist details, and tracked song revenue on How Much Music.`}
   image={imageSrc}
   imageAlt={`${album.title} by ${album.artistName}`}
   type="article"
@@ -109,7 +109,7 @@ const albumSchema = {
         <li><strong>Label:</strong> {album.label ?? "Not yet added"}</li>
         <li><strong>Album track count:</strong> {album.trackCount ?? "Not yet added"}</li>
         {album.editionNote && <li><strong>Matched edition:</strong> {album.editionNote}</li>}
-        <li><strong>Tracked on Artist Money:</strong> {album.trackedSongCount} song{album.trackedSongCount === 1 ? "" : "s"}</li>
+        <li><strong>Tracked on How Much Music:</strong> {album.trackedSongCount} song{album.trackedSongCount === 1 ? "" : "s"}</li>
       </ul>
     </section>
 
@@ -134,7 +134,7 @@ const albumSchema = {
     </section>
 
     <section aria-labelledby="tracked-songs-title">
-      <h2 id="tracked-songs-title">Tracked Songs on Artist Money</h2>
+      <h2 id="tracked-songs-title">Tracked Songs on How Much Music</h2>
       <p class="results-note">These are the songs from this album that currently have dedicated earnings pages in the catalog.</p>
       <ul class="meta-list">
         {album.trackListing.map((song, index) => (
@@ -157,7 +157,7 @@ const albumSchema = {
           Browse all albums: <a href={`${baseUrl}albums/`}>Albums</a>
         </li>
         <li>
-          Methodology: <a href={`${baseUrl}insights/methodology/`}>How Artist Money models revenue</a>
+          Methodology: <a href={`${baseUrl}insights/methodology/`}>How Much Music models revenue</a>
         </li>
         {album.links?.appleMusic && (
           <li>

@@ -33,7 +33,7 @@ const artistSchema = {
   foundingLocation: artist.country,
   description:
     artist.bio ??
-    `${artist.name} artist page with income estimates, songs, and revenue strategy on Artist Money.`,
+    `${artist.name} artist page with income estimates, songs, and revenue strategy on How Much Music.`,
   track: artistSongs.map((song) => ({
     "@type": "MusicRecording",
     name: song.title,
@@ -43,8 +43,8 @@ const artistSchema = {
 ---
 
 <BaseLayout
-  title={article?.seoTitle ?? `${artist.name} | Artist Money`}
-  description={article?.shortAnswer ?? `${artist.name} artist page with income estimates, songs, and revenue strategy on Artist Money.`}
+  title={article?.seoTitle ?? `${artist.name} | How Much Music`}
+  description={article?.shortAnswer ?? `${artist.name} artist page with income estimates, songs, and revenue strategy on How Much Music.`}
   image={imageSrc}
   imageAlt={artistPhoto?.alt ?? `Artwork for ${artist.name}`}
   type="article"

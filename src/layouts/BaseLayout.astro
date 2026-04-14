@@ -12,7 +12,7 @@ interface Props {
 
 const {
   title,
-  description = "Artist Money tracks artist and song pages with simple estimated earnings data.",
+  description = "How Much Music tracks artist, song, and album pages with modeled music earnings data.",
   image,
   imageAlt = title,
   type = "website",
@@ -37,7 +37,7 @@ const jsonLdPayload = jsonLd
     <meta name="description" content={description} />
     <link rel="icon" href={`${baseUrl}favicon.svg`} type="image/svg+xml" />
     <link rel="canonical" href={canonicalUrl.toString()} />
-    <meta property="og:site_name" content="Artist Money" />
+    <meta property="og:site_name" content="How Much Music" />
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -60,7 +60,7 @@ const jsonLdPayload = jsonLd
   <body>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href={baseUrl}>Artist Money</a>
+        <a class="brand" href={baseUrl}>How Much Music</a>
         <nav aria-label="Primary navigation">
           <a href={baseUrl}>Home</a>
           <a href={`${baseUrl}artists/`}>Artists</a>
@@ -81,7 +81,7 @@ const jsonLdPayload = jsonLd
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <p class="eyebrow">Artist Money</p>
+          <p class="eyebrow">How Much Music</p>
           <p>
             Music earnings, catalog value, and artist-side estimates presented as editorial
             research.
@@ -118,7 +118,7 @@ const jsonLdPayload = jsonLd
             Earnings are estimates, not public royalty statements. Image licenses and rights notes
             are listed on the credits page.
           </p>
-          <p class="footer-note">© 2026 Artist Money</p>
+          <p class="footer-note">© 2026 How Much Music</p>
         </div>
       </div>
     </footer>
