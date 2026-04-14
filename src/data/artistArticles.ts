@@ -125,5 +125,65 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "Creator-side authorship and catalog recognition improve the retained share."
     ],
     insight: "When a catalog becomes licensing infrastructure, its earning life extends far beyond its chart cycle."
+  },
+  gas: {
+    seoTitle: "Does GAS still make money from ambient-techno records?",
+    shortAnswer: "Yes — estimated $120K-$500K/year.",
+    sources: [
+      "Deep-listening and ambient playlist use keeps the catalog active.",
+      "Vinyl reissues and collector demand matter more here than mainstream chart exposure.",
+      "Creator-led catalog control improves retained value versus performer-only catalogs."
+    ],
+    insight: "Atmospheric niche catalogs can earn steadily when they remain canonical inside specialist listening culture."
+  },
+  "oneohtrix-point-never": {
+    seoTitle: "Does Oneohtrix Point Never still make money from older records?",
+    shortAnswer: "Yes — estimated $300K-$1.2M/year.",
+    sources: [
+      "Streaming from a loyal experimental-music audience keeps the core catalog active.",
+      "Film-score associations and wider producer visibility improve long-tail relevance.",
+      "Critical-canon status helps older records keep circulating."
+    ],
+    insight: "Experimental catalogs earn when they stay culturally referential, not only when they reach mainstream scale."
+  },
+  squarepusher: {
+    seoTitle: "Does Squarepusher still earn money from old tracks?",
+    shortAnswer: "Yes — estimated $250K-$900K/year.",
+    sources: [
+      "IDM and electronic-canon listening keep key recordings alive.",
+      "Specialist fans continue to drive reissues, streams, and deep-catalog discovery.",
+      "Production-led cult catalogs monetize depth and influence more than mainstream exposure."
+    ],
+    insight: "Technically distinctive electronic catalogs can keep paying because they remain reference points for entire scenes."
+  },
+  blur: {
+    seoTitle: "Does Blur still make money from its catalog?",
+    shortAnswer: "Yes — estimated $2M-$7M/year.",
+    sources: [
+      "Song 2 still performs unusually well through sync use and sports-media reuse.",
+      "Britpop nostalgia keeps multiple catalog songs active on streaming services.",
+      "Writer-side participation strengthens the economics of legacy hits."
+    ],
+    insight: "One globally reusable crossover single can materially lift the economics of an entire band catalog."
+  },
+  gorillaz: {
+    seoTitle: "Do Gorillaz still make money from old songs?",
+    shortAnswer: "Yes — estimated $4M-$12M/year.",
+    sources: [
+      "Feel Good Inc. and Clint Eastwood remain global streaming staples.",
+      "The visual brand keeps older songs culturally visible and reusable.",
+      "Genre crossover broadens the catalog's long-tail audience."
+    ],
+    insight: "Catalogs that bridge genres and visual identity often age better than single-scene projects."
+  },
+  "travis-scott": {
+    seoTitle: "How much does Travis Scott still make from streaming?",
+    shortAnswer: "Estimated $15M-$50M/year.",
+    sources: [
+      "Major streaming hits still operate at global rap-catalog scale.",
+      "Playlist reach keeps top songs visible well beyond the release cycle.",
+      "Brand visibility and collaboration effects amplify song-level economics."
+    ],
+    insight: "At streaming scale, a small number of giant records can dominate an artist's annual earnings profile."
   }
 };
