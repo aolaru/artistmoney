@@ -88,34 +88,50 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
 </BaseLayout>
 
 <script is:inline>
-  const artistSearchInput = document.querySelector("#artist-search");
-  const artistGenreSelect = document.querySelector("#artist-genre");
-  const artistCountrySelect = document.querySelector("#artist-country");
-  const artistCards = [...document.querySelectorAll("[data-artist-card]")];
-  const artistNote = document.querySelector("#artist-results-note");
+  const initArtistFilters = () => {
+    const artistSearchInput = document.querySelector("#artist-search");
+    const artistGenreSelect = document.querySelector("#artist-genre");
+    const artistCountrySelect = document.querySelector("#artist-country");
+    const artistCards = [...document.querySelectorAll("[data-artist-card]")];
+    const artistNote = document.querySelector("#artist-results-note");
 
-  const applyArtistFilters = () => {
-    const query = (artistSearchInput?.value ?? "").trim().toLowerCase();
-    const genre = artistGenreSelect?.value ?? "";
-    const country = artistCountrySelect?.value ?? "";
+    if (!artistSearchInput || !artistGenreSelect || !artistCountrySelect || !artistNote) return;
+    if (artistSearchInput.dataset.filtersBound === "true") return;
 
-    let visible = 0;
+    const applyArtistFilters = () => {
+      const query = artistSearchInput.value.trim().toLowerCase();
+      const genre = artistGenreSelect.value;
+      const country = artistCountrySelect.value;
 
-    artistCards.forEach((card) => {
-      const matchesQuery = !query || card.dataset.search?.includes(query);
-      const matchesGenre = !genre || card.dataset.genre === genre;
-      const matchesCountry = !country || card.dataset.country === country;
-      const show = Boolean(matchesQuery && matchesGenre && matchesCountry);
+      let visible = 0;
 
-      card.classList.toggle("is-hidden", !show);
-      if (show) visible += 1;
+      artistCards.forEach((card) => {
+        const matchesQuery = !query || card.dataset.search?.includes(query);
+        const matchesGenre = !genre || card.dataset.genre === genre;
+        const matchesCountry = !country || card.dataset.country === country;
+        const show = Boolean(matchesQuery && matchesGenre && matchesCountry);
+
+        card.classList.toggle("is-hidden", !show);
+        if (show) visible += 1;
+      });
+
+      artistNote.textContent = `Showing ${visible} artist${visible === 1 ? "" : "s"}`;
+    };
+
+    [artistSearchInput, artistGenreSelect, artistCountrySelect].forEach((element) => {
+      element.addEventListener("input", applyArtistFilters);
+      element.addEventListener("change", applyArtistFilters);
     });
 
-    if (artistNote) artistNote.textContent = `Showing ${visible} artist${visible === 1 ? "" : "s"}`;
+    artistSearchInput.dataset.filtersBound = "true";
+    applyArtistFilters();
   };
 
-  [artistSearchInput, artistGenreSelect, artistCountrySelect].forEach((element) => {
-    element?.addEventListener("input", applyArtistFilters);
-    element?.addEventListener("change", applyArtistFilters);
-  });
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initArtistFilters, { once: true });
+  } else {
+    initArtistFilters();
+  }
+
+  document.addEventListener("astro:page-load", initArtistFilters);
 </script>

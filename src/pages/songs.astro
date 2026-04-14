@@ -103,34 +103,50 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
 </BaseLayout>
 
 <script is:inline>
-  const songSearchInput = document.querySelector("#song-search");
-  const songArtistSelect = document.querySelector("#song-artist");
-  const songDecadeSelect = document.querySelector("#song-decade");
-  const songCards = [...document.querySelectorAll("[data-song-card]")];
-  const songNote = document.querySelector("#song-results-note");
+  const initSongFilters = () => {
+    const songSearchInput = document.querySelector("#song-search");
+    const songArtistSelect = document.querySelector("#song-artist");
+    const songDecadeSelect = document.querySelector("#song-decade");
+    const songCards = [...document.querySelectorAll("[data-song-card]")];
+    const songNote = document.querySelector("#song-results-note");
 
-  const applySongFilters = () => {
-    const query = (songSearchInput?.value ?? "").trim().toLowerCase();
-    const artist = songArtistSelect?.value ?? "";
-    const decade = songDecadeSelect?.value ?? "";
+    if (!songSearchInput || !songArtistSelect || !songDecadeSelect || !songNote) return;
+    if (songSearchInput.dataset.filtersBound === "true") return;
 
-    let visible = 0;
+    const applySongFilters = () => {
+      const query = songSearchInput.value.trim().toLowerCase();
+      const artist = songArtistSelect.value;
+      const decade = songDecadeSelect.value;
 
-    songCards.forEach((card) => {
-      const matchesQuery = !query || card.dataset.search?.includes(query);
-      const matchesArtist = !artist || card.dataset.artist === artist;
-      const matchesDecade = !decade || card.dataset.decade === decade;
-      const show = Boolean(matchesQuery && matchesArtist && matchesDecade);
+      let visible = 0;
 
-      card.classList.toggle("is-hidden", !show);
-      if (show) visible += 1;
+      songCards.forEach((card) => {
+        const matchesQuery = !query || card.dataset.search?.includes(query);
+        const matchesArtist = !artist || card.dataset.artist === artist;
+        const matchesDecade = !decade || card.dataset.decade === decade;
+        const show = Boolean(matchesQuery && matchesArtist && matchesDecade);
+
+        card.classList.toggle("is-hidden", !show);
+        if (show) visible += 1;
+      });
+
+      songNote.textContent = `Showing ${visible} song${visible === 1 ? "" : "s"}`;
+    };
+
+    [songSearchInput, songArtistSelect, songDecadeSelect].forEach((element) => {
+      element.addEventListener("input", applySongFilters);
+      element.addEventListener("change", applySongFilters);
     });
 
-    if (songNote) songNote.textContent = `Showing ${visible} song${visible === 1 ? "" : "s"}`;
+    songSearchInput.dataset.filtersBound = "true";
+    applySongFilters();
   };
 
-  [songSearchInput, songArtistSelect, songDecadeSelect].forEach((element) => {
-    element?.addEventListener("input", applySongFilters);
-    element?.addEventListener("change", applySongFilters);
-  });
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSongFilters, { once: true });
+  } else {
+    initSongFilters();
+  }
+
+  document.addEventListener("astro:page-load", initSongFilters);
 </script>

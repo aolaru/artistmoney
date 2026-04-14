@@ -92,31 +92,47 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
 </BaseLayout>
 
 <script is:inline>
-  const albumSearchInput = document.querySelector("#album-search");
-  const albumDecadeSelect = document.querySelector("#album-decade");
-  const albumCards = [...document.querySelectorAll("[data-album-card]")];
-  const albumNote = document.querySelector("#album-results-note");
+  const initAlbumFilters = () => {
+    const albumSearchInput = document.querySelector("#album-search");
+    const albumDecadeSelect = document.querySelector("#album-decade");
+    const albumCards = [...document.querySelectorAll("[data-album-card]")];
+    const albumNote = document.querySelector("#album-results-note");
 
-  const applyAlbumFilters = () => {
-    const query = (albumSearchInput?.value ?? "").trim().toLowerCase();
-    const decade = albumDecadeSelect?.value ?? "";
+    if (!albumSearchInput || !albumDecadeSelect || !albumNote) return;
+    if (albumSearchInput.dataset.filtersBound === "true") return;
 
-    let visible = 0;
+    const applyAlbumFilters = () => {
+      const query = albumSearchInput.value.trim().toLowerCase();
+      const decade = albumDecadeSelect.value;
 
-    albumCards.forEach((card) => {
-      const matchesQuery = !query || card.dataset.search?.includes(query);
-      const matchesDecade = !decade || card.dataset.decade === decade;
-      const show = Boolean(matchesQuery && matchesDecade);
+      let visible = 0;
 
-      card.classList.toggle("is-hidden", !show);
-      if (show) visible += 1;
+      albumCards.forEach((card) => {
+        const matchesQuery = !query || card.dataset.search?.includes(query);
+        const matchesDecade = !decade || card.dataset.decade === decade;
+        const show = Boolean(matchesQuery && matchesDecade);
+
+        card.classList.toggle("is-hidden", !show);
+        if (show) visible += 1;
+      });
+
+      albumNote.textContent = `Showing ${visible} album${visible === 1 ? "" : "s"}`;
+    };
+
+    [albumSearchInput, albumDecadeSelect].forEach((element) => {
+      element.addEventListener("input", applyAlbumFilters);
+      element.addEventListener("change", applyAlbumFilters);
     });
 
-    if (albumNote) albumNote.textContent = `Showing ${visible} album${visible === 1 ? "" : "s"}`;
+    albumSearchInput.dataset.filtersBound = "true";
+    applyAlbumFilters();
   };
 
-  [albumSearchInput, albumDecadeSelect].forEach((element) => {
-    element?.addEventListener("input", applyAlbumFilters);
-    element?.addEventListener("change", applyAlbumFilters);
-  });
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAlbumFilters, { once: true });
+  } else {
+    initAlbumFilters();
+  }
+
+  document.addEventListener("astro:page-load", initAlbumFilters);
 </script>
