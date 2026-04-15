@@ -1,24 +1,30 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 2,
-    "song": 2,
-    "album": 2
+    "artist": 3,
+    "song": 3,
+    "album": 3
   },
   "lastTouched": {
     "artist": {
       "2pac": "2026-04-15T06:40:18.327Z",
-      "50-cent": "2026-04-15T06:43:23.685Z"
+      "50-cent": "2026-04-15T06:43:23.685Z",
+      "aerosmith": "2026-04-15T06:55:59.198Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
-      "1979": "2026-04-15T06:40:18.327Z"
+      "1979": "2026-04-15T06:40:18.327Z",
+      "a-horse-with-no-name": "2026-04-15T06:55:59.198Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-15T06:55:59.198Z",
+      "summary": "artist:aerosmith, song:a-horse-with-no-name"
+    },
     {
       "timestamp": "2026-04-15T06:43:23.685Z",
       "summary": "artist:50-cent, song:505, album:4-non-blondes-bigger-better-faster-more"
