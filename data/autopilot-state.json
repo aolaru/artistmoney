@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 5,
-    "song": 5,
-    "album": 5
+    "artist": 6,
+    "song": 6,
+    "album": 6
   },
   "lastTouched": {
     "artist": {
@@ -11,14 +11,16 @@
       "50-cent": "2026-04-15T06:43:23.685Z",
       "aerosmith": "2026-04-15T06:55:59.198Z",
       "aphex-twin": "2026-04-15T09:22:38.828Z",
-      "audioslave": "2026-04-15T11:01:22.052Z"
+      "audioslave": "2026-04-15T11:01:22.052Z",
+      "billie-eilish": "2026-04-15T13:41:50.295Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
       "1979": "2026-04-15T06:40:18.327Z",
       "a-horse-with-no-name": "2026-04-15T06:55:59.198Z",
       "all-along-the-watchtower": "2026-04-15T09:22:38.828Z",
-      "all-my-life": "2026-04-15T11:01:22.052Z"
+      "all-my-life": "2026-04-15T11:01:22.052Z",
+      "alone": "2026-04-15T13:41:50.295Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -27,6 +29,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-15T13:41:50.295Z",
+      "summary": "artist:billie-eilish, song:alone"
+    },
     {
       "timestamp": "2026-04-15T11:01:22.052Z",
       "summary": "artist:audioslave, song:all-my-life, album:air-moon-safari"

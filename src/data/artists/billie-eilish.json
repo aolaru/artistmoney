@@ -2,5 +2,17 @@
   "name": "Billie Eilish",
   "slug": "billie-eilish",
   "estimated_income": "$8M-$25M/year",
-  "top_songs": ["bad-guy", "happier-than-ever", "everything-i-wanted"]
+  "top_songs": [
+    "bad-guy",
+    "happier-than-ever",
+    "everything-i-wanted"
+  ],
+  "bio": "Billie Eilish has a durable catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Billie Eilish remains closely associated with Bad Guy and Happier Than Ever, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Bad Guy and Happier Than Ever still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings even after the original release cycle ends.",
+    "Playlist use and listener rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand help extend catalog value over time."
+  ]
 }
