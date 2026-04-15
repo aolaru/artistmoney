@@ -6250,5 +6250,76 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/aerosmith/1658644936?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Aerosmith%20Aerosmith"
     }
+  },
+  "air-moon-safari": {
+    "releaseDate": "1998-01-16",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "La Femme d'argent",
+        "durationMs": 426614
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Sexy Boy",
+        "durationMs": 298467
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "All I Need",
+        "durationMs": 268307
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Kelly Watch the Stars",
+        "durationMs": 226293
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Talisman",
+        "durationMs": 256707
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Remember",
+        "durationMs": 154293
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "You Make It Easy",
+        "durationMs": 241533
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Ce Matin-Là",
+        "durationMs": 219040
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "New Star In the Sky",
+        "durationMs": 340600
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Le voyage de Pénélope",
+        "durationMs": 190867
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Air%20Moon%20Safari",
+      "appleMusic": "https://music.apple.com/us/album/moon-safari/693063670?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Air%20Moon%20Safari"
+    }
   }
 } as const;

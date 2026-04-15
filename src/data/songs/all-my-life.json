@@ -4,5 +4,14 @@
   "artist": "k-ci-and-jojo",
   "estimated_revenue": "$250K-$850K/year",
   "album": "Love Always",
-  "year": 1997
+  "year": 1997,
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable over time.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring revenue drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can add to the baseline stream count."
+  ],
+  "related_songs": [
+    "tell-me-its-real"
+  ]
 }

@@ -2,9 +2,19 @@
   "name": "Audioslave",
   "slug": "audioslave",
   "estimated_income": "$1M-$3.5M/year",
-  "top_songs": ["like-a-stone", "be-yourself"],
+  "top_songs": [
+    "like-a-stone",
+    "be-yourself"
+  ],
   "genre": "Alternative Rock / Hard Rock",
   "country": "United States",
   "active_since": "2001",
-  "bio": "Audioslave's catalog still performs through early-2000s rock nostalgia and the long-tail strength of a few defining singles."
+  "bio": "Audioslave's catalog still performs through early-2000s rock nostalgia and the long-tail strength of a few defining singles.",
+  "notable_for": "Audioslave remains closely associated with Like a Stone and Be Yourself, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Like a Stone and Be Yourself still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Classic catalog streaming keeps major songs active well beyond the original release cycle.",
+    "Playlist longevity and generational rediscovery support steady long-tail listening.",
+    "Film, television, sports, and trailer usage can reactivate demand for familiar recordings."
+  ]
 }

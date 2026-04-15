@@ -1,29 +1,36 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 4,
-    "song": 4,
-    "album": 4
+    "artist": 5,
+    "song": 5,
+    "album": 5
   },
   "lastTouched": {
     "artist": {
       "2pac": "2026-04-15T06:40:18.327Z",
       "50-cent": "2026-04-15T06:43:23.685Z",
       "aerosmith": "2026-04-15T06:55:59.198Z",
-      "aphex-twin": "2026-04-15T09:22:38.828Z"
+      "aphex-twin": "2026-04-15T09:22:38.828Z",
+      "audioslave": "2026-04-15T11:01:22.052Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
       "1979": "2026-04-15T06:40:18.327Z",
       "a-horse-with-no-name": "2026-04-15T06:55:59.198Z",
-      "all-along-the-watchtower": "2026-04-15T09:22:38.828Z"
+      "all-along-the-watchtower": "2026-04-15T09:22:38.828Z",
+      "all-my-life": "2026-04-15T11:01:22.052Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
-      "aerosmith-aerosmith": "2026-04-15T09:22:38.828Z"
+      "aerosmith-aerosmith": "2026-04-15T09:22:38.828Z",
+      "air-moon-safari": "2026-04-15T11:01:22.052Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-15T11:01:22.052Z",
+      "summary": "artist:audioslave, song:all-my-life, album:air-moon-safari"
+    },
     {
       "timestamp": "2026-04-15T09:22:38.828Z",
       "summary": "artist:aphex-twin, song:all-along-the-watchtower, album:aerosmith-aerosmith"
