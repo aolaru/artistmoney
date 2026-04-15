@@ -1,14 +1,14 @@
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-
-import { songMetadata } from "../src/data/songMetadata.ts";
+import { loadExportedDataModule } from "./load-data-module.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const songsDir = path.join(rootDir, "src", "data", "songs");
 const artistsDir = path.join(rootDir, "src", "data", "artists");
 const outputPath = path.join(rootDir, "src", "data", "albumMetadata.ts");
+const songMetadataPath = path.join(rootDir, "src", "data", "songMetadata.ts");
 const MINIMUM_METADATA_SCORE = 100;
 const MINIMUM_FULL_TRACKLIST_SCORE = 140;
 
@@ -118,6 +118,7 @@ async function fetchJson(url) {
 }
 
 export async function buildAlbums() {
+  const songMetadata = await loadExportedDataModule(songMetadataPath, "songMetadata");
   const [artistFiles, songFiles] = await Promise.all([
     fs.readdir(artistsDir),
     fs.readdir(songsDir)

@@ -1,8 +1,8 @@
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { albumMetadata } from "../src/data/albumMetadata.ts";
 import { buildAlbums, fetchAlbumMetadata, renderFile } from "./generate-album-metadata.mjs";
+import { loadExportedDataModule } from "./load-data-module.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
@@ -443,6 +443,7 @@ async function writeSummary(result) {
 }
 
 export async function main() {
+  const albumMetadata = await loadExportedDataModule(albumMetadataPath, "albumMetadata");
   const state = await readState();
   const artistFiles = await readJsonCollection(artistDir);
   const songFiles = await readJsonCollection(songDir);
