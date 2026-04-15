@@ -1,20 +1,28 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 1,
-    "song": 1,
-    "album": 1
+    "artist": 2,
+    "song": 2,
+    "album": 2
   },
   "lastTouched": {
     "artist": {
-      "2pac": "2026-04-15T06:40:18.327Z"
+      "2pac": "2026-04-15T06:40:18.327Z",
+      "50-cent": "2026-04-15T06:43:23.685Z"
     },
     "song": {
+      "505": "2026-04-15T06:43:23.685Z",
       "1979": "2026-04-15T06:40:18.327Z"
     },
-    "album": {}
+    "album": {
+      "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z"
+    }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-15T06:43:23.685Z",
+      "summary": "artist:50-cent, song:505, album:4-non-blondes-bigger-better-faster-more"
+    },
     {
       "timestamp": "2026-04-15T06:40:18.327Z",
       "summary": "artist:2pac, song:1979"

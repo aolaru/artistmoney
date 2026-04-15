@@ -2,5 +2,16 @@
   "name": "50 Cent",
   "slug": "50-cent",
   "estimated_income": "$5M-$15M/year",
-  "top_songs": ["in-da-club", "21-questions"]
+  "top_songs": [
+    "in-da-club",
+    "21-questions"
+  ],
+  "bio": "50 Cent has a durable catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "50 Cent remains closely associated with In Da Club and 21 Questions, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like In Da Club and 21 Questions still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings even after the original release cycle ends.",
+    "Playlist use and listener rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand help extend catalog value over time."
+  ]
 }

@@ -6112,5 +6112,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "spotify": "https://open.spotify.com/search/Underworld%20Trainspotting",
       "youtubeMusic": "https://music.youtube.com/search?q=Underworld%20Trainspotting"
     }
+  },
+  "4-non-blondes-bigger-better-faster-more": {
+    "releaseDate": "1992-10-13",
+    "label": "Interscope Records",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Train",
+        "durationMs": 223560
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Superfly",
+        "durationMs": 277507
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "What's Up?",
+        "durationMs": 295533
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Pleasantly Blue",
+        "durationMs": 146960
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Morphine and Chocolate",
+        "durationMs": 281733
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Spaceman",
+        "durationMs": 220307
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Old Mr. Heffer",
+        "durationMs": 136800
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Calling All the People",
+        "durationMs": 197627
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Dear Mr. President",
+        "durationMs": 283267
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Drifting",
+        "durationMs": 210240
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "No Place Like Home",
+        "durationMs": 188907
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/4%20Non%20Blondes%20Bigger%2C%20Better%2C%20Faster%2C%20More!",
+      "appleMusic": "https://music.apple.com/us/album/bigger-better-faster-more/1440902342?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=4%20Non%20Blondes%20Bigger%2C%20Better%2C%20Faster%2C%20More!"
+    }
   }
 } as const;
