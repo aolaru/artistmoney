@@ -2,5 +2,17 @@
   "name": "2Pac",
   "slug": "2pac",
   "estimated_income": "$2M-$7M/year",
-  "top_songs": ["california-love", "changes", "dear-mama"]
+  "top_songs": [
+    "california-love",
+    "changes",
+    "dear-mama"
+  ],
+  "bio": "2Pac has a durable catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "2Pac remains closely associated with California Love and Changes, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like California Love and Changes still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings even after the original release cycle ends.",
+    "Playlist use and listener rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand help extend catalog value over time."
+  ]
 }

@@ -1,14 +1,23 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 0,
-    "song": 0,
-    "album": 0
+    "artist": 1,
+    "song": 1,
+    "album": 1
   },
   "lastTouched": {
-    "artist": {},
-    "song": {},
+    "artist": {
+      "2pac": "2026-04-15T06:40:18.327Z"
+    },
+    "song": {
+      "1979": "2026-04-15T06:40:18.327Z"
+    },
     "album": {}
   },
-  "recentRuns": []
+  "recentRuns": [
+    {
+      "timestamp": "2026-04-15T06:40:18.327Z",
+      "summary": "artist:2pac, song:1979"
+    }
+  ]
 }

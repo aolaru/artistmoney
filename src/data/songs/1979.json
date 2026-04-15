@@ -4,5 +4,14 @@
   "artist": "the-smashing-pumpkins",
   "estimated_revenue": "$350K-$1.2M/year",
   "album": "Mellon Collie and the Infinite Sadness",
-  "year": 1995
+  "year": 1995,
+  "meaning_summary": "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay across catalog listening.",
+  "revenue_drivers": [
+    "Classic replay value and catalog streaming keep major rock songs commercially relevant.",
+    "Playlist placement and cultural familiarity support long-tail listener demand.",
+    "Sync placements and live-culture recognition help extend the song's revenue life."
+  ],
+  "related_songs": [
+    "tonight-tonight"
+  ]
 }
