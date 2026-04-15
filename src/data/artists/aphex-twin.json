@@ -2,5 +2,17 @@
   "name": "Aphex Twin",
   "slug": "aphex-twin",
   "estimated_income": "$500K-$1.5M/year",
-  "top_songs": ["windowlicker", "avril-14th", "xtal"]
+  "top_songs": [
+    "windowlicker",
+    "avril-14th",
+    "xtal"
+  ],
+  "bio": "Aphex Twin has a durable catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Aphex Twin remains closely associated with Windowlicker and Avril 14th, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Windowlicker and Avril 14th still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings even after the original release cycle ends.",
+    "Playlist use and listener rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand help extend catalog value over time."
+  ]
 }

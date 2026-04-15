@@ -1,26 +1,33 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 3,
-    "song": 3,
-    "album": 3
+    "artist": 4,
+    "song": 4,
+    "album": 4
   },
   "lastTouched": {
     "artist": {
       "2pac": "2026-04-15T06:40:18.327Z",
       "50-cent": "2026-04-15T06:43:23.685Z",
-      "aerosmith": "2026-04-15T06:55:59.198Z"
+      "aerosmith": "2026-04-15T06:55:59.198Z",
+      "aphex-twin": "2026-04-15T09:22:38.828Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
       "1979": "2026-04-15T06:40:18.327Z",
-      "a-horse-with-no-name": "2026-04-15T06:55:59.198Z"
+      "a-horse-with-no-name": "2026-04-15T06:55:59.198Z",
+      "all-along-the-watchtower": "2026-04-15T09:22:38.828Z"
     },
     "album": {
-      "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z"
+      "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
+      "aerosmith-aerosmith": "2026-04-15T09:22:38.828Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-15T09:22:38.828Z",
+      "summary": "artist:aphex-twin, song:all-along-the-watchtower, album:aerosmith-aerosmith"
+    },
     {
       "timestamp": "2026-04-15T06:55:59.198Z",
       "summary": "artist:aerosmith, song:a-horse-with-no-name"

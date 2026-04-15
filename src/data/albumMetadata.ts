@@ -14,7 +14,6 @@ export type AlbumMetadata = {
   links?: {
     spotify?: string;
     appleMusic?: string;
-    amazonMusic?: string;
     youtubeMusic?: string;
   };
 };
@@ -6190,6 +6189,66 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "spotify": "https://open.spotify.com/search/4%20Non%20Blondes%20Bigger%2C%20Better%2C%20Faster%2C%20More!",
       "appleMusic": "https://music.apple.com/us/album/bigger-better-faster-more/1440902342?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=4%20Non%20Blondes%20Bigger%2C%20Better%2C%20Faster%2C%20More!"
+    }
+  },
+  "aerosmith-aerosmith": {
+    "releaseDate": "1973-01-05",
+    "label": "Aerodisc Partnership",
+    "trackCount": 8,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Make It",
+        "durationMs": 220545
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Somebody",
+        "durationMs": 225734
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Dream On",
+        "durationMs": 267597
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "One Way Street",
+        "durationMs": 422607
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Mama Kin",
+        "durationMs": 269191
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Write Me a Letter",
+        "durationMs": 252508
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Movin' Out",
+        "durationMs": 302717
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Walkin' the Dog",
+        "durationMs": 193515
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Aerosmith%20Aerosmith",
+      "appleMusic": "https://music.apple.com/us/album/aerosmith/1658644936?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Aerosmith%20Aerosmith"
     }
   }
 } as const;
