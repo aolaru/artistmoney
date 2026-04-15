@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 6,
-    "song": 6,
-    "album": 6
+    "artist": 7,
+    "song": 7,
+    "album": 7
   },
   "lastTouched": {
     "artist": {
@@ -12,7 +12,8 @@
       "aerosmith": "2026-04-15T06:55:59.198Z",
       "aphex-twin": "2026-04-15T09:22:38.828Z",
       "audioslave": "2026-04-15T11:01:22.052Z",
-      "billie-eilish": "2026-04-15T13:41:50.295Z"
+      "billie-eilish": "2026-04-15T13:41:50.295Z",
+      "black-sabbath": "2026-04-15T15:06:41.292Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -20,7 +21,8 @@
       "a-horse-with-no-name": "2026-04-15T06:55:59.198Z",
       "all-along-the-watchtower": "2026-04-15T09:22:38.828Z",
       "all-my-life": "2026-04-15T11:01:22.052Z",
-      "alone": "2026-04-15T13:41:50.295Z"
+      "alone": "2026-04-15T13:41:50.295Z",
+      "another-brick-in-the-wall": "2026-04-15T15:06:41.292Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -29,6 +31,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-15T15:06:41.292Z",
+      "summary": "artist:black-sabbath, song:another-brick-in-the-wall"
+    },
     {
       "timestamp": "2026-04-15T13:41:50.295Z",
       "summary": "artist:billie-eilish, song:alone"

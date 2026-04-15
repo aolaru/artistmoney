@@ -2,8 +2,19 @@
   "name": "Black Sabbath",
   "slug": "black-sabbath",
   "estimated_income": "$2M-$8M/year",
-  "top_songs": ["paranoid", "iron-man"],
+  "top_songs": [
+    "paranoid",
+    "iron-man"
+  ],
   "genre": "Heavy Metal",
   "country": "United Kingdom",
-  "active_since": "1968"
+  "active_since": "1968",
+  "bio": "Black Sabbath has a durable heavy metal catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Black Sabbath remains closely associated with Paranoid and Iron Man, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Paranoid and Iron Man still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Classic catalog streaming keeps major songs active well beyond the original release cycle.",
+    "Playlist longevity and generational rediscovery support steady long-tail listening.",
+    "Film, television, sports, and trailer usage can reactivate demand for familiar recordings."
+  ]
 }
