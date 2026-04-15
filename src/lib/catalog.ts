@@ -209,7 +209,15 @@ export function getAlbumSlug(artistSlug: string, albumTitle: string) {
 function buildAmazonMusicSearchLink(...parts: Array<string | undefined>) {
   const query = parts.filter(Boolean).join(" ").trim();
   if (!query) return undefined;
-  return `https://music.amazon.com/search/${encodeURIComponent(query)}`;
+  const url = new URL(`https://music.amazon.com/search/${encodeURIComponent(query)}`);
+  const associateTag =
+    import.meta.env.PUBLIC_AMAZON_ASSOCIATE_TAG?.trim() || "kreativauto-20";
+
+  if (associateTag) {
+    url.searchParams.set("tag", associateTag);
+  }
+
+  return url.toString();
 }
 
 function summarizeRevenue(songs: Song[]) {
