@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 8,
-    "song": 8,
-    "album": 8
+    "artist": 9,
+    "song": 9,
+    "album": 9
   },
   "lastTouched": {
     "artist": {
@@ -14,7 +14,8 @@
       "audioslave": "2026-04-15T11:01:22.052Z",
       "billie-eilish": "2026-04-15T13:41:50.295Z",
       "black-sabbath": "2026-04-15T15:06:41.292Z",
-      "boston": "2026-04-15T19:09:22.203Z"
+      "boston": "2026-04-15T19:09:22.203Z",
+      "chicago": "2026-04-15T21:46:31.024Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -24,15 +25,21 @@
       "all-my-life": "2026-04-15T11:01:22.052Z",
       "alone": "2026-04-15T13:41:50.295Z",
       "another-brick-in-the-wall": "2026-04-15T15:06:41.292Z",
-      "army-of-me": "2026-04-15T19:09:22.203Z"
+      "army-of-me": "2026-04-15T19:09:22.203Z",
+      "baby-s-on-fire": "2026-04-15T21:46:31.024Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
       "aerosmith-aerosmith": "2026-04-15T09:22:38.828Z",
-      "air-moon-safari": "2026-04-15T11:01:22.052Z"
+      "air-moon-safari": "2026-04-15T11:01:22.052Z",
+      "america-america": "2026-04-15T21:46:31.024Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-15T21:46:31.024Z",
+      "summary": "artist:chicago, song:baby-s-on-fire, album:america-america"
+    },
     {
       "timestamp": "2026-04-15T19:09:22.203Z",
       "summary": "artist:boston, song:army-of-me"

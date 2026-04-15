@@ -6321,5 +6321,89 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/moon-safari/693063670?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Air%20Moon%20Safari"
     }
+  },
+  "america-america": {
+    "releaseDate": "1971-12-29",
+    "label": "Warner Records Inc.",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Riverside",
+        "durationMs": 181093
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Sandman",
+        "durationMs": 308600
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Three Roses",
+        "durationMs": 233933
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Children",
+        "durationMs": 188293
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "A Horse With No Name",
+        "durationMs": 252240
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Here",
+        "durationMs": 327933
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "I Need You",
+        "durationMs": 183187
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Rainy Day",
+        "durationMs": 174440
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Never Found the Time",
+        "durationMs": 230733
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Clarice",
+        "durationMs": 241293
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Donkey Jaw",
+        "durationMs": 319600
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Pigeon Song",
+        "durationMs": 138133
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/America%20America",
+      "appleMusic": "https://music.apple.com/us/album/america/301027593?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=America%20America"
+    }
   }
 } as const;

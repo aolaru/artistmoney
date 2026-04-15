@@ -2,8 +2,19 @@
   "name": "Chicago",
   "slug": "chicago",
   "estimated_income": "$2M-$7M/year",
-  "top_songs": ["if-you-leave-me-now", "youre-the-inspiration"],
+  "top_songs": [
+    "if-you-leave-me-now",
+    "youre-the-inspiration"
+  ],
   "genre": "Rock / Pop",
   "country": "United States",
-  "active_since": "1967"
+  "active_since": "1967",
+  "bio": "Chicago has a durable rock / pop catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Chicago remains closely associated with If You Leave Me Now and You're the Inspiration, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like If You Leave Me Now and You're the Inspiration still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the strongest songs keep earning after release.",
+    "Broad catalog recognition improves resilience across radio memory, social reuse, and rediscovery.",
+    "Licensing and seasonal or event-driven playback can create recurring revenue spikes."
+  ]
 }

@@ -16,5 +16,15 @@
     "publishing_owner": "Publishing appears concentrated on the writer or small rightsholder group",
     "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
     "notes": "This is an inferred gross-to-net range based on niche catalog behavior, not a public royalty statement."
-  }
+  },
+  "meaning_summary": "This recording leans on atmosphere, texture, and replayable mood, which makes it durable in both listener memory and long-tail streaming.",
+  "revenue_drivers": [
+    "Playlist and mood-based streaming support repeat listening over long periods.",
+    "Electronic tracks can keep earning through steady niche demand and reissue interest.",
+    "Licensing and soundtrack-style use can materially improve long-tail economics."
+  ],
+  "related_songs": [
+    "an-ending-ascent",
+    "music-for-airports-1-1"
+  ]
 }
