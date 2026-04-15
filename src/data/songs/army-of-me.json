@@ -4,5 +4,14 @@
   "artist": "bjork",
   "estimated_revenue": "$180K-$700K/year",
   "album": "Post",
-  "year": 1995
+  "year": 1995,
+  "meaning_summary": "This recording leans on atmosphere, texture, and replayable mood, which makes it durable in both listener memory and long-tail streaming.",
+  "revenue_drivers": [
+    "Playlist and mood-based streaming support repeat listening over long periods.",
+    "Electronic tracks can keep earning through steady niche demand and reissue interest.",
+    "Licensing and soundtrack-style use can materially improve long-tail economics."
+  ],
+  "related_songs": [
+    "hyperballad"
+  ]
 }

@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 7,
-    "song": 7,
-    "album": 7
+    "artist": 8,
+    "song": 8,
+    "album": 8
   },
   "lastTouched": {
     "artist": {
@@ -13,7 +13,8 @@
       "aphex-twin": "2026-04-15T09:22:38.828Z",
       "audioslave": "2026-04-15T11:01:22.052Z",
       "billie-eilish": "2026-04-15T13:41:50.295Z",
-      "black-sabbath": "2026-04-15T15:06:41.292Z"
+      "black-sabbath": "2026-04-15T15:06:41.292Z",
+      "boston": "2026-04-15T19:09:22.203Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -22,7 +23,8 @@
       "all-along-the-watchtower": "2026-04-15T09:22:38.828Z",
       "all-my-life": "2026-04-15T11:01:22.052Z",
       "alone": "2026-04-15T13:41:50.295Z",
-      "another-brick-in-the-wall": "2026-04-15T15:06:41.292Z"
+      "another-brick-in-the-wall": "2026-04-15T15:06:41.292Z",
+      "army-of-me": "2026-04-15T19:09:22.203Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -31,6 +33,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-15T19:09:22.203Z",
+      "summary": "artist:boston, song:army-of-me"
+    },
     {
       "timestamp": "2026-04-15T15:06:41.292Z",
       "summary": "artist:black-sabbath, song:another-brick-in-the-wall"
