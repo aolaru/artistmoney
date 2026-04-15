@@ -110,7 +110,13 @@ const songSchema = {
           <div class="external-links">
             {playerLinks.map(([platform, url]) => (
               <a class="external-link" href={url} rel="noreferrer" target="_blank">
-                {platform === "appleMusic" ? "Apple Music" : platform === "youtubeMusic" ? "YouTube Music" : "Spotify"}
+                {platform === "appleMusic"
+                  ? "Apple Music"
+                  : platform === "youtubeMusic"
+                    ? "YouTube Music"
+                    : platform === "amazonMusic"
+                      ? "Amazon Music"
+                      : "Spotify"}
               </a>
             ))}
           </div>

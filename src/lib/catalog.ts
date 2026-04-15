@@ -110,6 +110,7 @@ export type Song = SongJson & {
     artwork?: string;
     links?: {
       appleMusic?: string;
+      amazonMusic?: string;
       spotify?: string;
       youtubeMusic?: string;
     };
@@ -128,6 +129,7 @@ export type Album = {
   links?: {
     spotify?: string;
     appleMusic?: string;
+    amazonMusic?: string;
     youtubeMusic?: string;
   };
   editionNote?: string;
@@ -161,6 +163,9 @@ export const artists: Artist[] = parsedArtists
 export const songs: Song[] = parsedSongs
   .map((song) => {
     const supplemental = songMetadata[song.slug];
+    const artist = parsedArtists.find((entry) => entry.slug === song.artist);
+    const amazonMusic = buildAmazonMusicSearchLink(artist?.name ?? song.artist, song.title);
+    const playerMetadata = songPlayerMetadata[song.slug];
 
     return {
       ...song,
@@ -169,7 +174,19 @@ export const songs: Song[] = parsedSongs
       meaning_summary: song.meaning_summary ?? supplemental?.meaningSummary,
       revenue_drivers: song.revenue_drivers ?? supplemental?.revenueDrivers,
       related_songs: song.related_songs ?? supplemental?.relatedSongs,
-      player: songPlayerMetadata[song.slug]
+      player: playerMetadata
+        ? {
+            ...playerMetadata,
+            links: {
+              ...playerMetadata.links,
+              amazonMusic: playerMetadata.links?.amazonMusic ?? amazonMusic
+            }
+          }
+        : {
+            links: {
+              amazonMusic
+            }
+          }
     };
   })
   .sort((left, right) => left.title.localeCompare(right.title));
@@ -187,6 +204,12 @@ export function slugifyAlbumTitle(title: string) {
 
 export function getAlbumSlug(artistSlug: string, albumTitle: string) {
   return `${artistSlug}-${slugifyAlbumTitle(albumTitle)}`;
+}
+
+function buildAmazonMusicSearchLink(...parts: Array<string | undefined>) {
+  const query = parts.filter(Boolean).join(" ").trim();
+  if (!query) return undefined;
+  return `https://music.amazon.com/search/${encodeURIComponent(query)}`;
 }
 
 function summarizeRevenue(songs: Song[]) {
@@ -252,7 +275,10 @@ export const albums = [...albumEntries.values()].sort((left, right) => {
     releaseDate: supplemental?.releaseDate ?? (album.year ? `${album.year}` : undefined),
     label: supplemental?.label,
     trackCount: supplemental?.trackCount ?? album.trackedSongCount,
-    links: supplemental?.links,
+    links: {
+      ...supplemental?.links,
+      amazonMusic: supplemental?.links?.amazonMusic ?? buildAmazonMusicSearchLink(album.artistName, album.title)
+    },
     editionNote: supplemental?.editionNote,
     fullTracklist: supplemental?.fullTracklist,
     revenueRange,

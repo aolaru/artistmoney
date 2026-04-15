@@ -4,6 +4,7 @@ export type SongPlayerMetadata = {
   artwork?: string;
   links?: {
     appleMusic?: string;
+    amazonMusic?: string;
     spotify?: string;
     youtubeMusic?: string;
   };

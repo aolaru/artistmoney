@@ -14,6 +14,7 @@ export type AlbumMetadata = {
   links?: {
     spotify?: string;
     appleMusic?: string;
+    amazonMusic?: string;
     youtubeMusic?: string;
   };
 };

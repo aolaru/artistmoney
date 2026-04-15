@@ -180,6 +180,13 @@ const albumSchema = {
             <a href={album.links.youtubeMusic} rel="noreferrer" target="_blank">Search album</a>
           </li>
         )}
+        {album.links?.amazonMusic && (
+          <li>
+            Amazon Music:
+            {" "}
+            <a href={album.links.amazonMusic} rel="noreferrer" target="_blank">Search album</a>
+          </li>
+        )}
       </ul>
     </section>
   </article>
