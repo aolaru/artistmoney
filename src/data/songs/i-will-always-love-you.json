@@ -1,0 +1,31 @@
+{
+  "title": "I Will Always Love You",
+  "slug": "i-will-always-love-you",
+  "artist": "whitney-houston",
+  "estimated_revenue": "$900K-$3M/year",
+  "album": "The Bodyguard: Original Soundtrack Album",
+  "year": 1992,
+  "meaning_summary": "I Will Always Love You still dominates because it pairs emotional clarity with one of the most recognizable vocal performances in pop history.",
+  "revenue_drivers": [
+    "The song remains a global streaming and catalog-ballad staple.",
+    "Its Bodyguard association keeps soundtrack and film-linked discovery active.",
+    "Weddings, tribute culture, and media reuse extend long-tail demand."
+  ],
+  "related_songs": [
+    "i-wanna-dance-with-somebody"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1.5M-$4M/year",
+    "artist_or_estate_share": "$900K-$3M/year",
+    "label_master_share": "$300K-$900K/year",
+    "publishing_share": "$150K-$500K/year",
+    "songwriter_share": "$120K-$400K/year",
+    "assumptions": "Estimate assumes ongoing global streaming, soundtrack-linked listening, legacy radio value, and licensing demand."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter estate split",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out catalog position",
+    "notes": "Artist-side economics are modeled from performance and master participation assumptions, not private royalty statements."
+  }
+}

@@ -265,5 +265,25 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "Large-scale rock hits with strong replay value can earn at levels closer to mainstream pop than most legacy rock catalogs."
     ],
     insight: "The rare rock catalog that crosses into mass streaming culture keeps compounding long after release."
+  },
+  "whitney-houston": {
+    seoTitle: "Does Whitney Houston still make money from her catalog?",
+    shortAnswer: "Yes — estimated $8M-$25M/year.",
+    sources: [
+      "I Will Always Love You and I Wanna Dance with Somebody continue to stream at elite evergreen pop scale.",
+      "Soundtrack value, event-driven listening, and long-tail radio familiarity keep the catalog commercially active.",
+      "Catalog recognition and licensing demand remain unusually strong for Whitney Houston's biggest recordings."
+    ],
+    insight: "A catalog built on universally recognizable vocal performances can keep earning for decades because the songs remain useful across playlists, events, film memory, and cultural nostalgia."
+  },
+  "steve-hauschildt": {
+    seoTitle: "Does Steve Hauschildt still make money from ambient records?",
+    shortAnswer: "Yes — estimated $120K-$500K/year.",
+    sources: [
+      "Specialist ambient and electronic audiences keep tracks like Horizon of Apollo and Where All Is Fled active in long-tail streaming.",
+      "Deep-listening genres monetize through repeat use and catalog depth more than mainstream hit volume.",
+      "Creator-leaning electronic catalogs can retain meaningful artist-side value even at modest scale."
+    ],
+    insight: "Ambient catalogs tend to monetize consistency and depth: lower headline scale, but steadier long-term listening from a loyal audience."
   }
 };

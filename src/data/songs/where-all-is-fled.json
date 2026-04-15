@@ -1,0 +1,31 @@
+{
+  "title": "Where All Is Fled",
+  "slug": "where-all-is-fled",
+  "artist": "steve-hauschildt",
+  "estimated_revenue": "$30K-$120K/year",
+  "album": "Where All Is Fled",
+  "year": 2015,
+  "meaning_summary": "Where All Is Fled retains value because it translates experimental ambient composition into something emotionally legible and replayable.",
+  "revenue_drivers": [
+    "Specialist ambient listeners revisit the track as part of album and mood-based listening.",
+    "The title track benefits from deeper fan attachment and full-album replay behavior.",
+    "Ambient catalog tracks can compound slowly through niche playlist and library use."
+  ],
+  "related_songs": [
+    "horizon-of-apollo"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$45K-$150K/year",
+    "artist_or_estate_share": "$30K-$120K/year",
+    "label_master_share": "$8K-$24K/year",
+    "publishing_share": "$4K-$10K/year",
+    "songwriter_share": "$5K-$15K/year",
+    "assumptions": "Estimate assumes long-tail specialist streaming, creator-leaning rights economics, and relatively low churn in ambient catalog listening."
+  },
+  "ownership": {
+    "master_owner": "Likely label / creator-affiliated split",
+    "publishing_owner": "Likely composer-side publishing control",
+    "catalog_sale_status": "No catalog sale adjustment assumed",
+    "notes": "Estimated from niche ambient catalog behavior, not disclosed royalty statements."
+  }
+}

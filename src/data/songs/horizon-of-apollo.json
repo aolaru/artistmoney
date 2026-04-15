@@ -1,0 +1,31 @@
+{
+  "title": "Horizon of Apollo",
+  "slug": "horizon-of-apollo",
+  "artist": "steve-hauschildt",
+  "estimated_revenue": "$35K-$140K/year",
+  "album": "S/H",
+  "year": 2013,
+  "meaning_summary": "Horizon of Apollo keeps earning because its melodic ambient arc works both as active listening and as highly reusable focus music.",
+  "revenue_drivers": [
+    "Ambient playlist usage keeps the track in steady specialist circulation.",
+    "The track benefits from repeat listening in work, study, and reflective contexts.",
+    "Long-tail catalog listening sustains revenue even without mainstream hit behavior."
+  ],
+  "related_songs": [
+    "where-all-is-fled"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$50K-$180K/year",
+    "artist_or_estate_share": "$35K-$140K/year",
+    "label_master_share": "$10K-$30K/year",
+    "publishing_share": "$4K-$12K/year",
+    "songwriter_share": "$6K-$18K/year",
+    "assumptions": "Estimate assumes durable ambient streaming, creator-side participation, and modest but stable editorial and algorithmic playlist support."
+  },
+  "ownership": {
+    "master_owner": "Likely label / creator-affiliated split",
+    "publishing_owner": "Likely composer-side publishing control",
+    "catalog_sale_status": "No catalog sale adjustment assumed",
+    "notes": "Modeled as a specialist ambient track with steady long-tail economics rather than event-driven revenue spikes."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "title": "I Wanna Dance with Somebody",
+  "slug": "i-wanna-dance-with-somebody",
+  "artist": "whitney-houston",
+  "estimated_revenue": "$700K-$2.2M/year",
+  "album": "Whitney",
+  "year": 1987,
+  "meaning_summary": "I Wanna Dance with Somebody stays valuable because it functions as both a euphoric party record and a permanent nostalgia hit across generations.",
+  "revenue_drivers": [
+    "Decades-spanning playlist use keeps the song in constant circulation.",
+    "Its crossover familiarity supports strong event, retail, and social replay value.",
+    "Licensing and celebration-driven listening continue to refresh demand."
+  ],
+  "related_songs": [
+    "i-will-always-love-you"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1.1M-$3M/year",
+    "artist_or_estate_share": "$700K-$2.2M/year",
+    "label_master_share": "$250K-$700K/year",
+    "publishing_share": "$120K-$350K/year",
+    "songwriter_share": "$100K-$300K/year",
+    "assumptions": "Estimate assumes large evergreen streaming, catalog playlist strength, and recurring sync-style reuse."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out catalog position",
+    "notes": "This is a modeled artist-side estimate built from legacy pop hit behavior rather than disclosed contract data."
+  }
+}
