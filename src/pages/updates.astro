@@ -1,0 +1,121 @@
+---
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { artistMap, songMap } from "../lib/catalog";
+import { getCatalogUpdates } from "../lib/updates";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const updates = getCatalogUpdates(30);
+const artistTouchCount = updates.reduce((count, entry) => count + entry.artistSlugs.length, 0);
+const songTouchCount = updates.reduce((count, entry) => count + entry.songSlugs.length, 0);
+const albumTouchCount = updates.filter((entry) => entry.includesAlbumMetadata).length;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "How Much Music Updates",
+  description: "Recent artist, song, and album updates across the How Much Music catalog.",
+  url: new URL(`${baseUrl}updates/`, Astro.site).toString()
+};
+---
+
+<BaseLayout
+  title="Updates | How Much Music"
+  description="Recent artist, song, and album improvements across the How Much Music catalog."
+  jsonLd={jsonLd}
+>
+  <Breadcrumbs items={[{ label: "Home", href: baseUrl }, { label: "Updates" }]} />
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Updates</p>
+      <h1>Latest catalog improvements</h1>
+      <p>
+        This page is generated from git history during the site build. It tracks the most recent
+        artist, song, and album metadata updates that shipped into the public catalog.
+      </p>
+    </div>
+    <div class="hero-panel" aria-label="Update totals">
+      <strong>{updates.length}</strong>
+      <span>recent update entries</span>
+      <span>{artistTouchCount} artist touches</span>
+      <span>{songTouchCount} song touches</span>
+      <span>{albumTouchCount} album metadata updates</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="updates-title">
+    <h2 id="updates-title">Recent changes</h2>
+    {updates.length === 0 ? (
+      <p>
+        No update history is available in this build. This usually means the build ran without full
+        git history.
+      </p>
+    ) : (
+      <div class="updates-list">
+        {updates.map((entry) => (
+          <article class="card update-card">
+            <div class="artist-card-body">
+              <div class="update-header">
+                <p class="eyebrow">Commit {entry.shortHash}</p>
+                <p class="update-date">{entry.date}</p>
+              </div>
+              <h3>{entry.summary}</h3>
+              <div class="update-tags" aria-label="Update scope">
+                {entry.artistSlugs.length > 0 && (
+                  <span class="rank-badge">{entry.artistSlugs.length} artist update{entry.artistSlugs.length === 1 ? "" : "s"}</span>
+                )}
+                {entry.songSlugs.length > 0 && (
+                  <span class="rank-badge">{entry.songSlugs.length} song update{entry.songSlugs.length === 1 ? "" : "s"}</span>
+                )}
+                {entry.includesAlbumMetadata && <span class="rank-badge">Album metadata</span>}
+              </div>
+
+              {entry.artistSlugs.length > 0 && (
+                <>
+                  <p class="update-subheading">Artists</p>
+                  <div class="update-links">
+                    {entry.artistSlugs.map((slug) => {
+                      const artist = artistMap.get(slug);
+                      return (
+                        <a href={`${baseUrl}artist/${slug}/`}>
+                          {artist?.name ?? slug}
+                        </a>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+
+              {entry.songSlugs.length > 0 && (
+                <>
+                  <p class="update-subheading">Songs</p>
+                  <div class="update-links">
+                    {entry.songSlugs.map((slug) => {
+                      const song = songMap.get(slug);
+                      return (
+                        <a href={`${baseUrl}song/${slug}/`}>
+                          {song?.title ?? slug}
+                        </a>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+
+              {entry.includesAlbumMetadata && (
+                <p class="update-note">
+                  This commit also changed album metadata or tracklist coverage. Browse the full
+                  album index at <a href={`${baseUrl}albums/`}>Albums</a>.
+                </p>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+  </section>
+</BaseLayout>

@@ -408,6 +408,51 @@ p {
   border-color: var(--text);
 }
 
+.updates-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.update-card {
+  overflow: visible;
+}
+
+.update-header,
+.update-links,
+.update-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.update-header {
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.update-date,
+.update-note {
+  margin: 0;
+}
+
+.update-subheading {
+  margin: 1rem 0 0.45rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.update-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-strong);
+  text-decoration: none;
+}
+
 @media (max-width: 640px) {
   .site-header .container {
     flex-direction: column;
