@@ -1,13 +1,17 @@
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
 import { z } from "zod";
 import { albumMetadata } from "../data/albumMetadata";
 import { artistMetadata } from "../data/artistMetadata";
 import { songPlayerMetadata } from "../data/songPlayerMetadata";
 import { songMetadata } from "../data/songMetadata";
-import { createArtistArtwork, getArtistPhoto } from "./artistArtwork";
+import { createArtistArtwork, getArtistPhoto, getArtistPhotos } from "./artistArtwork";
 import {
   formatRevenueRange,
+  normalizeRevenue,
   parseRevenueRange,
   revenueMidpoint,
+  type NormalizedRevenue,
   type RevenueRange
 } from "./revenue";
 
@@ -97,6 +101,10 @@ export type Artist = ArtistJson & {
   country?: string;
   active_since?: string;
   bio?: string;
+  normalizedRevenue?: {
+    artistSide: NormalizedRevenue | null;
+    grossCatalog: NormalizedRevenue | null;
+  };
 };
 
 export type Song = SongJson & {
@@ -115,6 +123,10 @@ export type Song = SongJson & {
       spotify?: string;
       youtubeMusic?: string;
     };
+  };
+  normalizedRevenue?: {
+    artistSide: NormalizedRevenue | null;
+    grossTrack: NormalizedRevenue | null;
   };
 };
 
@@ -145,6 +157,7 @@ export type Album = {
   trackedSongCount: number;
   estimatedRevenue?: string;
   revenueRange?: RevenueRange;
+  normalizedRevenue?: NormalizedRevenue | null;
 };
 
 export type ArtistVisual = {
@@ -152,6 +165,12 @@ export type ArtistVisual = {
   alt: string;
   provider: "appleMusic" | "artistPhoto" | "generated";
   providerLink?: string;
+};
+
+export type MethodologySnapshot = {
+  confidenceLabel: string;
+  summary: string;
+  bullets: string[];
 };
 
 export const artists: Artist[] = parsedArtists
@@ -163,7 +182,11 @@ export const artists: Artist[] = parsedArtists
       genre: artist.genre ?? supplemental?.genre,
       country: artist.country ?? supplemental?.country,
       active_since: artist.active_since ?? supplemental?.activeSince,
-      bio: artist.bio ?? supplemental?.summary
+      bio: artist.bio ?? supplemental?.summary,
+      normalizedRevenue: {
+        artistSide: normalizeRevenue(artist.earnings?.artist_or_estate_share ?? artist.estimated_income),
+        grossCatalog: normalizeRevenue(artist.earnings?.gross_catalog_revenue)
+      }
     };
   })
   .sort((left, right) => left.name.localeCompare(right.name));
@@ -182,6 +205,10 @@ export const songs: Song[] = parsedSongs
       meaning_summary: song.meaning_summary ?? supplemental?.meaningSummary,
       revenue_drivers: song.revenue_drivers ?? supplemental?.revenueDrivers,
       related_songs: song.related_songs ?? supplemental?.relatedSongs,
+      normalizedRevenue: {
+        artistSide: normalizeRevenue(song.earnings?.artist_or_estate_share ?? song.estimated_revenue),
+        grossTrack: normalizeRevenue(song.earnings?.gross_track_revenue)
+      },
       player: playerMetadata
         ? {
             ...playerMetadata,
@@ -298,6 +325,7 @@ export const albums = [...albumEntries.values()].sort((left, right) => {
     editionNote: supplemental?.editionNote,
     fullTracklist: supplemental?.fullTracklist,
     revenueRange,
+    normalizedRevenue: normalizeRevenue(album.estimatedRevenue),
     trackListing: [...album.songs].sort((left, right) => {
       if (left.year && right.year && left.year !== right.year) return left.year - right.year;
       return left.title.localeCompare(right.title);
@@ -317,6 +345,238 @@ export function getSong(slug: string) {
 
 export function getAlbum(slug: string) {
   return albumMap.get(slug);
+}
+
+export function getArtistMethodology(artist: Artist): MethodologySnapshot {
+  const hasArtistSideSplit = Boolean(artist.earnings?.artist_or_estate_share);
+  const hasGrossCatalog = Boolean(artist.earnings?.gross_catalog_revenue);
+  const hasOwnership = Boolean(
+    artist.ownership?.master_owner || artist.ownership?.publishing_owner || artist.ownership?.catalog_sale_status
+  );
+
+  const confidenceLabel = hasArtistSideSplit && hasOwnership
+    ? "Split-aware estimate"
+    : hasArtistSideSplit
+      ? "Partial split estimate"
+      : "Modeled top-line estimate";
+
+  return {
+    confidenceLabel,
+    summary: hasArtistSideSplit
+      ? "The primary figure is the modeled artist-side or estate-side annual cut, not gross catalog revenue."
+      : "The primary figure is a modeled annual income range because a specific artist-side royalty split is not available yet.",
+    bullets: [
+      hasGrossCatalog
+        ? "Gross catalog revenue is shown separately when enough context exists to distinguish top-line catalog value from artist-side take-home."
+        : "Gross catalog revenue is not modeled separately on this page yet, so the lead figure should be treated as a blended estimate.",
+      hasOwnership
+        ? "Ownership notes are available here and can materially change who actually keeps the revenue shown on the page."
+        : "Ownership context is still partial here, so the estimate should be treated as directional rather than contract-accurate.",
+      "All figures are annual modeled ranges based on streaming scale, catalog age, licensing usefulness, and known ownership context, not audited royalty statements."
+    ]
+  };
+}
+
+export function getSongMethodology(song: Song): MethodologySnapshot {
+  const hasArtistSideSplit = Boolean(song.earnings?.artist_or_estate_share);
+  const hasGrossTrack = Boolean(song.earnings?.gross_track_revenue);
+  const hasOwnership = Boolean(
+    song.ownership?.master_owner || song.ownership?.publishing_owner || song.ownership?.catalog_sale_status
+  );
+
+  const confidenceLabel = hasArtistSideSplit && hasOwnership
+    ? "Split-aware estimate"
+    : hasArtistSideSplit
+      ? "Partial split estimate"
+      : "Modeled top-line estimate";
+
+  return {
+    confidenceLabel,
+    summary: hasArtistSideSplit
+      ? "The headline number is the modeled artist-side annual share for this recording when split data exists."
+      : "The headline number is a modeled annual revenue range because a specific artist-side split is not available yet.",
+    bullets: [
+      hasGrossTrack
+        ? "Gross track revenue is separated from artist-side take-home where the page has enough split context."
+        : "Gross track revenue is not shown separately here, so the page emphasizes the best available directional estimate.",
+      hasOwnership
+        ? "Ownership notes on masters or publishing are included and should be read alongside the revenue number."
+        : "Ownership context is incomplete here, so the estimate should be treated as directional rather than contract-precise.",
+      "All figures are annual modeled ranges based on streaming behavior, cultural replay value, sync potential, and available ownership information, not public royalty statements."
+    ]
+  };
+}
+
+function isValidAbsoluteUrl(url?: string) {
+  if (!url) return false;
+
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:";
+  } catch {
+    return false;
+  }
+}
+
+function hasAllowedHost(url: string | undefined, allowedHosts: string[]) {
+  if (!url) return false;
+
+  try {
+    const { hostname, protocol } = new URL(url);
+    return protocol === "https:" && allowedHosts.some((host) => hostname === host || hostname.endsWith(`.${host}`));
+  } catch {
+    return false;
+  }
+}
+
+function localPublicAssetExists(publicPath: string) {
+  return existsSync(resolve(process.cwd(), "public", `.${publicPath}`));
+}
+
+function validateCatalogSemantics() {
+  const issues: string[] = [];
+
+  artists.forEach((artist) => {
+    if (artist.top_songs.length < 2) {
+      issues.push(`Artist "${artist.slug}" must have at least 2 top songs.`);
+    }
+
+    if (new Set(artist.top_songs).size !== artist.top_songs.length) {
+      issues.push(`Artist "${artist.slug}" has duplicate top_songs entries.`);
+    }
+
+    if (!artist.normalizedRevenue?.artistSide) {
+      issues.push(`Artist "${artist.slug}" has an unparseable estimated income.`);
+    }
+
+    artist.top_songs.forEach((songSlug) => {
+      const song = songMap.get(songSlug);
+
+      if (!song) {
+        issues.push(`Artist "${artist.slug}" references missing top song "${songSlug}".`);
+        return;
+      }
+
+      if (song.artist !== artist.slug) {
+        issues.push(`Artist "${artist.slug}" top song "${songSlug}" belongs to "${song.artist}".`);
+      }
+    });
+  });
+
+  songs.forEach((song) => {
+    if (!artistMap.has(song.artist)) {
+      issues.push(`Song "${song.slug}" references missing artist "${song.artist}".`);
+    }
+
+    if (!song.album) {
+      issues.push(`Song "${song.slug}" is missing album metadata.`);
+    }
+
+    if (!song.year) {
+      issues.push(`Song "${song.slug}" is missing release year metadata.`);
+    }
+
+    if (!song.normalizedRevenue?.artistSide) {
+      issues.push(`Song "${song.slug}" has an unparseable estimated revenue.`);
+    }
+
+    if (song.related_songs) {
+      if (new Set(song.related_songs).size !== song.related_songs.length) {
+        issues.push(`Song "${song.slug}" has duplicate related_songs entries.`);
+      }
+
+      song.related_songs.forEach((relatedSlug) => {
+        if (relatedSlug === song.slug) {
+          issues.push(`Song "${song.slug}" cannot relate to itself.`);
+        }
+
+        if (!songMap.has(relatedSlug)) {
+          issues.push(`Song "${song.slug}" references missing related song "${relatedSlug}".`);
+        }
+      });
+    }
+
+    if (song.player?.artwork && !(song.player.links?.appleMusic ?? song.player.appleMusic)) {
+      issues.push(`Song "${song.slug}" has provider artwork without an Apple Music source link.`);
+    }
+
+    if (song.player?.artwork && !hasAllowedHost(song.player.artwork, ["mzstatic.com"])) {
+      issues.push(`Song "${song.slug}" has provider artwork from an unexpected host.`);
+    }
+
+    if (song.player?.previewUrl && !hasAllowedHost(song.player.previewUrl, ["itunes.apple.com"])) {
+      issues.push(`Song "${song.slug}" has preview audio from an unexpected host.`);
+    }
+
+    if (song.player?.links?.appleMusic && !hasAllowedHost(song.player.links.appleMusic, ["music.apple.com"])) {
+      issues.push(`Song "${song.slug}" has an invalid Apple Music link.`);
+    }
+
+    if (song.player?.links?.spotify && !hasAllowedHost(song.player.links.spotify, ["open.spotify.com"])) {
+      issues.push(`Song "${song.slug}" has an invalid Spotify link.`);
+    }
+
+    if (song.player?.links?.youtubeMusic && !hasAllowedHost(song.player.links.youtubeMusic, ["music.youtube.com"])) {
+      issues.push(`Song "${song.slug}" has an invalid YouTube Music link.`);
+    }
+
+    if (song.player?.links?.amazonMusic && !hasAllowedHost(song.player.links.amazonMusic, ["music.amazon.com"])) {
+      issues.push(`Song "${song.slug}" has an invalid Amazon Music link.`);
+    }
+  });
+
+  albums.forEach((album) => {
+    if (!album.trackListing.length) {
+      issues.push(`Album "${album.slug}" has no tracked songs.`);
+    }
+
+    if (!artistMap.has(album.artistSlug)) {
+      issues.push(`Album "${album.slug}" references missing artist "${album.artistSlug}".`);
+    }
+
+    if (album.links?.appleMusic && !hasAllowedHost(album.links.appleMusic, ["music.apple.com"])) {
+      issues.push(`Album "${album.slug}" has an invalid Apple Music link.`);
+    }
+
+    if (album.links?.spotify && !hasAllowedHost(album.links.spotify, ["open.spotify.com"])) {
+      issues.push(`Album "${album.slug}" has an invalid Spotify link.`);
+    }
+
+    if (album.links?.youtubeMusic && !hasAllowedHost(album.links.youtubeMusic, ["music.youtube.com"])) {
+      issues.push(`Album "${album.slug}" has an invalid YouTube Music link.`);
+    }
+
+    if (album.links?.amazonMusic && !hasAllowedHost(album.links.amazonMusic, ["music.amazon.com"])) {
+      issues.push(`Album "${album.slug}" has an invalid Amazon Music link.`);
+    }
+  });
+
+  Object.entries(getArtistPhotos()).forEach(([slug, photo]) => {
+    if (!artistMap.has(slug)) {
+      issues.push(`Artist photo exists for unknown artist "${slug}".`);
+    }
+
+    if (!photo.localPath || !localPublicAssetExists(photo.localPath)) {
+      issues.push(`Artist "${slug}" photo file is missing at "${photo.localPath}".`);
+    }
+
+    if (!isValidAbsoluteUrl(photo.sourceUrl) || !hasAllowedHost(photo.sourceUrl, ["commons.wikimedia.org"])) {
+      issues.push(`Artist "${slug}" has an invalid Wikimedia source URL.`);
+    }
+
+    if (
+      !isValidAbsoluteUrl(photo.licenseUrl) ||
+      !hasAllowedHost(photo.licenseUrl, ["creativecommons.org", "commons.wikimedia.org"])
+    ) {
+      issues.push(`Artist "${slug}" has an invalid license URL.`);
+    }
+  });
+
+  if (issues.length > 0) {
+    throw new Error(
+      `Catalog semantic validation failed:\n- ${issues.slice(0, 40).join("\n- ")}${issues.length > 40 ? `\n- ...and ${issues.length - 40} more` : ""}`
+    );
+  }
 }
 
 export function getArtistVisual(artist: Artist): ArtistVisual {
@@ -353,7 +613,9 @@ export function getArtistVisual(artist: Artist): ArtistVisual {
 
 export const rankedArtists = artists
   .map((artist) => {
-    const revenueRange = parseRevenueRange(artist.estimated_income);
+    const revenueRange = artist.normalizedRevenue?.artistSide
+      ? { min: artist.normalizedRevenue.artistSide.min, max: artist.normalizedRevenue.artistSide.max }
+      : null;
 
     return {
       artist,
@@ -365,7 +627,9 @@ export const rankedArtists = artists
 
 export const rankedSongs = songs
   .map((song) => {
-    const revenueRange = parseRevenueRange(song.estimated_revenue);
+    const revenueRange = song.normalizedRevenue?.artistSide
+      ? { min: song.normalizedRevenue.artistSide.min, max: song.normalizedRevenue.artistSide.max }
+      : null;
 
     return {
       song,
@@ -379,6 +643,8 @@ export const rankedAlbums = albums
   .map((album) => ({
     album,
     revenueRange: album.revenueRange,
-    revenueScore: revenueMidpoint(album.revenueRange ?? null) ?? 0
+    revenueScore: album.normalizedRevenue?.midpoint ?? revenueMidpoint(album.revenueRange ?? null) ?? 0
   }))
   .sort((left, right) => right.revenueScore - left.revenueScore);
+
+validateCatalogSemantics();

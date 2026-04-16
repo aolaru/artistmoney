@@ -448,7 +448,7 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Eminem_2021_Color_Corrected.jpg",
     credit: "Photo by Brendan_linden via Wikimedia Commons",
     license: "CC0 1.0",
-    licenseUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
     localPath: "/images/artists/eminem.jpg",
     personalityRightsWarning: "Living artist depicted. CC0 status does not remove publicity or personality-rights considerations."
   },

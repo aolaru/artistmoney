@@ -150,12 +150,22 @@ p {
   gap: 1.25rem;
 }
 
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
 .card {
   border: 1px solid var(--border);
   border-radius: 20px;
   background: var(--surface);
   box-shadow: var(--shadow);
   overflow: hidden;
+}
+
+.editorial-card {
+  min-height: 100%;
 }
 
 .eyebrow {
@@ -371,6 +381,31 @@ p {
   margin-top: 0.25rem;
   font-size: 0.92rem;
   line-height: 1.5;
+}
+
+.methodology-card {
+  padding: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.methodology-card .meta-list {
+  margin-top: 1rem;
+}
+
+.methodology-badge {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 0.85rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .meta-list {

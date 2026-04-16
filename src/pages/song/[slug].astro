@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { songArticles } from "../../data/songArticles";
 import { createSongArtwork } from "../../lib/artistArtwork";
-import { getAlbum, getAlbumSlug, getArtist, songs, type Song } from "../../lib/catalog";
+import { getAlbum, getAlbumSlug, getArtist, getSongMethodology, songs, type Song } from "../../lib/catalog";
 import { getSongEditorial } from "../../lib/editorial";
 
 export function getStaticPaths() {
@@ -34,6 +34,7 @@ const imageSrc = providerArtwork ?? createSongArtwork(song.title, artist?.name ?
 });
 const playerLinks = Object.entries(song.player?.links ?? {}).filter(([, url]) => url) as Array<[string, string]>;
 const editorial = getSongEditorial(song, artist);
+const methodology = getSongMethodology(song);
 const songSchema = {
   "@context": "https://schema.org",
   "@type": "MusicRecording",
@@ -274,10 +275,18 @@ const songSchema = {
 
     <section aria-labelledby="methodology-title">
       <h2 id="methodology-title">Methodology</h2>
-      <p>
-        These earnings figures are editorial estimates based on streaming scale, ownership context,
-        and long-tail catalog behavior. <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
-      </p>
+      <div class="methodology-card">
+        <p class="methodology-badge">{methodology.confidenceLabel}</p>
+        <p>{methodology.summary}</p>
+        <ul class="meta-list">
+          {methodology.bullets.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+        <p>
+          <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
+        </p>
+      </div>
     </section>
   </article>
 </BaseLayout>

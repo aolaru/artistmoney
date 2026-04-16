@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { artistArticles } from "../../data/artistArticles";
-import { artists, getArtistVisual, songs, type Artist } from "../../lib/catalog";
+import { artists, getArtistMethodology, getArtistVisual, songs, type Artist } from "../../lib/catalog";
 import { getArtistEditorial } from "../../lib/editorial";
 
 export function getStaticPaths() {
@@ -22,6 +22,7 @@ const hasDetailedEarnings = Boolean(artist.earnings || artist.ownership);
 const artistVisual = getArtistVisual(artist);
 const imageSrc = artistVisual.src;
 const editorial = getArtistEditorial(artist, artistSongs);
+const methodology = getArtistMethodology(artist);
 const artistSchema = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
@@ -135,6 +136,22 @@ const artistSchema = {
         <li>{artist.earnings?.artist_or_estate_share ?? artist.estimated_income}</li>
       </ul>
       {!article && <p>{editorial.shortAnswer}</p>}
+    </section>
+
+    <section aria-labelledby="methodology-title">
+      <h2 id="methodology-title">Methodology Snapshot</h2>
+      <div class="methodology-card">
+        <p class="methodology-badge">{methodology.confidenceLabel}</p>
+        <p>{methodology.summary}</p>
+        <ul class="meta-list">
+          {methodology.bullets.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+        <p>
+          <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
+        </p>
+      </div>
     </section>
 
     {hasDetailedEarnings && (

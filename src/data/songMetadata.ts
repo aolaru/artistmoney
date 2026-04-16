@@ -230,5 +230,23 @@ export const songMetadata: Record<string, SongMetadata> = {
     meaningSummary: "Would? stays active because it remains one of Alice In Chains' most emotionally sharp and recognizable songs.",
     relatedSongs: ["man-in-the-box", "rooster"]
   },
+  creep: { album: "Pablo Honey", year: 1992 },
+  "dayvan-cowboy": { album: "The Campfire Headphase", year: 2005 },
+  "fix-you": { album: "X&Y", year: 2005 },
+  "harder-better-faster-stronger": { album: "Discovery", year: 2001 },
+  hello: { album: "25", year: 2015 },
+  "karma-police": { album: "OK Computer", year: 1997 },
+  power: { album: "My Beautiful Dark Twisted Fantasy", year: 2010 },
+  rae: { album: "Amber", year: 1994 },
+  rooster: { album: "Dirt", year: 1992 },
+  roygbiv: { album: "Music Has the Right to Children", year: 1998 },
+  "shook-ones-pt-ii": { album: "The Infamous", year: 1995 },
+  "still-dre": { album: "2001", year: 1999 },
+  stronger: { album: "Graduation", year: 2007 },
+  "survival-of-the-fittest": { album: "The Infamous", year: 1995 },
+  "the-next-episode": { album: "2001", year: 1999 },
+  "the-one-i-love": { album: "Document", year: 1987 },
   xtal: { album: "Selected Ambient Works 85-92", year: 1992 }
+  ,
+  yellow: { album: "Parachutes", year: 2000 }
 };

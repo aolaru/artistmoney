@@ -3,6 +3,15 @@ export type RevenueRange = {
   max: number;
 };
 
+export type NormalizedRevenue = {
+  display: string;
+  min: number;
+  max: number;
+  midpoint: number;
+  currency: "USD";
+  period: "year";
+};
+
 function parseRevenueValue(token: string) {
   const match = token.trim().match(/^\$?([\d.]+)\s*([KMB])?\+?$/i);
 
@@ -44,6 +53,21 @@ export function revenueMidpoint(range: RevenueRange | null) {
   return range ? (range.min + range.max) / 2 : null;
 }
 
+export function normalizeRevenue(input?: string | null): NormalizedRevenue | null {
+  const range = parseRevenueRange(input);
+
+  if (!range) return null;
+
+  return {
+    display: formatRevenueRange(range) ?? input ?? "",
+    min: range.min,
+    max: range.max,
+    midpoint: revenueMidpoint(range) ?? range.min,
+    currency: "USD",
+    period: "year"
+  };
+}
+
 export function formatRevenueValue(value: number) {
   if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(1).replace(/\.0$/, "")}B`;
   if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1).replace(/\.0$/, "")}M`;
@@ -54,4 +78,14 @@ export function formatRevenueValue(value: number) {
 export function formatRevenueRange(range: RevenueRange | null) {
   if (!range) return undefined;
   return `${formatRevenueValue(range.min)}-${formatRevenueValue(range.max)}/year`;
+}
+
+export function formatRevenueMidpoint(value?: number | null) {
+  if (value == null) return undefined;
+
+  return Math.round(value).toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0
+  });
 }

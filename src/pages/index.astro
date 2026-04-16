@@ -1,27 +1,46 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getArtist, getArtistVisual, songs } from "../lib/catalog";
+import {
+  albums,
+  artists,
+  getArtist,
+  getArtistMethodology,
+  getArtistVisual,
+  getSongMethodology,
+  rankedAlbums,
+  rankedArtists,
+  rankedSongs,
+  songs
+} from "../lib/catalog";
+import { getArtistEditorial, getSongEditorial } from "../lib/editorial";
+import { formatRevenueMidpoint } from "../lib/revenue";
+import { getCatalogUpdates } from "../lib/updates";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
-const featuredSongSlugs = ["blinding-lights", "gangstas-paradise", "in-this-shirt"];
-const featuredArtistSlugs = ["the-weeknd", "daft-punk", "oasis"];
+const topArtists = rankedArtists.slice(0, 3);
+const topSongs = rankedSongs.slice(0, 3);
+const topCatalogs = rankedAlbums.slice(0, 3);
+const recentUpdates = getCatalogUpdates(5);
 
-const featuredSongs = featuredSongSlugs
-  .map((slug) => songs.find((song) => song.slug === slug))
-  .filter(Boolean);
-
-const featuredArtists = featuredArtistSlugs
+const latestArtistSlugs = recentUpdates.flatMap((entry) => entry.artistSlugs);
+const latestSongSlugs = recentUpdates.flatMap((entry) => entry.songSlugs);
+const latestArtists = [...new Set(latestArtistSlugs)]
   .map((slug) => artists.find((artist) => artist.slug === slug))
-  .filter(Boolean);
+  .filter(Boolean)
+  .slice(0, 3);
+const latestSongs = [...new Set(latestSongSlugs)]
+  .map((slug) => songs.find((song) => song.slug === slug))
+  .filter(Boolean)
+  .slice(0, 3);
 
 const insightLinks = [
   {
     label: "How streaming payouts work",
     href: `${baseUrl}insights/streaming-payouts/`,
-    detail: "Why per-stream revenue is a range, not one clean universal number."
+    detail: "Why per-stream revenue is a range, not one universal payout."
   },
   {
     label: "What catalog ownership means",
@@ -35,125 +54,286 @@ const insightLinks = [
   }
 ];
 
-const rankingLinks = [
-  {
-    label: "Top artists",
-    href: `${baseUrl}top-artists/`,
-    detail: "Ranked by modeled annual artist-side earnings."
-  },
-  {
-    label: "Top songs",
-    href: `${baseUrl}top-songs/`,
-    detail: "Ranked by modeled annual song revenue."
-  },
-  {
-    label: "Top catalogs",
-    href: `${baseUrl}catalogs/`,
-    detail: "Ranked by aggregated tracked-song revenue."
-  }
-];
-
-const discoveryLinks = [
-  {
-    label: "Browse by genre",
-    href: `${baseUrl}genres/`,
-    detail: "Group artists by genre and compare catalog economics within similar audiences."
-  },
-  {
-    label: "Browse by decade",
-    href: `${baseUrl}decades/`,
-    detail: "See which release eras still produce the strongest long-tail song value."
-  }
-];
+const spotlightArtist = topArtists[0]?.artist;
+const spotlightSong = topSongs[0]?.song;
+const spotlightAlbum = topCatalogs[0]?.album;
+const spotlightArtistEditorial = spotlightArtist
+  ? getArtistEditorial(
+      spotlightArtist,
+      spotlightArtist.top_songs
+        .map((slug) => songs.find((song) => song.slug === slug))
+        .filter(Boolean)
+    )
+  : null;
+const spotlightSongEditorial = spotlightSong
+  ? getSongEditorial(spotlightSong, getArtist(spotlightSong.artist))
+  : null;
+const evergreenEntry = rankedSongs.find(({ song }) => (song.year ?? 9999) <= 2000);
+const evergreenSong = evergreenEntry?.song;
+const evergreenArtist = evergreenSong ? getArtist(evergreenSong.artist) : undefined;
+const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArtist) : undefined;
 ---
 
 <BaseLayout
   title="How Much Music | Understand Music Emotionally and Financially"
-  description="Understand music emotionally and financially through artist pages, song pages, and simple income insights."
+  description="How Much Music tracks artist, song, and album pages with modeled music earnings data, ownership context, and catalog insights."
 >
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">How Much Music</p>
-      <h1>How Much Music</h1>
-      <p>Understand music — emotionally and financially</p>
+      <h1>Music earnings, catalog value, and long-tail song economics</h1>
       <p>
-        How Much Music breaks down what songs and catalogs may generate, what artists likely keep,
-        and why certain recordings keep earning years after release.
+        How Much Music tracks what songs and catalogs may generate, what artists or estates likely
+        keep, and why certain recordings continue to earn long after release.
       </p>
+      {(spotlightArtist && spotlightSong && spotlightAlbum) && (
+        <p>
+          Right now the strongest modeled pages in the catalog are
+          {" "}
+          <a href={`${baseUrl}artist/${spotlightArtist.slug}/`}>{spotlightArtist.name}</a>,
+          {" "}
+          <a href={`${baseUrl}song/${spotlightSong.slug}/`}>{spotlightSong.title}</a>,
+          {" "}
+          and
+          {" "}
+          <a href={`${baseUrl}album/${spotlightAlbum.slug}/`}>{spotlightAlbum.title}</a>.
+        </p>
+      )}
     </div>
     <div class="hero-panel" aria-label="Site summary">
       <strong>{songs.length}</strong>
-      <span>songs tracked across the catalog</span>
+      <span>songs tracked</span>
+      <span>{artists.length} artists</span>
+      <span>{albums.length} albums</span>
     </div>
   </section>
 
-  <section id="songs" aria-labelledby="trending-title">
-    <h2 id="trending-title">Trending Songs</h2>
-    <p class="results-note">Featured songs with strong replay value, cultural memory, or unusual catalog strength.</p>
-    <div class="card-grid">
-      {featuredSongs.map((song) => {
-        const artist = getArtist(song.artist);
-        const artistName = artist?.name ?? song.artist;
-        const artistVisual = artist ? getArtistVisual(artist) : undefined;
+  <section aria-labelledby="snapshot-title">
+    <h2 id="snapshot-title">Catalog Snapshot</h2>
+    <ul class="meta-list">
+      <li>
+        <strong>Top artist midpoint:</strong>
+        {" "}
+        {topArtists[0] ? formatRevenueMidpoint(topArtists[0].revenueScore) : "Not available"}
+      </li>
+      <li>
+        <strong>Top song midpoint:</strong>
+        {" "}
+        {topSongs[0] ? formatRevenueMidpoint(topSongs[0].revenueScore) : "Not available"}
+      </li>
+      <li>
+        <strong>Top catalog midpoint:</strong>
+        {" "}
+        {topCatalogs[0] ? formatRevenueMidpoint(topCatalogs[0].revenueScore) : "Not available"}
+      </li>
+    </ul>
+  </section>
 
-        return (
-        <article class="card artist-card">
-          <img
-            class="artist-card-image"
-            src={artistVisual?.src ?? ""}
-            alt={artistVisual?.alt ?? `Artwork for ${artistName}`}
-            loading="lazy"
-            width="1200"
-            height="900"
-            referrerpolicy="no-referrer"
-          />
+  <section aria-labelledby="editorial-title">
+    <h2 id="editorial-title">Editorial Front Page</h2>
+    <div class="editorial-grid">
+      {spotlightArtist && spotlightArtistEditorial && (
+        <article class="card editorial-card">
           <div class="artist-card-body">
-            <p class="eyebrow">Song</p>
-            <h3>
-              <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
-            </h3>
+            <p class="eyebrow">Featured Artist Deep Dive</p>
+            <h3><a href={`${baseUrl}artist/${spotlightArtist.slug}/`}>{spotlightArtist.name}</a></h3>
+            <p>{spotlightArtistEditorial.overview}</p>
             <p class="artist-card-meta">
-              By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
+              Artist-side midpoint: {formatRevenueMidpoint(topArtists[0]?.revenueScore)}
             </p>
-            {(song.album || song.year) && (
-              <p class="artist-card-meta">{[song.album, song.year].filter(Boolean).join(" · ")}</p>
-            )}
-            <p>Estimated revenue: {song.estimated_revenue}</p>
           </div>
         </article>
+      )}
+      {spotlightSong && spotlightSongEditorial && (
+        <article class="card editorial-card">
+          <div class="artist-card-body">
+            <p class="eyebrow">Featured Song Story</p>
+            <h3><a href={`${baseUrl}song/${spotlightSong.slug}/`}>{spotlightSong.title}</a></h3>
+            <p>{spotlightSongEditorial.meaning}</p>
+            <p class="artist-card-meta">
+              Song midpoint: {formatRevenueMidpoint(topSongs[0]?.revenueScore)}
+            </p>
+          </div>
+        </article>
+      )}
+      {evergreenSong && (
+        <article class="card editorial-card">
+          <div class="artist-card-body">
+            <p class="eyebrow">Evergreen Signal</p>
+            <h3><a href={`${baseUrl}song/${evergreenSong.slug}/`}>{evergreenSong.title}</a></h3>
+            <p>
+              {evergreenSong.title} by {evergreenArtist?.name ?? evergreenSong.artist} shows how older catalog songs can
+              stay economically relevant decades after release when replay value and playlist fit remain strong.
+            </p>
+            <p class="artist-card-meta">
+              Released {evergreenSong.year} · midpoint {formatRevenueMidpoint(evergreenEntry?.revenueScore)}
+            </p>
+          </div>
+        </article>
+      )}
+    </div>
+  </section>
+
+  {homepageMethodology && (
+    <section aria-labelledby="why-matters-title">
+      <h2 id="why-matters-title">Why These Numbers Matter</h2>
+      <div class="methodology-card">
+        <p class="methodology-badge">{homepageMethodology.confidenceLabel}</p>
+        <p>{homepageMethodology.summary}</p>
+        <ul class="meta-list">
+          {homepageMethodology.bullets.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+        <p>
+          <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
+        </p>
+      </div>
+    </section>
+  )}
+
+  <section id="artists" aria-labelledby="top-artists-title">
+    <h2 id="top-artists-title">Top Artists</h2>
+    <p class="results-note">Ranked by normalized artist-side annual earnings midpoint.</p>
+    <div class="card-grid">
+      {topArtists.map(({ artist, revenueScore }) => {
+        const artistVisual = getArtistVisual(artist);
+        return (
+          <article class="card artist-card">
+            <img
+              class="artist-card-image"
+              src={artistVisual.src}
+              alt={artistVisual.alt}
+              loading="lazy"
+              width="1200"
+              height="900"
+              referrerpolicy="no-referrer"
+            />
+            <div class="artist-card-body">
+              <p class="eyebrow">Artist</p>
+              <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
+              {(artist.genre || artist.country) && (
+                <p class="artist-card-meta">{[artist.genre, artist.country].filter(Boolean).join(" · ")}</p>
+              )}
+              <p>Estimated income: {artist.estimated_income}</p>
+              <p class="artist-card-meta">Modeled midpoint: {formatRevenueMidpoint(revenueScore)}</p>
+            </div>
+          </article>
         );
       })}
     </div>
   </section>
 
-  <section id="artists" aria-labelledby="artists-title">
-    <h2 id="artists-title">Still Making Money</h2>
-    <p class="results-note">Featured artists with durable catalogs, recurring streaming income, or unusually strong long-tail economics.</p>
+  <section id="songs" aria-labelledby="top-songs-title">
+    <h2 id="top-songs-title">Top Songs</h2>
+    <p class="results-note">Ranked by normalized annual song revenue midpoint.</p>
     <div class="card-grid">
-      {featuredArtists.map((artist) => {
+      {topSongs.map(({ song, revenueScore }) => {
+        const artist = getArtist(song.artist);
+        const artistName = artist?.name ?? song.artist;
+        const artistVisual = artist ? getArtistVisual(artist) : undefined;
+
+        return (
+          <article class="card artist-card">
+            <img
+              class="artist-card-image"
+              src={artistVisual?.src ?? ""}
+              alt={artistVisual?.alt ?? `Artwork for ${artistName}`}
+              loading="lazy"
+              width="1200"
+              height="900"
+              referrerpolicy="no-referrer"
+            />
+            <div class="artist-card-body">
+              <p class="eyebrow">Song</p>
+              <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
+              <p class="artist-card-meta">
+                By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
+              </p>
+              {(song.album || song.year) && (
+                <p class="artist-card-meta">{[song.album, song.year].filter(Boolean).join(" · ")}</p>
+              )}
+              <p>Estimated revenue: {song.estimated_revenue}</p>
+              <p class="artist-card-meta">Modeled midpoint: {formatRevenueMidpoint(revenueScore)}</p>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <section aria-labelledby="catalogs-title">
+    <h2 id="catalogs-title">Top Catalogs</h2>
+    <ul class="meta-list">
+      {topCatalogs.map(({ album, revenueScore }) => (
+        <li>
+          <a href={`${baseUrl}album/${album.slug}/`}>{album.title}</a>
+          <span class="meta-inline">
+            {" "}· {album.artistName} · {album.estimatedRevenue} · midpoint {formatRevenueMidpoint(revenueScore)}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="updates-title">
+    <h2 id="updates-title">Latest Updates</h2>
+    <ul class="meta-list">
+      {recentUpdates.map((entry) => (
+        <li>
+          <a href={`${baseUrl}updates/`}>{entry.summary}</a>
+          <span class="meta-inline">
+            {" "}· {entry.date} · {entry.artistSlugs.length} artist update{entry.artistSlugs.length === 1 ? "" : "s"} · {entry.songSlugs.length} song update{entry.songSlugs.length === 1 ? "" : "s"}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section aria-labelledby="new-pages-title">
+    <h2 id="new-pages-title">Latest Additions</h2>
+    <div class="card-grid">
+      {latestArtists.map((artist) => {
         const artistVisual = getArtistVisual(artist);
         return (
-        <article class="card artist-card">
-          <img
-            class="artist-card-image"
-            src={artistVisual.src}
-            alt={artistVisual.alt}
-            loading="lazy"
-            width="1200"
-            height="900"
-            referrerpolicy="no-referrer"
-          />
-          <div class="artist-card-body">
-            <p class="eyebrow">Artist</p>
-            <h3>
-              <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
-            </h3>
-            {(artist.genre || artist.country) && (
-              <p class="artist-card-meta">{[artist.genre, artist.country].filter(Boolean).join(" · ")}</p>
-            )}
-            <p>Estimated income: {artist.estimated_income}</p>
-          </div>
-        </article>
+          <article class="card artist-card">
+            <img
+              class="artist-card-image"
+              src={artistVisual.src}
+              alt={artistVisual.alt}
+              loading="lazy"
+              width="1200"
+              height="900"
+              referrerpolicy="no-referrer"
+            />
+            <div class="artist-card-body">
+              <p class="eyebrow">Recent artist</p>
+              <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
+              <p>{artist.estimated_income}</p>
+            </div>
+          </article>
+        );
+      })}
+      {latestSongs.map((song) => {
+        const artist = getArtist(song.artist);
+        const artistVisual = artist ? getArtistVisual(artist) : undefined;
+        return (
+          <article class="card artist-card">
+            <img
+              class="artist-card-image"
+              src={artistVisual?.src ?? ""}
+              alt={artistVisual?.alt ?? song.title}
+              loading="lazy"
+              width="1200"
+              height="900"
+              referrerpolicy="no-referrer"
+            />
+            <div class="artist-card-body">
+              <p class="eyebrow">Recent song</p>
+              <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
+              <p>{song.estimated_revenue}</p>
+            </div>
+          </article>
         );
       })}
     </div>
@@ -163,30 +343,6 @@ const discoveryLinks = [
     <h2 id="insights-title">Insights</h2>
     <ul class="meta-list">
       {insightLinks.map((link) => (
-        <li>
-          <a href={link.href}>{link.label}</a>
-          <span class="meta-inline"> {" "}· {link.detail}</span>
-        </li>
-      ))}
-    </ul>
-  </section>
-
-  <section aria-labelledby="rankings-title">
-    <h2 id="rankings-title">Rankings</h2>
-    <ul class="meta-list">
-      {rankingLinks.map((link) => (
-        <li>
-          <a href={link.href}>{link.label}</a>
-          <span class="meta-inline"> {" "}· {link.detail}</span>
-        </li>
-      ))}
-    </ul>
-  </section>
-
-  <section aria-labelledby="discovery-title">
-    <h2 id="discovery-title">Discovery</h2>
-    <ul class="meta-list">
-      {discoveryLinks.map((link) => (
         <li>
           <a href={link.href}>{link.label}</a>
           <span class="meta-inline"> {" "}· {link.detail}</span>
