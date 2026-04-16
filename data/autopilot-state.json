@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 14,
-    "song": 14,
-    "album": 14
+    "artist": 15,
+    "song": 15,
+    "album": 15
   },
   "lastTouched": {
     "artist": {
@@ -20,7 +20,8 @@
       "david-bowie": "2026-04-16T05:26:34.608Z",
       "dj-shadow": "2026-04-16T07:25:07.116Z",
       "drake": "2026-04-16T10:12:32.476Z",
-      "fleetwood-mac": "2026-04-16T19:05:55.400Z"
+      "fleetwood-mac": "2026-04-16T19:05:55.400Z",
+      "guns-n-roses": "2026-04-16T21:39:11.659Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -36,7 +37,8 @@
       "big-poppa": "2026-04-16T05:26:34.608Z",
       "black-hole-sun": "2026-04-16T07:25:07.116Z",
       "blank-space": "2026-04-16T10:12:32.476Z",
-      "block-rockin-beats": "2026-04-16T19:05:55.400Z"
+      "block-rockin-beats": "2026-04-16T19:05:55.400Z",
+      "boys-dont-cry": "2026-04-16T21:39:11.659Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -44,10 +46,15 @@
       "air-moon-safari": "2026-04-15T11:01:22.052Z",
       "america-america": "2026-04-15T21:46:31.024Z",
       "audioslave-out-of-exile": "2026-04-16T07:25:07.116Z",
-      "black-sabbath-paranoid": "2026-04-16T10:12:32.476Z"
+      "black-sabbath-paranoid": "2026-04-16T10:12:32.476Z",
+      "blur-parklife": "2026-04-16T21:39:11.659Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-16T21:39:11.659Z",
+      "summary": "artist:guns-n-roses, song:boys-dont-cry, album:blur-parklife"
+    },
     {
       "timestamp": "2026-04-16T19:05:55.400Z",
       "summary": "artist:fleetwood-mac, song:block-rockin-beats"
@@ -83,10 +90,6 @@
     {
       "timestamp": "2026-04-15T13:41:50.295Z",
       "summary": "artist:billie-eilish, song:alone"
-    },
-    {
-      "timestamp": "2026-04-15T11:01:22.052Z",
-      "summary": "artist:audioslave, song:all-my-life, album:air-moon-safari"
     }
   ]
 }

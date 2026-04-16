@@ -6549,5 +6549,113 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/paranoid/785232473?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Black%20Sabbath%20Paranoid"
     }
+  },
+  "blur-parklife": {
+    "releaseDate": "1994-04-25",
+    "label": "Parlophone Records Ltd",
+    "trackCount": 16,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Girls and Boys",
+        "durationMs": 291200
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Tracy Jacks",
+        "durationMs": 259627
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "End of a Century",
+        "durationMs": 165840
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Parklife",
+        "durationMs": 185093
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Bank Holiday",
+        "durationMs": 102307
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Badhead",
+        "durationMs": 205773
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "The Debt Collector",
+        "durationMs": 130720
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Far Out",
+        "durationMs": 97547
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "To the End",
+        "durationMs": 244600
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "London Loves",
+        "durationMs": 255453
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Trouble in the Message Centre",
+        "durationMs": 249040
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Clover Over Dover",
+        "durationMs": 202253
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Magic America",
+        "durationMs": 217907
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Jubilee",
+        "durationMs": 167800
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "This Is a Low",
+        "durationMs": 316747
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Lot 105",
+        "durationMs": 79000
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Blur%20Parklife",
+      "appleMusic": "https://music.apple.com/us/album/parklife/699665183?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Blur%20Parklife"
+    }
   }
 } as const;

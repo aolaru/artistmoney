@@ -2,5 +2,15 @@
   "title": "Boys Don't Cry",
   "slug": "boys-dont-cry",
   "artist": "the-cure",
-  "estimated_revenue": "$230K-$850K/year"
+  "estimated_revenue": "$230K-$850K/year",
+  "meaning_summary": "Boys Don't Cry stays commercially durable because it is emotionally direct, easy to revisit, and well suited to long-tail catalog listening.",
+  "revenue_drivers": [
+    "Streaming and catalog discovery keep the song generating recurring revenue.",
+    "Playlist longevity supports steady repeat listening over time.",
+    "Licensing and cultural familiarity can create additional earnings beyond baseline streams."
+  ],
+  "related_songs": [
+    "friday-im-in-love",
+    "just-like-heaven"
+  ]
 }
