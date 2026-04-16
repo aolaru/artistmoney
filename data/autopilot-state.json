@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 9,
-    "song": 9,
-    "album": 9
+    "artist": 10,
+    "song": 10,
+    "album": 10
   },
   "lastTouched": {
     "artist": {
@@ -15,7 +15,8 @@
       "billie-eilish": "2026-04-15T13:41:50.295Z",
       "black-sabbath": "2026-04-15T15:06:41.292Z",
       "boston": "2026-04-15T19:09:22.203Z",
-      "chicago": "2026-04-15T21:46:31.024Z"
+      "chicago": "2026-04-15T21:46:31.024Z",
+      "craig-mack": "2026-04-16T02:10:02.311Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -26,7 +27,8 @@
       "alone": "2026-04-15T13:41:50.295Z",
       "another-brick-in-the-wall": "2026-04-15T15:06:41.292Z",
       "army-of-me": "2026-04-15T19:09:22.203Z",
-      "baby-s-on-fire": "2026-04-15T21:46:31.024Z"
+      "baby-s-on-fire": "2026-04-15T21:46:31.024Z",
+      "barracuda": "2026-04-16T02:10:02.311Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -36,6 +38,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-16T02:10:02.311Z",
+      "summary": "artist:craig-mack, song:barracuda"
+    },
     {
       "timestamp": "2026-04-15T21:46:31.024Z",
       "summary": "artist:chicago, song:baby-s-on-fire, album:america-america"

@@ -4,5 +4,14 @@
   "artist": "heart",
   "estimated_revenue": "$250K-$900K/year",
   "album": "Little Queen",
-  "year": 1977
+  "year": 1977,
+  "meaning_summary": "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay across catalog listening.",
+  "revenue_drivers": [
+    "Classic replay value and catalog streaming keep major rock songs commercially relevant.",
+    "Playlist placement and cultural familiarity support long-tail listener demand.",
+    "Sync placements and live-culture recognition help extend the song's revenue life."
+  ],
+  "related_songs": [
+    "alone"
+  ]
 }

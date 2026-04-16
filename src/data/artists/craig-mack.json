@@ -2,8 +2,19 @@
   "name": "Craig Mack",
   "slug": "craig-mack",
   "estimated_income": "$120K-$500K/year",
-  "top_songs": ["flava-in-ya-ear", "get-down"],
+  "top_songs": [
+    "flava-in-ya-ear",
+    "get-down"
+  ],
   "genre": "Hip-Hop",
   "country": "United States",
-  "active_since": "1988"
+  "active_since": "1988",
+  "bio": "Craig Mack has a durable hip-hop catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Craig Mack remains closely associated with Flava in Ya Ear and Get Down, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Flava in Ya Ear and Get Down still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps legacy rap records active long after their original chart run.",
+    "Playlist placement and cultural recognition help the biggest songs sustain repeat listening.",
+    "Licensing, sampling, and nostalgia-driven discovery continue to support long-tail earnings."
+  ]
 }
