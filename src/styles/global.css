@@ -310,6 +310,23 @@ p {
   aspect-ratio: 1 / 1;
 }
 
+.song-visual {
+  margin: 1.25rem 0 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.song-visual-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .artist-card-body {
   padding: 1.1rem;
 }

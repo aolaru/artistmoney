@@ -118,6 +118,53 @@ export function createAlbumArtwork(
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
+export function createSongArtwork(
+  title: string,
+  artistName: string,
+  slug: string,
+  metadata?: { year?: number; album?: string }
+) {
+  const hash = hashValue(slug);
+  const [dark, mid, light] = palettes[(hash + 1) % palettes.length];
+  const accent = palettes[(hash + 3) % palettes.length][1];
+  const displayTitle = title.toUpperCase();
+  const displayArtist = artistName.toUpperCase();
+  const angle = -10 + (hash % 20);
+  const year = metadata?.year ? `${metadata.year}` : "";
+  const album = metadata?.album?.toUpperCase() ?? "";
+
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="${title} by ${artistName}">
+      <defs>
+        <linearGradient id="song-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="${dark}" />
+          <stop offset="52%" stop-color="${mid}" />
+          <stop offset="100%" stop-color="${light}" />
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="675" fill="url(#song-bg)" rx="42" />
+      <circle cx="1024" cy="148" r="118" fill="white" opacity="0.14" />
+      <circle cx="175" cy="514" r="96" fill="${accent}" opacity="0.18" />
+      <g transform="translate(824 332) rotate(${angle})">
+        <rect x="-168" y="-168" width="336" height="336" rx="34" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.26)" stroke-width="7" />
+        <circle cx="0" cy="0" r="108" fill="rgba(21,31,43,0.22)" />
+        <circle cx="0" cy="0" r="28" fill="${accent}" opacity="0.88" />
+      </g>
+      <text x="78" y="96" fill="rgba(20,31,45,0.56)" font-family="Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="26" letter-spacing="6">${displayArtist}</text>
+      ${year ? `<text x="1120" y="96" text-anchor="end" fill="rgba(20,31,45,0.5)" font-family="Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="4">${year}</text>` : ""}
+      <foreignObject x="72" y="180" width="650" height="240">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif; font-size: 86px; font-weight: 750; line-height: 0.98; color: rgba(20,31,45,0.92); letter-spacing: -0.05em;">
+          ${displayTitle}
+        </div>
+      </foreignObject>
+      <path d="M78 474 H548" stroke="rgba(20,31,45,0.34)" stroke-width="8" stroke-linecap="round" />
+      ${album ? `<text x="78" y="528" fill="rgba(20,31,45,0.6)" font-family="Inter, SF Pro Text, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="24" letter-spacing="4">${album}</text>` : ""}
+    </svg>
+  `;
+
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;

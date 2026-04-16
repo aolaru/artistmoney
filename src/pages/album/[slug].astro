@@ -16,7 +16,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const artist = getArtist(album.artistSlug);
-const imageSrc = createAlbumArtwork(album.title, album.artistName, album.slug, {
+const albumArtworkSong = album.trackListing.find((entry) => entry.player?.artwork);
+const providerArtwork = albumArtworkSong?.player?.artwork;
+const providerArtworkLink = album.links?.appleMusic ?? albumArtworkSong?.player?.links?.appleMusic ?? albumArtworkSong?.player?.appleMusic;
+const imageSrc = providerArtwork ?? createAlbumArtwork(album.title, album.artistName, album.slug, {
   releaseDate: album.releaseDate,
   label: album.label,
   trackCount: album.trackCount
@@ -74,6 +77,7 @@ const albumSchema = {
         alt={`Cover artwork for ${album.title} by ${album.artistName}`}
         width="1200"
         height="1200"
+        referrerpolicy="no-referrer"
       />
       <div class="artist-hero-copy">
         <p class="eyebrow">Album</p>
@@ -90,6 +94,17 @@ const albumSchema = {
           <li><strong>Tracked songs:</strong> {album.trackedSongCount}</li>
           {album.estimatedRevenue && <li><strong>Tracked revenue:</strong> {album.estimatedRevenue}</li>}
         </ul>
+        {providerArtwork && (
+          <p class="image-credit">
+            Cover artwork shown via Apple Music.
+            {" "}
+            {providerArtworkLink && (
+              <a href={providerArtworkLink} rel="noreferrer" target="_blank">
+                Open the source album
+              </a>
+            )}
+          </p>
+        )}
       </div>
     </div>
 

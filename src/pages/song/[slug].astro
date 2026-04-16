@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { songArticles } from "../../data/songArticles";
-import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
+import { createSongArtwork } from "../../lib/artistArtwork";
 import { getAlbum, getAlbumSlug, getArtist, songs, type Song } from "../../lib/catalog";
 import { getSongEditorial } from "../../lib/editorial";
 
@@ -26,7 +26,12 @@ const relatedSongs = (song.related_songs?.length
   : songs.filter((entry) => entry.artist === song.artist && entry.slug !== song.slug).slice(0, 3)) as Song[];
 const article = songArticles[song.slug];
 const hasDetailedEarnings = Boolean(song.earnings || song.ownership);
-const imageSrc = artist ? getArtistPhoto(song.artist)?.src ?? createArtistArtwork(artist.name, artist.slug) : undefined;
+const providerArtwork = song.player?.artwork;
+const providerArtworkLink = song.player?.links?.appleMusic ?? song.player?.appleMusic;
+const imageSrc = providerArtwork ?? createSongArtwork(song.title, artist?.name ?? song.artist, song.slug, {
+  year: song.year,
+  album: song.album
+});
 const playerLinks = Object.entries(song.player?.links ?? {}).filter(([, url]) => url) as Array<[string, string]>;
 const editorial = getSongEditorial(song, artist);
 const songSchema = {
@@ -73,6 +78,28 @@ const songSchema = {
 
     <p class="eyebrow">Song</p>
     <h1>{song.title}</h1>
+
+    <div class="song-visual">
+      <img
+        class="song-visual-image"
+        src={imageSrc}
+        alt={artist ? `${song.title} by ${artist.name}` : song.title}
+        width="1200"
+        height="675"
+        referrerpolicy="no-referrer"
+      />
+    </div>
+    {providerArtwork && (
+      <p class="image-credit">
+        Artwork shown via Apple Music.
+        {" "}
+        {providerArtworkLink && (
+          <a href={providerArtworkLink} rel="noreferrer" target="_blank">
+            Open the source track
+          </a>
+        )}
+      </p>
+    )}
 
     {(song.album || song.year) && (
       <ul class="meta-list">
