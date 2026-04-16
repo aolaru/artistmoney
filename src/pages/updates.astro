@@ -12,6 +12,26 @@ const updates = getCatalogUpdates(30);
 const artistTouchCount = updates.reduce((count, entry) => count + entry.artistSlugs.length, 0);
 const songTouchCount = updates.reduce((count, entry) => count + entry.songSlugs.length, 0);
 const albumTouchCount = updates.filter((entry) => entry.includesAlbumMetadata).length;
+const newArtistCount = updates.reduce((count, entry) => count + entry.addedArtistSlugs.length, 0);
+const newSongCount = updates.reduce((count, entry) => count + entry.addedSongSlugs.length, 0);
+const editorialCount = updates.filter((entry) => entry.includesArtistEditorial || entry.includesSongEditorial).length;
+
+const latestNewArtists = [...new Set(updates.flatMap((entry) => entry.addedArtistSlugs))]
+  .map((slug) => artistMap.get(slug))
+  .filter(Boolean)
+  .slice(0, 6);
+
+const latestNewSongs = [...new Set(updates.flatMap((entry) => entry.addedSongSlugs))]
+  .map((slug) => songMap.get(slug))
+  .filter(Boolean)
+  .slice(0, 6);
+
+const categoryLabels = {
+  "catalog-expansion": "Catalog expansion",
+  "album-enrichment": "Album enrichment",
+  "editorial-upgrade": "Editorial upgrade",
+  mixed: "Mixed update"
+} as const;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -24,7 +44,7 @@ const jsonLd = {
 
 <BaseLayout
   title="Updates | How Much Music"
-  description="Recent artist, song, and album improvements across the How Much Music catalog."
+  description="A public changelog for new artists, new songs, album enrichments, and editorial upgrades on How Much Music."
   jsonLd={jsonLd}
 >
   <Breadcrumbs items={[{ label: "Home", href: baseUrl }, { label: "Updates" }]} />
@@ -32,19 +52,77 @@ const jsonLd = {
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Updates</p>
-      <h1>Latest catalog improvements</h1>
+      <h1>Public changelog for the catalog</h1>
       <p>
-        This page is generated from git history during the site build. It tracks the most recent
-        artist, song, and album metadata updates that shipped into the public catalog.
+        This page is generated from git history during the site build. It separates new artists and
+        songs from album enrichments and editorial refreshes so visitors can see what changed, not
+        just which commit shipped.
       </p>
     </div>
     <div class="hero-panel" aria-label="Update totals">
       <strong>{updates.length}</strong>
-      <span>recent update entries</span>
-      <span>{artistTouchCount} artist touches</span>
-      <span>{songTouchCount} song touches</span>
-      <span>{albumTouchCount} album metadata updates</span>
+      <span>recent changelog entries</span>
+      <span>{newArtistCount} new artists</span>
+      <span>{newSongCount} new songs</span>
+      <span>{editorialCount} editorial refreshes</span>
+      <span>{albumTouchCount} album enrichments</span>
     </div>
+  </section>
+
+  <section aria-labelledby="highlights-title">
+    <h2 id="highlights-title">Recent Highlights</h2>
+    <div class="editorial-grid">
+      <article class="card editorial-card">
+        <div class="artist-card-body">
+          <p class="eyebrow">New Artists</p>
+          <h3>{newArtistCount}</h3>
+          <p>New artist pages added across the current changelog window.</p>
+          <div class="update-links">
+            {latestNewArtists.map((artist) => (
+              <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+            ))}
+          </div>
+        </div>
+      </article>
+      <article class="card editorial-card">
+        <div class="artist-card-body">
+          <p class="eyebrow">New Songs</p>
+          <h3>{newSongCount}</h3>
+          <p>Fresh song pages linked into the catalog.</p>
+          <div class="update-links">
+            {latestNewSongs.map((song) => (
+              <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+            ))}
+          </div>
+        </div>
+      </article>
+      <article class="card editorial-card">
+        <div class="artist-card-body">
+          <p class="eyebrow">Album Enrichments</p>
+          <h3>{albumTouchCount}</h3>
+          <p>Album metadata, release context, and tracklist improvements shipped recently.</p>
+          <p><a href={`${baseUrl}albums/`}>Browse all albums</a></p>
+        </div>
+      </article>
+      <article class="card editorial-card">
+        <div class="artist-card-body">
+          <p class="eyebrow">Editorial Refreshes</p>
+          <h3>{editorialCount}</h3>
+          <p>Artist and song pages enriched with stronger copy, metadata, and methodology context.</p>
+          <p><a href={`${baseUrl}insights/methodology/`}>Read the methodology</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="snapshot-title">
+    <h2 id="snapshot-title">Changelog Snapshot</h2>
+    <ul class="meta-list">
+      <li><strong>Artist touches:</strong> {artistTouchCount}</li>
+      <li><strong>Song touches:</strong> {songTouchCount}</li>
+      <li><strong>Album enrichments:</strong> {albumTouchCount}</li>
+      <li><strong>Editorial refreshes:</strong> {editorialCount}</li>
+    </ul>
   </section>
 
   <section aria-labelledby="updates-title">
@@ -56,65 +134,105 @@ const jsonLd = {
       </p>
     ) : (
       <div class="updates-list">
-        {updates.map((entry) => (
-          <article class="card update-card">
-            <div class="artist-card-body">
-              <div class="update-header">
-                <p class="eyebrow">Commit {entry.shortHash}</p>
-                <p class="update-date">{entry.date}</p>
-              </div>
-              <h3>{entry.summary}</h3>
-              <div class="update-tags" aria-label="Update scope">
-                {entry.artistSlugs.length > 0 && (
-                  <span class="rank-badge">{entry.artistSlugs.length} artist update{entry.artistSlugs.length === 1 ? "" : "s"}</span>
+        {updates.map((entry) => {
+          const updatedArtistSlugs = entry.artistSlugs.filter((slug) => !entry.addedArtistSlugs.includes(slug));
+          const updatedSongSlugs = entry.songSlugs.filter((slug) => !entry.addedSongSlugs.includes(slug));
+
+          return (
+            <article class="card update-card">
+              <div class="artist-card-body">
+                <div class="update-header">
+                  <p class="eyebrow">Commit {entry.shortHash}</p>
+                  <p class="update-date">{entry.date}</p>
+                </div>
+                <h3>{entry.summary}</h3>
+
+                <div class="update-tags" aria-label="Update scope">
+                  <span class="rank-badge">{categoryLabels[entry.category]}</span>
+                  {entry.addedArtistSlugs.length > 0 && (
+                    <span class="rank-badge">
+                      {entry.addedArtistSlugs.length} new artist page{entry.addedArtistSlugs.length === 1 ? "" : "s"}
+                    </span>
+                  )}
+                  {entry.addedSongSlugs.length > 0 && (
+                    <span class="rank-badge">
+                      {entry.addedSongSlugs.length} new song page{entry.addedSongSlugs.length === 1 ? "" : "s"}
+                    </span>
+                  )}
+                  {entry.includesAlbumMetadata && <span class="rank-badge">Album metadata</span>}
+                  {entry.includesArtistEditorial && <span class="rank-badge">Artist editorial</span>}
+                  {entry.includesSongEditorial && <span class="rank-badge">Song editorial</span>}
+                </div>
+
+                {entry.highlights.length > 0 && (
+                  <>
+                    <p class="update-subheading">Highlights</p>
+                    <div class="update-tags">
+                      {entry.highlights.map((highlight) => (
+                        <span class="active-filter-chip">{highlight}</span>
+                      ))}
+                    </div>
+                  </>
                 )}
-                {entry.songSlugs.length > 0 && (
-                  <span class="rank-badge">{entry.songSlugs.length} song update{entry.songSlugs.length === 1 ? "" : "s"}</span>
+
+                {entry.addedArtistSlugs.length > 0 && (
+                  <>
+                    <p class="update-subheading">New artist pages</p>
+                    <div class="update-links">
+                      {entry.addedArtistSlugs.map((slug) => {
+                        const artist = artistMap.get(slug);
+                        return <a href={`${baseUrl}artist/${slug}/`}>{artist?.name ?? slug}</a>;
+                      })}
+                    </div>
+                  </>
                 )}
-                {entry.includesAlbumMetadata && <span class="rank-badge">Album metadata</span>}
+
+                {updatedArtistSlugs.length > 0 && (
+                  <>
+                    <p class="update-subheading">Updated artist pages</p>
+                    <div class="update-links">
+                      {updatedArtistSlugs.map((slug) => {
+                        const artist = artistMap.get(slug);
+                        return <a href={`${baseUrl}artist/${slug}/`}>{artist?.name ?? slug}</a>;
+                      })}
+                    </div>
+                  </>
+                )}
+
+                {entry.addedSongSlugs.length > 0 && (
+                  <>
+                    <p class="update-subheading">New song pages</p>
+                    <div class="update-links">
+                      {entry.addedSongSlugs.map((slug) => {
+                        const song = songMap.get(slug);
+                        return <a href={`${baseUrl}song/${slug}/`}>{song?.title ?? slug}</a>;
+                      })}
+                    </div>
+                  </>
+                )}
+
+                {updatedSongSlugs.length > 0 && (
+                  <>
+                    <p class="update-subheading">Updated song pages</p>
+                    <div class="update-links">
+                      {updatedSongSlugs.map((slug) => {
+                        const song = songMap.get(slug);
+                        return <a href={`${baseUrl}song/${slug}/`}>{song?.title ?? slug}</a>;
+                      })}
+                    </div>
+                  </>
+                )}
+
+                {entry.includesAlbumMetadata && (
+                  <p class="update-note">
+                    This update also changed album metadata, release context, or tracklist coverage.
+                    Browse the full album index at <a href={`${baseUrl}albums/`}>Albums</a>.
+                  </p>
+                )}
               </div>
-
-              {entry.artistSlugs.length > 0 && (
-                <>
-                  <p class="update-subheading">Artists</p>
-                  <div class="update-links">
-                    {entry.artistSlugs.map((slug) => {
-                      const artist = artistMap.get(slug);
-                      return (
-                        <a href={`${baseUrl}artist/${slug}/`}>
-                          {artist?.name ?? slug}
-                        </a>
-                      );
-                    })}
-                  </div>
-                </>
-              )}
-
-              {entry.songSlugs.length > 0 && (
-                <>
-                  <p class="update-subheading">Songs</p>
-                  <div class="update-links">
-                    {entry.songSlugs.map((slug) => {
-                      const song = songMap.get(slug);
-                      return (
-                        <a href={`${baseUrl}song/${slug}/`}>
-                          {song?.title ?? slug}
-                        </a>
-                      );
-                    })}
-                  </div>
-                </>
-              )}
-
-              {entry.includesAlbumMetadata && (
-                <p class="update-note">
-                  This commit also changed album metadata or tracklist coverage. Browse the full
-                  album index at <a href={`${baseUrl}albums/`}>Albums</a>.
-                </p>
-              )}
-            </div>
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </div>
     )}
   </section>

@@ -94,7 +94,7 @@ function isEditionVariant(title = "") {
   return /(deluxe|expanded|anniversary|edition|remaster(ed)?|bonus|complete recordings?|amended version)/i.test(title);
 }
 
-async function fetchJson(url) {
+async function fetchJson(url, { allowNotFound = false } = {}) {
   for (let attempt = 0; attempt < 5; attempt += 1) {
     const response = await fetch(url, {
       headers: {
@@ -104,6 +104,10 @@ async function fetchJson(url) {
 
     if (response.ok) {
       return response.json();
+    }
+
+    if (allowNotFound && response.status === 404) {
+      return null;
     }
 
     if (response.status !== 429) {
@@ -167,8 +171,8 @@ export async function buildAlbums() {
 export async function fetchAlbumMetadata(album) {
   const query = `${album.artistName} ${album.title}`;
   const searchUrl = `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=album&limit=10`;
-  const search = await fetchJson(searchUrl);
-  const ranked = (search.results ?? [])
+  const search = await fetchJson(searchUrl, { allowNotFound: true });
+  const ranked = ((search?.results) ?? [])
     .map((result) => ({ result, score: scoreAlbumMatch(result, album.title, album.artistName, album.year) }))
     .sort((left, right) => right.score - left.score);
   const best =
@@ -204,8 +208,10 @@ export async function fetchAlbumMetadata(album) {
   }
 
   if (matched.collectionId && best.score >= MINIMUM_FULL_TRACKLIST_SCORE && !isEditionVariant(matched.collectionName ?? "")) {
-    const lookup = await fetchJson(`https://itunes.apple.com/lookup?id=${matched.collectionId}&entity=song`);
-    const tracks = (lookup.results ?? [])
+    const lookup = await fetchJson(`https://itunes.apple.com/lookup?id=${matched.collectionId}&entity=song`, {
+      allowNotFound: true
+    });
+    const tracks = ((lookup?.results) ?? [])
       .filter((entry) => entry.wrapperType === "track" && entry.kind === "song")
       .map((entry) => ({
         discNumber: entry.discNumber,
@@ -259,7 +265,18 @@ async function main() {
   const metadata = {};
 
   for (const album of albums) {
-    metadata[album.slug] = await fetchAlbumMetadata(album);
+    try {
+      metadata[album.slug] = await fetchAlbumMetadata(album);
+    } catch (error) {
+      console.warn(`Skipping album metadata for ${album.slug}: ${error.message}`);
+      metadata[album.slug] = {
+        releaseDate: album.year ? `${album.year}` : undefined,
+        links: {
+          spotify: buildSearchLink("spotify", album.artistName, album.title),
+          youtubeMusic: buildSearchLink("youtubeMusic", album.artistName, album.title)
+        }
+      };
+    }
     await new Promise((resolve) => setTimeout(resolve, 250));
   }
 

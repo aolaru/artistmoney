@@ -540,33 +540,41 @@ export async function main() {
   }
 
   if (albumEntry) {
-    const nextAlbumMetadata = await fetchAlbumMetadata(albumEntry);
-    if (nextAlbumMetadata.fullTracklist?.length) {
-      const mergedAlbumMetadata = {
-        ...albumMetadata,
-        [albumEntry.slug]: {
-          ...(albumMetadata[albumEntry.slug] ?? {}),
-          ...nextAlbumMetadata
-        }
-      };
+    try {
+      const nextAlbumMetadata = await fetchAlbumMetadata(albumEntry);
+      if (nextAlbumMetadata.fullTracklist?.length) {
+        const mergedAlbumMetadata = {
+          ...albumMetadata,
+          [albumEntry.slug]: {
+            ...(albumMetadata[albumEntry.slug] ?? {}),
+            ...nextAlbumMetadata
+          }
+        };
 
-      await writeFile(albumMetadataPath, renderFile(mergedAlbumMetadata), "utf8");
-      state.lastTouched.album[albumEntry.slug] = new Date(now).toISOString();
-      changes.push({
-        kind: "album",
-        slug: albumEntry.slug,
-        file: path.relative(rootDir, albumMetadataPath),
-        fields: ["releaseDate", "label", "trackCount", "fullTracklist", "links"].filter((field) => {
-          const previous = albumMetadata[albumEntry.slug]?.[field];
-          const next = mergedAlbumMetadata[albumEntry.slug]?.[field];
-          return JSON.stringify(previous) !== JSON.stringify(next);
-        })
-      });
-    } else {
+        await writeFile(albumMetadataPath, renderFile(mergedAlbumMetadata), "utf8");
+        state.lastTouched.album[albumEntry.slug] = new Date(now).toISOString();
+        changes.push({
+          kind: "album",
+          slug: albumEntry.slug,
+          file: path.relative(rootDir, albumMetadataPath),
+          fields: ["releaseDate", "label", "trackCount", "fullTracklist", "links"].filter((field) => {
+            const previous = albumMetadata[albumEntry.slug]?.[field];
+            const next = mergedAlbumMetadata[albumEntry.slug]?.[field];
+            return JSON.stringify(previous) !== JSON.stringify(next);
+          })
+        });
+      } else {
+        skipped.push({
+          kind: "album",
+          slug: albumEntry.slug,
+          reason: "no high-confidence full tracklist match was found"
+        });
+      }
+    } catch (error) {
       skipped.push({
         kind: "album",
         slug: albumEntry.slug,
-        reason: "no high-confidence full tracklist match was found"
+        reason: `album metadata lookup failed: ${error.message}`
       });
     }
   }
