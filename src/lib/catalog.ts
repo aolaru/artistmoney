@@ -2,7 +2,9 @@ import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { z } from "zod";
 import { albumMetadata } from "../data/albumMetadata";
+import { artistArticles } from "../data/artistArticles";
 import { artistMetadata } from "../data/artistMetadata";
+import { songArticles } from "../data/songArticles";
 import { songPlayerMetadata } from "../data/songPlayerMetadata";
 import { songMetadata } from "../data/songMetadata";
 import { createArtistArtwork, getArtistPhoto, getArtistPhotos } from "./artistArtwork";
@@ -171,6 +173,14 @@ export type MethodologySnapshot = {
   confidenceLabel: string;
   summary: string;
   bullets: string[];
+};
+
+export type ConfidenceLevel = "high" | "medium" | "low";
+
+export type ConfidenceScore = {
+  level: ConfidenceLevel;
+  score: number;
+  reasons: string[];
 };
 
 export const artists: Artist[] = parsedArtists
@@ -347,6 +357,366 @@ export function getAlbum(slug: string) {
   return albumMap.get(slug);
 }
 
+function toConfidence(score: number, reasons: string[]): ConfidenceScore {
+  return {
+    level: score >= 5 ? "high" : score >= 3 ? "medium" : "low",
+    score,
+    reasons
+  };
+}
+
+export function getArtistConfidence(artist: Artist): ConfidenceScore {
+  let score = 0;
+  const reasons: string[] = [];
+
+  if (artist.earnings?.artist_or_estate_share) {
+    score += 2;
+    reasons.push("artist-side split is modeled");
+  }
+  if (artist.earnings?.gross_catalog_revenue) {
+    score += 1;
+    reasons.push("gross catalog revenue is separated");
+  }
+  if (artist.ownership?.master_owner || artist.ownership?.publishing_owner || artist.ownership?.catalog_sale_status) {
+    score += 1;
+    reasons.push("ownership context is present");
+  }
+  if (artist.bio?.trim() || artistArticles[artist.slug]?.shortAnswer) {
+    score += 1;
+    reasons.push("editorial overview is present");
+  }
+  if (artist.revenue_drivers?.length || artistArticles[artist.slug]?.sources?.length) {
+    score += 1;
+    reasons.push("revenue-driver context is present");
+  }
+
+  return toConfidence(score, reasons);
+}
+
+export function getSongConfidence(song: Song): ConfidenceScore {
+  let score = 0;
+  const reasons: string[] = [];
+
+  if (song.earnings?.artist_or_estate_share) {
+    score += 2;
+    reasons.push("artist-side split is modeled");
+  }
+  if (song.earnings?.gross_track_revenue) {
+    score += 1;
+    reasons.push("gross track revenue is separated");
+  }
+  if (song.ownership?.master_owner || song.ownership?.publishing_owner || song.ownership?.catalog_sale_status) {
+    score += 1;
+    reasons.push("ownership context is present");
+  }
+  if (song.meaning_summary?.trim() || songArticles[song.slug]?.shortAnswer) {
+    score += 1;
+    reasons.push("editorial meaning/overview is present");
+  }
+  if (song.related_songs?.length || getContextSongs(song, 2).length) {
+    score += 1;
+    reasons.push("related listening context is present");
+  }
+
+  return toConfidence(score, reasons);
+}
+
+export function getAlbumConfidence(album: Album): ConfidenceScore {
+  let score = 0;
+  const reasons: string[] = [];
+
+  if (album.normalizedRevenue) {
+    score += 1;
+    reasons.push("tracked revenue is normalized");
+  }
+  if (album.releaseDate) {
+    score += 1;
+    reasons.push("release date is present");
+  }
+  if (album.label) {
+    score += 1;
+    reasons.push("label metadata is present");
+  }
+  if (album.trackCount) {
+    score += 1;
+    reasons.push("track count is present");
+  }
+  if (album.fullTracklist?.length) {
+    score += 1;
+    reasons.push("full tracklist is present");
+  }
+  if (album.links?.appleMusic) {
+    score += 1;
+    reasons.push("provider source link is present");
+  }
+
+  return toConfidence(score, reasons);
+}
+
+function genreTokens(value?: string) {
+  return (value ?? "")
+    .split(/[\/,&·]+/)
+    .map((token) => token.trim().toLowerCase())
+    .filter(Boolean);
+}
+
+function extractYear(value?: string) {
+  const match = value?.match(/\b(19|20)\d{2}\b/);
+  return match ? Number(match[0]) : undefined;
+}
+
+function toDecade(year?: number) {
+  return year ? Math.floor(year / 10) * 10 : undefined;
+}
+
+export function getArtistOwnershipNote(artist: Artist) {
+  if (artist.ownership?.notes) return artist.ownership.notes;
+  if (artist.earnings?.assumptions) return artist.earnings.assumptions;
+
+  const details = [
+    artist.ownership?.master_owner ? `masters are likely controlled by ${artist.ownership.master_owner}` : "",
+    artist.ownership?.publishing_owner ? `publishing is likely controlled by ${artist.ownership.publishing_owner}` : "",
+    artist.ownership?.catalog_sale_status ? `catalog status is ${artist.ownership.catalog_sale_status}` : ""
+  ].filter(Boolean);
+
+  if (details.length > 0) {
+    return `${artist.name}'s reported earnings should be read alongside ownership context: ${details.join(", ")}.`;
+  }
+
+  return `${artist.name}'s contract splits are not fully public, so the artist-side number on this page should be treated as a directional estimate rather than a royalty-statement equivalent.`;
+}
+
+export function getArtistOverviewText(artist: Artist) {
+  return (
+    artist.bio?.trim() ||
+    `${artist.name}${artist.country ? ` from ${artist.country}` : ""} has a catalog that still attracts listeners through recognisable songs, repeat listening, and long-tail streaming demand.`
+  );
+}
+
+export function getArtistRevenueContext(artist: Artist) {
+  if (artist.revenue_drivers?.length) return artist.revenue_drivers;
+  if (artistArticles[artist.slug]?.sources?.length) return artistArticles[artist.slug].sources;
+
+  const topSongNames = artist.top_songs
+    .map((slug) => songMap.get(slug)?.title)
+    .filter((value): value is string => Boolean(value))
+    .slice(0, 3);
+  const leadSongs = topSongNames.length ? topSongNames.join(", ") : "The strongest songs in the catalog";
+  const leadGenre = genreTokens(artist.genre)[0];
+
+  return [
+    `${leadSongs} continue to anchor long-tail listening demand.`,
+    `${leadGenre ? `${leadGenre} playlist placement` : "Streaming and catalog playlist placement"} helps keep the catalog active.`,
+    "Publishing, licensing, and nostalgia spikes can materially change the artist-side economics over time."
+  ];
+}
+
+export function getSongOwnershipNote(song: Song, artist?: Artist) {
+  if (song.ownership?.notes) return song.ownership.notes;
+  if (song.earnings?.assumptions) return song.earnings.assumptions;
+
+  const details = [
+    song.ownership?.master_owner ? `masters are likely controlled by ${song.ownership.master_owner}` : "",
+    song.ownership?.publishing_owner ? `publishing is likely controlled by ${song.ownership.publishing_owner}` : "",
+    song.ownership?.catalog_sale_status ? `catalog status is ${song.ownership.catalog_sale_status}` : ""
+  ].filter(Boolean);
+
+  if (details.length > 0) {
+    return `${song.title} should be read with ownership context in mind: ${details.join(", ")}.`;
+  }
+
+  return `${song.title} by ${artist?.name ?? song.artist} is modeled from the best available catalog and platform signals, but the exact master and publishing splits are not fully public.`;
+}
+
+export function getSongMeaningText(song: Song) {
+  return (
+    song.meaning_summary?.trim() ||
+    songArticles[song.slug]?.shortAnswer?.trim() ||
+    `${song.title}${song.album ? ` from ${song.album}` : ""} remains commercially relevant because it is emotionally legible, easy to replay, and culturally recognisable inside ${getArtist(song.artist)?.name ?? song.artist}'s catalog.`
+  );
+}
+
+export function getSongRevenueContext(song: Song) {
+  if (song.revenue_drivers?.length) return song.revenue_drivers;
+  if (songArticles[song.slug]?.breakdown?.length) return songArticles[song.slug].breakdown;
+
+  return [
+    "Streaming is usually the largest recurring revenue source.",
+    "Catalog familiarity helps the song stay useful in playlists and recommendation loops.",
+    "Licensing and social rediscovery can create revenue spikes on top of the long-tail baseline."
+  ];
+}
+
+export function getAlbumMethodology(album: Album): MethodologySnapshot {
+  const confidence = getAlbumConfidence(album);
+
+  return {
+    confidenceLabel: `${confidence.level[0].toUpperCase()}${confidence.level.slice(1)} confidence album estimate`,
+    summary: "Album pages model tracked-song revenue, not full-album royalty statements, and become stronger as tracklists, release metadata, and provider links improve.",
+    bullets: [
+      album.fullTracklist?.length
+        ? "This page has a matched full tracklist, which improves album-level context."
+        : "This page still relies on tracked songs only, so album context is partial.",
+      album.normalizedRevenue
+        ? "Tracked-song revenue has been normalized into a numeric annual range for ranking and comparison."
+        : "Tracked-song revenue is still partial, so ranking weight is limited.",
+      "Album economics on this site are a proxy for catalog strength, not a substitute for a full release-level royalty statement."
+    ]
+  };
+}
+
+export function getRelatedArtists(artist: Artist, limit = 3) {
+  const artistGenreTokens = new Set(genreTokens(artist.genre));
+  const artistDecade = toDecade(extractYear(artist.active_since));
+
+  return artists
+    .filter((candidate) => candidate.slug !== artist.slug)
+    .map((candidate) => {
+      const candidateGenreTokens = genreTokens(candidate.genre);
+      const sharedGenres = candidateGenreTokens.filter((token) => artistGenreTokens.has(token)).length;
+      const sameCountry = artist.country && candidate.country && artist.country === candidate.country ? 1 : 0;
+      const candidateDecade = toDecade(extractYear(candidate.active_since));
+      const sameDecade = artistDecade && candidateDecade && artistDecade === candidateDecade ? 1 : 0;
+      const score = sharedGenres * 3 + sameCountry * 2 + sameDecade;
+
+      return {
+        artist: candidate,
+        score,
+        revenueScore: candidate.normalizedRevenue?.artistSide?.midpoint ?? 0
+      };
+    })
+    .filter((entry) => entry.score > 0)
+    .sort((left, right) => right.score - left.score || right.revenueScore - left.revenueScore)
+    .slice(0, limit)
+    .map((entry) => entry.artist);
+}
+
+export function getMoreSongsFromAlbum(song: Song, limit = 4) {
+  if (!song.album) return [];
+
+  const album = getAlbum(getAlbumSlug(song.artist, song.album));
+  if (!album) return [];
+
+  return album.trackListing
+    .filter((entry) => entry.slug !== song.slug)
+    .slice(0, limit);
+}
+
+export function getRelatedAlbumsForSong(song: Song, limit = 3) {
+  const artist = getArtist(song.artist);
+  const songDecade = toDecade(song.year);
+  const artistGenreTokens = new Set(genreTokens(artist?.genre));
+
+  return albums
+    .filter((album) => album.slug !== (song.album ? getAlbumSlug(song.artist, song.album) : ""))
+    .map((album) => {
+      const albumArtist = getArtist(album.artistSlug);
+      const albumGenreTokens = genreTokens(albumArtist?.genre);
+      const sameArtist = album.artistSlug === song.artist ? 1 : 0;
+      const sharedGenres = albumGenreTokens.filter((token) => artistGenreTokens.has(token)).length;
+      const sameDecade = songDecade && toDecade(album.year) === songDecade ? 1 : 0;
+      const score = sameArtist * 5 + sharedGenres * 2 + sameDecade;
+
+      return {
+        album,
+        score,
+        revenueScore: album.normalizedRevenue?.midpoint ?? 0
+      };
+    })
+    .filter((entry) => entry.score > 0)
+    .sort((left, right) => right.score - left.score || right.revenueScore - left.revenueScore)
+    .slice(0, limit)
+    .map((entry) => entry.album);
+}
+
+export function getContextSongs(song: Song, limit = 4) {
+  const artist = getArtist(song.artist);
+  const songDecade = toDecade(song.year);
+  const artistGenreTokens = new Set(genreTokens(artist?.genre));
+
+  return songs
+    .filter((candidate) => candidate.slug !== song.slug)
+    .map((candidate) => {
+      const candidateArtist = getArtist(candidate.artist);
+      const candidateGenreTokens = genreTokens(candidateArtist?.genre);
+      const sharedGenres = candidateGenreTokens.filter((token) => artistGenreTokens.has(token)).length;
+      const sameDecade = songDecade && toDecade(candidate.year) === songDecade ? 1 : 0;
+      const sameArtist = candidate.artist === song.artist ? 1 : 0;
+      const score = sameArtist * 4 + sharedGenres * 2 + sameDecade;
+
+      return {
+        song: candidate,
+        score,
+        revenueScore: candidate.normalizedRevenue?.artistSide?.midpoint ?? 0
+      };
+    })
+    .filter((entry) => entry.score > 0)
+    .sort((left, right) => right.score - left.score || right.revenueScore - left.revenueScore)
+    .slice(0, limit)
+    .map((entry) => entry.song);
+}
+
+export function getRelatedAlbums(album: Album, limit = 3) {
+  const albumArtist = getArtist(album.artistSlug);
+  const albumGenreTokens = new Set(genreTokens(albumArtist?.genre));
+  const albumDecade = toDecade(album.year);
+
+  return albums
+    .filter((candidate) => candidate.slug !== album.slug)
+    .map((candidate) => {
+      const candidateArtist = getArtist(candidate.artistSlug);
+      const candidateGenreTokens = genreTokens(candidateArtist?.genre);
+      const sameArtist = candidate.artistSlug === album.artistSlug ? 1 : 0;
+      const sharedGenres = candidateGenreTokens.filter((token) => albumGenreTokens.has(token)).length;
+      const sameDecade = albumDecade && toDecade(candidate.year) === albumDecade ? 1 : 0;
+      const score = sameArtist * 5 + sharedGenres * 2 + sameDecade;
+
+      return {
+        album: candidate,
+        score,
+        revenueScore: candidate.normalizedRevenue?.midpoint ?? 0
+      };
+    })
+    .filter((entry) => entry.score > 0)
+    .sort((left, right) => right.score - left.score || right.revenueScore - left.revenueScore)
+    .slice(0, limit)
+    .map((entry) => entry.album);
+}
+
+export function getMoreAlbumsFromArtist(album: Album, limit = 3) {
+  return albums
+    .filter((candidate) => candidate.artistSlug === album.artistSlug && candidate.slug !== album.slug)
+    .sort((left, right) => (right.normalizedRevenue?.midpoint ?? 0) - (left.normalizedRevenue?.midpoint ?? 0))
+    .slice(0, limit);
+}
+
+export function getAlbumContextSongs(album: Album, limit = 4) {
+  const albumArtist = getArtist(album.artistSlug);
+  const albumGenreTokens = new Set(genreTokens(albumArtist?.genre));
+  const albumDecade = toDecade(album.year);
+
+  return songs
+    .filter((song) => !album.trackListing.some((tracked) => tracked.slug === song.slug))
+    .map((song) => {
+      const songArtist = getArtist(song.artist);
+      const songGenreTokens = genreTokens(songArtist?.genre);
+      const sameArtist = song.artist === album.artistSlug ? 1 : 0;
+      const sharedGenres = songGenreTokens.filter((token) => albumGenreTokens.has(token)).length;
+      const sameDecade = albumDecade && toDecade(song.year) === albumDecade ? 1 : 0;
+      const score = sameArtist * 4 + sharedGenres * 2 + sameDecade;
+
+      return {
+        song,
+        score,
+        revenueScore: song.normalizedRevenue?.artistSide?.midpoint ?? 0
+      };
+    })
+    .filter((entry) => entry.score > 0)
+    .sort((left, right) => right.score - left.score || right.revenueScore - left.revenueScore)
+    .slice(0, limit)
+    .map((entry) => entry.song);
+}
+
 export function getArtistMethodology(artist: Artist): MethodologySnapshot {
   const hasArtistSideSplit = Boolean(artist.earnings?.artist_or_estate_share);
   const hasGrossCatalog = Boolean(artist.earnings?.gross_catalog_revenue);
@@ -437,6 +807,8 @@ function validateCatalogSemantics() {
   const issues: string[] = [];
 
   artists.forEach((artist) => {
+    const relatedArtists = getRelatedArtists(artist, 3);
+
     if (artist.top_songs.length < 2) {
       issues.push(`Artist "${artist.slug}" must have at least 2 top songs.`);
     }
@@ -447,6 +819,22 @@ function validateCatalogSemantics() {
 
     if (!artist.normalizedRevenue?.artistSide) {
       issues.push(`Artist "${artist.slug}" has an unparseable estimated income.`);
+    }
+
+    if (!getArtistOverviewText(artist).trim()) {
+      issues.push(`Artist "${artist.slug}" is missing overview copy.`);
+    }
+
+    if (getArtistRevenueContext(artist).length < 2) {
+      issues.push(`Artist "${artist.slug}" is missing enough revenue-driver context.`);
+    }
+
+    if (!getArtistOwnershipNote(artist).trim()) {
+      issues.push(`Artist "${artist.slug}" is missing an ownership note.`);
+    }
+
+    if (relatedArtists.length === 0) {
+      issues.push(`Artist "${artist.slug}" has no related-artist links.`);
     }
 
     artist.top_songs.forEach((songSlug) => {
@@ -464,6 +852,10 @@ function validateCatalogSemantics() {
   });
 
   songs.forEach((song) => {
+    const relatedPool = (song.related_songs?.length ?? 0) > 0
+      ? song.related_songs ?? []
+      : songs.filter((entry) => entry.artist === song.artist && entry.slug !== song.slug).map((entry) => entry.slug);
+
     if (!artistMap.has(song.artist)) {
       issues.push(`Song "${song.slug}" references missing artist "${song.artist}".`);
     }
@@ -478,6 +870,22 @@ function validateCatalogSemantics() {
 
     if (!song.normalizedRevenue?.artistSide) {
       issues.push(`Song "${song.slug}" has an unparseable estimated revenue.`);
+    }
+
+    if (!getSongMeaningText(song).trim()) {
+      issues.push(`Song "${song.slug}" is missing overview or meaning copy.`);
+    }
+
+    if (getSongRevenueContext(song).length < 2) {
+      issues.push(`Song "${song.slug}" is missing enough revenue-driver context.`);
+    }
+
+    if (!getSongOwnershipNote(song, getArtist(song.artist)).trim()) {
+      issues.push(`Song "${song.slug}" is missing an ownership note.`);
+    }
+
+    if (relatedPool.length === 0) {
+      issues.push(`Song "${song.slug}" has no related-song links.`);
     }
 
     if (song.related_songs) {

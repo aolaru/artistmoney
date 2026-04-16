@@ -3,7 +3,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { songArticles } from "../../data/songArticles";
 import { createSongArtwork } from "../../lib/artistArtwork";
-import { getAlbum, getAlbumSlug, getArtist, getSongMethodology, songs, type Song } from "../../lib/catalog";
+import {
+  getAlbum,
+  getAlbumSlug,
+  getArtist,
+  getContextSongs,
+  getMoreSongsFromAlbum,
+  getRelatedAlbumsForSong,
+  getSongMethodology,
+  getSongOwnershipNote,
+  songs,
+  type Song
+} from "../../lib/catalog";
 import { getSongEditorial } from "../../lib/editorial";
 
 export function getStaticPaths() {
@@ -35,6 +46,10 @@ const imageSrc = providerArtwork ?? createSongArtwork(song.title, artist?.name ?
 const playerLinks = Object.entries(song.player?.links ?? {}).filter(([, url]) => url) as Array<[string, string]>;
 const editorial = getSongEditorial(song, artist);
 const methodology = getSongMethodology(song);
+const ownershipNote = getSongOwnershipNote(song, artist);
+const moreFromAlbum = getMoreSongsFromAlbum(song, 4);
+const relatedAlbums = getRelatedAlbumsForSong(song, 3);
+const contextSongs = getContextSongs(song, 4);
 const songSchema = {
   "@context": "https://schema.org",
   "@type": "MusicRecording",
@@ -239,6 +254,11 @@ const songSchema = {
       </>
     )}
 
+    <section aria-labelledby="ownership-note-title">
+      <h2 id="ownership-note-title">Ownership Note</h2>
+      <p>{ownershipNote}</p>
+    </section>
+
     <section aria-labelledby="lifetime-title">
       <h2 id="lifetime-title">Lifetime Earnings</h2>
       <p><strong>{article?.lifetimeEstimate ?? editorial.lifetime}</strong></p>
@@ -267,6 +287,53 @@ const songSchema = {
           {relatedSongs.map((relatedSong) => (
             <li>
               <a href={`${baseUrl}song/${relatedSong.slug}/`}>{relatedSong.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {moreFromAlbum.length > 0 && (
+      <section aria-labelledby="album-songs-title">
+        <h2 id="album-songs-title">More From This Album</h2>
+        <ul class="meta-list">
+          {moreFromAlbum.map((albumSong) => (
+            <li>
+              <a href={`${baseUrl}song/${albumSong.slug}/`}>{albumSong.title}</a>
+              <span class="meta-inline"> · {albumSong.estimated_revenue}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {relatedAlbums.length > 0 && (
+      <section aria-labelledby="related-albums-title">
+        <h2 id="related-albums-title">Related Albums</h2>
+        <ul class="meta-list">
+          {relatedAlbums.map((relatedAlbum) => (
+            <li>
+              <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
+              <span class="meta-inline">
+                {" "}· {relatedAlbum.artistName}{relatedAlbum.year ? ` · ${relatedAlbum.year}` : ""}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {contextSongs.length > 0 && (
+      <section aria-labelledby="context-songs-title">
+        <h2 id="context-songs-title">More From This Era and Genre</h2>
+        <ul class="meta-list">
+          {contextSongs.map((contextSong) => (
+            <li>
+              <a href={`${baseUrl}song/${contextSong.slug}/`}>{contextSong.title}</a>
+              <span class="meta-inline">
+                {" "}· {getArtist(contextSong.artist)?.name ?? contextSong.artist}
+                {contextSong.year ? ` · ${contextSong.year}` : ""}
+              </span>
             </li>
           ))}
         </ul>

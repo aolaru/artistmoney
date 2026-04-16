@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getAlbumSlug, getArtist, getArtistVisual, songs } from "../lib/catalog";
+import { artists, getAlbumSlug, getArtist, getArtistVisual, getSongConfidence, songs } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -50,14 +50,35 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
           ))}
         </select>
       </label>
+      <label class="filter-field">
+        <span>Confidence</span>
+        <select id="song-confidence">
+          <option value="">All confidence levels</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </label>
+      <label class="filter-field">
+        <span>Sort</span>
+        <select id="song-sort">
+          <option value="earnings">Highest earnings</option>
+          <option value="alpha">Alphabetical</option>
+          <option value="year">Newest release year</option>
+          <option value="confidence">Highest confidence</option>
+        </select>
+      </label>
     </div>
+    <div class="active-filters" id="song-active-filters"></div>
     <p class="results-note" id="song-results-note">Showing {songs.length} songs</p>
-    <div class="card-grid">
+    <div class="card-grid" id="song-card-grid">
       {songs.map((song) => {
         const artist = getArtist(song.artist);
         const artistName = artist?.name ?? song.artist;
         const artistVisual = artist ? getArtistVisual(artist) : undefined;
         const decade = song.year ? `${Math.floor(song.year / 10) * 10}s` : "";
+        const confidence = getSongConfidence(song);
+        const revenueMidpoint = song.normalizedRevenue?.artistSide?.midpoint ?? 0;
 
         return (
           <article
@@ -66,6 +87,11 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
             data-search={`${song.title} ${artistName} ${song.album ?? ""}`.toLowerCase()}
             data-artist={song.artist}
             data-decade={decade}
+            data-confidence={confidence.level}
+            data-confidence-score={confidence.score}
+            data-revenue={revenueMidpoint}
+            data-year={song.year ?? 0}
+            data-name={song.title.toLowerCase()}
           >
             <img
               class="artist-card-image"
@@ -78,6 +104,7 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
             />
             <div class="artist-card-body">
               <p class="eyebrow">Song</p>
+              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
               <h3>
                 <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
               </h3>
@@ -107,16 +134,66 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
     const songSearchInput = document.querySelector("#song-search");
     const songArtistSelect = document.querySelector("#song-artist");
     const songDecadeSelect = document.querySelector("#song-decade");
+    const songConfidenceSelect = document.querySelector("#song-confidence");
+    const songSortSelect = document.querySelector("#song-sort");
     const songCards = [...document.querySelectorAll("[data-song-card]")];
     const songNote = document.querySelector("#song-results-note");
+    const songGrid = document.querySelector("#song-card-grid");
+    const activeFilters = document.querySelector("#song-active-filters");
 
-    if (!songSearchInput || !songArtistSelect || !songDecadeSelect || !songNote) return;
+    if (!songSearchInput || !songArtistSelect || !songDecadeSelect || !songConfidenceSelect || !songSortSelect || !songNote || !songGrid || !activeFilters) return;
     if (songSearchInput.dataset.filtersBound === "true") return;
+
+    const syncUrl = () => {
+      const url = new URL(window.location.href);
+      const values = {
+        q: songSearchInput.value.trim(),
+        artist: songArtistSelect.value,
+        decade: songDecadeSelect.value,
+        confidence: songConfidenceSelect.value,
+        sort: songSortSelect.value
+      };
+
+      Object.entries(values).forEach(([key, value]) => {
+        if (value) {
+          url.searchParams.set(key, value);
+        } else {
+          url.searchParams.delete(key);
+        }
+      });
+
+      history.replaceState({}, "", `${url.pathname}${url.searchParams.toString() ? `?${url.searchParams.toString()}` : ""}`);
+    };
+
+    const renderActiveFilters = () => {
+      const items = [];
+      if (songSearchInput.value.trim()) items.push(`Search: ${songSearchInput.value.trim()}`);
+      if (songArtistSelect.value) items.push(`Artist: ${songArtistSelect.selectedOptions[0]?.textContent ?? songArtistSelect.value}`);
+      if (songDecadeSelect.value) items.push(`Decade: ${songDecadeSelect.value}`);
+      if (songConfidenceSelect.value) items.push(`Confidence: ${songConfidenceSelect.value}`);
+      if (songSortSelect.value && songSortSelect.value !== "earnings") items.push(`Sort: ${songSortSelect.selectedOptions[0]?.textContent ?? songSortSelect.value}`);
+
+      activeFilters.innerHTML = items.length
+        ? `${items.map((item) => `<span class="active-filter-chip">${item}</span>`).join("")}<button type="button" class="filter-reset" id="song-reset">Clear filters</button>`
+        : "";
+
+      const resetButton = document.querySelector("#song-reset");
+      resetButton?.addEventListener("click", () => {
+        songSearchInput.value = "";
+        songArtistSelect.value = "";
+        songDecadeSelect.value = "";
+        songConfidenceSelect.value = "";
+        songSortSelect.value = "earnings";
+        applySongFilters();
+      }, { once: true });
+    };
 
     const applySongFilters = () => {
       const query = songSearchInput.value.trim().toLowerCase();
       const artist = songArtistSelect.value;
       const decade = songDecadeSelect.value;
+      const confidence = songConfidenceSelect.value;
+      const sort = songSortSelect.value;
 
       let visible = 0;
 
@@ -124,16 +201,47 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
         const matchesQuery = !query || card.dataset.search?.includes(query);
         const matchesArtist = !artist || card.dataset.artist === artist;
         const matchesDecade = !decade || card.dataset.decade === decade;
-        const show = Boolean(matchesQuery && matchesArtist && matchesDecade);
+        const matchesConfidence = !confidence || card.dataset.confidence === confidence;
+        const show = Boolean(matchesQuery && matchesArtist && matchesDecade && matchesConfidence);
 
         card.classList.toggle("is-hidden", !show);
         if (show) visible += 1;
       });
 
+      const sortedCards = [...songCards].sort((left, right) => {
+        if (sort === "alpha") {
+          return (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
+        }
+
+        if (sort === "year") {
+          return Number(right.dataset.year ?? 0) - Number(left.dataset.year ?? 0)
+            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+        }
+
+        if (sort === "confidence") {
+          return Number(right.dataset.confidenceScore ?? 0) - Number(left.dataset.confidenceScore ?? 0)
+            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+        }
+
+        return Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0)
+          || (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
+      });
+
+      sortedCards.forEach((card) => songGrid.appendChild(card));
+
       songNote.textContent = `Showing ${visible} song${visible === 1 ? "" : "s"}`;
+      renderActiveFilters();
+      syncUrl();
     };
 
-    [songSearchInput, songArtistSelect, songDecadeSelect].forEach((element) => {
+    const params = new URLSearchParams(window.location.search);
+    songSearchInput.value = params.get("q") ?? "";
+    songArtistSelect.value = params.get("artist") ?? "";
+    songDecadeSelect.value = params.get("decade") ?? "";
+    songConfidenceSelect.value = params.get("confidence") ?? "";
+    songSortSelect.value = params.get("sort") ?? "earnings";
+
+    [songSearchInput, songArtistSelect, songDecadeSelect, songConfidenceSelect, songSortSelect].forEach((element) => {
       element.addEventListener("input", applySongFilters);
       element.addEventListener("change", applySongFilters);
     });

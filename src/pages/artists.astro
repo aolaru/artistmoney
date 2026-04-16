@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getArtistVisual } from "../lib/catalog";
+import { artists, getArtistConfidence, getArtistVisual } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -50,12 +50,32 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
           ))}
         </select>
       </label>
+      <label class="filter-field">
+        <span>Confidence</span>
+        <select id="artist-confidence">
+          <option value="">All confidence levels</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </label>
+      <label class="filter-field">
+        <span>Sort</span>
+        <select id="artist-sort">
+          <option value="earnings">Highest earnings</option>
+          <option value="alpha">Alphabetical</option>
+          <option value="confidence">Highest confidence</option>
+        </select>
+      </label>
     </div>
+    <div class="active-filters" id="artist-active-filters"></div>
     <p class="results-note" id="artist-results-note">Showing {artists.length} artists</p>
-    <div class="card-grid">
+    <div class="card-grid" id="artist-card-grid">
       {artists.map((artist) => (
         (() => {
           const artistVisual = getArtistVisual(artist);
+          const confidence = getArtistConfidence(artist);
+          const revenueMidpoint = artist.normalizedRevenue?.artistSide?.midpoint ?? 0;
           return (
         <article
           class="card artist-card"
@@ -63,6 +83,10 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
           data-search={`${artist.name} ${artist.genre ?? ""} ${artist.country ?? ""}`.toLowerCase()}
           data-genre={artist.genre ?? ""}
           data-country={artist.country ?? ""}
+          data-confidence={confidence.level}
+          data-confidence-score={confidence.score}
+          data-revenue={revenueMidpoint}
+          data-name={artist.name.toLowerCase()}
         >
           <img
             class="artist-card-image"
@@ -75,6 +99,7 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
           />
           <div class="artist-card-body">
             <p class="eyebrow">Artist</p>
+            <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
             <h3>
               <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
             </h3>
@@ -96,16 +121,67 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
     const artistSearchInput = document.querySelector("#artist-search");
     const artistGenreSelect = document.querySelector("#artist-genre");
     const artistCountrySelect = document.querySelector("#artist-country");
+    const artistConfidenceSelect = document.querySelector("#artist-confidence");
+    const artistSortSelect = document.querySelector("#artist-sort");
     const artistCards = [...document.querySelectorAll("[data-artist-card]")];
     const artistNote = document.querySelector("#artist-results-note");
+    const artistGrid = document.querySelector("#artist-card-grid");
+    const activeFilters = document.querySelector("#artist-active-filters");
 
-    if (!artistSearchInput || !artistGenreSelect || !artistCountrySelect || !artistNote) return;
+    if (!artistSearchInput || !artistGenreSelect || !artistCountrySelect || !artistConfidenceSelect || !artistSortSelect || !artistNote || !artistGrid || !activeFilters) return;
     if (artistSearchInput.dataset.filtersBound === "true") return;
+
+    const syncUrl = () => {
+      const url = new URL(window.location.href);
+      const params = url.searchParams;
+      const values = {
+        q: artistSearchInput.value.trim(),
+        genre: artistGenreSelect.value,
+        country: artistCountrySelect.value,
+        confidence: artistConfidenceSelect.value,
+        sort: artistSortSelect.value
+      };
+
+      Object.entries(values).forEach(([key, value]) => {
+        if (value) {
+          params.set(key, value);
+        } else {
+          params.delete(key);
+        }
+      });
+
+      history.replaceState({}, "", `${url.pathname}${params.toString() ? `?${params.toString()}` : ""}`);
+    };
+
+    const renderActiveFilters = () => {
+      const items = [];
+      if (artistSearchInput.value.trim()) items.push(`Search: ${artistSearchInput.value.trim()}`);
+      if (artistGenreSelect.value) items.push(`Genre: ${artistGenreSelect.value}`);
+      if (artistCountrySelect.value) items.push(`Country: ${artistCountrySelect.value}`);
+      if (artistConfidenceSelect.value) items.push(`Confidence: ${artistConfidenceSelect.value}`);
+      if (artistSortSelect.value && artistSortSelect.value !== "earnings") items.push(`Sort: ${artistSortSelect.selectedOptions[0]?.textContent ?? artistSortSelect.value}`);
+
+      activeFilters.innerHTML = items.length
+        ? `${items.map((item) => `<span class="active-filter-chip">${item}</span>`).join("")}<button type="button" class="filter-reset" id="artist-reset">Clear filters</button>`
+        : "";
+
+      const resetButton = document.querySelector("#artist-reset");
+      resetButton?.addEventListener("click", () => {
+        artistSearchInput.value = "";
+        artistGenreSelect.value = "";
+        artistCountrySelect.value = "";
+        artistConfidenceSelect.value = "";
+        artistSortSelect.value = "earnings";
+        applyArtistFilters();
+      }, { once: true });
+    };
 
     const applyArtistFilters = () => {
       const query = artistSearchInput.value.trim().toLowerCase();
       const genre = artistGenreSelect.value;
       const country = artistCountrySelect.value;
+      const confidence = artistConfidenceSelect.value;
+      const sort = artistSortSelect.value;
 
       let visible = 0;
 
@@ -113,16 +189,42 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
         const matchesQuery = !query || card.dataset.search?.includes(query);
         const matchesGenre = !genre || card.dataset.genre === genre;
         const matchesCountry = !country || card.dataset.country === country;
-        const show = Boolean(matchesQuery && matchesGenre && matchesCountry);
+        const matchesConfidence = !confidence || card.dataset.confidence === confidence;
+        const show = Boolean(matchesQuery && matchesGenre && matchesCountry && matchesConfidence);
 
         card.classList.toggle("is-hidden", !show);
         if (show) visible += 1;
       });
 
+      const sortedCards = [...artistCards].sort((left, right) => {
+        if (sort === "alpha") {
+          return (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
+        }
+
+        if (sort === "confidence") {
+          return Number(right.dataset.confidenceScore ?? 0) - Number(left.dataset.confidenceScore ?? 0)
+            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+        }
+
+        return Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0)
+          || (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
+      });
+
+      sortedCards.forEach((card) => artistGrid.appendChild(card));
+
       artistNote.textContent = `Showing ${visible} artist${visible === 1 ? "" : "s"}`;
+      renderActiveFilters();
+      syncUrl();
     };
 
-    [artistSearchInput, artistGenreSelect, artistCountrySelect].forEach((element) => {
+    const params = new URLSearchParams(window.location.search);
+    artistSearchInput.value = params.get("q") ?? "";
+    artistGenreSelect.value = params.get("genre") ?? "";
+    artistCountrySelect.value = params.get("country") ?? "";
+    artistConfidenceSelect.value = params.get("confidence") ?? "";
+    artistSortSelect.value = params.get("sort") ?? "earnings";
+
+    [artistSearchInput, artistGenreSelect, artistCountrySelect, artistConfidenceSelect, artistSortSelect].forEach((element) => {
       element.addEventListener("input", applyArtistFilters);
       element.addEventListener("change", applyArtistFilters);
     });

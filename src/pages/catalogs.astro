@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { createAlbumArtwork } from "../lib/artistArtwork";
-import { rankedAlbums } from "../lib/catalog";
+import { getAlbumConfidence, rankedAlbums } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -38,7 +38,9 @@ const entries = rankedAlbums.filter((entry) => entry.revenueRange).slice(0, 25);
   <section aria-labelledby="catalogs-title">
     <h2 id="catalogs-title">Catalog Ranking</h2>
     <div class="card-grid">
-      {entries.map(({ album, revenueRange }, index) => (
+      {entries.map(({ album, revenueRange }, index) => {
+        const confidence = getAlbumConfidence(album);
+        return (
         <article class="card artist-card ranked-card">
           <img
             class="artist-card-image album-cover-image"
@@ -55,6 +57,7 @@ const entries = rankedAlbums.filter((entry) => entry.revenueRange).slice(0, 25);
           <div class="artist-card-body">
             <p class="rank-badge">#{index + 1}</p>
             <p class="eyebrow">Album</p>
+            <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
             <h3><a href={`${baseUrl}album/${album.slug}/`}>{album.title}</a></h3>
             <p class="artist-card-meta">
               By <a href={`${baseUrl}artist/${album.artistSlug}/`}>{album.artistName}</a>
@@ -72,7 +75,8 @@ const entries = rankedAlbums.filter((entry) => entry.revenueRange).slice(0, 25);
             )}
           </div>
         </article>
-      ))}
+        );
+      })}
     </div>
   </section>
 </BaseLayout>

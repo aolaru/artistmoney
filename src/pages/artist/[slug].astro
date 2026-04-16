@@ -2,7 +2,15 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { artistArticles } from "../../data/artistArticles";
-import { artists, getArtistMethodology, getArtistVisual, songs, type Artist } from "../../lib/catalog";
+import {
+  artists,
+  getArtistMethodology,
+  getArtistOwnershipNote,
+  getArtistVisual,
+  getRelatedArtists,
+  songs,
+  type Artist
+} from "../../lib/catalog";
 import { getArtistEditorial } from "../../lib/editorial";
 
 export function getStaticPaths() {
@@ -23,6 +31,8 @@ const artistVisual = getArtistVisual(artist);
 const imageSrc = artistVisual.src;
 const editorial = getArtistEditorial(artist, artistSongs);
 const methodology = getArtistMethodology(artist);
+const ownershipNote = getArtistOwnershipNote(artist);
+const relatedArtists = getRelatedArtists(artist, 4);
 const artistSchema = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
@@ -204,6 +214,11 @@ const artistSchema = {
       </>
     )}
 
+    <section aria-labelledby="ownership-note-title">
+      <h2 id="ownership-note-title">Ownership Note</h2>
+      <p>{ownershipNote}</p>
+    </section>
+
     <section aria-labelledby="songs-title">
       <h2 id="songs-title">Top Songs</h2>
       <ul class="meta-list">
@@ -220,6 +235,22 @@ const artistSchema = {
         ))}
       </ul>
     </section>
+
+    {relatedArtists.length > 0 && (
+      <section aria-labelledby="related-artists-title">
+        <h2 id="related-artists-title">Related Artists</h2>
+        <ul class="meta-list">
+          {relatedArtists.map((relatedArtist) => (
+            <li>
+              <a href={`${baseUrl}artist/${relatedArtist.slug}/`}>{relatedArtist.name}</a>
+              <span class="meta-inline">
+                {" "}· {[relatedArtist.genre, relatedArtist.country].filter(Boolean).join(" · ")}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
 
     <section aria-labelledby="strategy-title">
       <h2 id="strategy-title">Revenue Strategy</h2>

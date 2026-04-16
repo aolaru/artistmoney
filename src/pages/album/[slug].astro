@@ -2,7 +2,16 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { createAlbumArtwork } from "../../lib/artistArtwork";
-import { albums, getArtist, type Album } from "../../lib/catalog";
+import {
+  albums,
+  getAlbumConfidence,
+  getAlbumContextSongs,
+  getAlbumMethodology,
+  getArtist,
+  getMoreAlbumsFromArtist,
+  getRelatedAlbums,
+  type Album
+} from "../../lib/catalog";
 
 export function getStaticPaths() {
   return albums.map((album) => ({
@@ -19,6 +28,11 @@ const artist = getArtist(album.artistSlug);
 const albumArtworkSong = album.trackListing.find((entry) => entry.player?.artwork);
 const providerArtwork = albumArtworkSong?.player?.artwork;
 const providerArtworkLink = album.links?.appleMusic ?? albumArtworkSong?.player?.links?.appleMusic ?? albumArtworkSong?.player?.appleMusic;
+const confidence = getAlbumConfidence(album);
+const methodology = getAlbumMethodology(album);
+const relatedAlbums = getRelatedAlbums(album, 4);
+const moreAlbumsFromArtist = getMoreAlbumsFromArtist(album, 4);
+const contextSongs = getAlbumContextSongs(album, 4);
 const imageSrc = providerArtwork ?? createAlbumArtwork(album.title, album.artistName, album.slug, {
   releaseDate: album.releaseDate,
   label: album.label,
@@ -81,6 +95,7 @@ const albumSchema = {
       />
       <div class="artist-hero-copy">
         <p class="eyebrow">Album</p>
+        <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
         <h1>{album.title}</h1>
         <p>
           {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : album.artistName}
@@ -114,6 +129,22 @@ const albumSchema = {
         This album page groups the songs currently tracked from <strong>{album.title}</strong>,
         adds release metadata where available, and separates full-album context from the songs currently tracked in the catalog.
       </p>
+    </section>
+
+    <section aria-labelledby="album-methodology-title">
+      <h2 id="album-methodology-title">Methodology Snapshot</h2>
+      <div class="methodology-card">
+        <p class="methodology-badge">{methodology.confidenceLabel}</p>
+        <p>{methodology.summary}</p>
+        <ul class="meta-list">
+          {methodology.bullets.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
+        <p>
+          <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
+        </p>
+      </div>
     </section>
 
     <section aria-labelledby="album-metadata-title">
@@ -161,6 +192,54 @@ const albumSchema = {
         ))}
       </ul>
     </section>
+
+    {moreAlbumsFromArtist.length > 0 && (
+      <section aria-labelledby="more-from-artist-title">
+        <h2 id="more-from-artist-title">More From This Artist</h2>
+        <ul class="meta-list">
+          {moreAlbumsFromArtist.map((relatedAlbum) => (
+            <li>
+              <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
+              <span class="meta-inline">
+                {" "}· {relatedAlbum.releaseDate ?? relatedAlbum.year ?? "Unknown"} · {relatedAlbum.estimatedRevenue ?? "Tracked revenue still partial"}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {relatedAlbums.length > 0 && (
+      <section aria-labelledby="related-albums-title">
+        <h2 id="related-albums-title">Related Albums</h2>
+        <ul class="meta-list">
+          {relatedAlbums.map((relatedAlbum) => (
+            <li>
+              <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
+              <span class="meta-inline">
+                {" "}· {relatedAlbum.artistName}{relatedAlbum.year ? ` · ${relatedAlbum.year}` : ""}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {contextSongs.length > 0 && (
+      <section aria-labelledby="album-context-songs-title">
+        <h2 id="album-context-songs-title">More From This Era and Genre</h2>
+        <ul class="meta-list">
+          {contextSongs.map((song) => (
+            <li>
+              <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+              <span class="meta-inline">
+                {" "}· {getArtist(song.artist)?.name ?? song.artist}{song.year ? ` · ${song.year}` : ""}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
 
     <section aria-labelledby="album-links-title">
       <h2 id="album-links-title">Listen and Explore</h2>

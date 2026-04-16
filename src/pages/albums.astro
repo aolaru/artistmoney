@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { createAlbumArtwork } from "../lib/artistArtwork";
-import { albums } from "../lib/catalog";
+import { albums, getAlbumConfidence } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -42,17 +42,43 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
           ))}
         </select>
       </label>
+      <label class="filter-field">
+        <span>Confidence</span>
+        <select id="album-confidence">
+          <option value="">All confidence levels</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </label>
+      <label class="filter-field">
+        <span>Sort</span>
+        <select id="album-sort">
+          <option value="earnings">Highest tracked revenue</option>
+          <option value="alpha">Alphabetical</option>
+          <option value="year">Newest release year</option>
+          <option value="confidence">Highest confidence</option>
+        </select>
+      </label>
     </div>
+    <div class="active-filters" id="album-active-filters"></div>
     <p class="results-note" id="album-results-note">Showing {albums.length} albums</p>
-    <div class="card-grid">
+    <div class="card-grid" id="album-card-grid">
       {albums.map((album) => {
         const decade = album.year ? `${Math.floor(album.year / 10) * 10}s` : "";
+        const confidence = getAlbumConfidence(album);
+        const revenueMidpoint = album.normalizedRevenue?.midpoint ?? 0;
         return (
           <article
             class="card artist-card"
             data-album-card
             data-search={`${album.title} ${album.artistName}`.toLowerCase()}
             data-decade={decade}
+            data-confidence={confidence.level}
+            data-confidence-score={confidence.score}
+            data-revenue={revenueMidpoint}
+            data-year={album.year ?? 0}
+            data-name={album.title.toLowerCase()}
           >
             <img
               class="artist-card-image album-cover-image"
@@ -68,6 +94,7 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
             />
             <div class="artist-card-body">
               <p class="eyebrow">Album</p>
+              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
               <h3>
                 <a href={`${baseUrl}album/${album.slug}/`}>{album.title}</a>
               </h3>
@@ -95,31 +122,108 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
   const initAlbumFilters = () => {
     const albumSearchInput = document.querySelector("#album-search");
     const albumDecadeSelect = document.querySelector("#album-decade");
+    const albumConfidenceSelect = document.querySelector("#album-confidence");
+    const albumSortSelect = document.querySelector("#album-sort");
     const albumCards = [...document.querySelectorAll("[data-album-card]")];
     const albumNote = document.querySelector("#album-results-note");
+    const albumGrid = document.querySelector("#album-card-grid");
+    const activeFilters = document.querySelector("#album-active-filters");
 
-    if (!albumSearchInput || !albumDecadeSelect || !albumNote) return;
+    if (!albumSearchInput || !albumDecadeSelect || !albumConfidenceSelect || !albumSortSelect || !albumNote || !albumGrid || !activeFilters) return;
     if (albumSearchInput.dataset.filtersBound === "true") return;
+
+    const syncUrl = () => {
+      const url = new URL(window.location.href);
+      const values = {
+        q: albumSearchInput.value.trim(),
+        decade: albumDecadeSelect.value,
+        confidence: albumConfidenceSelect.value,
+        sort: albumSortSelect.value
+      };
+
+      Object.entries(values).forEach(([key, value]) => {
+        if (value) {
+          url.searchParams.set(key, value);
+        } else {
+          url.searchParams.delete(key);
+        }
+      });
+
+      history.replaceState({}, "", `${url.pathname}${url.searchParams.toString() ? `?${url.searchParams.toString()}` : ""}`);
+    };
+
+    const renderActiveFilters = () => {
+      const items = [];
+      if (albumSearchInput.value.trim()) items.push(`Search: ${albumSearchInput.value.trim()}`);
+      if (albumDecadeSelect.value) items.push(`Decade: ${albumDecadeSelect.value}`);
+      if (albumConfidenceSelect.value) items.push(`Confidence: ${albumConfidenceSelect.value}`);
+      if (albumSortSelect.value && albumSortSelect.value !== "earnings") items.push(`Sort: ${albumSortSelect.selectedOptions[0]?.textContent ?? albumSortSelect.value}`);
+
+      activeFilters.innerHTML = items.length
+        ? `${items.map((item) => `<span class="active-filter-chip">${item}</span>`).join("")}<button type="button" class="filter-reset" id="album-reset">Clear filters</button>`
+        : "";
+
+      const resetButton = document.querySelector("#album-reset");
+      resetButton?.addEventListener("click", () => {
+        albumSearchInput.value = "";
+        albumDecadeSelect.value = "";
+        albumConfidenceSelect.value = "";
+        albumSortSelect.value = "earnings";
+        applyAlbumFilters();
+      }, { once: true });
+    };
 
     const applyAlbumFilters = () => {
       const query = albumSearchInput.value.trim().toLowerCase();
       const decade = albumDecadeSelect.value;
+      const confidence = albumConfidenceSelect.value;
+      const sort = albumSortSelect.value;
 
       let visible = 0;
 
       albumCards.forEach((card) => {
         const matchesQuery = !query || card.dataset.search?.includes(query);
         const matchesDecade = !decade || card.dataset.decade === decade;
-        const show = Boolean(matchesQuery && matchesDecade);
+        const matchesConfidence = !confidence || card.dataset.confidence === confidence;
+        const show = Boolean(matchesQuery && matchesDecade && matchesConfidence);
 
         card.classList.toggle("is-hidden", !show);
         if (show) visible += 1;
       });
 
+      const sortedCards = [...albumCards].sort((left, right) => {
+        if (sort === "alpha") {
+          return (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
+        }
+
+        if (sort === "year") {
+          return Number(right.dataset.year ?? 0) - Number(left.dataset.year ?? 0)
+            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+        }
+
+        if (sort === "confidence") {
+          return Number(right.dataset.confidenceScore ?? 0) - Number(left.dataset.confidenceScore ?? 0)
+            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+        }
+
+        return Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0)
+          || (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
+      });
+
+      sortedCards.forEach((card) => albumGrid.appendChild(card));
+
       albumNote.textContent = `Showing ${visible} album${visible === 1 ? "" : "s"}`;
+      renderActiveFilters();
+      syncUrl();
     };
 
-    [albumSearchInput, albumDecadeSelect].forEach((element) => {
+    const params = new URLSearchParams(window.location.search);
+    albumSearchInput.value = params.get("q") ?? "";
+    albumDecadeSelect.value = params.get("decade") ?? "";
+    albumConfidenceSelect.value = params.get("confidence") ?? "";
+    albumSortSelect.value = params.get("sort") ?? "earnings";
+
+    [albumSearchInput, albumDecadeSelect, albumConfidenceSelect, albumSortSelect].forEach((element) => {
       element.addEventListener("input", applyAlbumFilters);
       element.addEventListener("change", applyAlbumFilters);
     });
