@@ -1,0 +1,35 @@
+{
+  "name": "Elvis Presley",
+  "slug": "elvis-presley",
+  "estimated_income": "$8M-$30M/year",
+  "top_songs": [
+    "cant-help-falling-in-love",
+    "jailhouse-rock"
+  ],
+  "genre": "Rock and Roll / Pop",
+  "country": "United States",
+  "active_since": "1954",
+  "bio": "Elvis Presley's catalog keeps earning because it combines deep song recognition, constant film and media reuse, and unusually broad multi-generational familiarity.",
+  "notable_for": "One of the most durable legacy-music catalogs in the world, with songs that continue to perform through streaming, publishing, and licensing.",
+  "career_highlight": "Can't Help Falling in Love remains one of the strongest long-tail catalog standards from the rock-and-roll era.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "estate-managed brand and licensing activity",
+    "publishing and performance royalties",
+    "film, documentary, and nostalgia-driven reuse"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$14M-$40M/year",
+    "artist_or_estate_share": "$8M-$30M/year",
+    "label_share": "$3M-$8M/year",
+    "publisher_share": "$1M-$3M/year",
+    "writer_share": "$1.2M-$4M/year",
+    "assumptions": "Estimate assumes very strong long-tail consumption, recurring licensing demand, and active estate-side monetization."
+  },
+  "ownership": {
+    "master_owner": "Estate and legacy rights structures are assumed to be mixed",
+    "publishing_owner": "Publishing economics depend on composition ownership, not just performer identity",
+    "catalog_sale_status": "No new catalog sale adjustment is modeled here",
+    "notes": "For Elvis, estate-side monetization and brand licensing are likely more important than for a typical legacy catalog."
+  }
+}

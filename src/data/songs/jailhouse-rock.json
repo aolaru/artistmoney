@@ -1,0 +1,31 @@
+{
+  "title": "Jailhouse Rock",
+  "slug": "jailhouse-rock",
+  "artist": "elvis-presley",
+  "estimated_revenue": "$350K-$1.3M/year",
+  "album": "Jailhouse Rock",
+  "year": 1957,
+  "meaning_summary": "Jailhouse Rock still generates value because it remains one of the most instantly recognizable recordings from the first era of global rock and roll.",
+  "revenue_drivers": [
+    "Classic-film and rock-history relevance keep the song culturally active.",
+    "Playlist and nostalgia demand support steady long-tail streaming.",
+    "Estate-managed licensing and media reuse extend commercial life."
+  ],
+  "related_songs": [
+    "cant-help-falling-in-love"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$500K-$1.7M/year",
+    "artist_or_estate_share": "$350K-$1.3M/year",
+    "label_master_share": "$90K-$300K/year",
+    "publishing_share": "$50K-$150K/year",
+    "songwriter_share": "$60K-$180K/year",
+    "assumptions": "Estimate assumes durable classic-rock usage, high recognition, and continuing licensing-style reuse."
+  },
+  "ownership": {
+    "master_owner": "Estate and legacy rights-holder structure assumed",
+    "publishing_owner": "Composition-side rights assumed to be distinct from performer economics",
+    "catalog_sale_status": "No new catalog sale adjustment assumed",
+    "notes": "This is a modeled estate-side estimate based on very strong historical recognition rather than disclosed royalty data."
+  }
+}

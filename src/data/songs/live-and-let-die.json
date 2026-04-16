@@ -1,0 +1,31 @@
+{
+  "title": "Live and Let Die",
+  "slug": "live-and-let-die",
+  "artist": "paul-mccartney",
+  "estimated_revenue": "$350K-$1.2M/year",
+  "album": "Red Rose Speedway",
+  "year": 1973,
+  "meaning_summary": "Live and Let Die remains valuable because it works simultaneously as a Bond-theme standard, a classic-rock staple, and a highly licensable cinematic recording.",
+  "revenue_drivers": [
+    "Bond franchise association keeps the song culturally visible.",
+    "Licensing and soundtrack-style reuse refresh long-tail value.",
+    "Classic-rock familiarity supports recurring streaming and playlist demand."
+  ],
+  "related_songs": [
+    "maybe-im-amazed"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$500K-$1.6M/year",
+    "artist_or_estate_share": "$350K-$1.2M/year",
+    "label_master_share": "$90K-$280K/year",
+    "publishing_share": "$55K-$170K/year",
+    "songwriter_share": "$80K-$250K/year",
+    "assumptions": "Estimate assumes strong franchise-linked recognition, durable playlist presence, and recurring licensing value."
+  },
+  "ownership": {
+    "master_owner": "Legacy label / rights-holder structure assumed",
+    "publishing_owner": "Composer-side publishing participation assumed",
+    "catalog_sale_status": "No catalog sale adjustment assumed",
+    "notes": "Theme-song status can materially extend the revenue life of a catalog recording."
+  }
+}

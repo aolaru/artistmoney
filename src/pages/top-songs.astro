@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
-import { getArtist, rankedSongs } from "../lib/catalog";
+import { getArtist, getArtistVisual, rankedSongs } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -41,13 +40,14 @@ const entries = rankedSongs.filter((entry) => entry.revenueRange).slice(0, 30);
       {entries.map(({ song, revenueRange }, index) => {
         const artist = getArtist(song.artist);
         const artistName = artist?.name ?? song.artist;
+        const artistVisual = artist ? getArtistVisual(artist) : undefined;
 
         return (
           <article class="card artist-card ranked-card">
             <img
               class="artist-card-image"
-              src={getArtistPhoto(song.artist)?.src ?? createArtistArtwork(artistName, song.artist)}
-              alt={getArtistPhoto(song.artist)?.alt ?? `Artwork for ${artistName}`}
+              src={artistVisual?.src ?? ""}
+              alt={artistVisual?.alt ?? `Artwork for ${artistName}`}
               loading="lazy"
               width="1200"
               height="900"

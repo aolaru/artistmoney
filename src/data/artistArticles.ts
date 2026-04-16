@@ -285,5 +285,35 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "Creator-leaning electronic catalogs can retain meaningful artist-side value even at modest scale."
     ],
     insight: "Ambient catalogs tend to monetize consistency and depth: lower headline scale, but steadier long-term listening from a loyal audience."
+  },
+  "paul-mccartney": {
+    seoTitle: "Does Paul McCartney still make money from his solo catalog?",
+    shortAnswer: "Yes — estimated $6M-$20M/year.",
+    sources: [
+      "Maybe I'm Amazed and Live and Let Die remain globally familiar catalog songs.",
+      "Strong songwriter participation can materially improve retained economics.",
+      "Classic-rock playlists and sync-style reuse keep the solo catalog commercially active."
+    ],
+    insight: "Writer-led legacy catalogs often compound better because the artist participates on both the recording and publishing sides."
+  },
+  "john-lennon": {
+    seoTitle: "Does John Lennon still make money from his solo songs?",
+    shortAnswer: "Yes — estimated $4M-$14M/year.",
+    sources: [
+      "Imagine remains one of the strongest long-tail songs in the entire classic-rock and songwriter catalog.",
+      "Publishing participation makes a major difference on songs with enduring global reuse.",
+      "A compact catalog can still generate large annual revenue if one or two songs become cultural standards."
+    ],
+    insight: "Catalog scale matters less when a single song becomes part of global cultural memory."
+  },
+  "elvis-presley": {
+    seoTitle: "Does Elvis Presley still make money from old songs?",
+    shortAnswer: "Yes — estimated $8M-$30M/year.",
+    sources: [
+      "Can't Help Falling in Love and Jailhouse Rock continue to perform through streaming, media reuse, and event-driven listening.",
+      "Estate-led licensing and brand management can extend catalog earnings beyond ordinary legacy playback.",
+      "Deep multi-generational recognition gives Elvis unusually durable catalog economics."
+    ],
+    insight: "The biggest legacy catalogs earn not only from streams, but from being culturally unavoidable across films, events, and nostalgia media."
   }
 };

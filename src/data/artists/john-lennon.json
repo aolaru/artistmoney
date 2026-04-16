@@ -1,0 +1,35 @@
+{
+  "name": "John Lennon",
+  "slug": "john-lennon",
+  "estimated_income": "$4M-$14M/year",
+  "top_songs": [
+    "imagine",
+    "starting-over"
+  ],
+  "genre": "Rock / Pop",
+  "country": "United Kingdom",
+  "active_since": "1969",
+  "bio": "John Lennon's solo catalog stays valuable because a small number of universally recognized songs continue to drive streaming, publishing, and sync-style emotional reuse.",
+  "notable_for": "A compact but exceptionally recognizable solo catalog led by Imagine and Starting Over.",
+  "career_highlight": "Imagine remains one of the most durable writer-led songs in the modern catalog economy.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "publishing royalties",
+    "memorial and event-driven listening",
+    "licensing and cultural reuse"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$7M-$18M/year",
+    "artist_or_estate_share": "$4M-$14M/year",
+    "label_share": "$1.4M-$4M/year",
+    "publisher_share": "$700K-$2M/year",
+    "writer_share": "$1M-$3M/year",
+    "assumptions": "Estimate assumes Imagine dominates annual catalog economics and that songwriter-side value materially strengthens retained earnings."
+  },
+  "ownership": {
+    "master_owner": "Legacy label-side control is assumed for core masters",
+    "publishing_owner": "Writer and estate-side publishing participation is assumed",
+    "catalog_sale_status": "No new catalog sale adjustment is modeled here",
+    "notes": "Annual economics are driven by a very small number of globally recognized songs rather than broad-volume catalog depth."
+  }
+}

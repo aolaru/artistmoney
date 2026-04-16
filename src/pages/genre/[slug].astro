@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
-import { artists } from "../../lib/catalog";
+import { artists, getArtistVisual } from "../../lib/catalog";
 
 export function getStaticPaths() {
   const genreMap = new Map<string, string[]>();
@@ -59,12 +58,14 @@ const genreLabel = genre.names[0];
   <section aria-labelledby="genre-artists-title">
     <h2 id="genre-artists-title">Artists in {genreLabel}</h2>
     <div class="card-grid">
-      {genreArtists.map((artist) => (
+      {genreArtists.map((artist) => {
+        const artistVisual = getArtistVisual(artist);
+        return (
         <article class="card artist-card">
           <img
             class="artist-card-image"
-            src={getArtistPhoto(artist.slug)?.src ?? createArtistArtwork(artist.name, artist.slug)}
-            alt={getArtistPhoto(artist.slug)?.alt ?? `Artwork for ${artist.name}`}
+            src={artistVisual.src}
+            alt={artistVisual.alt}
             loading="lazy"
             width="1200"
             height="900"
@@ -79,7 +80,8 @@ const genreLabel = genre.names[0];
             <p>Estimated income: {artist.estimated_income}</p>
           </div>
         </article>
-      ))}
+        );
+      })}
     </div>
   </section>
 </BaseLayout>

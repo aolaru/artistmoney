@@ -1,0 +1,31 @@
+{
+  "title": "(Just Like) Starting Over",
+  "slug": "starting-over",
+  "artist": "john-lennon",
+  "estimated_revenue": "$180K-$700K/year",
+  "album": "Double Fantasy",
+  "year": 1980,
+  "meaning_summary": "Starting Over retains value because it sits at the intersection of legacy pop nostalgia, artist biography, and long-tail playlist familiarity.",
+  "revenue_drivers": [
+    "Biography-driven interest keeps the song relevant beyond ordinary catalog fade.",
+    "Legacy pop playlists and recurrent radio memory support steady replay value.",
+    "Catalog depth around major cultural figures tends to monetize even outside the single biggest song."
+  ],
+  "related_songs": [
+    "imagine"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$260K-$900K/year",
+    "artist_or_estate_share": "$180K-$700K/year",
+    "label_master_share": "$45K-$150K/year",
+    "publishing_share": "$25K-$90K/year",
+    "songwriter_share": "$35K-$120K/year",
+    "assumptions": "Estimate assumes durable nostalgia listening, continued catalog relevance, and moderate publishing-side participation."
+  },
+  "ownership": {
+    "master_owner": "Legacy label / catalog rights-holder assumed",
+    "publishing_owner": "Writer and estate-side publishing participation assumed",
+    "catalog_sale_status": "No new catalog sale adjustment assumed",
+    "notes": "Modeled from the behavior of secondary-but-still-recognized songs in a globally famous solo catalog."
+  }
+}

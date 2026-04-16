@@ -1,9 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
 import { artistArticles } from "../../data/artistArticles";
-import { artists, songs, type Artist } from "../../lib/catalog";
+import { artists, getArtistVisual, songs, type Artist } from "../../lib/catalog";
 import { getArtistEditorial } from "../../lib/editorial";
 
 export function getStaticPaths() {
@@ -18,10 +17,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const artistSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
-const artistPhoto = getArtistPhoto(artist.slug);
 const article = artistArticles[artist.slug];
 const hasDetailedEarnings = Boolean(artist.earnings || artist.ownership);
-const imageSrc = artistPhoto?.src ?? createArtistArtwork(artist.name, artist.slug);
+const artistVisual = getArtistVisual(artist);
+const imageSrc = artistVisual.src;
 const editorial = getArtistEditorial(artist, artistSongs);
 const artistSchema = {
   "@context": "https://schema.org",
@@ -46,7 +45,7 @@ const artistSchema = {
   title={article?.seoTitle ?? `${artist.name} | How Much Music`}
   description={article?.shortAnswer ?? `${artist.name} artist page with income estimates, songs, and revenue strategy on How Much Music.`}
   image={imageSrc}
-  imageAlt={artistPhoto?.alt ?? `Artwork for ${artist.name}`}
+  imageAlt={artistVisual.alt}
   type="article"
   jsonLd={artistSchema}
 >
@@ -61,7 +60,7 @@ const artistSchema = {
       <img
         class="artist-profile-image"
         src={imageSrc}
-        alt={artistPhoto?.alt ?? `Artwork for ${artist.name}`}
+        alt={artistVisual.alt}
         width="1200"
         height="900"
         referrerpolicy="no-referrer"
@@ -70,13 +69,18 @@ const artistSchema = {
         <p class="eyebrow">Artist</p>
         <h1>{artist.name}</h1>
         <p>Artist pages combine meaning, catalog value, and simple money signals.</p>
-        {artistPhoto && (
+        {artistVisual.provider === "appleMusic" && artistVisual.providerLink && (
           <p class="image-credit">
-            {artistPhoto.credit}. License:
+            Artwork shown via Apple Music.
             {" "}
-            <a href={artistPhoto.licenseUrl} rel="noreferrer" target="_blank">{artistPhoto.license}</a>
-            {" · "}
-            <a href={artistPhoto.sourceUrl} rel="noreferrer" target="_blank">source</a>
+            <a href={artistVisual.providerLink} rel="noreferrer" target="_blank">Open source track</a>
+          </p>
+        )}
+        {artistVisual.provider === "artistPhoto" && artistVisual.providerLink && (
+          <p class="image-credit">
+            Artist image source:
+            {" "}
+            <a href={artistVisual.providerLink} rel="noreferrer" target="_blank">Wikimedia Commons</a>
           </p>
         )}
       </div>

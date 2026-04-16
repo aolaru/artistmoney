@@ -1,0 +1,31 @@
+{
+  "title": "Can't Help Falling in Love",
+  "slug": "cant-help-falling-in-love",
+  "artist": "elvis-presley",
+  "estimated_revenue": "$700K-$2.5M/year",
+  "album": "Blue Hawaii",
+  "year": 1961,
+  "meaning_summary": "Can't Help Falling in Love keeps earning because it functions as both a canonical Elvis song and a permanent romantic standard.",
+  "revenue_drivers": [
+    "Weddings, event use, and emotional playlist placement drive recurring demand.",
+    "Its status as a cultural standard creates unusually long revenue life.",
+    "Film, covers, and estate-led catalog promotion help reset attention over time."
+  ],
+  "related_songs": [
+    "jailhouse-rock"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1M-$3.2M/year",
+    "artist_or_estate_share": "$700K-$2.5M/year",
+    "label_master_share": "$180K-$520K/year",
+    "publishing_share": "$90K-$260K/year",
+    "songwriter_share": "$110K-$300K/year",
+    "assumptions": "Estimate assumes global evergreen consumption, ceremony-driven demand, and strong estate-led catalog monetization."
+  },
+  "ownership": {
+    "master_owner": "Estate and legacy rights-holder structure assumed",
+    "publishing_owner": "Composition-side rights assumed to be split from performer economics",
+    "catalog_sale_status": "No new catalog sale adjustment assumed",
+    "notes": "As with many standards, publishing-side value and cover culture materially extend revenue."
+  }
+}

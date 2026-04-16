@@ -1,0 +1,35 @@
+{
+  "name": "Paul McCartney",
+  "slug": "paul-mccartney",
+  "estimated_income": "$6M-$20M/year",
+  "top_songs": [
+    "maybe-im-amazed",
+    "live-and-let-die"
+  ],
+  "genre": "Rock / Pop",
+  "country": "United Kingdom",
+  "active_since": "1970",
+  "bio": "Paul McCartney's solo and Wings-era catalog continues to earn through streaming, classic-rock radio memory, licensing demand, and deep cross-generational recognition.",
+  "notable_for": "One of the strongest post-Beatles solo catalogs, with songs that remain useful across film, playlists, and legacy pop listening.",
+  "career_highlight": "Maybe I'm Amazed and Live and Let Die still anchor the solo catalog's long-tail economics decades after release.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "classic rock and legacy pop playlist use",
+    "sync licensing",
+    "publishing and performance royalties"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$10M-$28M/year",
+    "artist_or_estate_share": "$6M-$20M/year",
+    "label_share": "$2M-$6M/year",
+    "publisher_share": "$900K-$3M/year",
+    "writer_share": "$1.2M-$4M/year",
+    "assumptions": "Estimate assumes strong publishing participation, global legacy-streaming scale, and ongoing licensing value from the biggest solo-era recordings."
+  },
+  "ownership": {
+    "master_owner": "Mixed across legacy label agreements and catalog rights structures",
+    "publishing_owner": "Substantial songwriter-side participation is assumed",
+    "catalog_sale_status": "No full catalog sale adjustment is assumed here",
+    "notes": "Modeled from long-tail catalog performance and likely songwriter economics, not private royalty statements."
+  }
+}

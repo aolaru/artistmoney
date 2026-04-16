@@ -3,6 +3,7 @@ import { albumMetadata } from "../data/albumMetadata";
 import { artistMetadata } from "../data/artistMetadata";
 import { songPlayerMetadata } from "../data/songPlayerMetadata";
 import { songMetadata } from "../data/songMetadata";
+import { createArtistArtwork, getArtistPhoto } from "./artistArtwork";
 import {
   formatRevenueRange,
   parseRevenueRange,
@@ -144,6 +145,13 @@ export type Album = {
   trackedSongCount: number;
   estimatedRevenue?: string;
   revenueRange?: RevenueRange;
+};
+
+export type ArtistVisual = {
+  src: string;
+  alt: string;
+  provider: "appleMusic" | "artistPhoto" | "generated";
+  providerLink?: string;
 };
 
 export const artists: Artist[] = parsedArtists
@@ -309,6 +317,38 @@ export function getSong(slug: string) {
 
 export function getAlbum(slug: string) {
   return albumMap.get(slug);
+}
+
+export function getArtistVisual(artist: Artist): ArtistVisual {
+  const featuredSong = artist.top_songs
+    .map((slug) => songMap.get(slug))
+    .find((song) => song?.player?.artwork);
+
+  if (featuredSong?.player?.artwork) {
+    return {
+      src: featuredSong.player.artwork,
+      alt: `${artist.name} artwork via ${featuredSong.title}`,
+      provider: "appleMusic",
+      providerLink: featuredSong.player.links?.appleMusic ?? featuredSong.player.appleMusic
+    };
+  }
+
+  const artistPhoto = getArtistPhoto(artist.slug);
+
+  if (artistPhoto) {
+    return {
+      src: artistPhoto.src,
+      alt: artistPhoto.alt,
+      provider: "artistPhoto",
+      providerLink: artistPhoto.sourceUrl
+    };
+  }
+
+  return {
+    src: createArtistArtwork(artist.name, artist.slug),
+    alt: `Artwork for ${artist.name}`,
+    provider: "generated"
+  };
 }
 
 export const rankedArtists = artists

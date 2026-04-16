@@ -1,0 +1,31 @@
+{
+  "title": "Maybe I'm Amazed",
+  "slug": "maybe-im-amazed",
+  "artist": "paul-mccartney",
+  "estimated_revenue": "$300K-$1M/year",
+  "album": "McCartney",
+  "year": 1970,
+  "meaning_summary": "Maybe I'm Amazed still earns because it combines classic-rock familiarity with a personal emotional core that keeps it relevant in both active listening and legacy playlists.",
+  "revenue_drivers": [
+    "Classic-rock and songwriter playlists keep the track in steady circulation.",
+    "Its long-standing critical and fan reputation strengthens repeat catalog listening.",
+    "Publishing-side value improves the economics of a writer-led signature song."
+  ],
+  "related_songs": [
+    "live-and-let-die"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$450K-$1.4M/year",
+    "artist_or_estate_share": "$300K-$1M/year",
+    "label_master_share": "$80K-$240K/year",
+    "publishing_share": "$45K-$150K/year",
+    "songwriter_share": "$70K-$220K/year",
+    "assumptions": "Estimate assumes strong long-tail streaming, recurrent classic-rock usage, and meaningful songwriter-side participation."
+  },
+  "ownership": {
+    "master_owner": "Legacy label / catalog rights structure assumed",
+    "publishing_owner": "Strong composer-side participation assumed",
+    "catalog_sale_status": "No catalog sale adjustment assumed",
+    "notes": "Modeled from signature-song behavior in a major legacy solo catalog."
+  }
+}

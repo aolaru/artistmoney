@@ -1,0 +1,31 @@
+{
+  "title": "Imagine",
+  "slug": "imagine",
+  "artist": "john-lennon",
+  "estimated_revenue": "$500K-$1.8M/year",
+  "album": "Imagine",
+  "year": 1971,
+  "meaning_summary": "Imagine still earns at a high level because it remains one of the most culturally reusable songs in modern popular music.",
+  "revenue_drivers": [
+    "Global recognition keeps the song active in streaming and recurrent listening.",
+    "Event-driven use, memorial contexts, and social sharing refresh demand repeatedly.",
+    "Writer-led publishing value makes the song economically stronger than a performance-only catalog cut."
+  ],
+  "related_songs": [
+    "starting-over"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$750K-$2.4M/year",
+    "artist_or_estate_share": "$500K-$1.8M/year",
+    "label_master_share": "$130K-$360K/year",
+    "publishing_share": "$80K-$220K/year",
+    "songwriter_share": "$110K-$320K/year",
+    "assumptions": "Estimate assumes unusually strong publishing-side economics and recurring global event-based listening."
+  },
+  "ownership": {
+    "master_owner": "Legacy label / catalog rights-holder assumed",
+    "publishing_owner": "Writer and estate-side publishing participation assumed",
+    "catalog_sale_status": "No new catalog sale adjustment assumed",
+    "notes": "Imagine behaves more like a global standard than a normal legacy-rock song."
+  }
+}

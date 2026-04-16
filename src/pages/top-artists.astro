@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { createArtistArtwork, getArtistPhoto } from "../lib/artistArtwork";
-import { rankedArtists } from "../lib/catalog";
+import { getArtistVisual, rankedArtists } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -38,12 +37,14 @@ const entries = rankedArtists.filter((entry) => entry.revenueRange).slice(0, 25)
   <section aria-labelledby="top-artists-title">
     <h2 id="top-artists-title">Artist Ranking</h2>
     <div class="card-grid">
-      {entries.map(({ artist, revenueRange }, index) => (
+      {entries.map(({ artist, revenueRange }, index) => {
+        const artistVisual = getArtistVisual(artist);
+        return (
         <article class="card artist-card ranked-card">
           <img
             class="artist-card-image"
-            src={getArtistPhoto(artist.slug)?.src ?? createArtistArtwork(artist.name, artist.slug)}
-            alt={getArtistPhoto(artist.slug)?.alt ?? `Artwork for ${artist.name}`}
+            src={artistVisual.src}
+            alt={artistVisual.alt}
             loading="lazy"
             width="1200"
             height="900"
@@ -64,7 +65,8 @@ const entries = rankedArtists.filter((entry) => entry.revenueRange).slice(0, 25)
             )}
           </div>
         </article>
-      ))}
+        );
+      })}
     </div>
   </section>
 </BaseLayout>

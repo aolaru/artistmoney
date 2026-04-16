@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import { createArtistArtwork, getArtistPhoto } from "../../lib/artistArtwork";
-import { getArtist, songs } from "../../lib/catalog";
+import { getArtist, getArtistVisual, songs } from "../../lib/catalog";
 
 export function getStaticPaths() {
   return [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.year / 10) * 10}s` : null)).filter(Boolean))]
@@ -48,12 +47,14 @@ const decadeArtists = artistSlugs.map((slug) => getArtist(slug)).filter(Boolean)
   <section aria-labelledby="decade-artists-title">
     <h2 id="decade-artists-title">Artists active in this release slice</h2>
     <div class="card-grid">
-      {decadeArtists.map((artist) => (
+      {decadeArtists.map((artist) => {
+        const artistVisual = getArtistVisual(artist);
+        return (
         <article class="card artist-card">
           <img
             class="artist-card-image"
-            src={getArtistPhoto(artist.slug)?.src ?? createArtistArtwork(artist.name, artist.slug)}
-            alt={getArtistPhoto(artist.slug)?.alt ?? `Artwork for ${artist.name}`}
+            src={artistVisual.src}
+            alt={artistVisual.alt}
             loading="lazy"
             width="1200"
             height="900"
@@ -65,7 +66,8 @@ const decadeArtists = artistSlugs.map((slug) => getArtist(slug)).filter(Boolean)
             <p>Estimated income: {artist.estimated_income}</p>
           </div>
         </article>
-      ))}
+        );
+      })}
     </div>
   </section>
 
