@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 11,
-    "song": 11,
-    "album": 11
+    "artist": 12,
+    "song": 12,
+    "album": 12
   },
   "lastTouched": {
     "artist": {
@@ -17,7 +17,8 @@
       "boston": "2026-04-15T19:09:22.203Z",
       "chicago": "2026-04-15T21:46:31.024Z",
       "craig-mack": "2026-04-16T02:10:02.311Z",
-      "david-bowie": "2026-04-16T05:26:34.608Z"
+      "david-bowie": "2026-04-16T05:26:34.608Z",
+      "dj-shadow": "2026-04-16T07:25:07.116Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -30,16 +31,22 @@
       "army-of-me": "2026-04-15T19:09:22.203Z",
       "baby-s-on-fire": "2026-04-15T21:46:31.024Z",
       "barracuda": "2026-04-16T02:10:02.311Z",
-      "big-poppa": "2026-04-16T05:26:34.608Z"
+      "big-poppa": "2026-04-16T05:26:34.608Z",
+      "black-hole-sun": "2026-04-16T07:25:07.116Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
       "aerosmith-aerosmith": "2026-04-15T09:22:38.828Z",
       "air-moon-safari": "2026-04-15T11:01:22.052Z",
-      "america-america": "2026-04-15T21:46:31.024Z"
+      "america-america": "2026-04-15T21:46:31.024Z",
+      "audioslave-out-of-exile": "2026-04-16T07:25:07.116Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-16T07:25:07.116Z",
+      "summary": "artist:dj-shadow, song:black-hole-sun, album:audioslave-out-of-exile"
+    },
     {
       "timestamp": "2026-04-16T05:26:34.608Z",
       "summary": "artist:david-bowie, song:big-poppa"
@@ -75,10 +82,6 @@
     {
       "timestamp": "2026-04-15T06:55:59.198Z",
       "summary": "artist:aerosmith, song:a-horse-with-no-name"
-    },
-    {
-      "timestamp": "2026-04-15T06:43:23.685Z",
-      "summary": "artist:50-cent, song:505, album:4-non-blondes-bigger-better-faster-more"
     }
   ]
 }

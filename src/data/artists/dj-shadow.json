@@ -2,9 +2,19 @@
   "name": "DJ Shadow",
   "slug": "dj-shadow",
   "estimated_income": "$400K-$1.5M/year",
-  "top_songs": ["midnight-in-a-perfect-world", "organ-donor"],
+  "top_songs": [
+    "midnight-in-a-perfect-world",
+    "organ-donor"
+  ],
   "genre": "Instrumental Hip-Hop / Electronic",
   "country": "United States",
   "active_since": "1991",
-  "bio": "DJ Shadow built one of the most durable instrumental hip-hop catalogs, with sample-driven recordings that still perform through deep-listening and beat-culture discovery."
+  "bio": "DJ Shadow built one of the most durable instrumental hip-hop catalogs, with sample-driven recordings that still perform through deep-listening and beat-culture discovery.",
+  "notable_for": "DJ Shadow remains closely associated with Midnight in a Perfect World and Organ Donor, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Midnight in a Perfect World and Organ Donor still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps legacy rap records active long after their original chart run.",
+    "Playlist placement and cultural recognition help the biggest songs sustain repeat listening.",
+    "Licensing, sampling, and nostalgia-driven discovery continue to support long-tail earnings."
+  ]
 }

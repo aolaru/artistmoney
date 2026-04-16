@@ -16,5 +16,15 @@
     "publishing_owner": "Publishing value appears tied to songwriter-side rights",
     "catalog_sale_status": "No sale assumption baked in",
     "notes": "For major 1990s rock recordings, the artist-side share can be materially lower than gross listener demand suggests."
-  }
+  },
+  "meaning_summary": "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay across catalog listening.",
+  "revenue_drivers": [
+    "Classic replay value and catalog streaming keep major rock songs commercially relevant.",
+    "Playlist placement and cultural familiarity support long-tail listener demand.",
+    "Sync placements and live-culture recognition help extend the song's revenue life."
+  ],
+  "related_songs": [
+    "fell-on-black-days",
+    "outshined"
+  ]
 }

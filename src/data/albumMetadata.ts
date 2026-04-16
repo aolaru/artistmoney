@@ -6405,5 +6405,89 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/america/301027593?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=America%20America"
     }
+  },
+  "audioslave-out-of-exile": {
+    "releaseDate": "2005-05-23",
+    "label": "Interscope Records and Sony BMG Entertainment",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Your Time Has Come",
+        "durationMs": 255427
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Out of Exile",
+        "durationMs": 288507
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Be Yourself",
+        "durationMs": 278973
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Doesn't Remind Me",
+        "durationMs": 255000
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Drown Me Slowly",
+        "durationMs": 233600
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Heavens Dead",
+        "durationMs": 276160
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "The Worm",
+        "durationMs": 236667
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Man or Animal",
+        "durationMs": 232440
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Yesterday to Tomorrow",
+        "durationMs": 273680
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Dandelion",
+        "durationMs": 278027
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "#1 Zero",
+        "durationMs": 299000
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "The Curse",
+        "durationMs": 309707
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Audioslave%20Out%20of%20Exile",
+      "appleMusic": "https://music.apple.com/us/album/out-of-exile/1440715095?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Audioslave%20Out%20of%20Exile"
+    }
   }
 } as const;
