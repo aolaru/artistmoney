@@ -4,5 +4,14 @@
   "artist": "the-chemical-brothers",
   "estimated_revenue": "$180K-$700K/year",
   "album": "Dig Your Own Hole",
-  "year": 1997
+  "year": 1997,
+  "meaning_summary": "This recording leans on atmosphere, texture, and replayable mood, which makes it durable in both listener memory and long-tail streaming.",
+  "revenue_drivers": [
+    "Playlist and mood-based streaming support repeat listening over long periods.",
+    "Electronic tracks can keep earning through steady niche demand and reissue interest.",
+    "Licensing and soundtrack-style use can materially improve long-tail economics."
+  ],
+  "related_songs": [
+    "hey-boy-hey-girl"
+  ]
 }

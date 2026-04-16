@@ -2,8 +2,19 @@
   "name": "Fleetwood Mac",
   "slug": "fleetwood-mac",
   "estimated_income": "$8M-$25M/year",
-  "top_songs": ["dreams", "the-chain"],
+  "top_songs": [
+    "dreams",
+    "the-chain"
+  ],
   "genre": "Classic Rock / Pop Rock",
   "country": "United Kingdom / United States",
-  "active_since": "1967"
+  "active_since": "1967",
+  "bio": "Fleetwood Mac has a durable classic rock / pop rock catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Fleetwood Mac remains closely associated with Dreams and The Chain, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Dreams and The Chain still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the strongest songs keep earning after release.",
+    "Broad catalog recognition improves resilience across radio memory, social reuse, and rediscovery.",
+    "Licensing and seasonal or event-driven playback can create recurring revenue spikes."
+  ]
 }

@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 13,
-    "song": 13,
-    "album": 13
+    "artist": 14,
+    "song": 14,
+    "album": 14
   },
   "lastTouched": {
     "artist": {
@@ -19,7 +19,8 @@
       "craig-mack": "2026-04-16T02:10:02.311Z",
       "david-bowie": "2026-04-16T05:26:34.608Z",
       "dj-shadow": "2026-04-16T07:25:07.116Z",
-      "drake": "2026-04-16T10:12:32.476Z"
+      "drake": "2026-04-16T10:12:32.476Z",
+      "fleetwood-mac": "2026-04-16T19:05:55.400Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -34,7 +35,8 @@
       "barracuda": "2026-04-16T02:10:02.311Z",
       "big-poppa": "2026-04-16T05:26:34.608Z",
       "black-hole-sun": "2026-04-16T07:25:07.116Z",
-      "blank-space": "2026-04-16T10:12:32.476Z"
+      "blank-space": "2026-04-16T10:12:32.476Z",
+      "block-rockin-beats": "2026-04-16T19:05:55.400Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -46,6 +48,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-16T19:05:55.400Z",
+      "summary": "artist:fleetwood-mac, song:block-rockin-beats"
+    },
     {
       "timestamp": "2026-04-16T10:12:32.476Z",
       "summary": "artist:drake, song:blank-space, album:black-sabbath-paranoid"
@@ -81,10 +87,6 @@
     {
       "timestamp": "2026-04-15T11:01:22.052Z",
       "summary": "artist:audioslave, song:all-my-life, album:air-moon-safari"
-    },
-    {
-      "timestamp": "2026-04-15T09:22:38.828Z",
-      "summary": "artist:aphex-twin, song:all-along-the-watchtower, album:aerosmith-aerosmith"
     }
   ]
 }
