@@ -6489,5 +6489,65 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/out-of-exile/1440715095?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Audioslave%20Out%20of%20Exile"
     }
+  },
+  "black-sabbath-paranoid": {
+    "releaseDate": "1970-09-18",
+    "label": "Warner Records Inc. Marketed by Rhino Entertainment",
+    "trackCount": 8,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "War Pigs / Luke's Wall",
+        "durationMs": 474360
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Paranoid",
+        "durationMs": 168406
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Planet Caravan",
+        "durationMs": 269027
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Iron Man",
+        "durationMs": 355304
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Electric Funeral",
+        "durationMs": 289803
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Hand of Doom",
+        "durationMs": 428291
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Rat Salad",
+        "durationMs": 150802
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Jack the Stripper / Fairies Wear Boots",
+        "durationMs": 372145
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Black%20Sabbath%20Paranoid",
+      "appleMusic": "https://music.apple.com/us/album/paranoid/785232473?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Black%20Sabbath%20Paranoid"
+    }
   }
 } as const;

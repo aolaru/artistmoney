@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 12,
-    "song": 12,
-    "album": 12
+    "artist": 13,
+    "song": 13,
+    "album": 13
   },
   "lastTouched": {
     "artist": {
@@ -18,7 +18,8 @@
       "chicago": "2026-04-15T21:46:31.024Z",
       "craig-mack": "2026-04-16T02:10:02.311Z",
       "david-bowie": "2026-04-16T05:26:34.608Z",
-      "dj-shadow": "2026-04-16T07:25:07.116Z"
+      "dj-shadow": "2026-04-16T07:25:07.116Z",
+      "drake": "2026-04-16T10:12:32.476Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -32,17 +33,23 @@
       "baby-s-on-fire": "2026-04-15T21:46:31.024Z",
       "barracuda": "2026-04-16T02:10:02.311Z",
       "big-poppa": "2026-04-16T05:26:34.608Z",
-      "black-hole-sun": "2026-04-16T07:25:07.116Z"
+      "black-hole-sun": "2026-04-16T07:25:07.116Z",
+      "blank-space": "2026-04-16T10:12:32.476Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
       "aerosmith-aerosmith": "2026-04-15T09:22:38.828Z",
       "air-moon-safari": "2026-04-15T11:01:22.052Z",
       "america-america": "2026-04-15T21:46:31.024Z",
-      "audioslave-out-of-exile": "2026-04-16T07:25:07.116Z"
+      "audioslave-out-of-exile": "2026-04-16T07:25:07.116Z",
+      "black-sabbath-paranoid": "2026-04-16T10:12:32.476Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-16T10:12:32.476Z",
+      "summary": "artist:drake, song:blank-space, album:black-sabbath-paranoid"
+    },
     {
       "timestamp": "2026-04-16T07:25:07.116Z",
       "summary": "artist:dj-shadow, song:black-hole-sun, album:audioslave-out-of-exile"
@@ -78,10 +85,6 @@
     {
       "timestamp": "2026-04-15T09:22:38.828Z",
       "summary": "artist:aphex-twin, song:all-along-the-watchtower, album:aerosmith-aerosmith"
-    },
-    {
-      "timestamp": "2026-04-15T06:55:59.198Z",
-      "summary": "artist:aerosmith, song:a-horse-with-no-name"
     }
   ]
 }
