@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 10,
-    "song": 10,
-    "album": 10
+    "artist": 11,
+    "song": 11,
+    "album": 11
   },
   "lastTouched": {
     "artist": {
@@ -16,7 +16,8 @@
       "black-sabbath": "2026-04-15T15:06:41.292Z",
       "boston": "2026-04-15T19:09:22.203Z",
       "chicago": "2026-04-15T21:46:31.024Z",
-      "craig-mack": "2026-04-16T02:10:02.311Z"
+      "craig-mack": "2026-04-16T02:10:02.311Z",
+      "david-bowie": "2026-04-16T05:26:34.608Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -28,7 +29,8 @@
       "another-brick-in-the-wall": "2026-04-15T15:06:41.292Z",
       "army-of-me": "2026-04-15T19:09:22.203Z",
       "baby-s-on-fire": "2026-04-15T21:46:31.024Z",
-      "barracuda": "2026-04-16T02:10:02.311Z"
+      "barracuda": "2026-04-16T02:10:02.311Z",
+      "big-poppa": "2026-04-16T05:26:34.608Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -38,6 +40,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-16T05:26:34.608Z",
+      "summary": "artist:david-bowie, song:big-poppa"
+    },
     {
       "timestamp": "2026-04-16T02:10:02.311Z",
       "summary": "artist:craig-mack, song:barracuda"
@@ -73,10 +79,6 @@
     {
       "timestamp": "2026-04-15T06:43:23.685Z",
       "summary": "artist:50-cent, song:505, album:4-non-blondes-bigger-better-faster-more"
-    },
-    {
-      "timestamp": "2026-04-15T06:40:18.327Z",
-      "summary": "artist:2pac, song:1979"
     }
   ]
 }

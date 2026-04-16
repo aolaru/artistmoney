@@ -2,9 +2,19 @@
   "name": "David Bowie",
   "slug": "david-bowie",
   "estimated_income": "$4M-$14M/year",
-  "top_songs": ["heroes", "starman"],
+  "top_songs": [
+    "heroes",
+    "starman"
+  ],
   "genre": "Art Rock / Pop",
   "country": "United Kingdom",
   "active_since": "1962",
-  "bio": "David Bowie's catalog has unusual long-tail value because it spans multiple eras, multiple audience generations, and constant sync-ready cultural reuse."
+  "bio": "David Bowie's catalog has unusual long-tail value because it spans multiple eras, multiple audience generations, and constant sync-ready cultural reuse.",
+  "notable_for": "David Bowie remains closely associated with Heroes and Starman, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Heroes and Starman still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the strongest songs keep earning after release.",
+    "Broad catalog recognition improves resilience across radio memory, social reuse, and rediscovery.",
+    "Licensing and seasonal or event-driven playback can create recurring revenue spikes."
+  ]
 }
