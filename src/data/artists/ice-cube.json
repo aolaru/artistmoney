@@ -2,8 +2,19 @@
   "name": "Ice Cube",
   "slug": "ice-cube",
   "estimated_income": "$1.5M-$5M/year",
-  "top_songs": ["it-was-a-good-day", "check-yo-self"],
+  "top_songs": [
+    "it-was-a-good-day",
+    "check-yo-self"
+  ],
   "genre": "Hip-Hop",
   "country": "United States",
-  "active_since": "1986"
+  "active_since": "1986",
+  "bio": "Ice Cube has a durable hip-hop catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Ice Cube remains closely associated with It Was a Good Day and Check Yo Self, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like It Was a Good Day and Check Yo Self still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps legacy rap records active long after their original chart run.",
+    "Playlist placement and cultural recognition help the biggest songs sustain repeat listening.",
+    "Licensing, sampling, and nostalgia-driven discovery continue to support long-tail earnings."
+  ]
 }

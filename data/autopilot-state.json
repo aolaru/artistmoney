@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 15,
-    "song": 15,
-    "album": 15
+    "artist": 16,
+    "song": 16,
+    "album": 16
   },
   "lastTouched": {
     "artist": {
@@ -21,7 +21,8 @@
       "dj-shadow": "2026-04-16T07:25:07.116Z",
       "drake": "2026-04-16T10:12:32.476Z",
       "fleetwood-mac": "2026-04-16T19:05:55.400Z",
-      "guns-n-roses": "2026-04-16T21:39:11.659Z"
+      "guns-n-roses": "2026-04-16T21:39:11.659Z",
+      "ice-cube": "2026-04-17T02:06:14.021Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -38,7 +39,8 @@
       "black-hole-sun": "2026-04-16T07:25:07.116Z",
       "blank-space": "2026-04-16T10:12:32.476Z",
       "block-rockin-beats": "2026-04-16T19:05:55.400Z",
-      "boys-dont-cry": "2026-04-16T21:39:11.659Z"
+      "boys-dont-cry": "2026-04-16T21:39:11.659Z",
+      "busy-child": "2026-04-17T02:06:14.021Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -47,10 +49,15 @@
       "america-america": "2026-04-15T21:46:31.024Z",
       "audioslave-out-of-exile": "2026-04-16T07:25:07.116Z",
       "black-sabbath-paranoid": "2026-04-16T10:12:32.476Z",
-      "blur-parklife": "2026-04-16T21:39:11.659Z"
+      "blur-parklife": "2026-04-16T21:39:11.659Z",
+      "boards-of-canada-the-campfire-headphase": "2026-04-17T02:06:14.021Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-17T02:06:14.021Z",
+      "summary": "artist:ice-cube, song:busy-child, album:boards-of-canada-the-campfire-headphase"
+    },
     {
       "timestamp": "2026-04-16T21:39:11.659Z",
       "summary": "artist:guns-n-roses, song:boys-dont-cry, album:blur-parklife"
@@ -86,10 +93,6 @@
     {
       "timestamp": "2026-04-15T15:06:41.292Z",
       "summary": "artist:black-sabbath, song:another-brick-in-the-wall"
-    },
-    {
-      "timestamp": "2026-04-15T13:41:50.295Z",
-      "summary": "artist:billie-eilish, song:alone"
     }
   ]
 }

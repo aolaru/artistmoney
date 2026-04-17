@@ -6657,5 +6657,107 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/parklife/699665183?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Blur%20Parklife"
     }
+  },
+  "boards-of-canada-the-campfire-headphase": {
+    "releaseDate": "2005-10-17",
+    "label": "Warp Records Limited",
+    "trackCount": 15,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Into the Rainbow Vein",
+        "durationMs": 44280
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Chromakey Dreamcoat",
+        "durationMs": 347467
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Satellite Anthem Icarus",
+        "durationMs": 364533
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Peacock Tail",
+        "durationMs": 324907
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Dayvan Cowboy",
+        "durationMs": 300187
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "A Moment of Clarity",
+        "durationMs": 51720
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "84 Pontiac Dream",
+        "durationMs": 229813
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Sherbet Head",
+        "durationMs": 161853
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Oscar See Through Red Eye",
+        "durationMs": 308760
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Ataronchronon",
+        "durationMs": 74133
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Hey Saturday Sun",
+        "durationMs": 296480
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Constants Are Changing",
+        "durationMs": 102053
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Slow This Bird Down",
+        "durationMs": 369147
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Tears from the Compound Eye",
+        "durationMs": 243547
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Farewell Fire",
+        "durationMs": 506267
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Boards%20of%20Canada%20The%20Campfire%20Headphase",
+      "appleMusic": "https://music.apple.com/us/album/the-campfire-headphase/81696254?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Boards%20of%20Canada%20The%20Campfire%20Headphase"
+    }
   }
 } as const;
