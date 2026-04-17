@@ -7010,5 +7010,107 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/parachutes/1122782080?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Coldplay%20Parachutes"
     }
+  },
+  "busta-rhymes-the-big-bang": {
+    "releaseDate": "2006-01-01",
+    "label": "Aftermath Records",
+    "trackCount": 16,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Get You Some (feat. Q-Tip)",
+        "durationMs": 225893
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Touch It",
+        "durationMs": 214960
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "How We Do It Over Here (feat. Missy Elliott)",
+        "durationMs": 216027
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "New York Shit (feat. Swizz Beatz)",
+        "durationMs": 181667
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Been Through the Storm (feat. Stevie Wonder)",
+        "durationMs": 246933
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "In the Ghetto (feat. Rick James)",
+        "durationMs": 233440
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Cocaina (feat. Marsha of Floetry)",
+        "durationMs": 212307
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "You Can't Hold the Torch (feat. Q-Tip)",
+        "durationMs": 219453
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Goldmine (feat. Raekwon)",
+        "durationMs": 225120
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "I Love My Bitch (feat. will.i.am & Kelis)",
+        "durationMs": 227667
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Don't Get Carried Away (feat. Nas)",
+        "durationMs": 210587
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "They're Out to Get Me (feat. Mr. Porter)",
+        "durationMs": 302480
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Get Down (feat. Timbaland)",
+        "durationMs": 220600
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "I'll Do It All (feat. Latoiya Williams)",
+        "durationMs": 302027
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Legend of the Fall Offs",
+        "durationMs": 280307
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Busta%20Rhymes%20The%20Big%20Bang",
+      "appleMusic": "https://music.apple.com/us/album/the-big-bang/1445847151?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Busta%20Rhymes%20The%20Big%20Bang"
+    }
   }
 } as const;

@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 21,
-    "song": 21,
-    "album": 21
+    "artist": 22,
+    "song": 22,
+    "album": 22
   },
   "lastTouched": {
     "artist": {
@@ -27,7 +27,8 @@
       "kansas": "2026-04-17T07:25:44.773Z",
       "led-zeppelin": "2026-04-17T10:10:44.884Z",
       "ludacris": "2026-04-17T13:08:26.904Z",
-      "montell-jordan": "2026-04-17T15:56:16.152Z"
+      "montell-jordan": "2026-04-17T15:56:16.152Z",
+      "nas": "2026-04-17T18:54:12.653Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -50,7 +51,8 @@
       "carry-on-wayward-son": "2026-04-17T07:25:44.773Z",
       "changes": "2026-04-17T10:10:44.884Z",
       "clint-eastwood": "2026-04-17T13:08:26.904Z",
-      "come-as-you-are": "2026-04-17T15:56:16.152Z"
+      "come-as-you-are": "2026-04-17T15:56:16.152Z",
+      "come-together": "2026-04-17T18:54:12.653Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -63,10 +65,15 @@
       "boards-of-canada-the-campfire-headphase": "2026-04-17T02:06:14.021Z",
       "boston-boston": "2026-04-17T05:23:57.309Z",
       "busta-rhymes-when-disaster-strikes": "2026-04-17T07:25:44.773Z",
-      "coldplay-parachutes": "2026-04-17T13:08:26.904Z"
+      "coldplay-parachutes": "2026-04-17T13:08:26.904Z",
+      "busta-rhymes-the-big-bang": "2026-04-17T18:54:12.653Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-17T18:54:12.653Z",
+      "summary": "artist:nas, song:come-together, album:busta-rhymes-the-big-bang"
+    },
     {
       "timestamp": "2026-04-17T15:56:16.152Z",
       "summary": "artist:montell-jordan, song:come-as-you-are"
@@ -102,10 +109,6 @@
     {
       "timestamp": "2026-04-16T10:12:32.476Z",
       "summary": "artist:drake, song:blank-space, album:black-sabbath-paranoid"
-    },
-    {
-      "timestamp": "2026-04-16T07:25:07.116Z",
-      "summary": "artist:dj-shadow, song:black-hole-sun, album:audioslave-out-of-exile"
     }
   ]
 }

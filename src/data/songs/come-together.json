@@ -2,5 +2,16 @@
   "title": "Come Together",
   "slug": "come-together",
   "artist": "the-beatles",
-  "estimated_revenue": "$700K-$2.2M/year"
+  "estimated_revenue": "$700K-$2.2M/year",
+  "meaning_summary": "Come Together stays commercially durable because it is emotionally direct, easy to revisit, and well suited to long-tail catalog listening.",
+  "revenue_drivers": [
+    "Streaming and catalog discovery keep the song generating recurring revenue.",
+    "Playlist longevity supports steady repeat listening over time.",
+    "Licensing and cultural familiarity can create additional earnings beyond baseline streams."
+  ],
+  "related_songs": [
+    "all-you-need-is-love",
+    "hey-jude",
+    "let-it-be"
+  ]
 }

@@ -2,8 +2,19 @@
   "name": "Nas",
   "slug": "nas",
   "estimated_income": "$3M-$10M/year",
-  "top_songs": ["ny-state-of-mind", "if-i-ruled-the-world"],
+  "top_songs": [
+    "ny-state-of-mind",
+    "if-i-ruled-the-world"
+  ],
   "genre": "Hip-Hop",
   "country": "United States",
-  "active_since": "1991"
+  "active_since": "1991",
+  "bio": "Nas has a durable hip-hop catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Nas remains closely associated with N.Y. State of Mind and If I Ruled the World (Imagine That), which continue to anchor catalog attention.",
+  "career_highlight": "Songs like N.Y. State of Mind and If I Ruled the World (Imagine That) still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps legacy rap records active long after their original chart run.",
+    "Playlist placement and cultural recognition help the biggest songs sustain repeat listening.",
+    "Licensing, sampling, and nostalgia-driven discovery continue to support long-tail earnings."
+  ]
 }
