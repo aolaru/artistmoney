@@ -6818,5 +6818,125 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/boston/913902091?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Boston%20Boston"
     }
+  },
+  "busta-rhymes-when-disaster-strikes": {
+    "releaseDate": "1997-09-16",
+    "label": "Elektra Entertainment Company. Marketed by Rhino Entertainment Company",
+    "trackCount": 18,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Intro",
+        "durationMs": 283067
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "The Whole World Lookin' At Me",
+        "durationMs": 209200
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Survival Hungry",
+        "durationMs": 206227
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "When Disaster Strikes",
+        "durationMs": 204920
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "So Hardcore",
+        "durationMs": 215587
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Get High Tonight",
+        "durationMs": 231187
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Turn It Up",
+        "durationMs": 251893
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Put Your Hands Where My Eyes Could See",
+        "durationMs": 194560
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "There's Not a Problem My Squad Can't Fix (feat. Jamal)",
+        "durationMs": 200253
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "We Could Take It Outside (feat. The Flipmode Squad)",
+        "durationMs": 286760
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Rhymes Galore",
+        "durationMs": 153467
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Things We Be Doin' for Money, Pt. 1",
+        "durationMs": 156027
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Things We Be Doin' for Money, Pt. 2 (feat. Rampage, Anthony Hamilton & Chosen Generation)",
+        "durationMs": 230787
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "One (feat. Erykah Badu)",
+        "durationMs": 270160
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Dangerous (feat. Erykah Badu)",
+        "durationMs": 217533
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "The Body Rock (feat. Rampage, Sean \"Puffy\" Combs & Mace)",
+        "durationMs": 246000
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "Get Off My Block (feat. Lord Have Mercy)",
+        "durationMs": 239160
+      },
+      {
+        "discNumber": 1,
+        "number": 18,
+        "title": "Outro (Preparation for the Final World Front)",
+        "durationMs": 150800
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Busta%20Rhymes%20When%20Disaster%20Strikes...",
+      "appleMusic": "https://music.apple.com/us/album/when-disaster-strikes/321975625?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Busta%20Rhymes%20When%20Disaster%20Strikes..."
+    }
   }
 } as const;

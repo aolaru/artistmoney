@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 17,
-    "song": 17,
-    "album": 17
+    "artist": 18,
+    "song": 18,
+    "album": 18
   },
   "lastTouched": {
     "artist": {
@@ -23,7 +23,8 @@
       "fleetwood-mac": "2026-04-16T19:05:55.400Z",
       "guns-n-roses": "2026-04-16T21:39:11.659Z",
       "ice-cube": "2026-04-17T02:06:14.021Z",
-      "jimi-hendrix": "2026-04-17T05:23:57.309Z"
+      "jimi-hendrix": "2026-04-17T05:23:57.309Z",
+      "kansas": "2026-04-17T07:25:44.773Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -42,7 +43,8 @@
       "block-rockin-beats": "2026-04-16T19:05:55.400Z",
       "boys-dont-cry": "2026-04-16T21:39:11.659Z",
       "busy-child": "2026-04-17T02:06:14.021Z",
-      "california-love": "2026-04-17T05:23:57.309Z"
+      "california-love": "2026-04-17T05:23:57.309Z",
+      "carry-on-wayward-son": "2026-04-17T07:25:44.773Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -53,10 +55,15 @@
       "black-sabbath-paranoid": "2026-04-16T10:12:32.476Z",
       "blur-parklife": "2026-04-16T21:39:11.659Z",
       "boards-of-canada-the-campfire-headphase": "2026-04-17T02:06:14.021Z",
-      "boston-boston": "2026-04-17T05:23:57.309Z"
+      "boston-boston": "2026-04-17T05:23:57.309Z",
+      "busta-rhymes-when-disaster-strikes": "2026-04-17T07:25:44.773Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-17T07:25:44.773Z",
+      "summary": "artist:kansas, song:carry-on-wayward-son, album:busta-rhymes-when-disaster-strikes"
+    },
     {
       "timestamp": "2026-04-17T05:23:57.309Z",
       "summary": "artist:jimi-hendrix, song:california-love, album:boston-boston"
@@ -92,10 +99,6 @@
     {
       "timestamp": "2026-04-15T21:46:31.024Z",
       "summary": "artist:chicago, song:baby-s-on-fire, album:america-america"
-    },
-    {
-      "timestamp": "2026-04-15T19:09:22.203Z",
-      "summary": "artist:boston, song:army-of-me"
     }
   ]
 }
