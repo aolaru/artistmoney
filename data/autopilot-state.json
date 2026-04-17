@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 19,
-    "song": 19,
-    "album": 19
+    "artist": 20,
+    "song": 20,
+    "album": 20
   },
   "lastTouched": {
     "artist": {
@@ -25,7 +25,8 @@
       "ice-cube": "2026-04-17T02:06:14.021Z",
       "jimi-hendrix": "2026-04-17T05:23:57.309Z",
       "kansas": "2026-04-17T07:25:44.773Z",
-      "led-zeppelin": "2026-04-17T10:10:44.884Z"
+      "led-zeppelin": "2026-04-17T10:10:44.884Z",
+      "ludacris": "2026-04-17T13:08:26.904Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -46,7 +47,8 @@
       "busy-child": "2026-04-17T02:06:14.021Z",
       "california-love": "2026-04-17T05:23:57.309Z",
       "carry-on-wayward-son": "2026-04-17T07:25:44.773Z",
-      "changes": "2026-04-17T10:10:44.884Z"
+      "changes": "2026-04-17T10:10:44.884Z",
+      "clint-eastwood": "2026-04-17T13:08:26.904Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -58,10 +60,15 @@
       "blur-parklife": "2026-04-16T21:39:11.659Z",
       "boards-of-canada-the-campfire-headphase": "2026-04-17T02:06:14.021Z",
       "boston-boston": "2026-04-17T05:23:57.309Z",
-      "busta-rhymes-when-disaster-strikes": "2026-04-17T07:25:44.773Z"
+      "busta-rhymes-when-disaster-strikes": "2026-04-17T07:25:44.773Z",
+      "coldplay-parachutes": "2026-04-17T13:08:26.904Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-17T13:08:26.904Z",
+      "summary": "artist:ludacris, song:clint-eastwood, album:coldplay-parachutes"
+    },
     {
       "timestamp": "2026-04-17T10:10:44.884Z",
       "summary": "artist:led-zeppelin, song:changes"
@@ -97,10 +104,6 @@
     {
       "timestamp": "2026-04-16T05:26:34.608Z",
       "summary": "artist:david-bowie, song:big-poppa"
-    },
-    {
-      "timestamp": "2026-04-16T02:10:02.311Z",
-      "summary": "artist:craig-mack, song:barracuda"
     }
   ]
 }

@@ -2,8 +2,19 @@
   "name": "Ludacris",
   "slug": "ludacris",
   "estimated_income": "$2M-$7M/year",
-  "top_songs": ["stand-up", "rollout-my-business"],
+  "top_songs": [
+    "stand-up",
+    "rollout-my-business"
+  ],
   "genre": "Hip-Hop",
   "country": "United States",
-  "active_since": "1998"
+  "active_since": "1998",
+  "bio": "Ludacris has a durable hip-hop catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Ludacris remains closely associated with Stand Up and Rollout (My Business), which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Stand Up and Rollout (My Business) still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps legacy rap records active long after their original chart run.",
+    "Playlist placement and cultural recognition help the biggest songs sustain repeat listening.",
+    "Licensing, sampling, and nostalgia-driven discovery continue to support long-tail earnings."
+  ]
 }

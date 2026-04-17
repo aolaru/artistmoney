@@ -4,5 +4,14 @@
   "artist": "gorillaz",
   "estimated_revenue": "$700K-$2M/year",
   "album": "Gorillaz",
-  "year": 2001
+  "year": 2001,
+  "meaning_summary": "This track pairs a memorable hook with strong cultural recall, which helps explain both its emotional staying power and its long-tail commercial value.",
+  "revenue_drivers": [
+    "Catalog streaming remains the main long-tail revenue source for recognizable rap tracks.",
+    "Playlist placement and cultural recall help the song stay commercially active.",
+    "Sampling, sync opportunities, and short-form rediscovery can extend earnings."
+  ],
+  "related_songs": [
+    "feel-good-inc"
+  ]
 }

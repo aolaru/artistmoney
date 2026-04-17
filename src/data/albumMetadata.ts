@@ -6938,5 +6938,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/when-disaster-strikes/321975625?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Busta%20Rhymes%20When%20Disaster%20Strikes..."
     }
+  },
+  "coldplay-parachutes": {
+    "releaseDate": "2000-07-10",
+    "label": "Parlophone Records Ltd",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Don't Panic",
+        "durationMs": 137225
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Shiver",
+        "durationMs": 299265
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Spies",
+        "durationMs": 318268
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Sparks",
+        "durationMs": 227094
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Yellow",
+        "durationMs": 269208
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Trouble",
+        "durationMs": 270731
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Parachutes",
+        "durationMs": 46228
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "High Speed",
+        "durationMs": 254049
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "We Never Change",
+        "durationMs": 249327
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Everything's Not Lost",
+        "durationMs": 435248
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Coldplay%20Parachutes",
+      "appleMusic": "https://music.apple.com/us/album/parachutes/1122782080?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Coldplay%20Parachutes"
+    }
   }
 } as const;
