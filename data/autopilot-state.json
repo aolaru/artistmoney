@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 18,
-    "song": 18,
-    "album": 18
+    "artist": 19,
+    "song": 19,
+    "album": 19
   },
   "lastTouched": {
     "artist": {
@@ -24,7 +24,8 @@
       "guns-n-roses": "2026-04-16T21:39:11.659Z",
       "ice-cube": "2026-04-17T02:06:14.021Z",
       "jimi-hendrix": "2026-04-17T05:23:57.309Z",
-      "kansas": "2026-04-17T07:25:44.773Z"
+      "kansas": "2026-04-17T07:25:44.773Z",
+      "led-zeppelin": "2026-04-17T10:10:44.884Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -44,7 +45,8 @@
       "boys-dont-cry": "2026-04-16T21:39:11.659Z",
       "busy-child": "2026-04-17T02:06:14.021Z",
       "california-love": "2026-04-17T05:23:57.309Z",
-      "carry-on-wayward-son": "2026-04-17T07:25:44.773Z"
+      "carry-on-wayward-son": "2026-04-17T07:25:44.773Z",
+      "changes": "2026-04-17T10:10:44.884Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -60,6 +62,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-17T10:10:44.884Z",
+      "summary": "artist:led-zeppelin, song:changes"
+    },
     {
       "timestamp": "2026-04-17T07:25:44.773Z",
       "summary": "artist:kansas, song:carry-on-wayward-son, album:busta-rhymes-when-disaster-strikes"
@@ -95,10 +101,6 @@
     {
       "timestamp": "2026-04-16T02:10:02.311Z",
       "summary": "artist:craig-mack, song:barracuda"
-    },
-    {
-      "timestamp": "2026-04-15T21:46:31.024Z",
-      "summary": "artist:chicago, song:baby-s-on-fire, album:america-america"
     }
   ]
 }

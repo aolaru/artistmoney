@@ -2,5 +2,17 @@
   "name": "Led Zeppelin",
   "slug": "led-zeppelin",
   "estimated_income": "$3M-$9M/year",
-  "top_songs": ["stairway-to-heaven", "whole-lotta-love", "kashmir"]
+  "top_songs": [
+    "stairway-to-heaven",
+    "whole-lotta-love",
+    "kashmir"
+  ],
+  "bio": "Led Zeppelin has a durable catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Led Zeppelin remains closely associated with Stairway to Heaven and Whole Lotta Love, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Stairway to Heaven and Whole Lotta Love still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings even after the original release cycle ends.",
+    "Playlist use and listener rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand help extend catalog value over time."
+  ]
 }
