@@ -380,6 +380,39 @@ p {
   line-height: 1.6;
 }
 
+.comparison-list {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(180px, 0.9fr);
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-strong);
+  color: var(--muted);
+}
+
+.comparison-row strong {
+  color: var(--text);
+}
+
+.comparison-head {
+  background: transparent;
+  border-style: dashed;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.comparison-current {
+  background: rgba(30, 106, 97, 0.08);
+}
+
 .song-sidebar {
   display: grid;
   gap: 1rem;
@@ -692,5 +725,9 @@ p {
 
   .song-sidebar {
     position: static;
+  }
+
+  .comparison-row {
+    grid-template-columns: 1fr;
   }
 }

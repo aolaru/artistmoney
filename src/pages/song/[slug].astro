@@ -14,10 +14,12 @@ import {
   getSongConfidence,
   getSongMethodology,
   getSongOwnershipNote,
+  rankedSongs,
   songs,
   type Song
 } from "../../lib/catalog";
 import { getSongEditorial } from "../../lib/editorial";
+import { formatRevenueMidpoint } from "../../lib/revenue";
 
 export function getStaticPaths() {
   return songs.map((song) => ({
@@ -56,6 +58,24 @@ const contextSongs = getContextSongs(song, 4);
 const leadRevenue = song.earnings?.artist_or_estate_share ?? song.estimated_revenue;
 const conciseWhy = (song.revenue_drivers ?? article?.whyItStillMakesMoney ?? [...editorial.why]).slice(0, 3);
 const detailedBreakdown = article?.breakdown ?? [...editorial.breakdown];
+const comparisonSongs = rankedSongs
+  .filter((entry) => entry.song.slug !== song.slug)
+  .filter((entry) => {
+    const entrySongArtist = getArtist(entry.song.artist);
+    const sameArtist = entry.song.artist === song.artist;
+    const sameYear = song.year && entry.song.year ? Math.abs(entry.song.year - song.year) <= 2 : false;
+    const sameGenre = artist?.genre && entrySongArtist?.genre && artist.genre === entrySongArtist.genre;
+    return sameArtist || sameYear || sameGenre;
+  })
+  .slice(0, 3);
+const snippetQuestion = `How much money does ${song.title} make?`;
+const snippetAnswer = `${song.title}${artist ? ` by ${artist.name}` : ""} earns an estimated ${leadRevenue} from streaming, licensing, and long-tail catalog replay value.`;
+const statItems = [
+  song.year ? `Released in ${song.year}` : undefined,
+  album?.trackCount ? `${album.trackCount} tracks on the linked album page` : undefined,
+  song.player?.previewUrl ? "Apple Music preview available" : "External listening links available",
+  `${confidence.level} confidence estimate`
+].filter(Boolean);
 const metadataBits = [
   artist ? artist.name : song.artist,
   song.album ? song.album : undefined,
@@ -140,10 +160,45 @@ const songSchema = {
 
         <section aria-labelledby="short-answer-title">
           <h2 id="short-answer-title">Short Answer</h2>
-          <p><strong>{leadRevenue} artist-side per year.</strong></p>
-          <p>{article?.shortAnswer ?? editorial.shortAnswer}</p>
+          <p><strong>{snippetQuestion}</strong></p>
+          <p><strong>{snippetAnswer}</strong></p>
           <p>{song.meaning_summary ?? editorial.meaning}</p>
         </section>
+
+        <section aria-labelledby="stats-title">
+          <h2 id="stats-title">Did You Know?</h2>
+          <ul class="song-bullet-list">
+            {statItems.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          <p class="results-note">Last updated: April 2026</p>
+        </section>
+
+        {comparisonSongs.length > 0 && (
+          <section aria-labelledby="comparison-title">
+            <h2 id="comparison-title">{song.title} vs Similar Songs</h2>
+            <div class="comparison-list">
+              <div class="comparison-row comparison-head">
+                <span>Song</span>
+                <span>Artist</span>
+                <span>Estimated yearly midpoint</span>
+              </div>
+              <div class="comparison-row comparison-current">
+                <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+                <span>{artist?.name ?? song.artist}</span>
+                <strong>{formatRevenueMidpoint(song.normalizedRevenue?.artistSide?.midpoint)}</strong>
+              </div>
+              {comparisonSongs.map(({ song: comparisonSong, revenueScore }) => (
+                <div class="comparison-row">
+                  <a href={`${baseUrl}song/${comparisonSong.slug}/`}>{comparisonSong.title}</a>
+                  <span>{getArtist(comparisonSong.artist)?.name ?? comparisonSong.artist}</span>
+                  <span>{formatRevenueMidpoint(revenueScore)}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {(song.player?.previewUrl || playerLinks.length > 0) && (
           <section aria-labelledby="player-title">
