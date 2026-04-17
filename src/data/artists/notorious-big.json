@@ -2,5 +2,17 @@
   "name": "The Notorious B.I.G.",
   "slug": "notorious-big",
   "estimated_income": "$1.5M-$5M/year",
-  "top_songs": ["juicy", "big-poppa", "hypnotize"]
+  "top_songs": [
+    "juicy",
+    "big-poppa",
+    "hypnotize"
+  ],
+  "bio": "The Notorious B.I.G. has a durable catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "The Notorious B.I.G. remains closely associated with Juicy and Big Poppa, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Juicy and Big Poppa still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings even after the original release cycle ends.",
+    "Playlist use and listener rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand help extend catalog value over time."
+  ]
 }

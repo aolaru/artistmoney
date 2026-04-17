@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 22,
-    "song": 22,
-    "album": 22
+    "artist": 23,
+    "song": 23,
+    "album": 23
   },
   "lastTouched": {
     "artist": {
@@ -28,7 +28,8 @@
       "led-zeppelin": "2026-04-17T10:10:44.884Z",
       "ludacris": "2026-04-17T13:08:26.904Z",
       "montell-jordan": "2026-04-17T15:56:16.152Z",
-      "nas": "2026-04-17T18:54:12.653Z"
+      "nas": "2026-04-17T18:54:12.653Z",
+      "notorious-big": "2026-04-17T21:37:37.568Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -52,7 +53,8 @@
       "changes": "2026-04-17T10:10:44.884Z",
       "clint-eastwood": "2026-04-17T13:08:26.904Z",
       "come-as-you-are": "2026-04-17T15:56:16.152Z",
-      "come-together": "2026-04-17T18:54:12.653Z"
+      "come-together": "2026-04-17T18:54:12.653Z",
+      "common-people": "2026-04-17T21:37:37.568Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -70,6 +72,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-17T21:37:37.568Z",
+      "summary": "artist:notorious-big, song:common-people"
+    },
     {
       "timestamp": "2026-04-17T18:54:12.653Z",
       "summary": "artist:nas, song:come-together, album:busta-rhymes-the-big-bang"
@@ -105,10 +111,6 @@
     {
       "timestamp": "2026-04-16T19:05:55.400Z",
       "summary": "artist:fleetwood-mac, song:block-rockin-beats"
-    },
-    {
-      "timestamp": "2026-04-16T10:12:32.476Z",
-      "summary": "artist:drake, song:blank-space, album:black-sabbath-paranoid"
     }
   ]
 }
