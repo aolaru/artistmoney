@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getAlbumSlug, getArtist, getArtistVisual, getSongConfidence, songs } from "../lib/catalog";
+import { artists, getAlbumSlug, getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, songs } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -18,6 +18,7 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
       <p class="eyebrow">Songs</p>
       <h1>All songs in the catalog</h1>
       <p>Browse the full song index and jump into earnings-focused song pages.</p>
+      <p><a href={`${baseUrl}insights/methodology/`}>Confidence badges explain how complete each song estimate is.</a></p>
     </div>
     <div class="hero-panel" aria-label="Song count">
       <strong>{songs.length}</strong>
@@ -105,6 +106,7 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
             <div class="artist-card-body">
               <p class="eyebrow">Song</p>
               <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+              <p class="confidence-note">{getConfidenceSummary(confidence)} <a href={`${baseUrl}insights/methodology/`}>Why?</a></p>
               <h3>
                 <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
               </h3>

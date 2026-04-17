@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { getArtist, getArtistVisual, getSongConfidence, rankedSongs } from "../lib/catalog";
+import { getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, rankedSongs } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -58,6 +58,7 @@ const entries = rankedSongs.filter((entry) => entry.revenueRange).slice(0, 30);
               <p class="rank-badge">#{index + 1}</p>
               <p class="eyebrow">Song</p>
               <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+              <p class="confidence-note">{getConfidenceSummary(confidence)} <a href={`${baseUrl}insights/methodology/`}>Why?</a></p>
               <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
               <p class="artist-card-meta">
                 By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>

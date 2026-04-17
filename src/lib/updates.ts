@@ -15,6 +15,7 @@ export type CatalogUpdate = {
   includesArtistEditorial: boolean;
   includesSongEditorial: boolean;
   category: "catalog-expansion" | "album-enrichment" | "editorial-upgrade" | "mixed";
+  sourceType: "autopilot" | "manual";
   highlights: string[];
 };
 
@@ -104,6 +105,12 @@ export function getCatalogUpdates(limit = 24): CatalogUpdate[] {
         const category =
           categories.length > 1 ? "mixed" : categories[0] ?? "editorial-upgrade";
 
+        const sourceType =
+          summary.toLowerCase().includes("backfill existing page content") ||
+          summary.toLowerCase().includes("autopilot")
+            ? "autopilot"
+            : "manual";
+
         const highlights = [
           addedArtistSlugs.length > 0
             ? `${addedArtistSlugs.length} new artist page${addedArtistSlugs.length === 1 ? "" : "s"}`
@@ -115,6 +122,12 @@ export function getCatalogUpdates(limit = 24): CatalogUpdate[] {
           includesArtistEditorial ? "artist editorial refreshed" : null,
           includesSongEditorial ? "song editorial refreshed" : null
         ].filter(Boolean) as string[];
+
+        if (sourceType === "autopilot") {
+          highlights.push("autopilot refresh");
+        } else {
+          highlights.push("manual editorial release");
+        }
 
         return {
           hash,
@@ -129,6 +142,7 @@ export function getCatalogUpdates(limit = 24): CatalogUpdate[] {
           includesArtistEditorial,
           includesSongEditorial,
           category,
+          sourceType,
           highlights
         };
       })

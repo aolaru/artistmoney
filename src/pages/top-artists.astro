@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { getArtistConfidence, getArtistVisual, rankedArtists } from "../lib/catalog";
+import { getArtistConfidence, getArtistVisual, getConfidenceSummary, rankedArtists } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -53,9 +53,10 @@ const entries = rankedArtists.filter((entry) => entry.revenueRange).slice(0, 25)
           />
           <div class="artist-card-body">
             <p class="rank-badge">#{index + 1}</p>
-            <p class="eyebrow">Artist</p>
-            <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
-            <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
+              <p class="eyebrow">Artist</p>
+              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+              <p class="confidence-note">{getConfidenceSummary(confidence)} <a href={`${baseUrl}insights/methodology/`}>Why?</a></p>
+              <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
             {(artist.genre || artist.country) && (
               <p class="artist-card-meta">{[artist.genre, artist.country].filter(Boolean).join(" · ")}</p>
             )}

@@ -4,9 +4,13 @@ import {
   albums,
   artists,
   getArtist,
+  getArtistConfidence,
   getArtistMethodology,
   getArtistVisual,
+  getConfidenceSummary,
+  getSongConfidence,
   getSongMethodology,
+  getAlbumConfidence,
   rankedAlbums,
   rankedArtists,
   rankedSongs,
@@ -24,14 +28,26 @@ const topArtists = rankedArtists.slice(0, 3);
 const topSongs = rankedSongs.slice(0, 3);
 const topCatalogs = rankedAlbums.slice(0, 3);
 const recentUpdates = getCatalogUpdates(5);
+const manualUpdates = recentUpdates.filter((entry) => entry.sourceType === "manual");
+const autopilotUpdates = recentUpdates.filter((entry) => entry.sourceType === "autopilot");
 
 const latestArtistSlugs = recentUpdates.flatMap((entry) => entry.artistSlugs);
 const latestSongSlugs = recentUpdates.flatMap((entry) => entry.songSlugs);
+const latestAddedArtistSlugs = recentUpdates.flatMap((entry) => entry.addedArtistSlugs);
+const latestAddedSongSlugs = recentUpdates.flatMap((entry) => entry.addedSongSlugs);
 const latestArtists = [...new Set(latestArtistSlugs)]
   .map((slug) => artists.find((artist) => artist.slug === slug))
   .filter(Boolean)
   .slice(0, 3);
 const latestSongs = [...new Set(latestSongSlugs)]
+  .map((slug) => songs.find((song) => song.slug === slug))
+  .filter(Boolean)
+  .slice(0, 3);
+const latestAddedArtists = [...new Set(latestAddedArtistSlugs)]
+  .map((slug) => artists.find((artist) => artist.slug === slug))
+  .filter(Boolean)
+  .slice(0, 3);
+const latestAddedSongs = [...new Set(latestAddedSongSlugs)]
   .map((slug) => songs.find((song) => song.slug === slug))
   .filter(Boolean)
   .slice(0, 3);
@@ -198,6 +214,7 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
     <div class="card-grid">
       {topArtists.map(({ artist, revenueScore }) => {
         const artistVisual = getArtistVisual(artist);
+        const confidence = getArtistConfidence(artist);
         return (
           <article class="card artist-card">
             <img
@@ -211,6 +228,12 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
             />
             <div class="artist-card-body">
               <p class="eyebrow">Artist</p>
+              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+              <p class="confidence-note">
+                {getConfidenceSummary(confidence)}
+                {" "}
+                <a href={`${baseUrl}insights/methodology/`}>Why?</a>
+              </p>
               <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
               {(artist.genre || artist.country) && (
                 <p class="artist-card-meta">{[artist.genre, artist.country].filter(Boolean).join(" · ")}</p>
@@ -232,6 +255,7 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
         const artist = getArtist(song.artist);
         const artistName = artist?.name ?? song.artist;
         const artistVisual = artist ? getArtistVisual(artist) : undefined;
+        const confidence = getSongConfidence(song);
 
         return (
           <article class="card artist-card">
@@ -246,6 +270,12 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
             />
             <div class="artist-card-body">
               <p class="eyebrow">Song</p>
+              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+              <p class="confidence-note">
+                {getConfidenceSummary(confidence)}
+                {" "}
+                <a href={`${baseUrl}insights/methodology/`}>Why?</a>
+              </p>
               <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
               <p class="artist-card-meta">
                 By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
@@ -265,35 +295,64 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
   <section aria-labelledby="catalogs-title">
     <h2 id="catalogs-title">Top Catalogs</h2>
     <ul class="meta-list">
-      {topCatalogs.map(({ album, revenueScore }) => (
+      {topCatalogs.map(({ album, revenueScore }) => {
+        const confidence = getAlbumConfidence(album);
+        return (
         <li>
           <a href={`${baseUrl}album/${album.slug}/`}>{album.title}</a>
           <span class="meta-inline">
             {" "}· {album.artistName} · {album.estimatedRevenue} · midpoint {formatRevenueMidpoint(revenueScore)}
           </span>
+          <br />
+          <span class="meta-inline">
+            {confidence.level} confidence · {getConfidenceSummary(confidence)}
+          </span>
         </li>
-      ))}
+        );
+      })}
     </ul>
   </section>
 
   <section aria-labelledby="updates-title">
     <h2 id="updates-title">Latest Updates</h2>
-    <ul class="meta-list">
-      {recentUpdates.map((entry) => (
-        <li>
-          <a href={`${baseUrl}updates/`}>{entry.summary}</a>
-          <span class="meta-inline">
-            {" "}· {entry.date} · {entry.artistSlugs.length} artist update{entry.artistSlugs.length === 1 ? "" : "s"} · {entry.songSlugs.length} song update{entry.songSlugs.length === 1 ? "" : "s"}
-          </span>
-        </li>
-      ))}
-    </ul>
+    <div class="editorial-grid">
+      <article class="card editorial-card">
+        <div class="artist-card-body">
+          <p class="eyebrow">Manual Releases</p>
+          <h3>{manualUpdates.length}</h3>
+          <p>Direct editorial and catalog updates shipped by hand in the latest window.</p>
+          <ul class="compact-update-list">
+            {manualUpdates.slice(0, 3).map((entry) => (
+              <li>
+                <a href={`${baseUrl}updates/`}>{entry.summary}</a>
+                <span class="meta-inline"> · {entry.date}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+      <article class="card editorial-card">
+        <div class="artist-card-body">
+          <p class="eyebrow">Autopilot Refreshes</p>
+          <h3>{autopilotUpdates.length}</h3>
+          <p>Automated existing-page upgrades that improved metadata or editorial coverage.</p>
+          <ul class="compact-update-list">
+            {autopilotUpdates.slice(0, 3).map((entry) => (
+              <li>
+                <a href={`${baseUrl}updates/`}>{entry.summary}</a>
+                <span class="meta-inline"> · {entry.date}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+    </div>
   </section>
 
   <section aria-labelledby="new-pages-title">
     <h2 id="new-pages-title">Latest Additions</h2>
     <div class="card-grid">
-      {latestArtists.map((artist) => {
+      {latestAddedArtists.map((artist) => {
         const artistVisual = getArtistVisual(artist);
         return (
           <article class="card artist-card">
@@ -314,7 +373,7 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
           </article>
         );
       })}
-      {latestSongs.map((song) => {
+      {latestAddedSongs.map((song) => {
         const artist = getArtist(song.artist);
         const artistVisual = artist ? getArtistVisual(artist) : undefined;
         return (
@@ -337,6 +396,33 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
         );
       })}
     </div>
+  </section>
+
+  <section aria-labelledby="freshness-title">
+    <h2 id="freshness-title">Freshness Signals</h2>
+    <ul class="meta-list">
+      <li>
+        <strong>Recently touched artists:</strong>
+        {" "}
+        {latestArtists.map((artist) => (
+          <>
+            <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>{" "}
+          </>
+        ))}
+      </li>
+      <li>
+        <strong>Recently touched songs:</strong>
+        {" "}
+        {latestSongs.map((song) => (
+          <>
+            <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>{" "}
+          </>
+        ))}
+      </li>
+      <li>
+        <a href={`${baseUrl}updates/`}>Open the full changelog</a>
+      </li>
+    </ul>
   </section>
 
   <section aria-labelledby="insights-title">

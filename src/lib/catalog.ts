@@ -183,6 +183,15 @@ export type ConfidenceScore = {
   reasons: string[];
 };
 
+export function getConfidenceSummary(confidence: ConfidenceScore) {
+  if (confidence.reasons.length === 0) {
+    return "Modeled from partial catalog and metadata signals.";
+  }
+
+  const leadReasons = confidence.reasons.slice(0, 2);
+  return `${leadReasons.join(" + ")}.`;
+}
+
 export const artists: Artist[] = parsedArtists
   .map((artist) => {
     const supplemental = artistMetadata[artist.slug];

@@ -15,6 +15,8 @@ const albumTouchCount = updates.filter((entry) => entry.includesAlbumMetadata).l
 const newArtistCount = updates.reduce((count, entry) => count + entry.addedArtistSlugs.length, 0);
 const newSongCount = updates.reduce((count, entry) => count + entry.addedSongSlugs.length, 0);
 const editorialCount = updates.filter((entry) => entry.includesArtistEditorial || entry.includesSongEditorial).length;
+const autopilotCount = updates.filter((entry) => entry.sourceType === "autopilot").length;
+const manualCount = updates.filter((entry) => entry.sourceType === "manual").length;
 
 const latestNewArtists = [...new Set(updates.flatMap((entry) => entry.addedArtistSlugs))]
   .map((slug) => artistMap.get(slug))
@@ -66,6 +68,7 @@ const jsonLd = {
       <span>{newSongCount} new songs</span>
       <span>{editorialCount} editorial refreshes</span>
       <span>{albumTouchCount} album enrichments</span>
+      <span>{autopilotCount} autopilot refreshes</span>
     </div>
   </section>
 
@@ -112,6 +115,14 @@ const jsonLd = {
           <p><a href={`${baseUrl}insights/methodology/`}>Read the methodology</a></p>
         </div>
       </article>
+      <article class="card editorial-card">
+        <div class="artist-card-body">
+          <p class="eyebrow">Autopilot vs Manual</p>
+          <h3>{autopilotCount} / {manualCount}</h3>
+          <p>Recent updates separated by automated refreshes versus direct editorial releases.</p>
+          <p><a href={`${baseUrl}updates/`}>Review the full changelog split</a></p>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -122,6 +133,8 @@ const jsonLd = {
       <li><strong>Song touches:</strong> {songTouchCount}</li>
       <li><strong>Album enrichments:</strong> {albumTouchCount}</li>
       <li><strong>Editorial refreshes:</strong> {editorialCount}</li>
+      <li><strong>Manual releases:</strong> {manualCount}</li>
+      <li><strong>Autopilot refreshes:</strong> {autopilotCount}</li>
     </ul>
   </section>
 
@@ -149,6 +162,7 @@ const jsonLd = {
 
                 <div class="update-tags" aria-label="Update scope">
                   <span class="rank-badge">{categoryLabels[entry.category]}</span>
+                  <span class="rank-badge">{entry.sourceType === "autopilot" ? "Autopilot" : "Manual"}</span>
                   {entry.addedArtistSlugs.length > 0 && (
                     <span class="rank-badge">
                       {entry.addedArtistSlugs.length} new artist page{entry.addedArtistSlugs.length === 1 ? "" : "s"}

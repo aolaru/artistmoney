@@ -497,6 +497,12 @@ p {
   margin: 0 0 0.75rem;
 }
 
+.confidence-note {
+  margin: -0.3rem 0 0.85rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .confidence-high {
   background: rgba(30, 106, 97, 0.12);
   color: var(--accent);
@@ -515,6 +521,17 @@ p {
 .updates-list {
   display: grid;
   gap: 1rem;
+}
+
+.compact-update-list {
+  padding-left: 1rem;
+  margin: 0.75rem 0 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.compact-update-list li {
+  color: var(--muted);
 }
 
 .update-card {

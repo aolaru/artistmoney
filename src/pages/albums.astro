@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { createAlbumArtwork } from "../lib/artistArtwork";
-import { albums, getAlbumConfidence } from "../lib/catalog";
+import { albums, getAlbumConfidence, getConfidenceSummary } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -19,6 +19,7 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
       <p class="eyebrow">Albums</p>
       <h1>Albums in the catalog</h1>
       <p>Browse albums derived from the tracked song catalog and jump into linked song pages.</p>
+      <p><a href={`${baseUrl}insights/methodology/`}>Confidence badges reflect how complete the album context is.</a></p>
     </div>
     <div class="hero-panel" aria-label="Album count">
       <strong>{albums.length}</strong>
@@ -95,6 +96,7 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
             <div class="artist-card-body">
               <p class="eyebrow">Album</p>
               <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+              <p class="confidence-note">{getConfidenceSummary(confidence)} <a href={`${baseUrl}insights/methodology/`}>Why?</a></p>
               <h3>
                 <a href={`${baseUrl}album/${album.slug}/`}>{album.title}</a>
               </h3>
