@@ -2,8 +2,19 @@
   "name": "Montell Jordan",
   "slug": "montell-jordan",
   "estimated_income": "$400K-$1.5M/year",
-  "top_songs": ["this-is-how-we-do-it", "get-it-on-tonite"],
+  "top_songs": [
+    "this-is-how-we-do-it",
+    "get-it-on-tonite"
+  ],
   "genre": "R&B / Hip-Hop Soul",
   "country": "United States",
-  "active_since": "1991"
+  "active_since": "1991",
+  "bio": "Montell Jordan has a durable r&b / hip-hop soul catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Montell Jordan remains closely associated with This Is How We Do It and Get It On Tonite, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like This Is How We Do It and Get It On Tonite still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps legacy rap records active long after their original chart run.",
+    "Playlist placement and cultural recognition help the biggest songs sustain repeat listening.",
+    "Licensing, sampling, and nostalgia-driven discovery continue to support long-tail earnings."
+  ]
 }
