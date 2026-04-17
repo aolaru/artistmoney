@@ -60,22 +60,131 @@ const conciseWhy = (song.revenue_drivers ?? article?.whyItStillMakesMoney ?? [..
 const detailedBreakdown = article?.breakdown ?? [...editorial.breakdown];
 const comparisonSongs = rankedSongs
   .filter((entry) => entry.song.slug !== song.slug)
-  .filter((entry) => {
+  .map((entry) => {
     const entrySongArtist = getArtist(entry.song.artist);
     const sameArtist = entry.song.artist === song.artist;
+    const sameAlbum = Boolean(song.album && entry.song.album && song.album === entry.song.album);
     const sameYear = song.year && entry.song.year ? Math.abs(entry.song.year - song.year) <= 2 : false;
     const sameGenre = artist?.genre && entrySongArtist?.genre && artist.genre === entrySongArtist.genre;
-    return sameArtist || sameYear || sameGenre;
+    const yearDistance = song.year && entry.song.year ? Math.abs(entry.song.year - song.year) : 99;
+    const revenueDistance = Math.abs(
+      (entry.song.normalizedRevenue?.artistSide?.midpoint ?? 0) - (song.normalizedRevenue?.artistSide?.midpoint ?? 0)
+    );
+
+    let relevance = 0;
+    const reasons: string[] = [];
+
+    if (sameArtist) {
+      relevance += 8;
+      reasons.push("same artist");
+    }
+    if (sameAlbum) {
+      relevance += 5;
+      reasons.push("same album");
+    }
+    if (sameGenre) {
+      relevance += 3;
+      reasons.push("same genre");
+    }
+    if (sameYear) {
+      relevance += Math.max(1, 3 - yearDistance);
+      reasons.push("same era");
+    }
+    if (revenueDistance > 0 && revenueDistance <= 500_000) {
+      relevance += 2;
+      reasons.push("similar earnings band");
+    }
+
+    return {
+      ...entry,
+      relevance,
+      comparisonReason: reasons.slice(0, 2).join(" · ")
+    };
   })
+  .filter((entry) => entry.relevance > 0)
+  .sort((left, right) =>
+    right.relevance - left.relevance ||
+    Math.abs(left.revenueScore - (song.normalizedRevenue?.artistSide?.midpoint ?? 0)) -
+      Math.abs(right.revenueScore - (song.normalizedRevenue?.artistSide?.midpoint ?? 0))
+  )
   .slice(0, 3);
+const songRank = rankedSongs.findIndex((entry) => entry.song.slug === song.slug) + 1;
+const catalogPercentile = songRank > 0 ? Math.max(1, Math.round((songRank / rankedSongs.length) * 100)) : undefined;
+const yearsOld = song.year ? new Date().getFullYear() - song.year : undefined;
+const artistSongCount = songs.filter((entry) => entry.artist === song.artist).length;
+const artistRank = rankedSongs
+  .filter((entry) => entry.song.artist === song.artist)
+  .findIndex((entry) => entry.song.slug === song.slug) + 1;
 const snippetQuestion = `How much money does ${song.title} make?`;
-const snippetAnswer = `${song.title}${artist ? ` by ${artist.name}` : ""} earns an estimated ${leadRevenue} from streaming, licensing, and long-tail catalog replay value.`;
+const snippetLead = hasDetailedEarnings
+  ? `${song.title}${artist ? ` by ${artist.name}` : ""} is modeled at ${leadRevenue} per year on the artist side, with gross track revenue and ownership context separated below.`
+  : `${song.title}${artist ? ` by ${artist.name}` : ""} earns an estimated ${leadRevenue} per year from streaming, licensing, and long-tail catalog replay value.`;
+const snippetSupport = yearsOld && yearsOld >= 10
+  ? `The song still reads as an evergreen catalog asset roughly ${yearsOld} years after release.`
+  : artistRank > 0 && artistSongCount > 1
+    ? `It currently ranks #${artistRank} among the tracked songs for ${artist?.name ?? song.artist}.`
+    : `This page focuses on the annual earnings range rather than claiming an audited lifetime total.`;
 const statItems = [
-  song.year ? `Released in ${song.year}` : undefined,
+  songRank > 0 ? `Currently ranks around the top ${catalogPercentile}% of tracked songs by modeled artist-side earnings` : undefined,
+  song.year ? `Released in ${song.year}${yearsOld ? ` and still shows earnings power roughly ${yearsOld} years later` : ""}` : undefined,
+  artistRank > 0 && artistSongCount > 1 ? `Ranks #${artistRank} among ${artistSongCount} tracked songs for ${artist?.name ?? song.artist}` : undefined,
   album?.trackCount ? `${album.trackCount} tracks on the linked album page` : undefined,
   song.player?.previewUrl ? "Apple Music preview available" : "External listening links available",
   `${confidence.level} confidence estimate`
 ].filter(Boolean);
+const revenueBarCandidates = [
+  song.normalizedRevenue?.grossTrack
+    ? {
+        label: "Gross track revenue",
+        value: song.earnings?.gross_track_revenue ?? song.normalizedRevenue.grossTrack.display,
+        midpoint: song.normalizedRevenue.grossTrack.midpoint
+      }
+    : undefined,
+  song.normalizedRevenue?.artistSide
+    ? {
+        label: "Artist-side share",
+        value: song.earnings?.artist_or_estate_share ?? song.normalizedRevenue.artistSide.display,
+        midpoint: song.normalizedRevenue.artistSide.midpoint
+      }
+    : undefined,
+  song.earnings?.label_master_share
+    ? {
+        label: "Label master share",
+        value: song.earnings.label_master_share,
+        midpoint: song.normalizedRevenue?.grossTrack?.midpoint && song.normalizedRevenue?.artistSide?.midpoint
+          ? Math.max(song.normalizedRevenue.grossTrack.midpoint - song.normalizedRevenue.artistSide.midpoint, 0)
+          : 0
+      }
+    : undefined
+].filter(Boolean);
+const revenueBarsMax = Math.max(...revenueBarCandidates.map((entry) => entry.midpoint), 0);
+const revenueBars = revenueBarCandidates.map((entry) => ({
+  ...entry,
+  width: revenueBarsMax > 0 ? Math.max(18, Math.round((entry.midpoint / revenueBarsMax) * 100)) : 100
+}));
+const intentQuestions = [
+  {
+    question: `How much did ${song.title} make in total?`,
+    answer:
+      article?.lifetimeEstimate
+        ? `${song.title} is currently modeled at ${article.lifetimeEstimate} in lifetime earnings, based on the annual range and long-tail replay assumptions shown on this page.`
+        : `${song.title} does not have a public lifetime total, so this page stays focused on modeled annual earnings instead of claiming an audited career total.`
+  },
+  {
+    question: `How much does ${song.title} make per stream?`,
+    answer: `${song.title} does not have a single public per-stream rate because payouts vary by platform, territory, subscription tier, and contract structure. The estimate here is modeled from aggregate streaming, licensing, and catalog behavior instead.`
+  },
+  {
+    question: `Who owns ${song.title}?`,
+    answer: ownershipNote
+  }
+];
+const topEarningSongs = rankedSongs
+  .filter((entry) => entry.song.slug !== song.slug)
+  .slice(0, 5);
+const trafficMagnetNote = songRank > 0 && catalogPercentile
+  ? `${song.title} sits in the top ${catalogPercentile}% of tracked songs on the site by modeled artist-side earnings.`
+  : `${song.title} is positioned here using the same catalog ranking model applied across the site.`;
 const metadataBits = [
   artist ? artist.name : song.artist,
   song.album ? song.album : undefined,
@@ -161,7 +270,8 @@ const songSchema = {
         <section aria-labelledby="short-answer-title">
           <h2 id="short-answer-title">Short Answer</h2>
           <p><strong>{snippetQuestion}</strong></p>
-          <p><strong>{snippetAnswer}</strong></p>
+          <p><strong>{snippetLead}</strong></p>
+          <p>{snippetSupport}</p>
           <p>{song.meaning_summary ?? editorial.meaning}</p>
         </section>
 
@@ -172,6 +282,7 @@ const songSchema = {
               <li>{item}</li>
             ))}
           </ul>
+          <p class="traffic-magnet-note">{trafficMagnetNote}</p>
           <p class="results-note">Last updated: April 2026</p>
         </section>
 
@@ -189,14 +300,38 @@ const songSchema = {
                 <span>{artist?.name ?? song.artist}</span>
                 <strong>{formatRevenueMidpoint(song.normalizedRevenue?.artistSide?.midpoint)}</strong>
               </div>
-              {comparisonSongs.map(({ song: comparisonSong, revenueScore }) => (
+              {comparisonSongs.map(({ song: comparisonSong, revenueScore, comparisonReason }) => (
                 <div class="comparison-row">
-                  <a href={`${baseUrl}song/${comparisonSong.slug}/`}>{comparisonSong.title}</a>
+                  <div>
+                    <a href={`${baseUrl}song/${comparisonSong.slug}/`}>{comparisonSong.title}</a>
+                    {comparisonReason && <div class="comparison-reason">{comparisonReason}</div>}
+                  </div>
                   <span>{getArtist(comparisonSong.artist)?.name ?? comparisonSong.artist}</span>
                   <span>{formatRevenueMidpoint(revenueScore)}</span>
                 </div>
               ))}
             </div>
+          </section>
+        )}
+
+        {revenueBars.length > 1 && (
+          <section aria-labelledby="revenue-visual-title">
+            <h2 id="revenue-visual-title">Revenue Breakdown</h2>
+            <div class="revenue-bars">
+              {revenueBars.map((entry) => (
+                <div class="revenue-bar-row">
+                  <div class="revenue-bar-copy">
+                    <strong>{entry.label}</strong>
+                    <span>{entry.value}</span>
+                  </div>
+                  <div class="revenue-bar-track" aria-hidden="true">
+                    <div class="revenue-bar-fill" style={`width: ${entry.width}%`}></div>
+                  </div>
+                  <div class="revenue-bar-scale">{entry.width}% of the lead revenue lane</div>
+                </div>
+              ))}
+            </div>
+            <p class="results-note">Bars reflect modeled annual midpoint ranges, not audited royalty statements.</p>
           </section>
         )}
 
@@ -239,6 +374,18 @@ const songSchema = {
             ))}
           </ul>
           <p>{article?.insight ?? editorial.insight}</p>
+        </section>
+
+        <section aria-labelledby="questions-title">
+          <h2 id="questions-title">More Questions About {song.title}</h2>
+          <div class="intent-question-list">
+            {intentQuestions.map((item) => (
+              <article class="intent-question-card">
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <details class="details-card">
@@ -377,6 +524,23 @@ const songSchema = {
                   <span class="meta-inline">
                     {" "}· {getArtist(contextSong.artist)?.name ?? contextSong.artist}
                     {contextSong.year ? ` · ${contextSong.year}` : ""}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {topEarningSongs.length > 0 && (
+          <section aria-labelledby="top-songs-title">
+            <h2 id="top-songs-title">Top Songs by Earnings</h2>
+            <ul class="meta-list">
+              {topEarningSongs.map(({ song: rankedSong, revenueScore }) => (
+                <li>
+                  <a href={`${baseUrl}song/${rankedSong.slug}/`}>{rankedSong.title}</a>
+                  <span class="meta-inline">
+                    {" "}· {getArtist(rankedSong.artist)?.name ?? rankedSong.artist}
+                    {" "}· {formatRevenueMidpoint(revenueScore)}
                   </span>
                 </li>
               ))}
