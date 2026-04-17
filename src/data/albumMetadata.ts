@@ -6759,5 +6759,64 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/the-campfire-headphase/81696254?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Boards%20of%20Canada%20The%20Campfire%20Headphase"
     }
+  },
+  "boston-boston": {
+    "releaseDate": "1976-08-25",
+    "trackCount": 8,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "More Than a Feeling",
+        "durationMs": 285133
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Peace of Mind",
+        "durationMs": 303587
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Foreplay / Long Time",
+        "durationMs": 467640
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Rock & Roll Band",
+        "durationMs": 180347
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Smokin'",
+        "durationMs": 261387
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Hitch a Ride",
+        "durationMs": 251733
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Something About You",
+        "durationMs": 227907
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Let Me Take You Home Tonight",
+        "durationMs": 286680
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Boston%20Boston",
+      "appleMusic": "https://music.apple.com/us/album/boston/913902091?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Boston%20Boston"
+    }
   }
 } as const;
