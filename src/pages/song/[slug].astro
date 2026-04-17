@@ -7,9 +7,11 @@ import {
   getAlbum,
   getAlbumSlug,
   getArtist,
+  getConfidenceSummary,
   getContextSongs,
   getMoreSongsFromAlbum,
   getRelatedAlbumsForSong,
+  getSongConfidence,
   getSongMethodology,
   getSongOwnershipNote,
   songs,
@@ -46,10 +48,19 @@ const imageSrc = providerArtwork ?? createSongArtwork(song.title, artist?.name ?
 const playerLinks = Object.entries(song.player?.links ?? {}).filter(([, url]) => url) as Array<[string, string]>;
 const editorial = getSongEditorial(song, artist);
 const methodology = getSongMethodology(song);
+const confidence = getSongConfidence(song);
 const ownershipNote = getSongOwnershipNote(song, artist);
 const moreFromAlbum = getMoreSongsFromAlbum(song, 4);
 const relatedAlbums = getRelatedAlbumsForSong(song, 3);
 const contextSongs = getContextSongs(song, 4);
+const leadRevenue = song.earnings?.artist_or_estate_share ?? song.estimated_revenue;
+const conciseWhy = (song.revenue_drivers ?? article?.whyItStillMakesMoney ?? [...editorial.why]).slice(0, 3);
+const detailedBreakdown = article?.breakdown ?? [...editorial.breakdown];
+const metadataBits = [
+  artist ? artist.name : song.artist,
+  song.album ? song.album : undefined,
+  song.year ? `${song.year}` : undefined
+].filter(Boolean);
 const songSchema = {
   "@context": "https://schema.org",
   "@type": "MusicRecording",
@@ -92,268 +103,232 @@ const songSchema = {
       { label: song.title }
     ]} />
 
-    <p class="eyebrow">Song</p>
-    <h1>{song.title}</h1>
+    <section class="song-page-shell" aria-labelledby="song-title">
+      <div class="song-primary-flow">
+        <p class="eyebrow">Song</p>
+        <h1 id="song-title">{song.title}</h1>
+        {metadataBits.length > 0 && <p class="song-kicker">{metadataBits.join(" · ")}</p>}
+        <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+        <p class="confidence-note">
+          {getConfidenceSummary(confidence)}
+          {" "}
+          <a href={`${baseUrl}insights/methodology/`}>Why?</a>
+        </p>
 
-    <div class="song-visual">
-      <img
-        class="song-visual-image"
-        src={imageSrc}
-        alt={artist ? `${song.title} by ${artist.name}` : song.title}
-        width="1200"
-        height="675"
-        referrerpolicy="no-referrer"
-      />
-    </div>
-    {providerArtwork && (
-      <p class="image-credit">
-        Artwork shown via Apple Music.
-        {" "}
-        {providerArtworkLink && (
-          <a href={providerArtworkLink} rel="noreferrer" target="_blank">
-            Open the source track
-          </a>
-        )}
-      </p>
-    )}
+        <div class="song-visual">
+          <img
+            class="song-visual-image"
+            src={imageSrc}
+            alt={artist ? `${song.title} by ${artist.name}` : song.title}
+            width="1200"
+            height="675"
+            referrerpolicy="no-referrer"
+          />
+        </div>
 
-    {(song.album || song.year) && (
-      <ul class="meta-list">
-        {song.album && (
-          <li>
-            <strong>Album:</strong>{" "}
-            {album ? <a href={`${baseUrl}album/${album.slug}/`}>{song.album}</a> : song.album}
-          </li>
-        )}
-        {song.year && <li><strong>Released:</strong> {song.year}</li>}
-      </ul>
-    )}
-
-    <section aria-labelledby="song-artist-title">
-      <h2 id="song-artist-title">Artist</h2>
-      <p>
-        {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : song.artist}
-      </p>
-    </section>
-
-    {(song.player?.previewUrl || playerLinks.length > 0) && (
-      <section aria-labelledby="player-title">
-        <h2 id="player-title">Listen</h2>
-        {song.player?.previewUrl ? (
-          <>
-            <p class="results-note">Official Apple Music preview.</p>
-            <audio class="song-player" controls preload="none" src={song.player.previewUrl}>
-              Your browser does not support the audio element.
-            </audio>
-          </>
-        ) : (
-          <p class="results-note">Preview audio is not available for this song right now.</p>
-        )}
-        {playerLinks.length > 0 && (
-          <div class="external-links">
-            {playerLinks.map(([platform, url]) => (
-              <a class="external-link" href={url} rel="noreferrer" target="_blank">
-                {platform === "appleMusic"
-                  ? "Apple Music"
-                  : platform === "youtubeMusic"
-                    ? "YouTube Music"
-                    : platform === "amazonMusic"
-                      ? "Amazon Music"
-                      : "Spotify"}
+        {providerArtwork && (
+          <p class="image-credit">
+            Artwork shown via Apple Music.
+            {" "}
+            {providerArtworkLink && (
+              <a href={providerArtworkLink} rel="noreferrer" target="_blank">
+                Open the source track
               </a>
-            ))}
-          </div>
+            )}
+          </p>
         )}
-      </section>
-    )}
 
-    <section aria-labelledby="meaning-title">
-      <h2 id="meaning-title">Meaning</h2>
-      <p>{song.meaning_summary ?? editorial.meaning}</p>
-    </section>
-
-    <section aria-labelledby="short-answer-title">
-      <h2 id="short-answer-title">Short Answer</h2>
-      <p><strong>{article?.shortAnswer ?? editorial.shortAnswer}</strong></p>
-    </section>
-
-    {hasDetailedEarnings ? (
-      <>
-        <section aria-labelledby="earnings-title">
-          <h2 id="earnings-title">Estimated Artist-Side Annual Earnings</h2>
-          <ul class="meta-list">
-            <li>{song.earnings?.artist_or_estate_share ?? song.estimated_revenue}</li>
-          </ul>
+        <section aria-labelledby="short-answer-title">
+          <h2 id="short-answer-title">Short Answer</h2>
+          <p><strong>{leadRevenue} artist-side per year.</strong></p>
+          <p>{article?.shortAnswer ?? editorial.shortAnswer}</p>
+          <p>{song.meaning_summary ?? editorial.meaning}</p>
         </section>
 
-        {song.earnings && (
-          <section aria-labelledby="breakdown-title">
-            <h2 id="breakdown-title">Revenue Breakdown</h2>
-            <ul class="meta-list">
-              {song.earnings.gross_track_revenue && (
-                <li><strong>Estimated gross track revenue:</strong> {song.earnings.gross_track_revenue}</li>
-              )}
-              {song.earnings.artist_or_estate_share && (
-                <li><strong>Estimated artist-side cut:</strong> {song.earnings.artist_or_estate_share}</li>
-              )}
-              {song.earnings.label_master_share && (
-                <li><strong>Estimated label master share:</strong> {song.earnings.label_master_share}</li>
-              )}
-              {song.earnings.publishing_share && (
-                <li><strong>Estimated publishing share:</strong> {song.earnings.publishing_share}</li>
-              )}
-              {song.earnings.songwriter_share && (
-                <li><strong>Estimated songwriter share:</strong> {song.earnings.songwriter_share}</li>
-              )}
-              {song.earnings.assumptions && (
-                <li><strong>Assumptions:</strong> {song.earnings.assumptions}</li>
-              )}
-            </ul>
+        {(song.player?.previewUrl || playerLinks.length > 0) && (
+          <section aria-labelledby="player-title">
+            <h2 id="player-title">Listen</h2>
+            {song.player?.previewUrl ? (
+              <>
+                <p class="results-note">Official Apple Music preview.</p>
+                <audio class="song-player" controls preload="none" src={song.player.previewUrl}>
+                  Your browser does not support the audio element.
+                </audio>
+              </>
+            ) : (
+              <p class="results-note">Preview audio is not available for this song right now.</p>
+            )}
+            {playerLinks.length > 0 && (
+              <div class="external-links">
+                {playerLinks.map(([platform, url]) => (
+                  <a class="external-link" href={url} rel="noreferrer" target="_blank">
+                    {platform === "appleMusic"
+                      ? "Apple Music"
+                      : platform === "youtubeMusic"
+                        ? "YouTube Music"
+                        : platform === "amazonMusic"
+                          ? "Amazon Music"
+                          : "Spotify"}
+                  </a>
+                ))}
+              </div>
+            )}
           </section>
         )}
 
-        {song.ownership && (
-          <section aria-labelledby="ownership-title">
-            <h2 id="ownership-title">Ownership and Catalog Status</h2>
-            <ul class="meta-list">
-              {song.ownership.master_owner && (
-                <li><strong>Masters:</strong> {song.ownership.master_owner}</li>
-              )}
-              {song.ownership.publishing_owner && (
-                <li><strong>Publishing:</strong> {song.ownership.publishing_owner}</li>
-              )}
-              {song.ownership.catalog_sale_status && (
-                <li><strong>Catalog sale status:</strong> {song.ownership.catalog_sale_status}</li>
-              )}
-              {song.ownership.notes && (
-                <li><strong>Notes:</strong> {song.ownership.notes}</li>
-              )}
-            </ul>
-          </section>
-        )}
-      </>
-    ) : (
-      <>
-        <section aria-labelledby="breakdown-title">
-          <h2 id="breakdown-title">Earnings Breakdown</h2>
-          <ul class="meta-list">
-            {(article?.breakdown ?? [
-              ...editorial.breakdown
-            ]).map((point) => (
+        <section aria-labelledby="money-title">
+          <h2 id="money-title">Why It Still Works</h2>
+          <ul class="song-bullet-list">
+            {conciseWhy.map((point) => (
               <li>{point}</li>
             ))}
           </ul>
+          <p>{article?.insight ?? editorial.insight}</p>
         </section>
 
-        <section aria-labelledby="earnings-title">
-          <h2 id="earnings-title">Estimated Earnings</h2>
-          <ul class="meta-list">
-            <li>{song.estimated_revenue}</li>
-          </ul>
-        </section>
-      </>
-    )}
+        <details class="details-card">
+          <summary>Show ownership and assumptions</summary>
+          <div class="details-card-body">
+            <p>{ownershipNote}</p>
 
-    <section aria-labelledby="ownership-note-title">
-      <h2 id="ownership-note-title">Ownership Note</h2>
-      <p>{ownershipNote}</p>
-    </section>
+            <section aria-labelledby="breakdown-title">
+              <h2 id="breakdown-title">Supporting Revenue Context</h2>
+              {hasDetailedEarnings ? (
+                <ul class="meta-list">
+                  {song.earnings?.gross_track_revenue && (
+                    <li><strong>Estimated gross track revenue:</strong> {song.earnings.gross_track_revenue}</li>
+                  )}
+                  {song.earnings?.artist_or_estate_share && (
+                    <li><strong>Estimated artist-side cut:</strong> {song.earnings.artist_or_estate_share}</li>
+                  )}
+                  {song.earnings?.label_master_share && (
+                    <li><strong>Estimated label master share:</strong> {song.earnings.label_master_share}</li>
+                  )}
+                  {song.earnings?.publishing_share && (
+                    <li><strong>Estimated publishing share:</strong> {song.earnings.publishing_share}</li>
+                  )}
+                  {song.earnings?.songwriter_share && (
+                    <li><strong>Estimated songwriter share:</strong> {song.earnings.songwriter_share}</li>
+                  )}
+                  {song.earnings?.assumptions && (
+                    <li><strong>Assumptions:</strong> {song.earnings.assumptions}</li>
+                  )}
+                  {song.ownership?.master_owner && (
+                    <li><strong>Masters:</strong> {song.ownership.master_owner}</li>
+                  )}
+                  {song.ownership?.publishing_owner && (
+                    <li><strong>Publishing:</strong> {song.ownership.publishing_owner}</li>
+                  )}
+                  {song.ownership?.catalog_sale_status && (
+                    <li><strong>Catalog sale status:</strong> {song.ownership.catalog_sale_status}</li>
+                  )}
+                  {song.ownership?.notes && (
+                    <li><strong>Notes:</strong> {song.ownership.notes}</li>
+                  )}
+                </ul>
+              ) : (
+                <ul class="meta-list">
+                  {detailedBreakdown.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                  <li><strong>Lifetime estimate:</strong> {article?.lifetimeEstimate ?? editorial.lifetime}</li>
+                </ul>
+              )}
+            </section>
 
-    <section aria-labelledby="lifetime-title">
-      <h2 id="lifetime-title">Lifetime Earnings</h2>
-      <p><strong>{article?.lifetimeEstimate ?? editorial.lifetime}</strong></p>
-    </section>
-
-    <section aria-labelledby="money-title">
-      <h2 id="money-title">Why It Still Makes Money</h2>
-      <ul class="meta-list">
-        {(song.revenue_drivers ?? article?.whyItStillMakesMoney ?? [
-          ...editorial.why
-        ]).map((point) => (
-          <li>{point}</li>
-        ))}
-      </ul>
-    </section>
-
-    <section aria-labelledby="insight-title">
-      <h2 id="insight-title">Insight</h2>
-      <p>{article?.insight ?? editorial.insight}</p>
-    </section>
-
-    {relatedSongs.length > 0 && (
-      <section aria-labelledby="related-title">
-        <h2 id="related-title">Related Songs</h2>
-        <ul class="meta-list">
-          {relatedSongs.map((relatedSong) => (
-            <li>
-              <a href={`${baseUrl}song/${relatedSong.slug}/`}>{relatedSong.title}</a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
-
-    {moreFromAlbum.length > 0 && (
-      <section aria-labelledby="album-songs-title">
-        <h2 id="album-songs-title">More From This Album</h2>
-        <ul class="meta-list">
-          {moreFromAlbum.map((albumSong) => (
-            <li>
-              <a href={`${baseUrl}song/${albumSong.slug}/`}>{albumSong.title}</a>
-              <span class="meta-inline"> · {albumSong.estimated_revenue}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
-
-    {relatedAlbums.length > 0 && (
-      <section aria-labelledby="related-albums-title">
-        <h2 id="related-albums-title">Related Albums</h2>
-        <ul class="meta-list">
-          {relatedAlbums.map((relatedAlbum) => (
-            <li>
-              <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
-              <span class="meta-inline">
-                {" "}· {relatedAlbum.artistName}{relatedAlbum.year ? ` · ${relatedAlbum.year}` : ""}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
-
-    {contextSongs.length > 0 && (
-      <section aria-labelledby="context-songs-title">
-        <h2 id="context-songs-title">More From This Era and Genre</h2>
-        <ul class="meta-list">
-          {contextSongs.map((contextSong) => (
-            <li>
-              <a href={`${baseUrl}song/${contextSong.slug}/`}>{contextSong.title}</a>
-              <span class="meta-inline">
-                {" "}· {getArtist(contextSong.artist)?.name ?? contextSong.artist}
-                {contextSong.year ? ` · ${contextSong.year}` : ""}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
-
-    <section aria-labelledby="methodology-title">
-      <h2 id="methodology-title">Methodology</h2>
-      <div class="methodology-card">
-        <p class="methodology-badge">{methodology.confidenceLabel}</p>
-        <p>{methodology.summary}</p>
-        <ul class="meta-list">
-          {methodology.bullets.map((point) => (
-            <li>{point}</li>
-          ))}
-        </ul>
-        <p>
-          <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
-        </p>
+            <div class="methodology-card">
+              <p class="methodology-badge">{methodology.confidenceLabel}</p>
+              <p>{methodology.summary}</p>
+              <ul class="meta-list">
+                {methodology.bullets.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+              <p>
+                <a href={`${baseUrl}insights/methodology/`}>Read the full site methodology.</a>
+              </p>
+            </div>
+          </div>
+        </details>
       </div>
+
+      <aside class="song-sidebar">
+        <div class="song-summary-card">
+          <p class="eyebrow">Earnings Snapshot</p>
+          <h2>{leadRevenue}</h2>
+          <ul class="stat-list">
+            <li><strong>Artist:</strong> {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : song.artist}</li>
+            {song.album && (
+              <li>
+                <strong>Album:</strong>{" "}
+                {album ? <a href={`${baseUrl}album/${album.slug}/`}>{song.album}</a> : song.album}
+              </li>
+            )}
+            {song.year && <li><strong>Released:</strong> {song.year}</li>}
+            <li><strong>Confidence:</strong> {confidence.level}</li>
+          </ul>
+        </div>
+
+        {relatedSongs.length > 0 && (
+          <section aria-labelledby="related-title">
+            <h2 id="related-title">Related Songs</h2>
+            <ul class="meta-list">
+              {relatedSongs.map((relatedSong) => (
+                <li>
+                  <a href={`${baseUrl}song/${relatedSong.slug}/`}>{relatedSong.title}</a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {moreFromAlbum.length > 0 && (
+          <section aria-labelledby="album-songs-title">
+            <h2 id="album-songs-title">More From This Album</h2>
+            <ul class="meta-list">
+              {moreFromAlbum.map((albumSong) => (
+                <li>
+                  <a href={`${baseUrl}song/${albumSong.slug}/`}>{albumSong.title}</a>
+                  <span class="meta-inline"> · {albumSong.estimated_revenue}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {relatedAlbums.length > 0 && (
+          <section aria-labelledby="related-albums-title">
+            <h2 id="related-albums-title">Related Albums</h2>
+            <ul class="meta-list">
+              {relatedAlbums.map((relatedAlbum) => (
+                <li>
+                  <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
+                  <span class="meta-inline">
+                    {" "}· {relatedAlbum.artistName}{relatedAlbum.year ? ` · ${relatedAlbum.year}` : ""}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {contextSongs.length > 0 && (
+          <section aria-labelledby="context-songs-title">
+            <h2 id="context-songs-title">More From This Era</h2>
+            <ul class="meta-list">
+              {contextSongs.map((contextSong) => (
+                <li>
+                  <a href={`${baseUrl}song/${contextSong.slug}/`}>{contextSong.title}</a>
+                  <span class="meta-inline">
+                    {" "}· {getArtist(contextSong.artist)?.name ?? contextSong.artist}
+                    {contextSong.year ? ` · ${contextSong.year}` : ""}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </aside>
     </section>
   </article>
 </BaseLayout>

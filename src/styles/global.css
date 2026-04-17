@@ -337,6 +337,96 @@ p {
   object-fit: cover;
 }
 
+.song-page-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.song-primary-flow {
+  display: grid;
+  gap: 1.35rem;
+  min-width: 0;
+}
+
+.song-primary-flow section,
+.song-summary-card,
+.details-card {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 1.2rem;
+}
+
+.song-primary-flow section > :last-child,
+.song-summary-card > :last-child,
+.details-card-body > :last-child {
+  margin-bottom: 0;
+}
+
+.song-kicker {
+  margin: -0.35rem 0 0;
+  font-size: 1rem;
+}
+
+.song-bullet-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.song-sidebar {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  position: sticky;
+  top: 5.5rem;
+}
+
+.song-summary-card h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin-bottom: 0.8rem;
+}
+
+.details-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.details-card summary {
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--text);
+  list-style: none;
+}
+
+.details-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.details-card summary::after {
+  content: "+";
+  float: right;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.details-card[open] summary::after {
+  content: "−";
+}
+
+.details-card-body {
+  display: grid;
+  gap: 1rem;
+  padding: 0 1.2rem 1.2rem;
+}
+
 .artist-card-body {
   padding: 1.1rem;
 }
@@ -585,7 +675,8 @@ p {
   }
 
   .hero,
-  .artist-hero {
+  .artist-hero,
+  .song-page-shell {
     grid-template-columns: 1fr;
   }
 
@@ -597,5 +688,9 @@ p {
 
   h1 {
     max-width: none;
+  }
+
+  .song-sidebar {
+    position: static;
   }
 }
