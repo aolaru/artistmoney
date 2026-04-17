@@ -1,0 +1,15 @@
+{
+  "title": "Beat It",
+  "slug": "beat-it",
+  "artist": "michael-jackson",
+  "estimated_revenue": "$700K-$2.5M/year",
+  "album": "Bad",
+  "year": 1987,
+  "meaning_summary": "Beat It still monetizes because it bridges pop and rock audiences unusually well for a legacy hit.",
+  "revenue_drivers": [
+    "cross-genre playlist demand",
+    "catalog streaming",
+    "sync-friendly recognizability"
+  ],
+  "related_songs": ["bad", "smooth-criminal"]
+}

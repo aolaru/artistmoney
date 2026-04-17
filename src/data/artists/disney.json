@@ -1,0 +1,18 @@
+{
+  "name": "Disney",
+  "slug": "disney",
+  "estimated_income": "$15M-$50M/year",
+  "top_songs": ["let-it-go", "circle-of-life"],
+  "genre": "Soundtrack / Family Pop",
+  "country": "United States",
+  "active_since": "1937",
+  "bio": "Disney soundtrack catalogs keep earning because family viewing cycles, singalong behavior, and perpetual franchise familiarity create long-tail demand across generations.",
+  "notable_for": "Animated soundtrack standards with recurring multi-generational replay value.",
+  "career_highlight": "Frozen and The Lion King remain two of the strongest family-soundtrack properties in modern catalog economics.",
+  "revenue_drivers": [
+    "soundtrack streaming",
+    "family catalog replay",
+    "film-driven nostalgia",
+    "licensing and franchise reuse"
+  ]
+}

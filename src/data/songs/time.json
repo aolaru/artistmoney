@@ -1,0 +1,15 @@
+{
+  "title": "Time",
+  "slug": "time",
+  "artist": "pink-floyd",
+  "estimated_revenue": "$250K-$950K/year",
+  "album": "The Dark Side of the Moon",
+  "year": 1973,
+  "meaning_summary": "Time still monetizes because Pink Floyd listeners continue to consume classic albums in sequence rather than only through singles.",
+  "revenue_drivers": [
+    "album-level listening",
+    "progressive-rock long-tail demand",
+    "classic catalog discovery"
+  ],
+  "related_songs": ["money", "comfortably-numb"]
+}

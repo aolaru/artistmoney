@@ -1,0 +1,18 @@
+{
+  "name": "Metallica",
+  "slug": "metallica",
+  "estimated_income": "$12M-$35M/year",
+  "top_songs": ["enter-sandman", "nothing-else-matters"],
+  "genre": "Heavy Metal",
+  "country": "United States",
+  "active_since": "1981",
+  "bio": "Metallica's catalog remains commercially powerful because the band's biggest recordings bridge metal, mainstream rock, and live-performance culture at global scale.",
+  "notable_for": "One of the strongest heavy-metal catalogs in long-tail music economics.",
+  "career_highlight": "The Black Album still drives disproportionate streaming and licensing value decades after release.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "global rock playlist demand",
+    "licensing and sports media use",
+    "deep live-catalog relevance"
+  ]
+}

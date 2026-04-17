@@ -1,0 +1,15 @@
+{
+  "title": "Billie Jean",
+  "slug": "billie-jean",
+  "artist": "michael-jackson",
+  "estimated_revenue": "$1M-$4M/year",
+  "album": "Thriller",
+  "year": 1982,
+  "meaning_summary": "Billie Jean remains one of pop's strongest long-tail recordings because its groove, hook, and cultural familiarity never really left circulation.",
+  "revenue_drivers": [
+    "global streaming demand",
+    "playlist permanence",
+    "licensing and media reuse"
+  ],
+  "related_songs": ["thriller", "beat-it"]
+}

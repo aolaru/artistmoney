@@ -1,0 +1,18 @@
+{
+  "name": "Bee Gees",
+  "slug": "bee-gees",
+  "estimated_income": "$6M-$18M/year",
+  "top_songs": ["stayin-alive", "how-deep-is-your-love"],
+  "genre": "Pop / Disco",
+  "country": "United Kingdom",
+  "active_since": "1963",
+  "bio": "The Bee Gees still monetize at a high level because the Saturday Night Fever-era catalog remains globally recognizable and unusually reusable in film, TV, and playlist culture.",
+  "notable_for": "Disco-era songwriting, soundtrack dominance, and enduring crossover hits.",
+  "career_highlight": "Saturday Night Fever songs remain among the most replayed and licensed disco recordings in the catalog economy.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "soundtrack-era nostalgia",
+    "publishing royalties",
+    "film and TV licensing"
+  ]
+}

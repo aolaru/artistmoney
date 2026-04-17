@@ -1,0 +1,18 @@
+{
+  "name": "Ed Sheeran",
+  "slug": "ed-sheeran",
+  "estimated_income": "$20M-$60M/year",
+  "top_songs": ["shape-of-you", "castle-on-the-hill"],
+  "genre": "Pop",
+  "country": "United Kingdom",
+  "active_since": "2011",
+  "bio": "Ed Sheeran's catalog is built for streaming scale because melody-driven pop songs continue to travel across global playlists and long-tail repeat listening.",
+  "notable_for": "Modern streaming-era songwriting at global scale.",
+  "career_highlight": "Divide remains one of the defining blockbuster pop albums of the streaming era.",
+  "revenue_drivers": [
+    "global streaming scale",
+    "playlist ubiquity",
+    "songwriter-side participation",
+    "catalog permanence in modern pop"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "AC/DC",
+  "slug": "ac-dc",
+  "estimated_income": "$8M-$25M/year",
+  "top_songs": ["back-in-black", "you-shook-me-all-night-long"],
+  "genre": "Hard Rock",
+  "country": "Australia",
+  "active_since": "1973",
+  "bio": "AC/DC's catalog keeps earning because the band's biggest riffs remain deeply embedded in sports media, rock playlists, and global licensing culture.",
+  "notable_for": "One of the most durable hard-rock catalogs ever recorded.",
+  "career_highlight": "Back in Black remains a core long-tail rock album with unusually strong replay and sync value.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "sports and media licensing",
+    "classic-rock radio familiarity",
+    "global merchandise and brand recognition"
+  ]
+}

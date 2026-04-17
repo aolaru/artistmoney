@@ -1,0 +1,15 @@
+{
+  "title": "Thriller",
+  "slug": "thriller",
+  "artist": "michael-jackson",
+  "estimated_revenue": "$900K-$3M/year",
+  "album": "Thriller",
+  "year": 1982,
+  "meaning_summary": "Thriller keeps earning because it combines a blockbuster hook with permanent seasonal and pop-culture replay value.",
+  "revenue_drivers": [
+    "seasonal replay spikes",
+    "catalog streaming",
+    "video-era cultural recognition"
+  ],
+  "related_songs": ["billie-jean", "beat-it"]
+}

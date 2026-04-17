@@ -1,0 +1,18 @@
+{
+  "name": "Michael Jackson",
+  "slug": "michael-jackson",
+  "estimated_income": "$25M-$90M/year",
+  "top_songs": ["billie-jean", "thriller"],
+  "genre": "Pop / R&B",
+  "country": "United States",
+  "active_since": "1971",
+  "bio": "Michael Jackson's catalog remains one of the most commercially durable in pop because global hit density, licensing demand, and multi-generational familiarity keep the songs active.",
+  "notable_for": "Blockbuster album economics, global pop standards, and one of the strongest legacy catalogs in modern music.",
+  "career_highlight": "Thriller and Bad-era recordings still operate at elite catalog scale decades after release.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "global playlist demand",
+    "licensing and media reuse",
+    "estate-led catalog management"
+  ]
+}
