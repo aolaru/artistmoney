@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 27,
-    "song": 27,
-    "album": 27
+    "artist": 28,
+    "song": 28,
+    "album": 28
   },
   "lastTouched": {
     "artist": {
@@ -33,7 +33,8 @@
       "portishead": "2026-04-18T01:57:00.765Z",
       "queen": "2026-04-18T05:02:56.675Z",
       "roxette": "2026-04-18T07:01:25.676Z",
-      "snoop-dogg": "2026-04-18T09:42:47.696Z"
+      "snoop-dogg": "2026-04-18T09:42:47.696Z",
+      "reo-speedwagon": "2026-04-18T12:53:08.545Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -62,7 +63,8 @@
       "crazy": "2026-04-18T01:57:00.765Z",
       "cry-me-a-river": "2026-04-18T05:02:56.675Z",
       "dayvan-cowboy": "2026-04-18T07:01:25.676Z",
-      "diamonds": "2026-04-18T09:42:47.696Z"
+      "diamonds": "2026-04-18T09:42:47.696Z",
+      "dna": "2026-04-18T12:53:08.545Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -82,6 +84,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-18T12:53:08.545Z",
+      "summary": "artist:reo-speedwagon, song:dna"
+    },
     {
       "timestamp": "2026-04-18T09:42:47.696Z",
       "summary": "artist:snoop-dogg, song:diamonds, album:creedence-clearwater-revival-pendulum"
@@ -117,10 +123,6 @@
     {
       "timestamp": "2026-04-17T10:10:44.884Z",
       "summary": "artist:led-zeppelin, song:changes"
-    },
-    {
-      "timestamp": "2026-04-17T07:25:44.773Z",
-      "summary": "artist:kansas, song:carry-on-wayward-son, album:busta-rhymes-when-disaster-strikes"
     }
   ]
 }
