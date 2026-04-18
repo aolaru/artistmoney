@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 23,
-    "song": 23,
-    "album": 23
+    "artist": 24,
+    "song": 24,
+    "album": 24
   },
   "lastTouched": {
     "artist": {
@@ -29,7 +29,8 @@
       "ludacris": "2026-04-17T13:08:26.904Z",
       "montell-jordan": "2026-04-17T15:56:16.152Z",
       "nas": "2026-04-17T18:54:12.653Z",
-      "notorious-big": "2026-04-17T21:37:37.568Z"
+      "notorious-big": "2026-04-17T21:37:37.568Z",
+      "portishead": "2026-04-18T01:57:00.765Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -54,7 +55,8 @@
       "clint-eastwood": "2026-04-17T13:08:26.904Z",
       "come-as-you-are": "2026-04-17T15:56:16.152Z",
       "come-together": "2026-04-17T18:54:12.653Z",
-      "common-people": "2026-04-17T21:37:37.568Z"
+      "common-people": "2026-04-17T21:37:37.568Z",
+      "crazy": "2026-04-18T01:57:00.765Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -68,10 +70,15 @@
       "boston-boston": "2026-04-17T05:23:57.309Z",
       "busta-rhymes-when-disaster-strikes": "2026-04-17T07:25:44.773Z",
       "coldplay-parachutes": "2026-04-17T13:08:26.904Z",
-      "busta-rhymes-the-big-bang": "2026-04-17T18:54:12.653Z"
+      "busta-rhymes-the-big-bang": "2026-04-17T18:54:12.653Z",
+      "coldplay-xandy": "2026-04-18T01:57:00.765Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-18T01:57:00.765Z",
+      "summary": "artist:portishead, song:crazy, album:coldplay-xandy"
+    },
     {
       "timestamp": "2026-04-17T21:37:37.568Z",
       "summary": "artist:notorious-big, song:common-people"
@@ -107,10 +114,6 @@
     {
       "timestamp": "2026-04-16T21:39:11.659Z",
       "summary": "artist:guns-n-roses, song:boys-dont-cry, album:blur-parklife"
-    },
-    {
-      "timestamp": "2026-04-16T19:05:55.400Z",
-      "summary": "artist:fleetwood-mac, song:block-rockin-beats"
     }
   ]
 }

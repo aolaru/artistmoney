@@ -7112,5 +7112,95 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/the-big-bang/1445847151?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Busta%20Rhymes%20The%20Big%20Bang"
     }
+  },
+  "coldplay-xandy": {
+    "releaseDate": "2005-06-06",
+    "label": "Parlophone Records Ltd",
+    "trackCount": 14,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Square One",
+        "durationMs": 287336
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "What If",
+        "durationMs": 297252
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "White Shadows",
+        "durationMs": 328269
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Fix You",
+        "durationMs": 294992
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Talk",
+        "durationMs": 311060
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "X&Y",
+        "durationMs": 274353
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Speed of Sound",
+        "durationMs": 288393
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "A Message",
+        "durationMs": 285482
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Low",
+        "durationMs": 332095
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "The Hardest Part",
+        "durationMs": 265109
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Swallowed in the Sea",
+        "durationMs": 238823
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Twisted Logic",
+        "durationMs": 272162
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Til Kingdom Come",
+        "durationMs": 251055
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Coldplay%20X%26Y",
+      "appleMusic": "https://music.apple.com/us/album/x-y/1123076757?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Coldplay%20X%26Y"
+    }
   }
 } as const;
