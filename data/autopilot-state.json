@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 25,
-    "song": 25,
-    "album": 25
+    "artist": 26,
+    "song": 26,
+    "album": 26
   },
   "lastTouched": {
     "artist": {
@@ -31,7 +31,8 @@
       "nas": "2026-04-17T18:54:12.653Z",
       "notorious-big": "2026-04-17T21:37:37.568Z",
       "portishead": "2026-04-18T01:57:00.765Z",
-      "queen": "2026-04-18T05:02:56.675Z"
+      "queen": "2026-04-18T05:02:56.675Z",
+      "roxette": "2026-04-18T07:01:25.676Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -58,7 +59,8 @@
       "come-together": "2026-04-17T18:54:12.653Z",
       "common-people": "2026-04-17T21:37:37.568Z",
       "crazy": "2026-04-18T01:57:00.765Z",
-      "cry-me-a-river": "2026-04-18T05:02:56.675Z"
+      "cry-me-a-river": "2026-04-18T05:02:56.675Z",
+      "dayvan-cowboy": "2026-04-18T07:01:25.676Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -77,6 +79,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-18T07:01:25.676Z",
+      "summary": "artist:roxette, song:dayvan-cowboy"
+    },
     {
       "timestamp": "2026-04-18T05:02:56.675Z",
       "summary": "artist:queen, song:cry-me-a-river"
@@ -112,10 +118,6 @@
     {
       "timestamp": "2026-04-17T05:23:57.309Z",
       "summary": "artist:jimi-hendrix, song:california-love, album:boston-boston"
-    },
-    {
-      "timestamp": "2026-04-17T02:06:14.021Z",
-      "summary": "artist:ice-cube, song:busy-child, album:boards-of-canada-the-campfire-headphase"
     }
   ]
 }

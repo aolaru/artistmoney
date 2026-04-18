@@ -2,9 +2,19 @@
   "name": "Roxette",
   "slug": "roxette",
   "estimated_income": "$1M-$4M/year",
-  "top_songs": ["listen-to-your-heart", "it-must-have-been-love"],
+  "top_songs": [
+    "listen-to-your-heart",
+    "it-must-have-been-love"
+  ],
   "genre": "Pop Rock",
   "country": "Sweden",
   "active_since": "1986",
-  "bio": "Roxette's strongest songs still generate long-tail streaming and soundtrack-style value because they remain broadly familiar and emotionally legible."
+  "bio": "Roxette's strongest songs still generate long-tail streaming and soundtrack-style value because they remain broadly familiar and emotionally legible.",
+  "notable_for": "Roxette remains closely associated with Listen to Your Heart and It Must Have Been Love, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Listen to Your Heart and It Must Have Been Love still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the strongest songs keep earning after release.",
+    "Broad catalog recognition improves resilience across radio memory, social reuse, and rediscovery.",
+    "Licensing and seasonal or event-driven playback can create recurring revenue spikes."
+  ]
 }
