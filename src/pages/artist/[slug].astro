@@ -4,14 +4,20 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { artistArticles } from "../../data/artistArticles";
 import {
   artists,
+  getArtistConfidence,
   getArtistMethodology,
+  getArtistOverviewText,
   getArtistOwnershipNote,
+  getArtistRevenueContext,
   getArtistVisual,
   getRelatedArtists,
+  rankedArtists,
   songs,
   type Artist
 } from "../../lib/catalog";
 import { getArtistEditorial } from "../../lib/editorial";
+import { formatFreshnessDate, getLatestGitDate } from "../../lib/freshness";
+import { formatRevenueMidpoint, normalizeRevenue } from "../../lib/revenue";
 
 export function getStaticPaths() {
   return artists.map((artist) => ({
@@ -31,8 +37,120 @@ const artistVisual = getArtistVisual(artist);
 const imageSrc = artistVisual.src;
 const editorial = getArtistEditorial(artist, artistSongs);
 const methodology = getArtistMethodology(artist);
+const confidence = getArtistConfidence(artist);
 const ownershipNote = getArtistOwnershipNote(artist);
 const relatedArtists = getRelatedArtists(artist, 4);
+const overviewText = getArtistOverviewText(artist);
+const revenueContext = getArtistRevenueContext(artist).slice(0, 3);
+const artistRank = rankedArtists.findIndex((entry) => entry.artist.slug === artist.slug) + 1;
+const artistPercentile = artistRank > 0 ? Math.max(1, Math.round((artistRank / rankedArtists.length) * 100)) : undefined;
+const activeSinceYear = artist.active_since ? Number(artist.active_since.match(/\d{4}/)?.[0]) : undefined;
+const yearsActive = activeSinceYear ? new Date().getFullYear() - activeSinceYear : undefined;
+const leadRevenue = artist.earnings?.artist_or_estate_share ?? artist.estimated_income;
+const snippetQuestion = `How much money does ${artist.name} make?`;
+const snippetLead = hasDetailedEarnings
+  ? `${artist.name} is modeled at ${leadRevenue} per year on the artist side, with gross catalog revenue and ownership context separated below.`
+  : `${artist.name} is modeled at ${leadRevenue} per year from streaming, publishing, licensing, and long-tail catalog demand.`;
+const snippetSupport = yearsActive && yearsActive >= 10
+  ? `${artist.name} still reads as an earning catalog roughly ${yearsActive} years after becoming active.`
+  : artistRank > 0
+    ? `${artist.name} currently ranks around the top ${artistPercentile}% of tracked artists on the site by modeled artist-side earnings.`
+    : `${artist.name} is modeled using the same catalog-ranking logic applied across the site.`;
+const statItems = [
+  artistRank > 0 ? `Currently ranks around the top ${artistPercentile}% of tracked artists by modeled artist-side earnings` : undefined,
+  activeSinceYear ? `Active since ${activeSinceYear}${yearsActive ? ` and still commercially relevant roughly ${yearsActive} years later` : ""}` : undefined,
+  artistSongs.length ? `${artistSongs.length} tracked top songs currently support this page` : undefined,
+  artist.genre ? `${artist.genre} remains the clearest genre lane for this catalog` : undefined,
+  `${confidence.level} confidence estimate`
+].filter(Boolean);
+const revenueBarCandidates = [
+  artist.earnings?.gross_catalog_revenue
+    ? {
+        label: "Gross catalog revenue",
+        value: artist.earnings.gross_catalog_revenue,
+        midpoint: normalizeRevenue(artist.earnings.gross_catalog_revenue)?.midpoint ?? 0
+      }
+    : undefined,
+  leadRevenue
+    ? {
+        label: "Artist-side share",
+        value: leadRevenue,
+        midpoint: normalizeRevenue(leadRevenue)?.midpoint ?? 0
+      }
+    : undefined,
+  artist.earnings?.label_share
+    ? {
+        label: "Label share",
+        value: artist.earnings.label_share,
+        midpoint: normalizeRevenue(artist.earnings.label_share)?.midpoint ?? 0
+      }
+    : undefined,
+  artist.earnings?.publisher_share
+    ? {
+        label: "Publisher share",
+        value: artist.earnings.publisher_share,
+        midpoint: normalizeRevenue(artist.earnings.publisher_share)?.midpoint ?? 0
+      }
+    : undefined,
+  artist.earnings?.writer_share
+    ? {
+        label: "Writer share",
+        value: artist.earnings.writer_share,
+        midpoint: normalizeRevenue(artist.earnings.writer_share)?.midpoint ?? 0
+      }
+    : undefined
+].filter(Boolean);
+const revenueBarsMax = Math.max(...revenueBarCandidates.map((entry) => entry.midpoint), 0);
+const revenueBars = revenueBarCandidates.map((entry) => ({
+  ...entry,
+  width: revenueBarsMax > 0 ? Math.max(18, Math.round((entry.midpoint / revenueBarsMax) * 100)) : 100
+}));
+const comparisonArtists = relatedArtists
+  .map((relatedArtist) => {
+    const sameCountry = artist.country && relatedArtist.country && artist.country === relatedArtist.country;
+    const sameGenre = artist.genre && relatedArtist.genre && artist.genre === relatedArtist.genre;
+    const sameEra = activeSinceYear && relatedArtist.active_since
+      ? Math.abs(Number(relatedArtist.active_since.match(/\d{4}/)?.[0] ?? 0) - activeSinceYear) <= 10
+      : false;
+    const reasons = [
+      sameGenre ? "same genre" : "",
+      sameCountry ? "same country" : "",
+      sameEra ? "same era" : ""
+    ].filter(Boolean);
+
+    return {
+      artist: relatedArtist,
+      reason: reasons.slice(0, 2).join(" · "),
+      revenueScore: normalizeRevenue(relatedArtist.earnings?.artist_or_estate_share ?? relatedArtist.estimated_income)?.midpoint ?? 0
+    };
+  })
+  .sort((left, right) => right.revenueScore - left.revenueScore)
+  .slice(0, 3);
+const intentQuestions = [
+  {
+    question: `How much does ${artist.name} make in a year?`,
+    answer: snippetLead
+  },
+  {
+    question: `Why does ${artist.name} still make money?`,
+    answer: revenueContext.join(" ")
+  },
+  {
+    question: `Who controls ${artist.name}'s catalog?`,
+    answer: ownershipNote
+  }
+];
+const topArtistsByEarnings = rankedArtists
+  .filter((entry) => entry.artist.slug !== artist.slug)
+  .slice(0, 5);
+const lastUpdated = formatFreshnessDate(
+  getLatestGitDate([
+    `src/data/artists/${artist.slug}.json`,
+    "src/data/artistMetadata.ts",
+    "src/data/artistArticles.ts",
+    "src/pages/artist/[slug].astro"
+  ])
+);
 const artistSchema = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
@@ -67,222 +185,281 @@ const artistSchema = {
       { label: artist.name }
     ]} />
 
-    <div class="artist-hero">
-      <img
-        class="artist-profile-image"
-        src={imageSrc}
-        alt={artistVisual.alt}
-        width="1200"
-        height="900"
-        referrerpolicy="no-referrer"
-      />
-      <div class="artist-hero-copy">
+    <section class="song-page-shell" aria-labelledby="artist-title">
+      <div class="song-primary-flow">
         <p class="eyebrow">Artist</p>
-        <h1>{artist.name}</h1>
-        <p>Artist pages combine meaning, catalog value, and simple money signals.</p>
-        {artistVisual.provider === "appleMusic" && artistVisual.providerLink && (
-          <p class="image-credit">
-            Artwork shown via Apple Music.
-            {" "}
-            <a href={artistVisual.providerLink} rel="noreferrer" target="_blank">Open source track</a>
-          </p>
-        )}
-        {artistVisual.provider === "artistPhoto" && artistVisual.providerLink && (
-          <p class="image-credit">
-            Artist image source:
-            {" "}
-            <a href={artistVisual.providerLink} rel="noreferrer" target="_blank">Wikimedia Commons</a>
-          </p>
-        )}
-      </div>
-    </div>
+        <h1 id="artist-title">{artist.name}</h1>
+        <p class="song-kicker">{[artist.genre, artist.country, artist.active_since].filter(Boolean).join(" · ")}</p>
+        <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+        <p class="confidence-note">
+          This page models artist-side earnings, not just top-line catalog value.
+          {" "}
+          <a href={`${baseUrl}insights/methodology/`}>Why?</a>
+        </p>
 
-    <section aria-labelledby="overview-title">
-      <h2 id="overview-title">Overview</h2>
-      <p>
-        {editorial.overview}
-      </p>
-      {(artist.genre || artist.country || artist.active_since) && (
-        <ul class="meta-list">
-          {artist.genre && <li><strong>Genre:</strong> {artist.genre}</li>}
-          {artist.country && <li><strong>Country:</strong> {artist.country}</li>}
-          {artist.active_since && <li><strong>Active since:</strong> {artist.active_since}</li>}
-        </ul>
-      )}
-    </section>
+        <div class="artist-hero">
+          <img
+            class="artist-profile-image"
+            src={imageSrc}
+            alt={artistVisual.alt}
+            width="1200"
+            height="900"
+            referrerpolicy="no-referrer"
+          />
+          <div class="artist-hero-copy">
+            <p>{overviewText}</p>
+            {artistVisual.provider === "appleMusic" && artistVisual.providerLink && (
+              <p class="image-credit">
+                Artwork shown via Apple Music.
+                {" "}
+                <a href={artistVisual.providerLink} rel="noreferrer" target="_blank">Open source track</a>
+              </p>
+            )}
+            {artistVisual.provider === "artistPhoto" && artistVisual.providerLink && (
+              <p class="image-credit">
+                Artist image source:
+                {" "}
+                <a href={artistVisual.providerLink} rel="noreferrer" target="_blank">Wikimedia Commons</a>
+              </p>
+            )}
+          </div>
+        </div>
 
-    {article && (
-      <>
         <section aria-labelledby="short-answer-title">
           <h2 id="short-answer-title">Short Answer</h2>
-          <p><strong>{article.shortAnswer}</strong></p>
+          <p><strong>{snippetQuestion}</strong></p>
+          <p><strong>{snippetLead}</strong></p>
+          <p>{snippetSupport}</p>
+          <p>{article?.shortAnswer ?? editorial.shortAnswer}</p>
         </section>
 
-        <section aria-labelledby="sources-title">
-          <h2 id="sources-title">Sources</h2>
-          <ul class="meta-list">
-            {article.sources.map((point) => (
+        <section aria-labelledby="stats-title">
+          <h2 id="stats-title">Did You Know?</h2>
+          <ul class="song-bullet-list">
+            {statItems.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          <p class="traffic-magnet-note">
+            {artistRank > 0 && artistPercentile
+              ? `${artist.name} sits in the top ${artistPercentile}% of tracked artists on the site by modeled artist-side earnings.`
+              : `${artist.name} is ranked using the same catalog model applied across the site.`}
+          </p>
+          {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
+        </section>
+
+        {comparisonArtists.length > 0 && (
+          <section aria-labelledby="comparison-title">
+            <h2 id="comparison-title">{artist.name} vs Similar Artists</h2>
+            <div class="comparison-list">
+              <div class="comparison-row comparison-head">
+                <span>Artist</span>
+                <span>Why compare</span>
+                <span>Estimated yearly midpoint</span>
+              </div>
+              <div class="comparison-row comparison-current">
+                <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+                <span>{[artist.genre, artist.country].filter(Boolean).join(" · ") || "current page"}</span>
+                <strong>{formatRevenueMidpoint(normalizeRevenue(leadRevenue)?.midpoint)}</strong>
+              </div>
+              {comparisonArtists.map(({ artist: comparisonArtist, reason, revenueScore }) => (
+                <div class="comparison-row">
+                  <a href={`${baseUrl}artist/${comparisonArtist.slug}/`}>{comparisonArtist.name}</a>
+                  <span>{reason || [comparisonArtist.genre, comparisonArtist.country].filter(Boolean).join(" · ")}</span>
+                  <span>{formatRevenueMidpoint(revenueScore)}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {revenueBars.length > 1 && (
+          <section aria-labelledby="revenue-visual-title">
+            <h2 id="revenue-visual-title">Revenue Breakdown</h2>
+            <div class="revenue-bars">
+              {revenueBars.map((entry) => (
+                <div class="revenue-bar-row">
+                  <div class="revenue-bar-copy">
+                    <strong>{entry.label}</strong>
+                    <span>{entry.value}</span>
+                  </div>
+                  <div class="revenue-bar-track" aria-hidden="true">
+                    <div class="revenue-bar-fill" style={`width: ${entry.width}%`}></div>
+                  </div>
+                  <div class="revenue-bar-scale">{entry.width}% of the lead revenue lane</div>
+                </div>
+              ))}
+            </div>
+            <p class="results-note">Bars reflect modeled annual midpoint ranges, not audited royalty statements.</p>
+          </section>
+        )}
+
+        <section aria-labelledby="strategy-title">
+          <h2 id="strategy-title">Why This Catalog Still Works</h2>
+          <ul class="song-bullet-list">
+            {revenueContext.map((point) => (
               <li>{point}</li>
             ))}
           </ul>
+          <p>{article?.insight ?? editorial.insight}</p>
         </section>
-      </>
-    )}
 
-    {!article && (
-      <section aria-labelledby="sources-title">
-        <h2 id="sources-title">Sources</h2>
-        <ul class="meta-list">
-          {editorial.sources.map((point) => (
-            <li>{point}</li>
-          ))}
-        </ul>
-      </section>
-    )}
+        <section aria-labelledby="questions-title">
+          <h2 id="questions-title">More Questions About {artist.name}</h2>
+          <div class="intent-question-list">
+            {intentQuestions.map((item) => (
+              <article class="intent-question-card">
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-    <section aria-labelledby="income-title">
-      <h2 id="income-title">Estimated Artist-Side Annual Earnings</h2>
-      <ul class="meta-list">
-        <li>{artist.earnings?.artist_or_estate_share ?? artist.estimated_income}</li>
-      </ul>
-      {!article && <p>{editorial.shortAnswer}</p>}
-    </section>
-
-    <section aria-labelledby="methodology-title">
-      <h2 id="methodology-title">Methodology Snapshot</h2>
-      <div class="methodology-card">
-        <p class="methodology-badge">{methodology.confidenceLabel}</p>
-        <p>{methodology.summary}</p>
-        <ul class="meta-list">
-          {methodology.bullets.map((point) => (
-            <li>{point}</li>
-          ))}
-        </ul>
-        <p>
-          <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
-        </p>
-      </div>
-    </section>
-
-    {hasDetailedEarnings && (
-      <>
-        {artist.earnings && (
-          <section aria-labelledby="breakdown-title">
-            <h2 id="breakdown-title">Revenue Breakdown</h2>
-            <ul class="meta-list">
-              {artist.earnings.gross_catalog_revenue && (
-                <li><strong>Estimated gross catalog revenue:</strong> {artist.earnings.gross_catalog_revenue}</li>
-              )}
-              {artist.earnings.artist_or_estate_share && (
-                <li><strong>Estimated artist or estate cut:</strong> {artist.earnings.artist_or_estate_share}</li>
-              )}
-              {artist.earnings.label_share && (
-                <li><strong>Estimated label share:</strong> {artist.earnings.label_share}</li>
-              )}
-              {artist.earnings.publisher_share && (
-                <li><strong>Estimated publisher share:</strong> {artist.earnings.publisher_share}</li>
-              )}
-              {artist.earnings.writer_share && (
-                <li><strong>Estimated writer share:</strong> {artist.earnings.writer_share}</li>
-              )}
-              {artist.earnings.assumptions && (
-                <li><strong>Assumptions:</strong> {artist.earnings.assumptions}</li>
-              )}
-            </ul>
-          </section>
-        )}
-
-        {artist.ownership && (
-          <section aria-labelledby="ownership-title">
-            <h2 id="ownership-title">Ownership and Catalog Status</h2>
-            <ul class="meta-list">
-              {artist.ownership.master_owner && (
-                <li><strong>Masters:</strong> {artist.ownership.master_owner}</li>
-              )}
-              {artist.ownership.publishing_owner && (
-                <li><strong>Publishing:</strong> {artist.ownership.publishing_owner}</li>
-              )}
-              {artist.ownership.catalog_sale_status && (
-                <li><strong>Catalog sale status:</strong> {artist.ownership.catalog_sale_status}</li>
-              )}
-              {artist.ownership.notes && (
-                <li><strong>Notes:</strong> {artist.ownership.notes}</li>
-              )}
-            </ul>
-          </section>
-        )}
-      </>
-    )}
-
-    <section aria-labelledby="ownership-note-title">
-      <h2 id="ownership-note-title">Ownership Note</h2>
-      <p>{ownershipNote}</p>
-    </section>
-
-    <section aria-labelledby="songs-title">
-      <h2 id="songs-title">Top Songs</h2>
-      <ul class="meta-list">
-        {artistSongs.map((song) => (
-          <li>
-            <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
-            {(song.album || song.year) && (
-              <span class="meta-inline">
-                {" "}
-                · {[song.album, song.year].filter(Boolean).join(" · ")}
-              </span>
+        <details class="details-card">
+          <summary>Show ownership and assumptions</summary>
+          <div class="details-card-body">
+            <p>{ownershipNote}</p>
+            {artist.earnings && (
+              <section aria-labelledby="breakdown-title">
+                <h2 id="breakdown-title">Supporting Revenue Context</h2>
+                <ul class="meta-list">
+                  {artist.earnings.gross_catalog_revenue && (
+                    <li><strong>Estimated gross catalog revenue:</strong> {artist.earnings.gross_catalog_revenue}</li>
+                  )}
+                  {artist.earnings.artist_or_estate_share && (
+                    <li><strong>Estimated artist or estate cut:</strong> {artist.earnings.artist_or_estate_share}</li>
+                  )}
+                  {artist.earnings.label_share && (
+                    <li><strong>Estimated label share:</strong> {artist.earnings.label_share}</li>
+                  )}
+                  {artist.earnings.publisher_share && (
+                    <li><strong>Estimated publisher share:</strong> {artist.earnings.publisher_share}</li>
+                  )}
+                  {artist.earnings.writer_share && (
+                    <li><strong>Estimated writer share:</strong> {artist.earnings.writer_share}</li>
+                  )}
+                  {artist.earnings.assumptions && (
+                    <li><strong>Assumptions:</strong> {artist.earnings.assumptions}</li>
+                  )}
+                </ul>
+              </section>
             )}
-          </li>
-        ))}
-      </ul>
+            {artist.ownership && (
+              <section aria-labelledby="ownership-title">
+                <h2 id="ownership-title">Ownership and Catalog Status</h2>
+                <ul class="meta-list">
+                  {artist.ownership.master_owner && (
+                    <li><strong>Masters:</strong> {artist.ownership.master_owner}</li>
+                  )}
+                  {artist.ownership.publishing_owner && (
+                    <li><strong>Publishing:</strong> {artist.ownership.publishing_owner}</li>
+                  )}
+                  {artist.ownership.catalog_sale_status && (
+                    <li><strong>Catalog sale status:</strong> {artist.ownership.catalog_sale_status}</li>
+                  )}
+                  {artist.ownership.notes && (
+                    <li><strong>Notes:</strong> {artist.ownership.notes}</li>
+                  )}
+                </ul>
+              </section>
+            )}
+            <div class="methodology-card">
+              <p class="methodology-badge">{methodology.confidenceLabel}</p>
+              <p>{methodology.summary}</p>
+              <ul class="meta-list">
+                {methodology.bullets.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+              <p>
+                <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
+              </p>
+            </div>
+            <section aria-labelledby="sources-title">
+              <h2 id="sources-title">Sources</h2>
+              <ul class="meta-list">
+                {(article?.sources ?? editorial.sources).map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </section>
+          </div>
+        </details>
+      </div>
+
+      <aside class="song-sidebar">
+        <div class="song-summary-card">
+          <p class="eyebrow">Earnings Snapshot</p>
+          <h2>{leadRevenue}</h2>
+          <ul class="stat-list">
+            {artist.genre && <li><strong>Genre:</strong> {artist.genre}</li>}
+            {artist.country && <li><strong>Country:</strong> {artist.country}</li>}
+            {artist.active_since && <li><strong>Active since:</strong> {artist.active_since}</li>}
+            <li><strong>Confidence:</strong> {confidence.level}</li>
+          </ul>
+        </div>
+
+        {artistSongs.length > 0 && (
+          <section aria-labelledby="songs-title">
+            <h2 id="songs-title">Top Songs</h2>
+            <ul class="meta-list">
+              {artistSongs.map((song) => (
+                <li>
+                  <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+                  {(song.album || song.year) && (
+                    <span class="meta-inline">
+                      {" "}· {[song.album, song.year].filter(Boolean).join(" · ")}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {relatedArtists.length > 0 && (
+          <section aria-labelledby="related-artists-title">
+            <h2 id="related-artists-title">Related Artists</h2>
+            <ul class="meta-list">
+              {relatedArtists.map((relatedArtist) => (
+                <li>
+                  <a href={`${baseUrl}artist/${relatedArtist.slug}/`}>{relatedArtist.name}</a>
+                  <span class="meta-inline">
+                    {" "}· {[relatedArtist.genre, relatedArtist.country].filter(Boolean).join(" · ")}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {(artist.notable_for || artist.career_highlight) && (
+          <section aria-labelledby="highlights-title">
+            <h2 id="highlights-title">Key Career Highlights</h2>
+            <ul class="meta-list">
+              {artist.notable_for && <li><strong>Known for:</strong> {artist.notable_for}</li>}
+              {artist.career_highlight && <li><strong>Highlight:</strong> {artist.career_highlight}</li>}
+            </ul>
+          </section>
+        )}
+
+        {topArtistsByEarnings.length > 0 && (
+          <section aria-labelledby="top-artists-title">
+            <h2 id="top-artists-title">Top Artists by Earnings</h2>
+            <ul class="meta-list">
+              {topArtistsByEarnings.map(({ artist: rankedArtist, revenueScore }) => (
+                <li>
+                  <a href={`${baseUrl}artist/${rankedArtist.slug}/`}>{rankedArtist.name}</a>
+                  <span class="meta-inline">
+                    {" "}· {formatRevenueMidpoint(revenueScore)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </aside>
     </section>
-
-    {relatedArtists.length > 0 && (
-      <section aria-labelledby="related-artists-title">
-        <h2 id="related-artists-title">Related Artists</h2>
-        <ul class="meta-list">
-          {relatedArtists.map((relatedArtist) => (
-            <li>
-              <a href={`${baseUrl}artist/${relatedArtist.slug}/`}>{relatedArtist.name}</a>
-              <span class="meta-inline">
-                {" "}· {[relatedArtist.genre, relatedArtist.country].filter(Boolean).join(" · ")}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
-    )}
-
-    <section aria-labelledby="strategy-title">
-      <h2 id="strategy-title">Revenue Strategy</h2>
-      <ul class="meta-list">
-        {editorial.revenueStrategy.map((point) => (
-          <li>{point}</li>
-        ))}
-      </ul>
-    </section>
-
-    {(artist.notable_for || artist.career_highlight) && (
-      <section aria-labelledby="highlights-title">
-        <h2 id="highlights-title">Key Career Highlights</h2>
-        <ul class="meta-list">
-          {artist.notable_for && <li><strong>Known for:</strong> {artist.notable_for}</li>}
-          {artist.career_highlight && <li><strong>Highlight:</strong> {artist.career_highlight}</li>}
-        </ul>
-      </section>
-    )}
-
-    {article && (
-      <section aria-labelledby="insight-title">
-        <h2 id="insight-title">Insight</h2>
-        <p>{article.insight}</p>
-      </section>
-    )}
-
-    {!article && (
-      <section aria-labelledby="insight-title">
-        <h2 id="insight-title">Insight</h2>
-        <p>{editorial.insight}</p>
-      </section>
-    )}
   </article>
 </BaseLayout>

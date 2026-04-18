@@ -19,6 +19,7 @@ import {
   type Song
 } from "../../lib/catalog";
 import { getSongEditorial } from "../../lib/editorial";
+import { formatFreshnessDate, getLatestGitDate } from "../../lib/freshness";
 import { formatRevenueMidpoint } from "../../lib/revenue";
 
 export function getStaticPaths() {
@@ -182,6 +183,14 @@ const intentQuestions = [
 const topEarningSongs = rankedSongs
   .filter((entry) => entry.song.slug !== song.slug)
   .slice(0, 5);
+const lastUpdated = formatFreshnessDate(
+  getLatestGitDate([
+    `src/data/songs/${song.slug}.json`,
+    "src/data/songMetadata.ts",
+    "src/data/songArticles.ts",
+    "src/pages/song/[slug].astro"
+  ])
+);
 const trafficMagnetNote = songRank > 0 && catalogPercentile
   ? `${song.title} sits in the top ${catalogPercentile}% of tracked songs on the site by modeled artist-side earnings.`
   : `${song.title} is positioned here using the same catalog ranking model applied across the site.`;
@@ -283,7 +292,7 @@ const songSchema = {
             ))}
           </ul>
           <p class="traffic-magnet-note">{trafficMagnetNote}</p>
-          <p class="results-note">Last updated: April 2026</p>
+          {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
         </section>
 
         {comparisonSongs.length > 0 && (

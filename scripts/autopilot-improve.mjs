@@ -9,12 +9,13 @@ const rootDir = path.resolve(__dirname, "..");
 const artistDir = path.join(rootDir, "src", "data", "artists");
 const songDir = path.join(rootDir, "src", "data", "songs");
 const albumMetadataPath = path.join(rootDir, "src", "data", "albumMetadata.ts");
+const artistMetadataPath = path.join(rootDir, "src", "data", "artistMetadata.ts");
 const statePath = path.join(rootDir, "data", "autopilot-state.json");
 const summaryDir = path.join(rootDir, ".autopilot");
 const summaryPath = path.join(summaryDir, "summary.md");
 const outputPath = path.join(summaryDir, "result.json");
 
-const artistMissingFields = ["bio", "notable_for", "career_highlight", "revenue_drivers"];
+const artistMissingFields = ["genre", "country", "active_since", "bio", "notable_for", "career_highlight", "revenue_drivers"];
 const songMissingFields = ["meaning_summary", "revenue_drivers", "related_songs"];
 const albumMissingFields = ["fullTracklist"];
 const bannedPhrases = [
@@ -135,40 +136,40 @@ function artistRevenueDrivers(artist) {
 
   if (family === "hip-hop") {
     return [
-      "Catalog streaming keeps legacy rap records active long after their original chart run.",
-      "Playlist placement and cultural recognition help the biggest songs sustain repeat listening.",
-      "Licensing, sampling, and nostalgia-driven discovery continue to support long-tail earnings."
+      "Recognizable catalog cuts keep drawing repeat streaming long after the original release cycle.",
+      "Playlist memory and cultural recall help the strongest records stay active.",
+      "Sampling, sync use, and nostalgia spikes can lift the baseline."
     ];
   }
 
   if (family === "electronic") {
     return [
-      "Long-tail streaming and electronic playlist use keep the catalog commercially active.",
-      "Dedicated fan listening and reissue interest deepen catalog value beyond headline singles.",
-      "Sync-friendly instrumentals or mood-driven tracks can extend revenue over time."
+      "Long-tail streaming and mood-based playlists keep the catalog commercially active.",
+      "Deep-fan listening and reissue interest add value beyond the headline tracks.",
+      "Instrumental or atmosphere-driven tracks can stay useful for sync over time."
     ];
   }
 
   if (family === "pop") {
     return [
-      "Repeat streaming and playlist familiarity help the strongest songs keep earning after release.",
-      "Broad catalog recognition improves resilience across radio memory, social reuse, and rediscovery.",
-      "Licensing and seasonal or event-driven playback can create recurring revenue spikes."
+      "Repeat streaming and playlist familiarity help the biggest songs keep earning after release.",
+      "Broad recognition supports social reuse, rediscovery, and steady catalog listening.",
+      "Licensing and event-driven playback can create recurring spikes."
     ];
   }
 
   if (family === "rock") {
     return [
-      "Classic catalog streaming keeps major songs active well beyond the original release cycle.",
-      "Playlist longevity and generational rediscovery support steady long-tail listening.",
-      "Film, television, sports, and trailer usage can reactivate demand for familiar recordings."
+      "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
+      "Generational rediscovery supports durable long-tail listening.",
+      "Film, television, sports, and trailer use can reactivate familiar recordings."
     ];
   }
 
   return [
-    "Catalog streaming sustains earnings even after the original release cycle ends.",
-    "Playlist use and listener rediscovery keep durable songs in circulation.",
-    "Licensing and long-tail audience demand help extend catalog value over time."
+    "Catalog streaming sustains earnings after the original release cycle ends.",
+    "Playlist use and rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand extend catalog value over time."
   ];
 }
 
@@ -177,40 +178,40 @@ function songRevenueDrivers(song, artist) {
 
   if (family === "hip-hop") {
     return [
-      "Catalog streaming remains the main long-tail revenue source for recognizable rap tracks.",
-      "Playlist placement and cultural recall help the song stay commercially active.",
-      "Sampling, sync opportunities, and short-form rediscovery can extend earnings."
+      "Catalog streaming remains the main long-tail driver for recognizable rap tracks.",
+      "Playlist placement and cultural recall help the song stay active.",
+      "Sampling, sync use, and short-form rediscovery can extend earnings."
     ];
   }
 
   if (family === "electronic") {
     return [
       "Playlist and mood-based streaming support repeat listening over long periods.",
-      "Electronic tracks can keep earning through steady niche demand and reissue interest.",
-      "Licensing and soundtrack-style use can materially improve long-tail economics."
+      "Steady niche demand and reissue interest can keep the track earning.",
+      "Licensing and soundtrack-style use can materially improve the long tail."
     ];
   }
 
   if (family === "pop") {
     return [
-      "Streaming scale and playlist inclusion remain the largest recurring revenue drivers.",
+      "Streaming scale and playlist inclusion remain the largest recurring drivers.",
       "A durable hook and broad familiarity help the song keep earning across catalog listening.",
-      "Sync, social reuse, and seasonal spikes can add to the baseline stream count."
+      "Sync, social reuse, and seasonal spikes can lift the baseline."
     ];
   }
 
   if (family === "rock") {
     return [
-      "Classic replay value and catalog streaming keep major rock songs commercially relevant.",
-      "Playlist placement and cultural familiarity support long-tail listener demand.",
+      "Classic replay value and catalog streaming keep major rock songs relevant.",
+      "Cultural familiarity supports long-tail listener demand.",
       "Sync placements and live-culture recognition help extend the song's revenue life."
     ];
   }
 
   return [
     "Streaming and catalog discovery keep the song generating recurring revenue.",
-    "Playlist longevity supports steady repeat listening over time.",
-    "Licensing and cultural familiarity can create additional earnings beyond baseline streams."
+    "Playlist longevity supports steady repeat listening.",
+    "Licensing and cultural familiarity can add earnings beyond baseline streams."
   ];
 }
 
@@ -218,22 +219,22 @@ function songMeaningSummary(song, artist) {
   const family = genreFamily(artist?.genre);
 
   if (family === "hip-hop") {
-    return "This track pairs a memorable hook with strong cultural recall, which helps explain both its emotional staying power and its long-tail commercial value.";
+    return "This track pairs a memorable hook with strong cultural recall, which helps explain its staying power and long-tail commercial value.";
   }
 
   if (family === "electronic") {
-    return "This recording leans on atmosphere, texture, and replayable mood, which makes it durable in both listener memory and long-tail streaming.";
+    return "This recording leans on atmosphere, texture, and replayable mood, which makes it durable in listener memory and long-tail streaming.";
   }
 
   if (family === "pop") {
-    return "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable over time.";
+    return "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.";
   }
 
   if (family === "rock") {
-    return "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay across catalog listening.";
+    return "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay.";
   }
 
-  return `${song.title} stays commercially durable because it is emotionally direct, easy to revisit, and well suited to long-tail catalog listening.`;
+  return `${song.title} stays durable because it is easy to revisit and well suited to long-tail catalog listening.`;
 }
 
 async function readJsonCollection(directory) {
@@ -336,27 +337,44 @@ function validateSongRecord(song, songMap) {
 }
 
 function mergeArtistBackfill(artist, songMap) {
+  const artistMetadata = globalThis.__artistMetadata?.[artist.slug];
   const topSongTitles = artist.top_songs
     .map((slug) => songMap.get(slug)?.title ?? titleizeSlug(slug))
     .slice(0, 2);
 
   const updates = {};
 
+  if (!artist.genre && artistMetadata?.genre) {
+    updates.genre = artistMetadata.genre;
+  }
+
+  if (!artist.country && artistMetadata?.country) {
+    updates.country = artistMetadata.country;
+  }
+
+  if (!artist.active_since && artistMetadata?.activeSince) {
+    updates.active_since = artistMetadata.activeSince;
+  }
+
   if (!artist.bio) {
-    const catalogDescriptor = artist.genre ? `${lowerPhrase(artist.genre, "music")} catalog` : "catalog";
-    updates.bio = `${artist.name} has a durable ${catalogDescriptor} that continues to attract listeners through streaming, playlists, and long-tail discovery.`;
+    if (artistMetadata?.summary) {
+      updates.bio = artistMetadata.summary;
+    } else {
+      const catalogDescriptor = artist.genre ? `${lowerPhrase(artist.genre, "music")} catalog` : "catalog";
+      updates.bio = `${artist.name} has a durable ${catalogDescriptor} that continues to attract listeners through streaming, playlists, and replay value.`;
+    }
   }
 
   if (!artist.notable_for) {
     updates.notable_for = topSongTitles.length > 0
-      ? `${artist.name} remains closely associated with ${topSongTitles.join(" and ")}, which continue to anchor catalog attention.`
+      ? `${artist.name} remains closely associated with ${topSongTitles.join(" and ")}, which still anchor attention around the catalog.`
       : `${artist.name} maintains a catalog with durable replay value and recurring listener demand.`;
   }
 
   if (!artist.career_highlight) {
     updates.career_highlight = topSongTitles.length > 0
       ? `Songs like ${topSongTitles.join(" and ")} still help define the catalog's long-tail earnings profile.`
-      : "The catalog still shows long-tail value through streaming, playlisting, and recurring discovery.";
+      : "The catalog still shows long-tail value through streaming, playlist placement, and recurring discovery.";
   }
 
   if (!artist.revenue_drivers) {
@@ -443,6 +461,7 @@ async function writeSummary(result) {
 }
 
 export async function main() {
+  globalThis.__artistMetadata = await loadExportedDataModule(artistMetadataPath, "artistMetadata");
   const albumMetadata = await loadExportedDataModule(albumMetadataPath, "albumMetadata");
   const state = await readState();
   const artistFiles = await readJsonCollection(artistDir);
