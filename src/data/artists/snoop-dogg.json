@@ -2,5 +2,16 @@
   "name": "Snoop Dogg",
   "slug": "snoop-dogg",
   "estimated_income": "$10M-$30M/year",
-  "top_songs": ["drop-it-like-its-hot", "gin-and-juice"]
+  "top_songs": [
+    "drop-it-like-its-hot",
+    "gin-and-juice"
+  ],
+  "bio": "Snoop Dogg has a durable catalog that continues to attract listeners through streaming, playlists, and long-tail discovery.",
+  "notable_for": "Snoop Dogg remains closely associated with Drop It Like It's Hot and Gin and Juice, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Drop It Like It's Hot and Gin and Juice still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings even after the original release cycle ends.",
+    "Playlist use and listener rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand help extend catalog value over time."
+  ]
 }

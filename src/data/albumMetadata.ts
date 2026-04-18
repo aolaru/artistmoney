@@ -7202,5 +7202,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/x-y/1123076757?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Coldplay%20X%26Y"
     }
+  },
+  "creedence-clearwater-revival-pendulum": {
+    "releaseDate": "1970-12-15",
+    "label": "Concord Music Group",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Pagan Baby",
+        "durationMs": 385047
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Sailor's Lament",
+        "durationMs": 231355
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Chameleon",
+        "durationMs": 199635
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Have You Ever Seen the Rain?",
+        "durationMs": 162098
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "(Wish I Could) Hideaway",
+        "durationMs": 228973
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Born To Move",
+        "durationMs": 340404
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Hey Tonight",
+        "durationMs": 165321
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "It's Just a Thought",
+        "durationMs": 235219
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Molina",
+        "durationMs": 164941
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Rude Awakening #2",
+        "durationMs": 380888
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Creedence%20Clearwater%20Revival%20Pendulum",
+      "appleMusic": "https://music.apple.com/us/album/pendulum/1440948020?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Creedence%20Clearwater%20Revival%20Pendulum"
+    }
   }
 } as const;
