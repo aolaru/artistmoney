@@ -2,8 +2,19 @@
   "name": "Steve Perry",
   "slug": "steve-perry",
   "estimated_income": "$500K-$2M/year",
-  "top_songs": ["oh-sherrie", "foolish-heart"],
+  "top_songs": [
+    "oh-sherrie",
+    "foolish-heart"
+  ],
   "genre": "Rock / Pop",
   "country": "United States",
-  "active_since": "1970"
+  "active_since": "1970",
+  "bio": "Steve Perry has a durable rock / pop catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "Steve Perry remains closely associated with Oh Sherrie and Foolish Heart, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Oh Sherrie and Foolish Heart still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the biggest songs keep earning after release.",
+    "Broad recognition supports social reuse, rediscovery, and steady catalog listening.",
+    "Licensing and event-driven playback can create recurring spikes."
+  ]
 }

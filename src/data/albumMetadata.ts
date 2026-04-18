@@ -7274,5 +7274,71 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/pendulum/1440948020?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Creedence%20Clearwater%20Revival%20Pendulum"
     }
+  },
+  "dire-straits-brothers-in-arms": {
+    "releaseDate": "1985-05-17",
+    "label": "Mercury Records Ltd. (London)",
+    "trackCount": 9,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "So Far Away",
+        "durationMs": 312133
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Money for Nothing",
+        "durationMs": 506400
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Walk of Life",
+        "durationMs": 252507
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Your Latest Trick",
+        "durationMs": 393867
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Why Worry",
+        "durationMs": 511293
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Ride Across the River",
+        "durationMs": 417907
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "The Man's Too Strong",
+        "durationMs": 280427
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "One World",
+        "durationMs": 220773
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Brothers In Arms",
+        "durationMs": 419400
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Dire%20Straits%20Brothers%20in%20Arms",
+      "appleMusic": "https://music.apple.com/us/album/brothers-in-arms/299545299?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Dire%20Straits%20Brothers%20in%20Arms"
+    }
   }
 } as const;

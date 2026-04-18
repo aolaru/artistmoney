@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 29,
-    "song": 29,
-    "album": 29
+    "artist": 30,
+    "song": 30,
+    "album": 30
   },
   "lastTouched": {
     "artist": {
@@ -35,7 +35,8 @@
       "roxette": "2026-04-18T07:01:25.676Z",
       "snoop-dogg": "2026-04-18T09:42:47.696Z",
       "reo-speedwagon": "2026-04-18T12:53:08.545Z",
-      "rihanna": "2026-04-18T15:34:00.646Z"
+      "rihanna": "2026-04-18T15:34:00.646Z",
+      "steve-perry": "2026-04-18T18:40:37.357Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -66,7 +67,8 @@
       "dayvan-cowboy": "2026-04-18T07:01:25.676Z",
       "diamonds": "2026-04-18T09:42:47.696Z",
       "dna": "2026-04-18T12:53:08.545Z",
-      "dont-look-back-in-anger": "2026-04-18T15:34:00.646Z"
+      "dont-look-back-in-anger": "2026-04-18T15:34:00.646Z",
+      "dream-on": "2026-04-18T18:40:37.357Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -82,10 +84,15 @@
       "coldplay-parachutes": "2026-04-17T13:08:26.904Z",
       "busta-rhymes-the-big-bang": "2026-04-17T18:54:12.653Z",
       "coldplay-xandy": "2026-04-18T01:57:00.765Z",
-      "creedence-clearwater-revival-pendulum": "2026-04-18T09:42:47.696Z"
+      "creedence-clearwater-revival-pendulum": "2026-04-18T09:42:47.696Z",
+      "dire-straits-brothers-in-arms": "2026-04-18T18:40:37.357Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-18T18:40:37.357Z",
+      "summary": "artist:steve-perry, song:dream-on, album:dire-straits-brothers-in-arms"
+    },
     {
       "timestamp": "2026-04-18T15:34:00.646Z",
       "summary": "artist:rihanna, song:dont-look-back-in-anger"
@@ -121,10 +128,6 @@
     {
       "timestamp": "2026-04-17T15:56:16.152Z",
       "summary": "artist:montell-jordan, song:come-as-you-are"
-    },
-    {
-      "timestamp": "2026-04-17T13:08:26.904Z",
-      "summary": "artist:ludacris, song:clint-eastwood, album:coldplay-parachutes"
     }
   ]
 }
