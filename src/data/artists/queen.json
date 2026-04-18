@@ -2,9 +2,19 @@
   "name": "Queen",
   "slug": "queen",
   "estimated_income": "$10M-$35M/year",
-  "top_songs": ["bohemian-rhapsody", "dont-stop-me-now"],
+  "top_songs": [
+    "bohemian-rhapsody",
+    "dont-stop-me-now"
+  ],
   "genre": "Classic Rock / Pop",
   "country": "United Kingdom",
   "active_since": "1970",
-  "bio": "Queen remains one of the highest-value evergreen catalogs in the world because of extreme song familiarity, sports and media reuse, and constant global replay."
+  "bio": "Queen remains one of the highest-value evergreen catalogs in the world because of extreme song familiarity, sports and media reuse, and constant global replay.",
+  "notable_for": "Queen remains closely associated with Bohemian Rhapsody and Don't Stop Me Now, which continue to anchor catalog attention.",
+  "career_highlight": "Songs like Bohemian Rhapsody and Don't Stop Me Now still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the strongest songs keep earning after release.",
+    "Broad catalog recognition improves resilience across radio memory, social reuse, and rediscovery.",
+    "Licensing and seasonal or event-driven playback can create recurring revenue spikes."
+  ]
 }

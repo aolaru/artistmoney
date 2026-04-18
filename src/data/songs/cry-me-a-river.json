@@ -18,5 +18,14 @@
     "publishing_owner": "Publishing appears split across writers and producers",
     "catalog_sale_status": "No song-specific sale adjustment is assumed",
     "notes": "Modeled from long-tail catalog behavior and not from public royalty statements."
-  }
+  },
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable over time.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring revenue drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can add to the baseline stream count."
+  ],
+  "related_songs": [
+    "sexyback"
+  ]
 }
