@@ -2,5 +2,20 @@
   "name": "The Beatles",
   "slug": "the-beatles",
   "estimated_income": "$8M-$20M/year",
-  "top_songs": ["hey-jude", "let-it-be", "come-together"]
+  "top_songs": [
+    "hey-jude",
+    "let-it-be",
+    "come-together"
+  ],
+  "genre": "Rock / Pop",
+  "country": "United Kingdom",
+  "active_since": "1962",
+  "bio": "The Beatles remain one of the most valuable music catalogs in the world, with unmatched long-term global demand.",
+  "notable_for": "The Beatles remains closely associated with Hey Jude and Let It Be, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Hey Jude and Let It Be still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings after the original release cycle ends.",
+    "Playlist use and rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand extend catalog value over time."
+  ]
 }

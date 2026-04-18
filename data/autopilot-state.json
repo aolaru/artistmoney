@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 30,
-    "song": 30,
-    "album": 30
+    "artist": 31,
+    "song": 31,
+    "album": 31
   },
   "lastTouched": {
     "artist": {
@@ -36,7 +36,8 @@
       "snoop-dogg": "2026-04-18T09:42:47.696Z",
       "reo-speedwagon": "2026-04-18T12:53:08.545Z",
       "rihanna": "2026-04-18T15:34:00.646Z",
-      "steve-perry": "2026-04-18T18:40:37.357Z"
+      "steve-perry": "2026-04-18T18:40:37.357Z",
+      "the-beatles": "2026-04-18T21:29:54.187Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -68,7 +69,8 @@
       "diamonds": "2026-04-18T09:42:47.696Z",
       "dna": "2026-04-18T12:53:08.545Z",
       "dont-look-back-in-anger": "2026-04-18T15:34:00.646Z",
-      "dream-on": "2026-04-18T18:40:37.357Z"
+      "dream-on": "2026-04-18T18:40:37.357Z",
+      "drop-it-like-its-hot": "2026-04-18T21:29:54.187Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -89,6 +91,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-18T21:29:54.187Z",
+      "summary": "artist:the-beatles, song:drop-it-like-its-hot"
+    },
     {
       "timestamp": "2026-04-18T18:40:37.357Z",
       "summary": "artist:steve-perry, song:dream-on, album:dire-straits-brothers-in-arms"
@@ -124,10 +130,6 @@
     {
       "timestamp": "2026-04-17T18:54:12.653Z",
       "summary": "artist:nas, song:come-together, album:busta-rhymes-the-big-bang"
-    },
-    {
-      "timestamp": "2026-04-17T15:56:16.152Z",
-      "summary": "artist:montell-jordan, song:come-as-you-are"
     }
   ]
 }
