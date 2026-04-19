@@ -16,5 +16,14 @@
     "publishing_owner": "Publishing appears split across songwriters and rightsholders",
     "catalog_sale_status": "No full catalog sale assumed at the song level",
     "notes": "This is a gross-to-net estimate, not a public royalty statement."
-  }
+  },
+  "meaning_summary": "Gangsta's Paradise stays durable because it is easy to revisit and well suited to long-tail catalog listening.",
+  "revenue_drivers": [
+    "Streaming and catalog discovery keep the song generating recurring revenue.",
+    "Playlist longevity supports steady repeat listening.",
+    "Licensing and cultural familiarity can add earnings beyond baseline streams."
+  ],
+  "related_songs": [
+    "fantastic-voyage"
+  ]
 }

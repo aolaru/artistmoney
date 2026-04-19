@@ -7766,5 +7766,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/youve-come-a-long-way-baby/714927896?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Fatboy%20Slim%20You've%20Come%20a%20Long%20Way%2C%20Baby"
     }
+  },
+  "foreigner-agent-provocateur": {
+    "releaseDate": "1984-12-07",
+    "label": "Atlantic Recording Corporation for the United States and WEA International Inc. for the world outside of the United States.",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Tooth and Nail",
+        "durationMs": 235200
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "That Was Yesterday",
+        "durationMs": 229053
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "I Want to Know What Love Is",
+        "durationMs": 304787
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Growing Up the Hard Way",
+        "durationMs": 253867
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Reaction to Action",
+        "durationMs": 212000
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Stranger In My Own House",
+        "durationMs": 304973
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "A Love In Vain",
+        "durationMs": 271027
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Down On Love",
+        "durationMs": 249933
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Two Different Worlds",
+        "durationMs": 271827
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "She's Too Tough",
+        "durationMs": 190640
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Foreigner%20Agent%20Provocateur",
+      "appleMusic": "https://music.apple.com/us/album/agent-provocateur/216663946?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Foreigner%20Agent%20Provocateur"
+    }
   }
 } as const;
