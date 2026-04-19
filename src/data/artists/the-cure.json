@@ -2,5 +2,20 @@
   "name": "The Cure",
   "slug": "the-cure",
   "estimated_income": "$1M-$4M/year",
-  "top_songs": ["friday-im-in-love", "just-like-heaven", "boys-dont-cry"]
+  "top_songs": [
+    "friday-im-in-love",
+    "just-like-heaven",
+    "boys-dont-cry"
+  ],
+  "genre": "Alternative rock",
+  "country": "United Kingdom",
+  "active_since": "1978",
+  "bio": "The Cure's dark-pop and alternative staples continue to perform through touring, nostalgia, and playlist placement.",
+  "notable_for": "The Cure remains closely associated with Friday I'm in Love and Just Like Heaven, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Friday I'm in Love and Just Like Heaven still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings after the original release cycle ends.",
+    "Playlist use and rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand extend catalog value over time."
+  ]
 }

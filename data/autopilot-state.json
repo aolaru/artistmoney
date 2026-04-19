@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 32,
-    "song": 32,
-    "album": 32
+    "artist": 33,
+    "song": 33,
+    "album": 33
   },
   "lastTouched": {
     "artist": {
@@ -38,7 +38,8 @@
       "rihanna": "2026-04-18T15:34:00.646Z",
       "steve-perry": "2026-04-18T18:40:37.357Z",
       "the-beatles": "2026-04-18T21:29:54.187Z",
-      "the-chemical-brothers": "2026-04-19T02:10:32.021Z"
+      "the-chemical-brothers": "2026-04-19T02:10:32.021Z",
+      "the-cure": "2026-04-19T05:24:40.140Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -72,7 +73,8 @@
       "dont-look-back-in-anger": "2026-04-18T15:34:00.646Z",
       "dream-on": "2026-04-18T18:40:37.357Z",
       "drop-it-like-its-hot": "2026-04-18T21:29:54.187Z",
-      "empire-state-of-mind": "2026-04-19T02:10:32.021Z"
+      "empire-state-of-mind": "2026-04-19T02:10:32.021Z",
+      "everybody-hurts": "2026-04-19T05:24:40.140Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -93,6 +95,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-19T05:24:40.140Z",
+      "summary": "artist:the-cure, song:everybody-hurts"
+    },
     {
       "timestamp": "2026-04-19T02:10:32.021Z",
       "summary": "artist:the-chemical-brothers, song:empire-state-of-mind"
@@ -128,10 +134,6 @@
     {
       "timestamp": "2026-04-18T01:57:00.765Z",
       "summary": "artist:portishead, song:crazy, album:coldplay-xandy"
-    },
-    {
-      "timestamp": "2026-04-17T21:37:37.568Z",
-      "summary": "artist:notorious-big, song:common-people"
     }
   ]
 }
