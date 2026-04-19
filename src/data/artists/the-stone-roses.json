@@ -2,9 +2,19 @@
   "name": "The Stone Roses",
   "slug": "the-stone-roses",
   "estimated_income": "$800K-$2.8M/year",
-  "top_songs": ["i-wanna-be-adored", "fools-gold"],
+  "top_songs": [
+    "i-wanna-be-adored",
+    "fools-gold"
+  ],
   "genre": "Alternative Rock / Madchester",
   "country": "United Kingdom",
   "active_since": "1983",
-  "bio": "The Stone Roses still earn through cult-canon status, British alternative nostalgia, and the enduring value of a compact but iconic catalog."
+  "bio": "The Stone Roses still earn through cult-canon status, British alternative nostalgia, and the enduring value of a compact but iconic catalog.",
+  "notable_for": "The Stone Roses remains closely associated with I Wanna Be Adored and Fools Gold, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like I Wanna Be Adored and Fools Gold still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
+    "Generational rediscovery supports durable long-tail listening.",
+    "Film, television, sports, and trailer use can reactivate familiar recordings."
+  ]
 }
