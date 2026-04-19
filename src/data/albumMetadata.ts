@@ -7442,5 +7442,155 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/and-then-there-was-x/1444117538?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=DMX%20...And%20Then%20There%20Was%20X"
     }
+  },
+  "dr-dre-2001": {
+    "releaseDate": "1999-11-16",
+    "label": "Aftermath Entertainment/Interscope Records",
+    "trackCount": 23,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Lolo (Intro)",
+        "durationMs": 40987
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "The Watcher",
+        "durationMs": 206573
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "F*** You (feat. Devin a/k/a The Dude & Snoop Dogg)",
+        "durationMs": 205413
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Still D.R.E. (feat. Snoop Dogg)",
+        "durationMs": 270560
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Big Ego's (feat. Hittman)",
+        "durationMs": 237667
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Xxplosive (feat. Hittman, Six-Two, Nate Dogg & Kurupt)",
+        "durationMs": 169973
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "What's the Difference (feat. Eminem & Alvin Joiner)",
+        "durationMs": 244240
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Bar One",
+        "durationMs": 50520
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Light Speed (feat. Hittman)",
+        "durationMs": 161000
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Forgot About Dre (feat. Eminem)",
+        "durationMs": 222253
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "The Next Episode (feat. Snoop Dogg)",
+        "durationMs": 161547
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Let's Get High (feat. Hittman, Ms. Roq & Kurupt)",
+        "durationMs": 147413
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Bi*** Ni**az (feat. Hittman, Six-Two & Snoop Dogg)",
+        "durationMs": 253533
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "The Car Bomb",
+        "durationMs": 60893
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Murder Ink (feat. Hittman & Ms. Roq)",
+        "durationMs": 148347
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Ed-Ucation (feat. Hittman & Ms. Roq)",
+        "durationMs": 92093
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "Some L.A. N****z (feat. Hittman, Ms. Roq, Knoc-Turn'al, Time Bomb, Koka Kambon, Defari, MC Ren & Alvin Joiner)",
+        "durationMs": 269800
+      },
+      {
+        "discNumber": 1,
+        "number": 18,
+        "title": "Pause 4 Porno",
+        "durationMs": 83453
+      },
+      {
+        "discNumber": 1,
+        "number": 19,
+        "title": "Housewife (feat. Hittman & Kurupt)",
+        "durationMs": 242667
+      },
+      {
+        "discNumber": 1,
+        "number": 20,
+        "title": "Ackrite (feat. Hittman)",
+        "durationMs": 219960
+      },
+      {
+        "discNumber": 1,
+        "number": 21,
+        "title": "Bang Bang (feat. Hittman & Knoc-Turn'al)",
+        "durationMs": 222333
+      },
+      {
+        "discNumber": 1,
+        "number": 22,
+        "title": "The Message (feat. Mary J. Blige & Rell) [Non]",
+        "durationMs": 303973
+      },
+      {
+        "discNumber": 1,
+        "number": 23,
+        "title": "Outro (Non)",
+        "durationMs": 25507
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Dr.%20Dre%202001",
+      "appleMusic": "https://music.apple.com/us/album/2001/1444156266?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Dr.%20Dre%202001"
+    }
   }
 } as const;

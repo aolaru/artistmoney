@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 34,
-    "song": 34,
-    "album": 34
+    "artist": 35,
+    "song": 35,
+    "album": 35
   },
   "lastTouched": {
     "artist": {
@@ -40,7 +40,8 @@
       "the-beatles": "2026-04-18T21:29:54.187Z",
       "the-chemical-brothers": "2026-04-19T02:10:32.021Z",
       "the-cure": "2026-04-19T05:24:40.140Z",
-      "the-eagles": "2026-04-19T07:13:05.022Z"
+      "the-eagles": "2026-04-19T07:13:05.022Z",
+      "the-smashing-pumpkins": "2026-04-19T09:42:13.620Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -76,7 +77,8 @@
       "drop-it-like-its-hot": "2026-04-18T21:29:54.187Z",
       "empire-state-of-mind": "2026-04-19T02:10:32.021Z",
       "everybody-hurts": "2026-04-19T05:24:40.140Z",
-      "fallin": "2026-04-19T07:13:05.022Z"
+      "fallin": "2026-04-19T07:13:05.022Z",
+      "fix-you": "2026-04-19T09:42:13.620Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -94,10 +96,15 @@
       "coldplay-xandy": "2026-04-18T01:57:00.765Z",
       "creedence-clearwater-revival-pendulum": "2026-04-18T09:42:47.696Z",
       "dire-straits-brothers-in-arms": "2026-04-18T18:40:37.357Z",
-      "dmx-and-then-there-was-x": "2026-04-19T07:13:05.022Z"
+      "dmx-and-then-there-was-x": "2026-04-19T07:13:05.022Z",
+      "dr-dre-2001": "2026-04-19T09:42:13.620Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-19T09:42:13.620Z",
+      "summary": "artist:the-smashing-pumpkins, song:fix-you, album:dr-dre-2001"
+    },
     {
       "timestamp": "2026-04-19T07:13:05.022Z",
       "summary": "artist:the-eagles, song:fallin, album:dmx-and-then-there-was-x"
@@ -133,10 +140,6 @@
     {
       "timestamp": "2026-04-18T07:01:25.676Z",
       "summary": "artist:roxette, song:dayvan-cowboy"
-    },
-    {
-      "timestamp": "2026-04-18T05:02:56.675Z",
-      "summary": "artist:queen, song:cry-me-a-river"
     }
   ]
 }
