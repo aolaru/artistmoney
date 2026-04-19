@@ -7592,5 +7592,101 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/2001/1444156266?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Dr.%20Dre%202001"
     }
+  },
+  "elvis-presley-blue-hawaii": {
+    "releaseDate": "1961-10-01",
+    "label": "Sony Music Entertainment",
+    "trackCount": 14,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Blue Hawaii",
+        "durationMs": 157026
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Almost Always True",
+        "durationMs": 144182
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Aloha Oe",
+        "durationMs": 115017
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "No More",
+        "durationMs": 144184
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Can't Help Falling In Love",
+        "durationMs": 185878
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Rock-A-Hula Baby",
+        "durationMs": 123863
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Moonlight Swim",
+        "durationMs": 141146
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Ku-U-I-Po",
+        "durationMs": 143168
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Ito Eats",
+        "durationMs": 84914
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Slicin' Sand",
+        "durationMs": 97266
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Hawaiian Sunset",
+        "durationMs": 154652
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Beach Boy Blues",
+        "durationMs": 124748
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Island of Love",
+        "durationMs": 161112
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Hawaiian Wedding Song",
+        "durationMs": 169164
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Elvis%20Presley%20Blue%20Hawaii",
+      "appleMusic": "https://music.apple.com/us/album/blue-hawaii-original-soundtrack/949550016?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Elvis%20Presley%20Blue%20Hawaii"
+    }
   }
 } as const;

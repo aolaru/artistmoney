@@ -2,8 +2,19 @@
   "name": "Wu-Tang Clan",
   "slug": "wu-tang-clan",
   "estimated_income": "$2M-$7M/year",
-  "top_songs": ["c-r-e-a-m", "protect-ya-neck"],
+  "top_songs": [
+    "c-r-e-a-m",
+    "protect-ya-neck"
+  ],
   "genre": "Hip-Hop",
   "country": "United States",
-  "active_since": "1992"
+  "active_since": "1992",
+  "bio": "Wu-Tang Clan has a durable hip-hop catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "Wu-Tang Clan remains closely associated with C.R.E.A.M. and Protect Ya Neck, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like C.R.E.A.M. and Protect Ya Neck still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Recognizable catalog cuts keep drawing repeat streaming long after the original release cycle.",
+    "Playlist memory and cultural recall help the strongest records stay active.",
+    "Sampling, sync use, and nostalgia spikes can lift the baseline."
+  ]
 }

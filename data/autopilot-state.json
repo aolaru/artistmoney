@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 36,
-    "song": 36,
-    "album": 36
+    "artist": 37,
+    "song": 37,
+    "album": 37
   },
   "lastTouched": {
     "artist": {
@@ -42,7 +42,8 @@
       "the-cure": "2026-04-19T05:24:40.140Z",
       "the-eagles": "2026-04-19T07:13:05.022Z",
       "the-smashing-pumpkins": "2026-04-19T09:42:13.620Z",
-      "the-stone-roses": "2026-04-19T12:52:47.195Z"
+      "the-stone-roses": "2026-04-19T12:52:47.195Z",
+      "wu-tang-clan": "2026-04-19T15:33:46.850Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -80,7 +81,8 @@
       "everybody-hurts": "2026-04-19T05:24:40.140Z",
       "fallin": "2026-04-19T07:13:05.022Z",
       "fix-you": "2026-04-19T09:42:13.620Z",
-      "foolish-heart": "2026-04-19T12:52:47.195Z"
+      "foolish-heart": "2026-04-19T12:52:47.195Z",
+      "fortunate-son": "2026-04-19T15:33:46.850Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -99,10 +101,15 @@
       "creedence-clearwater-revival-pendulum": "2026-04-18T09:42:47.696Z",
       "dire-straits-brothers-in-arms": "2026-04-18T18:40:37.357Z",
       "dmx-and-then-there-was-x": "2026-04-19T07:13:05.022Z",
-      "dr-dre-2001": "2026-04-19T09:42:13.620Z"
+      "dr-dre-2001": "2026-04-19T09:42:13.620Z",
+      "elvis-presley-blue-hawaii": "2026-04-19T15:33:46.850Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-19T15:33:46.850Z",
+      "summary": "artist:wu-tang-clan, song:fortunate-son, album:elvis-presley-blue-hawaii"
+    },
     {
       "timestamp": "2026-04-19T12:52:47.195Z",
       "summary": "artist:the-stone-roses, song:foolish-heart"
@@ -138,10 +145,6 @@
     {
       "timestamp": "2026-04-18T12:53:08.545Z",
       "summary": "artist:reo-speedwagon, song:dna"
-    },
-    {
-      "timestamp": "2026-04-18T09:42:47.696Z",
-      "summary": "artist:snoop-dogg, song:diamonds, album:creedence-clearwater-revival-pendulum"
     }
   ]
 }
