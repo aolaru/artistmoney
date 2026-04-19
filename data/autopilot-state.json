@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 31,
-    "song": 31,
-    "album": 31
+    "artist": 32,
+    "song": 32,
+    "album": 32
   },
   "lastTouched": {
     "artist": {
@@ -37,7 +37,8 @@
       "reo-speedwagon": "2026-04-18T12:53:08.545Z",
       "rihanna": "2026-04-18T15:34:00.646Z",
       "steve-perry": "2026-04-18T18:40:37.357Z",
-      "the-beatles": "2026-04-18T21:29:54.187Z"
+      "the-beatles": "2026-04-18T21:29:54.187Z",
+      "the-chemical-brothers": "2026-04-19T02:10:32.021Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -70,7 +71,8 @@
       "dna": "2026-04-18T12:53:08.545Z",
       "dont-look-back-in-anger": "2026-04-18T15:34:00.646Z",
       "dream-on": "2026-04-18T18:40:37.357Z",
-      "drop-it-like-its-hot": "2026-04-18T21:29:54.187Z"
+      "drop-it-like-its-hot": "2026-04-18T21:29:54.187Z",
+      "empire-state-of-mind": "2026-04-19T02:10:32.021Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -91,6 +93,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-19T02:10:32.021Z",
+      "summary": "artist:the-chemical-brothers, song:empire-state-of-mind"
+    },
     {
       "timestamp": "2026-04-18T21:29:54.187Z",
       "summary": "artist:the-beatles, song:drop-it-like-its-hot"
@@ -126,10 +132,6 @@
     {
       "timestamp": "2026-04-17T21:37:37.568Z",
       "summary": "artist:notorious-big, song:common-people"
-    },
-    {
-      "timestamp": "2026-04-17T18:54:12.653Z",
-      "summary": "artist:nas, song:come-together, album:busta-rhymes-the-big-bang"
     }
   ]
 }

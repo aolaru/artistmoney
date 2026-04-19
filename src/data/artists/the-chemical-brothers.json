@@ -2,8 +2,19 @@
   "name": "The Chemical Brothers",
   "slug": "the-chemical-brothers",
   "estimated_income": "$1.5M-$5M/year",
-  "top_songs": ["block-rockin-beats", "hey-boy-hey-girl"],
+  "top_songs": [
+    "block-rockin-beats",
+    "hey-boy-hey-girl"
+  ],
   "genre": "Electronic / Big Beat",
   "country": "United Kingdom",
-  "active_since": "1989"
+  "active_since": "1989",
+  "bio": "The Chemical Brothers has a durable electronic / big beat catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "The Chemical Brothers remains closely associated with Block Rockin' Beats and Hey Boy Hey Girl, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Block Rockin' Beats and Hey Boy Hey Girl still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Long-tail streaming and mood-based playlists keep the catalog commercially active.",
+    "Deep-fan listening and reissue interest add value beyond the headline tracks.",
+    "Instrumental or atmosphere-driven tracks can stay useful for sync over time."
+  ]
 }
