@@ -7340,5 +7340,107 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/brothers-in-arms/299545299?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Dire%20Straits%20Brothers%20in%20Arms"
     }
+  },
+  "dmx-and-then-there-was-x": {
+    "releaseDate": "1999-12-21",
+    "label": "The Island Def Jam Music Group",
+    "trackCount": 15,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "One More Road to Cross",
+        "durationMs": 260760
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "The Professional",
+        "durationMs": 208800
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Fame",
+        "durationMs": 223097
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Here We Go Again",
+        "durationMs": 233240
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Party Up (Up in Here)",
+        "durationMs": 268867
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Make a Move",
+        "durationMs": 213693
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "What These Bitches Want (feat. Sisqó)",
+        "durationMs": 252733
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "What's My Name?",
+        "durationMs": 229067
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "More 2 a Song",
+        "durationMs": 223000
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Don't You Ever",
+        "durationMs": 233240
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "D-X-L (Hard White) [feat. The Lox & Drag-On]",
+        "durationMs": 258493
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Comin' for Ya",
+        "durationMs": 242040
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Prayer 3",
+        "durationMs": 120067
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Angel (feat. Regina Bell)",
+        "durationMs": 308200
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Good Girls, Bad Guys (feat. Dyme)",
+        "durationMs": 236133
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/DMX%20...And%20Then%20There%20Was%20X",
+      "appleMusic": "https://music.apple.com/us/album/and-then-there-was-x/1444117538?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=DMX%20...And%20Then%20There%20Was%20X"
+    }
   }
 } as const;

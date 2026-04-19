@@ -2,8 +2,19 @@
   "name": "The Eagles",
   "slug": "the-eagles",
   "estimated_income": "$6M-$18M/year",
-  "top_songs": ["hotel-california", "take-it-easy"],
+  "top_songs": [
+    "hotel-california",
+    "take-it-easy"
+  ],
   "genre": "Classic Rock / Country Rock",
   "country": "United States",
-  "active_since": "1971"
+  "active_since": "1971",
+  "bio": "The Eagles has a durable classic rock / country rock catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "The Eagles remains closely associated with Hotel California and Take It Easy, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Hotel California and Take It Easy still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
+    "Generational rediscovery supports durable long-tail listening.",
+    "Film, television, sports, and trailer use can reactivate familiar recordings."
+  ]
 }
