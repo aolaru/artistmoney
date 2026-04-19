@@ -7688,5 +7688,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/blue-hawaii-original-soundtrack/949550016?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Elvis%20Presley%20Blue%20Hawaii"
     }
+  },
+  "fatboy-slim-you-ve-come-a-long-way-baby": {
+    "releaseDate": "1998-01-01",
+    "label": "Skint Records",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Right Here, Right Now",
+        "durationMs": 387707
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "The Rockafeller Skank",
+        "durationMs": 413880
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Ill'n In Heaven",
+        "durationMs": 227880
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Gangster Trippin'",
+        "durationMs": 320053
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Build It Up - Tear It Down",
+        "durationMs": 305440
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Kalifornia",
+        "durationMs": 353400
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Soul Surfing",
+        "durationMs": 296453
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "You're Not from Brighton",
+        "durationMs": 320693
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Praise You",
+        "durationMs": 323240
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Love Island",
+        "durationMs": 318307
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Acid 8000",
+        "durationMs": 448147
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Fatboy%20Slim%20You've%20Come%20a%20Long%20Way%2C%20Baby",
+      "appleMusic": "https://music.apple.com/us/album/youve-come-a-long-way-baby/714927896?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Fatboy%20Slim%20You've%20Come%20a%20Long%20Way%2C%20Baby"
+    }
   }
 } as const;
