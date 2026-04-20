@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 6,
-    "song": 43,
-    "album": 43
+    "artist": 7,
+    "song": 44,
+    "album": 44
   },
   "lastTouched": {
     "artist": {
@@ -46,7 +46,8 @@
       "wu-tang-clan": "2026-04-19T15:33:46.850Z",
       "america": "2026-04-20T02:10:55.418Z",
       "arctic-monkeys": "2026-04-20T05:36:19.149Z",
-      "bon-jovi": "2026-04-20T10:44:09.573Z"
+      "bon-jovi": "2026-04-20T10:44:09.573Z",
+      "coolio": "2026-04-20T13:20:52.531Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -91,7 +92,8 @@
       "get-down": "2026-04-20T02:10:55.418Z",
       "get-lucky": "2026-04-20T05:36:19.149Z",
       "gin-and-juice": "2026-04-20T07:59:22.279Z",
-      "give-it-to-me": "2026-04-20T10:44:09.573Z"
+      "give-it-to-me": "2026-04-20T10:44:09.573Z",
+      "gods-plan": "2026-04-20T13:20:52.531Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -118,6 +120,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-20T13:20:52.531Z",
+      "summary": "artist:coolio, song:gods-plan"
+    },
     {
       "timestamp": "2026-04-20T10:44:09.573Z",
       "summary": "artist:bon-jovi, song:give-it-to-me, album:gorillaz-demon-days"
@@ -153,10 +159,6 @@
     {
       "timestamp": "2026-04-19T09:42:13.620Z",
       "summary": "artist:the-smashing-pumpkins, song:fix-you, album:dr-dre-2001"
-    },
-    {
-      "timestamp": "2026-04-19T07:13:05.022Z",
-      "summary": "artist:the-eagles, song:fallin, album:dmx-and-then-there-was-x"
     }
   ]
 }
