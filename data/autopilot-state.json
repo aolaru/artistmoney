@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 4,
-    "song": 41,
-    "album": 41
+    "artist": 5,
+    "song": 42,
+    "album": 42
   },
   "lastTouched": {
     "artist": {
@@ -12,7 +12,7 @@
       "aerosmith": "2026-04-15T06:55:59.198Z",
       "aphex-twin": "2026-04-15T09:22:38.828Z",
       "audioslave": "2026-04-15T11:01:22.052Z",
-      "billie-eilish": "2026-04-15T13:41:50.295Z",
+      "billie-eilish": "2026-04-20T07:59:22.279Z",
       "black-sabbath": "2026-04-15T15:06:41.292Z",
       "boston": "2026-04-15T19:09:22.203Z",
       "chicago": "2026-04-15T21:46:31.024Z",
@@ -88,7 +88,8 @@
       "frontin": "2026-04-19T18:41:35.092Z",
       "gangstas-paradise": "2026-04-19T21:31:07.424Z",
       "get-down": "2026-04-20T02:10:55.418Z",
-      "get-lucky": "2026-04-20T05:36:19.149Z"
+      "get-lucky": "2026-04-20T05:36:19.149Z",
+      "gin-and-juice": "2026-04-20T07:59:22.279Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -114,6 +115,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-20T07:59:22.279Z",
+      "summary": "artist:billie-eilish, song:gin-and-juice"
+    },
     {
       "timestamp": "2026-04-20T05:36:19.149Z",
       "summary": "artist:arctic-monkeys, song:get-lucky"
@@ -149,10 +154,6 @@
     {
       "timestamp": "2026-04-19T05:24:40.140Z",
       "summary": "artist:the-cure, song:everybody-hurts"
-    },
-    {
-      "timestamp": "2026-04-19T02:10:32.021Z",
-      "summary": "artist:the-chemical-brothers, song:empire-state-of-mind"
     }
   ]
 }
