@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 8,
-    "song": 45,
-    "album": 45
+    "artist": 9,
+    "song": 46,
+    "album": 46
   },
   "lastTouched": {
     "artist": {
@@ -19,7 +19,7 @@
       "craig-mack": "2026-04-16T02:10:02.311Z",
       "david-bowie": "2026-04-16T05:26:34.608Z",
       "dj-shadow": "2026-04-16T07:25:07.116Z",
-      "drake": "2026-04-16T10:12:32.476Z",
+      "drake": "2026-04-20T18:58:28.492Z",
       "fleetwood-mac": "2026-04-16T19:05:55.400Z",
       "guns-n-roses": "2026-04-16T21:39:11.659Z",
       "ice-cube": "2026-04-17T02:06:14.021Z",
@@ -95,7 +95,8 @@
       "gin-and-juice": "2026-04-20T07:59:22.279Z",
       "give-it-to-me": "2026-04-20T10:44:09.573Z",
       "gods-plan": "2026-04-20T13:20:52.531Z",
-      "hallelujah": "2026-04-20T16:04:12.885Z"
+      "hallelujah": "2026-04-20T16:04:12.885Z",
+      "happier-than-ever": "2026-04-20T18:58:28.492Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -118,10 +119,15 @@
       "elvis-presley-blue-hawaii": "2026-04-19T15:33:46.850Z",
       "fatboy-slim-you-ve-come-a-long-way-baby": "2026-04-19T18:41:35.092Z",
       "foreigner-agent-provocateur": "2026-04-19T21:31:07.424Z",
-      "gorillaz-demon-days": "2026-04-20T10:44:09.573Z"
+      "gorillaz-demon-days": "2026-04-20T10:44:09.573Z",
+      "heart-bad-animals": "2026-04-20T18:58:28.492Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-20T18:58:28.492Z",
+      "summary": "artist:drake, song:happier-than-ever, album:heart-bad-animals"
+    },
     {
       "timestamp": "2026-04-20T16:04:12.885Z",
       "summary": "artist:dire-straits, song:hallelujah"
@@ -157,10 +163,6 @@
     {
       "timestamp": "2026-04-19T15:33:46.850Z",
       "summary": "artist:wu-tang-clan, song:fortunate-son, album:elvis-presley-blue-hawaii"
-    },
-    {
-      "timestamp": "2026-04-19T12:52:47.195Z",
-      "summary": "artist:the-stone-roses, song:foolish-heart"
     }
   ]
 }

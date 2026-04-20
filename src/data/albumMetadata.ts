@@ -7940,5 +7940,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/demon-days/850571319?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Gorillaz%20Demon%20Days"
     }
+  },
+  "heart-bad-animals": {
+    "releaseDate": "1987-01-01",
+    "label": "Capitol Records Inc.",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Who Will You Run To",
+        "durationMs": 246400
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Alone",
+        "durationMs": 218733
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "There's the Girl",
+        "durationMs": 230067
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "I Want You So Bad",
+        "durationMs": 261640
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Wait for an Answer",
+        "durationMs": 271493
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Bad Animals",
+        "durationMs": 294133
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "You Ain't So Tough",
+        "durationMs": 245600
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Strangers of the Heart",
+        "durationMs": 221200
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Easy Target",
+        "durationMs": 238467
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "RSVP",
+        "durationMs": 219173
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Heart%20Bad%20Animals",
+      "appleMusic": "https://music.apple.com/us/album/bad-animals/724077331?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Heart%20Bad%20Animals"
+    }
   }
 } as const;
