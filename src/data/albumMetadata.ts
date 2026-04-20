@@ -8012,5 +8012,113 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/bad-animals/724077331?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Heart%20Bad%20Animals"
     }
+  },
+  "ice-cube-the-predator": {
+    "releaseDate": "1992-11-17",
+    "label": "UMG Recordings",
+    "trackCount": 16,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "The First Day of School",
+        "durationMs": 79960
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "When Will They Shoot?",
+        "durationMs": 276364
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "I'm Scared",
+        "durationMs": 92200
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Wicked",
+        "durationMs": 234400
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Now I Gotta Wet 'Cha",
+        "durationMs": 224960
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "The Predator",
+        "durationMs": 243573
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "It Was a Good Day",
+        "durationMs": 261596
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "We Had to Tear This Mothaf***a Up",
+        "durationMs": 262803
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "F**k 'Em",
+        "durationMs": 122093
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Dirty Mack",
+        "durationMs": 273600
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Don't Trust 'Em",
+        "durationMs": 228995
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Gangsta's Fairytale 2",
+        "durationMs": 199000
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Check Yo Self (feat. Das EFX)",
+        "durationMs": 221600
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Who Got the Camera?",
+        "durationMs": 276867
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Integration",
+        "durationMs": 151760
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Say Hi to the Bad Guy",
+        "durationMs": 189933
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Ice%20Cube%20The%20Predator",
+      "appleMusic": "https://music.apple.com/us/album/the-predator/1444057366?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Ice%20Cube%20The%20Predator"
+    }
   }
 } as const;

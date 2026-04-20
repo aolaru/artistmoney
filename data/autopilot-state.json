@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 9,
-    "song": 46,
-    "album": 46
+    "artist": 10,
+    "song": 47,
+    "album": 47
   },
   "lastTouched": {
     "artist": {
@@ -48,7 +48,8 @@
       "arctic-monkeys": "2026-04-20T05:36:19.149Z",
       "bon-jovi": "2026-04-20T10:44:09.573Z",
       "coolio": "2026-04-20T13:20:52.531Z",
-      "dire-straits": "2026-04-20T16:04:12.885Z"
+      "dire-straits": "2026-04-20T16:04:12.885Z",
+      "foreigner": "2026-04-20T21:41:58.265Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -96,7 +97,8 @@
       "give-it-to-me": "2026-04-20T10:44:09.573Z",
       "gods-plan": "2026-04-20T13:20:52.531Z",
       "hallelujah": "2026-04-20T16:04:12.885Z",
-      "happier-than-ever": "2026-04-20T18:58:28.492Z"
+      "happier-than-ever": "2026-04-20T18:58:28.492Z",
+      "harder-better-faster-stronger": "2026-04-20T21:41:58.265Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -120,10 +122,15 @@
       "fatboy-slim-you-ve-come-a-long-way-baby": "2026-04-19T18:41:35.092Z",
       "foreigner-agent-provocateur": "2026-04-19T21:31:07.424Z",
       "gorillaz-demon-days": "2026-04-20T10:44:09.573Z",
-      "heart-bad-animals": "2026-04-20T18:58:28.492Z"
+      "heart-bad-animals": "2026-04-20T18:58:28.492Z",
+      "ice-cube-the-predator": "2026-04-20T21:41:58.265Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-20T21:41:58.265Z",
+      "summary": "artist:foreigner, song:harder-better-faster-stronger, album:ice-cube-the-predator"
+    },
     {
       "timestamp": "2026-04-20T18:58:28.492Z",
       "summary": "artist:drake, song:happier-than-ever, album:heart-bad-animals"
@@ -159,10 +166,6 @@
     {
       "timestamp": "2026-04-19T18:41:35.092Z",
       "summary": "artist:2pac, song:frontin, album:fatboy-slim-you-ve-come-a-long-way-baby"
-    },
-    {
-      "timestamp": "2026-04-19T15:33:46.850Z",
-      "summary": "artist:wu-tang-clan, song:fortunate-son, album:elvis-presley-blue-hawaii"
     }
   ]
 }
