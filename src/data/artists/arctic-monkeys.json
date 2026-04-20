@@ -2,5 +2,20 @@
   "name": "Arctic Monkeys",
   "slug": "arctic-monkeys",
   "estimated_income": "$5M-$18M/year",
-  "top_songs": ["do-i-wanna-know", "505", "why-d-you-only-call-me-when-youre-high"]
+  "top_songs": [
+    "do-i-wanna-know",
+    "505",
+    "why-d-you-only-call-me-when-youre-high"
+  ],
+  "genre": "Indie rock",
+  "country": "United Kingdom",
+  "active_since": "2002",
+  "bio": "Arctic Monkeys moved from blog-era guitar breakout to a long-running arena act with durable catalog streaming.",
+  "notable_for": "Arctic Monkeys remains closely associated with Do I Wanna Know? and 505, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Do I Wanna Know? and 505 still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings after the original release cycle ends.",
+    "Playlist use and rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand extend catalog value over time."
+  ]
 }
