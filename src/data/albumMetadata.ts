@@ -7838,5 +7838,107 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/agent-provocateur/216663946?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Foreigner%20Agent%20Provocateur"
     }
+  },
+  "gorillaz-demon-days": {
+    "releaseDate": "2005-05-11",
+    "label": "Parlophone Records Limited",
+    "trackCount": 15,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Intro",
+        "durationMs": 63160
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Last Living Souls",
+        "durationMs": 190400
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Kids with Guns",
+        "durationMs": 225840
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "O Green World",
+        "durationMs": 271960
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Dirty Harry (feat. Bootie Brown)",
+        "durationMs": 223800
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Feel Good Inc. (feat. David Jolicoeur, Kelvin Mercer & Vincent Mason)",
+        "durationMs": 221173
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "El Mañana",
+        "durationMs": 230027
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Every Planet We Reach Is Dead",
+        "durationMs": 293267
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "November Has Come",
+        "durationMs": 161107
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "All Alone (feat. Martina Topley-Bird & Roots Manuva)",
+        "durationMs": 210067
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "White Light",
+        "durationMs": 128427
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "DARE (feat. Shaun Ryder & Roses Gabor)",
+        "durationMs": 244307
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Fire Coming out of the Monkey's Head",
+        "durationMs": 196427
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Don't Get Lost in Heaven",
+        "durationMs": 120373
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Demon Days",
+        "durationMs": 268893
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Gorillaz%20Demon%20Days",
+      "appleMusic": "https://music.apple.com/us/album/demon-days/850571319?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Gorillaz%20Demon%20Days"
+    }
   }
 } as const;

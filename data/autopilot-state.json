@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 5,
-    "song": 42,
-    "album": 42
+    "artist": 6,
+    "song": 43,
+    "album": 43
   },
   "lastTouched": {
     "artist": {
@@ -45,7 +45,8 @@
       "the-stone-roses": "2026-04-19T12:52:47.195Z",
       "wu-tang-clan": "2026-04-19T15:33:46.850Z",
       "america": "2026-04-20T02:10:55.418Z",
-      "arctic-monkeys": "2026-04-20T05:36:19.149Z"
+      "arctic-monkeys": "2026-04-20T05:36:19.149Z",
+      "bon-jovi": "2026-04-20T10:44:09.573Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -89,7 +90,8 @@
       "gangstas-paradise": "2026-04-19T21:31:07.424Z",
       "get-down": "2026-04-20T02:10:55.418Z",
       "get-lucky": "2026-04-20T05:36:19.149Z",
-      "gin-and-juice": "2026-04-20T07:59:22.279Z"
+      "gin-and-juice": "2026-04-20T07:59:22.279Z",
+      "give-it-to-me": "2026-04-20T10:44:09.573Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -111,10 +113,15 @@
       "dr-dre-2001": "2026-04-19T09:42:13.620Z",
       "elvis-presley-blue-hawaii": "2026-04-19T15:33:46.850Z",
       "fatboy-slim-you-ve-come-a-long-way-baby": "2026-04-19T18:41:35.092Z",
-      "foreigner-agent-provocateur": "2026-04-19T21:31:07.424Z"
+      "foreigner-agent-provocateur": "2026-04-19T21:31:07.424Z",
+      "gorillaz-demon-days": "2026-04-20T10:44:09.573Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-20T10:44:09.573Z",
+      "summary": "artist:bon-jovi, song:give-it-to-me, album:gorillaz-demon-days"
+    },
     {
       "timestamp": "2026-04-20T07:59:22.279Z",
       "summary": "artist:billie-eilish, song:gin-and-juice"
@@ -150,10 +157,6 @@
     {
       "timestamp": "2026-04-19T07:13:05.022Z",
       "summary": "artist:the-eagles, song:fallin, album:dmx-and-then-there-was-x"
-    },
-    {
-      "timestamp": "2026-04-19T05:24:40.140Z",
-      "summary": "artist:the-cure, song:everybody-hurts"
     }
   ]
 }

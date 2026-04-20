@@ -18,5 +18,14 @@
     "publishing_owner": "Publishing appears split across writers and producers",
     "catalog_sale_status": "No song-specific sale adjustment is modeled",
     "notes": "Inferred annual earnings range, not a published royalty breakdown."
-  }
+  },
+  "meaning_summary": "This track pairs a memorable hook with strong cultural recall, which helps explain its staying power and long-tail commercial value.",
+  "revenue_drivers": [
+    "Catalog streaming remains the main long-tail driver for recognizable rap tracks.",
+    "Playlist placement and cultural recall help the song stay active.",
+    "Sampling, sync use, and short-form rediscovery can extend earnings."
+  ],
+  "related_songs": [
+    "the-way-i-are"
+  ]
 }

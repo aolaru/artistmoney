@@ -2,8 +2,19 @@
   "name": "Bon Jovi",
   "slug": "bon-jovi",
   "estimated_income": "$4M-$12M/year",
-  "top_songs": ["livin-on-a-prayer", "wanted-dead-or-alive"],
+  "top_songs": [
+    "livin-on-a-prayer",
+    "wanted-dead-or-alive"
+  ],
   "genre": "Rock",
   "country": "United States",
-  "active_since": "1983"
+  "active_since": "1983",
+  "bio": "Bon Jovi has a durable rock catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "Bon Jovi remains closely associated with Livin' on a Prayer and Wanted Dead or Alive, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Livin' on a Prayer and Wanted Dead or Alive still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
+    "Generational rediscovery supports durable long-tail listening.",
+    "Film, television, sports, and trailer use can reactivate familiar recordings."
+  ]
 }
