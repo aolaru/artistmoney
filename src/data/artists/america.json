@@ -2,8 +2,19 @@
   "name": "America",
   "slug": "america",
   "estimated_income": "$700K-$2.5M/year",
-  "top_songs": ["a-horse-with-no-name", "sister-golden-hair"],
+  "top_songs": [
+    "a-horse-with-no-name",
+    "sister-golden-hair"
+  ],
   "genre": "Soft Rock / Folk Rock",
   "country": "United Kingdom / United States",
-  "active_since": "1970"
+  "active_since": "1970",
+  "bio": "America has a durable soft rock / folk rock catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "America remains closely associated with A Horse with No Name and Sister Golden Hair, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like A Horse with No Name and Sister Golden Hair still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
+    "Generational rediscovery supports durable long-tail listening.",
+    "Film, television, sports, and trailer use can reactivate familiar recordings."
+  ]
 }
