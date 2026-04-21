@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 13,
-    "song": 50,
-    "album": 50
+    "artist": 14,
+    "song": 51,
+    "album": 51
   },
   "lastTouched": {
     "artist": {
@@ -52,7 +52,8 @@
       "foreigner": "2026-04-20T21:41:58.265Z",
       "jeff-buckley": "2026-04-21T02:06:50.458Z",
       "kendrick-lamar": "2026-04-21T05:23:05.578Z",
-      "ll-cool-j": "2026-04-21T07:28:23.754Z"
+      "ll-cool-j": "2026-04-21T07:28:23.754Z",
+      "n-w-a": "2026-04-21T10:16:18.325Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -104,7 +105,8 @@
       "harder-better-faster-stronger": "2026-04-20T21:41:58.265Z",
       "hello": "2026-04-21T02:06:50.458Z",
       "hey-boy-hey-girl": "2026-04-21T05:23:05.578Z",
-      "hotel-california": "2026-04-21T07:28:23.754Z"
+      "hotel-california": "2026-04-21T07:28:23.754Z",
+      "humble": "2026-04-21T10:16:18.325Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -130,10 +132,15 @@
       "gorillaz-demon-days": "2026-04-20T10:44:09.573Z",
       "heart-bad-animals": "2026-04-20T18:58:28.492Z",
       "ice-cube-the-predator": "2026-04-20T21:41:58.265Z",
-      "jeff-buckley-grace": "2026-04-21T07:28:23.754Z"
+      "jeff-buckley-grace": "2026-04-21T07:28:23.754Z",
+      "jimi-hendrix-electric-ladyland": "2026-04-21T10:16:18.325Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-21T10:16:18.325Z",
+      "summary": "artist:n-w-a, song:humble, album:jimi-hendrix-electric-ladyland"
+    },
     {
       "timestamp": "2026-04-21T07:28:23.754Z",
       "summary": "artist:ll-cool-j, song:hotel-california, album:jeff-buckley-grace"
@@ -169,10 +176,6 @@
     {
       "timestamp": "2026-04-20T07:59:22.279Z",
       "summary": "artist:billie-eilish, song:gin-and-juice"
-    },
-    {
-      "timestamp": "2026-04-20T05:36:19.149Z",
-      "summary": "artist:arctic-monkeys, song:get-lucky"
     }
   ]
 }

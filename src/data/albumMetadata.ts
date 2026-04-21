@@ -8198,5 +8198,113 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/grace/1046187510?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Jeff%20Buckley%20Grace"
     }
+  },
+  "jimi-hendrix-electric-ladyland": {
+    "releaseDate": "1968-10-16",
+    "label": "Sony Music Entertainment",
+    "trackCount": 17,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "...And the Gods Made Love",
+        "durationMs": 82627
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Have You Ever Been (To Electric Ladyland)",
+        "durationMs": 130040
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Crosstown Traffic",
+        "durationMs": 146573
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Voodoo Chile",
+        "durationMs": 899933
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Little Miss Strange",
+        "durationMs": 172200
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Long Hot Summer Night",
+        "durationMs": 207760
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Come On (Let the Good Times Roll)",
+        "durationMs": 249373
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Gypsy Eyes",
+        "durationMs": 223680
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Burning of the Midnight Lamp",
+        "durationMs": 219613
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Rainy Day, Dream Away",
+        "durationMs": 222067
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "1983... (A Merman I Should Turn to Be)",
+        "durationMs": 819627
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Moon, Turn the Tides... Gently Gently Away",
+        "durationMs": 61773
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Still Raining, Still Dreaming",
+        "durationMs": 265587
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "House Burning Down",
+        "durationMs": 272840
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "All Along the Watchtower",
+        "durationMs": 240800
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Voodoo Child (Slight Return)",
+        "durationMs": 313373
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Jimi%20Hendrix%20Electric%20Ladyland",
+      "appleMusic": "https://music.apple.com/us/album/electric-ladyland/357652252?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Jimi%20Hendrix%20Electric%20Ladyland"
+    }
   }
 } as const;
