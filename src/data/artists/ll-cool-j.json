@@ -2,8 +2,19 @@
   "name": "LL Cool J",
   "slug": "ll-cool-j",
   "estimated_income": "$1.5M-$5M/year",
-  "top_songs": ["mama-said-knock-you-out", "loungin"],
+  "top_songs": [
+    "mama-said-knock-you-out",
+    "loungin"
+  ],
   "genre": "Hip-Hop",
   "country": "United States",
-  "active_since": "1984"
+  "active_since": "1984",
+  "bio": "LL Cool J has a durable hip-hop catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "LL Cool J remains closely associated with Mama Said Knock You Out and Loungin, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Mama Said Knock You Out and Loungin still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Recognizable catalog cuts keep drawing repeat streaming long after the original release cycle.",
+    "Playlist memory and cultural recall help the strongest records stay active.",
+    "Sampling, sync use, and nostalgia spikes can lift the baseline."
+  ]
 }

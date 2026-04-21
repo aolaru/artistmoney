@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 12,
-    "song": 49,
-    "album": 49
+    "artist": 13,
+    "song": 50,
+    "album": 50
   },
   "lastTouched": {
     "artist": {
@@ -51,7 +51,8 @@
       "dire-straits": "2026-04-20T16:04:12.885Z",
       "foreigner": "2026-04-20T21:41:58.265Z",
       "jeff-buckley": "2026-04-21T02:06:50.458Z",
-      "kendrick-lamar": "2026-04-21T05:23:05.578Z"
+      "kendrick-lamar": "2026-04-21T05:23:05.578Z",
+      "ll-cool-j": "2026-04-21T07:28:23.754Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -102,7 +103,8 @@
       "happier-than-ever": "2026-04-20T18:58:28.492Z",
       "harder-better-faster-stronger": "2026-04-20T21:41:58.265Z",
       "hello": "2026-04-21T02:06:50.458Z",
-      "hey-boy-hey-girl": "2026-04-21T05:23:05.578Z"
+      "hey-boy-hey-girl": "2026-04-21T05:23:05.578Z",
+      "hotel-california": "2026-04-21T07:28:23.754Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -127,10 +129,15 @@
       "foreigner-agent-provocateur": "2026-04-19T21:31:07.424Z",
       "gorillaz-demon-days": "2026-04-20T10:44:09.573Z",
       "heart-bad-animals": "2026-04-20T18:58:28.492Z",
-      "ice-cube-the-predator": "2026-04-20T21:41:58.265Z"
+      "ice-cube-the-predator": "2026-04-20T21:41:58.265Z",
+      "jeff-buckley-grace": "2026-04-21T07:28:23.754Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-21T07:28:23.754Z",
+      "summary": "artist:ll-cool-j, song:hotel-california, album:jeff-buckley-grace"
+    },
     {
       "timestamp": "2026-04-21T05:23:05.578Z",
       "summary": "artist:kendrick-lamar, song:hey-boy-hey-girl"
@@ -166,10 +173,6 @@
     {
       "timestamp": "2026-04-20T05:36:19.149Z",
       "summary": "artist:arctic-monkeys, song:get-lucky"
-    },
-    {
-      "timestamp": "2026-04-20T02:10:55.418Z",
-      "summary": "artist:america, song:get-down"
     }
   ]
 }

@@ -8120,5 +8120,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/the-predator/1444057366?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Ice%20Cube%20The%20Predator"
     }
+  },
+  "jeff-buckley-grace": {
+    "releaseDate": "1994-08-23",
+    "label": "Columbia Records",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Mojo Pin",
+        "durationMs": 342813
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Grace",
+        "durationMs": 322040
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Last Goodbye",
+        "durationMs": 275720
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Lilac Wine",
+        "durationMs": 272907
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "So Real",
+        "durationMs": 283520
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Hallelujah",
+        "durationMs": 413827
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Lover, You Should've Come Over",
+        "durationMs": 404213
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Corpus Christi Carol",
+        "durationMs": 176760
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Eternal Life",
+        "durationMs": 292347
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Dream Brother",
+        "durationMs": 331787
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Forget Her",
+        "durationMs": 314440
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Jeff%20Buckley%20Grace",
+      "appleMusic": "https://music.apple.com/us/album/grace/1046187510?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Jeff%20Buckley%20Grace"
+    }
   }
 } as const;
