@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 11,
-    "song": 48,
-    "album": 48
+    "artist": 12,
+    "song": 49,
+    "album": 49
   },
   "lastTouched": {
     "artist": {
@@ -50,7 +50,8 @@
       "coolio": "2026-04-20T13:20:52.531Z",
       "dire-straits": "2026-04-20T16:04:12.885Z",
       "foreigner": "2026-04-20T21:41:58.265Z",
-      "jeff-buckley": "2026-04-21T02:06:50.458Z"
+      "jeff-buckley": "2026-04-21T02:06:50.458Z",
+      "kendrick-lamar": "2026-04-21T05:23:05.578Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -100,7 +101,8 @@
       "hallelujah": "2026-04-20T16:04:12.885Z",
       "happier-than-ever": "2026-04-20T18:58:28.492Z",
       "harder-better-faster-stronger": "2026-04-20T21:41:58.265Z",
-      "hello": "2026-04-21T02:06:50.458Z"
+      "hello": "2026-04-21T02:06:50.458Z",
+      "hey-boy-hey-girl": "2026-04-21T05:23:05.578Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -129,6 +131,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-21T05:23:05.578Z",
+      "summary": "artist:kendrick-lamar, song:hey-boy-hey-girl"
+    },
     {
       "timestamp": "2026-04-21T02:06:50.458Z",
       "summary": "artist:jeff-buckley, song:hello"
@@ -164,10 +170,6 @@
     {
       "timestamp": "2026-04-20T02:10:55.418Z",
       "summary": "artist:america, song:get-down"
-    },
-    {
-      "timestamp": "2026-04-19T21:31:07.424Z",
-      "summary": "artist:50-cent, song:gangstas-paradise, album:foreigner-agent-provocateur"
     }
   ]
 }

@@ -2,5 +2,20 @@
   "name": "Kendrick Lamar",
   "slug": "kendrick-lamar",
   "estimated_income": "$10M-$30M/year",
-  "top_songs": ["humble", "dna", "all-the-stars"]
+  "top_songs": [
+    "humble",
+    "dna",
+    "all-the-stars"
+  ],
+  "genre": "Hip-hop",
+  "country": "United States",
+  "active_since": "2011",
+  "bio": "Kendrick Lamar combines critically dominant albums with blockbuster singles and strong soundtrack crossover.",
+  "notable_for": "Kendrick Lamar remains closely associated with HUMBLE. and DNA., which still anchor attention around the catalog.",
+  "career_highlight": "Songs like HUMBLE. and DNA. still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings after the original release cycle ends.",
+    "Playlist use and rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand extend catalog value over time."
+  ]
 }
