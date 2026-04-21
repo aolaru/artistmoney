@@ -2,9 +2,19 @@
   "name": "The Cardigans",
   "slug": "the-cardigans",
   "estimated_income": "$500K-$1.8M/year",
-  "top_songs": ["lovefool", "my-favourite-game"],
+  "top_songs": [
+    "lovefool",
+    "my-favourite-game"
+  ],
   "genre": "Alternative Pop / Rock",
   "country": "Sweden",
   "active_since": "1992",
-  "bio": "The Cardigans keep earning through crossover pop nostalgia, soundtrack association, and continued playlist reuse."
+  "bio": "The Cardigans keep earning through crossover pop nostalgia, soundtrack association, and continued playlist reuse.",
+  "notable_for": "The Cardigans remains closely associated with Lovefool and My Favourite Game, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Lovefool and My Favourite Game still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the biggest songs keep earning after release.",
+    "Broad recognition supports social reuse, rediscovery, and steady catalog listening.",
+    "Licensing and event-driven playback can create recurring spikes."
+  ]
 }
