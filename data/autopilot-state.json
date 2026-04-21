@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 16,
-    "song": 53,
-    "album": 53
+    "artist": 17,
+    "song": 54,
+    "album": 54
   },
   "lastTouched": {
     "artist": {
@@ -33,7 +33,7 @@
       "portishead": "2026-04-18T01:57:00.765Z",
       "queen": "2026-04-18T05:02:56.675Z",
       "roxette": "2026-04-18T07:01:25.676Z",
-      "snoop-dogg": "2026-04-18T09:42:47.696Z",
+      "snoop-dogg": "2026-04-21T19:05:43.573Z",
       "reo-speedwagon": "2026-04-18T12:53:08.545Z",
       "rihanna": "2026-04-18T15:34:00.646Z",
       "steve-perry": "2026-04-18T18:40:37.357Z",
@@ -109,7 +109,8 @@
       "hotel-california": "2026-04-21T07:28:23.754Z",
       "humble": "2026-04-21T10:16:18.325Z",
       "hypnotize": "2026-04-21T13:15:05.450Z",
-      "i-wanna-be-adored": "2026-04-21T16:07:28.711Z"
+      "i-wanna-be-adored": "2026-04-21T16:07:28.711Z",
+      "if-i-ruled-the-world": "2026-04-21T19:05:43.573Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -142,6 +143,10 @@
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-21T19:05:43.573Z",
+      "summary": "artist:snoop-dogg, song:if-i-ruled-the-world"
+    },
     {
       "timestamp": "2026-04-21T16:07:28.711Z",
       "summary": "artist:pulp, song:i-wanna-be-adored, album:justin-timberlake-justified"
@@ -177,10 +182,6 @@
     {
       "timestamp": "2026-04-20T16:04:12.885Z",
       "summary": "artist:dire-straits, song:hallelujah"
-    },
-    {
-      "timestamp": "2026-04-20T13:20:52.531Z",
-      "summary": "artist:coolio, song:gods-plan"
     }
   ]
 }
