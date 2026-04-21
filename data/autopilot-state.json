@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 14,
-    "song": 51,
-    "album": 51
+    "artist": 15,
+    "song": 52,
+    "album": 52
   },
   "lastTouched": {
     "artist": {
@@ -29,7 +29,7 @@
       "ludacris": "2026-04-17T13:08:26.904Z",
       "montell-jordan": "2026-04-17T15:56:16.152Z",
       "nas": "2026-04-17T18:54:12.653Z",
-      "notorious-big": "2026-04-17T21:37:37.568Z",
+      "notorious-big": "2026-04-21T13:15:05.450Z",
       "portishead": "2026-04-18T01:57:00.765Z",
       "queen": "2026-04-18T05:02:56.675Z",
       "roxette": "2026-04-18T07:01:25.676Z",
@@ -106,7 +106,8 @@
       "hello": "2026-04-21T02:06:50.458Z",
       "hey-boy-hey-girl": "2026-04-21T05:23:05.578Z",
       "hotel-california": "2026-04-21T07:28:23.754Z",
-      "humble": "2026-04-21T10:16:18.325Z"
+      "humble": "2026-04-21T10:16:18.325Z",
+      "hypnotize": "2026-04-21T13:15:05.450Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -133,10 +134,15 @@
       "heart-bad-animals": "2026-04-20T18:58:28.492Z",
       "ice-cube-the-predator": "2026-04-20T21:41:58.265Z",
       "jeff-buckley-grace": "2026-04-21T07:28:23.754Z",
-      "jimi-hendrix-electric-ladyland": "2026-04-21T10:16:18.325Z"
+      "jimi-hendrix-electric-ladyland": "2026-04-21T10:16:18.325Z",
+      "john-lennon-imagine": "2026-04-21T13:15:05.450Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-21T13:15:05.450Z",
+      "summary": "artist:notorious-big, song:hypnotize, album:john-lennon-imagine"
+    },
     {
       "timestamp": "2026-04-21T10:16:18.325Z",
       "summary": "artist:n-w-a, song:humble, album:jimi-hendrix-electric-ladyland"
@@ -172,10 +178,6 @@
     {
       "timestamp": "2026-04-20T10:44:09.573Z",
       "summary": "artist:bon-jovi, song:give-it-to-me, album:gorillaz-demon-days"
-    },
-    {
-      "timestamp": "2026-04-20T07:59:22.279Z",
-      "summary": "artist:billie-eilish, song:gin-and-juice"
     }
   ]
 }

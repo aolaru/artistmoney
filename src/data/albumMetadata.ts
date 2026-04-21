@@ -8306,5 +8306,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/electric-ladyland/357652252?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Jimi%20Hendrix%20Electric%20Ladyland"
     }
+  },
+  "john-lennon-imagine": {
+    "releaseDate": "1971-09-09",
+    "label": "Calderstone Productions Limited (a division of Universal Music Group)",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Imagine",
+        "durationMs": 186853
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Crippled Inside",
+        "durationMs": 232627
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Jealous Guy",
+        "durationMs": 257733
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "It's So Hard",
+        "durationMs": 149053
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "I Don't Wanna Be a Soldier Mama",
+        "durationMs": 368653
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Gimme Some Truth",
+        "durationMs": 198160
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Oh My Love",
+        "durationMs": 167773
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "How Do You Sleep?",
+        "durationMs": 339027
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "How?",
+        "durationMs": 226333
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Oh Yoko!",
+        "durationMs": 257124
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/John%20Lennon%20Imagine",
+      "appleMusic": "https://music.apple.com/us/album/imagine/1440853752?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=John%20Lennon%20Imagine"
+    }
   }
 } as const;

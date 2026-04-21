@@ -2,5 +2,15 @@
   "title": "Hypnotize",
   "slug": "hypnotize",
   "artist": "notorious-big",
-  "estimated_revenue": "$500K-$1.6M/year"
+  "estimated_revenue": "$500K-$1.6M/year",
+  "meaning_summary": "Hypnotize stays durable because it is easy to revisit and well suited to long-tail catalog listening.",
+  "revenue_drivers": [
+    "Streaming and catalog discovery keep the song generating recurring revenue.",
+    "Playlist longevity supports steady repeat listening.",
+    "Licensing and cultural familiarity can add earnings beyond baseline streams."
+  ],
+  "related_songs": [
+    "big-poppa",
+    "juicy"
+  ]
 }
