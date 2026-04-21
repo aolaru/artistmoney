@@ -8378,5 +8378,95 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/imagine/1440853752?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=John%20Lennon%20Imagine"
     }
+  },
+  "justin-timberlake-justified": {
+    "releaseDate": "2002-11-05",
+    "label": "Zomba Recording LLC",
+    "trackCount": 13,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Señorita",
+        "durationMs": 294867
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Like I Love You",
+        "durationMs": 283627
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "(Oh No) What You Got",
+        "durationMs": 271333
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Take It from Here",
+        "durationMs": 374333
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Cry Me a River",
+        "durationMs": 288333
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Rock Your Body",
+        "durationMs": 267267
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Nothin' Else",
+        "durationMs": 298840
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Last Night",
+        "durationMs": 287267
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Still On My Brain",
+        "durationMs": 275667
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "(And She Said) Take Me Now",
+        "durationMs": 331160
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Right for Me",
+        "durationMs": 269640
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Let's Take a Ride",
+        "durationMs": 284067
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Never Again",
+        "durationMs": 274733
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Justin%20Timberlake%20Justified",
+      "appleMusic": "https://music.apple.com/us/album/justified/252606580?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Justin%20Timberlake%20Justified"
+    }
   }
 } as const;

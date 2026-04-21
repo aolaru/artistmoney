@@ -2,9 +2,19 @@
   "name": "Pulp",
   "slug": "pulp",
   "estimated_income": "$900K-$3M/year",
-  "top_songs": ["common-people", "disco-2000"],
+  "top_songs": [
+    "common-people",
+    "disco-2000"
+  ],
   "genre": "Britpop / Alternative Rock",
   "country": "United Kingdom",
   "active_since": "1978",
-  "bio": "Pulp's catalog keeps paying because its most recognizable songs remain culturally specific, lyrically sticky, and easy to revisit."
+  "bio": "Pulp's catalog keeps paying because its most recognizable songs remain culturally specific, lyrically sticky, and easy to revisit.",
+  "notable_for": "Pulp remains closely associated with Common People and Disco 2000, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Common People and Disco 2000 still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the biggest songs keep earning after release.",
+    "Broad recognition supports social reuse, rediscovery, and steady catalog listening.",
+    "Licensing and event-driven playback can create recurring spikes."
+  ]
 }
