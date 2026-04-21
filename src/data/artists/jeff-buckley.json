@@ -2,9 +2,19 @@
   "name": "Jeff Buckley",
   "slug": "jeff-buckley",
   "estimated_income": "$1M-$3M/year",
-  "top_songs": ["hallelujah", "last-goodbye"],
+  "top_songs": [
+    "hallelujah",
+    "last-goodbye"
+  ],
   "genre": "Alternative Rock / Singer-Songwriter",
   "country": "United States",
   "active_since": "1991",
-  "bio": "Jeff Buckley's small but powerful catalog continues to earn through canonical status, reinterpretation value, and heavy replay around a few defining recordings."
+  "bio": "Jeff Buckley's small but powerful catalog continues to earn through canonical status, reinterpretation value, and heavy replay around a few defining recordings.",
+  "notable_for": "Jeff Buckley remains closely associated with Hallelujah and Last Goodbye, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Hallelujah and Last Goodbye still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
+    "Generational rediscovery supports durable long-tail listening.",
+    "Film, television, sports, and trailer use can reactivate familiar recordings."
+  ]
 }
