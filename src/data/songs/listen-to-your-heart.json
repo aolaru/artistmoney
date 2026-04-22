@@ -4,5 +4,14 @@
   "artist": "roxette",
   "estimated_revenue": "$250K-$900K/year",
   "album": "Look Sharp!",
-  "year": 1988
+  "year": 1988,
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can lift the baseline."
+  ],
+  "related_songs": [
+    "it-must-have-been-love"
+  ]
 }

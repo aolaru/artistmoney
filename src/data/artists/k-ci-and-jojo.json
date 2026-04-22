@@ -2,8 +2,19 @@
   "name": "K-Ci & JoJo",
   "slug": "k-ci-and-jojo",
   "estimated_income": "$500K-$1.8M/year",
-  "top_songs": ["all-my-life", "tell-me-its-real"],
+  "top_songs": [
+    "all-my-life",
+    "tell-me-its-real"
+  ],
   "genre": "R&B",
   "country": "United States",
-  "active_since": "1996"
+  "active_since": "1996",
+  "bio": "K-Ci & JoJo has a durable r&b catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "K-Ci & JoJo remains closely associated with All My Life and Tell Me It's Real, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like All My Life and Tell Me It's Real still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the biggest songs keep earning after release.",
+    "Broad recognition supports social reuse, rediscovery, and steady catalog listening.",
+    "Licensing and event-driven playback can create recurring spikes."
+  ]
 }

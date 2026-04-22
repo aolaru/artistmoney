@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 5,
-    "song": 62,
-    "album": 62
+    "artist": 6,
+    "song": 63,
+    "album": 63
   },
   "lastTouched": {
     "artist": {
@@ -61,7 +61,8 @@
       "4-non-blondes": "2026-04-22T07:25:53.234Z",
       "bjork": "2026-04-22T13:16:47.253Z",
       "creedence-clearwater-revival": "2026-04-22T16:06:41.257Z",
-      "fatboy-slim": "2026-04-22T19:06:45.929Z"
+      "fatboy-slim": "2026-04-22T19:06:45.929Z",
+      "k-ci-and-jojo": "2026-04-22T21:46:00.147Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -125,7 +126,8 @@
       "karma-police": "2026-04-22T10:16:43.373Z",
       "keep-on-loving-you": "2026-04-22T13:16:47.253Z",
       "last-goodbye": "2026-04-22T16:06:41.257Z",
-      "light-my-fire": "2026-04-22T19:06:45.929Z"
+      "light-my-fire": "2026-04-22T19:06:45.929Z",
+      "listen-to-your-heart": "2026-04-22T21:46:00.147Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -157,10 +159,15 @@
       "justin-timberlake-justified": "2026-04-21T16:07:28.711Z",
       "kanye-west-graduation": "2026-04-22T02:05:21.839Z",
       "linkin-park-hybrid-theory": "2026-04-22T05:21:33.266Z",
-      "ludacris-chicken-n-beer": "2026-04-22T16:06:41.257Z"
+      "ludacris-chicken-n-beer": "2026-04-22T16:06:41.257Z",
+      "madonna-like-a-prayer": "2026-04-22T21:46:00.147Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-22T21:46:00.147Z",
+      "summary": "artist:k-ci-and-jojo, song:listen-to-your-heart, album:madonna-like-a-prayer"
+    },
     {
       "timestamp": "2026-04-22T19:06:45.929Z",
       "summary": "artist:fatboy-slim, song:light-my-fire"
@@ -196,10 +203,6 @@
     {
       "timestamp": "2026-04-21T19:05:43.573Z",
       "summary": "artist:snoop-dogg, song:if-i-ruled-the-world"
-    },
-    {
-      "timestamp": "2026-04-21T16:07:28.711Z",
-      "summary": "artist:pulp, song:i-wanna-be-adored, album:justin-timberlake-justified"
     }
   ]
 }

@@ -8738,5 +8738,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/chicken-n-beer/1442839424?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Ludacris%20Chicken-n-Beer"
     }
+  },
+  "madonna-like-a-prayer": {
+    "releaseDate": "1989-03-21",
+    "label": "Sire Records Company",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Like a Prayer",
+        "durationMs": 340867
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Express Yourself",
+        "durationMs": 279133
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Love Song",
+        "durationMs": 292800
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Till Death Do Us Part",
+        "durationMs": 318467
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Promise to Try",
+        "durationMs": 218067
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Cherish",
+        "durationMs": 303493
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Dear Jessie",
+        "durationMs": 261507
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Oh Father",
+        "durationMs": 298760
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Keep It Together",
+        "durationMs": 303200
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Pray for Spanish Eyes",
+        "durationMs": 317707
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Act of Contrition",
+        "durationMs": 139200
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Madonna%20Like%20a%20Prayer",
+      "appleMusic": "https://music.apple.com/us/album/like-a-prayer/83448003?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Madonna%20Like%20a%20Prayer"
+    }
   }
 } as const;
