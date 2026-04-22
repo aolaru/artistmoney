@@ -2,9 +2,19 @@
   "name": "The Verve",
   "slug": "the-verve",
   "estimated_income": "$1M-$4M/year",
-  "top_songs": ["bitter-sweet-symphony", "the-drugs-dont-work"],
+  "top_songs": [
+    "bitter-sweet-symphony",
+    "the-drugs-dont-work"
+  ],
   "genre": "Alternative Rock / Britpop",
   "country": "United Kingdom",
   "active_since": "1989",
-  "bio": "The Verve's catalog remains durable because a small number of emotionally huge songs still translate into playlists, sync, and memory-driven listening."
+  "bio": "The Verve's catalog remains durable because a small number of emotionally huge songs still translate into playlists, sync, and memory-driven listening.",
+  "notable_for": "The Verve remains closely associated with Bitter Sweet Symphony and The Drugs Don't Work, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Bitter Sweet Symphony and The Drugs Don't Work still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the biggest songs keep earning after release.",
+    "Broad recognition supports social reuse, rediscovery, and steady catalog listening.",
+    "Licensing and event-driven playback can create recurring spikes."
+  ]
 }

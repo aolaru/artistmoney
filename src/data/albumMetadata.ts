@@ -8564,5 +8564,89 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/graduation/1442845779?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Kanye%20West%20Graduation"
     }
+  },
+  "linkin-park-hybrid-theory": {
+    "releaseDate": "2000-10-24",
+    "label": "Warner Records Inc.",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Papercut",
+        "durationMs": 184469
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "One Step Closer",
+        "durationMs": 155647
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "With You",
+        "durationMs": 203286
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Points of Authority",
+        "durationMs": 200309
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Crawling",
+        "durationMs": 209034
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Runaway",
+        "durationMs": 183946
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "By Myself",
+        "durationMs": 189771
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "In the End",
+        "durationMs": 216294
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "A Place for My Head",
+        "durationMs": 184683
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Forgotten",
+        "durationMs": 194446
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Cure for the Itch",
+        "durationMs": 157080
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Pushing Me Away",
+        "durationMs": 191899
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Linkin%20Park%20Hybrid%20Theory",
+      "appleMusic": "https://music.apple.com/us/album/hybrid-theory/528436018?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Linkin%20Park%20Hybrid%20Theory"
+    }
   }
 } as const;
