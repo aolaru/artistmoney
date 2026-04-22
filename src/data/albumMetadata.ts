@@ -8648,5 +8648,95 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/hybrid-theory/528436018?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Linkin%20Park%20Hybrid%20Theory"
     }
+  },
+  "ludacris-chicken-n-beer": {
+    "releaseDate": "2003-01-01",
+    "label": "The Island Def Jam Music Group",
+    "trackCount": 13,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Southern Fried Intro",
+        "durationMs": 235840
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Blow It Out",
+        "durationMs": 245093
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Stand Up (feat. Shawnna)",
+        "durationMs": 213960
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Splash Waterfalls",
+        "durationMs": 290867
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Hard Times (feat. 8Ball & MJG, MJG & Carl Thomas)",
+        "durationMs": 315920
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Diamond In the Back",
+        "durationMs": 252627
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Screwed Up (feat. Lil' Flip)",
+        "durationMs": 292867
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "P-Poppin' (feat. Shawnna & Lil' Fate)",
+        "durationMs": 289267
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Hip Hop Quotables",
+        "durationMs": 189533
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Hoe's in My Room (feat. Snoop Dogg)",
+        "durationMs": 280107
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Teamwork",
+        "durationMs": 226320
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "We Got (feat. Chingy, I-20 & Tity Boi)",
+        "durationMs": 261253
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Eyebrows Down (feat. Tity Boi & Dolla Boy)",
+        "durationMs": 320587
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Ludacris%20Chicken-n-Beer",
+      "appleMusic": "https://music.apple.com/us/album/chicken-n-beer/1442839424?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Ludacris%20Chicken-n-Beer"
+    }
   }
 } as const;

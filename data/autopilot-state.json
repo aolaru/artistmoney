@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 3,
-    "song": 60,
-    "album": 60
+    "artist": 4,
+    "song": 61,
+    "album": 61
   },
   "lastTouched": {
     "artist": {
@@ -59,7 +59,8 @@
       "the-doors": "2026-04-22T02:05:21.839Z",
       "the-verve": "2026-04-22T05:21:33.266Z",
       "4-non-blondes": "2026-04-22T07:25:53.234Z",
-      "bjork": "2026-04-22T13:16:47.253Z"
+      "bjork": "2026-04-22T13:16:47.253Z",
+      "creedence-clearwater-revival": "2026-04-22T16:06:41.257Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -121,7 +122,8 @@
       "it-must-have-been-love": "2026-04-22T05:21:33.266Z",
       "juicy": "2026-04-22T07:25:53.234Z",
       "karma-police": "2026-04-22T10:16:43.373Z",
-      "keep-on-loving-you": "2026-04-22T13:16:47.253Z"
+      "keep-on-loving-you": "2026-04-22T13:16:47.253Z",
+      "last-goodbye": "2026-04-22T16:06:41.257Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -152,10 +154,15 @@
       "john-lennon-imagine": "2026-04-21T13:15:05.450Z",
       "justin-timberlake-justified": "2026-04-21T16:07:28.711Z",
       "kanye-west-graduation": "2026-04-22T02:05:21.839Z",
-      "linkin-park-hybrid-theory": "2026-04-22T05:21:33.266Z"
+      "linkin-park-hybrid-theory": "2026-04-22T05:21:33.266Z",
+      "ludacris-chicken-n-beer": "2026-04-22T16:06:41.257Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-22T16:06:41.257Z",
+      "summary": "artist:creedence-clearwater-revival, song:last-goodbye, album:ludacris-chicken-n-beer"
+    },
     {
       "timestamp": "2026-04-22T13:16:47.253Z",
       "summary": "artist:bjork, song:keep-on-loving-you"
@@ -191,10 +198,6 @@
     {
       "timestamp": "2026-04-21T13:15:05.450Z",
       "summary": "artist:notorious-big, song:hypnotize, album:john-lennon-imagine"
-    },
-    {
-      "timestamp": "2026-04-21T10:16:18.325Z",
-      "summary": "artist:n-w-a, song:humble, album:jimi-hendrix-electric-ladyland"
     }
   ]
 }

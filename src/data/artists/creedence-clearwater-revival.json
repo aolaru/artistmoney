@@ -2,8 +2,19 @@
   "name": "Creedence Clearwater Revival",
   "slug": "creedence-clearwater-revival",
   "estimated_income": "$2M-$7M/year",
-  "top_songs": ["fortunate-son", "have-you-ever-seen-the-rain"],
+  "top_songs": [
+    "fortunate-son",
+    "have-you-ever-seen-the-rain"
+  ],
   "genre": "Classic Rock / Roots Rock",
   "country": "United States",
-  "active_since": "1967"
+  "active_since": "1967",
+  "bio": "Creedence Clearwater Revival has a durable classic rock / roots rock catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "Creedence Clearwater Revival remains closely associated with Fortunate Son and Have You Ever Seen the Rain, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Fortunate Son and Have You Ever Seen the Rain still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
+    "Generational rediscovery supports durable long-tail listening.",
+    "Film, television, sports, and trailer use can reactivate familiar recordings."
+  ]
 }
