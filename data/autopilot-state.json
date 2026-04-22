@@ -1,16 +1,16 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 1,
-    "song": 58,
-    "album": 58
+    "artist": 2,
+    "song": 59,
+    "album": 59
   },
   "lastTouched": {
     "artist": {
       "2pac": "2026-04-19T18:41:35.092Z",
       "50-cent": "2026-04-19T21:31:07.424Z",
       "aerosmith": "2026-04-15T06:55:59.198Z",
-      "aphex-twin": "2026-04-15T09:22:38.828Z",
+      "aphex-twin": "2026-04-22T10:16:43.373Z",
       "audioslave": "2026-04-15T11:01:22.052Z",
       "billie-eilish": "2026-04-20T07:59:22.279Z",
       "black-sabbath": "2026-04-15T15:06:41.292Z",
@@ -118,7 +118,8 @@
       "in-da-club": "2026-04-21T21:40:28.583Z",
       "in-this-shirt": "2026-04-22T02:05:21.839Z",
       "it-must-have-been-love": "2026-04-22T05:21:33.266Z",
-      "juicy": "2026-04-22T07:25:53.234Z"
+      "juicy": "2026-04-22T07:25:53.234Z",
+      "karma-police": "2026-04-22T10:16:43.373Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -154,6 +155,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-22T10:16:43.373Z",
+      "summary": "artist:aphex-twin, song:karma-police"
+    },
+    {
       "timestamp": "2026-04-22T07:25:53.234Z",
       "summary": "artist:4-non-blondes, song:juicy"
     },
@@ -188,10 +193,6 @@
     {
       "timestamp": "2026-04-21T07:28:23.754Z",
       "summary": "artist:ll-cool-j, song:hotel-california, album:jeff-buckley-grace"
-    },
-    {
-      "timestamp": "2026-04-21T05:23:05.578Z",
-      "summary": "artist:kendrick-lamar, song:hey-boy-hey-girl"
     }
   ]
 }
