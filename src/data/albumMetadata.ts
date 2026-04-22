@@ -8468,5 +8468,101 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/justified/252606580?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Justin%20Timberlake%20Justified"
     }
+  },
+  "kanye-west-graduation": {
+    "releaseDate": "2007-01-01",
+    "label": "UMG Recordings",
+    "trackCount": 14,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Good Morning",
+        "durationMs": 195093
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Champion",
+        "durationMs": 167533
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Stronger",
+        "durationMs": 312027
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "I Wonder",
+        "durationMs": 243440
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Good Life (feat. T-Pain)",
+        "durationMs": 206867
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Can't Tell Me Nothing",
+        "durationMs": 271760
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Barry Bonds (feat. Lil Wayne)",
+        "durationMs": 204333
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Drunk and Hot Girls (feat. Mos Def)",
+        "durationMs": 313267
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Flashing Lights",
+        "durationMs": 237440
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Everything I Am (feat. DJ Premier)",
+        "durationMs": 227400
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "The Glory",
+        "durationMs": 212667
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Homecoming (feat. Chris Martin)",
+        "durationMs": 204027
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Big Brother",
+        "durationMs": 288067
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Good Night",
+        "durationMs": 186360
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Kanye%20West%20Graduation",
+      "appleMusic": "https://music.apple.com/us/album/graduation/1442845779?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Kanye%20West%20Graduation"
+    }
   }
 } as const;

@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 18,
-    "song": 55,
-    "album": 55
+    "artist": 19,
+    "song": 56,
+    "album": 56
   },
   "lastTouched": {
     "artist": {
@@ -55,7 +55,8 @@
       "ll-cool-j": "2026-04-21T07:28:23.754Z",
       "n-w-a": "2026-04-21T10:16:18.325Z",
       "pulp": "2026-04-21T16:07:28.711Z",
-      "the-cardigans": "2026-04-21T21:40:28.583Z"
+      "the-cardigans": "2026-04-21T21:40:28.583Z",
+      "the-doors": "2026-04-22T02:05:21.839Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -112,7 +113,8 @@
       "hypnotize": "2026-04-21T13:15:05.450Z",
       "i-wanna-be-adored": "2026-04-21T16:07:28.711Z",
       "if-i-ruled-the-world": "2026-04-21T19:05:43.573Z",
-      "in-da-club": "2026-04-21T21:40:28.583Z"
+      "in-da-club": "2026-04-21T21:40:28.583Z",
+      "in-this-shirt": "2026-04-22T02:05:21.839Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -141,10 +143,15 @@
       "jeff-buckley-grace": "2026-04-21T07:28:23.754Z",
       "jimi-hendrix-electric-ladyland": "2026-04-21T10:16:18.325Z",
       "john-lennon-imagine": "2026-04-21T13:15:05.450Z",
-      "justin-timberlake-justified": "2026-04-21T16:07:28.711Z"
+      "justin-timberlake-justified": "2026-04-21T16:07:28.711Z",
+      "kanye-west-graduation": "2026-04-22T02:05:21.839Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-22T02:05:21.839Z",
+      "summary": "artist:the-doors, song:in-this-shirt, album:kanye-west-graduation"
+    },
     {
       "timestamp": "2026-04-21T21:40:28.583Z",
       "summary": "artist:the-cardigans, song:in-da-club"
@@ -180,10 +187,6 @@
     {
       "timestamp": "2026-04-20T21:41:58.265Z",
       "summary": "artist:foreigner, song:harder-better-faster-stronger, album:ice-cube-the-predator"
-    },
-    {
-      "timestamp": "2026-04-20T18:58:28.492Z",
-      "summary": "artist:drake, song:happier-than-ever, album:heart-bad-animals"
     }
   ]
 }
