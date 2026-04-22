@@ -2,9 +2,19 @@
   "name": "Bjork",
   "slug": "bjork",
   "estimated_income": "$2M-$8M/year",
-  "top_songs": ["army-of-me", "hyperballad"],
+  "top_songs": [
+    "army-of-me",
+    "hyperballad"
+  ],
   "genre": "Art Pop / Electronic",
   "country": "Iceland",
   "active_since": "1977",
-  "bio": "Bjork built a globally recognized art-pop catalog whose commercial life extends through streaming, sync value, and multigenerational rediscovery."
+  "bio": "Bjork built a globally recognized art-pop catalog whose commercial life extends through streaming, sync value, and multigenerational rediscovery.",
+  "notable_for": "Bjork remains closely associated with Army of Me and Hyperballad, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Army of Me and Hyperballad still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Long-tail streaming and mood-based playlists keep the catalog commercially active.",
+    "Deep-fan listening and reissue interest add value beyond the headline tracks.",
+    "Instrumental or atmosphere-driven tracks can stay useful for sync over time."
+  ]
 }

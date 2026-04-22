@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 2,
-    "song": 59,
-    "album": 59
+    "artist": 3,
+    "song": 60,
+    "album": 60
   },
   "lastTouched": {
     "artist": {
@@ -58,7 +58,8 @@
       "the-cardigans": "2026-04-21T21:40:28.583Z",
       "the-doors": "2026-04-22T02:05:21.839Z",
       "the-verve": "2026-04-22T05:21:33.266Z",
-      "4-non-blondes": "2026-04-22T07:25:53.234Z"
+      "4-non-blondes": "2026-04-22T07:25:53.234Z",
+      "bjork": "2026-04-22T13:16:47.253Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -119,7 +120,8 @@
       "in-this-shirt": "2026-04-22T02:05:21.839Z",
       "it-must-have-been-love": "2026-04-22T05:21:33.266Z",
       "juicy": "2026-04-22T07:25:53.234Z",
-      "karma-police": "2026-04-22T10:16:43.373Z"
+      "karma-police": "2026-04-22T10:16:43.373Z",
+      "keep-on-loving-you": "2026-04-22T13:16:47.253Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -155,6 +157,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-22T13:16:47.253Z",
+      "summary": "artist:bjork, song:keep-on-loving-you"
+    },
+    {
       "timestamp": "2026-04-22T10:16:43.373Z",
       "summary": "artist:aphex-twin, song:karma-police"
     },
@@ -189,10 +195,6 @@
     {
       "timestamp": "2026-04-21T10:16:18.325Z",
       "summary": "artist:n-w-a, song:humble, album:jimi-hendrix-electric-ladyland"
-    },
-    {
-      "timestamp": "2026-04-21T07:28:23.754Z",
-      "summary": "artist:ll-cool-j, song:hotel-california, album:jeff-buckley-grace"
     }
   ]
 }
