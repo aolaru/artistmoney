@@ -180,7 +180,7 @@
     "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "The Prodigy",
       "slug": "the-prodigy",
@@ -236,10 +236,11 @@
           "firestarter"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Sade",
       "slug": "sade",
@@ -295,10 +296,11 @@
           "smooth-operator"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Burial",
       "slug": "burial",
@@ -354,7 +356,8 @@
           "archangel"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
     "checked": false,
