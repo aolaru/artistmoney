@@ -2,8 +2,19 @@
   "name": "Fatboy Slim",
   "slug": "fatboy-slim",
   "estimated_income": "$1.5M-$5M/year",
-  "top_songs": ["praise-you", "right-here-right-now"],
+  "top_songs": [
+    "praise-you",
+    "right-here-right-now"
+  ],
   "genre": "Electronic / Big Beat",
   "country": "United Kingdom",
-  "active_since": "1996"
+  "active_since": "1996",
+  "bio": "Fatboy Slim has a durable electronic / big beat catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "Fatboy Slim remains closely associated with Praise You and Right Here, Right Now, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Praise You and Right Here, Right Now still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Long-tail streaming and mood-based playlists keep the catalog commercially active.",
+    "Deep-fan listening and reissue interest add value beyond the headline tracks.",
+    "Instrumental or atmosphere-driven tracks can stay useful for sync over time."
+  ]
 }

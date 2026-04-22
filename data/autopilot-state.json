@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 4,
-    "song": 61,
-    "album": 61
+    "artist": 5,
+    "song": 62,
+    "album": 62
   },
   "lastTouched": {
     "artist": {
@@ -60,7 +60,8 @@
       "the-verve": "2026-04-22T05:21:33.266Z",
       "4-non-blondes": "2026-04-22T07:25:53.234Z",
       "bjork": "2026-04-22T13:16:47.253Z",
-      "creedence-clearwater-revival": "2026-04-22T16:06:41.257Z"
+      "creedence-clearwater-revival": "2026-04-22T16:06:41.257Z",
+      "fatboy-slim": "2026-04-22T19:06:45.929Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -123,7 +124,8 @@
       "juicy": "2026-04-22T07:25:53.234Z",
       "karma-police": "2026-04-22T10:16:43.373Z",
       "keep-on-loving-you": "2026-04-22T13:16:47.253Z",
-      "last-goodbye": "2026-04-22T16:06:41.257Z"
+      "last-goodbye": "2026-04-22T16:06:41.257Z",
+      "light-my-fire": "2026-04-22T19:06:45.929Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -160,6 +162,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-22T19:06:45.929Z",
+      "summary": "artist:fatboy-slim, song:light-my-fire"
+    },
+    {
       "timestamp": "2026-04-22T16:06:41.257Z",
       "summary": "artist:creedence-clearwater-revival, song:last-goodbye, album:ludacris-chicken-n-beer"
     },
@@ -194,10 +200,6 @@
     {
       "timestamp": "2026-04-21T16:07:28.711Z",
       "summary": "artist:pulp, song:i-wanna-be-adored, album:justin-timberlake-justified"
-    },
-    {
-      "timestamp": "2026-04-21T13:15:05.450Z",
-      "summary": "artist:notorious-big, song:hypnotize, album:john-lennon-imagine"
     }
   ]
 }
