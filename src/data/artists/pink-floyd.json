@@ -2,5 +2,20 @@
   "name": "Pink Floyd",
   "slug": "pink-floyd",
   "estimated_income": "$3M-$10M/year",
-  "top_songs": ["another-brick-in-the-wall", "comfortably-numb", "wish-you-were-here"]
+  "top_songs": [
+    "another-brick-in-the-wall",
+    "comfortably-numb",
+    "wish-you-were-here"
+  ],
+  "genre": "Progressive rock",
+  "country": "United Kingdom",
+  "active_since": "1965",
+  "bio": "Pink Floyd's earnings are driven by canonical albums, premium catalog positioning, and strong multigenerational listening.",
+  "notable_for": "Pink Floyd remains closely associated with Another Brick in the Wall and Comfortably Numb, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Another Brick in the Wall and Comfortably Numb still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings after the original release cycle ends.",
+    "Playlist use and rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand extend catalog value over time."
+  ]
 }
