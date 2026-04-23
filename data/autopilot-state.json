@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 2,
-    "song": 69,
-    "album": 69
+    "artist": 3,
+    "song": 70,
+    "album": 70
   },
   "lastTouched": {
     "artist": {
@@ -68,7 +68,8 @@
       "taylor-swift": "2026-04-23T07:44:17.692Z",
       "the-irrepressibles": "2026-04-23T10:19:10.867Z",
       "abba": "2026-04-23T13:17:28.356Z",
-      "busta-rhymes": "2026-04-23T16:26:50.868Z"
+      "busta-rhymes": "2026-04-23T16:26:50.868Z",
+      "heart": "2026-04-23T19:01:57.374Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -139,7 +140,8 @@
       "loungin": "2026-04-23T07:44:17.692Z",
       "mama-said-knock-you-out": "2026-04-23T10:19:10.867Z",
       "midnight-in-a-perfect-world": "2026-04-23T13:17:28.356Z",
-      "more-than-a-feeling": "2026-04-23T16:26:50.868Z"
+      "more-than-a-feeling": "2026-04-23T16:26:50.868Z",
+      "music-for-airports-1-1": "2026-04-23T19:01:57.374Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -181,6 +183,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-23T19:01:57.374Z",
+      "summary": "artist:heart, song:music-for-airports-1-1"
+    },
+    {
       "timestamp": "2026-04-23T16:26:50.868Z",
       "summary": "artist:busta-rhymes, song:more-than-a-feeling, album:mariah-carey-merry-christmas"
     },
@@ -215,10 +221,6 @@
     {
       "timestamp": "2026-04-22T16:06:41.257Z",
       "summary": "artist:creedence-clearwater-revival, song:last-goodbye, album:ludacris-chicken-n-beer"
-    },
-    {
-      "timestamp": "2026-04-22T13:16:47.253Z",
-      "summary": "artist:bjork, song:keep-on-loving-you"
     }
   ]
 }

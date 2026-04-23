@@ -2,5 +2,15 @@
   "title": "Music for Airports 1/1",
   "slug": "music-for-airports-1-1",
   "artist": "brian-eno",
-  "estimated_revenue": "$90K-$300K/year"
+  "estimated_revenue": "$90K-$300K/year",
+  "meaning_summary": "This recording leans on atmosphere, texture, and replayable mood, which makes it durable in listener memory and long-tail streaming.",
+  "revenue_drivers": [
+    "Playlist and mood-based streaming support repeat listening over long periods.",
+    "Steady niche demand and reissue interest can keep the track earning.",
+    "Licensing and soundtrack-style use can materially improve the long tail."
+  ],
+  "related_songs": [
+    "an-ending-ascent",
+    "baby-s-on-fire"
+  ]
 }

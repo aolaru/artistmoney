@@ -2,8 +2,19 @@
   "name": "Heart",
   "slug": "heart",
   "estimated_income": "$1M-$4M/year",
-  "top_songs": ["barracuda", "alone"],
+  "top_songs": [
+    "barracuda",
+    "alone"
+  ],
   "genre": "Rock",
   "country": "United States",
-  "active_since": "1973"
+  "active_since": "1973",
+  "bio": "Heart has a durable rock catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "Heart remains closely associated with Barracuda and Alone, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Barracuda and Alone still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
+    "Generational rediscovery supports durable long-tail listening.",
+    "Film, television, sports, and trailer use can reactivate familiar recordings."
+  ]
 }
