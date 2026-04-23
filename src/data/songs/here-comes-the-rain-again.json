@@ -1,0 +1,31 @@
+{
+  "title": "Here Comes the Rain Again",
+  "slug": "here-comes-the-rain-again",
+  "artist": "eurythmics",
+  "estimated_revenue": "$300K-$1M/year",
+  "album": "Touch",
+  "year": 1983,
+  "meaning_summary": "Here Comes the Rain Again still earns because it remains one of Eurythmics' most durable mood-driven songs and continues to fit both synth-pop and adult-pop nostalgia listening.",
+  "revenue_drivers": [
+    "The track holds long-tail value through 1980s and new-wave playlist use.",
+    "Its atmosphere supports recurrent media and soundtrack-style reuse.",
+    "Writer participation strengthens the artist-side economics of replay."
+  ],
+  "related_songs": [
+    "sweet-dreams-are-made-of-this"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$500K-$1.3M/year",
+    "artist_or_estate_share": "$300K-$1M/year",
+    "label_master_share": "$120K-$350K/year",
+    "publishing_share": "$90K-$260K/year",
+    "songwriter_share": "$70K-$200K/year",
+    "assumptions": "Estimate assumes durable playlist placement, strong song identity, and lighter but steady sync-style reuse."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "writer / publisher split with strong creator participation",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out song position",
+    "notes": "Artist-side range is modeled, not disclosed by rightsholders."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "title": "What's Love Got to Do with It",
+  "slug": "whats-love-got-to-do-with-it",
+  "artist": "tina-turner",
+  "estimated_revenue": "$500K-$1.6M/year",
+  "album": "Private Dancer",
+  "year": 1984,
+  "meaning_summary": "What's Love Got to Do with It still earns because it remains one of the most recognizable adult-pop crossover hits of the 1980s.",
+  "revenue_drivers": [
+    "The song stays active on global 1980s and adult-pop playlists.",
+    "Its crossover familiarity supports broad long-tail replay.",
+    "Film, TV, and nostalgia-media reuse extend demand beyond pure streaming."
+  ],
+  "related_songs": [
+    "the-best"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$850K-$2.1M/year",
+    "artist_or_estate_share": "$500K-$1.6M/year",
+    "label_master_share": "$200K-$550K/year",
+    "publishing_share": "$120K-$350K/year",
+    "songwriter_share": "$90K-$260K/year",
+    "assumptions": "Estimate assumes stable legacy-pop streaming, soundtrack-style recognition, and broad catalog familiarity."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out song position",
+    "notes": "Artist-side economics are modeled from master participation assumptions, not private royalty statements."
+  }
+}

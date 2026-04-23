@@ -1420,5 +1420,300 @@
         ]
       }
     ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "U2",
+      "slug": "u2",
+      "estimated_income": "$8M-$30M/year",
+      "top_songs": [
+        "with-or-without-you",
+        "one"
+      ],
+      "genre": "Rock / Alternative Rock",
+      "country": "Ireland",
+      "active_since": "1976",
+      "bio": "U2 still monetizes at global catalog scale through stadium-era hits, long-tail streaming, and unusually durable multi-decade recognition.",
+      "notable_for": "Arena-scale catalog songs with exceptional long-tail replay and global familiarity.",
+      "career_highlight": "Songs like With or Without You and One continue to define the commercial afterlife of the U2 catalog.",
+      "revenue_drivers": [
+        "Global catalog streaming keeps the biggest songs commercially active decades after release.",
+        "Cross-generational recognition supports playlist placement and recurring discovery.",
+        "Film, television, and event-driven use can reactivate familiar recordings."
+      ]
+    },
+    "songs": [
+      {
+        "title": "With or Without You",
+        "slug": "with-or-without-you",
+        "artist": "u2",
+        "estimated_revenue": "$900K-$3M/year",
+        "album": "The Joshua Tree",
+        "year": 1987,
+        "meaning_summary": "Its emotional directness and instantly recognizable arrangement help it keep earning through repeat listening and catalog reuse.",
+        "revenue_drivers": [
+          "Classic-rock and broad catalog playlists support recurring streaming.",
+          "Cross-generational familiarity keeps the song discoverable.",
+          "Sync use and event-driven replay can lift the baseline."
+        ],
+        "related_songs": [
+          "one"
+        ]
+      },
+      {
+        "title": "One",
+        "slug": "one",
+        "artist": "u2",
+        "estimated_revenue": "$700K-$2.4M/year",
+        "album": "Achtung Baby",
+        "year": 1991,
+        "meaning_summary": "Its emotional clarity and enduring live and catalog status make it one of the most durable songs in the U2 catalog.",
+        "revenue_drivers": [
+          "Ballad-style replay value supports long-tail streaming.",
+          "Strong cultural memory keeps the song in circulation.",
+          "Catalog recognition and sync utility extend earnings over time."
+        ],
+        "related_songs": [
+          "with-or-without-you"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "The Rolling Stones",
+      "slug": "the-rolling-stones",
+      "estimated_income": "$10M-$35M/year",
+      "top_songs": [
+        "paint-it-black",
+        "gimme-shelter"
+      ],
+      "genre": "Rock / Classic Rock",
+      "country": "United Kingdom",
+      "active_since": "1962",
+      "bio": "The Rolling Stones remain one of the clearest examples of a rock catalog that still throws off major earnings through streaming, sync, and perpetual cultural familiarity.",
+      "notable_for": "One of the deepest and most reusable classic-rock catalogs in popular music.",
+      "career_highlight": "Songs like Paint It, Black and Gimme Shelter continue to anchor the catalog's modern earning power.",
+      "revenue_drivers": [
+        "Classic-rock streaming and playlist longevity sustain recurring listening.",
+        "Film, television, trailer, and sports use keep the catalog commercially relevant.",
+        "Global recognition supports long-tail replay across multiple generations."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Paint It, Black",
+        "slug": "paint-it-black",
+        "artist": "the-rolling-stones",
+        "estimated_revenue": "$1M-$3.5M/year",
+        "album": "Aftermath",
+        "year": 1966,
+        "meaning_summary": "Its dark hook and immediate recognizability make it unusually durable in both catalog listening and sync-heavy reuse.",
+        "revenue_drivers": [
+          "Classic-rock playlists support steady recurring streaming.",
+          "Heavy sync potential keeps the track active beyond baseline listening.",
+          "Multigenerational recognition sustains long-tail replay."
+        ],
+        "related_songs": [
+          "gimme-shelter"
+        ]
+      },
+      {
+        "title": "Gimme Shelter",
+        "slug": "gimme-shelter",
+        "artist": "the-rolling-stones",
+        "estimated_revenue": "$1.2M-$4M/year",
+        "album": "Let It Bleed",
+        "year": 1969,
+        "meaning_summary": "Its dramatic energy and constant reuse in film and media help explain why it remains one of the strongest earning Stones recordings.",
+        "revenue_drivers": [
+          "Sync placements materially extend the song's commercial life.",
+          "Catalog streaming and best-of listening keep demand steady.",
+          "Cultural familiarity supports continuing discovery."
+        ],
+        "related_songs": [
+          "paint-it-black"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Bob Dylan",
+      "slug": "bob-dylan",
+      "estimated_income": "$6M-$22M/year",
+      "top_songs": [
+        "blowin-in-the-wind",
+        "like-a-rolling-stone"
+      ],
+      "genre": "Folk Rock / Singer-Songwriter",
+      "country": "United States",
+      "active_since": "1962",
+      "bio": "Bob Dylan's catalog remains unusually valuable because songwriting ownership, canonical status, and cross-generational reuse reinforce each other over time.",
+      "notable_for": "Writer-led catalog strength with deep publishing significance.",
+      "career_highlight": "Signature songs still earn through catalog streaming, covers, licensing, and songwriter-side value.",
+      "revenue_drivers": [
+        "Songwriter-side economics materially strengthen the long-tail value of the catalog.",
+        "Canonical songs attract ongoing rediscovery and cover-version interest.",
+        "Publishing, licensing, and repertoire prestige reinforce catalog demand."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Blowin' in the Wind",
+        "slug": "blowin-in-the-wind",
+        "artist": "bob-dylan",
+        "estimated_revenue": "$500K-$1.8M/year",
+        "album": "The Freewheelin' Bob Dylan",
+        "year": 1963,
+        "meaning_summary": "Its lyrical durability and songwriter importance keep it commercially relevant even outside pure streaming scale.",
+        "revenue_drivers": [
+          "Publishing and cover-version value matter as much as direct recording revenue.",
+          "Canonical status supports catalog discovery and reuse.",
+          "Licensing and educational/cultural circulation extend the long tail."
+        ],
+        "related_songs": [
+          "like-a-rolling-stone"
+        ]
+      },
+      {
+        "title": "Like a Rolling Stone",
+        "slug": "like-a-rolling-stone",
+        "artist": "bob-dylan",
+        "estimated_revenue": "$700K-$2.4M/year",
+        "album": "Highway 61 Revisited",
+        "year": 1965,
+        "meaning_summary": "Its status as a foundational rock recording keeps it culturally active and financially durable across multiple channels.",
+        "revenue_drivers": [
+          "Canonical catalog listening supports recurring streams.",
+          "Publishing and writer-side participation deepen the song's economics.",
+          "Long-term cultural relevance sustains discovery and licensing value."
+        ],
+        "related_songs": [
+          "blowin-in-the-wind"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Phil Collins",
+      "slug": "phil-collins",
+      "estimated_income": "$5M-$18M/year",
+      "top_songs": [
+        "in-the-air-tonight",
+        "another-day-in-paradise"
+      ],
+      "genre": "Pop / Rock",
+      "country": "United Kingdom",
+      "active_since": "1981",
+      "bio": "Phil Collins continues to earn through one of the strongest solo-pop catalogs of the 1980s, reinforced by soundtrack exposure and writer participation.",
+      "notable_for": "Solo hits with major long-tail replay and soundtrack-era durability.",
+      "career_highlight": "In the Air Tonight remains one of the clearest examples of a solo catalog song with decades of afterlife.",
+      "revenue_drivers": [
+        "Catalog streaming keeps signature songs active across decades.",
+        "Soundtrack memory and cultural reuse reinforce long-tail replay.",
+        "Writer-side participation improves retained catalog economics."
+      ]
+    },
+    "songs": [
+      {
+        "title": "In the Air Tonight",
+        "slug": "in-the-air-tonight",
+        "artist": "phil-collins",
+        "estimated_revenue": "$1M-$3.4M/year",
+        "album": "Face Value",
+        "year": 1981,
+        "meaning_summary": "Its distinctive mood and instantly recognizable drum break keep it commercially durable in both streaming and sync contexts.",
+        "revenue_drivers": [
+          "Catalog streaming and classic-pop playlists sustain recurring listening.",
+          "Sync and viral rediscovery can materially lift the baseline.",
+          "Strong cultural memory keeps the track relevant across generations."
+        ],
+        "related_songs": [
+          "another-day-in-paradise"
+        ]
+      },
+      {
+        "title": "Another Day in Paradise",
+        "slug": "another-day-in-paradise",
+        "artist": "phil-collins",
+        "estimated_revenue": "$500K-$1.8M/year",
+        "album": "...But Seriously",
+        "year": 1989,
+        "meaning_summary": "Its ballad structure and continued catalog familiarity help it retain long-tail earnings power.",
+        "revenue_drivers": [
+          "Adult-pop and legacy playlists support repeat streaming.",
+          "Catalog familiarity keeps the song discoverable over time.",
+          "Writer-side value adds to the song's retained economics."
+        ],
+        "related_songs": [
+          "in-the-air-tonight"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Red Hot Chili Peppers",
+      "slug": "red-hot-chili-peppers",
+      "estimated_income": "$8M-$25M/year",
+      "top_songs": [
+        "under-the-bridge",
+        "californication"
+      ],
+      "genre": "Alternative Rock / Funk Rock",
+      "country": "United States",
+      "active_since": "1983",
+      "bio": "Red Hot Chili Peppers keep earning through a high-recognition alternative-rock catalog with unusually strong replay value across multiple eras.",
+      "notable_for": "Alternative-rock staples with persistent playlist and catalog demand.",
+      "career_highlight": "Songs like Under the Bridge and Californication still anchor the catalog's modern earning power.",
+      "revenue_drivers": [
+        "Alternative-rock streaming and playlist longevity sustain recurring listening.",
+        "Cross-era hit density supports strong catalog discovery.",
+        "Live-culture familiarity and sync use help extend the songs' commercial life."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Under the Bridge",
+        "slug": "under-the-bridge",
+        "artist": "red-hot-chili-peppers",
+        "estimated_revenue": "$800K-$2.8M/year",
+        "album": "Blood Sugar Sex Magik",
+        "year": 1991,
+        "meaning_summary": "Its emotional directness and broad alternative-rock familiarity keep it commercially durable long after release.",
+        "revenue_drivers": [
+          "Alternative-rock playlists support steady catalog streaming.",
+          "Strong cultural memory keeps the song active in rediscovery loops.",
+          "Sync and catalog reuse can lift revenue above the baseline."
+        ],
+        "related_songs": [
+          "californication"
+        ]
+      },
+      {
+        "title": "Californication",
+        "slug": "californication",
+        "artist": "red-hot-chili-peppers",
+        "estimated_revenue": "$900K-$3M/year",
+        "album": "Californication",
+        "year": 1999,
+        "meaning_summary": "Its hook, recognizability, and continued playlist use make it one of the band's clearest long-tail earners.",
+        "revenue_drivers": [
+          "Catalog streaming and alternative-rock playlists sustain long-tail replay.",
+          "Late-90s nostalgia keeps the song visible to newer listeners.",
+          "Broad recognition supports ongoing discovery and reuse."
+        ],
+        "related_songs": [
+          "under-the-bridge"
+        ]
+      }
+    ]
   }
 ]

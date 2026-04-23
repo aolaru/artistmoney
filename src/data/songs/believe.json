@@ -1,0 +1,31 @@
+{
+  "title": "Believe",
+  "slug": "believe",
+  "artist": "cher",
+  "estimated_revenue": "$800K-$2.5M/year",
+  "album": "Believe",
+  "year": 1998,
+  "meaning_summary": "Believe still earns because it remains one of the most recognizable late-1990s pop songs and a permanent fixture in dance-pop nostalgia culture.",
+  "revenue_drivers": [
+    "The song remains active on global throwback and dance-pop playlists.",
+    "Its comeback-story status keeps catalog rediscovery strong.",
+    "Club, event, and media reuse support long-tail demand."
+  ],
+  "related_songs": [
+    "if-i-could-turn-back-time"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1.3M-$3.5M/year",
+    "artist_or_estate_share": "$800K-$2.5M/year",
+    "label_master_share": "$300K-$900K/year",
+    "publishing_share": "$180K-$600K/year",
+    "songwriter_share": "$120K-$400K/year",
+    "assumptions": "Estimate assumes ongoing global streaming, dance-pop replay value, event-driven listening, and moderate licensing demand."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out song position",
+    "notes": "Artist-side economics are modeled from performance and master participation assumptions, not private royalty statements."
+  }
+}

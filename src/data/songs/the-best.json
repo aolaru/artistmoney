@@ -1,0 +1,31 @@
+{
+  "title": "The Best",
+  "slug": "the-best",
+  "artist": "tina-turner",
+  "estimated_revenue": "$400K-$1.4M/year",
+  "album": "Foreign Affair",
+  "year": 1989,
+  "meaning_summary": "The Best still makes money because it remains one of the most reused sports-and-event songs in late-1980s pop culture.",
+  "revenue_drivers": [
+    "The song benefits from sports, event, and motivational-use familiarity.",
+    "Playlist longevity keeps it active beyond its original chart cycle.",
+    "Its chant-like hook supports broad cultural reuse."
+  ],
+  "related_songs": [
+    "whats-love-got-to-do-with-it"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$700K-$1.8M/year",
+    "artist_or_estate_share": "$400K-$1.4M/year",
+    "label_master_share": "$180K-$500K/year",
+    "publishing_share": "$120K-$320K/year",
+    "songwriter_share": "$90K-$240K/year",
+    "assumptions": "Estimate assumes ongoing event-driven listening, streaming replay, and media reuse."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out song position",
+    "notes": "Modeled annual range, not a public accounting of label and publishing receipts."
+  }
+}

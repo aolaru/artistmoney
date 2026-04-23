@@ -1,0 +1,31 @@
+{
+  "title": "Because You Loved Me",
+  "slug": "because-you-loved-me",
+  "artist": "celine-dion",
+  "estimated_revenue": "$450K-$1.5M/year",
+  "album": "Falling into You",
+  "year": 1996,
+  "meaning_summary": "Because You Loved Me still earns because it remains one of the strongest adult-pop ballads of the 1990s.",
+  "revenue_drivers": [
+    "The song stays active on adult-contemporary and 1990s ballad playlists.",
+    "Event-driven listening keeps the track commercially relevant.",
+    "Its broad emotional familiarity supports steady long-tail demand."
+  ],
+  "related_songs": [
+    "my-heart-will-go-on"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$800K-$2M/year",
+    "artist_or_estate_share": "$450K-$1.5M/year",
+    "label_master_share": "$180K-$500K/year",
+    "publishing_share": "$120K-$360K/year",
+    "songwriter_share": "$90K-$260K/year",
+    "assumptions": "Estimate assumes durable adult-pop streaming, recurrent playlist presence, and steady event-led listening."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out song position",
+    "notes": "Modeled annual range, not a public split between label and publishing receipts."
+  }
+}

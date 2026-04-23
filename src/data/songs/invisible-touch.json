@@ -1,0 +1,31 @@
+{
+  "title": "Invisible Touch",
+  "slug": "invisible-touch",
+  "artist": "genesis",
+  "estimated_revenue": "$350K-$1.1M/year",
+  "album": "Invisible Touch",
+  "year": 1986,
+  "meaning_summary": "Invisible Touch still earns because it remains Genesis' cleanest mainstream pop crossover and keeps resurfacing through 1980s playlists.",
+  "revenue_drivers": [
+    "The track stays active on classic-pop and 1980s playlists.",
+    "Its crossover familiarity supports wider replay than deeper catalog cuts.",
+    "Writer participation strengthens the economics of long-tail use."
+  ],
+  "related_songs": [
+    "land-of-confusion"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$600K-$1.5M/year",
+    "artist_or_estate_share": "$350K-$1.1M/year",
+    "label_master_share": "$140K-$420K/year",
+    "publishing_share": "$100K-$300K/year",
+    "songwriter_share": "$80K-$240K/year",
+    "assumptions": "Estimate assumes steady replay on 1980s playlists, catalog streaming, and writer-side participation."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "band-aligned songwriter / publisher split",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out song position",
+    "notes": "Modeled annual range, not a public royalty statement."
+  }
+}

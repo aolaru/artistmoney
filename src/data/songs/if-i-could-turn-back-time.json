@@ -1,0 +1,31 @@
+{
+  "title": "If I Could Turn Back Time",
+  "slug": "if-i-could-turn-back-time",
+  "artist": "cher",
+  "estimated_revenue": "$350K-$1.2M/year",
+  "album": "Heart of Stone",
+  "year": 1989,
+  "meaning_summary": "If I Could Turn Back Time still earns because it remains one of Cher's most familiar power-pop recordings and keeps resurfacing through classic-pop nostalgia.",
+  "revenue_drivers": [
+    "The song retains strong recognition across late-1980s and adult-pop playlists.",
+    "Its chorus-driven familiarity makes it durable in recurrent listening.",
+    "Legacy radio and event-driven use help preserve catalog value."
+  ],
+  "related_songs": [
+    "believe"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$600K-$1.6M/year",
+    "artist_or_estate_share": "$350K-$1.2M/year",
+    "label_master_share": "$150K-$450K/year",
+    "publishing_share": "$100K-$300K/year",
+    "songwriter_share": "$80K-$220K/year",
+    "assumptions": "Estimate assumes long-tail streaming, recurrent playlist use, and lighter sync-style reuse than Believe."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out song position",
+    "notes": "Modeled annual range, not a public breakdown of master and publishing receipts."
+  }
+}

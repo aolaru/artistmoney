@@ -1,0 +1,31 @@
+{
+  "title": "Sweet Dreams (Are Made of This)",
+  "slug": "sweet-dreams-are-made-of-this",
+  "artist": "eurythmics",
+  "estimated_revenue": "$700K-$2.2M/year",
+  "album": "Sweet Dreams (Are Made of This)",
+  "year": 1983,
+  "meaning_summary": "Sweet Dreams still earns at high catalog scale because it remains one of the most instantly recognizable songs of the synth-pop era.",
+  "revenue_drivers": [
+    "The song performs strongly on 1980s, synth-pop, and crossover nostalgia playlists.",
+    "Its hook and sonic identity make it unusually sync-friendly.",
+    "Writer-side participation strengthens retained catalog value."
+  ],
+  "related_songs": [
+    "here-comes-the-rain-again"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1.2M-$3M/year",
+    "artist_or_estate_share": "$700K-$2.2M/year",
+    "label_master_share": "$260K-$750K/year",
+    "publishing_share": "$180K-$550K/year",
+    "songwriter_share": "$150K-$450K/year",
+    "assumptions": "Estimate assumes global playlist longevity, strong media reuse, and durable cross-generational replay."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "writer / publisher split with strong creator participation",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out song position",
+    "notes": "Modeled annual range, not a public split of recording and publishing receipts."
+  }
+}

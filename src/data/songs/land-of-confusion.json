@@ -1,0 +1,31 @@
+{
+  "title": "Land of Confusion",
+  "slug": "land-of-confusion",
+  "artist": "genesis",
+  "estimated_revenue": "$250K-$900K/year",
+  "album": "Invisible Touch",
+  "year": 1986,
+  "meaning_summary": "Land of Confusion still makes money because its political-pop hook and recurring video-era recognition keep it visible in the Genesis catalog.",
+  "revenue_drivers": [
+    "The song retains strong 1980s playlist and classic-rock crossover appeal.",
+    "Its recognizable chorus keeps replay healthy in legacy listening.",
+    "Writer-side economics improve the retained share of long-tail demand."
+  ],
+  "related_songs": [
+    "invisible-touch"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$450K-$1.2M/year",
+    "artist_or_estate_share": "$250K-$900K/year",
+    "label_master_share": "$120K-$320K/year",
+    "publishing_share": "$80K-$240K/year",
+    "songwriter_share": "$60K-$180K/year",
+    "assumptions": "Estimate assumes durable replay within the Genesis catalog, 1980s nostalgia demand, and moderate sync-style reuse."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "band-aligned songwriter / publisher split",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out song position",
+    "notes": "Artist-side economics are modeled from likely band and writer participation, not disclosed royalty documents."
+  }
+}

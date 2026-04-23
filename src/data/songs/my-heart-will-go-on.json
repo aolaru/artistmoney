@@ -1,0 +1,31 @@
+{
+  "title": "My Heart Will Go On",
+  "slug": "my-heart-will-go-on",
+  "artist": "celine-dion",
+  "estimated_revenue": "$1M-$3.5M/year",
+  "album": "Let's Talk About Love",
+  "year": 1997,
+  "meaning_summary": "My Heart Will Go On still dominates because Titanic made it one of the strongest soundtrack-linked songs in modern pop history.",
+  "revenue_drivers": [
+    "The song remains globally tied to Titanic and soundtrack nostalgia.",
+    "Weddings, events, and ballad playlists keep long-tail listening active.",
+    "Its cultural familiarity supports unusual catalog durability."
+  ],
+  "related_songs": [
+    "because-you-loved-me"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1.8M-$4.5M/year",
+    "artist_or_estate_share": "$1M-$3.5M/year",
+    "label_master_share": "$350K-$1M/year",
+    "publishing_share": "$220K-$700K/year",
+    "songwriter_share": "$150K-$500K/year",
+    "assumptions": "Estimate assumes global soundtrack nostalgia, high recurring ballad demand, and strong event-driven listening."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not publicly modeled as a fully sold-out song position",
+    "notes": "Artist-side range is modeled from likely master participation and performance income, not disclosed royalty statements."
+  }
+}

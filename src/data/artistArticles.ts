@@ -315,5 +315,55 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "Deep multi-generational recognition gives Elvis unusually durable catalog economics."
     ],
     insight: "The biggest legacy catalogs earn not only from streams, but from being culturally unavoidable across films, events, and nostalgia media."
+  },
+  cher: {
+    seoTitle: "Does Cher still make money from old hits?",
+    shortAnswer: "Yes — estimated $6M-$18M/year.",
+    sources: [
+      "Believe remains one of the strongest long-tail dance-pop recordings of the late 1990s.",
+      "If I Could Turn Back Time and other classics keep the catalog active across nostalgia and recurrent-play listening.",
+      "Cross-generational recognition gives Cher unusually durable replay value."
+    ],
+    insight: "Multi-era catalogs age well when they bridge classic-pop familiarity and modern playlist-friendly production."
+  },
+  "tina-turner": {
+    seoTitle: "Does Tina Turner still make money from her catalog?",
+    shortAnswer: "Yes — estimated $5M-$16M/year.",
+    sources: [
+      "What's Love Got to Do with It and The Best remain two of the strongest evergreen comeback-era hits in pop-rock.",
+      "Event-driven listening and sports-media familiarity keep the catalog unusually active.",
+      "Legacy recognition and recurrent playlist use support steady long-tail earnings."
+    ],
+    insight: "Songs that become part of sports, events, and shared public memory usually outlive their original chart cycle by decades."
+  },
+  "celine-dion": {
+    seoTitle: "Does Celine Dion still make money from old songs?",
+    shortAnswer: "Yes — estimated $8M-$28M/year.",
+    sources: [
+      "My Heart Will Go On remains one of the strongest soundtrack-driven songs in modern catalog economics.",
+      "Because You Loved Me and other ballads continue to perform through adult-pop and event-driven listening.",
+      "Soundtrack association and emotional familiarity extend the catalog's earning life."
+    ],
+    insight: "When a catalog owns both soundtrack memory and event listening, it compounds well beyond ordinary pop replay."
+  },
+  genesis: {
+    seoTitle: "Does Genesis still make money from its catalog?",
+    shortAnswer: "Yes — estimated $4M-$12M/year.",
+    sources: [
+      "Invisible Touch and Land of Confusion remain active through 1980s and classic-rock playlist demand.",
+      "The band's multi-era legacy broadens catalog discovery beyond only the biggest crossover singles.",
+      "Writer-side participation can materially improve the economics of long-tail replay."
+    ],
+    insight: "Catalogs that bridge scenes and decades keep earning because they are rediscovered by more than one kind of listener."
+  },
+  eurythmics: {
+    seoTitle: "Do Eurythmics still make money from old hits?",
+    shortAnswer: "Yes — estimated $3M-$10M/year.",
+    sources: [
+      "Sweet Dreams (Are Made of This) remains one of the strongest evergreen songs in synth-pop.",
+      "The catalog stays sync-friendly because the songs are both recognizable and sonically distinctive.",
+      "Creator participation strengthens retained value across the band's best-known tracks."
+    ],
+    insight: "Distinctive synth-pop catalogs can stay commercially strong for decades because their songs remain easy to recognize, place, and replay."
   }
 };

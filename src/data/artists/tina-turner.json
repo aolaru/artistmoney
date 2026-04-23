@@ -1,0 +1,21 @@
+{
+  "name": "Tina Turner",
+  "slug": "tina-turner",
+  "estimated_income": "$5M-$16M/year",
+  "top_songs": [
+    "whats-love-got-to-do-with-it",
+    "the-best"
+  ],
+  "genre": "Pop Rock / Soul",
+  "country": "United States",
+  "active_since": "1960",
+  "bio": "Tina Turner's catalog continues to earn because it combines globally familiar comeback-era hits with songs that remain central to sports, event, and nostalgia listening.",
+  "notable_for": "One of the strongest legacy comeback catalogs in pop-rock, led by universally recognizable 1980s singles.",
+  "career_highlight": "What's Love Got to Do with It remains one of the most durable adult-pop crossover hits of the 1980s.",
+  "revenue_drivers": [
+    "catalog streaming",
+    "radio and legacy playlist demand",
+    "sports and event reuse",
+    "licensing and soundtrack familiarity"
+  ]
+}
