@@ -4,5 +4,14 @@
   "artist": "squarepusher",
   "estimated_revenue": "$35K-$130K/year",
   "album": "Go Plastic",
-  "year": 2001
+  "year": 2001,
+  "meaning_summary": "This recording leans on atmosphere, texture, and replayable mood, which makes it durable in listener memory and long-tail streaming.",
+  "revenue_drivers": [
+    "Playlist and mood-based streaming support repeat listening over long periods.",
+    "Steady niche demand and reissue interest can keep the track earning.",
+    "Licensing and soundtrack-style use can materially improve the long tail."
+  ],
+  "related_songs": [
+    "come-on-my-selector"
+  ]
 }

@@ -2,5 +2,20 @@
   "name": "Nirvana",
   "slug": "nirvana",
   "estimated_income": "$2M-$6M/year",
-  "top_songs": ["smells-like-teen-spirit", "come-as-you-are", "lithium"]
+  "top_songs": [
+    "smells-like-teen-spirit",
+    "come-as-you-are",
+    "lithium"
+  ],
+  "genre": "Grunge / Rock",
+  "country": "United States",
+  "active_since": "1989",
+  "bio": "Nirvana's relatively compact catalog remains a high-value alternative-rock asset with enduring global recognition.",
+  "notable_for": "Nirvana remains closely associated with Smells Like Teen Spirit and Come as You Are, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Smells Like Teen Spirit and Come as You Are still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings after the original release cycle ends.",
+    "Playlist use and rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand extend catalog value over time."
+  ]
 }

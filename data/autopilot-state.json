@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 3,
-    "song": 70,
-    "album": 70
+    "artist": 4,
+    "song": 71,
+    "album": 71
   },
   "lastTouched": {
     "artist": {
@@ -69,7 +69,8 @@
       "the-irrepressibles": "2026-04-23T10:19:10.867Z",
       "abba": "2026-04-23T13:17:28.356Z",
       "busta-rhymes": "2026-04-23T16:26:50.868Z",
-      "heart": "2026-04-23T19:01:57.374Z"
+      "heart": "2026-04-23T19:01:57.374Z",
+      "nirvana": "2026-04-23T21:41:31.981Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -141,7 +142,8 @@
       "mama-said-knock-you-out": "2026-04-23T10:19:10.867Z",
       "midnight-in-a-perfect-world": "2026-04-23T13:17:28.356Z",
       "more-than-a-feeling": "2026-04-23T16:26:50.868Z",
-      "music-for-airports-1-1": "2026-04-23T19:01:57.374Z"
+      "music-for-airports-1-1": "2026-04-23T19:01:57.374Z",
+      "my-red-hot-car": "2026-04-23T21:41:31.981Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -183,6 +185,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-23T21:41:31.981Z",
+      "summary": "artist:nirvana, song:my-red-hot-car"
+    },
+    {
       "timestamp": "2026-04-23T19:01:57.374Z",
       "summary": "artist:heart, song:music-for-airports-1-1"
     },
@@ -217,10 +223,6 @@
     {
       "timestamp": "2026-04-22T19:06:45.929Z",
       "summary": "artist:fatboy-slim, song:light-my-fire"
-    },
-    {
-      "timestamp": "2026-04-22T16:06:41.257Z",
-      "summary": "artist:creedence-clearwater-revival, song:last-goodbye, album:ludacris-chicken-n-beer"
     }
   ]
 }
