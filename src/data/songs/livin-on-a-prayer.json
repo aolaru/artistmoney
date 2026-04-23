@@ -4,5 +4,14 @@
   "artist": "bon-jovi",
   "estimated_revenue": "$900K-$2.8M/year",
   "album": "Slippery When Wet",
-  "year": 1986
+  "year": 1986,
+  "meaning_summary": "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay.",
+  "revenue_drivers": [
+    "Classic replay value and catalog streaming keep major rock songs relevant.",
+    "Cultural familiarity supports long-tail listener demand.",
+    "Sync placements and live-culture recognition help extend the song's revenue life."
+  ],
+  "related_songs": [
+    "wanted-dead-or-alive"
+  ]
 }

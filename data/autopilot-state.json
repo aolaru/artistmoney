@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 6,
-    "song": 63,
-    "album": 63
+    "artist": 7,
+    "song": 64,
+    "album": 64
   },
   "lastTouched": {
     "artist": {
@@ -62,7 +62,8 @@
       "bjork": "2026-04-22T13:16:47.253Z",
       "creedence-clearwater-revival": "2026-04-22T16:06:41.257Z",
       "fatboy-slim": "2026-04-22T19:06:45.929Z",
-      "k-ci-and-jojo": "2026-04-22T21:46:00.147Z"
+      "k-ci-and-jojo": "2026-04-22T21:46:00.147Z",
+      "mark-morrison": "2026-04-23T02:09:01.884Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -127,7 +128,8 @@
       "keep-on-loving-you": "2026-04-22T13:16:47.253Z",
       "last-goodbye": "2026-04-22T16:06:41.257Z",
       "light-my-fire": "2026-04-22T19:06:45.929Z",
-      "listen-to-your-heart": "2026-04-22T21:46:00.147Z"
+      "listen-to-your-heart": "2026-04-22T21:46:00.147Z",
+      "livin-on-a-prayer": "2026-04-23T02:09:01.884Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -160,10 +162,15 @@
       "kanye-west-graduation": "2026-04-22T02:05:21.839Z",
       "linkin-park-hybrid-theory": "2026-04-22T05:21:33.266Z",
       "ludacris-chicken-n-beer": "2026-04-22T16:06:41.257Z",
-      "madonna-like-a-prayer": "2026-04-22T21:46:00.147Z"
+      "madonna-like-a-prayer": "2026-04-22T21:46:00.147Z",
+      "mariah-carey-the-emancipation-of-mimi": "2026-04-23T02:09:01.884Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-23T02:09:01.884Z",
+      "summary": "artist:mark-morrison, song:livin-on-a-prayer, album:mariah-carey-the-emancipation-of-mimi"
+    },
     {
       "timestamp": "2026-04-22T21:46:00.147Z",
       "summary": "artist:k-ci-and-jojo, song:listen-to-your-heart, album:madonna-like-a-prayer"
@@ -199,10 +206,6 @@
     {
       "timestamp": "2026-04-21T21:40:28.583Z",
       "summary": "artist:the-cardigans, song:in-da-club"
-    },
-    {
-      "timestamp": "2026-04-21T19:05:43.573Z",
-      "summary": "artist:snoop-dogg, song:if-i-ruled-the-world"
     }
   ]
 }

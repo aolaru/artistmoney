@@ -8816,5 +8816,100 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/like-a-prayer/83448003?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Madonna%20Like%20a%20Prayer"
     }
+  },
+  "mariah-carey-the-emancipation-of-mimi": {
+    "releaseDate": "2005-04-12",
+    "trackCount": 14,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "It's Like That (feat. Jermaine Dupri & Fatman Scoop)",
+        "durationMs": 203124
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "We Belong Together",
+        "durationMs": 201400
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Shake It Off",
+        "durationMs": 232840
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Mine Again",
+        "durationMs": 241693
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Say Somethin' (feat. Snoop Dogg)",
+        "durationMs": 224440
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Stay The Night",
+        "durationMs": 237267
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Get Your Number (feat. Jermaine Dupri)",
+        "durationMs": 195560
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "One And Only (feat. Twista)",
+        "durationMs": 194707
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Circles",
+        "durationMs": 210760
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Your Girl",
+        "durationMs": 166333
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "I Wish You Knew",
+        "durationMs": 214907
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "To The Floor (feat. Nelly)",
+        "durationMs": 207627
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Joy Ride",
+        "durationMs": 243800
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Fly Like A Bird",
+        "durationMs": 233040
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Mariah%20Carey%20The%20Emancipation%20of%20Mimi",
+      "appleMusic": "https://music.apple.com/us/album/the-emancipation-of-mimi/1476731879?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Mariah%20Carey%20The%20Emancipation%20of%20Mimi"
+    }
   }
 } as const;

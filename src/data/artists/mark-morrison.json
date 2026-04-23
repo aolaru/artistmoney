@@ -2,8 +2,19 @@
   "name": "Mark Morrison",
   "slug": "mark-morrison",
   "estimated_income": "$250K-$900K/year",
-  "top_songs": ["return-of-the-mack", "crazy"],
+  "top_songs": [
+    "return-of-the-mack",
+    "crazy"
+  ],
   "genre": "R&B / Hip-Hop Soul",
   "country": "United Kingdom",
-  "active_since": "1993"
+  "active_since": "1993",
+  "bio": "Mark Morrison has a durable r&b / hip-hop soul catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "Mark Morrison remains closely associated with Return of the Mack and Crazy, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Return of the Mack and Crazy still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Recognizable catalog cuts keep drawing repeat streaming long after the original release cycle.",
+    "Playlist memory and cultural recall help the strongest records stay active.",
+    "Sampling, sync use, and nostalgia spikes can lift the baseline."
+  ]
 }
