@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 8,
-    "song": 65,
-    "album": 65
+    "artist": 9,
+    "song": 66,
+    "album": 66
   },
   "lastTouched": {
     "artist": {
@@ -64,7 +64,8 @@
       "fatboy-slim": "2026-04-22T19:06:45.929Z",
       "k-ci-and-jojo": "2026-04-22T21:46:00.147Z",
       "mark-morrison": "2026-04-23T02:09:01.884Z",
-      "pink-floyd": "2026-04-23T05:25:44.325Z"
+      "pink-floyd": "2026-04-23T05:25:44.325Z",
+      "taylor-swift": "2026-04-23T07:44:17.692Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -131,7 +132,8 @@
       "light-my-fire": "2026-04-22T19:06:45.929Z",
       "listen-to-your-heart": "2026-04-22T21:46:00.147Z",
       "livin-on-a-prayer": "2026-04-23T02:09:01.884Z",
-      "losing-my-religion": "2026-04-23T05:25:44.325Z"
+      "losing-my-religion": "2026-04-23T05:25:44.325Z",
+      "loungin": "2026-04-23T07:44:17.692Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -170,6 +172,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-23T07:44:17.692Z",
+      "summary": "artist:taylor-swift, song:loungin"
+    },
+    {
       "timestamp": "2026-04-23T05:25:44.325Z",
       "summary": "artist:pink-floyd, song:losing-my-religion"
     },
@@ -204,10 +210,6 @@
     {
       "timestamp": "2026-04-22T05:21:33.266Z",
       "summary": "artist:the-verve, song:it-must-have-been-love, album:linkin-park-hybrid-theory"
-    },
-    {
-      "timestamp": "2026-04-22T02:05:21.839Z",
-      "summary": "artist:the-doors, song:in-this-shirt, album:kanye-west-graduation"
     }
   ]
 }

@@ -2,5 +2,20 @@
   "name": "Taylor Swift",
   "slug": "taylor-swift",
   "estimated_income": "$50M-$120M/year",
-  "top_songs": ["blank-space", "shake-it-off", "anti-hero"]
+  "top_songs": [
+    "blank-space",
+    "shake-it-off",
+    "anti-hero"
+  ],
+  "genre": "Pop",
+  "country": "United States",
+  "active_since": "2006",
+  "bio": "Taylor Swift pairs top-tier streaming with touring and fan-driven catalog re-engagement across multiple eras.",
+  "notable_for": "Taylor Swift remains closely associated with Blank Space and Shake It Off, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Blank Space and Shake It Off still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming sustains earnings after the original release cycle ends.",
+    "Playlist use and rediscovery keep durable songs in circulation.",
+    "Licensing and long-tail audience demand extend catalog value over time."
+  ]
 }
