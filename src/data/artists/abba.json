@@ -2,9 +2,19 @@
   "name": "ABBA",
   "slug": "abba",
   "estimated_income": "$8M-$25M/year",
-  "top_songs": ["dancing-queen", "gimme-gimme-gimme"],
+  "top_songs": [
+    "dancing-queen",
+    "gimme-gimme-gimme"
+  ],
   "genre": "Pop",
   "country": "Sweden",
   "active_since": "1972",
-  "bio": "ABBA remains one of the strongest evergreen pop catalogs in the world, with constant playlist use, film and theater association, and broad nostalgic replay."
+  "bio": "ABBA remains one of the strongest evergreen pop catalogs in the world, with constant playlist use, film and theater association, and broad nostalgic replay.",
+  "notable_for": "ABBA remains closely associated with Dancing Queen and Gimme! Gimme! Gimme! (A Man After Midnight), which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Dancing Queen and Gimme! Gimme! Gimme! (A Man After Midnight) still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Repeat streaming and playlist familiarity help the biggest songs keep earning after release.",
+    "Broad recognition supports social reuse, rediscovery, and steady catalog listening.",
+    "Licensing and event-driven playback can create recurring spikes."
+  ]
 }

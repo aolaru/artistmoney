@@ -8989,5 +8989,112 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/bad/559334659?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Michael%20Jackson%20Bad"
     }
+  },
+  "ludacris-word-of-mouf": {
+    "releaseDate": "2001-11-27",
+    "trackCount": 16,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Coming 2 America",
+        "durationMs": 262227
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Rollout (My Business)",
+        "durationMs": 240013
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Go 2 Sleep (feat. Infamous 2-0, Lil' Fate & Three 6 Mafia)",
+        "durationMs": 242509
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Cry Babies (Oh No)",
+        "durationMs": 289228
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "She Said (feat. Fate Wilson)",
+        "durationMs": 278547
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Area Codes (feat. Nate Dogg)",
+        "durationMs": 249533
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Growing Pains (feat. Fate Wilson & Keon Bryce)",
+        "durationMs": 288147
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Move B***h (feat. Ludacris, Mystikal & I-20)",
+        "durationMs": 271627
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Saturday (Oooh! Ooooh!) [feat. Sleepy Brown]",
+        "durationMs": 228893
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Keep It On the Hush (feat. Jazze Pha)",
+        "durationMs": 286720
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Word of Mouf (Freestyle) [feat. 4 Ize]",
+        "durationMs": 131760
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Get the F*** Back (feat. Shawnna, I-20 & Fate Wilson)",
+        "durationMs": 321547
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Freaky Thangs (feat. Twista & Jagged Edge)",
+        "durationMs": 331800
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Cold Outside (feat. Chimere)",
+        "durationMs": 403653
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Block Lockdown (feat. Infamous 2-0)",
+        "durationMs": 295080
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Welcome to Atlanta (feat. Ludacris)",
+        "durationMs": 203667
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Ludacris%20Word%20of%20Mouf",
+      "appleMusic": "https://music.apple.com/us/album/word-of-mouf/1456413816?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Ludacris%20Word%20of%20Mouf"
+    }
   }
 } as const;

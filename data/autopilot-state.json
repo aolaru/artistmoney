@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 10,
-    "song": 67,
-    "album": 67
+    "artist": 1,
+    "song": 68,
+    "album": 68
   },
   "lastTouched": {
     "artist": {
@@ -66,7 +66,8 @@
       "mark-morrison": "2026-04-23T02:09:01.884Z",
       "pink-floyd": "2026-04-23T05:25:44.325Z",
       "taylor-swift": "2026-04-23T07:44:17.692Z",
-      "the-irrepressibles": "2026-04-23T10:19:10.867Z"
+      "the-irrepressibles": "2026-04-23T10:19:10.867Z",
+      "abba": "2026-04-23T13:17:28.356Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -135,7 +136,8 @@
       "livin-on-a-prayer": "2026-04-23T02:09:01.884Z",
       "losing-my-religion": "2026-04-23T05:25:44.325Z",
       "loungin": "2026-04-23T07:44:17.692Z",
-      "mama-said-knock-you-out": "2026-04-23T10:19:10.867Z"
+      "mama-said-knock-you-out": "2026-04-23T10:19:10.867Z",
+      "midnight-in-a-perfect-world": "2026-04-23T13:17:28.356Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -170,10 +172,15 @@
       "ludacris-chicken-n-beer": "2026-04-22T16:06:41.257Z",
       "madonna-like-a-prayer": "2026-04-22T21:46:00.147Z",
       "mariah-carey-the-emancipation-of-mimi": "2026-04-23T02:09:01.884Z",
-      "michael-jackson-bad": "2026-04-23T10:19:10.867Z"
+      "michael-jackson-bad": "2026-04-23T10:19:10.867Z",
+      "ludacris-word-of-mouf": "2026-04-23T13:17:28.356Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-23T13:17:28.356Z",
+      "summary": "artist:abba, song:midnight-in-a-perfect-world, album:ludacris-word-of-mouf"
+    },
     {
       "timestamp": "2026-04-23T10:19:10.867Z",
       "summary": "artist:the-irrepressibles, song:mama-said-knock-you-out, album:michael-jackson-bad"
@@ -209,10 +216,6 @@
     {
       "timestamp": "2026-04-22T10:16:43.373Z",
       "summary": "artist:aphex-twin, song:karma-police"
-    },
-    {
-      "timestamp": "2026-04-22T07:25:53.234Z",
-      "summary": "artist:4-non-blondes, song:juicy"
     }
   ]
 }
