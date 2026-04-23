@@ -88,6 +88,9 @@ const evergreenEntry = rankedSongs.find(({ song }) => (song.year ?? 9999) <= 200
 const evergreenSong = evergreenEntry?.song;
 const evergreenArtist = evergreenSong ? getArtist(evergreenSong.artist) : undefined;
 const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArtist) : undefined;
+const splitAwareArtists = rankedArtists
+  .filter(({ artist }) => artist.earnings?.artist_or_estate_share && artist.earnings?.label_share)
+  .slice(0, 6);
 ---
 
 <BaseLayout
@@ -210,7 +213,7 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
 
   <section id="artists" aria-labelledby="top-artists-title">
     <h2 id="top-artists-title">Top Artists</h2>
-    <p class="results-note">Ranked by normalized artist-side annual earnings midpoint.</p>
+    <p class="results-note">Ranked by normalized artist-side annual earnings midpoint. Where available, cards also show the modeled label share for comparison.</p>
     <div class="card-grid">
       {topArtists.map(({ artist, revenueScore }) => {
         const artistVisual = getArtistVisual(artist);
@@ -238,7 +241,8 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
               {(artist.genre || artist.country) && (
                 <p class="artist-card-meta">{[artist.genre, artist.country].filter(Boolean).join(" · ")}</p>
               )}
-              <p>Estimated income: {artist.estimated_income}</p>
+              <p><strong>Artist-side:</strong> {artist.earnings?.artist_or_estate_share ?? artist.estimated_income}</p>
+              <p><strong>Label side:</strong> {artist.earnings?.label_share ?? "Not modeled yet"}</p>
               <p class="artist-card-meta">Modeled midpoint: {formatRevenueMidpoint(revenueScore)}</p>
             </div>
           </article>
@@ -246,6 +250,24 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
       })}
     </div>
   </section>
+
+  {splitAwareArtists.length > 0 && (
+    <section aria-labelledby="split-title">
+      <h2 id="split-title">Artist vs Label: Who Keeps What</h2>
+      <p class="results-note">These modeled ranges compare what the artist or estate may keep each year versus the label-side share when split data exists.</p>
+      <ul class="meta-list">
+        {splitAwareArtists.map(({ artist }) => (
+          <li>
+            <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+            <span class="meta-inline">
+              {" "}· artist-side {artist.earnings?.artist_or_estate_share}
+              {" "}· label side {artist.earnings?.label_share}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   <section id="songs" aria-labelledby="top-songs-title">
     <h2 id="top-songs-title">Top Songs</h2>
