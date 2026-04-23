@@ -8911,5 +8911,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/the-emancipation-of-mimi/1476731879?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Mariah%20Carey%20The%20Emancipation%20of%20Mimi"
     }
+  },
+  "michael-jackson-bad": {
+    "releaseDate": "1987-08-31",
+    "label": "MJJ Productions Inc.",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Bad",
+        "durationMs": 247369
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "The Way You Make Me Feel",
+        "durationMs": 298122
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Speed Demon",
+        "durationMs": 242022
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Liberian Girl",
+        "durationMs": 232802
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Just Good Friends",
+        "durationMs": 247334
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Another Part of Me",
+        "durationMs": 234715
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Man In the Mirror",
+        "durationMs": 318688
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "I Just Can't Stop Loving You",
+        "durationMs": 253785
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Dirty Diana",
+        "durationMs": 280753
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Smooth Criminal",
+        "durationMs": 257766
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Leave Me Alone",
+        "durationMs": 280359
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Michael%20Jackson%20Bad",
+      "appleMusic": "https://music.apple.com/us/album/bad/559334659?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Michael%20Jackson%20Bad"
+    }
   }
 } as const;
