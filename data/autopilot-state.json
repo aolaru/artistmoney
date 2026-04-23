@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 1,
-    "song": 68,
-    "album": 68
+    "artist": 2,
+    "song": 69,
+    "album": 69
   },
   "lastTouched": {
     "artist": {
@@ -67,7 +67,8 @@
       "pink-floyd": "2026-04-23T05:25:44.325Z",
       "taylor-swift": "2026-04-23T07:44:17.692Z",
       "the-irrepressibles": "2026-04-23T10:19:10.867Z",
-      "abba": "2026-04-23T13:17:28.356Z"
+      "abba": "2026-04-23T13:17:28.356Z",
+      "busta-rhymes": "2026-04-23T16:26:50.868Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -137,7 +138,8 @@
       "losing-my-religion": "2026-04-23T05:25:44.325Z",
       "loungin": "2026-04-23T07:44:17.692Z",
       "mama-said-knock-you-out": "2026-04-23T10:19:10.867Z",
-      "midnight-in-a-perfect-world": "2026-04-23T13:17:28.356Z"
+      "midnight-in-a-perfect-world": "2026-04-23T13:17:28.356Z",
+      "more-than-a-feeling": "2026-04-23T16:26:50.868Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -173,10 +175,15 @@
       "madonna-like-a-prayer": "2026-04-22T21:46:00.147Z",
       "mariah-carey-the-emancipation-of-mimi": "2026-04-23T02:09:01.884Z",
       "michael-jackson-bad": "2026-04-23T10:19:10.867Z",
-      "ludacris-word-of-mouf": "2026-04-23T13:17:28.356Z"
+      "ludacris-word-of-mouf": "2026-04-23T13:17:28.356Z",
+      "mariah-carey-merry-christmas": "2026-04-23T16:26:50.868Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-23T16:26:50.868Z",
+      "summary": "artist:busta-rhymes, song:more-than-a-feeling, album:mariah-carey-merry-christmas"
+    },
     {
       "timestamp": "2026-04-23T13:17:28.356Z",
       "summary": "artist:abba, song:midnight-in-a-perfect-world, album:ludacris-word-of-mouf"
@@ -212,10 +219,6 @@
     {
       "timestamp": "2026-04-22T13:16:47.253Z",
       "summary": "artist:bjork, song:keep-on-loving-you"
-    },
-    {
-      "timestamp": "2026-04-22T10:16:43.373Z",
-      "summary": "artist:aphex-twin, song:karma-police"
     }
   ]
 }

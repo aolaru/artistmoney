@@ -4,5 +4,14 @@
   "artist": "boston",
   "estimated_revenue": "$300K-$1M/year",
   "album": "Boston",
-  "year": 1976
+  "year": 1976,
+  "meaning_summary": "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay.",
+  "revenue_drivers": [
+    "Classic replay value and catalog streaming keep major rock songs relevant.",
+    "Cultural familiarity supports long-tail listener demand.",
+    "Sync placements and live-culture recognition help extend the song's revenue life."
+  ],
+  "related_songs": [
+    "peace-of-mind"
+  ]
 }

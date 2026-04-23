@@ -9096,5 +9096,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/word-of-mouf/1456413816?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Ludacris%20Word%20of%20Mouf"
     }
+  },
+  "mariah-carey-merry-christmas": {
+    "releaseDate": "1994-10-28",
+    "label": "Sony Music Entertainment",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Silent Night",
+        "durationMs": 221927
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "All I Want for Christmas Is You",
+        "durationMs": 241562
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "O Holy Night",
+        "durationMs": 267464
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Christmas (Baby Please Come Home)",
+        "durationMs": 155493
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Miss You Most (At Christmas Time)",
+        "durationMs": 273513
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Joy to the World",
+        "durationMs": 260168
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Jesus Born on This Day",
+        "durationMs": 222651
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Santa Claus Is Comin' to Town",
+        "durationMs": 204554
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Hark! The Herald Angels Sing / Gloria (In Excelsis Deo)",
+        "durationMs": 180864
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Jesus Oh What a Wonderful Child",
+        "durationMs": 266627
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Mariah%20Carey%20Merry%20Christmas",
+      "appleMusic": "https://music.apple.com/us/album/merry-christmas/585972750?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Mariah%20Carey%20Merry%20Christmas"
+    }
   }
 } as const;
