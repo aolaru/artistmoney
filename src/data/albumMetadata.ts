@@ -9234,5 +9234,125 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/thriller/269572838?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Michael%20Jackson%20Thriller"
     }
+  },
+  "montell-jordan-get-it-on-tonite": {
+    "releaseDate": "1999-01-01",
+    "label": "The Island Def Jam Music Group",
+    "trackCount": 18,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Sidney Jordan (Intro)",
+        "durationMs": 12667
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Get It On Tonite",
+        "durationMs": 276267
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Come Home",
+        "durationMs": 218333
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Funk Flex (Interlude)",
+        "durationMs": 12227
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "What's It Feel Like? (Is It Good?)",
+        "durationMs": 244200
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Everybody (Get Down)",
+        "durationMs": 270533
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Can't Get Enough (feat. Ja Rule)",
+        "durationMs": 230040
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Why You Wanna Do That? (Ooh Girl)",
+        "durationMs": 244827
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Maybe She Will",
+        "durationMs": 216573
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Kevin Nash Interview",
+        "durationMs": 57600
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Time to Say Goodbye",
+        "durationMs": 316400
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Let's Cuddle Up (feat. 187 Lockdown)",
+        "durationMs": 279800
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Do You",
+        "durationMs": 277800
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "One Last Time (Break Up Sex)",
+        "durationMs": 267800
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Last Night (Can We Move On?)",
+        "durationMs": 311227
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "The Interview",
+        "durationMs": 66400
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "Once Upon a Time",
+        "durationMs": 276467
+      },
+      {
+        "discNumber": 1,
+        "number": 18,
+        "title": "Against All Odds",
+        "durationMs": 531507
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Montell%20Jordan%20Get%20It%20on...%20Tonite",
+      "appleMusic": "https://music.apple.com/us/album/get-it-on-tonite/1442966746?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Montell%20Jordan%20Get%20It%20on...%20Tonite"
+    }
   }
 } as const;
