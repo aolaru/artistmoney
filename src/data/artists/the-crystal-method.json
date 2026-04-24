@@ -2,8 +2,19 @@
   "name": "The Crystal Method",
   "slug": "the-crystal-method",
   "estimated_income": "$300K-$1.2M/year",
-  "top_songs": ["busy-child", "name-of-the-game"],
+  "top_songs": [
+    "busy-child",
+    "name-of-the-game"
+  ],
   "genre": "Electronic / Big Beat",
   "country": "United States",
-  "active_since": "1993"
+  "active_since": "1993",
+  "bio": "The Crystal Method has a durable electronic / big beat catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "The Crystal Method remains closely associated with Busy Child and Name of the Game, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Busy Child and Name of the Game still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Long-tail streaming and mood-based playlists keep the catalog commercially active.",
+    "Deep-fan listening and reissue interest add value beyond the headline tracks.",
+    "Instrumental or atmosphere-driven tracks can stay useful for sync over time."
+  ]
 }

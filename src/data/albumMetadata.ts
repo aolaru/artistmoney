@@ -9168,5 +9168,71 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/merry-christmas/585972750?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Mariah%20Carey%20Merry%20Christmas"
     }
+  },
+  "michael-jackson-thriller": {
+    "releaseDate": "1982-11-29",
+    "label": "MJJ Productions Inc.",
+    "trackCount": 9,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Wanna Be Startin' Somethin'",
+        "durationMs": 363400
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Baby Be Mine",
+        "durationMs": 260368
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "The Girl Is Mine",
+        "durationMs": 222153
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Thriller",
+        "durationMs": 358807
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Beat It",
+        "durationMs": 258297
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Billie Jean",
+        "durationMs": 293802
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Human Nature",
+        "durationMs": 245838
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "P.Y.T. (Pretty Young Thing)",
+        "durationMs": 238334
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "The Lady in My Life",
+        "durationMs": 298251
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Michael%20Jackson%20Thriller",
+      "appleMusic": "https://music.apple.com/us/album/thriller/269572838?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Michael%20Jackson%20Thriller"
+    }
   }
 } as const;

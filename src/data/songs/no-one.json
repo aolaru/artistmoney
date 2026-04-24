@@ -18,5 +18,14 @@
     "publishing_owner": "Publishing appears shared with strong songwriter participation",
     "catalog_sale_status": "No sale adjustment is modeled",
     "notes": "Inferred annual range from current catalog and playlist behavior."
-  }
+  },
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can lift the baseline."
+  ],
+  "related_songs": [
+    "fallin"
+  ]
 }
