@@ -2,8 +2,19 @@
   "name": "Xzibit",
   "slug": "xzibit",
   "estimated_income": "$600K-$2M/year",
-  "top_songs": ["x", "paparazzi"],
+  "top_songs": [
+    "x",
+    "paparazzi"
+  ],
   "genre": "Hip-Hop",
   "country": "United States",
-  "active_since": "1995"
+  "active_since": "1995",
+  "bio": "Xzibit has a durable hip-hop catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "Xzibit remains closely associated with X and Paparazzi, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like X and Paparazzi still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Recognizable catalog cuts keep drawing repeat streaming long after the original release cycle.",
+    "Playlist memory and cultural recall help the strongest records stay active.",
+    "Sampling, sync use, and nostalgia spikes can lift the baseline."
+  ]
 }

@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 2,
-    "song": 74,
-    "album": 74
+    "artist": 0,
+    "song": 75,
+    "album": 75
   },
   "lastTouched": {
     "artist": {
@@ -72,7 +72,8 @@
       "heart": "2026-04-23T19:01:57.374Z",
       "nirvana": "2026-04-23T21:41:31.981Z",
       "the-crystal-method": "2026-04-24T02:09:33.236Z",
-      "beyonce": "2026-04-24T05:31:15.240Z"
+      "beyonce": "2026-04-24T05:31:15.240Z",
+      "xzibit": "2026-04-24T10:18:06.812Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -148,7 +149,8 @@
       "my-red-hot-car": "2026-04-23T21:41:31.981Z",
       "no-one": "2026-04-24T02:09:33.236Z",
       "numb": "2026-04-24T05:31:15.240Z",
-      "oh-sherrie": "2026-04-24T07:55:32.896Z"
+      "oh-sherrie": "2026-04-24T07:55:32.896Z",
+      "one-more-time": "2026-04-24T10:18:06.812Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -193,6 +195,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-24T10:18:06.812Z",
+      "summary": "artist:xzibit, song:one-more-time"
+    },
+    {
       "timestamp": "2026-04-24T07:55:32.896Z",
       "summary": "artist:led-zeppelin, song:oh-sherrie, album:n-w-a-straight-outta-compton"
     },
@@ -227,10 +233,6 @@
     {
       "timestamp": "2026-04-23T07:44:17.692Z",
       "summary": "artist:taylor-swift, song:loungin"
-    },
-    {
-      "timestamp": "2026-04-23T05:25:44.325Z",
-      "summary": "artist:pink-floyd, song:losing-my-religion"
     }
   ]
 }
