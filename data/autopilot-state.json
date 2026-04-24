@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 0,
-    "song": 75,
-    "album": 75
+    "artist": 1,
+    "song": 76,
+    "album": 76
   },
   "lastTouched": {
     "artist": {
@@ -73,7 +73,8 @@
       "nirvana": "2026-04-23T21:41:31.981Z",
       "the-crystal-method": "2026-04-24T02:09:33.236Z",
       "beyonce": "2026-04-24T05:31:15.240Z",
-      "xzibit": "2026-04-24T10:18:06.812Z"
+      "xzibit": "2026-04-24T10:18:06.812Z",
+      "dmx": "2026-04-24T13:13:43.475Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -150,7 +151,8 @@
       "no-one": "2026-04-24T02:09:33.236Z",
       "numb": "2026-04-24T05:31:15.240Z",
       "oh-sherrie": "2026-04-24T07:55:32.896Z",
-      "one-more-time": "2026-04-24T10:18:06.812Z"
+      "one-more-time": "2026-04-24T10:18:06.812Z",
+      "outshined": "2026-04-24T13:13:43.475Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -190,10 +192,15 @@
       "mariah-carey-merry-christmas": "2026-04-23T16:26:50.868Z",
       "michael-jackson-thriller": "2026-04-24T02:09:33.236Z",
       "montell-jordan-get-it-on-tonite": "2026-04-24T05:31:15.240Z",
-      "n-w-a-straight-outta-compton": "2026-04-24T07:55:32.896Z"
+      "n-w-a-straight-outta-compton": "2026-04-24T07:55:32.896Z",
+      "nelly-furtado-loose": "2026-04-24T13:13:43.475Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-24T13:13:43.475Z",
+      "summary": "artist:dmx, song:outshined, album:nelly-furtado-loose"
+    },
     {
       "timestamp": "2026-04-24T10:18:06.812Z",
       "summary": "artist:xzibit, song:one-more-time"
@@ -229,10 +236,6 @@
     {
       "timestamp": "2026-04-23T10:19:10.867Z",
       "summary": "artist:the-irrepressibles, song:mama-said-knock-you-out, album:michael-jackson-bad"
-    },
-    {
-      "timestamp": "2026-04-23T07:44:17.692Z",
-      "summary": "artist:taylor-swift, song:loungin"
     }
   ]
 }

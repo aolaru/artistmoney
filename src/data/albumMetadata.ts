@@ -9443,5 +9443,119 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/straight-outta-compton/1478946356?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=N.W.A%20Straight%20Outta%20Compton"
     }
+  },
+  "nelly-furtado-loose": {
+    "releaseDate": "2006-06-07",
+    "label": "Geffen Records",
+    "trackCount": 17,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Afraid (feat. Attitude)",
+        "durationMs": 215347
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Maneater",
+        "durationMs": 258893
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Promiscuous Interlude (feat. Timbaland)",
+        "durationMs": 6413
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Promiscuous (feat. Timbaland)",
+        "durationMs": 242293
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Glow",
+        "durationMs": 242493
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Showtime",
+        "durationMs": 244493
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "No Hay Igual Interlude (feat. Timbaland)",
+        "durationMs": 11453
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "No Hay Igual",
+        "durationMs": 215587
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Te Busque (feat. Juanes)",
+        "durationMs": 218227
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Say It Right",
+        "durationMs": 223080
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Do It",
+        "durationMs": 221507
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "In God's Hands",
+        "durationMs": 252333
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Wait for You Interlude (feat. Timbaland)",
+        "durationMs": 41920
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Wait for You",
+        "durationMs": 311120
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "All Good Things (Come to an End)",
+        "durationMs": 311187
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Let My Hair Down",
+        "durationMs": 218360
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "Somebody to Love",
+        "durationMs": 296547
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Nelly%20Furtado%20Loose",
+      "appleMusic": "https://music.apple.com/us/album/loose/1442463545?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Nelly%20Furtado%20Loose"
+    }
   }
 } as const;

@@ -2,8 +2,19 @@
   "name": "DMX",
   "slug": "dmx",
   "estimated_income": "$1.5M-$5M/year",
-  "top_songs": ["party-up", "x-gon-give-it-to-ya"],
+  "top_songs": [
+    "party-up",
+    "x-gon-give-it-to-ya"
+  ],
   "genre": "Hip-Hop",
   "country": "United States",
-  "active_since": "1991"
+  "active_since": "1991",
+  "bio": "DMX has a durable hip-hop catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "DMX remains closely associated with Party Up (Up in Here) and X Gon' Give It to Ya, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like Party Up (Up in Here) and X Gon' Give It to Ya still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Recognizable catalog cuts keep drawing repeat streaming long after the original release cycle.",
+    "Playlist memory and cultural recall help the strongest records stay active.",
+    "Sampling, sync use, and nostalgia spikes can lift the baseline."
+  ]
 }
