@@ -4,5 +4,14 @@
   "artist": "steve-perry",
   "estimated_revenue": "$120K-$450K/year",
   "album": "Street Talk",
-  "year": 1984
+  "year": 1984,
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can lift the baseline."
+  ],
+  "related_songs": [
+    "foolish-heart"
+  ]
 }

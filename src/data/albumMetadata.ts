@@ -9354,5 +9354,94 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/get-it-on-tonite/1442966746?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Montell%20Jordan%20Get%20It%20on...%20Tonite"
     }
+  },
+  "n-w-a-straight-outta-compton": {
+    "releaseDate": "1988-08-09",
+    "trackCount": 13,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Straight Outta Compton",
+        "durationMs": 243333
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "F***k Tha Police",
+        "durationMs": 314584
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Gangsta Gangsta",
+        "durationMs": 246307
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "If It Ain't Ruff",
+        "durationMs": 213733
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Parental Discretion Iz Advised",
+        "durationMs": 312493
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "8 Ball (Remix / Remastered/2000)",
+        "durationMs": 272733
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Something Like That",
+        "durationMs": 213773
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Express Yourself",
+        "durationMs": 262867
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Compton's N the House (Remix)",
+        "durationMs": 316467
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "I Ain't Tha 1",
+        "durationMs": 294427
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Dopeman",
+        "durationMs": 349973
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Quiet On Tha Set",
+        "durationMs": 238160
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Something 2 Dance 2",
+        "durationMs": 204040
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/N.W.A%20Straight%20Outta%20Compton",
+      "appleMusic": "https://music.apple.com/us/album/straight-outta-compton/1478946356?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=N.W.A%20Straight%20Outta%20Compton"
+    }
   }
 } as const;

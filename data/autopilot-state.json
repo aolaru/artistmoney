@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 1,
-    "song": 73,
-    "album": 73
+    "artist": 2,
+    "song": 74,
+    "album": 74
   },
   "lastTouched": {
     "artist": {
@@ -25,7 +25,7 @@
       "ice-cube": "2026-04-17T02:06:14.021Z",
       "jimi-hendrix": "2026-04-17T05:23:57.309Z",
       "kansas": "2026-04-17T07:25:44.773Z",
-      "led-zeppelin": "2026-04-17T10:10:44.884Z",
+      "led-zeppelin": "2026-04-24T07:55:32.896Z",
       "ludacris": "2026-04-17T13:08:26.904Z",
       "montell-jordan": "2026-04-17T15:56:16.152Z",
       "nas": "2026-04-17T18:54:12.653Z",
@@ -147,7 +147,8 @@
       "music-for-airports-1-1": "2026-04-23T19:01:57.374Z",
       "my-red-hot-car": "2026-04-23T21:41:31.981Z",
       "no-one": "2026-04-24T02:09:33.236Z",
-      "numb": "2026-04-24T05:31:15.240Z"
+      "numb": "2026-04-24T05:31:15.240Z",
+      "oh-sherrie": "2026-04-24T07:55:32.896Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -186,10 +187,15 @@
       "ludacris-word-of-mouf": "2026-04-23T13:17:28.356Z",
       "mariah-carey-merry-christmas": "2026-04-23T16:26:50.868Z",
       "michael-jackson-thriller": "2026-04-24T02:09:33.236Z",
-      "montell-jordan-get-it-on-tonite": "2026-04-24T05:31:15.240Z"
+      "montell-jordan-get-it-on-tonite": "2026-04-24T05:31:15.240Z",
+      "n-w-a-straight-outta-compton": "2026-04-24T07:55:32.896Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-24T07:55:32.896Z",
+      "summary": "artist:led-zeppelin, song:oh-sherrie, album:n-w-a-straight-outta-compton"
+    },
     {
       "timestamp": "2026-04-24T05:31:15.240Z",
       "summary": "artist:beyonce, song:numb, album:montell-jordan-get-it-on-tonite"
@@ -225,10 +231,6 @@
     {
       "timestamp": "2026-04-23T05:25:44.325Z",
       "summary": "artist:pink-floyd, song:losing-my-religion"
-    },
-    {
-      "timestamp": "2026-04-23T02:09:01.884Z",
-      "summary": "artist:mark-morrison, song:livin-on-a-prayer, album:mariah-carey-the-emancipation-of-mimi"
     }
   ]
 }
