@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 78,
-    "album": 78
+    "song": 79,
+    "album": 79
   },
   "lastTouched": {
     "artist": {
@@ -155,7 +155,8 @@
       "one-more-time": "2026-04-24T10:18:06.812Z",
       "outshined": "2026-04-24T13:13:43.475Z",
       "paid-in-full": "2026-04-24T16:01:59.161Z",
-      "paranoid": "2026-04-24T18:42:17.117Z"
+      "paranoid": "2026-04-24T18:42:17.117Z",
+      "peace-of-mind": "2026-04-24T21:43:08.253Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -203,6 +204,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-24T21:43:08.253Z",
+      "summary": "song:peace-of-mind"
+    },
+    {
       "timestamp": "2026-04-24T18:42:17.117Z",
       "summary": "song:paranoid, album:oneohtrix-point-never-again"
     },
@@ -237,10 +242,6 @@
     {
       "timestamp": "2026-04-23T19:01:57.374Z",
       "summary": "artist:heart, song:music-for-airports-1-1"
-    },
-    {
-      "timestamp": "2026-04-23T16:26:50.868Z",
-      "summary": "artist:busta-rhymes, song:more-than-a-feeling, album:mariah-carey-merry-christmas"
     }
   ]
 }
