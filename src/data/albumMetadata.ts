@@ -9557,5 +9557,65 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/loose/1442463545?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Nelly%20Furtado%20Loose"
     }
+  },
+  "new-order-power-corruption-and-lies": {
+    "releaseDate": "1983-05-02",
+    "label": "Warner Records 90 Ltd",
+    "trackCount": 8,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Age of Consent",
+        "durationMs": 315347
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "We All Stand",
+        "durationMs": 313827
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "The Village",
+        "durationMs": 277067
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "5-8-6",
+        "durationMs": 449747
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Your Silent Face",
+        "durationMs": 359573
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Ultraviolence",
+        "durationMs": 291013
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Ecstasy",
+        "durationMs": 265773
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Leave Me Alone",
+        "durationMs": 281773
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/New%20Order%20Power%2C%20Corruption%20%26%20Lies",
+      "appleMusic": "https://music.apple.com/us/album/power-corruption-lies/1040981945?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=New%20Order%20Power%2C%20Corruption%20%26%20Lies"
+    }
   }
 } as const;

@@ -2,8 +2,19 @@
   "name": "Simon & Garfunkel",
   "slug": "simon-and-garfunkel",
   "estimated_income": "$2M-$8M/year",
-  "top_songs": ["the-sound-of-silence", "mrs-robinson"],
+  "top_songs": [
+    "the-sound-of-silence",
+    "mrs-robinson"
+  ],
   "genre": "Folk Rock",
   "country": "United States",
-  "active_since": "1956"
+  "active_since": "1956",
+  "bio": "Simon & Garfunkel has a durable folk rock catalog that continues to attract listeners through streaming, playlists, and replay value.",
+  "notable_for": "Simon & Garfunkel remains closely associated with The Sound of Silence and Mrs. Robinson, which still anchor attention around the catalog.",
+  "career_highlight": "Songs like The Sound of Silence and Mrs. Robinson still help define the catalog's long-tail earnings profile.",
+  "revenue_drivers": [
+    "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
+    "Generational rediscovery supports durable long-tail listening.",
+    "Film, television, sports, and trailer use can reactivate familiar recordings."
+  ]
 }
