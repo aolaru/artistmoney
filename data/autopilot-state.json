@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 77,
-    "album": 77
+    "song": 78,
+    "album": 78
   },
   "lastTouched": {
     "artist": {
@@ -154,7 +154,8 @@
       "oh-sherrie": "2026-04-24T07:55:32.896Z",
       "one-more-time": "2026-04-24T10:18:06.812Z",
       "outshined": "2026-04-24T13:13:43.475Z",
-      "paid-in-full": "2026-04-24T16:01:59.161Z"
+      "paid-in-full": "2026-04-24T16:01:59.161Z",
+      "paranoid": "2026-04-24T18:42:17.117Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -196,10 +197,15 @@
       "montell-jordan-get-it-on-tonite": "2026-04-24T05:31:15.240Z",
       "n-w-a-straight-outta-compton": "2026-04-24T07:55:32.896Z",
       "nelly-furtado-loose": "2026-04-24T13:13:43.475Z",
-      "new-order-power-corruption-and-lies": "2026-04-24T16:01:59.161Z"
+      "new-order-power-corruption-and-lies": "2026-04-24T16:01:59.161Z",
+      "oneohtrix-point-never-again": "2026-04-24T18:42:17.117Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-24T18:42:17.117Z",
+      "summary": "song:paranoid, album:oneohtrix-point-never-again"
+    },
     {
       "timestamp": "2026-04-24T16:01:59.161Z",
       "summary": "artist:simon-and-garfunkel, song:paid-in-full, album:new-order-power-corruption-and-lies"
@@ -235,10 +241,6 @@
     {
       "timestamp": "2026-04-23T16:26:50.868Z",
       "summary": "artist:busta-rhymes, song:more-than-a-feeling, album:mariah-carey-merry-christmas"
-    },
-    {
-      "timestamp": "2026-04-23T13:17:28.356Z",
-      "summary": "artist:abba, song:midnight-in-a-perfect-world, album:ludacris-word-of-mouf"
     }
   ]
 }

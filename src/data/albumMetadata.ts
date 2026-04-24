@@ -9617,5 +9617,95 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/power-corruption-lies/1040981945?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=New%20Order%20Power%2C%20Corruption%20%26%20Lies"
     }
+  },
+  "oneohtrix-point-never-again": {
+    "releaseDate": "2023-09-29",
+    "label": "Ridge Valley Digital under exclusive licence to Warp Records Limited",
+    "trackCount": 13,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Elseware",
+        "durationMs": 115574
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Again",
+        "durationMs": 284598
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "World Outside",
+        "durationMs": 228136
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Krumville",
+        "durationMs": 283240
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Locrian Midwest",
+        "durationMs": 268911
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Plastic Antique",
+        "durationMs": 270240
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Gray Subviolet",
+        "durationMs": 165923
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "The Body Trail",
+        "durationMs": 272831
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Nightmare Paint",
+        "durationMs": 258998
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Memories of Music",
+        "durationMs": 364069
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "On an Axis",
+        "durationMs": 226683
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Ubiquity Road",
+        "durationMs": 298539
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "A Barely Lit Path",
+        "durationMs": 375111
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Oneohtrix%20Point%20Never%20Again",
+      "appleMusic": "https://music.apple.com/us/album/again/1701849976?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Oneohtrix%20Point%20Never%20Again"
+    }
   }
 } as const;
