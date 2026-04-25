@@ -293,6 +293,26 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     localPath: "/images/artists/coldplay.jpg",
     personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
   },
+  cher: {
+    alt: "Cher in 2019",
+    src: localPhoto("cher.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Cher_in_2019_cropped.jpg",
+    credit: "Photo via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/cher.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "celine-dion": {
+    alt: "Celine Dion in 2000",
+    src: localPhoto("celine-dion.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Celine_Dion_2000.jpg",
+    credit: "Photo via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/celine-dion.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
   "depeche-mode": {
     alt: "Depeche Mode group photo from 2006",
     src: localPhoto("depeche-mode.jpg"),
@@ -301,6 +321,26 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     license: "CC BY-SA 4.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
     localPath: "/images/artists/depeche-mode.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  eurythmics: {
+    alt: "Eurythmics in 1985",
+    src: localPhoto("eurythmics.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Eurythmics_1985.jpg",
+    credit: "Photo via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Eurythmics_1985.jpg",
+    localPath: "/images/artists/eurythmics.jpg",
+    personalityRightsWarning: "Living artists depicted. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  genesis: {
+    alt: "Genesis performing in Pittsburgh",
+    src: localPhoto("genesis.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:2104_-_Pittsburgh_-_Mellon_Arena_-_Genesis_(cropped).JPG",
+    credit: "Photo via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/genesis.jpg",
     personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   "tears-for-fears": {
@@ -312,6 +352,16 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
     localPath: "/images/artists/tears-for-fears.jpg",
     personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "tina-turner": {
+    alt: "Tina Turner during the 50th Anniversary Tour in 2009",
+    src: localPhoto("tina-turner.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Tina_Turner_50th_Anniversary_Tour.jpg",
+    credit: "Photo by Philip Spittle via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/tina-turner.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   "pearl-jam": {
     alt: "Pearl Jam performing with Chris Cornell in 2011",

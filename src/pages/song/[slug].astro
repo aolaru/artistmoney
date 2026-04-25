@@ -125,6 +125,9 @@ const snippetSupport = yearsOld && yearsOld >= 10
   : artistRank > 0 && artistSongCount > 1
     ? `It currently ranks #${artistRank} among the tracked songs for ${artist?.name ?? song.artist}.`
     : `This page focuses on the annual earnings range rather than claiming an audited lifetime total.`;
+const takeaway = hasDetailedEarnings
+  ? `${song.title} is one of the stronger modeled catalog earners here because replay demand and ownership context both support a durable annual range.`
+  : `${song.title} keeps earning because it still shows up in long-tail streaming, playlist rotation, and broader catalog memory.`;
 const statItems = [
   songRank > 0 ? `Currently ranks around the top ${catalogPercentile}% of tracked songs by modeled artist-side earnings` : undefined,
   song.year ? `Released in ${song.year}${yearsOld ? ` and still shows earnings power roughly ${yearsOld} years later` : ""}` : undefined,
@@ -276,28 +279,46 @@ const songSchema = {
           </p>
         )}
 
-        <section aria-labelledby="short-answer-title">
+        <section aria-labelledby="short-answer-title" class="song-intro-card">
           <h2 id="short-answer-title">Short Answer</h2>
-          <p><strong>{snippetQuestion}</strong></p>
-          <p><strong>{snippetLead}</strong></p>
-          <p>{snippetSupport}</p>
+          <p class="seo-question"><strong>{snippetQuestion}</strong></p>
+          <p class="song-lead-answer"><strong>{snippetLead}</strong></p>
+          <p class="song-takeaway"><strong>Takeaway:</strong> {takeaway}</p>
           <p>{song.meaning_summary ?? editorial.meaning}</p>
-        </section>
 
-        <section aria-labelledby="stats-title">
-          <h2 id="stats-title">Did You Know?</h2>
-          <ul class="song-bullet-list">
-            {statItems.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
+          <div class="song-intro-grid">
+            <div class="song-intro-panel">
+              <h3>Did You Know?</h3>
+              <ul class="song-bullet-list">
+                {statItems.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="song-intro-panel">
+              <h3>Why It Still Works</h3>
+              <ul class="song-bullet-list">
+                {conciseWhy.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
           <p class="traffic-magnet-note">{trafficMagnetNote}</p>
-          {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
+          <div class="song-intro-footer">
+            <p class="results-note">{snippetSupport}</p>
+            {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
+          </div>
         </section>
 
         {comparisonSongs.length > 0 && (
-          <section aria-labelledby="comparison-title">
-            <h2 id="comparison-title">{song.title} vs Similar Songs</h2>
+          <section aria-labelledby="comparison-title" class="comparison-section">
+            <h2 id="comparison-title">How It Compares</h2>
+            <p class="comparison-summary">
+              {song.title} is compared against nearby songs in the catalog based on artist overlap, era, genre, and modeled earnings range.
+            </p>
             <div class="comparison-list">
               <div class="comparison-row comparison-head">
                 <span>Song</span>
@@ -305,7 +326,10 @@ const songSchema = {
                 <span>Estimated yearly midpoint</span>
               </div>
               <div class="comparison-row comparison-current">
-                <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+                <div>
+                  <a href={`${baseUrl}song/${song.slug}/`}><strong>{song.title}</strong></a>
+                  <div class="comparison-reason">current page</div>
+                </div>
                 <span>{artist?.name ?? song.artist}</span>
                 <strong>{formatRevenueMidpoint(song.normalizedRevenue?.artistSide?.midpoint)}</strong>
               </div>
@@ -375,16 +399,6 @@ const songSchema = {
           </section>
         )}
 
-        <section aria-labelledby="money-title">
-          <h2 id="money-title">Why It Still Works</h2>
-          <ul class="song-bullet-list">
-            {conciseWhy.map((point) => (
-              <li>{point}</li>
-            ))}
-          </ul>
-          <p>{article?.insight ?? editorial.insight}</p>
-        </section>
-
         <section aria-labelledby="questions-title">
           <h2 id="questions-title">More Questions About {song.title}</h2>
           <div class="intent-question-list">
@@ -404,47 +418,45 @@ const songSchema = {
 
             <section aria-labelledby="breakdown-title">
               <h2 id="breakdown-title">Supporting Revenue Context</h2>
-              {hasDetailedEarnings ? (
-                <ul class="meta-list">
-                  {song.earnings?.gross_track_revenue && (
-                    <li><strong>Estimated gross track revenue:</strong> {song.earnings.gross_track_revenue}</li>
-                  )}
-                  {song.earnings?.artist_or_estate_share && (
-                    <li><strong>Estimated artist-side cut:</strong> {song.earnings.artist_or_estate_share}</li>
-                  )}
-                  {song.earnings?.label_master_share && (
-                    <li><strong>Estimated label master share:</strong> {song.earnings.label_master_share}</li>
-                  )}
-                  {song.earnings?.publishing_share && (
-                    <li><strong>Estimated publishing share:</strong> {song.earnings.publishing_share}</li>
-                  )}
-                  {song.earnings?.songwriter_share && (
-                    <li><strong>Estimated songwriter share:</strong> {song.earnings.songwriter_share}</li>
-                  )}
-                  {song.earnings?.assumptions && (
-                    <li><strong>Assumptions:</strong> {song.earnings.assumptions}</li>
-                  )}
-                  {song.ownership?.master_owner && (
-                    <li><strong>Masters:</strong> {song.ownership.master_owner}</li>
-                  )}
-                  {song.ownership?.publishing_owner && (
-                    <li><strong>Publishing:</strong> {song.ownership.publishing_owner}</li>
-                  )}
-                  {song.ownership?.catalog_sale_status && (
-                    <li><strong>Catalog sale status:</strong> {song.ownership.catalog_sale_status}</li>
-                  )}
-                  {song.ownership?.notes && (
-                    <li><strong>Notes:</strong> {song.ownership.notes}</li>
-                  )}
-                </ul>
-              ) : (
-                <ul class="meta-list">
-                  {detailedBreakdown.map((point) => (
-                    <li>{point}</li>
-                  ))}
-                  <li><strong>Lifetime estimate:</strong> {article?.lifetimeEstimate ?? editorial.lifetime}</li>
-                </ul>
-              )}
+              <div class="compact-context-grid">
+                {hasDetailedEarnings ? (
+                  <>
+                    {song.earnings?.gross_track_revenue && (
+                      <div class="compact-context-card"><strong>Estimated gross track revenue</strong><span>{song.earnings.gross_track_revenue}</span></div>
+                    )}
+                    {song.earnings?.artist_or_estate_share && (
+                      <div class="compact-context-card"><strong>Estimated artist-side cut</strong><span>{song.earnings.artist_or_estate_share}</span></div>
+                    )}
+                    {song.earnings?.label_master_share && (
+                      <div class="compact-context-card"><strong>Estimated label master share</strong><span>{song.earnings.label_master_share}</span></div>
+                    )}
+                    {song.earnings?.publishing_share && (
+                      <div class="compact-context-card"><strong>Estimated publishing share</strong><span>{song.earnings.publishing_share}</span></div>
+                    )}
+                    {song.earnings?.songwriter_share && (
+                      <div class="compact-context-card"><strong>Estimated songwriter share</strong><span>{song.earnings.songwriter_share}</span></div>
+                    )}
+                    {song.ownership?.master_owner && (
+                      <div class="compact-context-card"><strong>Masters</strong><span>{song.ownership.master_owner}</span></div>
+                    )}
+                    {song.ownership?.publishing_owner && (
+                      <div class="compact-context-card"><strong>Publishing</strong><span>{song.ownership.publishing_owner}</span></div>
+                    )}
+                    {song.ownership?.catalog_sale_status && (
+                      <div class="compact-context-card"><strong>Catalog sale status</strong><span>{song.ownership.catalog_sale_status}</span></div>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    {detailedBreakdown.slice(0, 4).map((point) => (
+                      <div class="compact-context-card"><span>{point}</span></div>
+                    ))}
+                    <div class="compact-context-card"><strong>Lifetime estimate</strong><span>{article?.lifetimeEstimate ?? editorial.lifetime}</span></div>
+                  </>
+                )}
+              </div>
+              {song.earnings?.assumptions && <p class="results-note"><strong>Assumptions:</strong> {song.earnings.assumptions}</p>}
+              {song.ownership?.notes && <p class="results-note"><strong>Notes:</strong> {song.ownership.notes}</p>}
             </section>
 
             <div class="methodology-card">
@@ -461,6 +473,56 @@ const songSchema = {
             </div>
           </div>
         </details>
+
+        {(moreFromAlbum.length > 0 || relatedAlbums.length > 0 || contextSongs.length > 0) && (
+          <section aria-labelledby="more-context-title" class="song-context-section">
+            <h2 id="more-context-title">More Context</h2>
+            <div class="context-grid">
+              {moreFromAlbum.length > 0 && (
+                <div class="context-card">
+                  <h3>More From This Album</h3>
+                  <ul class="meta-list">
+                    {moreFromAlbum.map((albumSong) => (
+                      <li>
+                        <a href={`${baseUrl}song/${albumSong.slug}/`}>{albumSong.title}</a>
+                        <span class="meta-inline"> · {albumSong.estimated_revenue}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {relatedAlbums.length > 0 && (
+                <div class="context-card">
+                  <h3>Related Albums</h3>
+                  <ul class="meta-list">
+                    {relatedAlbums.map((relatedAlbum) => (
+                      <li>
+                        <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
+                        <span class="meta-inline"> · {relatedAlbum.artistName}{relatedAlbum.year ? ` · ${relatedAlbum.year}` : ""}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {contextSongs.length > 0 && (
+                <div class="context-card">
+                  <h3>More From This Era</h3>
+                  <ul class="meta-list">
+                    {contextSongs.map((contextSong) => (
+                      <li>
+                        <a href={`${baseUrl}song/${contextSong.slug}/`}>{contextSong.title}</a>
+                        <span class="meta-inline">
+                          {" "}· {getArtist(contextSong.artist)?.name ?? contextSong.artist}
+                          {contextSong.year ? ` · ${contextSong.year}` : ""}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
       </div>
 
       <aside class="song-sidebar">
@@ -487,53 +549,6 @@ const songSchema = {
               {relatedSongs.map((relatedSong) => (
                 <li>
                   <a href={`${baseUrl}song/${relatedSong.slug}/`}>{relatedSong.title}</a>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {moreFromAlbum.length > 0 && (
-          <section aria-labelledby="album-songs-title">
-            <h2 id="album-songs-title">More From This Album</h2>
-            <ul class="meta-list">
-              {moreFromAlbum.map((albumSong) => (
-                <li>
-                  <a href={`${baseUrl}song/${albumSong.slug}/`}>{albumSong.title}</a>
-                  <span class="meta-inline"> · {albumSong.estimated_revenue}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {relatedAlbums.length > 0 && (
-          <section aria-labelledby="related-albums-title">
-            <h2 id="related-albums-title">Related Albums</h2>
-            <ul class="meta-list">
-              {relatedAlbums.map((relatedAlbum) => (
-                <li>
-                  <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
-                  <span class="meta-inline">
-                    {" "}· {relatedAlbum.artistName}{relatedAlbum.year ? ` · ${relatedAlbum.year}` : ""}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {contextSongs.length > 0 && (
-          <section aria-labelledby="context-songs-title">
-            <h2 id="context-songs-title">More From This Era</h2>
-            <ul class="meta-list">
-              {contextSongs.map((contextSong) => (
-                <li>
-                  <a href={`${baseUrl}song/${contextSong.slug}/`}>{contextSong.title}</a>
-                  <span class="meta-inline">
-                    {" "}· {getArtist(contextSong.artist)?.name ?? contextSong.artist}
-                    {contextSong.year ? ` · ${contextSong.year}` : ""}
-                  </span>
                 </li>
               ))}
             </ul>
