@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 84,
-    "album": 84
+    "song": 85,
+    "album": 85
   },
   "lastTouched": {
     "artist": {
@@ -161,7 +161,8 @@
       "promiscuous": "2026-04-25T05:07:48.602Z",
       "purple-haze": "2026-04-25T07:08:04.269Z",
       "rae": "2026-04-25T09:47:28.183Z",
-      "return-of-the-mack": "2026-04-25T12:54:45.346Z"
+      "return-of-the-mack": "2026-04-25T12:54:45.346Z",
+      "right-here-right-now": "2026-04-25T15:36:08.334Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -210,6 +211,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-25T15:36:08.334Z",
+      "summary": "song:right-here-right-now"
+    },
+    {
       "timestamp": "2026-04-25T12:54:45.346Z",
       "summary": "song:return-of-the-mack, album:portishead-dummy"
     },
@@ -244,10 +249,6 @@
     {
       "timestamp": "2026-04-24T13:13:43.475Z",
       "summary": "artist:dmx, song:outshined, album:nelly-furtado-loose"
-    },
-    {
-      "timestamp": "2026-04-24T10:18:06.812Z",
-      "summary": "artist:xzibit, song:one-more-time"
     }
   ]
 }
