@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 82,
-    "album": 82
+    "song": 83,
+    "album": 83
   },
   "lastTouched": {
     "artist": {
@@ -159,7 +159,8 @@
       "peace-of-mind": "2026-04-24T21:43:08.253Z",
       "power": "2026-04-25T01:59:28.915Z",
       "promiscuous": "2026-04-25T05:07:48.602Z",
-      "purple-haze": "2026-04-25T07:08:04.269Z"
+      "purple-haze": "2026-04-25T07:08:04.269Z",
+      "rae": "2026-04-25T09:47:28.183Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -207,6 +208,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-25T09:47:28.183Z",
+      "summary": "song:rae"
+    },
+    {
       "timestamp": "2026-04-25T07:08:04.269Z",
       "summary": "song:purple-haze"
     },
@@ -241,10 +246,6 @@
     {
       "timestamp": "2026-04-24T07:55:32.896Z",
       "summary": "artist:led-zeppelin, song:oh-sherrie, album:n-w-a-straight-outta-compton"
-    },
-    {
-      "timestamp": "2026-04-24T05:31:15.240Z",
-      "summary": "artist:beyonce, song:numb, album:montell-jordan-get-it-on-tonite"
     }
   ]
 }
