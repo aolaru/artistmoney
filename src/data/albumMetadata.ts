@@ -9784,5 +9784,89 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/dummy/1440653096?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Portishead%20Dummy"
     }
+  },
+  "queen-a-night-at-the-opera": {
+    "releaseDate": "1975-11-21",
+    "label": "Hollywood Records",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Death On Two Legs (Dedicated To...)",
+        "durationMs": 223094
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Lazing On a Sunday Afternoon",
+        "durationMs": 67226
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "I'm In Love With My Car",
+        "durationMs": 185067
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "You're My Best Friend",
+        "durationMs": 172424
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "'39",
+        "durationMs": 210643
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Sweet Lady",
+        "durationMs": 243867
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Seaside Rendezvous",
+        "durationMs": 139879
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "The Prophet's Song",
+        "durationMs": 500786
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Love of My Life",
+        "durationMs": 219055
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Good Company",
+        "durationMs": 203440
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Bohemian Rhapsody",
+        "durationMs": 354320
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "God Save the Queen",
+        "durationMs": 75131
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Queen%20A%20Night%20at%20the%20Opera",
+      "appleMusic": "https://music.apple.com/us/album/a-night-at-the-opera/1440806041?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Queen%20A%20Night%20at%20the%20Opera"
+    }
   }
 } as const;

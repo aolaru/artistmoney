@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 85,
-    "album": 85
+    "song": 86,
+    "album": 86
   },
   "lastTouched": {
     "artist": {
@@ -162,7 +162,8 @@
       "purple-haze": "2026-04-25T07:08:04.269Z",
       "rae": "2026-04-25T09:47:28.183Z",
       "return-of-the-mack": "2026-04-25T12:54:45.346Z",
-      "right-here-right-now": "2026-04-25T15:36:08.334Z"
+      "right-here-right-now": "2026-04-25T15:36:08.334Z",
+      "rollout-my-business": "2026-04-25T18:42:35.804Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -206,10 +207,15 @@
       "nelly-furtado-loose": "2026-04-24T13:13:43.475Z",
       "new-order-power-corruption-and-lies": "2026-04-24T16:01:59.161Z",
       "oneohtrix-point-never-again": "2026-04-24T18:42:17.117Z",
-      "portishead-dummy": "2026-04-25T12:54:45.346Z"
+      "portishead-dummy": "2026-04-25T12:54:45.346Z",
+      "queen-a-night-at-the-opera": "2026-04-25T18:42:35.804Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-25T18:42:35.804Z",
+      "summary": "song:rollout-my-business, album:queen-a-night-at-the-opera"
+    },
     {
       "timestamp": "2026-04-25T15:36:08.334Z",
       "summary": "song:right-here-right-now"
@@ -245,10 +251,6 @@
     {
       "timestamp": "2026-04-24T16:01:59.161Z",
       "summary": "artist:simon-and-garfunkel, song:paid-in-full, album:new-order-power-corruption-and-lies"
-    },
-    {
-      "timestamp": "2026-04-24T13:13:43.475Z",
-      "summary": "artist:dmx, song:outshined, album:nelly-furtado-loose"
     }
   ]
 }
