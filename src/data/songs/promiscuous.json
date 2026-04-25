@@ -18,5 +18,14 @@
     "publishing_owner": "Publishing appears shared among creators and publishers",
     "catalog_sale_status": "No catalog sale adjustment is applied",
     "notes": "Modeled annual range derived from current streaming and catalog behavior."
-  }
+  },
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can lift the baseline."
+  ],
+  "related_songs": [
+    "say-it-right"
+  ]
 }

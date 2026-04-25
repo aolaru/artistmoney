@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 80,
-    "album": 80
+    "song": 81,
+    "album": 81
   },
   "lastTouched": {
     "artist": {
@@ -157,7 +157,8 @@
       "paid-in-full": "2026-04-24T16:01:59.161Z",
       "paranoid": "2026-04-24T18:42:17.117Z",
       "peace-of-mind": "2026-04-24T21:43:08.253Z",
-      "power": "2026-04-25T01:59:28.915Z"
+      "power": "2026-04-25T01:59:28.915Z",
+      "promiscuous": "2026-04-25T05:07:48.602Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -205,6 +206,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-25T05:07:48.602Z",
+      "summary": "song:promiscuous"
+    },
+    {
       "timestamp": "2026-04-25T01:59:28.915Z",
       "summary": "song:power"
     },
@@ -239,10 +244,6 @@
     {
       "timestamp": "2026-04-24T02:09:33.236Z",
       "summary": "artist:the-crystal-method, song:no-one, album:michael-jackson-thriller"
-    },
-    {
-      "timestamp": "2026-04-23T21:41:31.981Z",
-      "summary": "artist:nirvana, song:my-red-hot-car"
     }
   ]
 }
