@@ -4,5 +4,14 @@
   "artist": "mark-morrison",
   "estimated_revenue": "$400K-$1.2M/year",
   "album": "Return of the Mack",
-  "year": 1996
+  "year": 1996,
+  "meaning_summary": "This track pairs a memorable hook with strong cultural recall, which helps explain its staying power and long-tail commercial value.",
+  "revenue_drivers": [
+    "Catalog streaming remains the main long-tail driver for recognizable rap tracks.",
+    "Playlist placement and cultural recall help the song stay active.",
+    "Sampling, sync use, and short-form rediscovery can extend earnings."
+  ],
+  "related_songs": [
+    "crazy"
+  ]
 }

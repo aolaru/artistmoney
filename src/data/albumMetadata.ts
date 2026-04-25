@@ -9707,5 +9707,82 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/again/1701849976?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Oneohtrix%20Point%20Never%20Again"
     }
+  },
+  "portishead-dummy": {
+    "releaseDate": "1994-01-01",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Mysterons",
+        "durationMs": 305240
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Sour Times",
+        "durationMs": 252267
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Strangers",
+        "durationMs": 237600
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "It Could Be Sweet",
+        "durationMs": 257160
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Wandering Star",
+        "durationMs": 293200
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "It's a Fire",
+        "durationMs": 226200
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Numb",
+        "durationMs": 235800
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Roads",
+        "durationMs": 303973
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Pedestal",
+        "durationMs": 220400
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Biscuit",
+        "durationMs": 302600
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Glory Box",
+        "durationMs": 308627
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Portishead%20Dummy",
+      "appleMusic": "https://music.apple.com/us/album/dummy/1440653096?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Portishead%20Dummy"
+    }
   }
 } as const;

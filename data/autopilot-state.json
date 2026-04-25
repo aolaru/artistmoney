@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 83,
-    "album": 83
+    "song": 84,
+    "album": 84
   },
   "lastTouched": {
     "artist": {
@@ -160,7 +160,8 @@
       "power": "2026-04-25T01:59:28.915Z",
       "promiscuous": "2026-04-25T05:07:48.602Z",
       "purple-haze": "2026-04-25T07:08:04.269Z",
-      "rae": "2026-04-25T09:47:28.183Z"
+      "rae": "2026-04-25T09:47:28.183Z",
+      "return-of-the-mack": "2026-04-25T12:54:45.346Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -203,10 +204,15 @@
       "n-w-a-straight-outta-compton": "2026-04-24T07:55:32.896Z",
       "nelly-furtado-loose": "2026-04-24T13:13:43.475Z",
       "new-order-power-corruption-and-lies": "2026-04-24T16:01:59.161Z",
-      "oneohtrix-point-never-again": "2026-04-24T18:42:17.117Z"
+      "oneohtrix-point-never-again": "2026-04-24T18:42:17.117Z",
+      "portishead-dummy": "2026-04-25T12:54:45.346Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-25T12:54:45.346Z",
+      "summary": "song:return-of-the-mack, album:portishead-dummy"
+    },
     {
       "timestamp": "2026-04-25T09:47:28.183Z",
       "summary": "song:rae"
@@ -242,10 +248,6 @@
     {
       "timestamp": "2026-04-24T10:18:06.812Z",
       "summary": "artist:xzibit, song:one-more-time"
-    },
-    {
-      "timestamp": "2026-04-24T07:55:32.896Z",
-      "summary": "artist:led-zeppelin, song:oh-sherrie, album:n-w-a-straight-outta-compton"
     }
   ]
 }
