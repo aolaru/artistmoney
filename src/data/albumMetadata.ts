@@ -9868,5 +9868,89 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/a-night-at-the-opera/1440806041?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Queen%20A%20Night%20at%20the%20Opera"
     }
+  },
+  "radiohead-ok-computer": {
+    "releaseDate": "1997-05-21",
+    "label": "XL Recordings Ltd",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Airbag",
+        "durationMs": 287880
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Paranoid Android",
+        "durationMs": 387213
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Subterranean Homesick Alien",
+        "durationMs": 267693
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Exit Music (For a Film)",
+        "durationMs": 267187
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Let Down",
+        "durationMs": 299560
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Karma Police",
+        "durationMs": 264067
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Fitter Happier",
+        "durationMs": 117333
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Electioneering",
+        "durationMs": 230627
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Climbing Up the Walls",
+        "durationMs": 285200
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "No Surprises",
+        "durationMs": 229120
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Lucky",
+        "durationMs": 258813
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "The Tourist",
+        "durationMs": 326533
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Radiohead%20OK%20Computer",
+      "appleMusic": "https://music.apple.com/us/album/ok-computer/1097861387?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Radiohead%20OK%20Computer"
+    }
   }
 } as const;

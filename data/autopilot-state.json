@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 86,
-    "album": 86
+    "song": 87,
+    "album": 87
   },
   "lastTouched": {
     "artist": {
@@ -163,7 +163,8 @@
       "rae": "2026-04-25T09:47:28.183Z",
       "return-of-the-mack": "2026-04-25T12:54:45.346Z",
       "right-here-right-now": "2026-04-25T15:36:08.334Z",
-      "rollout-my-business": "2026-04-25T18:42:35.804Z"
+      "rollout-my-business": "2026-04-25T18:42:35.804Z",
+      "roygbiv": "2026-04-25T21:32:23.227Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -208,10 +209,15 @@
       "new-order-power-corruption-and-lies": "2026-04-24T16:01:59.161Z",
       "oneohtrix-point-never-again": "2026-04-24T18:42:17.117Z",
       "portishead-dummy": "2026-04-25T12:54:45.346Z",
-      "queen-a-night-at-the-opera": "2026-04-25T18:42:35.804Z"
+      "queen-a-night-at-the-opera": "2026-04-25T18:42:35.804Z",
+      "radiohead-ok-computer": "2026-04-25T21:32:23.227Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-25T21:32:23.227Z",
+      "summary": "song:roygbiv, album:radiohead-ok-computer"
+    },
     {
       "timestamp": "2026-04-25T18:42:35.804Z",
       "summary": "song:rollout-my-business, album:queen-a-night-at-the-opera"
@@ -247,10 +253,6 @@
     {
       "timestamp": "2026-04-24T18:42:17.117Z",
       "summary": "song:paranoid, album:oneohtrix-point-never-again"
-    },
-    {
-      "timestamp": "2026-04-24T16:01:59.161Z",
-      "summary": "artist:simon-and-garfunkel, song:paid-in-full, album:new-order-power-corruption-and-lies"
     }
   ]
 }
