@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 88,
-    "album": 88
+    "song": 89,
+    "album": 89
   },
   "lastTouched": {
     "artist": {
@@ -165,7 +165,8 @@
       "right-here-right-now": "2026-04-25T15:36:08.334Z",
       "rollout-my-business": "2026-04-25T18:42:35.804Z",
       "roygbiv": "2026-04-25T21:32:23.227Z",
-      "say-it-right": "2026-04-26T02:13:34.096Z"
+      "say-it-right": "2026-04-26T02:13:34.096Z",
+      "shake-it-off": "2026-04-26T05:34:49.296Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -217,6 +218,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-26T05:34:49.296Z",
+      "summary": "song:shake-it-off"
+    },
+    {
       "timestamp": "2026-04-26T02:13:34.096Z",
       "summary": "song:say-it-right, album:rakim-paid-in-full"
     },
@@ -251,10 +256,6 @@
     {
       "timestamp": "2026-04-25T01:59:28.915Z",
       "summary": "song:power"
-    },
-    {
-      "timestamp": "2026-04-24T21:43:08.253Z",
-      "summary": "song:peace-of-mind"
     }
   ]
 }
