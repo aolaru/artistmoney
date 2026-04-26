@@ -27,6 +27,7 @@ const socialImage = image ? new URL(image, Astro.url).toString() : null;
 const jsonLdPayload = jsonLd
   ? JSON.stringify(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
   : null;
+const searchIndexUrl = `${baseUrl}search-index.json`;
 ---
 
 <!doctype html>
@@ -70,6 +71,24 @@ const jsonLdPayload = jsonLd
     <header class="site-header">
       <div class="container">
         <a class="brand" href={baseUrl}>How Much Music</a>
+        <div class="header-search" data-header-search>
+          <label class="sr-only" for="site-search">Search artists, songs, and albums</label>
+          <input
+            id="site-search"
+            class="header-search-input"
+            type="search"
+            placeholder="Search artists, songs, albums"
+            autocomplete="off"
+            spellcheck="false"
+            aria-autocomplete="list"
+            aria-controls="header-search-results"
+            aria-expanded="false"
+          />
+          <div class="header-search-panel" id="header-search-results" hidden>
+            <div class="header-search-empty">Start typing to search the catalog.</div>
+            <ul class="header-search-results" role="listbox"></ul>
+          </div>
+        </div>
         <nav aria-label="Primary navigation">
           <a href={baseUrl}>Home</a>
           <a href={`${baseUrl}artists/`}>Artists</a>
@@ -133,5 +152,189 @@ const jsonLdPayload = jsonLd
         </div>
       </div>
     </footer>
+    <script is:inline define:vars={{ searchIndexUrl }}>
+      (() => {
+        let searchItemsPromise;
+
+        const normalize = (value) => value.toLowerCase().trim();
+
+        const scoreItem = (item, query) => {
+          const title = item.titleLower;
+          const subtitle = item.subtitleLower ?? "";
+          const searchText = item.searchText;
+
+          let score = 0;
+          if (title === query) score += 300;
+          if (title.startsWith(query)) score += 180;
+          if (title.includes(query)) score += 120;
+          if (subtitle.startsWith(query)) score += 70;
+          if (subtitle.includes(query)) score += 40;
+          if (searchText.includes(query)) score += 20;
+          return score;
+        };
+
+        const fetchSearchItems = async () => {
+          if (!searchItemsPromise) {
+            searchItemsPromise = fetch(searchIndexUrl)
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(`Search index request failed: ${response.status}`);
+                }
+                return response.json();
+              })
+              .then((items) => items.map((item) => ({
+                ...item,
+                titleLower: item.title.toLowerCase(),
+                subtitleLower: (item.subtitle ?? "").toLowerCase(),
+                searchText: item.searchText.toLowerCase()
+              })));
+          }
+
+          return searchItemsPromise;
+        };
+
+        const initHeaderSearch = () => {
+          document.querySelectorAll("[data-header-search]").forEach((root) => {
+            if (root.dataset.bound === "true") return;
+            root.dataset.bound = "true";
+
+            const input = root.querySelector(".header-search-input");
+            const panel = root.querySelector(".header-search-panel");
+            const list = root.querySelector(".header-search-results");
+            const empty = root.querySelector(".header-search-empty");
+
+            if (!input || !panel || !list || !empty) return;
+
+            let suggestions = [];
+            let activeIndex = -1;
+
+            const closePanel = () => {
+              panel.hidden = true;
+              input.setAttribute("aria-expanded", "false");
+              activeIndex = -1;
+            };
+
+            const openPanel = () => {
+              panel.hidden = false;
+              input.setAttribute("aria-expanded", "true");
+            };
+
+            const render = () => {
+              list.innerHTML = "";
+
+              if (suggestions.length === 0) {
+                empty.hidden = false;
+                empty.textContent = input.value.trim()
+                  ? "No matching artists, songs, or albums."
+                  : "Start typing to search the catalog.";
+                openPanel();
+                return;
+              }
+
+              empty.hidden = true;
+
+              suggestions.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.setAttribute("role", "option");
+                li.className = "header-search-item";
+                if (index === activeIndex) li.classList.add("is-active");
+
+                const link = document.createElement("a");
+                link.href = item.url;
+                link.className = "header-search-link";
+                link.innerHTML = `
+                  <span class="header-search-type">${item.type}</span>
+                  <strong>${item.title}</strong>
+                  <span class="header-search-meta">${item.subtitle ?? ""}</span>
+                `;
+
+                li.appendChild(link);
+                list.appendChild(li);
+              });
+
+              openPanel();
+            };
+
+            const updateActive = (nextIndex) => {
+              if (suggestions.length === 0) return;
+              activeIndex = (nextIndex + suggestions.length) % suggestions.length;
+              render();
+            };
+
+            const updateSuggestions = async () => {
+              const query = normalize(input.value);
+              if (!query) {
+                suggestions = [];
+                render();
+                return;
+              }
+
+              try {
+                const items = await fetchSearchItems();
+                suggestions = items
+                  .map((item) => ({ item, score: scoreItem(item, query) }))
+                  .filter((entry) => entry.score > 0)
+                  .sort((left, right) => right.score - left.score || left.item.title.localeCompare(right.item.title))
+                  .slice(0, 8)
+                  .map((entry) => entry.item);
+                activeIndex = suggestions.length > 0 ? 0 : -1;
+                render();
+              } catch (_error) {
+                suggestions = [];
+                empty.hidden = false;
+                empty.textContent = "Search is unavailable right now.";
+                openPanel();
+              }
+            };
+
+            input.addEventListener("focus", () => {
+              if (!panel.hidden || input.value.trim()) {
+                render();
+              } else {
+                openPanel();
+              }
+              fetchSearchItems().catch(() => {});
+            });
+
+            input.addEventListener("input", () => {
+              updateSuggestions();
+            });
+
+            input.addEventListener("keydown", (event) => {
+              if (event.key === "ArrowDown") {
+                event.preventDefault();
+                updateActive(activeIndex + 1);
+                return;
+              }
+
+              if (event.key === "ArrowUp") {
+                event.preventDefault();
+                updateActive(activeIndex - 1);
+                return;
+              }
+
+              if (event.key === "Escape") {
+                closePanel();
+                return;
+              }
+
+              if (event.key === "Enter" && activeIndex >= 0 && suggestions[activeIndex]) {
+                event.preventDefault();
+                window.location.href = suggestions[activeIndex].url;
+              }
+            });
+
+            document.addEventListener("click", (event) => {
+              if (!root.contains(event.target)) {
+                closePanel();
+              }
+            });
+          });
+        };
+
+        initHeaderSearch();
+        document.addEventListener("astro:page-load", initHeaderSearch);
+      })();
+    </script>
   </body>
 </html>
