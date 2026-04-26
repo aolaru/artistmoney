@@ -1,0 +1,31 @@
+{
+  "title": "Flowers - 2024 Remaster",
+  "slug": "flowers-2024-remaster",
+  "artist": "olaru",
+  "estimated_revenue": "$1K-$8K/year",
+  "album": "Ambitones (10th Anniversary with Bonus track 2024 Remaster)",
+  "year": 2024,
+  "meaning_summary": "This track reads like the kind of independent electronic release that earns through mood-driven replay, repeat listens, and gradual discovery rather than one-off chart spikes.",
+  "revenue_drivers": [
+    "Independent electronic tracks can build value through steady niche streaming.",
+    "A remaster can reopen discovery and improve replay across existing listeners.",
+    "Creator-led catalogs retain more value when rights stay close to the artist."
+  ],
+  "related_songs": [
+    "sampling-darker-trashed-mix"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1.5K-$10K/year",
+    "artist_or_estate_share": "$1K-$8K/year",
+    "label_master_share": "$0-$1K/year",
+    "publishing_share": "$150-$700/year",
+    "songwriter_share": "$250-$1K/year",
+    "assumptions": "Estimate assumes small-scale independent streaming activity, creator-leaning rights ownership, and long-tail replay rather than major playlist scale."
+  },
+  "ownership": {
+    "master_owner": "Likely creator-led independent control",
+    "publishing_owner": "Likely composer-side publishing control",
+    "catalog_sale_status": "No catalog sale adjustment assumed",
+    "notes": "Modeled from independent-catalog behavior, not public royalty disclosures."
+  }
+}

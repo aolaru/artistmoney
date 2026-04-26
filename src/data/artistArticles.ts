@@ -365,5 +365,15 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "Creator participation strengthens retained value across the band's best-known tracks."
     ],
     insight: "Distinctive synth-pop catalogs can stay commercially strong for decades because their songs remain easy to recognize, place, and replay."
+  },
+  olaru: {
+    seoTitle: "Does Olaru still make money from independent electronic releases?",
+    shortAnswer: "Yes — modeled at roughly $5K-$40K/year.",
+    sources: [
+      "The public Spotify artist profile shows active catalog presence, monthly listeners, and releases including the Ambitones remaster cycle.",
+      "Independent electronic catalogs usually earn through long-tail replay, creator-led rights economics, and steady niche discovery rather than mainstream chart scale.",
+      "Artist-controlled or creator-leaning release structures can preserve a stronger artist-side share even when headline streaming volume is modest."
+    ],
+    insight: "Independent catalogs do not need massive scale to matter. If the rights stay close to the artist, even modest recurring listening can translate into meaningful retained value."
   }
 };

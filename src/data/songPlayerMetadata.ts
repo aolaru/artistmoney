@@ -397,6 +397,12 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
       "youtubeMusic": "https://music.youtube.com/search?q=Coolio%20Fantastic%20Voyage"
     }
   },
+  "flowers-2024-remaster": {
+    "links": {
+      "spotify": "https://open.spotify.com/search/Olaru%20Flowers%202024%20Remaster",
+      "youtubeMusic": "https://music.youtube.com/search?q=Olaru%20Flowers%202024%20Remaster"
+    }
+  },
   "fell-on-black-days": {
     "links": {
       "spotify": "https://open.spotify.com/search/Soundgarden%20Fell%20on%20Black%20Days",
@@ -693,6 +699,12 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/save-your-tears/1505683624?i=1505683980&uo=4",
       "spotify": "https://open.spotify.com/search/The%20Weeknd%20Save%20Your%20Tears",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Weeknd%20Save%20Your%20Tears"
+    }
+  },
+  "sampling-darker-trashed-mix": {
+    "links": {
+      "spotify": "https://open.spotify.com/search/Olaru%20Sampling%20Darker%20Trashed%20Mix",
+      "youtubeMusic": "https://music.youtube.com/search?q=Olaru%20Sampling%20Darker%20Trashed%20Mix"
     }
   },
   "shake-it-off": {

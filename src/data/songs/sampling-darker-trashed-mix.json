@@ -1,0 +1,31 @@
+{
+  "title": "Sampling - Darker Trashed Mix",
+  "slug": "sampling-darker-trashed-mix",
+  "artist": "olaru",
+  "estimated_revenue": "$1K-$7K/year",
+  "album": "Ambitones (Darker Trashed Mix)",
+  "year": 2024,
+  "meaning_summary": "Its mix framing and darker electronic positioning suggest a track that earns through specialist taste, repeat use, and catalog exploration rather than broad mainstream traffic.",
+  "revenue_drivers": [
+    "Alternative mixes can extend catalog life by giving listeners a second entry point.",
+    "Electronic niche audiences often replay mood-specific tracks more deeply than casual pop listeners.",
+    "Independent release economics can leave a relatively strong artist-side share even at small scale."
+  ],
+  "related_songs": [
+    "flowers-2024-remaster"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1.2K-$9K/year",
+    "artist_or_estate_share": "$1K-$7K/year",
+    "label_master_share": "$0-$900/year",
+    "publishing_share": "$120-$600/year",
+    "songwriter_share": "$220-$900/year",
+    "assumptions": "Estimate assumes modest but real independent streaming, creator-controlled economics, and slower-burn long-tail replay from niche listeners."
+  },
+  "ownership": {
+    "master_owner": "Likely creator-led independent control",
+    "publishing_owner": "Likely composer-side publishing control",
+    "catalog_sale_status": "No catalog sale adjustment assumed",
+    "notes": "Modeled from independent electronic release behavior, not disclosed statements."
+  }
+}
