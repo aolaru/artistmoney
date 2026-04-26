@@ -419,7 +419,7 @@
     ]
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Michael Jackson",
       "slug": "michael-jackson",
@@ -1712,6 +1712,714 @@
         ],
         "related_songs": [
           "under-the-bridge"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Gary Numan",
+      "slug": "gary-numan",
+      "estimated_income": "$900K-$3.2M/year",
+      "top_songs": [
+        "cars",
+        "are-friends-electric"
+      ],
+      "genre": "Synth-pop / New Wave",
+      "country": "United Kingdom",
+      "active_since": "1978",
+      "bio": "Gary Numan continues to earn through one of the foundational synth-pop catalogs, with songs that still travel through streaming, sync, and electronic rediscovery.",
+      "notable_for": "Early electronic hits with durable cultural recognition and synth-catalog influence.",
+      "career_highlight": "Cars remains one of the clearest examples of a late-1970s electronic single that still monetizes decades later.",
+      "revenue_drivers": [
+        "Catalog streaming and synth-pop playlist discovery sustain recurring listening.",
+        "Strong influence on later electronic and alternative music keeps the catalog culturally active.",
+        "Sync-friendly production and recognizability support long-tail reuse."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Cars",
+        "slug": "cars",
+        "artist": "gary-numan",
+        "estimated_revenue": "$250K-$900K/year",
+        "album": "The Pleasure Principle",
+        "year": 1979,
+        "meaning_summary": "Its cold synth hook and instantly recognizable structure help it remain commercially durable across streaming and sync-heavy contexts.",
+        "revenue_drivers": [
+          "Electronic and nostalgia playlists support steady repeat listening.",
+          "Sync use and cultural familiarity keep the track active beyond baseline streams.",
+          "The song's foundational synth-pop identity supports ongoing rediscovery."
+        ],
+        "related_songs": [
+          "are-friends-electric"
+        ]
+      },
+      {
+        "title": "Are 'Friends' Electric?",
+        "slug": "are-friends-electric",
+        "artist": "gary-numan",
+        "estimated_revenue": "$180K-$700K/year",
+        "album": "Replicas",
+        "year": 1979,
+        "meaning_summary": "Its dystopian mood and distinctive electronic identity make it unusually durable for long-tail streaming and catalog discovery.",
+        "revenue_drivers": [
+          "Core fan listening and electronic-catalog discovery sustain recurring streams.",
+          "The track's influence value helps keep it relevant in retrospective listening.",
+          "Alternative and synth-driven programming support long-tail reuse."
+        ],
+        "related_songs": [
+          "cars"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Nine Inch Nails",
+      "slug": "nine-inch-nails",
+      "estimated_income": "$2M-$7M/year",
+      "top_songs": [
+        "closer",
+        "hurt"
+      ],
+      "genre": "Industrial Rock / Alternative",
+      "country": "United States",
+      "active_since": "1988",
+      "bio": "Nine Inch Nails keep earning through a high-recognition industrial catalog that still performs via streaming, sync use, and cross-generational alternative discovery.",
+      "notable_for": "Industrial-rock songs with long-tail streaming strength and persistent sync utility.",
+      "career_highlight": "Closer and Hurt remain two of the strongest long-tail assets in the catalog, each supported by distinct cultural afterlives.",
+      "revenue_drivers": [
+        "Alternative and industrial playlist presence sustains recurring catalog streaming.",
+        "Sync and media usage keep the catalog relevant outside album listening cycles.",
+        "Strong songwriter identity improves retained value on key tracks."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Closer",
+        "slug": "closer",
+        "artist": "nine-inch-nails",
+        "estimated_revenue": "$350K-$1.2M/year",
+        "album": "The Downward Spiral",
+        "year": 1994,
+        "meaning_summary": "Its unmistakable production and cultural notoriety keep it commercially durable across streaming, nightlife, and sync-friendly reuse.",
+        "revenue_drivers": [
+          "Alternative and industrial playlists support steady repeat listening.",
+          "Cultural familiarity and sync use help keep the track in circulation.",
+          "The song's production identity makes it highly recognizable in catalog replay."
+        ],
+        "related_songs": [
+          "hurt"
+        ]
+      },
+      {
+        "title": "Hurt",
+        "slug": "hurt",
+        "artist": "nine-inch-nails",
+        "estimated_revenue": "$250K-$950K/year",
+        "album": "The Downward Spiral",
+        "year": 1994,
+        "meaning_summary": "Its emotional directness and long cultural afterlife keep it durable as both a catalog listen and a song people continue to rediscover.",
+        "revenue_drivers": [
+          "Long-tail streaming and alternative-catalog listening sustain recurring plays.",
+          "The song's emotional weight supports continued rediscovery and reuse.",
+          "Strong songwriter-side value helps retain meaningful earnings around the recording."
+        ],
+        "related_songs": [
+          "closer"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "The Police",
+      "slug": "the-police",
+      "estimated_income": "$4M-$14M/year",
+      "top_songs": [
+        "every-breath-you-take",
+        "roxanne"
+      ],
+      "genre": "Rock / New Wave",
+      "country": "United Kingdom",
+      "active_since": "1977",
+      "bio": "The Police still earn through one of the most durable late-1970s and 1980s catalogs, with songs that remain huge across streaming, sync, and global radio memory.",
+      "notable_for": "Cross-era rock songs with major long-tail replay and licensing value.",
+      "career_highlight": "Every Breath You Take remains one of the strongest recurring catalog songs in the entire era.",
+      "revenue_drivers": [
+        "Evergreen streaming and classic-rock playlist demand sustain recurring listening.",
+        "Heavy sync and media reuse keep the biggest songs commercially active.",
+        "Strong songwriter value improves retained catalog economics."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Every Breath You Take",
+        "slug": "every-breath-you-take",
+        "artist": "the-police",
+        "estimated_revenue": "$1.2M-$4.5M/year",
+        "album": "Synchronicity",
+        "year": 1983,
+        "meaning_summary": "Its instantly recognizable melody and constant cultural reuse make it one of the clearest long-tail catalog earners in the rock canon.",
+        "revenue_drivers": [
+          "Catalog streaming and radio familiarity sustain continuous replay.",
+          "Sync, interpolation, and media reuse materially extend earnings.",
+          "Strong global recognition keeps the song active across generations."
+        ],
+        "related_songs": [
+          "roxanne"
+        ]
+      },
+      {
+        "title": "Roxanne",
+        "slug": "roxanne",
+        "artist": "the-police",
+        "estimated_revenue": "$450K-$1.6M/year",
+        "album": "Outlandos d'Amour",
+        "year": 1978,
+        "meaning_summary": "Its hook, vocal identity, and enduring familiarity keep it commercially durable decades after release.",
+        "revenue_drivers": [
+          "Classic-rock and nostalgia playlists support steady repeat listening.",
+          "Strong identity and recognizability help the song travel well in sync and catalog discovery.",
+          "Cross-generational replay keeps earnings resilient over time."
+        ],
+        "related_songs": [
+          "every-breath-you-take"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Billy Joel",
+      "slug": "billy-joel",
+      "estimated_income": "$5M-$16M/year",
+      "top_songs": [
+        "piano-man",
+        "uptown-girl"
+      ],
+      "genre": "Pop Rock / Singer-Songwriter",
+      "country": "United States",
+      "active_since": "1971",
+      "bio": "Billy Joel keeps earning through a deep, high-recognition songbook that still performs across streaming, radio memory, and event-driven catalog listening.",
+      "notable_for": "One of the strongest piano-led pop catalogs of the 1970s and 1980s.",
+      "career_highlight": "Piano Man remains a flagship catalog song with unusually strong multi-generational replay value.",
+      "revenue_drivers": [
+        "Classic-pop and singer-songwriter streaming sustain recurring listening.",
+        "Event, wedding, and nostalgia-driven replay support durable catalog demand.",
+        "Strong writer-side participation improves retained value."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Piano Man",
+        "slug": "piano-man",
+        "artist": "billy-joel",
+        "estimated_revenue": "$700K-$2.4M/year",
+        "album": "Piano Man",
+        "year": 1973,
+        "meaning_summary": "Its storytelling, singalong chorus, and constant rediscovery make it one of Billy Joel's most durable long-tail earners.",
+        "revenue_drivers": [
+          "Streaming and legacy playlist placement sustain steady repeat listening.",
+          "Bar, event, and communal singalong contexts reinforce replay value.",
+          "Writer-side economics help preserve a meaningful artist share."
+        ],
+        "related_songs": [
+          "uptown-girl"
+        ]
+      },
+      {
+        "title": "Uptown Girl",
+        "slug": "uptown-girl",
+        "artist": "billy-joel",
+        "estimated_revenue": "$450K-$1.7M/year",
+        "album": "An Innocent Man",
+        "year": 1983,
+        "meaning_summary": "Its bright hook and cross-generational pop familiarity make it commercially durable well beyond its chart life.",
+        "revenue_drivers": [
+          "Pop-oldies and nostalgia playlists support repeat streaming.",
+          "Broad familiarity keeps the song active in catalog rediscovery.",
+          "Event and media reuse can lift earnings beyond baseline streams."
+        ],
+        "related_songs": [
+          "piano-man"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Pet Shop Boys",
+      "slug": "pet-shop-boys",
+      "estimated_income": "$2M-$7M/year",
+      "top_songs": [
+        "west-end-girls",
+        "its-a-sin"
+      ],
+      "genre": "Synth-pop / Dance-pop",
+      "country": "United Kingdom",
+      "active_since": "1981",
+      "bio": "Pet Shop Boys continue to monetize through a durable synth-pop catalog with strong streaming, club-memory, and long-tail electronic discovery.",
+      "notable_for": "Synth-pop songwriting with unusually durable crossover recognition.",
+      "career_highlight": "West End Girls and It's a Sin still anchor the catalog's modern earnings profile.",
+      "revenue_drivers": [
+        "Synth-pop and alternative-dance playlists sustain recurring listening.",
+        "Writer-led catalog economics improve retained value on core songs.",
+        "Club culture and retrospective discovery keep the catalog commercially active."
+      ]
+    },
+    "songs": [
+      {
+        "title": "West End Girls",
+        "slug": "west-end-girls",
+        "artist": "pet-shop-boys",
+        "estimated_revenue": "$300K-$1.1M/year",
+        "album": "Please",
+        "year": 1985,
+        "meaning_summary": "Its cool vocal delivery, synth structure, and enduring recognizability help it remain commercially durable.",
+        "revenue_drivers": [
+          "Synth-pop and nostalgia playlists support steady repeat listening.",
+          "Broad recognition keeps the song active in long-tail discovery.",
+          "Writer-side value adds to retained earnings."
+        ],
+        "related_songs": [
+          "its-a-sin"
+        ]
+      },
+      {
+        "title": "It's a Sin",
+        "slug": "its-a-sin",
+        "artist": "pet-shop-boys",
+        "estimated_revenue": "$250K-$950K/year",
+        "album": "Actually",
+        "year": 1987,
+        "meaning_summary": "Its emotional scale and strong melodic identity help the recording keep earning through replay and rediscovery.",
+        "revenue_drivers": [
+          "Catalog streaming and synth-driven playlist use sustain long-tail replay.",
+          "Alternative-pop familiarity supports recurring discovery.",
+          "Strong songwriter identity helps preserve retained economics."
+        ],
+        "related_songs": [
+          "west-end-girls"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Joy Division",
+      "slug": "joy-division",
+      "estimated_income": "$1.1M-$3.8M/year",
+      "top_songs": [
+        "love-will-tear-us-apart",
+        "atmosphere"
+      ],
+      "genre": "Post-punk / Alternative",
+      "country": "United Kingdom",
+      "active_since": "1976",
+      "bio": "Joy Division still earn through a compact but highly influential catalog that continues to drive post-punk discovery, streaming, and sync-level cultural reuse.",
+      "notable_for": "Post-punk recordings with unusually strong long-tail influence value.",
+      "career_highlight": "Love Will Tear Us Apart remains one of the defining catalog songs in alternative music.",
+      "revenue_drivers": [
+        "Alternative and post-punk playlists sustain steady replay.",
+        "Cultural influence and constant rediscovery keep the catalog active.",
+        "Strong identity and sync utility extend value beyond baseline streaming."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Love Will Tear Us Apart",
+        "slug": "love-will-tear-us-apart",
+        "artist": "joy-division",
+        "estimated_revenue": "$250K-$900K/year",
+        "album": "Substance",
+        "year": 1980,
+        "meaning_summary": "Its emotional immediacy and iconic status make it commercially durable long after the original release era.",
+        "revenue_drivers": [
+          "Post-punk and alternative playlists sustain recurring listening.",
+          "Its iconic status keeps the song active in cultural rediscovery loops.",
+          "Sync use and retrospective programming can lift the annual baseline."
+        ],
+        "related_songs": [
+          "atmosphere"
+        ]
+      },
+      {
+        "title": "Atmosphere",
+        "slug": "atmosphere",
+        "artist": "joy-division",
+        "estimated_revenue": "$140K-$550K/year",
+        "album": "Substance",
+        "year": 1980,
+        "meaning_summary": "Its mood and reputation make it one of those catalog tracks that keeps finding new listeners through deep listening and alternative discovery.",
+        "revenue_drivers": [
+          "Alternative-catalog listening supports steady long-tail streams.",
+          "The track's atmosphere and reputation encourage repeat discovery.",
+          "Dedicated fan listening stabilizes its earnings profile."
+        ],
+        "related_songs": [
+          "love-will-tear-us-apart"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Kraftwerk",
+      "slug": "kraftwerk",
+      "estimated_income": "$1.5M-$5M/year",
+      "top_songs": [
+        "the-model",
+        "computer-love"
+      ],
+      "genre": "Electronic / Synth-pop",
+      "country": "Germany",
+      "active_since": "1970",
+      "bio": "Kraftwerk continue to earn through a foundational electronic catalog whose influence, sampling legacy, and streaming rediscovery remain commercially meaningful.",
+      "notable_for": "Foundational electronic recordings with unusually strong influence-driven afterlife.",
+      "career_highlight": "Songs like The Model still function as core reference points in electronic and synth-pop catalog listening.",
+      "revenue_drivers": [
+        "Electronic discovery and influence-driven listening sustain catalog replay.",
+        "Sampling history and cultural reference value support long-tail relevance.",
+        "Specialist fan listening keeps the core catalog active over time."
+      ]
+    },
+    "songs": [
+      {
+        "title": "The Model",
+        "slug": "the-model",
+        "artist": "kraftwerk",
+        "estimated_revenue": "$180K-$700K/year",
+        "album": "The Man-Machine",
+        "year": 1978,
+        "meaning_summary": "Its minimalist hook and foundational synth-pop identity keep it commercially durable across decades of replay and discovery.",
+        "revenue_drivers": [
+          "Electronic and synth-pop playlists support recurring listening.",
+          "Influence value and cultural familiarity encourage ongoing rediscovery.",
+          "Long-tail specialist listening stabilizes annual revenue."
+        ],
+        "related_songs": [
+          "computer-love"
+        ]
+      },
+      {
+        "title": "Computer Love",
+        "slug": "computer-love",
+        "artist": "kraftwerk",
+        "estimated_revenue": "$120K-$450K/year",
+        "album": "Computer World",
+        "year": 1981,
+        "meaning_summary": "Its melodic restraint and lasting influence help it remain relevant in long-tail electronic listening.",
+        "revenue_drivers": [
+          "Deep electronic listening and rediscovery support steady replay.",
+          "The track's influence value helps extend its catalog life.",
+          "Specialist playlists keep it visible to newer listeners."
+        ],
+        "related_songs": [
+          "the-model"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "The Smiths",
+      "slug": "the-smiths",
+      "estimated_income": "$1.8M-$6M/year",
+      "top_songs": [
+        "there-is-a-light-that-never-goes-out",
+        "this-charming-man"
+      ],
+      "genre": "Alternative Rock / Indie",
+      "country": "United Kingdom",
+      "active_since": "1982",
+      "bio": "The Smiths keep earning through one of the most durable alternative catalogs, with songs that continue to travel through streaming, fandom, and cultural rediscovery.",
+      "notable_for": "Indie classics with unusually strong emotional replay value and cross-generational recognition.",
+      "career_highlight": "There Is a Light That Never Goes Out remains one of the defining long-tail songs in the alternative canon.",
+      "revenue_drivers": [
+        "Alternative and indie playlists support recurring replay.",
+        "Deep fan listening and continual rediscovery keep the catalog active.",
+        "Strong song identity supports sync and retrospective reuse."
+      ]
+    },
+    "songs": [
+      {
+        "title": "There Is a Light That Never Goes Out",
+        "slug": "there-is-a-light-that-never-goes-out",
+        "artist": "the-smiths",
+        "estimated_revenue": "$250K-$950K/year",
+        "album": "The Queen Is Dead",
+        "year": 1986,
+        "meaning_summary": "Its emotional clarity and cult-level familiarity make it one of the most durable songs in the Smiths catalog.",
+        "revenue_drivers": [
+          "Indie and alternative playlists support steady long-tail streaming.",
+          "Deep fan replay and cultural recognition keep the song visible.",
+          "Its strong identity helps it endure across generations of discovery."
+        ],
+        "related_songs": [
+          "this-charming-man"
+        ]
+      },
+      {
+        "title": "This Charming Man",
+        "slug": "this-charming-man",
+        "artist": "the-smiths",
+        "estimated_revenue": "$180K-$700K/year",
+        "album": "The Smiths",
+        "year": 1984,
+        "meaning_summary": "Its guitar motif and instantly recognizable character make it commercially durable in long-tail alternative listening.",
+        "revenue_drivers": [
+          "Alternative-catalog playlists sustain recurring replay.",
+          "Its recognizability supports steady rediscovery by newer listeners.",
+          "Fan-driven replay keeps the track economically active over time."
+        ],
+        "related_songs": [
+          "there-is-a-light-that-never-goes-out"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "The Killers",
+      "slug": "the-killers",
+      "estimated_income": "$4M-$13M/year",
+      "top_songs": [
+        "mr-brightside",
+        "somebody-told-me"
+      ],
+      "genre": "Alternative Rock / Indie Pop",
+      "country": "United States",
+      "active_since": "2001",
+      "bio": "The Killers keep earning through a compact but exceptionally durable 2000s catalog, led by songs that still dominate streaming and event-driven replay.",
+      "notable_for": "2000s alternative hits with unusually strong replay and social singalong value.",
+      "career_highlight": "Mr. Brightside remains one of the most resilient long-tail alternative songs of the streaming era.",
+      "revenue_drivers": [
+        "Alternative-pop playlist presence sustains major recurring listening.",
+        "Social, bar, and event-driven replay reinforce long-tail demand.",
+        "Cross-generational familiarity keeps core songs visible to new listeners."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Mr. Brightside",
+        "slug": "mr-brightside",
+        "artist": "the-killers",
+        "estimated_revenue": "$1.4M-$4.5M/year",
+        "album": "Hot Fuss",
+        "year": 2003,
+        "meaning_summary": "Its singalong energy and constant rediscovery make it one of the most durable alternative-rock recordings of its era.",
+        "revenue_drivers": [
+          "High playlist visibility and nostalgia replay sustain strong streaming.",
+          "Event-driven and social singalong use materially extend its annual value.",
+          "Cross-generational recognition keeps the song active at scale."
+        ],
+        "related_songs": [
+          "somebody-told-me"
+        ]
+      },
+      {
+        "title": "Somebody Told Me",
+        "slug": "somebody-told-me",
+        "artist": "the-killers",
+        "estimated_revenue": "$500K-$1.8M/year",
+        "album": "Hot Fuss",
+        "year": 2004,
+        "meaning_summary": "Its hook and early-2000s alternative identity help it remain commercially durable through replay and rediscovery.",
+        "revenue_drivers": [
+          "Alternative playlists and nostalgia listening support repeat streaming.",
+          "Catalog familiarity keeps the track discoverable over time.",
+          "The band's broader catalog strength reinforces long-tail replay."
+        ],
+        "related_songs": [
+          "mr-brightside"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Green Day",
+      "slug": "green-day",
+      "estimated_income": "$5M-$15M/year",
+      "top_songs": [
+        "basket-case",
+        "boulevard-of-broken-dreams"
+      ],
+      "genre": "Punk Rock / Alternative",
+      "country": "United States",
+      "active_since": "1987",
+      "bio": "Green Day still earn through one of the strongest modern punk and alternative catalogs, with songs that remain large across streaming, sync, and generational rediscovery.",
+      "notable_for": "Punk-pop songs with major long-tail replay and cross-era familiarity.",
+      "career_highlight": "Basket Case and Boulevard of Broken Dreams continue to anchor the catalog's long-tail earnings profile.",
+      "revenue_drivers": [
+        "Alternative and pop-punk playlists sustain recurring listening.",
+        "Cross-era hit density supports constant catalog discovery.",
+        "Sync use and youth-culture nostalgia reinforce long-tail value."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Basket Case",
+        "slug": "basket-case",
+        "artist": "green-day",
+        "estimated_revenue": "$700K-$2.4M/year",
+        "album": "Dookie",
+        "year": 1994,
+        "meaning_summary": "Its hook, pace, and enduring punk-pop familiarity make it one of Green Day's clearest long-tail earners.",
+        "revenue_drivers": [
+          "Alternative and pop-punk playlists support steady replay.",
+          "Strong cultural memory keeps the song active in rediscovery loops.",
+          "The band's broad catalog familiarity reinforces long-tail value."
+        ],
+        "related_songs": [
+          "boulevard-of-broken-dreams"
+        ]
+      },
+      {
+        "title": "Boulevard of Broken Dreams",
+        "slug": "boulevard-of-broken-dreams",
+        "artist": "green-day",
+        "estimated_revenue": "$650K-$2.2M/year",
+        "album": "American Idiot",
+        "year": 2004,
+        "meaning_summary": "Its emotional directness and broad 2000s radio familiarity keep it commercially durable well beyond its original cycle.",
+        "revenue_drivers": [
+          "Alternative and 2000s playlists sustain recurring replay.",
+          "Strong familiarity keeps the track visible to newer listeners.",
+          "Catalog depth and sync potential help extend earnings."
+        ],
+        "related_songs": [
+          "basket-case"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Tom Petty",
+      "slug": "tom-petty",
+      "estimated_income": "$4M-$13M/year",
+      "top_songs": [
+        "free-fallin",
+        "i-wont-back-down"
+      ],
+      "genre": "Rock / Heartland Rock",
+      "country": "United States",
+      "active_since": "1976",
+      "bio": "Tom Petty's catalog keeps earning through a broad, high-recognition American rock songbook that still performs across streaming, radio memory, and sync use.",
+      "notable_for": "American rock songs with strong long-tail replay and songwriter durability.",
+      "career_highlight": "Free Fallin' remains one of the strongest long-tail rock recordings of its era.",
+      "revenue_drivers": [
+        "Classic-rock and road-trip playlists sustain recurring listening.",
+        "Sync use and constant radio familiarity keep core songs commercially active.",
+        "Strong songwriter value improves retained economics."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Free Fallin'",
+        "slug": "free-fallin",
+        "artist": "tom-petty",
+        "estimated_revenue": "$800K-$2.7M/year",
+        "album": "Full Moon Fever",
+        "year": 1989,
+        "meaning_summary": "Its melody, broad familiarity, and easy replayability make it one of the clearest long-tail earners in the Tom Petty catalog.",
+        "revenue_drivers": [
+          "Classic-rock and evergreen playlists support strong repeat listening.",
+          "High recognition keeps the song active in rediscovery and sync use.",
+          "Writer-side participation improves retained catalog value."
+        ],
+        "related_songs": [
+          "i-wont-back-down"
+        ]
+      },
+      {
+        "title": "I Won't Back Down",
+        "slug": "i-wont-back-down",
+        "artist": "tom-petty",
+        "estimated_revenue": "$500K-$1.8M/year",
+        "album": "Full Moon Fever",
+        "year": 1989,
+        "meaning_summary": "Its resilient message and broad familiarity help the recording stay commercially durable across decades of replay.",
+        "revenue_drivers": [
+          "Classic-rock playlists and motivational reuse support steady replay.",
+          "Cultural familiarity keeps the song relevant to newer listeners.",
+          "Sync and event-driven usage can lift annual earnings above baseline."
+        ],
+        "related_songs": [
+          "free-fallin"
+        ]
+      }
+    ]
+  },
+  {
+    "checked": false,
+    "artist": {
+      "name": "Leonard Cohen",
+      "slug": "leonard-cohen",
+      "estimated_income": "$2M-$7M/year",
+      "top_songs": [
+        "hallelujah",
+        "suzanne"
+      ],
+      "genre": "Folk Rock / Singer-Songwriter",
+      "country": "Canada",
+      "active_since": "1967",
+      "bio": "Leonard Cohen's catalog remains valuable through songwriter-led economics, deep catalog listening, and songs that continue to circulate across covers, streaming, and sync use.",
+      "notable_for": "One of the strongest writer-driven catalogs in folk and literary songwriting.",
+      "career_highlight": "Hallelujah remains one of the clearest examples of a song whose long-tail value extends far beyond its original recording cycle.",
+      "revenue_drivers": [
+        "Songwriter-led catalog economics preserve strong retained value.",
+        "Covers, reinterpretations, and sync use extend long-tail earnings.",
+        "Folk and reflective playlist listening support recurring discovery."
+      ]
+    },
+    "songs": [
+      {
+        "title": "Hallelujah",
+        "slug": "hallelujah",
+        "artist": "leonard-cohen",
+        "estimated_revenue": "$600K-$2.3M/year",
+        "album": "Various Positions",
+        "year": 1984,
+        "meaning_summary": "Its extraordinary cover history and enduring emotional resonance make it one of the strongest long-tail songwriter assets in the catalog.",
+        "revenue_drivers": [
+          "Streaming, cover awareness, and film or TV use sustain ongoing replay.",
+          "Strong songwriter-side value materially improves retained earnings.",
+          "Deep cultural familiarity keeps the song commercially active across generations."
+        ],
+        "related_songs": [
+          "suzanne"
+        ]
+      },
+      {
+        "title": "Suzanne",
+        "slug": "suzanne",
+        "artist": "leonard-cohen",
+        "estimated_revenue": "$120K-$450K/year",
+        "album": "Songs of Leonard Cohen",
+        "year": 1967,
+        "meaning_summary": "Its lyrical identity and continuing songwriter prestige help it remain durable in long-tail catalog listening.",
+        "revenue_drivers": [
+          "Folk and singer-songwriter playlists support steady replay.",
+          "Writer reputation and catalog depth encourage ongoing discovery.",
+          "Cover and interpretation culture extends long-tail value."
+        ],
+        "related_songs": [
+          "hallelujah"
         ]
       }
     ]
