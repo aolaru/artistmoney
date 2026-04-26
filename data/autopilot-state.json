@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 92,
-    "album": 92
+    "song": 93,
+    "album": 93
   },
   "lastTouched": {
     "artist": {
@@ -169,7 +169,8 @@
       "shake-it-off": "2026-04-26T05:34:49.296Z",
       "sicko-mode": "2026-04-26T07:22:32.363Z",
       "smells-like-teen-spirit": "2026-04-26T09:50:51.030Z",
-      "song-2": "2026-04-26T12:56:48.692Z"
+      "song-2": "2026-04-26T12:56:48.692Z",
+      "stairway-to-heaven": "2026-04-26T15:38:04.627Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -223,6 +224,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-26T15:38:04.627Z",
+      "summary": "song:stairway-to-heaven"
+    },
+    {
       "timestamp": "2026-04-26T12:56:48.692Z",
       "summary": "song:song-2, album:reo-speedwagon-wheels-are-turnin"
     },
@@ -257,10 +262,6 @@
     {
       "timestamp": "2026-04-25T12:54:45.346Z",
       "summary": "song:return-of-the-mack, album:portishead-dummy"
-    },
-    {
-      "timestamp": "2026-04-25T09:47:28.183Z",
-      "summary": "song:rae"
     }
   ]
 }
