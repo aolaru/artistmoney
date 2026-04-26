@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 90,
-    "album": 90
+    "song": 91,
+    "album": 91
   },
   "lastTouched": {
     "artist": {
@@ -167,7 +167,8 @@
       "roygbiv": "2026-04-25T21:32:23.227Z",
       "say-it-right": "2026-04-26T02:13:34.096Z",
       "shake-it-off": "2026-04-26T05:34:49.296Z",
-      "sicko-mode": "2026-04-26T07:22:32.363Z"
+      "sicko-mode": "2026-04-26T07:22:32.363Z",
+      "smells-like-teen-spirit": "2026-04-26T09:50:51.030Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -220,6 +221,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-26T09:50:51.030Z",
+      "summary": "song:smells-like-teen-spirit"
+    },
+    {
       "timestamp": "2026-04-26T07:22:32.363Z",
       "summary": "song:sicko-mode, album:rem-document"
     },
@@ -254,10 +259,6 @@
     {
       "timestamp": "2026-04-25T07:08:04.269Z",
       "summary": "song:purple-haze"
-    },
-    {
-      "timestamp": "2026-04-25T05:07:48.602Z",
-      "summary": "song:promiscuous"
     }
   ]
 }
