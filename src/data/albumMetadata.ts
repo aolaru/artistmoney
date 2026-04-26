@@ -10114,5 +10114,71 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/document/1440850529?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=R.E.M.%20Document"
     }
+  },
+  "reo-speedwagon-wheels-are-turnin": {
+    "releaseDate": "1984-11-05",
+    "label": "Sony Music Entertainment",
+    "trackCount": 9,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "I Do' Wanna Know",
+        "durationMs": 253027
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "One Lonely Night",
+        "durationMs": 201467
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Thru the Window",
+        "durationMs": 302000
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Rock 'N Roll Star",
+        "durationMs": 221173
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Live Every Moment",
+        "durationMs": 299960
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Can't Fight This Feeling",
+        "durationMs": 294773
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Gotta Feel More",
+        "durationMs": 267293
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Break His Spell",
+        "durationMs": 178533
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Wheels Are Turnin'",
+        "durationMs": 350400
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/REO%20Speedwagon%20Wheels%20Are%20Turnin'",
+      "appleMusic": "https://music.apple.com/us/album/wheels-are-turnin/200298768?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=REO%20Speedwagon%20Wheels%20Are%20Turnin'"
+    }
   }
 } as const;

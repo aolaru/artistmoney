@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 91,
-    "album": 91
+    "song": 92,
+    "album": 92
   },
   "lastTouched": {
     "artist": {
@@ -168,7 +168,8 @@
       "say-it-right": "2026-04-26T02:13:34.096Z",
       "shake-it-off": "2026-04-26T05:34:49.296Z",
       "sicko-mode": "2026-04-26T07:22:32.363Z",
-      "smells-like-teen-spirit": "2026-04-26T09:50:51.030Z"
+      "smells-like-teen-spirit": "2026-04-26T09:50:51.030Z",
+      "song-2": "2026-04-26T12:56:48.692Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -216,10 +217,15 @@
       "queen-a-night-at-the-opera": "2026-04-25T18:42:35.804Z",
       "radiohead-ok-computer": "2026-04-25T21:32:23.227Z",
       "rakim-paid-in-full": "2026-04-26T02:13:34.096Z",
-      "rem-document": "2026-04-26T07:22:32.363Z"
+      "rem-document": "2026-04-26T07:22:32.363Z",
+      "reo-speedwagon-wheels-are-turnin": "2026-04-26T12:56:48.692Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-26T12:56:48.692Z",
+      "summary": "song:song-2, album:reo-speedwagon-wheels-are-turnin"
+    },
     {
       "timestamp": "2026-04-26T09:50:51.030Z",
       "summary": "song:smells-like-teen-spirit"
@@ -255,10 +261,6 @@
     {
       "timestamp": "2026-04-25T09:47:28.183Z",
       "summary": "song:rae"
-    },
-    {
-      "timestamp": "2026-04-25T07:08:04.269Z",
-      "summary": "song:purple-haze"
     }
   ]
 }
