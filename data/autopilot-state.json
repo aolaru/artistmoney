@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 89,
-    "album": 89
+    "song": 90,
+    "album": 90
   },
   "lastTouched": {
     "artist": {
@@ -166,7 +166,8 @@
       "rollout-my-business": "2026-04-25T18:42:35.804Z",
       "roygbiv": "2026-04-25T21:32:23.227Z",
       "say-it-right": "2026-04-26T02:13:34.096Z",
-      "shake-it-off": "2026-04-26T05:34:49.296Z"
+      "shake-it-off": "2026-04-26T05:34:49.296Z",
+      "sicko-mode": "2026-04-26T07:22:32.363Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -213,10 +214,15 @@
       "portishead-dummy": "2026-04-25T12:54:45.346Z",
       "queen-a-night-at-the-opera": "2026-04-25T18:42:35.804Z",
       "radiohead-ok-computer": "2026-04-25T21:32:23.227Z",
-      "rakim-paid-in-full": "2026-04-26T02:13:34.096Z"
+      "rakim-paid-in-full": "2026-04-26T02:13:34.096Z",
+      "rem-document": "2026-04-26T07:22:32.363Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-26T07:22:32.363Z",
+      "summary": "song:sicko-mode, album:rem-document"
+    },
     {
       "timestamp": "2026-04-26T05:34:49.296Z",
       "summary": "song:shake-it-off"
@@ -252,10 +258,6 @@
     {
       "timestamp": "2026-04-25T05:07:48.602Z",
       "summary": "song:promiscuous"
-    },
-    {
-      "timestamp": "2026-04-25T01:59:28.915Z",
-      "summary": "song:power"
     }
   ]
 }

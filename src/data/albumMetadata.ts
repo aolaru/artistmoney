@@ -10036,5 +10036,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/paid-in-full/1440841577?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Rakim%20Paid%20in%20Full"
     }
+  },
+  "rem-document": {
+    "releaseDate": "1987-09-01",
+    "label": "Capitol Records",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Finest Worksong",
+        "durationMs": 227640
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Welcome To the Occupation",
+        "durationMs": 166267
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Exhuming McCarthy",
+        "durationMs": 198573
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Disturbance At the Heron House",
+        "durationMs": 211853
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Strange",
+        "durationMs": 152000
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "It's the End of the World As We Know It (And I Feel Fine)",
+        "durationMs": 246760
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "The One I Love",
+        "durationMs": 197200
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Fireplace",
+        "durationMs": 203867
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Lightnin' Hopkins",
+        "durationMs": 200320
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "King of Birds",
+        "durationMs": 248027
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Oddfellows Local 151",
+        "durationMs": 322773
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/R.E.M.%20Document",
+      "appleMusic": "https://music.apple.com/us/album/document/1440850529?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=R.E.M.%20Document"
+    }
   }
 } as const;
