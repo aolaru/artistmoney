@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 94,
-    "album": 94
+    "song": 95,
+    "album": 95
   },
   "lastTouched": {
     "artist": {
@@ -171,7 +171,8 @@
       "smells-like-teen-spirit": "2026-04-26T09:50:51.030Z",
       "song-2": "2026-04-26T12:56:48.692Z",
       "stairway-to-heaven": "2026-04-26T15:38:04.627Z",
-      "stand-up": "2026-04-26T18:43:51.964Z"
+      "stand-up": "2026-04-26T18:43:51.964Z",
+      "starman": "2026-04-26T21:33:43.860Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -225,6 +226,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-26T21:33:43.860Z",
+      "summary": "song:starman"
+    },
+    {
       "timestamp": "2026-04-26T18:43:51.964Z",
       "summary": "song:stand-up"
     },
@@ -259,10 +264,6 @@
     {
       "timestamp": "2026-04-25T18:42:35.804Z",
       "summary": "song:rollout-my-business, album:queen-a-night-at-the-opera"
-    },
-    {
-      "timestamp": "2026-04-25T15:36:08.334Z",
-      "summary": "song:right-here-right-now"
     }
   ]
 }
