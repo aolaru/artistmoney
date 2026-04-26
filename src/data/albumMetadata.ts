@@ -9952,5 +9952,89 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/ok-computer/1097861387?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Radiohead%20OK%20Computer"
     }
+  },
+  "rakim-paid-in-full": {
+    "releaseDate": "1987-07-07",
+    "label": "The Island Def Jam Music Group",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "I Ain't No Joke",
+        "durationMs": 232934
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Eric B. Is On the Cut",
+        "durationMs": 229733
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "My Melody",
+        "durationMs": 407133
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "I Know You Got Soul",
+        "durationMs": 284467
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Move the Crowd",
+        "durationMs": 227333
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Paid In Full",
+        "durationMs": 228667
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "As the Rhyme Goes On",
+        "durationMs": 240667
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Chinese Arithmetic",
+        "durationMs": 246800
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Eric B. Is President",
+        "durationMs": 378533
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Extended Beat",
+        "durationMs": 229333
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "As the Rhyme Goes On (Radio Mix)",
+        "durationMs": 233253
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Paid In Full (Mini Madness) [The Coldcut Remix]",
+        "durationMs": 217998
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Rakim%20Paid%20in%20Full",
+      "appleMusic": "https://music.apple.com/us/album/paid-in-full/1440841577?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Rakim%20Paid%20in%20Full"
+    }
   }
 } as const;
