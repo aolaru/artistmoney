@@ -10288,5 +10288,82 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/come-on-over/1445668706?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Shania%20Twain%20Come%20On%20Over"
     }
+  },
+  "simon-and-garfunkel-sounds-of-silence": {
+    "releaseDate": "1966-01-17",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "The Sound of Silence",
+        "durationMs": 190102
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Leaves That Are Green",
+        "durationMs": 145081
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Blessed",
+        "durationMs": 198281
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Kathy's Song",
+        "durationMs": 201104
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Somewhere They Can't Find Me",
+        "durationMs": 159099
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Anji",
+        "durationMs": 137009
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Richard Cory",
+        "durationMs": 179129
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "A Most Peculiar Man",
+        "durationMs": 155478
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "April Come She Will",
+        "durationMs": 112816
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "We've Got a Groovy Thing Goin'",
+        "durationMs": 121390
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "I Am a Rock",
+        "durationMs": 169271
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Simon%20%26%20Garfunkel%20Sounds%20of%20Silence",
+      "appleMusic": "https://music.apple.com/us/album/sounds-of-silence/192480256?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Simon%20%26%20Garfunkel%20Sounds%20of%20Silence"
+    }
   }
 } as const;

@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 99,
-    "album": 99
+    "song": 100,
+    "album": 100
   },
   "lastTouched": {
     "artist": {
@@ -176,7 +176,8 @@
       "straight-outta-compton": "2026-04-27T02:24:15.858Z",
       "sultans-of-swing": "2026-04-27T05:49:32.571Z",
       "sweet-child-o-mine": "2026-04-27T08:14:09.093Z",
-      "tell-me-its-real": "2026-04-27T10:58:35.018Z"
+      "tell-me-its-real": "2026-04-27T10:58:35.018Z",
+      "the-drugs-dont-work": "2026-04-27T13:29:04.174Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -226,10 +227,15 @@
       "rakim-paid-in-full": "2026-04-26T02:13:34.096Z",
       "rem-document": "2026-04-26T07:22:32.363Z",
       "reo-speedwagon-wheels-are-turnin": "2026-04-26T12:56:48.692Z",
-      "shania-twain-come-on-over": "2026-04-27T10:58:35.018Z"
+      "shania-twain-come-on-over": "2026-04-27T10:58:35.018Z",
+      "simon-and-garfunkel-sounds-of-silence": "2026-04-27T13:29:04.174Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-27T13:29:04.174Z",
+      "summary": "song:the-drugs-dont-work, album:simon-and-garfunkel-sounds-of-silence"
+    },
     {
       "timestamp": "2026-04-27T10:58:35.018Z",
       "summary": "song:tell-me-its-real, album:shania-twain-come-on-over"
@@ -265,10 +271,6 @@
     {
       "timestamp": "2026-04-26T09:50:51.030Z",
       "summary": "song:smells-like-teen-spirit"
-    },
-    {
-      "timestamp": "2026-04-26T07:22:32.363Z",
-      "summary": "song:sicko-mode, album:rem-document"
     }
   ]
 }
