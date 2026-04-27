@@ -10180,5 +10180,113 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/wheels-are-turnin/200298768?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=REO%20Speedwagon%20Wheels%20Are%20Turnin'"
     }
+  },
+  "shania-twain-come-on-over": {
+    "releaseDate": "1997-11-04",
+    "label": "Mercury Records",
+    "trackCount": 16,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Man! I Feel Like a Woman!",
+        "durationMs": 233631
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "I'm Holdin' On to Love (To Save My Life)",
+        "durationMs": 208892
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Love Gets Me Every Time",
+        "durationMs": 211720
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Don't Be Stupid (You Know I Love You)",
+        "durationMs": 214642
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "From This Moment On (feat. Bryan White)",
+        "durationMs": 281014
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Come On Over",
+        "durationMs": 174410
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "When",
+        "durationMs": 218934
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Whatever You Do! Don't!",
+        "durationMs": 228839
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "If You Wanna Touch Her, Ask!",
+        "durationMs": 244013
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "You're Still the One",
+        "durationMs": 212120
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Honey, I'm Home",
+        "durationMs": 215278
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "That Don't Impress Me Much",
+        "durationMs": 218801
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Black Eyes, Blue Tears",
+        "durationMs": 219800
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "I Won't Leave You Lonely",
+        "durationMs": 252265
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Rock This Country!",
+        "durationMs": 262362
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "You've Got a Way",
+        "durationMs": 205883
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Shania%20Twain%20Come%20On%20Over",
+      "appleMusic": "https://music.apple.com/us/album/come-on-over/1445668706?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Shania%20Twain%20Come%20On%20Over"
+    }
   }
 } as const;
