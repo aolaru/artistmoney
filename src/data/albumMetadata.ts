@@ -10365,5 +10365,59 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/sounds-of-silence/192480256?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Simon%20%26%20Garfunkel%20Sounds%20of%20Silence"
     }
+  },
+  "squarepusher-big-loada": {
+    "releaseDate": "1997-07-21",
+    "label": "Warp Records Limited",
+    "trackCount": 7,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "A Journey to Reedham (7am Mix)",
+        "durationMs": 395800
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Full Rinse",
+        "durationMs": 146867
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Massif (Stay Strong)",
+        "durationMs": 387427
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Come On My Selector",
+        "durationMs": 204800
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "The Body Builder (Dressing Gown Mix)",
+        "durationMs": 181440
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Tequila Fish",
+        "durationMs": 368933
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Jacques Mal Chance (Il N'a Pas de Chance)",
+        "durationMs": 48267
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Squarepusher%20Big%20Loada",
+      "appleMusic": "https://music.apple.com/us/album/big-loada/200940766?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Squarepusher%20Big%20Loada"
+    }
   }
 } as const;

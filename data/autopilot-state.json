@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 100,
-    "album": 100
+    "song": 101,
+    "album": 101
   },
   "lastTouched": {
     "artist": {
@@ -177,7 +177,8 @@
       "sultans-of-swing": "2026-04-27T05:49:32.571Z",
       "sweet-child-o-mine": "2026-04-27T08:14:09.093Z",
       "tell-me-its-real": "2026-04-27T10:58:35.018Z",
-      "the-drugs-dont-work": "2026-04-27T13:29:04.174Z"
+      "the-drugs-dont-work": "2026-04-27T13:29:04.174Z",
+      "the-one-i-love": "2026-04-27T16:23:38.011Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -228,10 +229,15 @@
       "rem-document": "2026-04-26T07:22:32.363Z",
       "reo-speedwagon-wheels-are-turnin": "2026-04-26T12:56:48.692Z",
       "shania-twain-come-on-over": "2026-04-27T10:58:35.018Z",
-      "simon-and-garfunkel-sounds-of-silence": "2026-04-27T13:29:04.174Z"
+      "simon-and-garfunkel-sounds-of-silence": "2026-04-27T13:29:04.174Z",
+      "squarepusher-big-loada": "2026-04-27T16:23:38.011Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-27T16:23:38.011Z",
+      "summary": "song:the-one-i-love, album:squarepusher-big-loada"
+    },
     {
       "timestamp": "2026-04-27T13:29:04.174Z",
       "summary": "song:the-drugs-dont-work, album:simon-and-garfunkel-sounds-of-silence"
@@ -267,10 +273,6 @@
     {
       "timestamp": "2026-04-26T12:56:48.692Z",
       "summary": "song:song-2, album:reo-speedwagon-wheels-are-turnin"
-    },
-    {
-      "timestamp": "2026-04-26T09:50:51.030Z",
-      "summary": "song:smells-like-teen-spirit"
     }
   ]
 }
