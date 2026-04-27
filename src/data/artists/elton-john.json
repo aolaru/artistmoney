@@ -1,0 +1,20 @@
+{
+  "name": "Elton John",
+  "slug": "elton-john",
+  "estimated_income": "$15M-$40M/year",
+  "top_songs": [
+    "rocket-man",
+    "tiny-dancer"
+  ],
+  "genre": "Pop / Rock",
+  "country": "United Kingdom",
+  "active_since": "1969",
+  "bio": "Elton John's catalog keeps earning through classic-rock streaming, film and documentary usage, and strong songbook familiarity across generations.",
+  "notable_for": "Piano-led pop classics with deep songwriter and catalog value.",
+  "career_highlight": "His best-known recordings continue to deliver unusually stable long-tail income.",
+  "revenue_drivers": [
+    "Catalog streaming and songwriter value remain core revenue drivers.",
+    "Film, documentary, and tribute use keep the catalog highly visible.",
+    "Cross-generational recognition supports repeat listening and discovery."
+  ]
+}
