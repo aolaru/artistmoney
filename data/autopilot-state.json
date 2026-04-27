@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 97,
-    "album": 97
+    "song": 98,
+    "album": 98
   },
   "lastTouched": {
     "artist": {
@@ -174,7 +174,8 @@
       "stand-up": "2026-04-26T18:43:51.964Z",
       "starman": "2026-04-26T21:33:43.860Z",
       "straight-outta-compton": "2026-04-27T02:24:15.858Z",
-      "sultans-of-swing": "2026-04-27T05:49:32.571Z"
+      "sultans-of-swing": "2026-04-27T05:49:32.571Z",
+      "sweet-child-o-mine": "2026-04-27T08:14:09.093Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -228,6 +229,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-27T08:14:09.093Z",
+      "summary": "song:sweet-child-o-mine"
+    },
+    {
       "timestamp": "2026-04-27T05:49:32.571Z",
       "summary": "song:sultans-of-swing"
     },
@@ -262,10 +267,6 @@
     {
       "timestamp": "2026-04-26T05:34:49.296Z",
       "summary": "song:shake-it-off"
-    },
-    {
-      "timestamp": "2026-04-26T02:13:34.096Z",
-      "summary": "song:say-it-right, album:rakim-paid-in-full"
     }
   ]
 }
