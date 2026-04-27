@@ -10419,5 +10419,239 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/big-loada/200940766?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Squarepusher%20Big%20Loada"
     }
+  },
+  "steve-hauschildt-s-h": {
+    "releaseDate": "2013-09-13",
+    "label": "Editions Mego",
+    "trackCount": 37,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Poinsettia",
+        "durationMs": 61641
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Galloping",
+        "durationMs": 153716
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Thumbprints",
+        "durationMs": 330072
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Uncanny Valley",
+        "durationMs": 219909
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Dimmer",
+        "durationMs": 169383
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Enter Return",
+        "durationMs": 317990
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Familiar Scene",
+        "durationMs": 229741
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Dream in Dial-Up",
+        "durationMs": 142791
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Flatbed Scanner",
+        "durationMs": 380731
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Ampersands",
+        "durationMs": 238694
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Auto Mile",
+        "durationMs": 106968
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Liberty I",
+        "durationMs": 213965
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Liberty II",
+        "durationMs": 109940
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Liberty III",
+        "durationMs": 255575
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Intimate Yell",
+        "durationMs": 187500
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Seabreezes",
+        "durationMs": 160466
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "Flyswatter",
+        "durationMs": 309074
+      },
+      {
+        "discNumber": 1,
+        "number": 18,
+        "title": "Screenburn",
+        "durationMs": 129000
+      },
+      {
+        "discNumber": 1,
+        "number": 19,
+        "title": "By Buildings",
+        "durationMs": 276941
+      },
+      {
+        "discNumber": 1,
+        "number": 20,
+        "title": "Vox Ulterior",
+        "durationMs": 77478
+      },
+      {
+        "discNumber": 1,
+        "number": 21,
+        "title": "Still Cloudy",
+        "durationMs": 289500
+      },
+      {
+        "discNumber": 1,
+        "number": 22,
+        "title": "In the Waves",
+        "durationMs": 62385
+      },
+      {
+        "discNumber": 1,
+        "number": 23,
+        "title": "Coming Into View",
+        "durationMs": 610028
+      },
+      {
+        "discNumber": 1,
+        "number": 24,
+        "title": "Jovian",
+        "durationMs": 169383
+      },
+      {
+        "discNumber": 1,
+        "number": 25,
+        "title": "Venn",
+        "durationMs": 223500
+      },
+      {
+        "discNumber": 1,
+        "number": 26,
+        "title": "Star Map",
+        "durationMs": 74274
+      },
+      {
+        "discNumber": 1,
+        "number": 27,
+        "title": "Backwards Glance",
+        "durationMs": 211000
+      },
+      {
+        "discNumber": 1,
+        "number": 28,
+        "title": "OCR",
+        "durationMs": 133717
+      },
+      {
+        "discNumber": 1,
+        "number": 29,
+        "title": "Rapt for Liquid Minister",
+        "durationMs": 285297
+      },
+      {
+        "discNumber": 1,
+        "number": 30,
+        "title": "Portal",
+        "durationMs": 205049
+      },
+      {
+        "discNumber": 1,
+        "number": 31,
+        "title": "Critique of the Beautiful",
+        "durationMs": 967366
+      },
+      {
+        "discNumber": 1,
+        "number": 32,
+        "title": "Hemero",
+        "durationMs": 221325
+      },
+      {
+        "discNumber": 1,
+        "number": 33,
+        "title": "Hiccup",
+        "durationMs": 98428
+      },
+      {
+        "discNumber": 1,
+        "number": 34,
+        "title": "Verbatim",
+        "durationMs": 161153
+      },
+      {
+        "discNumber": 1,
+        "number": 35,
+        "title": "Red Corridor",
+        "durationMs": 134084
+      },
+      {
+        "discNumber": 1,
+        "number": 36,
+        "title": "Passing Cars",
+        "durationMs": 420203
+      },
+      {
+        "discNumber": 1,
+        "number": 37,
+        "title": "Different Directions",
+        "durationMs": 583731
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Steve%20Hauschildt%20S%2FH",
+      "appleMusic": "https://music.apple.com/us/album/s-h/1799297581?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Steve%20Hauschildt%20S%2FH"
+    }
   }
 } as const;
