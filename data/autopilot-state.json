@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 102,
-    "album": 102
+    "song": 103,
+    "album": 103
   },
   "lastTouched": {
     "artist": {
@@ -179,7 +179,8 @@
       "tell-me-its-real": "2026-04-27T10:58:35.018Z",
       "the-drugs-dont-work": "2026-04-27T13:29:04.174Z",
       "the-one-i-love": "2026-04-27T16:23:38.011Z",
-      "the-way-i-are": "2026-04-27T19:12:09.531Z"
+      "the-way-i-are": "2026-04-27T19:12:09.531Z",
+      "tonight-tonight": "2026-04-27T21:51:07.048Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -237,6 +238,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-27T21:51:07.048Z",
+      "summary": "song:tonight-tonight"
+    },
+    {
       "timestamp": "2026-04-27T19:12:09.531Z",
       "summary": "song:the-way-i-are, album:steve-hauschildt-s-h"
     },
@@ -271,10 +276,6 @@
     {
       "timestamp": "2026-04-26T18:43:51.964Z",
       "summary": "song:stand-up"
-    },
-    {
-      "timestamp": "2026-04-26T15:38:04.627Z",
-      "summary": "song:stairway-to-heaven"
     }
   ]
 }
