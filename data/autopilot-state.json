@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 108,
-    "album": 108
+    "song": 109,
+    "album": 109
   },
   "lastTouched": {
     "artist": {
@@ -185,7 +185,8 @@
       "wanted-dead-or-alive": "2026-04-28T05:55:01.821Z",
       "whats-up": "2026-04-28T08:16:20.855Z",
       "who-am-i-whats-my-name": "2026-04-28T11:00:53.295Z",
-      "why-d-you-only-call-me-when-youre-high": "2026-04-28T16:49:00.753Z"
+      "why-d-you-only-call-me-when-youre-high": "2026-04-28T16:49:00.753Z",
+      "wish-you-were-here": "2026-04-28T19:27:12.093Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -247,6 +248,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-28T19:27:12.093Z",
+      "summary": "song:wish-you-were-here"
+    },
+    {
       "timestamp": "2026-04-28T16:49:00.753Z",
       "summary": "song:why-d-you-only-call-me-when-youre-high, album:the-crystal-method-vegas"
     },
@@ -281,10 +286,6 @@
     {
       "timestamp": "2026-04-27T13:29:04.174Z",
       "summary": "song:the-drugs-dont-work, album:simon-and-garfunkel-sounds-of-silence"
-    },
-    {
-      "timestamp": "2026-04-27T10:58:35.018Z",
-      "summary": "song:tell-me-its-real, album:shania-twain-come-on-over"
     }
   ]
 }
