@@ -16,5 +16,15 @@
     "publishing_owner": "Songwriter-side publishing likely captures a meaningful share of the economics",
     "catalog_sale_status": "No full sale assumption baked in",
     "notes": "Songs with dominant songwriter credit can have a very different split from the headline streaming number."
-  }
+  },
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can lift the baseline."
+  ],
+  "related_songs": [
+    "champagne-supernova",
+    "dont-look-back-in-anger"
+  ]
 }

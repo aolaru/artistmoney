@@ -11054,5 +11054,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/vegas/1440899631?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Crystal%20Method%20Vegas"
     }
+  },
+  "the-doors-l-a-woman": {
+    "releaseDate": "1971-04-19",
+    "label": "Rhino Entertainment Company",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "The Changeling",
+        "durationMs": 289593
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Love Her Madly",
+        "durationMs": 211009
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Been Down So Long",
+        "durationMs": 277760
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Cars Hiss By My Window",
+        "durationMs": 299477
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "L.A. Woman",
+        "durationMs": 482220
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "L'America",
+        "durationMs": 273643
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Hyacinth House",
+        "durationMs": 192178
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Crawling King Snake",
+        "durationMs": 298598
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "The WASP (Texas Radio And The Big Beat)",
+        "durationMs": 259307
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Riders On The Storm",
+        "durationMs": 462926
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Doors%20L.A.%20Woman",
+      "appleMusic": "https://music.apple.com/us/album/l-a-woman/1622471682?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Doors%20L.A.%20Woman"
+    }
   }
 } as const;
