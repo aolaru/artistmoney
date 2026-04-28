@@ -10826,5 +10826,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/1/1440833098?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Beatles%201"
     }
+  },
+  "the-cardigans-gran-turismo": {
+    "releaseDate": "1998-01-01",
+    "label": "Universal Music AB",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Paralyzed",
+        "durationMs": 294800
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Erase/Rewind",
+        "durationMs": 215760
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Explode",
+        "durationMs": 244840
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Starter",
+        "durationMs": 230200
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Hanging Around",
+        "durationMs": 221200
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Higher",
+        "durationMs": 272173
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Marvel Hill",
+        "durationMs": 254800
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "My Favourite Game",
+        "durationMs": 217133
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Do You Believe",
+        "durationMs": 199240
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Junk of the Hearts",
+        "durationMs": 248067
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Nil",
+        "durationMs": 137133
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Cardigans%20Gran%20Turismo",
+      "appleMusic": "https://music.apple.com/us/album/gran-turismo/1440917748?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Cardigans%20Gran%20Turismo"
+    }
   }
 } as const;
