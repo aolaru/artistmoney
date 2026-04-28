@@ -71,12 +71,13 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
     <header class="site-header">
       <div class="container">
         <a class="brand" href={baseUrl}>How Much Music</a>
-        <div class="header-search" data-header-search>
+        <form class="header-search" data-header-search action={`${baseUrl}search/`} method="get">
           <label class="sr-only" for="site-search">Search artists, songs, and albums</label>
           <input
             id="site-search"
             class="header-search-input"
             type="search"
+            name="q"
             placeholder="Search artists, songs, albums"
             autocomplete="off"
             spellcheck="false"
@@ -87,8 +88,9 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
           <div class="header-search-panel" id="header-search-results" hidden>
             <div class="header-search-empty">Start typing to search the catalog.</div>
             <ul class="header-search-results" role="listbox"></ul>
+            <a class="header-search-all-link" href={`${baseUrl}search/`}>Open full search</a>
           </div>
-        </div>
+        </form>
         <nav aria-label="Primary navigation">
           <a href={baseUrl}>Home</a>
           <a href={`${baseUrl}artists/`}>Artists</a>
@@ -202,8 +204,9 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
             const panel = root.querySelector(".header-search-panel");
             const list = root.querySelector(".header-search-results");
             const empty = root.querySelector(".header-search-empty");
+            const allLink = root.querySelector(".header-search-all-link");
 
-            if (!input || !panel || !list || !empty) return;
+            if (!input || !panel || !list || !empty || !allLink) return;
 
             let suggestions = [];
             let activeIndex = -1;
@@ -221,10 +224,12 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
 
             const render = () => {
               list.innerHTML = "";
+              const query = input.value.trim();
+              allLink.href = query ? `${baseUrl}search/?q=${encodeURIComponent(query)}` : `${baseUrl}search/`;
 
               if (suggestions.length === 0) {
                 empty.hidden = false;
-                empty.textContent = input.value.trim()
+                empty.textContent = query
                   ? "No matching artists, songs, or albums."
                   : "Start typing to search the catalog.";
                 openPanel();
@@ -321,6 +326,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
               if (event.key === "Enter" && activeIndex >= 0 && suggestions[activeIndex]) {
                 event.preventDefault();
                 window.location.href = suggestions[activeIndex].url;
+                return;
               }
             });
 

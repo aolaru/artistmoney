@@ -1,0 +1,261 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const searchIndexUrl = `${baseUrl}search-index.json`;
+---
+
+<BaseLayout
+  title="Search | How Much Music"
+  description="Search artists, songs, and albums across How Much Music."
+>
+  <section class="search-page-hero">
+    <p class="eyebrow">Search</p>
+    <h1>Search the catalog</h1>
+    <p>
+      Find artists, songs, and albums across the modeled earnings catalog. Results are grouped by
+      type and scored by title, subtitle, and broader metadata match.
+    </p>
+  </section>
+
+  <section class="search-page-shell" data-search-page>
+    <form class="search-page-form" action={`${baseUrl}search/`} method="get">
+      <label class="sr-only" for="catalog-search-page">Search artists, songs, and albums</label>
+      <input
+        id="catalog-search-page"
+        class="search-page-input"
+        name="q"
+        type="search"
+        placeholder="Search artists, songs, albums"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button type="submit" class="search-page-submit">Search</button>
+    </form>
+
+    <div class="search-page-controls">
+      <div class="search-filter-chips" role="tablist" aria-label="Search result type">
+        <button type="button" class="search-filter-chip is-active" data-search-filter="all">All</button>
+        <button type="button" class="search-filter-chip" data-search-filter="artist">Artists</button>
+        <button type="button" class="search-filter-chip" data-search-filter="song">Songs</button>
+        <button type="button" class="search-filter-chip" data-search-filter="album">Albums</button>
+      </div>
+      <p class="results-note" data-search-status>Start typing or submit a query to search the catalog.</p>
+    </div>
+
+    <div class="search-results-shell" data-search-results></div>
+  </section>
+
+  <script is:inline define:vars={{ searchIndexUrl, baseUrl }}>
+    (() => {
+      let searchItemsPromise;
+
+      const normalize = (value) => value.toLowerCase().trim();
+      const escapeHtml = (value) =>
+        value
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;");
+
+      const escapeRegex = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+      const highlight = (value, query) => {
+        if (!query) return escapeHtml(value);
+        const regex = new RegExp(`(${escapeRegex(query)})`, "ig");
+        return escapeHtml(value).replace(regex, "<mark>$1</mark>");
+      };
+
+      const scoreItem = (item, query) => {
+        const title = item.titleLower;
+        const subtitle = item.subtitleLower ?? "";
+        const searchText = item.searchText;
+
+        let score = 0;
+        if (title === query) score += 300;
+        if (title.startsWith(query)) score += 180;
+        if (title.includes(query)) score += 120;
+        if (subtitle.startsWith(query)) score += 70;
+        if (subtitle.includes(query)) score += 40;
+        if (searchText.includes(query)) score += 20;
+        return score;
+      };
+
+      const fetchSearchItems = async () => {
+        if (!searchItemsPromise) {
+          searchItemsPromise = fetch(searchIndexUrl)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(`Search index request failed: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then((items) =>
+              items.map((item) => ({
+                ...item,
+                typeKey: item.type.toLowerCase(),
+                titleLower: item.title.toLowerCase(),
+                subtitleLower: (item.subtitle ?? "").toLowerCase(),
+                searchText: item.searchText.toLowerCase()
+              }))
+            );
+        }
+
+        return searchItemsPromise;
+      };
+
+      const renderResults = async () => {
+        const root = document.querySelector("[data-search-page]");
+        if (!root) return;
+
+        const form = root.querySelector(".search-page-form");
+        const input = root.querySelector(".search-page-input");
+        const resultsRoot = root.querySelector("[data-search-results]");
+        const status = root.querySelector("[data-search-status]");
+        const filterButtons = [...root.querySelectorAll("[data-search-filter]")];
+
+        if (!form || !input || !resultsRoot || !status || filterButtons.length === 0) return;
+
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get("q") ?? "";
+        const filter = (params.get("type") ?? "all").toLowerCase();
+        input.value = query;
+
+        filterButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.searchFilter === filter);
+        });
+
+        const normalizedQuery = normalize(query);
+        if (!normalizedQuery) {
+          resultsRoot.innerHTML = `
+            <div class="trust-card">
+              <h2>Search artists, songs, or albums</h2>
+              <p>Try an artist name, a song title, an album, or a mix like “mariah christmas” or “pink floyd moon”.</p>
+            </div>
+          `;
+          status.textContent = "Start typing or submit a query to search the catalog.";
+          return;
+        }
+
+        status.textContent = "Searching…";
+
+        try {
+          const items = await fetchSearchItems();
+          const matches = items
+            .map((item) => ({ item, score: scoreItem(item, normalizedQuery) }))
+            .filter((entry) => entry.score > 0)
+            .sort((left, right) => right.score - left.score || left.item.title.localeCompare(right.item.title));
+
+          const filteredMatches =
+            filter === "all" ? matches : matches.filter(({ item }) => item.typeKey === filter);
+
+          const grouped = {
+            artist: filteredMatches.filter(({ item }) => item.typeKey === "artist"),
+            song: filteredMatches.filter(({ item }) => item.typeKey === "song"),
+            album: filteredMatches.filter(({ item }) => item.typeKey === "album")
+          };
+
+          const total = filteredMatches.length;
+          status.textContent = total > 0
+            ? `${total} result${total === 1 ? "" : "s"} for “${query}”`
+            : `No results for “${query}”`;
+
+          if (total === 0) {
+            resultsRoot.innerHTML = `
+              <div class="trust-card">
+                <h2>No results found</h2>
+                <p>Try a shorter query, an artist name, or part of an album title.</p>
+              </div>
+            `;
+            return;
+          }
+
+          const sections = [
+            { key: "artist", label: "Artists", items: grouped.artist },
+            { key: "song", label: "Songs", items: grouped.song },
+            { key: "album", label: "Albums", items: grouped.album }
+          ]
+            .filter((section) => section.items.length > 0)
+            .map((section) => `
+              <section class="search-group" aria-labelledby="search-group-${section.key}">
+                <div class="search-group-header">
+                  <h2 id="search-group-${section.key}">${section.label}</h2>
+                  <span class="meta-inline">${section.items.length}</span>
+                </div>
+                <div class="search-result-list">
+                  ${section.items.slice(0, 12).map(({ item }) => `
+                    <article class="search-result-card">
+                      <p class="eyebrow">${item.type}</p>
+                      <h3><a href="${item.url}">${highlight(item.title, normalizedQuery)}</a></h3>
+                      ${item.subtitle ? `<p class="artist-card-meta">${highlight(item.subtitle, normalizedQuery)}</p>` : ""}
+                    </article>
+                  `).join("")}
+                </div>
+              </section>
+            `)
+            .join("");
+
+          resultsRoot.innerHTML = sections;
+        } catch (_error) {
+          status.textContent = "Search is unavailable right now.";
+          resultsRoot.innerHTML = `
+            <div class="trust-card">
+              <h2>Search is unavailable</h2>
+              <p>The catalog index could not be loaded right now. Try refreshing the page.</p>
+            </div>
+          `;
+        }
+      };
+
+      const updateQueryParam = (key, value) => {
+        const url = new URL(window.location.href);
+        if (value) {
+          url.searchParams.set(key, value);
+        } else {
+          url.searchParams.delete(key);
+        }
+        history.replaceState({}, "", `${url.pathname}${url.search}`);
+      };
+
+      const initSearchPage = () => {
+        const root = document.querySelector("[data-search-page]");
+        if (!root || root.dataset.bound === "true") return;
+        root.dataset.bound = "true";
+
+        const form = root.querySelector(".search-page-form");
+        const input = root.querySelector(".search-page-input");
+        const filterButtons = [...root.querySelectorAll("[data-search-filter]")];
+
+        if (!form || !input || filterButtons.length === 0) return;
+
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          updateQueryParam("q", input.value.trim());
+          renderResults();
+        });
+
+        input.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            updateQueryParam("q", input.value.trim());
+            renderResults();
+          }
+        });
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            updateQueryParam("type", button.dataset.searchFilter === "all" ? "" : button.dataset.searchFilter);
+            renderResults();
+          });
+        });
+
+        renderResults();
+      };
+
+      initSearchPage();
+      document.addEventListener("astro:page-load", initSearchPage);
+    })();
+  </script>
+</BaseLayout>
