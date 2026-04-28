@@ -4,6 +4,7 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { artistArticles } from "../../data/artistArticles";
 import {
   artists,
+  getConfidenceSummary,
   getArtistConfidence,
   getArtistMethodology,
   getArtistOverviewText,
@@ -157,6 +158,12 @@ const lastUpdated = formatFreshnessDate(
     "src/pages/artist/[slug].astro"
   ])
 );
+const artistTrustItems = [
+  { label: "Modeled artist-side range", value: leadRevenue },
+  { label: "Gross catalog revenue", value: artist.earnings?.gross_catalog_revenue ?? "Not separated on this page" },
+  { label: "Ownership context", value: artist.ownership ? "Included below" : "High-level only" },
+  { label: "Last updated", value: lastUpdated ?? "Current build" }
+];
 const artistSchema = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
@@ -197,11 +204,22 @@ const artistSchema = {
         <h1 id="artist-title">{artist.name}</h1>
         <p class="song-kicker">{[artist.genre, artist.country, artist.active_since].filter(Boolean).join(" · ")}</p>
         <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
-        <p class="confidence-note">
-          This page models artist-side earnings, not just top-line catalog value.
-          {" "}
-          <a href={`${baseUrl}insights/methodology/`}>Why?</a>
-        </p>
+        <section class="trust-snapshot" aria-label="Page trust snapshot">
+          <p class="confidence-note">
+            {getConfidenceSummary(confidence)}
+            {" "}
+            <a href={`${baseUrl}insights/methodology/`}>Why?</a>
+          </p>
+          <p class="trust-summary">{methodology.summary}</p>
+          <div class="trust-points">
+            {artistTrustItems.map((item) => (
+              <div class="trust-point">
+                <strong>{item.label}</strong>
+                <span>{item.value}</span>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <div class="artist-hero">
           <img

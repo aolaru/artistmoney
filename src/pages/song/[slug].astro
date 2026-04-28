@@ -197,6 +197,12 @@ const lastUpdated = formatFreshnessDate(
 const trafficMagnetNote = songRank > 0 && catalogPercentile
   ? `${song.title} sits in the top ${catalogPercentile}% of tracked songs on the site by modeled artist-side earnings.`
   : `${song.title} is positioned here using the same catalog ranking model applied across the site.`;
+const songTrustItems = [
+  { label: "Modeled artist-side range", value: leadRevenue },
+  { label: "Gross track revenue", value: song.earnings?.gross_track_revenue ?? "Not separated on this page" },
+  { label: "Ownership context", value: song.ownership ? "Included below" : "High-level only" },
+  { label: "Last updated", value: lastUpdated ?? "Current build" }
+];
 const metadataBits = [
   artist ? artist.name : song.artist,
   song.album ? song.album : undefined,
@@ -250,11 +256,22 @@ const songSchema = {
         <h1 id="song-title">{song.title}</h1>
         {metadataBits.length > 0 && <p class="song-kicker">{metadataBits.join(" · ")}</p>}
         <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
-        <p class="confidence-note">
-          {getConfidenceSummary(confidence)}
-          {" "}
-          <a href={`${baseUrl}insights/methodology/`}>Why?</a>
-        </p>
+        <section class="trust-snapshot" aria-label="Page trust snapshot">
+          <p class="confidence-note">
+            {getConfidenceSummary(confidence)}
+            {" "}
+            <a href={`${baseUrl}insights/methodology/`}>Why?</a>
+          </p>
+          <p class="trust-summary">{methodology.summary}</p>
+          <div class="trust-points">
+            {songTrustItems.map((item) => (
+              <div class="trust-point">
+                <strong>{item.label}</strong>
+                <span>{item.value}</span>
+              </div>
+            ))}
+          </div>
+        </section>
 
         <div class="song-visual">
           <img

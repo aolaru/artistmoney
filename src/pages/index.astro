@@ -73,6 +73,7 @@ const insightLinks = [
 const spotlightArtist = topArtists[0]?.artist;
 const spotlightSong = topSongs[0]?.song;
 const spotlightAlbum = topCatalogs[0]?.album;
+const spotlightSongMethodology = spotlightSong ? getSongMethodology(spotlightSong) : undefined;
 const spotlightArtistEditorial = spotlightArtist
   ? getArtistEditorial(
       spotlightArtist,
@@ -91,6 +92,30 @@ const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArti
 const splitAwareArtists = rankedArtists
   .filter(({ artist }) => artist.earnings?.artist_or_estate_share && artist.earnings?.label_share)
   .slice(0, 6);
+const highConfidenceArtists = rankedArtists
+  .filter(({ artist }) => getArtistConfidence(artist).level === "high")
+  .slice(0, 3);
+const highConfidenceSongs = rankedSongs
+  .filter(({ song }) => getSongConfidence(song).level === "high")
+  .slice(0, 3);
+const trustSignals = [
+  {
+    title: "Modeled annual ranges",
+    detail: "Every earnings figure is presented as a modeled yearly range, not a claimed audited royalty statement."
+  },
+  {
+    title: "Artist-side first",
+    detail: "Pages try to separate artist or estate take-home from gross catalog revenue whenever split data exists."
+  },
+  {
+    title: "Confidence labels",
+    detail: "High, medium, and low confidence pages reflect how much ownership, split, and catalog context is actually available."
+  },
+  {
+    title: "Split-aware coverage",
+    detail: `${splitAwareArtists.length} of the homepage's leading ranked artists currently expose both artist-side and label-side modeled ranges.`
+  }
+];
 ---
 
 <BaseLayout
@@ -128,24 +153,34 @@ const splitAwareArtists = rankedArtists
   </section>
 
   <section aria-labelledby="snapshot-title">
-    <h2 id="snapshot-title">Catalog Snapshot</h2>
-    <ul class="meta-list">
-      <li>
-        <strong>Top artist midpoint:</strong>
-        {" "}
-        {topArtists[0] ? formatRevenueMidpoint(topArtists[0].revenueScore) : "Not available"}
-      </li>
-      <li>
-        <strong>Top song midpoint:</strong>
-        {" "}
-        {topSongs[0] ? formatRevenueMidpoint(topSongs[0].revenueScore) : "Not available"}
-      </li>
-      <li>
-        <strong>Top catalog midpoint:</strong>
-        {" "}
-        {topCatalogs[0] ? formatRevenueMidpoint(topCatalogs[0].revenueScore) : "Not available"}
-      </li>
-    </ul>
+    <h2 id="snapshot-title">How to Read the Catalog</h2>
+    <div class="trust-grid">
+      <article class="trust-card">
+        <p class="eyebrow">Trust Snapshot</p>
+        <h3>What the homepage is measuring</h3>
+        <ul class="meta-list">
+          <li><strong>Top artist midpoint:</strong> {topArtists[0] ? formatRevenueMidpoint(topArtists[0].revenueScore) : "Not available"}</li>
+          <li><strong>Top song midpoint:</strong> {topSongs[0] ? formatRevenueMidpoint(topSongs[0].revenueScore) : "Not available"}</li>
+          <li><strong>Top catalog midpoint:</strong> {topCatalogs[0] ? formatRevenueMidpoint(topCatalogs[0].revenueScore) : "Not available"}</li>
+        </ul>
+      </article>
+      <article class="trust-card">
+        <p class="eyebrow">Methodology</p>
+        <h3>What the numbers mean</h3>
+        <p>{homepageMethodology?.summary ?? "The site models annual catalog behavior using the best available ownership, split, and replay context."}</p>
+        <p class="results-note">
+          <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
+        </p>
+      </article>
+    </div>
+    <div class="trust-grid">
+      {trustSignals.map((signal) => (
+        <article class="trust-card">
+          <h3>{signal.title}</h3>
+          <p>{signal.detail}</p>
+        </article>
+      ))}
+    </div>
   </section>
 
   <section aria-labelledby="editorial-title">
@@ -196,17 +231,70 @@ const splitAwareArtists = rankedArtists
   {homepageMethodology && (
     <section aria-labelledby="why-matters-title">
       <h2 id="why-matters-title">Why These Numbers Matter</h2>
-      <div class="methodology-card">
-        <p class="methodology-badge">{homepageMethodology.confidenceLabel}</p>
-        <p>{homepageMethodology.summary}</p>
-        <ul class="meta-list">
-          {homepageMethodology.bullets.map((point) => (
-            <li>{point}</li>
-          ))}
-        </ul>
-        <p>
-          <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
-        </p>
+      <div class="trust-grid">
+        <div class="methodology-card">
+          <p class="methodology-badge">{homepageMethodology.confidenceLabel}</p>
+          <p>{homepageMethodology.summary}</p>
+          <ul class="meta-list">
+            {homepageMethodology.bullets.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+          <p>
+            <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
+          </p>
+        </div>
+        <div class="methodology-card">
+          <p class="methodology-badge">{spotlightSongMethodology?.confidenceLabel ?? "Cross-check"}</p>
+          <p>
+            Song and artist pages now surface confidence, ownership context, and modeled artist-side ranges near the top instead of hiding the explanation below the fold.
+          </p>
+          <ul class="meta-list">
+            <li>{highConfidenceArtists.length} homepage-ranked artists currently score high confidence.</li>
+            <li>{highConfidenceSongs.length} homepage-ranked songs currently score high confidence.</li>
+            <li>Split-aware pages surface artist-side and label-side ranges separately when available.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {(highConfidenceArtists.length > 0 || highConfidenceSongs.length > 0) && (
+    <section aria-labelledby="confidence-title">
+      <h2 id="confidence-title">High-Confidence Pages</h2>
+      <div class="editorial-grid">
+        {highConfidenceArtists.length > 0 && (
+          <article class="card editorial-card">
+            <div class="artist-card-body">
+              <p class="eyebrow">Artists</p>
+              <h3>Pages with stronger ownership and split context</h3>
+              <ul class="meta-list">
+                {highConfidenceArtists.map(({ artist }) => (
+                  <li>
+                    <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+                    <span class="meta-inline"> · {artist.earnings?.artist_or_estate_share ?? artist.estimated_income}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        )}
+        {highConfidenceSongs.length > 0 && (
+          <article class="card editorial-card">
+            <div class="artist-card-body">
+              <p class="eyebrow">Songs</p>
+              <h3>Pages with clearer modeled take-home context</h3>
+              <ul class="meta-list">
+                {highConfidenceSongs.map(({ song }) => (
+                  <li>
+                    <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+                    <span class="meta-inline"> · {song.estimated_revenue}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        )}
       </div>
     </section>
   )}
