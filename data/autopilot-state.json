@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 104,
-    "album": 104
+    "song": 105,
+    "album": 105
   },
   "lastTouched": {
     "artist": {
@@ -181,7 +181,8 @@
       "the-one-i-love": "2026-04-27T16:23:38.011Z",
       "the-way-i-are": "2026-04-27T19:12:09.531Z",
       "tonight-tonight": "2026-04-27T21:51:07.048Z",
-      "umbrella": "2026-04-28T02:31:04.345Z"
+      "umbrella": "2026-04-28T02:31:04.345Z",
+      "wanted-dead-or-alive": "2026-04-28T05:55:01.821Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -234,10 +235,15 @@
       "shania-twain-come-on-over": "2026-04-27T10:58:35.018Z",
       "simon-and-garfunkel-sounds-of-silence": "2026-04-27T13:29:04.174Z",
       "squarepusher-big-loada": "2026-04-27T16:23:38.011Z",
-      "steve-hauschildt-s-h": "2026-04-27T19:12:09.531Z"
+      "steve-hauschildt-s-h": "2026-04-27T19:12:09.531Z",
+      "the-beatles-1": "2026-04-28T05:55:01.821Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-28T05:55:01.821Z",
+      "summary": "song:wanted-dead-or-alive, album:the-beatles-1"
+    },
     {
       "timestamp": "2026-04-28T02:31:04.345Z",
       "summary": "song:umbrella"
@@ -273,10 +279,6 @@
     {
       "timestamp": "2026-04-27T02:24:15.858Z",
       "summary": "song:straight-outta-compton"
-    },
-    {
-      "timestamp": "2026-04-26T21:33:43.860Z",
-      "summary": "song:starman"
     }
   ]
 }

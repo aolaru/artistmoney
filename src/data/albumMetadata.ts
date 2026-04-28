@@ -10653,5 +10653,178 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/s-h/1799297581?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Steve%20Hauschildt%20S%2FH"
     }
+  },
+  "the-beatles-1": {
+    "releaseDate": "2000-11-13",
+    "trackCount": 27,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Love Me Do",
+        "durationMs": 140173
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "From Me to You",
+        "durationMs": 116160
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "She Loves You",
+        "durationMs": 140920
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "I Want to Hold Your Hand",
+        "durationMs": 145747
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Can't Buy Me Love",
+        "durationMs": 131213
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "A Hard Day's Night",
+        "durationMs": 152920
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "I Feel Fine",
+        "durationMs": 139347
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Eight Days a Week",
+        "durationMs": 163320
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Ticket to Ride",
+        "durationMs": 190120
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Help!",
+        "durationMs": 139240
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Yesterday",
+        "durationMs": 125320
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Day Tripper",
+        "durationMs": 169000
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "We Can Work It Out",
+        "durationMs": 135693
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Paperback Writer",
+        "durationMs": 138200
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Yellow Submarine",
+        "durationMs": 158800
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Eleanor Rigby",
+        "durationMs": 125867
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "Penny Lane",
+        "durationMs": 180520
+      },
+      {
+        "discNumber": 1,
+        "number": 18,
+        "title": "All You Need Is Love",
+        "durationMs": 227760
+      },
+      {
+        "discNumber": 1,
+        "number": 19,
+        "title": "Hello, Goodbye",
+        "durationMs": 207787
+      },
+      {
+        "discNumber": 1,
+        "number": 20,
+        "title": "Lady Madonna",
+        "durationMs": 136827
+      },
+      {
+        "discNumber": 1,
+        "number": 21,
+        "title": "Hey Jude",
+        "durationMs": 425653
+      },
+      {
+        "discNumber": 1,
+        "number": 22,
+        "title": "Get Back",
+        "durationMs": 191773
+      },
+      {
+        "discNumber": 1,
+        "number": 23,
+        "title": "The Ballad of John and Yoko",
+        "durationMs": 179480
+      },
+      {
+        "discNumber": 1,
+        "number": 24,
+        "title": "Something",
+        "durationMs": 181413
+      },
+      {
+        "discNumber": 1,
+        "number": 25,
+        "title": "Come Together",
+        "durationMs": 258693
+      },
+      {
+        "discNumber": 1,
+        "number": 26,
+        "title": "Let It Be",
+        "durationMs": 230440
+      },
+      {
+        "discNumber": 1,
+        "number": 27,
+        "title": "The Long and Winding Road",
+        "durationMs": 219427
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Beatles%201",
+      "appleMusic": "https://music.apple.com/us/album/1/1440833098?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Beatles%201"
+    }
   }
 } as const;
