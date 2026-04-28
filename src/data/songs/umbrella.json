@@ -16,5 +16,15 @@
     "publishing_owner": "Publishing is typically shared across writers, producers, and publishers",
     "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
     "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
-  }
+  },
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can lift the baseline."
+  ],
+  "related_songs": [
+    "diamonds",
+    "work"
+  ]
 }
