@@ -10904,5 +10904,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/gran-turismo/1440917748?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Cardigans%20Gran%20Turismo"
     }
+  },
+  "the-chemical-brothers-surrender": {
+    "releaseDate": "1999-01-01",
+    "label": "Virgin Records Limited",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Music: Response",
+        "durationMs": 319960
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Under the Influence",
+        "durationMs": 256040
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Out of Control",
+        "durationMs": 439760
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Orange Wedge",
+        "durationMs": 186640
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Let Forever Be",
+        "durationMs": 236360
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "The Sunshine Underground",
+        "durationMs": 518907
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Asleep from Day",
+        "durationMs": 287227
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Got Glint?",
+        "durationMs": 326440
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Hey Boy Hey Girl",
+        "durationMs": 290493
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Surrender",
+        "durationMs": 270002
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Dream On",
+        "durationMs": 406533
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Chemical%20Brothers%20Surrender",
+      "appleMusic": "https://music.apple.com/us/album/surrender/714172597?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Chemical%20Brothers%20Surrender"
+    }
   }
 } as const;

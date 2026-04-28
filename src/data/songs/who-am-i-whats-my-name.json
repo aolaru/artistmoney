@@ -2,5 +2,15 @@
   "title": "Who Am I? (What's My Name)",
   "slug": "who-am-i-whats-my-name",
   "artist": "snoop-dogg",
-  "estimated_revenue": "$500K-$1.6M/year"
+  "estimated_revenue": "$500K-$1.6M/year",
+  "meaning_summary": "This track pairs a memorable hook with strong cultural recall, which helps explain its staying power and long-tail commercial value.",
+  "revenue_drivers": [
+    "Catalog streaming remains the main long-tail driver for recognizable rap tracks.",
+    "Playlist placement and cultural recall help the song stay active.",
+    "Sampling, sync use, and short-form rediscovery can extend earnings."
+  ],
+  "related_songs": [
+    "drop-it-like-its-hot",
+    "gin-and-juice"
+  ]
 }
