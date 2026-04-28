@@ -10982,5 +10982,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/surrender/714172597?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Chemical%20Brothers%20Surrender"
     }
+  },
+  "the-crystal-method-vegas": {
+    "releaseDate": "1997-01-01",
+    "label": "Outpost Recordings",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Trip Like I Do",
+        "durationMs": 454227
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Busy Child",
+        "durationMs": 445000
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Cherry Twist",
+        "durationMs": 265600
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "High Roller",
+        "durationMs": 329733
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Comin' Back",
+        "durationMs": 339067
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Keep Hope Alive",
+        "durationMs": 372667
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Vapor Trail",
+        "durationMs": 391507
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "She's My Pusher",
+        "durationMs": 341493
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Jaded",
+        "durationMs": 425733
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Bad Stone",
+        "durationMs": 309800
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Crystal%20Method%20Vegas",
+      "appleMusic": "https://music.apple.com/us/album/vegas/1440899631?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Crystal%20Method%20Vegas"
+    }
   }
 } as const;

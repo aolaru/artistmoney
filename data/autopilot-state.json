@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 107,
-    "album": 107
+    "song": 108,
+    "album": 108
   },
   "lastTouched": {
     "artist": {
@@ -184,7 +184,8 @@
       "umbrella": "2026-04-28T02:31:04.345Z",
       "wanted-dead-or-alive": "2026-04-28T05:55:01.821Z",
       "whats-up": "2026-04-28T08:16:20.855Z",
-      "who-am-i-whats-my-name": "2026-04-28T11:00:53.295Z"
+      "who-am-i-whats-my-name": "2026-04-28T11:00:53.295Z",
+      "why-d-you-only-call-me-when-youre-high": "2026-04-28T16:49:00.753Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -240,10 +241,15 @@
       "steve-hauschildt-s-h": "2026-04-27T19:12:09.531Z",
       "the-beatles-1": "2026-04-28T05:55:01.821Z",
       "the-cardigans-gran-turismo": "2026-04-28T08:16:20.855Z",
-      "the-chemical-brothers-surrender": "2026-04-28T11:00:53.295Z"
+      "the-chemical-brothers-surrender": "2026-04-28T11:00:53.295Z",
+      "the-crystal-method-vegas": "2026-04-28T16:49:00.753Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-28T16:49:00.753Z",
+      "summary": "song:why-d-you-only-call-me-when-youre-high, album:the-crystal-method-vegas"
+    },
     {
       "timestamp": "2026-04-28T11:00:53.295Z",
       "summary": "song:who-am-i-whats-my-name, album:the-chemical-brothers-surrender"
@@ -279,10 +285,6 @@
     {
       "timestamp": "2026-04-27T10:58:35.018Z",
       "summary": "song:tell-me-its-real, album:shania-twain-come-on-over"
-    },
-    {
-      "timestamp": "2026-04-27T08:14:09.093Z",
-      "summary": "song:sweet-child-o-mine"
     }
   ]
 }
