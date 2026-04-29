@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 4,
-    "album": 117
+    "song": 5,
+    "album": 118
   },
   "lastTouched": {
     "artist": {
@@ -194,7 +194,8 @@
       "21-questions": "2026-04-29T10:51:37.707Z",
       "alive": "2026-04-29T13:45:51.108Z",
       "all-the-stars": "2026-04-29T16:25:41.285Z",
-      "anti-hero": "2026-04-29T19:18:09.509Z"
+      "anti-hero": "2026-04-29T19:18:09.509Z",
+      "bad-guy": "2026-04-29T21:56:19.840Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -261,6 +262,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-29T21:56:19.840Z",
+      "summary": "song:bad-guy"
+    },
+    {
       "timestamp": "2026-04-29T19:18:09.509Z",
       "summary": "song:anti-hero, album:timbaland-shock-value"
     },
@@ -295,10 +300,6 @@
     {
       "timestamp": "2026-04-28T19:27:12.093Z",
       "summary": "song:wish-you-were-here"
-    },
-    {
-      "timestamp": "2026-04-28T16:49:00.753Z",
-      "summary": "song:why-d-you-only-call-me-when-youre-high, album:the-crystal-method-vegas"
     }
   ]
 }
