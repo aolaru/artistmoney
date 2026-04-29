@@ -11198,5 +11198,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/eagles/635791801?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Eagles%20Eagles"
     }
+  },
+  "the-eagles-their-greatest-hits-1971-1975": {
+    "releaseDate": "1976-02-17",
+    "label": "Elektra Records",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Take It Easy",
+        "durationMs": 211579
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Witchy Woman",
+        "durationMs": 250889
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Lyin' Eyes",
+        "durationMs": 381897
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Already Gone",
+        "durationMs": 255106
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Desperado",
+        "durationMs": 213713
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "One of These Nights",
+        "durationMs": 291409
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Tequila Sunrise",
+        "durationMs": 173057
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Take It to the Limit",
+        "durationMs": 287082
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Peaceful Easy Feeling",
+        "durationMs": 257957
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "The Best of My Love",
+        "durationMs": 274905
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Eagles%20Their%20Greatest%20Hits%201971-1975",
+      "appleMusic": "https://music.apple.com/us/album/their-greatest-hits-1971-1975/635829435?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Eagles%20Their%20Greatest%20Hits%201971-1975"
+    }
   }
 } as const;
