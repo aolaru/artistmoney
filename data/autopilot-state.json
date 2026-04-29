@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 112,
-    "album": 112
+    "song": 113,
+    "album": 113
   },
   "lastTouched": {
     "artist": {
@@ -189,7 +189,8 @@
       "wish-you-were-here": "2026-04-28T19:27:12.093Z",
       "wonderwall": "2026-04-28T21:53:01.037Z",
       "would": "2026-04-29T02:31:29.931Z",
-      "x": "2026-04-29T05:50:05.964Z"
+      "x": "2026-04-29T05:50:05.964Z",
+      "yellow": "2026-04-29T08:08:32.671Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -254,6 +255,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-29T08:08:32.671Z",
+      "summary": "song:yellow"
+    },
+    {
       "timestamp": "2026-04-29T05:50:05.964Z",
       "summary": "song:x, album:the-eagles-their-greatest-hits-1971-1975"
     },
@@ -288,10 +293,6 @@
     {
       "timestamp": "2026-04-28T02:31:04.345Z",
       "summary": "song:umbrella"
-    },
-    {
-      "timestamp": "2026-04-27T21:51:07.048Z",
-      "summary": "song:tonight-tonight"
     }
   ]
 }
