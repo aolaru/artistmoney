@@ -11270,5 +11270,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/their-greatest-hits-1971-1975/635829435?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Eagles%20Their%20Greatest%20Hits%201971-1975"
     }
+  },
+  "the-stone-roses-turns-into-stone": {
+    "releaseDate": "1992-10-27",
+    "label": "Silvertone Records Ltd.",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Elephant Stone",
+        "durationMs": 289867
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "The Hardest Thing In the World",
+        "durationMs": 161760
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Going Down",
+        "durationMs": 167227
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Mersey Paradise",
+        "durationMs": 162600
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Standing Here",
+        "durationMs": 307440
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Where Angels Play",
+        "durationMs": 252373
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Simone",
+        "durationMs": 264467
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Fools Gold",
+        "durationMs": 594000
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "What the World Is Waiting For",
+        "durationMs": 229973
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "One Love",
+        "durationMs": 463560
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Something's Burning",
+        "durationMs": 471533
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Stone%20Roses%20Turns%20Into%20Stone",
+      "appleMusic": "https://music.apple.com/us/album/turns-into-stone/268236389?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Stone%20Roses%20Turns%20Into%20Stone"
+    }
   }
 } as const;

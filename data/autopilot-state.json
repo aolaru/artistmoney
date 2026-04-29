@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 2,
-    "album": 115
+    "song": 3,
+    "album": 116
   },
   "lastTouched": {
     "artist": {
@@ -192,7 +192,8 @@
       "x": "2026-04-29T05:50:05.964Z",
       "yellow": "2026-04-29T08:08:32.671Z",
       "21-questions": "2026-04-29T10:51:37.707Z",
-      "alive": "2026-04-29T13:45:51.108Z"
+      "alive": "2026-04-29T13:45:51.108Z",
+      "all-the-stars": "2026-04-29T16:25:41.285Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -252,10 +253,15 @@
       "the-crystal-method-vegas": "2026-04-28T16:49:00.753Z",
       "the-doors-l-a-woman": "2026-04-28T21:53:01.037Z",
       "the-eagles-eagles": "2026-04-29T02:31:29.931Z",
-      "the-eagles-their-greatest-hits-1971-1975": "2026-04-29T05:50:05.964Z"
+      "the-eagles-their-greatest-hits-1971-1975": "2026-04-29T05:50:05.964Z",
+      "the-stone-roses-turns-into-stone": "2026-04-29T16:25:41.285Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-29T16:25:41.285Z",
+      "summary": "song:all-the-stars, album:the-stone-roses-turns-into-stone"
+    },
     {
       "timestamp": "2026-04-29T13:45:51.108Z",
       "summary": "song:alive"
@@ -291,10 +297,6 @@
     {
       "timestamp": "2026-04-28T11:00:53.295Z",
       "summary": "song:who-am-i-whats-my-name, album:the-chemical-brothers-surrender"
-    },
-    {
-      "timestamp": "2026-04-28T08:16:20.855Z",
-      "summary": "song:whats-up, album:the-cardigans-gran-turismo"
     }
   ]
 }
