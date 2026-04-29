@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 110,
-    "album": 110
+    "song": 111,
+    "album": 111
   },
   "lastTouched": {
     "artist": {
@@ -187,7 +187,8 @@
       "who-am-i-whats-my-name": "2026-04-28T11:00:53.295Z",
       "why-d-you-only-call-me-when-youre-high": "2026-04-28T16:49:00.753Z",
       "wish-you-were-here": "2026-04-28T19:27:12.093Z",
-      "wonderwall": "2026-04-28T21:53:01.037Z"
+      "wonderwall": "2026-04-28T21:53:01.037Z",
+      "would": "2026-04-29T02:31:29.931Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -245,10 +246,15 @@
       "the-cardigans-gran-turismo": "2026-04-28T08:16:20.855Z",
       "the-chemical-brothers-surrender": "2026-04-28T11:00:53.295Z",
       "the-crystal-method-vegas": "2026-04-28T16:49:00.753Z",
-      "the-doors-l-a-woman": "2026-04-28T21:53:01.037Z"
+      "the-doors-l-a-woman": "2026-04-28T21:53:01.037Z",
+      "the-eagles-eagles": "2026-04-29T02:31:29.931Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-29T02:31:29.931Z",
+      "summary": "song:would, album:the-eagles-eagles"
+    },
     {
       "timestamp": "2026-04-28T21:53:01.037Z",
       "summary": "song:wonderwall, album:the-doors-l-a-woman"
@@ -284,10 +290,6 @@
     {
       "timestamp": "2026-04-27T19:12:09.531Z",
       "summary": "song:the-way-i-are, album:steve-hauschildt-s-h"
-    },
-    {
-      "timestamp": "2026-04-27T16:23:38.011Z",
-      "summary": "song:the-one-i-love, album:squarepusher-big-loada"
     }
   ]
 }

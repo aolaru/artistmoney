@@ -11126,5 +11126,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/l-a-woman/1622471682?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Doors%20L.A.%20Woman"
     }
+  },
+  "the-eagles-eagles": {
+    "releaseDate": "1972-06-01",
+    "label": "Asylum Records. Marketed by Rhino Entertainment Company",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Take It Easy",
+        "durationMs": 211579
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Witchy Woman",
+        "durationMs": 250889
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Chug All Night",
+        "durationMs": 195657
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Most of Us Are Sad",
+        "durationMs": 215422
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Nightingale",
+        "durationMs": 245594
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Train Leaves Here This Morning",
+        "durationMs": 250457
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Take the Devil",
+        "durationMs": 240829
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Earlybird",
+        "durationMs": 179946
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Peaceful Easy Feeling",
+        "durationMs": 257957
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Tryin'",
+        "durationMs": 173240
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Eagles%20Eagles",
+      "appleMusic": "https://music.apple.com/us/album/eagles/635791801?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Eagles%20Eagles"
+    }
   }
 } as const;
