@@ -11348,5 +11348,119 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/turns-into-stone/268236389?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Stone%20Roses%20Turns%20Into%20Stone"
     }
+  },
+  "timbaland-shock-value": {
+    "releaseDate": "2007-01-01",
+    "label": "Blackground Records/Interscope Records",
+    "trackCount": 17,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Oh Timbaland",
+        "durationMs": 211373
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Give It to Me (feat. Justin Timberlake & Nelly Furtado)",
+        "durationMs": 212013
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Release (feat. Justin Timberlake)",
+        "durationMs": 205507
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "The Way I Are (feat. Keri Hilson & D.O.E.)",
+        "durationMs": 179120
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Bounce (feat. Missy Elliot, Justin Timberlake & Dr. Dre)",
+        "durationMs": 244293
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Come and Get Me (feat. 50 Cent & Tony Yayo)",
+        "durationMs": 210600
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Kill Yourself (feat. Sebastian & Attitude)",
+        "durationMs": 246520
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Boardmeeting (feat. Magoo)",
+        "durationMs": 149107
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Fantasy (feat. Money)",
+        "durationMs": 251067
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Scream (feat. Keri Hilson & Nicole Scherzinger)",
+        "durationMs": 341160
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Miscommunication (feat. Keri Hilson & Sebastian)",
+        "durationMs": 198973
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Bombay (feat. Amar & Jim Beanz)",
+        "durationMs": 174520
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Throw It On Me (feat. The Hives)",
+        "durationMs": 130867
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Time (feat. She Wants Revenge)",
+        "durationMs": 237587
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "One and Only (feat. Fall Out Boy)",
+        "durationMs": 256733
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Apologize (feat. OneRepublic)",
+        "durationMs": 184400
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "2 Man Show (feat. Elton John)",
+        "durationMs": 265613
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Timbaland%20Shock%20Value",
+      "appleMusic": "https://music.apple.com/us/album/shock-value/1443720487?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Timbaland%20Shock%20Value"
+    }
   }
 } as const;
