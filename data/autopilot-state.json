@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 1,
-    "album": 114
+    "song": 2,
+    "album": 115
   },
   "lastTouched": {
     "artist": {
@@ -191,7 +191,8 @@
       "would": "2026-04-29T02:31:29.931Z",
       "x": "2026-04-29T05:50:05.964Z",
       "yellow": "2026-04-29T08:08:32.671Z",
-      "21-questions": "2026-04-29T10:51:37.707Z"
+      "21-questions": "2026-04-29T10:51:37.707Z",
+      "alive": "2026-04-29T13:45:51.108Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -256,6 +257,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-29T13:45:51.108Z",
+      "summary": "song:alive"
+    },
+    {
       "timestamp": "2026-04-29T10:51:37.707Z",
       "summary": "song:21-questions"
     },
@@ -290,10 +295,6 @@
     {
       "timestamp": "2026-04-28T08:16:20.855Z",
       "summary": "song:whats-up, album:the-cardigans-gran-turismo"
-    },
-    {
-      "timestamp": "2026-04-28T05:55:01.821Z",
-      "summary": "song:wanted-dead-or-alive, album:the-beatles-1"
     }
   ]
 }
