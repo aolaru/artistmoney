@@ -52,6 +52,9 @@ const snippetLead = album.estimatedRevenue
 const snippetSupport = album.fullTracklist?.length
   ? `This page has a matched full tracklist, which makes the album context stronger than a songs-only view.`
   : `This page still relies on tracked songs only, so the revenue view is partial even if the album itself is important.`;
+const takeaway = album.fullTracklist?.length
+  ? `${album.title} is one of the stronger album pages on the site because the tracked songs sit inside a matched release frame instead of floating without album context.`
+  : `${album.title} is useful as a catalog page, but the economics are still partial until more songs or a fuller release picture are attached to it.`;
 const statItems = [
   albumRank > 0 ? `Currently ranks around the top ${albumPercentile}% of tracked albums by modeled revenue` : undefined,
   album.year ? `Released in ${album.year}${yearsOld ? ` and still reads as an active catalog asset roughly ${yearsOld} years later` : ""}` : undefined,
@@ -211,21 +214,18 @@ const albumSchema = {
           </div>
         </div>
 
-        <section aria-labelledby="short-answer-title">
-          <h2 id="short-answer-title">Short Answer</h2>
+        <section aria-labelledby="album-answer-title">
+          <h2 id="album-answer-title">Short Answer</h2>
           <p><strong>{snippetQuestion}</strong></p>
           <p><strong>{snippetLead}</strong></p>
           <p>{snippetSupport}</p>
-        </section>
-
-        <section aria-labelledby="stats-title">
-          <h2 id="stats-title">Did You Know?</h2>
+          <p class="traffic-magnet-note">{takeaway}</p>
           <ul class="song-bullet-list">
             {statItems.map((item) => (
               <li>{item}</li>
             ))}
           </ul>
-          <p class="traffic-magnet-note">
+          <p class="results-note">
             {albumRank > 0 && albumPercentile
               ? `${album.title} sits in the top ${albumPercentile}% of tracked albums on the site by modeled revenue.`
               : `${album.title} is ranked using the same album model applied across the site.`}
@@ -235,7 +235,11 @@ const albumSchema = {
 
         {comparisonAlbums.length > 0 && (
           <section aria-labelledby="comparison-title">
-            <h2 id="comparison-title">{album.title} vs Similar Albums</h2>
+            <h2 id="comparison-title">How It Compares</h2>
+            <p>
+              These albums are close to {album.title} by artist overlap, era, or genre context, so the
+              comparison is more useful than a generic ranking table.
+            </p>
             <div class="comparison-list">
               <div class="comparison-row comparison-head">
                 <span>Album</span>
@@ -289,6 +293,62 @@ const albumSchema = {
           <p>{methodology.summary}</p>
         </section>
 
+        {(moreAlbumsFromArtist.length > 0 || relatedAlbums.length > 0 || contextSongs.length > 0) && (
+          <section aria-labelledby="more-context-title" class="song-context-section">
+            <h2 id="more-context-title">More Context</h2>
+            <div class="compact-context-grid">
+              {moreAlbumsFromArtist.length > 0 && (
+                <article class="compact-context-card">
+                  <strong>More From This Artist</strong>
+                  <span>Other albums already tracked from the same catalog.</span>
+                  <ul class="meta-list">
+                    {moreAlbumsFromArtist.map((relatedAlbum) => (
+                      <li>
+                        <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
+                        <span class="meta-inline">
+                          {" "}· {relatedAlbum.releaseDate ?? relatedAlbum.year ?? "Unknown"} · {relatedAlbum.estimatedRevenue ?? "Tracked revenue still partial"}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              )}
+              {relatedAlbums.length > 0 && (
+                <article class="compact-context-card">
+                  <strong>Related Albums</strong>
+                  <span>Comparable albums by artist, era, or genre proximity.</span>
+                  <ul class="meta-list">
+                    {relatedAlbums.map((relatedAlbum) => (
+                      <li>
+                        <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
+                        <span class="meta-inline">
+                          {" "}· {relatedAlbum.artistName}{relatedAlbum.year ? ` · ${relatedAlbum.year}` : ""}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              )}
+              {contextSongs.length > 0 && (
+                <article class="compact-context-card">
+                  <strong>More From This Era</strong>
+                  <span>Nearby song pages from the same release window or genre lane.</span>
+                  <ul class="meta-list">
+                    {contextSongs.map((song) => (
+                      <li>
+                        <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+                        <span class="meta-inline">
+                          {" "}· {getArtist(song.artist)?.name ?? song.artist}{song.year ? ` · ${song.year}` : ""}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              )}
+            </div>
+          </section>
+        )}
+
         <section aria-labelledby="questions-title">
           <h2 id="questions-title">More Questions About {album.title}</h2>
           <div class="intent-question-list">
@@ -302,19 +362,32 @@ const albumSchema = {
         </section>
 
         <details class="details-card">
-          <summary>Show metadata, tracklists, and assumptions</summary>
+          <summary>Show tracklists and assumptions</summary>
           <div class="details-card-body">
-            <section aria-labelledby="album-metadata-title">
-              <h2 id="album-metadata-title">Album Metadata</h2>
-              <ul class="meta-list">
-                <li><strong>Artist:</strong> {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : album.artistName}</li>
-                <li><strong>Release date:</strong> {album.releaseDate ?? album.year ?? "Unknown"}</li>
-                <li><strong>Label:</strong> {album.label ?? "Not yet added"}</li>
-                <li><strong>Album track count:</strong> {album.trackCount ?? "Not yet added"}</li>
-                {album.editionNote && <li><strong>Matched edition:</strong> {album.editionNote}</li>}
-                <li><strong>Tracked on How Much Music:</strong> {album.trackedSongCount} song{album.trackedSongCount === 1 ? "" : "s"}</li>
-              </ul>
-            </section>
+            <div class="compact-context-grid">
+              <article class="compact-context-card">
+                <strong>Release Metadata</strong>
+                <span>
+                  {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : album.artistName}
+                  {" "}· {album.releaseDate ?? album.year ?? "Unknown"}
+                  {album.label ? ` · ${album.label}` : ""}
+                </span>
+                <span>
+                  {album.trackCount ? `${album.trackCount} tracks on the matched edition` : "Track count is still partial"} · {" "}
+                  {album.trackedSongCount} tracked song{album.trackedSongCount === 1 ? "" : "s"} on the site
+                </span>
+                {album.editionNote && <span>Matched edition: {album.editionNote}</span>}
+              </article>
+              <article class="compact-context-card">
+                <strong>Model Scope</strong>
+                <span>{methodology.summary}</span>
+                <span>
+                  {album.fullTracklist?.length
+                    ? "Full tracklist is available, so the release context is stronger."
+                    : "The page still relies on tracked songs only, so the release context is partial."}
+                </span>
+              </article>
+            </div>
 
             <section aria-labelledby="album-tracklisting-title">
               <h2 id="album-tracklisting-title">Full Tracklist</h2>
@@ -378,70 +451,6 @@ const albumSchema = {
           </ul>
         </div>
 
-        {moreAlbumsFromArtist.length > 0 && (
-          <section aria-labelledby="more-from-artist-title">
-            <h2 id="more-from-artist-title">More From This Artist</h2>
-            <ul class="meta-list">
-              {moreAlbumsFromArtist.map((relatedAlbum) => (
-                <li>
-                  <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
-                  <span class="meta-inline">
-                    {" "}· {relatedAlbum.releaseDate ?? relatedAlbum.year ?? "Unknown"} · {relatedAlbum.estimatedRevenue ?? "Tracked revenue still partial"}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {relatedAlbums.length > 0 && (
-          <section aria-labelledby="related-albums-title">
-            <h2 id="related-albums-title">Related Albums</h2>
-            <ul class="meta-list">
-              {relatedAlbums.map((relatedAlbum) => (
-                <li>
-                  <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
-                  <span class="meta-inline">
-                    {" "}· {relatedAlbum.artistName}{relatedAlbum.year ? ` · ${relatedAlbum.year}` : ""}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {contextSongs.length > 0 && (
-          <section aria-labelledby="album-context-songs-title">
-            <h2 id="album-context-songs-title">More From This Era</h2>
-            <ul class="meta-list">
-              {contextSongs.map((song) => (
-                <li>
-                  <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
-                  <span class="meta-inline">
-                    {" "}· {getArtist(song.artist)?.name ?? song.artist}{song.year ? ` · ${song.year}` : ""}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {topAlbumsByEarnings.length > 0 && (
-          <section aria-labelledby="top-albums-title">
-            <h2 id="top-albums-title">Top Albums by Earnings</h2>
-            <ul class="meta-list">
-              {topAlbumsByEarnings.map(({ album: rankedAlbum, revenueScore }) => (
-                <li>
-                  <a href={`${baseUrl}album/${rankedAlbum.slug}/`}>{rankedAlbum.title}</a>
-                  <span class="meta-inline">
-                    {" "}· {rankedAlbum.artistName} · {formatRevenueMidpoint(revenueScore)}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
         <section aria-labelledby="album-links-title">
           <h2 id="album-links-title">Listen and Explore</h2>
           <ul class="meta-list">
@@ -484,6 +493,22 @@ const albumSchema = {
             )}
           </ul>
         </section>
+
+        {topAlbumsByEarnings.length > 0 && (
+          <section aria-labelledby="top-albums-title">
+            <h2 id="top-albums-title">Top Albums by Earnings</h2>
+            <ul class="meta-list">
+              {topAlbumsByEarnings.map(({ album: rankedAlbum, revenueScore }) => (
+                <li>
+                  <a href={`${baseUrl}album/${rankedAlbum.slug}/`}>{rankedAlbum.title}</a>
+                  <span class="meta-inline">
+                    {" "}· {rankedAlbum.artistName} · {formatRevenueMidpoint(revenueScore)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </aside>
     </section>
   </article>
