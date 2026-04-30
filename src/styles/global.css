@@ -68,11 +68,18 @@ a {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
   color: var(--text);
   text-decoration: none;
-  font-size: 1.25rem;
-  font-weight: 650;
-  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 42px;
+  max-width: min(42vw, 260px);
 }
 
 .site-header nav {
@@ -474,6 +481,25 @@ mark {
 .artist-card-meta,
 .meta-inline {
   color: var(--muted);
+}
+
+.quality-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.2rem 0 0.45rem;
+}
+
+.quality-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(30, 106, 97, 0.08);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1;
 }
 
 .breadcrumbs {
