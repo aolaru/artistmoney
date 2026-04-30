@@ -253,6 +253,16 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     localPath: "/images/artists/adele.jpg",
     personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
+  "bad-bunny": {
+    alt: "Bad Bunny performing live",
+    src: localPhoto("bad-bunny.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Bad_Bunny_Performs.jpg",
+    credit: "Photo via Wikimedia Commons",
+    license: "CC0 1.0",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    localPath: "/images/artists/bad-bunny.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
   beyonce: {
     alt: "Beyonce performing in Munich in 2007",
     src: localPhoto("beyonce.jpg"),
@@ -281,6 +291,16 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     license: "CC BY-SA 3.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
     localPath: "/images/artists/dr-dre.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "ed-sheeran": {
+    alt: "Ed Sheeran performing in 2013",
+    src: localPhoto("ed-sheeran.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Ed_Sheeran_(cropped).jpg",
+    credit: "Photo by Harald Krichel via Wikimedia Commons",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    localPath: "/images/artists/ed-sheeran.jpg",
     personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   coldplay: {
@@ -522,6 +542,26 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     localPath: "/images/artists/massive-attack.jpg",
     personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
   },
+  "jay-z": {
+    alt: "Jay-Z in 2011",
+    src: localPhoto("jay-z.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Jay-Z_2011.jpg",
+    credit: "Photo by Mike Barry via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/jay-z.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "mariah-carey": {
+    alt: "Mariah Carey in Washington, D.C. in 1999",
+    src: localPhoto("mariah-carey.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Mariah_Carey_1999.jpg",
+    credit: "Photo by John Mathew Smith via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/mariah-carey.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
   "mobb-deep": {
     alt: "Mobb Deep performing at Out4Fame Festival in 2015",
     src: localPhoto("mobb-deep.jpg"),
@@ -569,6 +609,16 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     license: "CC BY 3.0",
     licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
     localPath: "/images/artists/fleetwood-mac.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Editorial use is generally safer than endorsement or advertising use."
+  },
+  queen: {
+    alt: "Queen performing in New Haven in 1977",
+    src: localPhoto("queen.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:QueenPerforming1977.jpg",
+    credit: "Photo by Carl Lender via Wikimedia Commons",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    localPath: "/images/artists/queen.jpg",
     personalityRightsWarning: "Living band members are identifiable. Editorial use is generally safer than endorsement or advertising use."
   },
   radiohead: {
