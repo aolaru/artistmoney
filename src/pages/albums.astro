@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { createAlbumArtwork } from "../lib/artistArtwork";
 import { albums, getAlbumConfidence, getConfidenceSummary } from "../lib/catalog";
+import { getLatestGitDate } from "../lib/freshness";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -59,6 +60,14 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
           <option value="alpha">Alphabetical</option>
           <option value="year">Newest release year</option>
           <option value="confidence">Highest confidence</option>
+          <option value="updated">Last updated</option>
+        </select>
+      </label>
+      <label class="filter-field">
+        <span>Tracklist</span>
+        <select id="album-tracklist">
+          <option value="">All albums</option>
+          <option value="yes">Full tracklist only</option>
         </select>
       </label>
     </div>
@@ -69,6 +78,11 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
         const decade = album.year ? `${Math.floor(album.year / 10) * 10}s` : "";
         const confidence = getAlbumConfidence(album);
         const revenueMidpoint = album.normalizedRevenue?.midpoint ?? 0;
+        const hasFullTracklist = album.fullTracklist?.length ? "yes" : "no";
+        const updated = getLatestGitDate([
+          "src/data/albumMetadata.ts",
+          "src/data/songMetadata.ts"
+        ]) ?? "";
         return (
           <article
             class="card artist-card"
@@ -80,6 +94,8 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
             data-revenue={revenueMidpoint}
             data-year={album.year ?? 0}
             data-name={album.title.toLowerCase()}
+            data-has-tracklist={hasFullTracklist}
+            data-updated={updated.replaceAll("-", "")}
           >
             <img
               class="artist-card-image album-cover-image"
@@ -108,6 +124,10 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
                   .filter(Boolean)
                   .join(" · ")}
               </p>
+              <div class="quality-chip-row">
+                {hasFullTracklist === "yes" && <span class="quality-chip">full tracklist</span>}
+                {updated && <span class="quality-chip">updated {updated}</span>}
+              </div>
               {album.estimatedRevenue && <p>Tracked song revenue: {album.estimatedRevenue}</p>}
               <p class="artist-card-meta">
                 {album.label ?? "Label metadata still partial"} · {album.fullTracklist?.length ? "Full tracklist on album page" : "Tracklist still partial"}
@@ -126,12 +146,13 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
     const albumDecadeSelect = document.querySelector("#album-decade");
     const albumConfidenceSelect = document.querySelector("#album-confidence");
     const albumSortSelect = document.querySelector("#album-sort");
+    const albumTracklistSelect = document.querySelector("#album-tracklist");
     const albumCards = [...document.querySelectorAll("[data-album-card]")];
     const albumNote = document.querySelector("#album-results-note");
     const albumGrid = document.querySelector("#album-card-grid");
     const activeFilters = document.querySelector("#album-active-filters");
 
-    if (!albumSearchInput || !albumDecadeSelect || !albumConfidenceSelect || !albumSortSelect || !albumNote || !albumGrid || !activeFilters) return;
+    if (!albumSearchInput || !albumDecadeSelect || !albumConfidenceSelect || !albumSortSelect || !albumTracklistSelect || !albumNote || !albumGrid || !activeFilters) return;
     if (albumSearchInput.dataset.filtersBound === "true") return;
 
     const syncUrl = () => {
@@ -140,7 +161,8 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
         q: albumSearchInput.value.trim(),
         decade: albumDecadeSelect.value,
         confidence: albumConfidenceSelect.value,
-        sort: albumSortSelect.value
+        sort: albumSortSelect.value,
+        tracklist: albumTracklistSelect.value
       };
 
       Object.entries(values).forEach(([key, value]) => {
@@ -159,6 +181,7 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
       if (albumSearchInput.value.trim()) items.push(`Search: ${albumSearchInput.value.trim()}`);
       if (albumDecadeSelect.value) items.push(`Decade: ${albumDecadeSelect.value}`);
       if (albumConfidenceSelect.value) items.push(`Confidence: ${albumConfidenceSelect.value}`);
+      if (albumTracklistSelect.value) items.push("Full tracklist only");
       if (albumSortSelect.value && albumSortSelect.value !== "earnings") items.push(`Sort: ${albumSortSelect.selectedOptions[0]?.textContent ?? albumSortSelect.value}`);
 
       activeFilters.innerHTML = items.length
@@ -170,6 +193,7 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
         albumSearchInput.value = "";
         albumDecadeSelect.value = "";
         albumConfidenceSelect.value = "";
+        albumTracklistSelect.value = "";
         albumSortSelect.value = "earnings";
         applyAlbumFilters();
       }, { once: true });
@@ -179,6 +203,7 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
       const query = albumSearchInput.value.trim().toLowerCase();
       const decade = albumDecadeSelect.value;
       const confidence = albumConfidenceSelect.value;
+      const tracklist = albumTracklistSelect.value;
       const sort = albumSortSelect.value;
 
       let visible = 0;
@@ -187,7 +212,8 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
         const matchesQuery = !query || card.dataset.search?.includes(query);
         const matchesDecade = !decade || card.dataset.decade === decade;
         const matchesConfidence = !confidence || card.dataset.confidence === confidence;
-        const show = Boolean(matchesQuery && matchesDecade && matchesConfidence);
+        const matchesTracklist = !tracklist || card.dataset.hasTracklist === tracklist;
+        const show = Boolean(matchesQuery && matchesDecade && matchesConfidence && matchesTracklist);
 
         card.classList.toggle("is-hidden", !show);
         if (show) visible += 1;
@@ -208,6 +234,11 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
             || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
         }
 
+        if (sort === "updated") {
+          return Number(right.dataset.updated ?? 0) - Number(left.dataset.updated ?? 0)
+            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+        }
+
         return Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0)
           || (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
       });
@@ -223,9 +254,10 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
     albumSearchInput.value = params.get("q") ?? "";
     albumDecadeSelect.value = params.get("decade") ?? "";
     albumConfidenceSelect.value = params.get("confidence") ?? "";
+    albumTracklistSelect.value = params.get("tracklist") ?? "";
     albumSortSelect.value = params.get("sort") ?? "earnings";
 
-    [albumSearchInput, albumDecadeSelect, albumConfidenceSelect, albumSortSelect].forEach((element) => {
+    [albumSearchInput, albumDecadeSelect, albumConfidenceSelect, albumSortSelect, albumTracklistSelect].forEach((element) => {
       element.addEventListener("input", applyAlbumFilters);
       element.addEventListener("change", applyAlbumFilters);
     });

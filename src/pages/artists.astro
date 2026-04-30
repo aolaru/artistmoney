@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { artists, getArtistConfidence, getArtistVisual, getConfidenceSummary } from "../lib/catalog";
+import { getLatestGitDate } from "../lib/freshness";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -66,6 +67,21 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
           <option value="earnings">Highest earnings</option>
           <option value="alpha">Alphabetical</option>
           <option value="confidence">Highest confidence</option>
+          <option value="updated">Last updated</option>
+        </select>
+      </label>
+      <label class="filter-field">
+        <span>Split-aware</span>
+        <select id="artist-split">
+          <option value="">All pages</option>
+          <option value="yes">Artist-side vs label-side modeled</option>
+        </select>
+      </label>
+      <label class="filter-field">
+        <span>Image</span>
+        <select id="artist-image">
+          <option value="">All artwork states</option>
+          <option value="yes">Real photo only</option>
         </select>
       </label>
     </div>
@@ -77,6 +93,13 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
           const artistVisual = getArtistVisual(artist);
           const confidence = getArtistConfidence(artist);
           const revenueMidpoint = artist.normalizedRevenue?.artistSide?.midpoint ?? 0;
+          const hasSplitAware = artist.earnings?.artist_or_estate_share && artist.earnings?.label_share ? "yes" : "no";
+          const hasRealImage = artistVisual.provider === "artistPhoto" ? "yes" : "no";
+          const updated = getLatestGitDate([
+            `src/data/artists/${artist.slug}.json`,
+            "src/data/artistMetadata.ts",
+            "src/data/artistArticles.ts"
+          ]) ?? "";
           return (
         <article
           class="card artist-card"
@@ -88,6 +111,9 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
           data-confidence-score={confidence.score}
           data-revenue={revenueMidpoint}
           data-name={artist.name.toLowerCase()}
+          data-split-aware={hasSplitAware}
+          data-has-real-image={hasRealImage}
+          data-updated={updated.replaceAll("-", "")}
         >
           <img
             class="artist-card-image"
@@ -108,6 +134,11 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
             {(artist.genre || artist.country) && (
               <p class="artist-card-meta">{[artist.genre, artist.country].filter(Boolean).join(" · ")}</p>
             )}
+            <div class="quality-chip-row">
+              {hasSplitAware === "yes" && <span class="quality-chip">split-aware</span>}
+              {hasRealImage === "yes" && <span class="quality-chip">real photo</span>}
+              {updated && <span class="quality-chip">updated {updated}</span>}
+            </div>
             <p>Estimated income: {artist.estimated_income}</p>
           </div>
         </article>
@@ -125,12 +156,14 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
     const artistCountrySelect = document.querySelector("#artist-country");
     const artistConfidenceSelect = document.querySelector("#artist-confidence");
     const artistSortSelect = document.querySelector("#artist-sort");
+    const artistSplitSelect = document.querySelector("#artist-split");
+    const artistImageSelect = document.querySelector("#artist-image");
     const artistCards = [...document.querySelectorAll("[data-artist-card]")];
     const artistNote = document.querySelector("#artist-results-note");
     const artistGrid = document.querySelector("#artist-card-grid");
     const activeFilters = document.querySelector("#artist-active-filters");
 
-    if (!artistSearchInput || !artistGenreSelect || !artistCountrySelect || !artistConfidenceSelect || !artistSortSelect || !artistNote || !artistGrid || !activeFilters) return;
+    if (!artistSearchInput || !artistGenreSelect || !artistCountrySelect || !artistConfidenceSelect || !artistSortSelect || !artistSplitSelect || !artistImageSelect || !artistNote || !artistGrid || !activeFilters) return;
     if (artistSearchInput.dataset.filtersBound === "true") return;
 
     const syncUrl = () => {
@@ -141,7 +174,9 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
         genre: artistGenreSelect.value,
         country: artistCountrySelect.value,
         confidence: artistConfidenceSelect.value,
-        sort: artistSortSelect.value
+        sort: artistSortSelect.value,
+        split: artistSplitSelect.value,
+        image: artistImageSelect.value
       };
 
       Object.entries(values).forEach(([key, value]) => {
@@ -161,6 +196,8 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
       if (artistGenreSelect.value) items.push(`Genre: ${artistGenreSelect.value}`);
       if (artistCountrySelect.value) items.push(`Country: ${artistCountrySelect.value}`);
       if (artistConfidenceSelect.value) items.push(`Confidence: ${artistConfidenceSelect.value}`);
+      if (artistSplitSelect.value) items.push("Split-aware only");
+      if (artistImageSelect.value) items.push("Real photo only");
       if (artistSortSelect.value && artistSortSelect.value !== "earnings") items.push(`Sort: ${artistSortSelect.selectedOptions[0]?.textContent ?? artistSortSelect.value}`);
 
       activeFilters.innerHTML = items.length
@@ -173,6 +210,8 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
         artistGenreSelect.value = "";
         artistCountrySelect.value = "";
         artistConfidenceSelect.value = "";
+        artistSplitSelect.value = "";
+        artistImageSelect.value = "";
         artistSortSelect.value = "earnings";
         applyArtistFilters();
       }, { once: true });
@@ -183,6 +222,8 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
       const genre = artistGenreSelect.value;
       const country = artistCountrySelect.value;
       const confidence = artistConfidenceSelect.value;
+      const split = artistSplitSelect.value;
+      const image = artistImageSelect.value;
       const sort = artistSortSelect.value;
 
       let visible = 0;
@@ -192,7 +233,9 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
         const matchesGenre = !genre || card.dataset.genre === genre;
         const matchesCountry = !country || card.dataset.country === country;
         const matchesConfidence = !confidence || card.dataset.confidence === confidence;
-        const show = Boolean(matchesQuery && matchesGenre && matchesCountry && matchesConfidence);
+        const matchesSplit = !split || card.dataset.splitAware === split;
+        const matchesImage = !image || card.dataset.hasRealImage === image;
+        const show = Boolean(matchesQuery && matchesGenre && matchesCountry && matchesConfidence && matchesSplit && matchesImage);
 
         card.classList.toggle("is-hidden", !show);
         if (show) visible += 1;
@@ -205,6 +248,11 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
 
         if (sort === "confidence") {
           return Number(right.dataset.confidenceScore ?? 0) - Number(left.dataset.confidenceScore ?? 0)
+            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+        }
+
+        if (sort === "updated") {
+          return Number(right.dataset.updated ?? 0) - Number(left.dataset.updated ?? 0)
             || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
         }
 
@@ -224,9 +272,11 @@ const countries = [...new Set(artists.map((artist) => artist.country).filter(Boo
     artistGenreSelect.value = params.get("genre") ?? "";
     artistCountrySelect.value = params.get("country") ?? "";
     artistConfidenceSelect.value = params.get("confidence") ?? "";
+    artistSplitSelect.value = params.get("split") ?? "";
+    artistImageSelect.value = params.get("image") ?? "";
     artistSortSelect.value = params.get("sort") ?? "earnings";
 
-    [artistSearchInput, artistGenreSelect, artistCountrySelect, artistConfidenceSelect, artistSortSelect].forEach((element) => {
+    [artistSearchInput, artistGenreSelect, artistCountrySelect, artistConfidenceSelect, artistSortSelect, artistSplitSelect, artistImageSelect].forEach((element) => {
       element.addEventListener("input", applyArtistFilters);
       element.addEventListener("change", applyArtistFilters);
     });

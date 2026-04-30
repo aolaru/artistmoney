@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { artists, getAlbumSlug, getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, songs } from "../lib/catalog";
+import { getLatestGitDate } from "../lib/freshness";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -67,6 +68,21 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
           <option value="alpha">Alphabetical</option>
           <option value="year">Newest release year</option>
           <option value="confidence">Highest confidence</option>
+          <option value="updated">Last updated</option>
+        </select>
+      </label>
+      <label class="filter-field">
+        <span>Split-aware</span>
+        <select id="song-split">
+          <option value="">All pages</option>
+          <option value="yes">Artist-side and gross modeled</option>
+        </select>
+      </label>
+      <label class="filter-field">
+        <span>Image</span>
+        <select id="song-image">
+          <option value="">All artwork states</option>
+          <option value="yes">Sourced image only</option>
         </select>
       </label>
     </div>
@@ -80,6 +96,13 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
         const decade = song.year ? `${Math.floor(song.year / 10) * 10}s` : "";
         const confidence = getSongConfidence(song);
         const revenueMidpoint = song.normalizedRevenue?.artistSide?.midpoint ?? 0;
+        const hasSplitAware = song.earnings?.artist_or_estate_share && song.earnings?.gross_track_revenue ? "yes" : "no";
+        const hasSourcedImage = artistVisual && artistVisual.provider !== "generated" ? "yes" : "no";
+        const updated = getLatestGitDate([
+          `src/data/songs/${song.slug}.json`,
+          "src/data/songMetadata.ts",
+          "src/data/songArticles.ts"
+        ]) ?? "";
 
         return (
           <article
@@ -93,6 +116,9 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
             data-revenue={revenueMidpoint}
             data-year={song.year ?? 0}
             data-name={song.title.toLowerCase()}
+            data-split-aware={hasSplitAware}
+            data-has-image={hasSourcedImage}
+            data-updated={updated.replaceAll("-", "")}
           >
             <img
               class="artist-card-image"
@@ -122,6 +148,11 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
                   {song.year}
                 </p>
               )}
+              <div class="quality-chip-row">
+                {hasSplitAware === "yes" && <span class="quality-chip">split-aware</span>}
+                {hasSourcedImage === "yes" && <span class="quality-chip">sourced image</span>}
+                {updated && <span class="quality-chip">updated {updated}</span>}
+              </div>
               <p>Estimated revenue: {song.estimated_revenue}</p>
             </div>
           </article>
@@ -138,12 +169,14 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
     const songDecadeSelect = document.querySelector("#song-decade");
     const songConfidenceSelect = document.querySelector("#song-confidence");
     const songSortSelect = document.querySelector("#song-sort");
+    const songSplitSelect = document.querySelector("#song-split");
+    const songImageSelect = document.querySelector("#song-image");
     const songCards = [...document.querySelectorAll("[data-song-card]")];
     const songNote = document.querySelector("#song-results-note");
     const songGrid = document.querySelector("#song-card-grid");
     const activeFilters = document.querySelector("#song-active-filters");
 
-    if (!songSearchInput || !songArtistSelect || !songDecadeSelect || !songConfidenceSelect || !songSortSelect || !songNote || !songGrid || !activeFilters) return;
+    if (!songSearchInput || !songArtistSelect || !songDecadeSelect || !songConfidenceSelect || !songSortSelect || !songSplitSelect || !songImageSelect || !songNote || !songGrid || !activeFilters) return;
     if (songSearchInput.dataset.filtersBound === "true") return;
 
     const syncUrl = () => {
@@ -153,7 +186,9 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
         artist: songArtistSelect.value,
         decade: songDecadeSelect.value,
         confidence: songConfidenceSelect.value,
-        sort: songSortSelect.value
+        sort: songSortSelect.value,
+        split: songSplitSelect.value,
+        image: songImageSelect.value
       };
 
       Object.entries(values).forEach(([key, value]) => {
@@ -173,6 +208,8 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
       if (songArtistSelect.value) items.push(`Artist: ${songArtistSelect.selectedOptions[0]?.textContent ?? songArtistSelect.value}`);
       if (songDecadeSelect.value) items.push(`Decade: ${songDecadeSelect.value}`);
       if (songConfidenceSelect.value) items.push(`Confidence: ${songConfidenceSelect.value}`);
+      if (songSplitSelect.value) items.push("Split-aware only");
+      if (songImageSelect.value) items.push("Sourced image only");
       if (songSortSelect.value && songSortSelect.value !== "earnings") items.push(`Sort: ${songSortSelect.selectedOptions[0]?.textContent ?? songSortSelect.value}`);
 
       activeFilters.innerHTML = items.length
@@ -185,6 +222,8 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
         songArtistSelect.value = "";
         songDecadeSelect.value = "";
         songConfidenceSelect.value = "";
+        songSplitSelect.value = "";
+        songImageSelect.value = "";
         songSortSelect.value = "earnings";
         applySongFilters();
       }, { once: true });
@@ -195,6 +234,8 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
       const artist = songArtistSelect.value;
       const decade = songDecadeSelect.value;
       const confidence = songConfidenceSelect.value;
+      const split = songSplitSelect.value;
+      const image = songImageSelect.value;
       const sort = songSortSelect.value;
 
       let visible = 0;
@@ -204,7 +245,9 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
         const matchesArtist = !artist || card.dataset.artist === artist;
         const matchesDecade = !decade || card.dataset.decade === decade;
         const matchesConfidence = !confidence || card.dataset.confidence === confidence;
-        const show = Boolean(matchesQuery && matchesArtist && matchesDecade && matchesConfidence);
+        const matchesSplit = !split || card.dataset.splitAware === split;
+        const matchesImage = !image || card.dataset.hasImage === image;
+        const show = Boolean(matchesQuery && matchesArtist && matchesDecade && matchesConfidence && matchesSplit && matchesImage);
 
         card.classList.toggle("is-hidden", !show);
         if (show) visible += 1;
@@ -225,6 +268,11 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
             || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
         }
 
+        if (sort === "updated") {
+          return Number(right.dataset.updated ?? 0) - Number(left.dataset.updated ?? 0)
+            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+        }
+
         return Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0)
           || (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
       });
@@ -241,9 +289,11 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
     songArtistSelect.value = params.get("artist") ?? "";
     songDecadeSelect.value = params.get("decade") ?? "";
     songConfidenceSelect.value = params.get("confidence") ?? "";
+    songSplitSelect.value = params.get("split") ?? "";
+    songImageSelect.value = params.get("image") ?? "";
     songSortSelect.value = params.get("sort") ?? "earnings";
 
-    [songSearchInput, songArtistSelect, songDecadeSelect, songConfidenceSelect, songSortSelect].forEach((element) => {
+    [songSearchInput, songArtistSelect, songDecadeSelect, songConfidenceSelect, songSortSelect, songSplitSelect, songImageSelect].forEach((element) => {
       element.addEventListener("input", applySongFilters);
       element.addEventListener("change", applySongFilters);
     });
