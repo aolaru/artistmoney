@@ -11576,5 +11576,89 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/astroworld/1421658111?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Travis%20Scott%20ASTROWORLD"
     }
+  },
+  "whitney-houston-the-bodyguard-original-soundtrack-album": {
+    "releaseDate": "1992-11-17",
+    "label": "Arista Records LLC",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "I Will Always Love You",
+        "durationMs": 271093
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "I Have Nothing",
+        "durationMs": 289160
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "I'm Every Woman",
+        "durationMs": 285107
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Run to You",
+        "durationMs": 264333
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Queen of the Night (Radio Edit)",
+        "durationMs": 188600
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Jesus Loves Me",
+        "durationMs": 312507
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Even If My Heart Would Break",
+        "durationMs": 297733
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Someday (I'm Coming Back)",
+        "durationMs": 297493
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "It's Gonna Be A Lovely Day",
+        "durationMs": 290333
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "What's So Funny 'Bout Peace, Love And Understanding",
+        "durationMs": 245173
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Theme From The Bodyguard",
+        "durationMs": 163360
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Trust In Me (feat. Sass Jordan)",
+        "durationMs": 253640
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Whitney%20Houston%20The%20Bodyguard%3A%20Original%20Soundtrack%20Album",
+      "appleMusic": "https://music.apple.com/us/album/the-bodyguard-original-soundtrack-album/388151892?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Whitney%20Houston%20The%20Bodyguard%3A%20Original%20Soundtrack%20Album"
+    }
   }
 } as const;
