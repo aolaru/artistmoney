@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 5,
-    "album": 118
+    "song": 6,
+    "album": 119
   },
   "lastTouched": {
     "artist": {
@@ -195,7 +195,8 @@
       "alive": "2026-04-29T13:45:51.108Z",
       "all-the-stars": "2026-04-29T16:25:41.285Z",
       "anti-hero": "2026-04-29T19:18:09.509Z",
-      "bad-guy": "2026-04-29T21:56:19.840Z"
+      "bad-guy": "2026-04-29T21:56:19.840Z",
+      "bitter-sweet-symphony": "2026-04-30T02:32:28.803Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -257,10 +258,15 @@
       "the-eagles-eagles": "2026-04-29T02:31:29.931Z",
       "the-eagles-their-greatest-hits-1971-1975": "2026-04-29T05:50:05.964Z",
       "the-stone-roses-turns-into-stone": "2026-04-29T16:25:41.285Z",
-      "timbaland-shock-value": "2026-04-29T19:18:09.509Z"
+      "timbaland-shock-value": "2026-04-29T19:18:09.509Z",
+      "travis-scott-astroworld": "2026-04-30T02:32:28.803Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-30T02:32:28.803Z",
+      "summary": "song:bitter-sweet-symphony, album:travis-scott-astroworld"
+    },
     {
       "timestamp": "2026-04-29T21:56:19.840Z",
       "summary": "song:bad-guy"
@@ -296,10 +302,6 @@
     {
       "timestamp": "2026-04-28T21:53:01.037Z",
       "summary": "song:wonderwall, album:the-doors-l-a-woman"
-    },
-    {
-      "timestamp": "2026-04-28T19:27:12.093Z",
-      "summary": "song:wish-you-were-here"
     }
   ]
 }

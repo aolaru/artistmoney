@@ -11462,5 +11462,119 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/shock-value/1443720487?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Timbaland%20Shock%20Value"
     }
+  },
+  "travis-scott-astroworld": {
+    "releaseDate": "2018-08-03",
+    "label": "Cactus Jack Records",
+    "trackCount": 17,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "STARGAZING",
+        "durationMs": 270715
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "CAROUSEL",
+        "durationMs": 180183
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "SICKO MODE",
+        "durationMs": 312820
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "R.I.P. SCREW",
+        "durationMs": 185610
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "STOP TRYING TO BE GOD",
+        "durationMs": 338438
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "NO BYSTANDERS",
+        "durationMs": 218283
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "SKELETONS",
+        "durationMs": 145588
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "WAKE UP",
+        "durationMs": 231964
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "5% TINT",
+        "durationMs": 196138
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "NC-17",
+        "durationMs": 156886
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "ASTROTHUNDER",
+        "durationMs": 142969
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "YOSEMITE",
+        "durationMs": 150043
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "CAN'T SAY",
+        "durationMs": 198408
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "WHO? WHAT!",
+        "durationMs": 176720
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "BUTTERFLY EFFECT",
+        "durationMs": 190557
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "HOUSTONFORNICATION",
+        "durationMs": 217828
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "COFFEE BEAN",
+        "durationMs": 209116
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Travis%20Scott%20ASTROWORLD",
+      "appleMusic": "https://music.apple.com/us/album/astroworld/1421658111?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Travis%20Scott%20ASTROWORLD"
+    }
   }
 } as const;
