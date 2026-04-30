@@ -11660,5 +11660,71 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/the-bodyguard-original-soundtrack-album/388151892?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Whitney%20Houston%20The%20Bodyguard%3A%20Original%20Soundtrack%20Album"
     }
+  },
+  "wu-tang-clan-enter-the-wu-tang-36-chambers": {
+    "releaseDate": "1993-11-09",
+    "label": "RCA Records",
+    "trackCount": 9,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Shame On a Nuh (feat. Raekwon, Ol' Dirty Bastard & Method Man)",
+        "durationMs": 176693
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Clan In Da Front (feat. RZA & GZA)",
+        "durationMs": 175800
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Can It Be All So Simple (Radio Edit)",
+        "durationMs": 260600
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Method Man (feat. Method Man, Raekwon, GZA, RZA & Ghostface Killah)",
+        "durationMs": 251440
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Da Mystery of Chessboxin' (feat. Method Man, U-God, Inspectah Deck, Raekwon, Ol' Dirty Bastard, Ghostface Killah & Masta Killa) [Radio Edit]",
+        "durationMs": 279227
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Wu-Tang Clan Ain't Nuthing Ta F' Wit (feat. RZA, Inspectah Deck & Method Man)",
+        "durationMs": 214373
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "C.R.E.A.M. (feat. Method Man, Raekwon, Inspectah Deck & Buddha Monk)",
+        "durationMs": 246627
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Protect Ya Neck (feat. RZA, Method Man, Inspectah Deck, Raekwon, U-God, Ol' Dirty Bastard, Ghostface Killah & GZA)",
+        "durationMs": 277067
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Tearz (feat. RZA & Ghostface Killah)",
+        "durationMs": 290973
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Wu-Tang%20Clan%20Enter%20the%20Wu-Tang%20(36%20Chambers)",
+      "appleMusic": "https://music.apple.com/us/album/enter-the-wu-tang-36-chambers/1746566237?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Wu-Tang%20Clan%20Enter%20the%20Wu-Tang%20(36%20Chambers)"
+    }
   }
 } as const;
