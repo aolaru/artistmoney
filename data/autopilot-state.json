@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 11,
-    "album": 1
+    "song": 12,
+    "album": 2
   },
   "lastTouched": {
     "artist": {
@@ -201,7 +201,8 @@
       "break-my-soul": "2026-04-30T08:12:38.054Z",
       "cant-fight-this-feeling": "2026-04-30T10:51:03.466Z",
       "check-yo-self": "2026-04-30T13:45:11.364Z",
-      "come-on-my-selector": "2026-04-30T16:15:44.868Z"
+      "come-on-my-selector": "2026-04-30T16:15:44.868Z",
+      "crazy-in-love": "2026-04-30T19:13:11.914Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -272,6 +273,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-30T19:13:11.914Z",
+      "summary": "song:crazy-in-love"
+    },
+    {
       "timestamp": "2026-04-30T16:15:44.868Z",
       "summary": "song:come-on-my-selector"
     },
@@ -306,10 +311,6 @@
     {
       "timestamp": "2026-04-29T16:25:41.285Z",
       "summary": "song:all-the-stars, album:the-stone-roses-turns-into-stone"
-    },
-    {
-      "timestamp": "2026-04-29T13:45:51.108Z",
-      "summary": "song:alive"
     }
   ]
 }
