@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 9,
-    "album": 122
+    "song": 10,
+    "album": 0
   },
   "lastTouched": {
     "artist": {
@@ -199,7 +199,8 @@
       "bitter-sweet-symphony": "2026-04-30T02:32:28.803Z",
       "blinding-lights": "2026-04-30T05:54:25.617Z",
       "break-my-soul": "2026-04-30T08:12:38.054Z",
-      "cant-fight-this-feeling": "2026-04-30T10:51:03.466Z"
+      "cant-fight-this-feeling": "2026-04-30T10:51:03.466Z",
+      "check-yo-self": "2026-04-30T13:45:11.364Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -264,10 +265,15 @@
       "timbaland-shock-value": "2026-04-29T19:18:09.509Z",
       "travis-scott-astroworld": "2026-04-30T02:32:28.803Z",
       "whitney-houston-the-bodyguard-original-soundtrack-album": "2026-04-30T08:12:38.054Z",
-      "wu-tang-clan-enter-the-wu-tang-36-chambers": "2026-04-30T10:51:03.466Z"
+      "wu-tang-clan-enter-the-wu-tang-36-chambers": "2026-04-30T10:51:03.466Z",
+      "xzibit-restless": "2026-04-30T13:45:11.364Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-04-30T13:45:11.364Z",
+      "summary": "song:check-yo-self, album:xzibit-restless"
+    },
     {
       "timestamp": "2026-04-30T10:51:03.466Z",
       "summary": "song:cant-fight-this-feeling, album:wu-tang-clan-enter-the-wu-tang-36-chambers"
@@ -303,10 +309,6 @@
     {
       "timestamp": "2026-04-29T10:51:37.707Z",
       "summary": "song:21-questions"
-    },
-    {
-      "timestamp": "2026-04-29T08:08:32.671Z",
-      "summary": "song:yellow"
     }
   ]
 }

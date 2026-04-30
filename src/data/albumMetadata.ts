@@ -11726,5 +11726,113 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/enter-the-wu-tang-36-chambers/1746566237?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Wu-Tang%20Clan%20Enter%20the%20Wu-Tang%20(36%20Chambers)"
     }
+  },
+  "xzibit-restless": {
+    "releaseDate": "2000-12-12",
+    "label": "Loud Records",
+    "trackCount": 16,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Restless (Intro)",
+        "durationMs": 75000
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Front 2 Back",
+        "durationMs": 182467
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Been a Long Time (feat. Nate Dogg)",
+        "durationMs": 237733
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "U Know (feat. Dr. Dre)",
+        "durationMs": 206400
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "X",
+        "durationMs": 255600
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Alkaholik (feat. Erick Sermon, J-Ro & Tash of Tha Liks)",
+        "durationMs": 219133
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Kenny Parker Show 2001 (feat. KRS One)",
+        "durationMs": 285867
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "D.N.A (Drugs-n-Alkahol) [feat. Snoop Dogg]",
+        "durationMs": 277467
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Double Time",
+        "durationMs": 170600
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Don't Approach Me (feat. Eminem)",
+        "durationMs": 276467
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Rimz & Tirez (feat. Defari, Goldie Loc & Kokane)",
+        "durationMs": 292400
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "F*cking You Right",
+        "durationMs": 222733
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Best of Things",
+        "durationMs": 200707
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Get Your Walk On",
+        "durationMs": 219867
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Sorry I'm Away so Much (feat. Suga Free)",
+        "durationMs": 239160
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Loud & Clear (feat. Defari, King T & Butch Cassidy)",
+        "durationMs": 213600
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Xzibit%20Restless",
+      "appleMusic": "https://music.apple.com/us/album/restless/267921139?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Xzibit%20Restless"
+    }
   }
 } as const;
