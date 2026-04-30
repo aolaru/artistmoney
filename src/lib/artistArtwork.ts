@@ -243,6 +243,16 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     localPath: "/images/artists/alice-in-chains.jpg",
     personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
   },
+  adele: {
+    alt: "Adele performing in London in 2007",
+    src: localPhoto("adele.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Adele.jpg",
+    credit: "Photo by Matt Pawsey via Wikimedia Commons",
+    license: "CC BY-SA 2.5",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.5/",
+    localPath: "/images/artists/adele.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
   beyonce: {
     alt: "Beyonce performing in Munich in 2007",
     src: localPhoto("beyonce.jpg"),
@@ -271,16 +281,6 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     license: "CC BY-SA 3.0",
     licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
     localPath: "/images/artists/dr-dre.jpg",
-    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
-  },
-  adele: {
-    alt: "Adele performing in London in 2007",
-    src: localPhoto("adele.jpg"),
-    sourceUrl: "https://commons.wikimedia.org/wiki/File:Adele.jpg",
-    credit: "Photo by Mpawsey via Wikimedia Commons",
-    license: "CC BY-SA 3.0",
-    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
-    localPath: "/images/artists/adele.jpg",
     personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   coldplay: {
@@ -542,6 +542,35 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     localPath: "/images/artists/moby.jpg",
     personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
+  madonna: {
+    alt: "Madonna at an AIDS Project Los Angeles benefit concert in 1990",
+    src: localPhoto("madonna.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Madonna_1990_cropped.jpg",
+    credit: "Photo by Alan Light via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/madonna.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "michael-jackson": {
+    alt: "Michael Jackson in 1984",
+    src: localPhoto("michael-jackson.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1984.jpg",
+    credit: "White House Photo Office via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Michael_Jackson_1984.jpg",
+    localPath: "/images/artists/michael-jackson.jpg"
+  },
+  "fleetwood-mac": {
+    alt: "Fleetwood Mac performing in St. Paul in 2009",
+    src: localPhoto("fleetwood-mac.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Fleetwood_Mac_2009.jpg",
+    credit: "Photo by Matt Becker via Wikimedia Commons",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    localPath: "/images/artists/fleetwood-mac.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Editorial use is generally safer than endorsement or advertising use."
+  },
   radiohead: {
     alt: "Radiohead composite performance photo",
     src: localPhoto("radiohead.jpg"),
@@ -591,6 +620,16 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
     localPath: "/images/artists/tim-hecker.jpg",
     personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "whitney-houston": {
+    alt: "Whitney Houston in Washington, D.C. in 2000",
+    src: localPhoto("whitney-houston.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Whitney_Houston_2000.jpg",
+    credit: "Photo by John Mathew Smith via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/whitney-houston.jpg",
+    personalityRightsWarning: "Identifiable performer depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   underworld: {
     alt: "Underworld performing in 2017",

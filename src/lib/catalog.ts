@@ -997,6 +997,17 @@ function validateCatalogSemantics() {
 }
 
 export function getArtistVisual(artist: Artist): ArtistVisual {
+  const artistPhoto = getArtistPhoto(artist.slug);
+
+  if (artistPhoto) {
+    return {
+      src: artistPhoto.src,
+      alt: artistPhoto.alt,
+      provider: "artistPhoto",
+      providerLink: artistPhoto.sourceUrl
+    };
+  }
+
   const featuredSong = artist.top_songs
     .map((slug) => songMap.get(slug))
     .find((song) => song?.player?.artwork);
@@ -1007,17 +1018,6 @@ export function getArtistVisual(artist: Artist): ArtistVisual {
       alt: `${artist.name} artwork via ${featuredSong.title}`,
       provider: "appleMusic",
       providerLink: featuredSong.player.links?.appleMusic ?? featuredSong.player.appleMusic
-    };
-  }
-
-  const artistPhoto = getArtistPhoto(artist.slug);
-
-  if (artistPhoto) {
-    return {
-      src: artistPhoto.src,
-      alt: artistPhoto.alt,
-      provider: "artistPhoto",
-      providerLink: artistPhoto.sourceUrl
     };
   }
 
