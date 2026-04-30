@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 6,
-    "album": 119
+    "song": 7,
+    "album": 120
   },
   "lastTouched": {
     "artist": {
@@ -196,7 +196,8 @@
       "all-the-stars": "2026-04-29T16:25:41.285Z",
       "anti-hero": "2026-04-29T19:18:09.509Z",
       "bad-guy": "2026-04-29T21:56:19.840Z",
-      "bitter-sweet-symphony": "2026-04-30T02:32:28.803Z"
+      "bitter-sweet-symphony": "2026-04-30T02:32:28.803Z",
+      "blinding-lights": "2026-04-30T05:54:25.617Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -264,6 +265,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-04-30T05:54:25.617Z",
+      "summary": "song:blinding-lights"
+    },
+    {
       "timestamp": "2026-04-30T02:32:28.803Z",
       "summary": "song:bitter-sweet-symphony, album:travis-scott-astroworld"
     },
@@ -298,10 +303,6 @@
     {
       "timestamp": "2026-04-29T02:31:29.931Z",
       "summary": "song:would, album:the-eagles-eagles"
-    },
-    {
-      "timestamp": "2026-04-28T21:53:01.037Z",
-      "summary": "song:wonderwall, album:the-doors-l-a-woman"
     }
   ]
 }
