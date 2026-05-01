@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 15,
-    "album": 5
+    "song": 16,
+    "album": 6
   },
   "lastTouched": {
     "artist": {
@@ -205,7 +205,8 @@
       "crazy-in-love": "2026-04-30T19:13:11.914Z",
       "dancing-queen": "2026-04-30T21:53:36.322Z",
       "disco-2000": "2026-05-01T02:37:53.162Z",
-      "dont-stop-me-now": "2026-05-01T06:12:12.022Z"
+      "dont-stop-me-now": "2026-05-01T06:12:12.022Z",
+      "fell-on-black-days": "2026-05-01T10:19:57.948Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -277,6 +278,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-01T10:19:57.948Z",
+      "summary": "song:fell-on-black-days"
+    },
+    {
       "timestamp": "2026-05-01T06:12:12.022Z",
       "summary": "song:dont-stop-me-now"
     },
@@ -311,10 +316,6 @@
     {
       "timestamp": "2026-04-30T05:54:25.617Z",
       "summary": "song:blinding-lights"
-    },
-    {
-      "timestamp": "2026-04-30T02:32:28.803Z",
-      "summary": "song:bitter-sweet-symphony, album:travis-scott-astroworld"
     }
   ]
 }
