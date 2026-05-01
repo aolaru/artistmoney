@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 13,
-    "album": 3
+    "song": 14,
+    "album": 4
   },
   "lastTouched": {
     "artist": {
@@ -203,7 +203,8 @@
       "check-yo-self": "2026-04-30T13:45:11.364Z",
       "come-on-my-selector": "2026-04-30T16:15:44.868Z",
       "crazy-in-love": "2026-04-30T19:13:11.914Z",
-      "dancing-queen": "2026-04-30T21:53:36.322Z"
+      "dancing-queen": "2026-04-30T21:53:36.322Z",
+      "disco-2000": "2026-05-01T02:37:53.162Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -269,10 +270,15 @@
       "travis-scott-astroworld": "2026-04-30T02:32:28.803Z",
       "whitney-houston-the-bodyguard-original-soundtrack-album": "2026-04-30T08:12:38.054Z",
       "wu-tang-clan-enter-the-wu-tang-36-chambers": "2026-04-30T10:51:03.466Z",
-      "xzibit-restless": "2026-04-30T13:45:11.364Z"
+      "xzibit-restless": "2026-04-30T13:45:11.364Z",
+      "ac-dc-back-in-black": "2026-05-01T02:37:53.162Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-01T02:37:53.162Z",
+      "summary": "song:disco-2000, album:ac-dc-back-in-black"
+    },
     {
       "timestamp": "2026-04-30T21:53:36.322Z",
       "summary": "song:dancing-queen"
@@ -308,10 +314,6 @@
     {
       "timestamp": "2026-04-29T21:56:19.840Z",
       "summary": "song:bad-guy"
-    },
-    {
-      "timestamp": "2026-04-29T19:18:09.509Z",
-      "summary": "song:anti-hero, album:timbaland-shock-value"
     }
   ]
 }

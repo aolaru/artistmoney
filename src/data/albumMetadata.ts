@@ -11834,5 +11834,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/restless/267921139?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Xzibit%20Restless"
     }
+  },
+  "ac-dc-back-in-black": {
+    "releaseDate": "1980-07-25",
+    "label": "Leidseplein Presse B.V.",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Hells Bells",
+        "durationMs": 312815
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Shoot to Thrill",
+        "durationMs": 318231
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "What Do You Do for Money Honey",
+        "durationMs": 215676
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Givin the Dog a Bone",
+        "durationMs": 212401
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Let Me Put My Love Into You",
+        "durationMs": 256058
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Back In Black",
+        "durationMs": 256000
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "You Shook Me All Night Long",
+        "durationMs": 210329
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Have a Drink On Me",
+        "durationMs": 239105
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Shake a Leg",
+        "durationMs": 246060
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Rock and Roll Ain't Noise Pollution",
+        "durationMs": 255648
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/AC%2FDC%20Back%20in%20Black",
+      "appleMusic": "https://music.apple.com/us/album/back-in-black/574050396?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=AC%2FDC%20Back%20in%20Black"
+    }
   }
 } as const;

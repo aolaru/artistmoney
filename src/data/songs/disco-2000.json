@@ -4,5 +4,14 @@
   "artist": "pulp",
   "estimated_revenue": "$160K-$550K/year",
   "album": "Different Class",
-  "year": 1995
+  "year": 1995,
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can lift the baseline."
+  ],
+  "related_songs": [
+    "common-people"
+  ]
 }
