@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 18,
-    "album": 8
+    "song": 19,
+    "album": 9
   },
   "lastTouched": {
     "artist": {
@@ -208,7 +208,8 @@
       "dont-stop-me-now": "2026-05-01T06:12:12.022Z",
       "fell-on-black-days": "2026-05-01T10:19:57.948Z",
       "fools-gold": "2026-05-01T13:09:53.495Z",
-      "fuck-tha-police": "2026-05-01T15:52:58.702Z"
+      "fuck-tha-police": "2026-05-01T15:52:58.702Z",
+      "get-it-on-tonite": "2026-05-01T19:05:23.631Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -280,6 +281,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-01T19:05:23.631Z",
+      "summary": "song:get-it-on-tonite"
+    },
+    {
       "timestamp": "2026-05-01T15:52:58.702Z",
       "summary": "song:fuck-tha-police"
     },
@@ -314,10 +319,6 @@
     {
       "timestamp": "2026-04-30T13:45:11.364Z",
       "summary": "song:check-yo-self, album:xzibit-restless"
-    },
-    {
-      "timestamp": "2026-04-30T10:51:03.466Z",
-      "summary": "song:cant-fight-this-feeling, album:wu-tang-clan-enter-the-wu-tang-36-chambers"
     }
   ]
 }

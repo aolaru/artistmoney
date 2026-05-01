@@ -4,5 +4,14 @@
   "artist": "montell-jordan",
   "estimated_revenue": "$120K-$420K/year",
   "album": "Get It on... Tonite",
-  "year": 1999
+  "year": 1999,
+  "meaning_summary": "This track pairs a memorable hook with strong cultural recall, which helps explain its staying power and long-tail commercial value.",
+  "revenue_drivers": [
+    "Catalog streaming remains the main long-tail driver for recognizable rap tracks.",
+    "Playlist placement and cultural recall help the song stay active.",
+    "Sampling, sync use, and short-form rediscovery can extend earnings."
+  ],
+  "related_songs": [
+    "this-is-how-we-do-it"
+  ]
 }
