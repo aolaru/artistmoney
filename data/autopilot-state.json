@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 17,
-    "album": 7
+    "song": 18,
+    "album": 8
   },
   "lastTouched": {
     "artist": {
@@ -207,7 +207,8 @@
       "disco-2000": "2026-05-01T02:37:53.162Z",
       "dont-stop-me-now": "2026-05-01T06:12:12.022Z",
       "fell-on-black-days": "2026-05-01T10:19:57.948Z",
-      "fools-gold": "2026-05-01T13:09:53.495Z"
+      "fools-gold": "2026-05-01T13:09:53.495Z",
+      "fuck-tha-police": "2026-05-01T15:52:58.702Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -279,6 +280,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-01T15:52:58.702Z",
+      "summary": "song:fuck-tha-police"
+    },
+    {
       "timestamp": "2026-05-01T13:09:53.495Z",
       "summary": "song:fools-gold"
     },
@@ -313,10 +318,6 @@
     {
       "timestamp": "2026-04-30T10:51:03.466Z",
       "summary": "song:cant-fight-this-feeling, album:wu-tang-clan-enter-the-wu-tang-36-chambers"
-    },
-    {
-      "timestamp": "2026-04-30T08:12:38.054Z",
-      "summary": "song:break-my-soul, album:whitney-houston-the-bodyguard-original-soundtrack-album"
     }
   ]
 }
