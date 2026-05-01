@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 16,
-    "album": 6
+    "song": 17,
+    "album": 7
   },
   "lastTouched": {
     "artist": {
@@ -206,7 +206,8 @@
       "dancing-queen": "2026-04-30T21:53:36.322Z",
       "disco-2000": "2026-05-01T02:37:53.162Z",
       "dont-stop-me-now": "2026-05-01T06:12:12.022Z",
-      "fell-on-black-days": "2026-05-01T10:19:57.948Z"
+      "fell-on-black-days": "2026-05-01T10:19:57.948Z",
+      "fools-gold": "2026-05-01T13:09:53.495Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -278,6 +279,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-01T13:09:53.495Z",
+      "summary": "song:fools-gold"
+    },
+    {
       "timestamp": "2026-05-01T10:19:57.948Z",
       "summary": "song:fell-on-black-days"
     },
@@ -312,10 +317,6 @@
     {
       "timestamp": "2026-04-30T08:12:38.054Z",
       "summary": "song:break-my-soul, album:whitney-houston-the-bodyguard-original-soundtrack-album"
-    },
-    {
-      "timestamp": "2026-04-30T05:54:25.617Z",
-      "summary": "song:blinding-lights"
     }
   ]
 }
