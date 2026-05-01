@@ -12546,5 +12546,89 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/hotel-california/635770200?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Eagles%20Hotel%20California"
     }
+  },
+  "america-hearts": {
+    "releaseDate": "1975-03-19",
+    "label": "Warner Records Inc. Manufactured and Marketed by Warner Strategic Marketing",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Daisy Jane",
+        "durationMs": 186467
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Half a Man",
+        "durationMs": 217360
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Midnight",
+        "durationMs": 163400
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Bell Tree",
+        "durationMs": 153773
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Old Virginia",
+        "durationMs": 211627
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "People In the Valley",
+        "durationMs": 162800
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Company",
+        "durationMs": 206373
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Woman Tonight",
+        "durationMs": 142360
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "The Story of a Teenager",
+        "durationMs": 200000
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Sister Golden Hair",
+        "durationMs": 199573
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Tomorrow",
+        "durationMs": 170067
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Seasons",
+        "durationMs": 181027
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/America%20Hearts",
+      "appleMusic": "https://music.apple.com/us/album/hearts/150058873?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=America%20Hearts"
+    }
   }
 } as const;

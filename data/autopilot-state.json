@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 19,
-    "album": 9
+    "song": 20,
+    "album": 10
   },
   "lastTouched": {
     "artist": {
@@ -209,7 +209,8 @@
       "fell-on-black-days": "2026-05-01T10:19:57.948Z",
       "fools-gold": "2026-05-01T13:09:53.495Z",
       "fuck-tha-police": "2026-05-01T15:52:58.702Z",
-      "get-it-on-tonite": "2026-05-01T19:05:23.631Z"
+      "get-it-on-tonite": "2026-05-01T19:05:23.631Z",
+      "girls-and-boys": "2026-05-01T21:48:43.527Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -276,10 +277,15 @@
       "whitney-houston-the-bodyguard-original-soundtrack-album": "2026-04-30T08:12:38.054Z",
       "wu-tang-clan-enter-the-wu-tang-36-chambers": "2026-04-30T10:51:03.466Z",
       "xzibit-restless": "2026-04-30T13:45:11.364Z",
-      "ac-dc-back-in-black": "2026-05-01T02:37:53.162Z"
+      "ac-dc-back-in-black": "2026-05-01T02:37:53.162Z",
+      "america-hearts": "2026-05-01T21:48:43.527Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-01T21:48:43.527Z",
+      "summary": "song:girls-and-boys, album:america-hearts"
+    },
     {
       "timestamp": "2026-05-01T19:05:23.631Z",
       "summary": "song:get-it-on-tonite"
@@ -315,10 +321,6 @@
     {
       "timestamp": "2026-04-30T16:15:44.868Z",
       "summary": "song:come-on-my-selector"
-    },
-    {
-      "timestamp": "2026-04-30T13:45:11.364Z",
-      "summary": "song:check-yo-self, album:xzibit-restless"
     }
   ]
 }
