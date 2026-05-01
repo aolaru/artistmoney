@@ -5,13 +5,29 @@
   "estimated_revenue": "$2M-$6M/year",
   "album": "Arrival",
   "year": 1976,
-  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "meaning_summary": "Dancing Queen remains commercially durable because it is instantly recognizable, broadly usable, and still functions as shorthand for euphoric pop.",
   "revenue_drivers": [
-    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
-    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
-    "Sync, social reuse, and seasonal spikes can lift the baseline."
+    "Global pop and disco nostalgia playlists keep the song active across generations.",
+    "Film, party, wedding, and stage-musical associations reinforce recurring demand.",
+    "Its melody and title recognition make it unusually sync-friendly for a 1970s pop single."
   ],
   "related_songs": [
-    "gimme-gimme-gimme"
-  ]
+    "gimme-gimme-gimme",
+    "name-of-the-game",
+    "stayin-alive"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$4M-$12M/year",
+    "artist_or_estate_share": "$2M-$6M/year",
+    "label_master_share": "$1M-$3M/year",
+    "publishing_share": "$700K-$2M/year",
+    "songwriter_share": "$700K-$2M/year",
+    "assumptions": "Estimate models evergreen streaming, disco nostalgia, stage and film adjacency, and strong songwriter-side participation."
+  },
+  "ownership": {
+    "master_owner": "Polar/major-label catalog economics with artist-side participation",
+    "publishing_owner": "Publishing appears highly valuable because ABBA songwriting is central to the catalog economics",
+    "catalog_sale_status": "No song-specific sale adjustment is modeled",
+    "notes": "Modeled range reflects long-tail global pop catalog behavior."
+  }
 }

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/audit-assets.mjs && astro build && node scripts/finalize-build.mjs",
+    "build": "node scripts/audit-assets.mjs && node scripts/audit-page-quality.mjs && astro build && node scripts/finalize-build.mjs",
+    "audit:quality": "node scripts/audit-page-quality.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

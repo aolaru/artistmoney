@@ -11,5 +11,22 @@
     "playlist permanence",
     "licensing and media reuse"
   ],
-  "related_songs": ["thriller", "beat-it"]
+  "related_songs": [
+    "thriller",
+    "beat-it"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$2M-$8M/year",
+    "artist_or_estate_share": "$1M-$4M/year",
+    "label_master_share": "$500K-$2M/year",
+    "publishing_share": "$350K-$1.2M/year",
+    "songwriter_share": "$350K-$1.2M/year",
+    "assumptions": "Estimate models global pop streaming, Thriller-era catalog demand, licensing reuse, and estate-side participation."
+  },
+  "ownership": {
+    "master_owner": "Major-label master economics with estate-side participation",
+    "publishing_owner": "Publishing and writer-side economics remain material for the estate",
+    "catalog_sale_status": "Estate catalog economics can materially affect retained value",
+    "notes": "Estate-side modeled range, not a disclosed royalty statement."
+  }
 }

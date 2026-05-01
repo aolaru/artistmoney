@@ -4,5 +4,30 @@
   "artist": "queen",
   "estimated_revenue": "$2M-$6M/year",
   "album": "A Night at the Opera",
-  "year": 1975
+  "year": 1975,
+  "meaning_summary": "Bohemian Rhapsody keeps earning because it is both a classic-rock standard and a cultural event song, with unusual replay value across streaming, film memory, and karaoke culture.",
+  "revenue_drivers": [
+    "Classic-rock playlists and cultural familiarity keep the song in constant long-tail circulation.",
+    "Film, television, and event use reinforce the song as a high-recognition catalog asset.",
+    "Its unusual structure makes it memorable enough to keep outperforming ordinary legacy singles."
+  ],
+  "related_songs": [
+    "dont-stop-me-now",
+    "stairway-to-heaven",
+    "hotel-california"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$4M-$12M/year",
+    "artist_or_estate_share": "$2M-$6M/year",
+    "label_master_share": "$1M-$3M/year",
+    "publishing_share": "$700K-$2M/year",
+    "songwriter_share": "$700K-$2M/year",
+    "assumptions": "Estimate models global streaming, classic-rock replay, film-linked rediscovery, and high publishing value for a writer-led composition."
+  },
+  "ownership": {
+    "master_owner": "Major-label controlled master with band/estate royalty participation",
+    "publishing_owner": "Publishing appears valuable because of Freddie Mercury writer-side participation and publisher administration",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed",
+    "notes": "Modeled annual range, not a disclosed Queen royalty statement."
+  }
 }

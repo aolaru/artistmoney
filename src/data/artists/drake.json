@@ -17,5 +17,19 @@
   ],
   "genre": "Hip-hop / Pop",
   "country": "Canada",
-  "active_since": "2009"
+  "active_since": "2009",
+  "earnings": {
+    "gross_catalog_revenue": "$45M-$100M/year",
+    "artist_or_estate_share": "$20M-$50M/year",
+    "label_share": "$14M-$32M/year",
+    "publisher_share": "$5M-$14M/year",
+    "writer_share": "$5M-$14M/year",
+    "assumptions": "Modeled from very large streaming catalog depth, playlist velocity, feature-driven discovery, and writer/performer participation."
+  },
+  "ownership": {
+    "master_owner": "Label-distributed masters with major artist-side royalty participation assumed",
+    "publishing_owner": "Publishing appears shared across Drake, producers, collaborators, and publishers",
+    "catalog_sale_status": "No broad catalog sale adjustment is assumed",
+    "notes": "Streaming-heavy catalogs are especially sensitive to platform mix and private contract terms."
+  }
 }

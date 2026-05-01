@@ -16,5 +16,18 @@
     "publishing_owner": "Publishing appears shared across creators, producers, and publishers",
     "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
     "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
-  }
+  },
+  "album": "Views",
+  "year": 2016,
+  "meaning_summary": "One Dance keeps earning because it remains one of Drake’s clearest global crossover records, built for streaming, dance playlists, and warm-weather replay.",
+  "revenue_drivers": [
+    "Global streaming scale keeps the song active across markets.",
+    "Dancehall and Afrobeats crossover appeal gives it wider playlist reach than a typical rap single.",
+    "Drake catalog listening keeps the track connected to a much larger streaming ecosystem."
+  ],
+  "related_songs": [
+    "gods-plan",
+    "hotline-bling",
+    "work"
+  ]
 }

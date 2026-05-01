@@ -17,5 +17,19 @@
     "Catalog streaming sustains earnings after the original release cycle ends.",
     "Playlist use and rediscovery keep durable songs in circulation.",
     "Licensing and long-tail audience demand extend catalog value over time."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$100M-$240M/year",
+    "artist_or_estate_share": "$50M-$120M/year",
+    "label_share": "$25M-$70M/year",
+    "publisher_share": "$10M-$30M/year",
+    "writer_share": "$10M-$30M/year",
+    "assumptions": "Modeled as a superstar catalog with unusually strong artist-side participation, songwriter share, owned/controlled rerecording upside, and global streaming scale."
+  },
+  "ownership": {
+    "master_owner": "Mixed catalog position across original masters, label-distributed releases, and Taylor-owned rerecording assets",
+    "publishing_owner": "Writer-side participation appears unusually strong because Swift is a primary songwriter",
+    "catalog_sale_status": "Original master ownership history and rerecording strategy materially affect catalog economics",
+    "notes": "Artist-side range reflects modeled retained value across streaming, publishing, licensing, and rerecording-driven catalog demand."
+  }
 }

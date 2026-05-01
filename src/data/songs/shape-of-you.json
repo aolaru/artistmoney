@@ -11,5 +11,23 @@
     "playlist ubiquity",
     "songwriter-side participation"
   ],
-  "related_songs": ["castle-on-the-hill"]
+  "related_songs": [
+    "castle-on-the-hill",
+    "blinding-lights",
+    "one-dance"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$2M-$8M/year",
+    "artist_or_estate_share": "$1M-$4M/year",
+    "label_master_share": "$500K-$2M/year",
+    "publishing_share": "$350K-$1.2M/year",
+    "songwriter_share": "$350K-$1.2M/year",
+    "assumptions": "Estimate models very large streaming volume, global playlist durability, songwriter participation, and pop catalog replay."
+  },
+  "ownership": {
+    "master_owner": "Label-distributed master with artist-side participation",
+    "publishing_owner": "Publishing appears shared across writers and publishers, with Sheeran writer-side participation",
+    "catalog_sale_status": "No song-specific sale adjustment is modeled",
+    "notes": "Modeled annual range, not a public royalty statement."
+  }
 }

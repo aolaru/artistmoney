@@ -2,5 +2,32 @@
   "title": "Save Your Tears",
   "slug": "save-your-tears",
   "artist": "the-weeknd",
-  "estimated_revenue": "$1.1M-$3.4M/year"
+  "estimated_revenue": "$1.1M-$3.4M/year",
+  "album": "After Hours",
+  "year": 2020,
+  "meaning_summary": "Save Your Tears keeps earning because it extended the After Hours era into a second durable pop hook with strong radio, remix, and playlist memory.",
+  "revenue_drivers": [
+    "Streaming and radio familiarity keep the song active after the original chart cycle.",
+    "The After Hours album halo links it to Blinding Lights and Starboy-era catalog demand.",
+    "Remix and social reuse helped the song stay visible across multiple listening contexts."
+  ],
+  "related_songs": [
+    "blinding-lights",
+    "starboy",
+    "one-more-time"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$2.2M-$6.8M/year",
+    "artist_or_estate_share": "$1.1M-$3.4M/year",
+    "label_master_share": "$550K-$1.7M/year",
+    "publishing_share": "$350K-$1.1M/year",
+    "songwriter_share": "$350K-$1.1M/year",
+    "assumptions": "Estimate models streaming, radio recurrence, remix-driven visibility, and superstar-era rights participation."
+  },
+  "ownership": {
+    "master_owner": "Label-distributed master with artist-side participation",
+    "publishing_owner": "Publishing appears shared across creators, producers, and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is modeled",
+    "notes": "Modeled annual range based on current streaming and catalog behavior."
+  }
 }

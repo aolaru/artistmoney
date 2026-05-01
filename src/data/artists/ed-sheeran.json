@@ -2,7 +2,10 @@
   "name": "Ed Sheeran",
   "slug": "ed-sheeran",
   "estimated_income": "$20M-$60M/year",
-  "top_songs": ["shape-of-you", "castle-on-the-hill"],
+  "top_songs": [
+    "shape-of-you",
+    "castle-on-the-hill"
+  ],
   "genre": "Pop",
   "country": "United Kingdom",
   "active_since": "2011",
@@ -14,5 +17,19 @@
     "playlist ubiquity",
     "songwriter-side participation",
     "catalog permanence in modern pop"
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$45M-$120M/year",
+    "artist_or_estate_share": "$20M-$60M/year",
+    "label_share": "$12M-$36M/year",
+    "publisher_share": "$6M-$18M/year",
+    "writer_share": "$6M-$18M/year",
+    "assumptions": "Modeled from extreme streaming scale, songwriter participation, durable global pop playlisting, and licensing value."
+  },
+  "ownership": {
+    "master_owner": "Label-distributed masters with artist-side participation",
+    "publishing_owner": "Writer-side participation appears meaningful because Sheeran is a central songwriter",
+    "catalog_sale_status": "No broad catalog sale adjustment is assumed",
+    "notes": "Artist-side estimate includes both performer economics and meaningful songwriter-side upside."
+  }
 }

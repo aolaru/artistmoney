@@ -18,5 +18,16 @@
     "publishing_owner": "Publishing appears split among band writers and publishers",
     "catalog_sale_status": "No song-specific sale adjustment is modeled",
     "notes": "Modeled annual range based on current streaming and legacy rock-catalog economics."
-  }
+  },
+  "meaning_summary": "In the End keeps earning because its piano figure, chorus, and emotional directness made it one of the most durable rock songs of the streaming era.",
+  "revenue_drivers": [
+    "2000s rock nostalgia and alternative playlists keep the song in heavy catalog circulation.",
+    "The chorus is immediately recognizable, which helps repeat listening and social reuse.",
+    "Band-wide catalog demand keeps Hybrid Theory tracks linked together economically."
+  ],
+  "related_songs": [
+    "numb",
+    "smells-like-teen-spirit",
+    "black-hole-sun"
+  ]
 }

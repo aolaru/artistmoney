@@ -2,7 +2,10 @@
   "name": "Bad Bunny",
   "slug": "bad-bunny",
   "estimated_income": "$20M-$70M/year",
-  "top_songs": ["titi-me-pregunto", "me-porto-bonito"],
+  "top_songs": [
+    "titi-me-pregunto",
+    "me-porto-bonito"
+  ],
   "genre": "Latin / Reggaeton",
   "country": "Puerto Rico",
   "active_since": "2016",
@@ -14,5 +17,19 @@
     "Latin playlist dominance",
     "cross-market catalog demand",
     "viral and social media reuse"
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$45M-$140M/year",
+    "artist_or_estate_share": "$20M-$70M/year",
+    "label_share": "$14M-$45M/year",
+    "publisher_share": "$5M-$18M/year",
+    "writer_share": "$5M-$18M/year",
+    "assumptions": "Modeled from global Latin streaming scale, playlist dominance, songwriter participation, and high current catalog velocity."
+  },
+  "ownership": {
+    "master_owner": "Label-distributed masters with major artist-side participation assumed",
+    "publishing_owner": "Publishing appears shared across Bad Bunny, producers, collaborators, and publishers",
+    "catalog_sale_status": "No broad catalog sale adjustment is assumed",
+    "notes": "High streaming concentration makes platform mix and contract terms especially important to the retained share."
+  }
 }

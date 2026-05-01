@@ -2,7 +2,10 @@
   "name": "Metallica",
   "slug": "metallica",
   "estimated_income": "$12M-$35M/year",
-  "top_songs": ["enter-sandman", "nothing-else-matters"],
+  "top_songs": [
+    "enter-sandman",
+    "nothing-else-matters"
+  ],
   "genre": "Heavy Metal",
   "country": "United States",
   "active_since": "1981",
@@ -14,5 +17,19 @@
     "global rock playlist demand",
     "licensing and sports media use",
     "deep live-catalog relevance"
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$50M-$100M/year",
+    "artist_or_estate_share": "$20M-$45M/year",
+    "label_share": "$12M-$30M/year",
+    "publisher_share": "$5M-$15M/year",
+    "writer_share": "$5M-$15M/year",
+    "assumptions": "Modeled from durable metal catalog streaming, physical/reissue demand, touring halo, sync value, and band writer participation."
+  },
+  "ownership": {
+    "master_owner": "Mixed label and band-side catalog economics across eras",
+    "publishing_owner": "Publishing appears materially tied to band songwriter participation",
+    "catalog_sale_status": "No broad catalog sale adjustment is assumed",
+    "notes": "Heavy catalog depth and reissue demand make the gross-to-artist split more complex than streaming alone."
+  }
 }

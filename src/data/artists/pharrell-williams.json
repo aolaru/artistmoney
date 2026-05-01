@@ -2,12 +2,34 @@
   "name": "Pharrell Williams",
   "slug": "pharrell-williams",
   "estimated_income": "$10M-$35M/year",
-  "top_songs": ["happy", "frontin"],
+  "top_songs": [
+    "happy",
+    "frontin"
+  ],
   "genre": "Pop / R&B",
   "country": "United States",
   "active_since": "1994",
   "bio": "Pharrell Williams earns across multiple layers of the music business as a performer, songwriter, producer, and catalog stakeholder.",
   "notable_for": "Crossover hitmaking, production work, and songwriting-driven economics.",
   "career_highlight": "A mix of solo hits and deep producer-writer participation gives his catalog more resilient economics than performer-only pop catalogs.",
-  "revenue_drivers": ["songwriting", "production royalties", "catalog streaming", "sync licensing"]
+  "revenue_drivers": [
+    "songwriting",
+    "production royalties",
+    "catalog streaming",
+    "sync licensing"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$45M-$95M/year",
+    "artist_or_estate_share": "$20M-$45M/year",
+    "label_share": "$10M-$28M/year",
+    "publisher_share": "$8M-$22M/year",
+    "writer_share": "$8M-$22M/year",
+    "assumptions": "Modeled from performer income, producer/songwriter catalog depth, publishing participation, and durable sync-friendly pop records."
+  },
+  "ownership": {
+    "master_owner": "Mixed performer, producer, and label-side master economics across projects",
+    "publishing_owner": "Publishing and producer-side participation appear especially important to retained value",
+    "catalog_sale_status": "No broad catalog sale adjustment is assumed",
+    "notes": "Producer/songwriter economics mean artist-side value can extend beyond Pharrell-billed solo tracks."
+  }
 }

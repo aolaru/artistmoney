@@ -2,7 +2,10 @@
   "name": "Travis Scott",
   "slug": "travis-scott",
   "estimated_income": "$15M-$50M/year",
-  "top_songs": ["sicko-mode", "goosebumps"],
+  "top_songs": [
+    "sicko-mode",
+    "goosebumps"
+  ],
   "genre": "Hip-Hop / Trap",
   "country": "United States",
   "active_since": "2013",
@@ -13,5 +16,19 @@
     "Billions of streams keep the top catalog performing at global rap scale.",
     "Large playlist footprint extends the life of key singles.",
     "Brand visibility and collaboration networks reinforce catalog reach."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$35M-$100M/year",
+    "artist_or_estate_share": "$15M-$50M/year",
+    "label_share": "$10M-$30M/year",
+    "publisher_share": "$4M-$14M/year",
+    "writer_share": "$4M-$14M/year",
+    "assumptions": "Modeled from streaming-scale rap catalog demand, blockbuster singles, feature networks, brand amplification, and writer/performer participation."
+  },
+  "ownership": {
+    "master_owner": "Label-distributed masters with major artist-side royalty participation assumed",
+    "publishing_owner": "Publishing appears shared across Travis Scott, producers, collaborators, and publishers",
+    "catalog_sale_status": "No broad catalog sale adjustment is assumed",
+    "notes": "Artist-side range is directional because exact master, producer, and publishing splits are private."
+  }
 }

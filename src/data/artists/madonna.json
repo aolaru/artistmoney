@@ -16,5 +16,19 @@
     "Global catalog streaming keeps Madonna's biggest singles commercially active.",
     "Sync and fashion or culture-adjacent placements help extend the value of the catalog.",
     "Multi-decade listener familiarity supports long-tail playlist and catalog performance."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$30M-$90M/year",
+    "artist_or_estate_share": "$12M-$45M/year",
+    "label_share": "$10M-$30M/year",
+    "publisher_share": "$4M-$14M/year",
+    "writer_share": "$3M-$12M/year",
+    "assumptions": "Modeled from global pop catalog depth, touring halo, sync use, compilation demand, and songwriter participation across key hits."
+  },
+  "ownership": {
+    "master_owner": "Mixed major-label master economics across eras with artist-side participation",
+    "publishing_owner": "Publishing appears shared across Madonna, collaborators, and publishers",
+    "catalog_sale_status": "No broad catalog sale adjustment is modeled",
+    "notes": "Modeled artist-side range, not a disclosed royalty statement."
+  }
 }

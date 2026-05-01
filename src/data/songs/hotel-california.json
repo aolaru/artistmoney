@@ -15,5 +15,19 @@
     "best-of-my-love",
     "desperado",
     "take-it-easy"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$2.4M-$7M/year",
+    "artist_or_estate_share": "$1.2M-$3.5M/year",
+    "label_master_share": "$600K-$1.8M/year",
+    "publishing_share": "$380K-$1.1M/year",
+    "songwriter_share": "$380K-$1.1M/year",
+    "assumptions": "Estimate models classic-rock streaming, album halo, radio recurrence, and writer-side participation."
+  },
+  "ownership": {
+    "master_owner": "Major-label catalog master with band-side royalty participation",
+    "publishing_owner": "Publishing appears tied to Eagles songwriter participation and publisher administration",
+    "catalog_sale_status": "No song-specific sale adjustment is modeled",
+    "notes": "Modeled annual range based on current catalog behavior."
+  }
 }

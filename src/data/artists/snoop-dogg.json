@@ -16,5 +16,19 @@
   ],
   "genre": "Hip-hop",
   "country": "United States",
-  "active_since": "1993"
+  "active_since": "1993",
+  "earnings": {
+    "gross_catalog_revenue": "$18M-$50M/year",
+    "artist_or_estate_share": "$8M-$24M/year",
+    "label_share": "$5M-$16M/year",
+    "publisher_share": "$2M-$8M/year",
+    "writer_share": "$2M-$8M/year",
+    "assumptions": "Modeled from evergreen West Coast rap catalog demand, licensing value, feature visibility, and long-tail streaming."
+  },
+  "ownership": {
+    "master_owner": "Mixed label and artist/business-side catalog economics across eras",
+    "publishing_owner": "Publishing appears shared across Snoop Dogg, collaborators, producers, and publishers",
+    "catalog_sale_status": "No broad catalog sale adjustment is assumed",
+    "notes": "The modeled range reflects retained artist-side catalog economics, not gross platform revenue."
+  }
 }

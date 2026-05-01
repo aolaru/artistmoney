@@ -710,6 +710,104 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     licenseUrl: "https://commons.wikimedia.org/wiki/File:Kanye_West_at_the_2009_Tribeca_Film_Festival_(crop_2).jpg",
     localPath: "/images/artists/kanye-west.jpg",
     personalityRightsWarning: "Living artist depicted. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  metallica: {
+    alt: "Metallica photographed by the Library of Congress in 2024",
+    src: localPhoto("metallica.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Metallica_March_2024.jpg",
+    credit: "Library of Congress Life via Wikimedia Commons",
+    license: "CC0 1.0",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    localPath: "/images/artists/metallica.jpg",
+    personalityRightsWarning: "Living artists depicted. CC0 status does not remove publicity or personality-rights considerations."
+  },
+  "ac-dc": {
+    alt: "AC/DC performing at London's Olympic Stadium",
+    src: localPhoto("ac-dc.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:AC_DC_at_London%27s_Olympic_Stadium.jpg",
+    credit: "Photo by Egghead06 via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/ac-dc.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Editorial use is generally safer than endorsement or advertising use."
+  },
+  abba: {
+    alt: "ABBA appearing on TopPop in 1974",
+    src: localPhoto("abba.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:ABBA_-_TopPop_1974_5.png",
+    credit: "AVRO via Wikimedia Commons",
+    license: "CC BY-SA 3.0 NL",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en",
+    localPath: "/images/artists/abba.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "bruce-springsteen": {
+    alt: "Bruce Springsteen performing at Roskilde Festival in 2012",
+    src: localPhoto("bruce-springsteen.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Bruce_Springsteen_-_Roskilde_Festival_2012.jpg",
+    credit: "Photo by Bill Ebbesen via Wikimedia Commons",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    localPath: "/images/artists/bruce-springsteen.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "elvis-presley": {
+    alt: "Elvis Presley portrait from Modern Screen in 1958",
+    src: localPhoto("elvis-presley.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Elvis_Presley,_Modern_Screen,_June_1958.jpg",
+    credit: "Modern Screen via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Elvis_Presley,_Modern_Screen,_June_1958.jpg",
+    localPath: "/images/artists/elvis-presley.jpg"
+  },
+  prince: {
+    alt: "Prince performing in Brussels in 1986",
+    src: localPhoto("prince.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Prince_Brussels_1986_(retouched).jpg",
+    credit: "Photo by Yves Lorson via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/prince.jpg"
+  },
+  "dua-lipa": {
+    alt: "Dua Lipa at the SWR3 New Pop Festival in 2016",
+    src: localPhoto("dua-lipa.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:British_singer_and_songwriter_Dua_Lipa_at_the_SWR3_New_Pop_Festival_2016.jpg",
+    credit: "Photo by Harald Krichel via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/dua-lipa.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "pharrell-williams": {
+    alt: "Pharrell Williams performing at Global Citizen Festival Hamburg",
+    src: localPhoto("pharrell-williams.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Pharrell_Williams_-_Global_Citizen_Festival_Hamburg_09.jpg",
+    credit: "Photo by Frank Schwichtenberg via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/pharrell-williams.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "linkin-park": {
+    alt: "Linkin Park From Zero press photo",
+    src: localPhoto("linkin-park.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Linkin_Park_-_From_Zero_Lead_Press_Photo_-_James_Minchin_III.jpg",
+    credit: "Photo by James Minchin III via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/linkin-park.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "justin-timberlake": {
+    alt: "Justin Timberlake photographed by Gage Skidmore",
+    src: localPhoto("justin-timberlake.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Justin_Timberlake_by_Gage_Skidmore_2.jpg",
+    credit: "Photo by Gage Skidmore via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/justin-timberlake.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   }
 };
 

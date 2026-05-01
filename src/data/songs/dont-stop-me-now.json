@@ -5,13 +5,29 @@
   "estimated_revenue": "$1.1M-$3.2M/year",
   "album": "Jazz",
   "year": 1978,
-  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "meaning_summary": "Don’t Stop Me Now keeps earning because it is one of Queen’s most reusable feel-good records, with strong playlist, film, ad, and event value.",
   "revenue_drivers": [
-    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
-    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
-    "Sync, social reuse, and seasonal spikes can lift the baseline."
+    "High-energy classic-rock playlists keep the song in daily circulation.",
+    "Advertising, film, and event contexts make the track unusually reusable.",
+    "Queen catalog demand links the song to a broader set of evergreen hits."
   ],
   "related_songs": [
-    "bohemian-rhapsody"
-  ]
+    "bohemian-rhapsody",
+    "stairway-to-heaven",
+    "hotel-california"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$2.2M-$6.4M/year",
+    "artist_or_estate_share": "$1.1M-$3.2M/year",
+    "label_master_share": "$550K-$1.6M/year",
+    "publishing_share": "$350K-$1M/year",
+    "songwriter_share": "$350K-$1M/year",
+    "assumptions": "Estimate models classic-rock streaming, sync friendliness, event use, and writer-side participation."
+  },
+  "ownership": {
+    "master_owner": "Major-label catalog master with band/estate royalty participation",
+    "publishing_owner": "Publishing appears valuable because of Queen writer-side participation",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is modeled",
+    "notes": "Modeled annual range, not a disclosed royalty statement."
+  }
 }

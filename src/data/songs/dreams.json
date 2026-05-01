@@ -4,5 +4,30 @@
   "artist": "fleetwood-mac",
   "estimated_revenue": "$1.3M-$3.8M/year",
   "album": "Rumours",
-  "year": 1977
+  "year": 1977,
+  "meaning_summary": "Dreams keeps earning because its relaxed groove and breakup lyric make it work across classic-rock, soft-rock, and viral rediscovery contexts.",
+  "revenue_drivers": [
+    "Classic-rock and soft-rock playlists keep the song in daily catalog circulation.",
+    "Viral rediscovery has shown the song can restart attention decades after release.",
+    "Fleetwood Mac catalog listening links Dreams to Rumours as a full-album asset."
+  ],
+  "related_songs": [
+    "the-chain",
+    "goosebumps",
+    "we-belong-together"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$2.6M-$7.6M/year",
+    "artist_or_estate_share": "$1.3M-$3.8M/year",
+    "label_master_share": "$650K-$1.9M/year",
+    "publishing_share": "$420K-$1.2M/year",
+    "songwriter_share": "$420K-$1.2M/year",
+    "assumptions": "Estimate models classic catalog streaming, viral rediscovery potential, album halo from Rumours, and writer-side participation."
+  },
+  "ownership": {
+    "master_owner": "Major-label catalog master with band-side royalty participation",
+    "publishing_owner": "Publishing appears tied to band songwriter participation and publisher administration",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is modeled",
+    "notes": "Modeled annual range based on current catalog behavior."
+  }
 }

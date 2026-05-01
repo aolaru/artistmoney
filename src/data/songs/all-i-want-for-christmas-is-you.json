@@ -18,5 +18,16 @@
     "publishing_owner": "Publishing appears exceptionally valuable because of writer-side participation",
     "catalog_sale_status": "No song-specific catalog sale adjustment is modeled",
     "notes": "This is one of the strongest annual seasonal songs in the catalog; year-to-year earnings can fluctuate materially."
-  }
+  },
+  "meaning_summary": "All I Want for Christmas Is You works like a seasonal catalog engine: it returns every holiday cycle, restarts public attention, and converts tradition into repeat streaming.",
+  "revenue_drivers": [
+    "Holiday streaming creates a concentrated annual spike that few non-seasonal songs can match.",
+    "Radio, retail, playlist, and social reuse keep the song visible every December.",
+    "Mariah Carey writer participation makes publishing materially more important than on performer-only hits."
+  ],
+  "related_songs": [
+    "we-belong-together",
+    "i-will-always-love-you",
+    "happy"
+  ]
 }

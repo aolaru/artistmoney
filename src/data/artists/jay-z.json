@@ -2,12 +2,34 @@
   "name": "Jay-Z",
   "slug": "jay-z",
   "estimated_income": "$20M-$60M/year",
-  "top_songs": ["empire-state-of-mind", "99-problems"],
+  "top_songs": [
+    "empire-state-of-mind",
+    "99-problems"
+  ],
   "genre": "Hip-Hop",
   "country": "United States",
   "active_since": "1996",
   "bio": "Jay-Z built one of rap's most durable catalogs while also turning publishing, ownership, and business leverage into a core part of his long-term earnings story.",
   "notable_for": "Catalog ownership, premium rap catalog economics, and crossover business scale.",
   "career_highlight": "His best-known records still stream at elite legacy-catalog scale while his writer and owner participation improves artist-side retention.",
-  "revenue_drivers": ["catalog streaming", "publishing royalties", "licensing", "ownership leverage"]
+  "revenue_drivers": [
+    "catalog streaming",
+    "publishing royalties",
+    "licensing",
+    "ownership leverage"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$40M-$120M/year",
+    "artist_or_estate_share": "$20M-$60M/year",
+    "label_share": "$10M-$34M/year",
+    "publisher_share": "$5M-$16M/year",
+    "writer_share": "$5M-$16M/year",
+    "assumptions": "Modeled from premium rap catalog demand, publishing participation, ownership leverage, licensing value, and long-tail streaming."
+  },
+  "ownership": {
+    "master_owner": "Mixed label and artist/business-controlled catalog economics across eras",
+    "publishing_owner": "Publishing and writer-side participation appear materially important",
+    "catalog_sale_status": "Ownership leverage is treated as a positive retained-value factor, not as a single confirmed sale adjustment",
+    "notes": "The range emphasizes retained artist-side economics rather than gross platform revenue."
+  }
 }

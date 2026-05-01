@@ -496,8 +496,12 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
   "hello": {
     "links": {
       "spotify": "https://open.spotify.com/search/Adele%20Hello",
-      "youtubeMusic": "https://music.youtube.com/search?q=Adele%20Hello"
-    }
+      "youtubeMusic": "https://music.youtube.com/search?q=Adele%20Hello",
+      "appleMusic": "https://music.apple.com/us/album/hello/1544494115?i=1544494392&uo=4"
+    },
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/93/22/22/93222271-8d55-d923-e0ff-b2964a5abefe/mzaf_3513742103157153222.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/hello/1544494115?i=1544494392&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/08/8c/24/088c2405-2e33-801b-5c38-e967f2c01e69/191404113974.png/600x600bb.jpg"
   },
   "hey-jude": {
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3d/08/f5/3d08f5d7-1e0a-99d9-1085-d50ecc972bb9/mzaf_1689604474306790314.plus.aac.p.m4a",
@@ -584,8 +588,12 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
   "lose-yourself": {
     "links": {
       "spotify": "https://open.spotify.com/search/Eminem%20Lose%20Yourself",
-      "youtubeMusic": "https://music.youtube.com/search?q=Eminem%20Lose%20Yourself"
-    }
+      "youtubeMusic": "https://music.youtube.com/search?q=Eminem%20Lose%20Yourself",
+      "appleMusic": "https://music.apple.com/us/album/lose-yourself/1440903339?i=1440903439&uo=4"
+    },
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/62/0a/a5/620aa56f-189e-708a-80f0-cebdada3872e/mzaf_7131619873177773332.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/lose-yourself/1440903339?i=1440903439&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/08/23/fc/0823fcd9-cb44-695b-32bf-b3bf51d9f800/00606949351229.rgb.jpg/600x600bb.jpg"
   },
   "losing-my-religion": {
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/af/be/f5/afbef592-8f00-fe28-8ab4-5c070827b2f8/mzaf_4959761764791628207.plus.aac.p.m4a",
@@ -618,8 +626,12 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
   "one-dance": {
     "links": {
       "spotify": "https://open.spotify.com/search/Drake%20One%20Dance",
-      "youtubeMusic": "https://music.youtube.com/search?q=Drake%20One%20Dance"
-    }
+      "youtubeMusic": "https://music.youtube.com/search?q=Drake%20One%20Dance",
+      "appleMusic": "https://music.apple.com/us/album/one-dance-feat-wizkid-kyla/1440841363?i=1440841384&uo=4"
+    },
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/a8/bd/68/a8bd68a2-dcd2-9024-3859-3a9fd6d53576/mzaf_16864609147187531487.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/one-dance-feat-wizkid-kyla/1440841363?i=1440841384&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f2/0d/8b/f20d8bff-a927-ae98-6784-20a1f51cb23e/16UMGIM27642.rgb.jpg/600x600bb.jpg"
   },
   "one-more-time": {
     "links": {
@@ -732,8 +744,12 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
   "smells-like-teen-spirit": {
     "links": {
       "spotify": "https://open.spotify.com/search/Nirvana%20Smells%20Like%20Teen%20Spirit",
-      "youtubeMusic": "https://music.youtube.com/search?q=Nirvana%20Smells%20Like%20Teen%20Spirit"
-    }
+      "youtubeMusic": "https://music.youtube.com/search?q=Nirvana%20Smells%20Like%20Teen%20Spirit",
+      "appleMusic": "https://music.apple.com/us/album/smells-like-teen-spirit/1440783617?i=1440783625&uo=4"
+    },
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a6/53/1e/a6531efa-397c-eb73-ecab-9b2790c1471e/mzaf_16440344883389407474.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/smells-like-teen-spirit/1440783617?i=1440783625&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/95/fd/b9/95fdb9b2-6d2b-92a6-97f2-51c1a6d77f1a/00602527874609.rgb.jpg/600x600bb.jpg"
   },
   "someone-like-you": {
     "links": {
@@ -756,8 +772,12 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
   "starboy": {
     "links": {
       "spotify": "https://open.spotify.com/search/The%20Weeknd%20Starboy",
-      "youtubeMusic": "https://music.youtube.com/search?q=The%20Weeknd%20Starboy"
-    }
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Weeknd%20Starboy",
+      "appleMusic": "https://music.apple.com/us/album/starboy-feat-daft-punk/1440870373?i=1440870375&uo=4"
+    },
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3f/a0/ba/3fa0ba5b-088d-bcf2-e4bd-355a5d505617/mzaf_3355567893400963384.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/starboy-feat-daft-punk/1440870373?i=1440870375&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b5/92/bb/b592bb72-52e3-e756-9b26-9f56d08f47ab/16UMGIM67864.rgb.jpg/600x600bb.jpg"
   },
   "still-dre": {
     "links": {
@@ -804,8 +824,12 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
   "umbrella": {
     "links": {
       "spotify": "https://open.spotify.com/search/Rihanna%20Umbrella",
-      "youtubeMusic": "https://music.youtube.com/search?q=Rihanna%20Umbrella"
-    }
+      "youtubeMusic": "https://music.youtube.com/search?q=Rihanna%20Umbrella",
+      "appleMusic": "https://music.apple.com/us/album/umbrella-feat-ja%C3%BF-z/1441154435?i=1441154437&uo=4"
+    },
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7b/45/22/7b452241-882c-409b-3a9b-23306b14286a/mzaf_8588243939716013218.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/umbrella-feat-ja%C3%BF-z/1441154435?i=1441154437&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2b/c0/81/2bc081c8-25f0-ba43-d451-587a54613778/16UMGIM59202.rgb.jpg/600x600bb.jpg"
   },
   "unfinished-sympathy": {
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/28/6b/72/286b72c8-e388-c791-b75e-1bcaed1ebac2/mzaf_12512470290971497615.plus.aac.p.m4a",
@@ -893,6 +917,136 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
     "links": {
       "spotify": "https://open.spotify.com/search/Coldplay%20Yellow",
       "youtubeMusic": "https://music.youtube.com/search?q=Coldplay%20Yellow"
+    }
+  },
+  "all-i-want-for-christmas-is-you": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/df/93/49/df93491d-65a6-bb2d-eb03-9ad3b3d62438/mzaf_10792594730801509593.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/all-i-want-for-christmas-is-you/585972750?i=585972803&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c6/b7/27/c6b727f7-3a32-6b43-cee2-05bb71daf1cf/dj.itfmdeif.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Mariah%20Carey%20All%20I%20Want%20for%20Christmas%20Is%20You",
+      "youtubeMusic": "https://music.youtube.com/search?q=Mariah%20Carey%20All%20I%20Want%20for%20Christmas%20Is%20You",
+      "appleMusic": "https://music.apple.com/us/album/all-i-want-for-christmas-is-you/585972750?i=585972803&uo=4"
+    }
+  },
+  "bohemian-rhapsody": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8f/11/52/8f1152a9-fd5f-0021-f546-b97579c22ec3/mzaf_3962258993076347789.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/bohemian-rhapsody/1440650428?i=1440650711&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/4d/08/2a/4d082a9e-7898-1aa1-a02f-339810058d9e/14DMGIM05632.rgb.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Queen%20Bohemian%20Rhapsody",
+      "youtubeMusic": "https://music.youtube.com/search?q=Queen%20Bohemian%20Rhapsody",
+      "appleMusic": "https://music.apple.com/us/album/bohemian-rhapsody/1440650428?i=1440650711&uo=4"
+    }
+  },
+  "dancing-queen": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1a/47/93/1a4793fc-1586-87bc-00d2-dc4916a61c7c/mzaf_13920610926910283055.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/dancing-queen/1422648512?i=1422648513&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/60/f8/a6/60f8a6bc-e875-238d-f2f8-f34a6034e6d2/14UMGIM07615.rgb.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/ABBA%20Dancing%20Queen",
+      "youtubeMusic": "https://music.youtube.com/search?q=ABBA%20Dancing%20Queen",
+      "appleMusic": "https://music.apple.com/us/album/dancing-queen/1422648512?i=1422648513&uo=4"
+    }
+  },
+  "sicko-mode": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/85/49/e2/8549e207-7ecf-21a9-7b2f-b414175c6a74/mzaf_10189975321658500285.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/sicko-mode/1421658111?i=1421658123&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/e7/49/8f/e7498f65-df8f-bead-d6e3-2a8d4d642a79/886447235317.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Travis%20Scott%20SICKO%20MODE",
+      "youtubeMusic": "https://music.youtube.com/search?q=Travis%20Scott%20SICKO%20MODE",
+      "appleMusic": "https://music.apple.com/us/album/sicko-mode/1421658111?i=1421658123&uo=4"
+    }
+  },
+  "in-the-end": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/3f/cb/c7/3fcbc7cc-0606-7f6e-7fc3-793318cfd1ed/mzaf_16081918663584534594.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/in-the-end/590431776?i=590431785&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/53/a7/7f/53a77fab-c54c-a57b-8130-248fc12d0c80/093624948995.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Linkin%20Park%20In%20the%20End",
+      "youtubeMusic": "https://music.youtube.com/search?q=Linkin%20Park%20In%20the%20End",
+      "appleMusic": "https://music.apple.com/us/album/in-the-end/590431776?i=590431785&uo=4"
+    }
+  },
+  "happy": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4c/ba/89/4cba89f1-1a8a-3f33-b3ac-d88bcad8b996/mzaf_17135561476274403451.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/happy-from-despicable-me-2/863835302?i=863835363&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/76/ff/5e/76ff5ee0-7ab4-2ac2-2598-486a9ccc06e1/886444516877.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Pharrell%20Williams%20Happy",
+      "youtubeMusic": "https://music.youtube.com/search?q=Pharrell%20Williams%20Happy",
+      "appleMusic": "https://music.apple.com/us/album/happy-from-despicable-me-2/863835302?i=863835363&uo=4"
+    }
+  },
+  "dreams": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d4/37/e7/d437e72a-c41b-332c-f196-bee295a9d673/mzaf_11574904347171701919.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/dreams/594061854?i=594061856&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/4d/13/ba/4d13bac3-d3d5-7581-2c74-034219eadf2b/081227970949.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Fleetwood%20Mac%20Dreams",
+      "youtubeMusic": "https://music.youtube.com/search?q=Fleetwood%20Mac%20Dreams",
+      "appleMusic": "https://music.apple.com/us/album/dreams/594061854?i=594061856&uo=4"
+    }
+  },
+  "billie-jean": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/dc/bc/8a/dcbc8a3e-4ce1-c00d-cc02-eda2212053c7/mzaf_8347559338388601510.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/billie-jean/269572838?i=269573364&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/32/4f/fd/324ffda2-9e51-8f6a-0c2d-c6fd2b41ac55/074643811224.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Michael%20Jackson%20Billie%20Jean",
+      "youtubeMusic": "https://music.youtube.com/search?q=Michael%20Jackson%20Billie%20Jean",
+      "appleMusic": "https://music.apple.com/us/album/billie-jean/269572838?i=269573364&uo=4"
+    }
+  },
+  "numb": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/bb/13/76/bb1376a7-4db0-ed68-c1a6-d0278cc4b320/mzaf_17832584344687833283.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/numb/590423275?i=590423552&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/13/44/05/134405bd-9e27-a678-8953-b5f724201f95/093624948988.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Linkin%20Park%20Numb",
+      "youtubeMusic": "https://music.youtube.com/search?q=Linkin%20Park%20Numb",
+      "appleMusic": "https://music.apple.com/us/album/numb/590423275?i=590423552&uo=4"
+    }
+  },
+  "shape-of-you": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/c7/4f/44c74f0d-72dc-6143-d4d0-ba14d661ca0d/mzaf_9566898362556366703.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/shape-of-you/1193701079?i=1193701392&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/15/e6/e8/15e6e8a4-4190-6a8b-86c3-ab4a51b88288/190295851286.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Ed%20Sheeran%20Shape%20of%20You",
+      "youtubeMusic": "https://music.youtube.com/search?q=Ed%20Sheeran%20Shape%20of%20You",
+      "appleMusic": "https://music.apple.com/us/album/shape-of-you/1193701079?i=1193701392&uo=4"
+    }
+  },
+  "hotel-california": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a7/1b/f0/a71bf07d-f498-05c9-2c8a-d12af7d019d8/mzaf_11402952498213508559.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/hotel-california/635770200?i=635770202&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/88/16/2c/88162c3d-46db-8321-61f3-3a47404cfe76/075596050920.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Eagles%20Hotel%20California",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Eagles%20Hotel%20California",
+      "appleMusic": "https://music.apple.com/us/album/hotel-california/635770200?i=635770202&uo=4"
+    }
+  },
+  "my-heart-will-go-on": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3c/b8/d8/3cb8d87a-b509-98a0-2c0f-be9f587dae32/mzaf_3167684900889811097.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/my-heart-will-go-on/1745576600?i=1745576958&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e8/49/1a/e8491a46-9fd7-c953-68cf-16de3f2c8041/196872070200.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Celine%20Dion%20My%20Heart%20Will%20Go%20On",
+      "youtubeMusic": "https://music.youtube.com/search?q=Celine%20Dion%20My%20Heart%20Will%20Go%20On",
+      "appleMusic": "https://music.apple.com/us/album/my-heart-will-go-on/1745576600?i=1745576958&uo=4"
+    }
+  },
+  "dont-stop-me-now": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6a/ec/92/6aec920f-5a05-d93b-ceaa-7de19cdbae88/mzaf_6658285650704260274.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/dont-stop-me-now/1440650428?i=1440650733&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/4d/08/2a/4d082a9e-7898-1aa1-a02f-339810058d9e/14DMGIM05632.rgb.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Queen%20Don't%20Stop%20Me%20Now",
+      "youtubeMusic": "https://music.youtube.com/search?q=Queen%20Don't%20Stop%20Me%20Now",
+      "appleMusic": "https://music.apple.com/us/album/dont-stop-me-now/1440650428?i=1440650733&uo=4"
     }
   }
 };

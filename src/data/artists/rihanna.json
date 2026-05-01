@@ -17,5 +17,19 @@
   ],
   "genre": "Pop / R&B",
   "country": "Barbados",
-  "active_since": "2005"
+  "active_since": "2005",
+  "earnings": {
+    "gross_catalog_revenue": "$55M-$140M/year",
+    "artist_or_estate_share": "$25M-$70M/year",
+    "label_share": "$16M-$45M/year",
+    "publisher_share": "$6M-$18M/year",
+    "writer_share": "$4M-$14M/year",
+    "assumptions": "Modeled from large global streaming demand, hit density, broad playlist inclusion, and licensing-friendly pop/R&B catalog value."
+  },
+  "ownership": {
+    "master_owner": "Major-label master ownership with artist-side royalty participation",
+    "publishing_owner": "Publishing appears shared across Rihanna, songwriters, producers, and publishers",
+    "catalog_sale_status": "No song-specific sale adjustment is modeled at the artist-page level",
+    "notes": "Headline number estimates artist-side catalog income rather than gross label receipts."
+  }
 }

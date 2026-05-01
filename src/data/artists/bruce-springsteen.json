@@ -2,7 +2,10 @@
   "name": "Bruce Springsteen",
   "slug": "bruce-springsteen",
   "estimated_income": "$8M-$30M/year",
-  "top_songs": ["born-in-the-u-s-a", "dancing-in-the-dark"],
+  "top_songs": [
+    "born-in-the-u-s-a",
+    "dancing-in-the-dark"
+  ],
   "genre": "Rock / Heartland Rock",
   "country": "United States",
   "active_since": "1973",
@@ -14,5 +17,19 @@
     "publishing royalties",
     "classic-rock and Americana playlists",
     "licensing and documentary use"
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$20M-$55M/year",
+    "artist_or_estate_share": "$9M-$28M/year",
+    "label_share": "$5M-$16M/year",
+    "publisher_share": "$3M-$9M/year",
+    "writer_share": "$3M-$9M/year",
+    "assumptions": "Modeled from classic-rock catalog streaming, songwriter participation, publishing value, licensing demand, and catalog-sale-adjusted visibility."
+  },
+  "ownership": {
+    "master_owner": "Catalog economics influenced by major-label history and reported catalog-rights transactions",
+    "publishing_owner": "Publishing and writer-side economics are material because Springsteen is the central songwriter",
+    "catalog_sale_status": "Reported catalog sale context can materially change who retains revenue",
+    "notes": "Artist-side range is modeled as directional catalog economics rather than a disclosed royalty statement."
+  }
 }

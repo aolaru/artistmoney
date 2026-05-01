@@ -12,6 +12,22 @@
     "Sampling, sync use, and short-form rediscovery can extend earnings."
   ],
   "related_songs": [
-    "goosebumps"
-  ]
+    "goosebumps",
+    "humble",
+    "gods-plan"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$4M-$12M/year",
+    "artist_or_estate_share": "$2M-$6M/year",
+    "label_master_share": "$1M-$3M/year",
+    "publishing_share": "$650K-$1.8M/year",
+    "songwriter_share": "$650K-$1.8M/year",
+    "assumptions": "Estimate models streaming-era rap scale, superstar features, playlist demand, and multi-writer publishing splits."
+  },
+  "ownership": {
+    "master_owner": "Major-label distributed master with artist-side participation",
+    "publishing_owner": "Publishing appears split across multiple writers, producers, and publishers",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed",
+    "notes": "Modeled annual range based on streaming and catalog behavior, not a public royalty statement."
+  }
 }

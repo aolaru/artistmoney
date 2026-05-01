@@ -2,12 +2,34 @@
   "name": "Mariah Carey",
   "slug": "mariah-carey",
   "estimated_income": "$15M-$45M/year",
-  "top_songs": ["all-i-want-for-christmas-is-you", "we-belong-together"],
+  "top_songs": [
+    "all-i-want-for-christmas-is-you",
+    "we-belong-together"
+  ],
   "genre": "Pop / R&B",
   "country": "United States",
   "active_since": "1990",
   "bio": "Mariah Carey's catalog remains exceptionally valuable because it combines evergreen seasonal income with major pop and R&B streaming demand.",
   "notable_for": "One of the strongest evergreen holiday songs in modern music plus a deep mainstream hit catalog.",
   "career_highlight": "All I Want for Christmas Is You resets her annual earnings profile every holiday season at a scale few catalogs can match.",
-  "revenue_drivers": ["seasonal catalog income", "catalog streaming", "publishing royalties", "licensing"]
+  "revenue_drivers": [
+    "seasonal catalog income",
+    "catalog streaming",
+    "publishing royalties",
+    "licensing"
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$35M-$95M/year",
+    "artist_or_estate_share": "$14M-$45M/year",
+    "label_share": "$10M-$28M/year",
+    "publisher_share": "$6M-$18M/year",
+    "writer_share": "$6M-$18M/year",
+    "assumptions": "Modeled from holiday-season catalog concentration, global pop/R&B streaming, publishing upside, and writer participation on key songs."
+  },
+  "ownership": {
+    "master_owner": "Major-label masters with artist-side royalty participation",
+    "publishing_owner": "Publishing appears unusually valuable because Carey is a writer on major catalog assets",
+    "catalog_sale_status": "No broad catalog sale adjustment is modeled",
+    "notes": "Seasonal concentration can make annual results more volatile than ordinary catalog pages."
+  }
 }

@@ -12,5 +12,19 @@
   "related_songs": [
     "blank-space",
     "shake-it-off"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$2.2M-$6.4M/year",
+    "artist_or_estate_share": "$1.1M-$3.2M/year",
+    "label_master_share": "$500K-$1.6M/year",
+    "publishing_share": "$350K-$1M/year",
+    "songwriter_share": "$350K-$1M/year",
+    "assumptions": "Estimate models current streaming scale, songwriter participation, and Midnights-era catalog replay."
+  },
+  "ownership": {
+    "master_owner": "Artist/label-distributed master economics with strong artist-side participation assumed",
+    "publishing_owner": "Publishing appears valuable because Swift is a primary songwriter",
+    "catalog_sale_status": "No song-specific sale adjustment is modeled",
+    "notes": "Modeled annual range, not a public royalty statement."
+  }
 }

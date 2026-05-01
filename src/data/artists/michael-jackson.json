@@ -2,7 +2,10 @@
   "name": "Michael Jackson",
   "slug": "michael-jackson",
   "estimated_income": "$25M-$90M/year",
-  "top_songs": ["billie-jean", "thriller"],
+  "top_songs": [
+    "billie-jean",
+    "thriller"
+  ],
   "genre": "Pop / R&B",
   "country": "United States",
   "active_since": "1971",
@@ -14,5 +17,19 @@
     "global playlist demand",
     "licensing and media reuse",
     "estate-led catalog management"
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$60M-$180M/year",
+    "artist_or_estate_share": "$25M-$90M/year",
+    "label_share": "$18M-$60M/year",
+    "publisher_share": "$8M-$28M/year",
+    "writer_share": "$6M-$24M/year",
+    "assumptions": "Modeled from estate-managed catalog scale, global streaming, publishing value, licensing demand, and long-running physical and compilation revenue."
+  },
+  "ownership": {
+    "master_owner": "Major-label and estate-linked catalog economics with estate-side participation",
+    "publishing_owner": "Publishing and writer-side economics remain material across the strongest songs",
+    "catalog_sale_status": "Estate-led catalog management and reported catalog transactions can materially change retained economics",
+    "notes": "This is an estate-side modeled range, not a disclosed royalty statement."
+  }
 }

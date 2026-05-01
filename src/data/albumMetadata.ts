@@ -11906,5 +11906,645 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/back-in-black/574050396?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=AC%2FDC%20Back%20in%20Black"
     }
+  },
+  "abba-arrival": {
+    "releaseDate": "1976-10-11",
+    "label": "Polar Music International AB",
+    "trackCount": 12,
+    "editionNote": "Arrival (Bonus Track Version)",
+    "links": {
+      "spotify": "https://open.spotify.com/search/ABBA%20Arrival",
+      "appleMusic": "https://music.apple.com/us/album/arrival-bonus-track-version/1440820126?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=ABBA%20Arrival"
+    },
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "When I Kissed the Teacher"
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Dancing Queen"
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "My Love, My Life"
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Dum Dum Diddle"
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Knowing Me, Knowing You"
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Money, Money, Money"
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "That’s Me"
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Why Did It Have to Be Me?"
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Tiger"
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Arrival"
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Fernando"
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Happy Hawaii"
+      }
+    ]
+  },
+  "bon-jovi-slippery-when-wet": {
+    "releaseDate": "1986-08-18",
+    "label": "The Island Def Jam Music Group",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Let It Rock",
+        "durationMs": 325267
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "You Give Love a Bad Name",
+        "durationMs": 222644
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Livin' On a Prayer",
+        "durationMs": 249581
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Social Disease",
+        "durationMs": 258313
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Wanted Dead or Alive",
+        "durationMs": 308344
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Raise Your Hands",
+        "durationMs": 256706
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Without Love",
+        "durationMs": 210849
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "I'd Die for You",
+        "durationMs": 270539
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Never Say Goodbye",
+        "durationMs": 288901
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Wild In the Streets",
+        "durationMs": 234856
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Bon%20Jovi%20Slippery%20When%20Wet",
+      "appleMusic": "https://music.apple.com/us/album/slippery-when-wet/1422954626?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Bon%20Jovi%20Slippery%20When%20Wet"
+    }
+  },
+  "fleetwood-mac-rumours": {
+    "releaseDate": "1977-02-04",
+    "label": "Warner Records Inc.",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Second Hand News",
+        "durationMs": 176307
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Dreams",
+        "durationMs": 257800
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Never Going Back Again",
+        "durationMs": 134400
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Don't Stop",
+        "durationMs": 193347
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Go Your Own Way",
+        "durationMs": 223613
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Songbird",
+        "durationMs": 200813
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "The Chain",
+        "durationMs": 268200
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "You Make Loving Fun",
+        "durationMs": 213693
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "I Don't Want to Know",
+        "durationMs": 196853
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Oh Daddy",
+        "durationMs": 236240
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Gold Dust Woman",
+        "durationMs": 295627
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Fleetwood%20Mac%20Rumours",
+      "appleMusic": "https://music.apple.com/us/album/rumours/594061854?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Fleetwood%20Mac%20Rumours"
+    }
+  },
+  "linkin-park-meteora": {
+    "releaseDate": "2003-03-25",
+    "label": "Warner Records Inc.",
+    "trackCount": 13,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Foreword",
+        "durationMs": 13387
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Don't Stay",
+        "durationMs": 188113
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Somewhere I Belong",
+        "durationMs": 214074
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Lying from You",
+        "durationMs": 175195
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Hit the Floor",
+        "durationMs": 164310
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Easier to Run",
+        "durationMs": 204184
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Faint",
+        "durationMs": 162206
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Figure.09",
+        "durationMs": 197627
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Breaking the Habit",
+        "durationMs": 196302
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "From the Inside",
+        "durationMs": 175647
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Nobody's Listening",
+        "durationMs": 179041
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Session",
+        "durationMs": 144829
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Numb",
+        "durationMs": 187508
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Linkin%20Park%20Meteora",
+      "appleMusic": "https://music.apple.com/us/album/meteora/528435845?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Linkin%20Park%20Meteora"
+    }
+  },
+  "bad-bunny-un-verano-sin-ti": {
+    "releaseDate": "2022-05-06",
+    "label": "Rimas Entertainment",
+    "trackCount": 23,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Moscow Mule"
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Después de la Playa"
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Me Porto Bonito"
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Tití Me Preguntó"
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Un Ratito"
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Yo No Soy Celoso"
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Tarot"
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Neverita"
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "La Corriente"
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Efecto"
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Party"
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Aguacero"
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Enséñame a Bailar"
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Ojitos Lindos"
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Dos Mil 16"
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "El Apagón"
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "Otro Atardecer"
+      },
+      {
+        "discNumber": 1,
+        "number": 18,
+        "title": "Un Coco"
+      },
+      {
+        "discNumber": 1,
+        "number": 19,
+        "title": "Andrea"
+      },
+      {
+        "discNumber": 1,
+        "number": 20,
+        "title": "Me Fui de Vacaciones"
+      },
+      {
+        "discNumber": 1,
+        "number": 21,
+        "title": "Un Verano Sin Ti"
+      },
+      {
+        "discNumber": 1,
+        "number": 22,
+        "title": "Agosto"
+      },
+      {
+        "discNumber": 1,
+        "number": 23,
+        "title": "Callaíta"
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Bad%20Bunny%20Un%20Verano%20Sin%20Ti",
+      "appleMusic": "https://music.apple.com/us/search?term=Bad%20Bunny%20Un%20Verano%20Sin%20Ti",
+      "youtubeMusic": "https://music.youtube.com/search?q=Bad%20Bunny%20Un%20Verano%20Sin%20Ti"
+    }
+  },
+  "ed-sheeran-divide": {
+    "releaseDate": "2017-03-03",
+    "label": "Asylum Records UK / Atlantic Records UK",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Eraser"
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Castle on the Hill"
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Dive"
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Shape of You"
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Perfect"
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Galway Girl"
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Happier"
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "New Man"
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Hearts Don’t Break Around Here"
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "What Do I Know?"
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "How Would You Feel (Paean)"
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Supermarket Flowers"
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Ed%20Sheeran%20%C3%B7",
+      "appleMusic": "https://music.apple.com/us/album/1193700601",
+      "youtubeMusic": "https://music.youtube.com/search?q=Ed%20Sheeran%20%C3%B7"
+    }
+  },
+  "pharrell-williams-g-i-r-l": {
+    "releaseDate": "2014-03-03",
+    "label": "Columbia Records",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Marilyn Monroe"
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Brand New"
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Hunter"
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Gush"
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Happy"
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Come Get It Bae"
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Gust of Wind"
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Lost Queen"
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Know Who You Are"
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "It Girl"
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Pharrell%20Williams%20G%20I%20R%20L",
+      "appleMusic": "https://music.apple.com/us/search?term=Pharrell%20Williams%20G%20I%20R%20L",
+      "youtubeMusic": "https://music.youtube.com/search?q=Pharrell%20Williams%20G%20I%20R%20L"
+    }
+  },
+  "the-eagles-hotel-california": {
+    "releaseDate": "1976-12-08",
+    "label": "Asylum Records. Marketed by Rhino Entertainment Company",
+    "trackCount": 9,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Hotel California",
+        "durationMs": 391357
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "New Kid In Town",
+        "durationMs": 304933
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Life In the Fast Lane",
+        "durationMs": 286218
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Wasted Time",
+        "durationMs": 296165
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Wasted Time (Reprise)",
+        "durationMs": 83386
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Victim of Love",
+        "durationMs": 250071
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Pretty Maids All In a Row",
+        "durationMs": 239328
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Try and Love Again",
+        "durationMs": 311058
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "The Last Resort",
+        "durationMs": 444366
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Eagles%20Hotel%20California",
+      "appleMusic": "https://music.apple.com/us/album/hotel-california/635770200?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Eagles%20Hotel%20California"
+    }
   }
 } as const;

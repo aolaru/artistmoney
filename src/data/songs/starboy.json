@@ -16,5 +16,15 @@
     "publishing_owner": "Publishing appears shared across creators, producers, and publishers",
     "catalog_sale_status": "No song-specific catalog sale adjustment is confirmed in this estimate",
     "notes": "This is an inferred gross-to-net range based on current streaming and catalog behavior, not a public royalty statement."
-  }
+  },
+  "revenue_drivers": [
+    "Streaming volume remains the largest recurring source of modeled revenue.",
+    "The Weeknd and Daft Punk association keeps the song useful across pop, R&B, and electronic-adjacent playlists.",
+    "Catalog replay and brand-like title recognition support long-tail listener demand."
+  ],
+  "related_songs": [
+    "blinding-lights",
+    "save-your-tears",
+    "one-more-time"
+  ]
 }
