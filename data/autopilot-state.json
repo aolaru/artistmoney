@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 23,
-    "album": 13
+    "song": 24,
+    "album": 14
   },
   "lastTouched": {
     "artist": {
@@ -213,7 +213,8 @@
       "girls-and-boys": "2026-05-01T21:48:43.527Z",
       "goosebumps": "2026-05-02T02:13:05.933Z",
       "have-you-ever-seen-the-rain": "2026-05-02T05:32:34.457Z",
-      "hey-jude": "2026-05-02T07:25:48.067Z"
+      "hey-jude": "2026-05-02T07:25:48.067Z",
+      "hyperballad": "2026-05-02T09:56:04.574Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -286,6 +287,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-02T09:56:04.574Z",
+      "summary": "song:hyperballad"
+    },
+    {
       "timestamp": "2026-05-02T07:25:48.067Z",
       "summary": "song:hey-jude"
     },
@@ -320,10 +325,6 @@
     {
       "timestamp": "2026-05-01T06:12:12.022Z",
       "summary": "song:dont-stop-me-now"
-    },
-    {
-      "timestamp": "2026-05-01T02:37:53.162Z",
-      "summary": "song:disco-2000, album:ac-dc-back-in-black"
     }
   ]
 }
