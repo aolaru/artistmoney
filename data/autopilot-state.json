@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 20,
-    "album": 10
+    "song": 21,
+    "album": 11
   },
   "lastTouched": {
     "artist": {
@@ -210,7 +210,8 @@
       "fools-gold": "2026-05-01T13:09:53.495Z",
       "fuck-tha-police": "2026-05-01T15:52:58.702Z",
       "get-it-on-tonite": "2026-05-01T19:05:23.631Z",
-      "girls-and-boys": "2026-05-01T21:48:43.527Z"
+      "girls-and-boys": "2026-05-01T21:48:43.527Z",
+      "goosebumps": "2026-05-02T02:13:05.933Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -283,6 +284,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-02T02:13:05.933Z",
+      "summary": "song:goosebumps"
+    },
+    {
       "timestamp": "2026-05-01T21:48:43.527Z",
       "summary": "song:girls-and-boys, album:america-hearts"
     },
@@ -317,10 +322,6 @@
     {
       "timestamp": "2026-04-30T19:13:11.914Z",
       "summary": "song:crazy-in-love"
-    },
-    {
-      "timestamp": "2026-04-30T16:15:44.868Z",
-      "summary": "song:come-on-my-selector"
     }
   ]
 }
