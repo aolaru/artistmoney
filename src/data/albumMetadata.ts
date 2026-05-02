@@ -12750,5 +12750,95 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/music-has-the-right-to-children/281116024?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Boards%20of%20Canada%20Music%20Has%20the%20Right%20to%20Children"
     }
+  },
+  "burial-untrue": {
+    "releaseDate": "2007-11-05",
+    "label": "Hyperdub",
+    "trackCount": 13,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Untitled",
+        "durationMs": 46213
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Archangel",
+        "durationMs": 238427
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Near Dark",
+        "durationMs": 234507
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Ghost Hardware",
+        "durationMs": 293093
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Endorphin",
+        "durationMs": 177333
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Etched Headplate",
+        "durationMs": 359760
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "In McDonalds",
+        "durationMs": 126091
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Untrue",
+        "durationMs": 376693
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Shell of Light",
+        "durationMs": 280533
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Dog Shelter",
+        "durationMs": 179213
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Homeless",
+        "durationMs": 320547
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Uk",
+        "durationMs": 100227
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Raver",
+        "durationMs": 299827
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Burial%20Untrue",
+      "appleMusic": "https://music.apple.com/us/album/untrue/893175779?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Burial%20Untrue"
+    }
   }
 } as const;

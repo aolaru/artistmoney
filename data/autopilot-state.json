@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 25,
-    "album": 15
+    "song": 26,
+    "album": 16
   },
   "lastTouched": {
     "artist": {
@@ -215,7 +215,8 @@
       "have-you-ever-seen-the-rain": "2026-05-02T05:32:34.457Z",
       "hey-jude": "2026-05-02T07:25:48.067Z",
       "hyperballad": "2026-05-02T09:56:04.574Z",
-      "i-want-to-know-what-love-is": "2026-05-02T12:59:43.486Z"
+      "i-want-to-know-what-love-is": "2026-05-02T12:59:43.486Z",
+      "iron-man": "2026-05-02T15:41:18.767Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -284,10 +285,15 @@
       "xzibit-restless": "2026-04-30T13:45:11.364Z",
       "ac-dc-back-in-black": "2026-05-01T02:37:53.162Z",
       "america-hearts": "2026-05-01T21:48:43.527Z",
-      "boards-of-canada-music-has-the-right-to-children": "2026-05-02T12:59:43.486Z"
+      "boards-of-canada-music-has-the-right-to-children": "2026-05-02T12:59:43.486Z",
+      "burial-untrue": "2026-05-02T15:41:18.767Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-02T15:41:18.767Z",
+      "summary": "song:iron-man, album:burial-untrue"
+    },
     {
       "timestamp": "2026-05-02T12:59:43.486Z",
       "summary": "song:i-want-to-know-what-love-is, album:boards-of-canada-music-has-the-right-to-children"
@@ -323,10 +329,6 @@
     {
       "timestamp": "2026-05-01T13:09:53.495Z",
       "summary": "song:fools-gold"
-    },
-    {
-      "timestamp": "2026-05-01T10:19:57.948Z",
-      "summary": "song:fell-on-black-days"
     }
   ]
 }
