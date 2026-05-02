@@ -12630,5 +12630,125 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/hearts/150058873?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=America%20Hearts"
     }
+  },
+  "boards-of-canada-music-has-the-right-to-children": {
+    "releaseDate": "1998-04-20",
+    "label": "Warp Records Limited",
+    "trackCount": 18,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Wildlife Analysis",
+        "durationMs": 75627
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "An Eagle In Your Mind",
+        "durationMs": 385520
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "The Color of the Fire",
+        "durationMs": 105627
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Telephasic Workshop",
+        "durationMs": 395480
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Triangles & Rhombuses",
+        "durationMs": 110413
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Sixtyten",
+        "durationMs": 348347
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Turquoise Hexagon Sun",
+        "durationMs": 307880
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Kaini Industries",
+        "durationMs": 59293
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Bocuma",
+        "durationMs": 95973
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Roygbiv",
+        "durationMs": 151520
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Rue the Whirl",
+        "durationMs": 399493
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Aquarius",
+        "durationMs": 358080
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Olson",
+        "durationMs": 91707
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Pete Standing Alone",
+        "durationMs": 367720
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Smokes Quantity",
+        "durationMs": 187320
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Open the Light",
+        "durationMs": 265027
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "One Very Important Thought",
+        "durationMs": 85053
+      },
+      {
+        "discNumber": 1,
+        "number": 18,
+        "title": "Happy Cycling",
+        "durationMs": 472520
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Boards%20of%20Canada%20Music%20Has%20the%20Right%20to%20Children",
+      "appleMusic": "https://music.apple.com/us/album/music-has-the-right-to-children/281116024?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Boards%20of%20Canada%20Music%20Has%20the%20Right%20to%20Children"
+    }
   }
 } as const;

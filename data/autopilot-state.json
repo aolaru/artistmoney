@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 24,
-    "album": 14
+    "song": 25,
+    "album": 15
   },
   "lastTouched": {
     "artist": {
@@ -214,7 +214,8 @@
       "goosebumps": "2026-05-02T02:13:05.933Z",
       "have-you-ever-seen-the-rain": "2026-05-02T05:32:34.457Z",
       "hey-jude": "2026-05-02T07:25:48.067Z",
-      "hyperballad": "2026-05-02T09:56:04.574Z"
+      "hyperballad": "2026-05-02T09:56:04.574Z",
+      "i-want-to-know-what-love-is": "2026-05-02T12:59:43.486Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -282,10 +283,15 @@
       "wu-tang-clan-enter-the-wu-tang-36-chambers": "2026-04-30T10:51:03.466Z",
       "xzibit-restless": "2026-04-30T13:45:11.364Z",
       "ac-dc-back-in-black": "2026-05-01T02:37:53.162Z",
-      "america-hearts": "2026-05-01T21:48:43.527Z"
+      "america-hearts": "2026-05-01T21:48:43.527Z",
+      "boards-of-canada-music-has-the-right-to-children": "2026-05-02T12:59:43.486Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-02T12:59:43.486Z",
+      "summary": "song:i-want-to-know-what-love-is, album:boards-of-canada-music-has-the-right-to-children"
+    },
     {
       "timestamp": "2026-05-02T09:56:04.574Z",
       "summary": "song:hyperballad"
@@ -321,10 +327,6 @@
     {
       "timestamp": "2026-05-01T10:19:57.948Z",
       "summary": "song:fell-on-black-days"
-    },
-    {
-      "timestamp": "2026-05-01T06:12:12.022Z",
-      "summary": "song:dont-stop-me-now"
     }
   ]
 }
