@@ -12840,5 +12840,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/untrue/893175779?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Burial%20Untrue"
     }
+  },
+  "cher-believe": {
+    "releaseDate": "1998-10-22",
+    "label": "All tracks 1998 Warner Music UK Ltd except track 10 1987 The David Geffen Company.",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Believe",
+        "durationMs": 239027
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "The Power",
+        "durationMs": 236360
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Runaway",
+        "durationMs": 286600
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "All or Nothing",
+        "durationMs": 238160
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Strong Enough",
+        "durationMs": 224000
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Dov'è L'amore",
+        "durationMs": 258307
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Takin' Back My Heart",
+        "durationMs": 272893
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Taxi Taxi",
+        "durationMs": 304040
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Love Is the Groove",
+        "durationMs": 271133
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "We All Sleep Alone",
+        "durationMs": 310667
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Cher%20Believe",
+      "appleMusic": "https://music.apple.com/us/album/believe/73273758?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Cher%20Believe"
+    }
   }
 } as const;
