@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 34,
-    "album": 24
+    "song": 35,
+    "album": 25
   },
   "lastTouched": {
     "artist": {
@@ -224,7 +224,8 @@
       "lovefool": "2026-05-03T07:55:13.686Z",
       "money-for-nothing": "2026-05-03T10:01:02.901Z",
       "my-favourite-game": "2026-05-03T12:59:19.687Z",
-      "november-rain": "2026-05-03T15:41:51.753Z"
+      "november-rain": "2026-05-03T15:41:51.753Z",
+      "organ-donor": "2026-05-03T18:52:43.341Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -301,6 +302,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-03T18:52:43.341Z",
+      "summary": "song:organ-donor"
+    },
+    {
       "timestamp": "2026-05-03T15:41:51.753Z",
       "summary": "song:november-rain, album:creedence-clearwater-revival-willy-and-the-poor-boys"
     },
@@ -335,10 +340,6 @@
     {
       "timestamp": "2026-05-02T15:41:18.767Z",
       "summary": "song:iron-man, album:burial-untrue"
-    },
-    {
-      "timestamp": "2026-05-02T12:59:43.486Z",
-      "summary": "song:i-want-to-know-what-love-is, album:boards-of-canada-music-has-the-right-to-children"
     }
   ]
 }
