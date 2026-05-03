@@ -145,10 +145,18 @@ const trustSignals = [
       )}
     </div>
     <div class="hero-panel" aria-label="Site summary">
-      <strong>{songs.length}</strong>
-      <span>songs tracked</span>
-      <span>{artists.length} artists</span>
-      <span>{albums.length} albums</span>
+      <a class="hero-stat-pill hero-stat-pill-primary" href={`${baseUrl}songs/`}>
+        <strong>{songs.length}</strong>
+        <span>songs tracked</span>
+      </a>
+      <a class="hero-stat-pill" href={`${baseUrl}artists/`}>
+        <strong>{artists.length}</strong>
+        <span>artists</span>
+      </a>
+      <a class="hero-stat-pill" href={`${baseUrl}albums/`}>
+        <strong>{albums.length}</strong>
+        <span>albums</span>
+      </a>
     </div>
   </section>
 
