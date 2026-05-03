@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 28,
-    "album": 18
+    "song": 29,
+    "album": 19
   },
   "lastTouched": {
     "artist": {
@@ -218,7 +218,8 @@
       "i-want-to-know-what-love-is": "2026-05-02T12:59:43.486Z",
       "iron-man": "2026-05-02T15:41:18.767Z",
       "just-like-heaven": "2026-05-02T18:52:36.993Z",
-      "konigsforst-5": "2026-05-02T21:35:54.952Z"
+      "konigsforst-5": "2026-05-02T21:35:54.952Z",
+      "like-a-stone": "2026-05-03T02:29:28.086Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -294,6 +295,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-03T02:29:28.086Z",
+      "summary": "song:like-a-stone"
+    },
+    {
       "timestamp": "2026-05-02T21:35:54.952Z",
       "summary": "song:konigsforst-5, album:cher-believe"
     },
@@ -328,10 +333,6 @@
     {
       "timestamp": "2026-05-01T21:48:43.527Z",
       "summary": "song:girls-and-boys, album:america-hearts"
-    },
-    {
-      "timestamp": "2026-05-01T19:05:23.631Z",
-      "summary": "song:get-it-on-tonite"
     }
   ]
 }
