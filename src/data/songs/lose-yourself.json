@@ -16,5 +16,15 @@
     "publishing_owner": "Songwriter and publisher economics remain a major value driver",
     "catalog_sale_status": "No sale assumption baked in",
     "notes": "For iconic soundtrack songs, licensing and cultural reuse can be as important as pure streaming."
-  }
+  },
+  "meaning_summary": "This track pairs a memorable hook with strong cultural recall, which helps explain its staying power and long-tail commercial value.",
+  "revenue_drivers": [
+    "Catalog streaming remains the main long-tail driver for recognizable rap tracks.",
+    "Playlist placement and cultural recall help the song stay active.",
+    "Sampling, sync use, and short-form rediscovery can extend earnings."
+  ],
+  "related_songs": [
+    "stan",
+    "without-me"
+  ]
 }
