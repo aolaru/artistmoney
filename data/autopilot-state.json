@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 33,
-    "album": 23
+    "song": 34,
+    "album": 24
   },
   "lastTouched": {
     "artist": {
@@ -223,7 +223,8 @@
       "lose-yourself": "2026-05-03T05:54:10.725Z",
       "lovefool": "2026-05-03T07:55:13.686Z",
       "money-for-nothing": "2026-05-03T10:01:02.901Z",
-      "my-favourite-game": "2026-05-03T12:59:19.687Z"
+      "my-favourite-game": "2026-05-03T12:59:19.687Z",
+      "november-rain": "2026-05-03T15:41:51.753Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -294,10 +295,15 @@
       "america-hearts": "2026-05-01T21:48:43.527Z",
       "boards-of-canada-music-has-the-right-to-children": "2026-05-02T12:59:43.486Z",
       "burial-untrue": "2026-05-02T15:41:18.767Z",
-      "cher-believe": "2026-05-02T21:35:54.952Z"
+      "cher-believe": "2026-05-02T21:35:54.952Z",
+      "creedence-clearwater-revival-willy-and-the-poor-boys": "2026-05-03T15:41:51.753Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-03T15:41:51.753Z",
+      "summary": "song:november-rain, album:creedence-clearwater-revival-willy-and-the-poor-boys"
+    },
     {
       "timestamp": "2026-05-03T12:59:19.687Z",
       "summary": "song:my-favourite-game"
@@ -333,10 +339,6 @@
     {
       "timestamp": "2026-05-02T12:59:43.486Z",
       "summary": "song:i-want-to-know-what-love-is, album:boards-of-canada-music-has-the-right-to-children"
-    },
-    {
-      "timestamp": "2026-05-02T09:56:04.574Z",
-      "summary": "song:hyperballad"
     }
   ]
 }

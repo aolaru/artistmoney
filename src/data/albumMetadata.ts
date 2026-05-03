@@ -12912,5 +12912,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/believe/73273758?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Cher%20Believe"
     }
+  },
+  "creedence-clearwater-revival-willy-and-the-poor-boys": {
+    "releaseDate": "1969-11-03",
+    "label": "Concord Music Group",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Down On the Corner",
+        "durationMs": 166899
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "It Came Out of the Sky",
+        "durationMs": 177132
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Cotton Fields",
+        "durationMs": 174513
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Poorboy Shuffle",
+        "durationMs": 144594
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Feelin' Blue",
+        "durationMs": 307702
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Fortunate Son",
+        "durationMs": 141772
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Don't Look Now",
+        "durationMs": 131792
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Midnight Special",
+        "durationMs": 253749
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Side o' the Road",
+        "durationMs": 204674
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Effigy",
+        "durationMs": 389328
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Creedence%20Clearwater%20Revival%20Willy%20and%20the%20Poor%20Boys",
+      "appleMusic": "https://music.apple.com/us/album/willy-and-the-poor-boys/1440950503?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Creedence%20Clearwater%20Revival%20Willy%20and%20the%20Poor%20Boys"
+    }
   }
 } as const;

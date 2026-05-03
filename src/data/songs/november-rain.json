@@ -4,5 +4,14 @@
   "artist": "guns-n-roses",
   "estimated_revenue": "$700K-$2.1M/year",
   "album": "Use Your Illusion I",
-  "year": 1991
+  "year": 1991,
+  "meaning_summary": "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay.",
+  "revenue_drivers": [
+    "Classic replay value and catalog streaming keep major rock songs relevant.",
+    "Cultural familiarity supports long-tail listener demand.",
+    "Sync placements and live-culture recognition help extend the song's revenue life."
+  ],
+  "related_songs": [
+    "sweet-child-o-mine"
+  ]
 }
