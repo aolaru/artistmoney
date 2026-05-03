@@ -360,7 +360,7 @@
     "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "George Michael",
       "slug": "george-michael",
@@ -416,7 +416,8 @@
           "careless-whisper"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
     "checked": true,
@@ -478,7 +479,7 @@
     ]
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Elton John",
       "slug": "elton-john",
@@ -534,10 +535,11 @@
           "rocket-man"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Cyndi Lauper",
       "slug": "cyndi-lauper",
@@ -593,7 +595,8 @@
           "girls-just-want-to-have-fun"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
     "checked": false,
