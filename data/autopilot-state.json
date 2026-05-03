@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 35,
-    "album": 25
+    "song": 36,
+    "album": 26
   },
   "lastTouched": {
     "artist": {
@@ -225,7 +225,8 @@
       "money-for-nothing": "2026-05-03T10:01:02.901Z",
       "my-favourite-game": "2026-05-03T12:59:19.687Z",
       "november-rain": "2026-05-03T15:41:51.753Z",
-      "organ-donor": "2026-05-03T18:52:43.341Z"
+      "organ-donor": "2026-05-03T18:52:43.341Z",
+      "paparazzi": "2026-05-03T21:37:26.316Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -302,6 +303,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-03T21:37:26.316Z",
+      "summary": "song:paparazzi"
+    },
+    {
       "timestamp": "2026-05-03T18:52:43.341Z",
       "summary": "song:organ-donor"
     },
@@ -336,10 +341,6 @@
     {
       "timestamp": "2026-05-02T18:52:36.993Z",
       "summary": "song:just-like-heaven"
-    },
-    {
-      "timestamp": "2026-05-02T15:41:18.767Z",
-      "summary": "song:iron-man, album:burial-untrue"
     }
   ]
 }
