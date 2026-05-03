@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 30,
-    "album": 20
+    "song": 31,
+    "album": 21
   },
   "lastTouched": {
     "artist": {
@@ -220,7 +220,8 @@
       "just-like-heaven": "2026-05-02T18:52:36.993Z",
       "konigsforst-5": "2026-05-02T21:35:54.952Z",
       "like-a-stone": "2026-05-03T02:29:28.086Z",
-      "lose-yourself": "2026-05-03T05:54:10.725Z"
+      "lose-yourself": "2026-05-03T05:54:10.725Z",
+      "lovefool": "2026-05-03T07:55:13.686Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -296,6 +297,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-03T07:55:13.686Z",
+      "summary": "song:lovefool"
+    },
+    {
       "timestamp": "2026-05-03T05:54:10.725Z",
       "summary": "song:lose-yourself"
     },
@@ -330,10 +335,6 @@
     {
       "timestamp": "2026-05-02T05:32:34.457Z",
       "summary": "song:have-you-ever-seen-the-rain"
-    },
-    {
-      "timestamp": "2026-05-02T02:13:05.933Z",
-      "summary": "song:goosebumps"
     }
   ]
 }

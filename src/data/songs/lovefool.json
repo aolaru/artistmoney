@@ -4,5 +4,14 @@
   "artist": "the-cardigans",
   "estimated_revenue": "$220K-$800K/year",
   "album": "First Band on the Moon",
-  "year": 1996
+  "year": 1996,
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can lift the baseline."
+  ],
+  "related_songs": [
+    "my-favourite-game"
+  ]
 }
