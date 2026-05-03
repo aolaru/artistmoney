@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 31,
-    "album": 21
+    "song": 32,
+    "album": 22
   },
   "lastTouched": {
     "artist": {
@@ -221,7 +221,8 @@
       "konigsforst-5": "2026-05-02T21:35:54.952Z",
       "like-a-stone": "2026-05-03T02:29:28.086Z",
       "lose-yourself": "2026-05-03T05:54:10.725Z",
-      "lovefool": "2026-05-03T07:55:13.686Z"
+      "lovefool": "2026-05-03T07:55:13.686Z",
+      "money-for-nothing": "2026-05-03T10:01:02.901Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -297,6 +298,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-03T10:01:02.901Z",
+      "summary": "song:money-for-nothing"
+    },
+    {
       "timestamp": "2026-05-03T07:55:13.686Z",
       "summary": "song:lovefool"
     },
@@ -331,10 +336,6 @@
     {
       "timestamp": "2026-05-02T07:25:48.067Z",
       "summary": "song:hey-jude"
-    },
-    {
-      "timestamp": "2026-05-02T05:32:34.457Z",
-      "summary": "song:have-you-ever-seen-the-rain"
     }
   ]
 }
