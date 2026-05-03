@@ -5,6 +5,7 @@ import { albumMetadata } from "../data/albumMetadata";
 import { artistArticles } from "../data/artistArticles";
 import { artistMetadata } from "../data/artistMetadata";
 import { songArticles } from "../data/songArticles";
+import { songPlatformMetrics, type SongPlatformMetrics } from "../data/platformMetrics";
 import { songPlayerMetadata } from "../data/songPlayerMetadata";
 import { songMetadata } from "../data/songMetadata";
 import { createArtistArtwork, getArtistPhoto, getArtistPhotos } from "./artistArtwork";
@@ -126,6 +127,7 @@ export type Song = SongJson & {
       youtubeMusic?: string;
     };
   };
+  platformMetrics?: SongPlatformMetrics;
   normalizedRevenue?: {
     artistSide: NormalizedRevenue | null;
     grossTrack: NormalizedRevenue | null;
@@ -224,6 +226,7 @@ export const songs: Song[] = parsedSongs
       meaning_summary: song.meaning_summary ?? supplemental?.meaningSummary,
       revenue_drivers: song.revenue_drivers ?? supplemental?.revenueDrivers,
       related_songs: song.related_songs ?? supplemental?.relatedSongs,
+      platformMetrics: songPlatformMetrics[song.slug],
       normalizedRevenue: {
         artistSide: normalizeRevenue(song.earnings?.artist_or_estate_share ?? song.estimated_revenue),
         grossTrack: normalizeRevenue(song.earnings?.gross_track_revenue)

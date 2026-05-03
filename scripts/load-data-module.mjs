@@ -2,7 +2,9 @@ import { readFile } from "node:fs/promises";
 import vm from "node:vm";
 
 function stripTypeDeclarations(source) {
-  return source.replace(/export type[\s\S]*?\n};\n/g, "");
+  return source
+    .replace(/^export type [^=;]+ = \{[\s\S]*?\n};\n?/gm, "")
+    .replace(/^export type [^=;]+ = [^;\n]+;\n?/gm, "");
 }
 
 function convertExportedConst(source, exportName) {

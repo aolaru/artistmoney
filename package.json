@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "build": "node scripts/audit-assets.mjs && node scripts/audit-page-quality.mjs && astro build && node scripts/finalize-build.mjs",
     "audit:quality": "node scripts/audit-page-quality.mjs",
+    "update:platform-metrics": "node scripts/update-platform-metrics.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

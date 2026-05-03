@@ -166,6 +166,26 @@ const revenueBars = revenueBarCandidates.map((entry) => ({
   ...entry,
   width: revenueBarsMax > 0 ? Math.max(18, Math.round((entry.midpoint / revenueBarsMax) * 100)) : 100
 }));
+const numberFormatter = new Intl.NumberFormat("en-US");
+const platformMetrics = song.platformMetrics;
+const youtubeSourceLabels = {
+  official_video: "Official video",
+  official_audio: "Official audio",
+  lyric_video: "Lyric video",
+  topic: "YouTube topic"
+};
+const youtubeVideoUrl = platformMetrics?.youtubeVideoId
+  ? `https://www.youtube.com/watch?v=${platformMetrics.youtubeVideoId}`
+  : undefined;
+const spotifyTrackUrl = platformMetrics?.spotifyTrackId
+  ? `https://open.spotify.com/track/${platformMetrics.spotifyTrackId}`
+  : song.player?.links?.spotify;
+const hasPlatformSignals = Boolean(
+  platformMetrics?.spotifyPopularity !== undefined ||
+  platformMetrics?.youtubeViews !== undefined ||
+  platformMetrics?.spotifyTrackId ||
+  platformMetrics?.youtubeVideoId
+);
 const intentQuestions = [
   {
     question: `How much did ${song.title} make in total?`,
@@ -191,6 +211,7 @@ const lastUpdated = formatFreshnessDate(
     `src/data/songs/${song.slug}.json`,
     "src/data/songMetadata.ts",
     "src/data/songArticles.ts",
+    "src/data/platformMetrics.ts",
     "src/pages/song/[slug].astro"
   ])
 );
@@ -201,6 +222,10 @@ const songTrustItems = [
   { label: "Modeled artist-side range", value: leadRevenue },
   { label: "Gross track revenue", value: song.earnings?.gross_track_revenue ?? "Not separated on this page" },
   { label: "Ownership context", value: song.ownership ? "Included below" : "High-level only" },
+  {
+    label: "Platform signals",
+    value: hasPlatformSignals ? "Included below" : "Listening links only"
+  },
   { label: "Last updated", value: lastUpdated ?? "Current build" }
 ];
 const metadataBits = [
@@ -382,6 +407,53 @@ const songSchema = {
               ))}
             </div>
             <p class="results-note">Bars reflect modeled annual midpoint ranges, not audited royalty statements.</p>
+          </section>
+        )}
+
+        {hasPlatformSignals && (
+          <section aria-labelledby="platform-signals-title" class="platform-signals-section">
+            <h2 id="platform-signals-title">Platform Signals</h2>
+            <p class="results-note">
+              Public platform indicators, not complete streaming totals. Spotify exposes popularity, while YouTube exposes public video views.
+            </p>
+            <div class="platform-signal-grid">
+              <article class="platform-signal-card">
+                <div class="platform-signal-heading">
+                  <span>Spotify</span>
+                  {spotifyTrackUrl && <a href={spotifyTrackUrl} rel="noreferrer" target="_blank">Open</a>}
+                </div>
+                {platformMetrics?.spotifyPopularity !== undefined ? (
+                  <>
+                    <strong>{platformMetrics.spotifyPopularity}/100 popularity</strong>
+                    <div class="platform-meter" aria-label={`Spotify popularity ${platformMetrics.spotifyPopularity} out of 100`}>
+                      <span style={`width: ${platformMetrics.spotifyPopularity}%`}></span>
+                    </div>
+                  </>
+                ) : (
+                  <p>Popularity score not checked yet.</p>
+                )}
+              </article>
+
+              <article class="platform-signal-card">
+                <div class="platform-signal-heading">
+                  <span>YouTube</span>
+                  {youtubeVideoUrl && <a href={youtubeVideoUrl} rel="noreferrer" target="_blank">Open</a>}
+                </div>
+                {platformMetrics?.youtubeViews !== undefined ? (
+                  <>
+                    <strong>{numberFormatter.format(platformMetrics.youtubeViews)} public views</strong>
+                    <p>{platformMetrics.youtubeSource ? youtubeSourceLabels[platformMetrics.youtubeSource] : "Tracked video"}</p>
+                  </>
+                ) : (
+                  <p>{platformMetrics?.youtubeVideoId ? "Official video configured; view count will appear after the API refresh runs." : "No tracked video yet."}</p>
+                )}
+              </article>
+            </div>
+            <p class="results-note">
+              {platformMetrics?.lastChecked
+                ? `Last platform refresh: ${platformMetrics.lastChecked}.`
+                : "Platform metrics are ready for refresh once API keys are configured."}
+            </p>
           </section>
         )}
 
