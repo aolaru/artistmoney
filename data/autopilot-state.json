@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 40,
-    "album": 30
+    "song": 41,
+    "album": 31
   },
   "lastTouched": {
     "artist": {
@@ -230,7 +230,8 @@
       "pop-4": "2026-05-04T02:28:01.623Z",
       "protect-ya-neck": "2026-05-04T06:07:47.341Z",
       "replica": "2026-05-04T11:02:20.516Z",
-      "roads": "2026-05-04T13:47:54.138Z"
+      "roads": "2026-05-04T13:47:54.138Z",
+      "sexyback": "2026-05-04T16:28:24.712Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -308,6 +309,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-04T16:28:24.712Z",
+      "summary": "song:sexyback"
+    },
+    {
       "timestamp": "2026-05-04T13:47:54.138Z",
       "summary": "song:roads"
     },
@@ -342,10 +347,6 @@
     {
       "timestamp": "2026-05-03T10:01:02.901Z",
       "summary": "song:money-for-nothing"
-    },
-    {
-      "timestamp": "2026-05-03T07:55:13.686Z",
-      "summary": "song:lovefool"
     }
   ]
 }
