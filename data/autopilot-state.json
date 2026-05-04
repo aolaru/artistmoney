@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 41,
-    "album": 31
+    "song": 42,
+    "album": 32
   },
   "lastTouched": {
     "artist": {
@@ -231,7 +231,8 @@
       "protect-ya-neck": "2026-05-04T06:07:47.341Z",
       "replica": "2026-05-04T11:02:20.516Z",
       "roads": "2026-05-04T13:47:54.138Z",
-      "sexyback": "2026-05-04T16:28:24.712Z"
+      "sexyback": "2026-05-04T16:28:24.712Z",
+      "sister-golden-hair": "2026-05-04T19:22:26.416Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -309,6 +310,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-04T19:22:26.416Z",
+      "summary": "song:sister-golden-hair"
+    },
+    {
       "timestamp": "2026-05-04T16:28:24.712Z",
       "summary": "song:sexyback"
     },
@@ -343,10 +348,6 @@
     {
       "timestamp": "2026-05-03T12:59:19.687Z",
       "summary": "song:my-favourite-game"
-    },
-    {
-      "timestamp": "2026-05-03T10:01:02.901Z",
-      "summary": "song:money-for-nothing"
     }
   ]
 }
