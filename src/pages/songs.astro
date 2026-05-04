@@ -2,12 +2,33 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { artists, getAlbumSlug, getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, songs } from "../lib/catalog";
 import { getLatestGitDate } from "../lib/freshness";
+import { getCatalogUpdates } from "../lib/updates";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const artistOptions = artists.map((artist) => ({ slug: artist.slug, name: artist.name }));
 const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.year / 10) * 10}s` : null)).filter(Boolean))].sort();
+const recentUpdates = getCatalogUpdates(20);
+
+function firstUpdateDateBySlug(slugLists: string[][]) {
+  const dates = new Map<string, string>();
+
+  slugLists.forEach((slugs, index) => {
+    const date = recentUpdates[index]?.date;
+    if (!date) return;
+    slugs.forEach((slug) => {
+      if (!dates.has(slug)) dates.set(slug, date);
+    });
+  });
+
+  return dates;
+}
+
+const newSongDates = firstUpdateDateBySlug(recentUpdates.map((entry) => entry.addedSongSlugs));
+const updatedSongDates = firstUpdateDateBySlug(
+  recentUpdates.map((entry) => entry.songSlugs.filter((slug) => !entry.addedSongSlugs.includes(slug)))
+);
 ---
 
 <BaseLayout
@@ -103,6 +124,8 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
           "src/data/songMetadata.ts",
           "src/data/songArticles.ts"
         ]) ?? "";
+        const newDate = newSongDates.get(song.slug);
+        const updatedDate = updatedSongDates.get(song.slug);
 
         return (
           <article
@@ -149,9 +172,14 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
                 </p>
               )}
               <div class="quality-chip-row">
+                {newDate ? (
+                  <span class="status-chip status-chip-new">NEW {newDate}</span>
+                ) : updatedDate ? (
+                  <span class="status-chip status-chip-updated">UPDATED {updatedDate}</span>
+                ) : null}
                 {hasSplitAware === "yes" && <span class="quality-chip">split-aware</span>}
                 {hasSourcedImage === "yes" && <span class="quality-chip">sourced image</span>}
-                {updated && <span class="quality-chip">updated {updated}</span>}
+                {updated && !newDate && !updatedDate && <span class="quality-chip">updated {updated}</span>}
               </div>
               <p>Estimated revenue: {song.estimated_revenue}</p>
             </div>

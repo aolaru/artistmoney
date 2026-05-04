@@ -3,12 +3,37 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { createAlbumArtwork } from "../lib/artistArtwork";
 import { albums, getAlbumConfidence, getConfidenceSummary } from "../lib/catalog";
 import { getLatestGitDate } from "../lib/freshness";
+import { getCatalogUpdates } from "../lib/updates";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
 const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(album.year / 10) * 10}s` : null)).filter(Boolean))].sort();
+const recentUpdates = getCatalogUpdates(20);
+const albumBySongSlug = new Map(
+  albums.flatMap((album) => album.trackListing.map((song) => [song.slug, album.slug] as const))
+);
+
+function firstAlbumDateFromSongUpdates(slugLists: string[][]) {
+  const dates = new Map<string, string>();
+
+  slugLists.forEach((songSlugs, index) => {
+    const date = recentUpdates[index]?.date;
+    if (!date) return;
+    songSlugs.forEach((songSlug) => {
+      const albumSlug = albumBySongSlug.get(songSlug);
+      if (albumSlug && !dates.has(albumSlug)) dates.set(albumSlug, date);
+    });
+  });
+
+  return dates;
+}
+
+const newAlbumDates = firstAlbumDateFromSongUpdates(recentUpdates.map((entry) => entry.addedSongSlugs));
+const updatedAlbumDates = firstAlbumDateFromSongUpdates(
+  recentUpdates.map((entry) => entry.songSlugs.filter((slug) => !entry.addedSongSlugs.includes(slug)))
+);
 ---
 
 <BaseLayout
@@ -83,6 +108,8 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
           "src/data/albumMetadata.ts",
           "src/data/songMetadata.ts"
         ]) ?? "";
+        const newDate = newAlbumDates.get(album.slug);
+        const updatedDate = updatedAlbumDates.get(album.slug);
         return (
           <article
             class="card artist-card"
@@ -125,8 +152,13 @@ const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(al
                   .join(" · ")}
               </p>
               <div class="quality-chip-row">
+                {newDate ? (
+                  <span class="status-chip status-chip-new">NEW {newDate}</span>
+                ) : updatedDate ? (
+                  <span class="status-chip status-chip-updated">UPDATED {updatedDate}</span>
+                ) : null}
                 {hasFullTracklist === "yes" && <span class="quality-chip">full tracklist</span>}
-                {updated && <span class="quality-chip">updated {updated}</span>}
+                {updated && !newDate && !updatedDate && <span class="quality-chip">updated {updated}</span>}
               </div>
               {album.estimatedRevenue && <p>Tracked song revenue: {album.estimatedRevenue}</p>}
               <p class="artist-card-meta">

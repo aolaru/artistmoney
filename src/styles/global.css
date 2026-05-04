@@ -543,6 +543,27 @@ mark {
   line-height: 1;
 }
 
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.66rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.status-chip-new {
+  background: rgba(219, 200, 116, 0.28);
+  color: #73570d;
+}
+
+.status-chip-updated {
+  background: rgba(30, 106, 97, 0.12);
+  color: var(--accent-strong);
+}
+
 .breadcrumbs {
   margin: 0 0 1rem;
 }
