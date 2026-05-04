@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 37,
-    "album": 27
+    "song": 38,
+    "album": 28
   },
   "lastTouched": {
     "artist": {
@@ -227,7 +227,8 @@
       "november-rain": "2026-05-03T15:41:51.753Z",
       "organ-donor": "2026-05-03T18:52:43.341Z",
       "paparazzi": "2026-05-03T21:37:26.316Z",
-      "pop-4": "2026-05-04T02:28:01.623Z"
+      "pop-4": "2026-05-04T02:28:01.623Z",
+      "protect-ya-neck": "2026-05-04T06:07:47.341Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -305,6 +306,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-04T06:07:47.341Z",
+      "summary": "song:protect-ya-neck"
+    },
+    {
       "timestamp": "2026-05-04T02:28:01.623Z",
       "summary": "song:pop-4, album:dire-straits-dire-straits"
     },
@@ -339,10 +344,6 @@
     {
       "timestamp": "2026-05-03T02:29:28.086Z",
       "summary": "song:like-a-stone"
-    },
-    {
-      "timestamp": "2026-05-02T21:35:54.952Z",
-      "summary": "song:konigsforst-5, album:cher-believe"
     }
   ]
 }
