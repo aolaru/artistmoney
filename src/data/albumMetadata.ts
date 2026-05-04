@@ -12984,5 +12984,71 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/willy-and-the-poor-boys/1440950503?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Creedence%20Clearwater%20Revival%20Willy%20and%20the%20Poor%20Boys"
     }
+  },
+  "dire-straits-dire-straits": {
+    "releaseDate": "1978-06-09",
+    "label": "Warner Records Inc.",
+    "trackCount": 9,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Down to the Waterline",
+        "durationMs": 242600
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Water of Love",
+        "durationMs": 326640
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Setting Me Up",
+        "durationMs": 199600
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Six Blade Knife",
+        "durationMs": 253427
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Southbound Again",
+        "durationMs": 179507
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Sultans of Swing",
+        "durationMs": 348760
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "In the Gallery",
+        "durationMs": 376707
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Wild West End",
+        "durationMs": 281600
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Lions",
+        "durationMs": 303827
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Dire%20Straits%20Dire%20Straits",
+      "appleMusic": "https://music.apple.com/us/album/dire-straits/307029087?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Dire%20Straits%20Dire%20Straits"
+    }
   }
 } as const;

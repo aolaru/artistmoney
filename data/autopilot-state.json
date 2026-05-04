@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 36,
-    "album": 26
+    "song": 37,
+    "album": 27
   },
   "lastTouched": {
     "artist": {
@@ -226,7 +226,8 @@
       "my-favourite-game": "2026-05-03T12:59:19.687Z",
       "november-rain": "2026-05-03T15:41:51.753Z",
       "organ-donor": "2026-05-03T18:52:43.341Z",
-      "paparazzi": "2026-05-03T21:37:26.316Z"
+      "paparazzi": "2026-05-03T21:37:26.316Z",
+      "pop-4": "2026-05-04T02:28:01.623Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -298,10 +299,15 @@
       "boards-of-canada-music-has-the-right-to-children": "2026-05-02T12:59:43.486Z",
       "burial-untrue": "2026-05-02T15:41:18.767Z",
       "cher-believe": "2026-05-02T21:35:54.952Z",
-      "creedence-clearwater-revival-willy-and-the-poor-boys": "2026-05-03T15:41:51.753Z"
+      "creedence-clearwater-revival-willy-and-the-poor-boys": "2026-05-03T15:41:51.753Z",
+      "dire-straits-dire-straits": "2026-05-04T02:28:01.623Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-04T02:28:01.623Z",
+      "summary": "song:pop-4, album:dire-straits-dire-straits"
+    },
     {
       "timestamp": "2026-05-03T21:37:26.316Z",
       "summary": "song:paparazzi"
@@ -337,10 +343,6 @@
     {
       "timestamp": "2026-05-02T21:35:54.952Z",
       "summary": "song:konigsforst-5, album:cher-believe"
-    },
-    {
-      "timestamp": "2026-05-02T18:52:36.993Z",
-      "summary": "song:just-like-heaven"
     }
   ]
 }
