@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 39,
-    "album": 29
+    "song": 40,
+    "album": 30
   },
   "lastTouched": {
     "artist": {
@@ -229,7 +229,8 @@
       "paparazzi": "2026-05-03T21:37:26.316Z",
       "pop-4": "2026-05-04T02:28:01.623Z",
       "protect-ya-neck": "2026-05-04T06:07:47.341Z",
-      "replica": "2026-05-04T11:02:20.516Z"
+      "replica": "2026-05-04T11:02:20.516Z",
+      "roads": "2026-05-04T13:47:54.138Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -307,6 +308,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-04T13:47:54.138Z",
+      "summary": "song:roads"
+    },
+    {
       "timestamp": "2026-05-04T11:02:20.516Z",
       "summary": "song:replica"
     },
@@ -341,10 +346,6 @@
     {
       "timestamp": "2026-05-03T07:55:13.686Z",
       "summary": "song:lovefool"
-    },
-    {
-      "timestamp": "2026-05-03T05:54:10.725Z",
-      "summary": "song:lose-yourself"
     }
   ]
 }
