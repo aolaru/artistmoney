@@ -13050,5 +13050,71 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/dire-straits/307029087?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Dire%20Straits%20Dire%20Straits"
     }
+  },
+  "elton-john-madman-across-the-water": {
+    "releaseDate": "1971-11-05",
+    "label": "This Record Company Ltd.",
+    "trackCount": 9,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Tiny Dancer",
+        "durationMs": 377200
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Levon",
+        "durationMs": 322653
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Razor Face",
+        "durationMs": 284800
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Madman Across the Water",
+        "durationMs": 358013
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Indian Sunset",
+        "durationMs": 407587
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Holiday Inn",
+        "durationMs": 257507
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Rotten Peaches",
+        "durationMs": 299160
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "All the Nasties",
+        "durationMs": 309973
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Goodbye",
+        "durationMs": 107690
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Elton%20John%20Madman%20Across%20the%20Water",
+      "appleMusic": "https://music.apple.com/us/album/madman-across-the-water/1440643462?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Elton%20John%20Madman%20Across%20the%20Water"
+    }
   }
 } as const;

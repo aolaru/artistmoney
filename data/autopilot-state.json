@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 42,
-    "album": 32
+    "song": 43,
+    "album": 33
   },
   "lastTouched": {
     "artist": {
@@ -232,7 +232,8 @@
       "replica": "2026-05-04T11:02:20.516Z",
       "roads": "2026-05-04T13:47:54.138Z",
       "sexyback": "2026-05-04T16:28:24.712Z",
-      "sister-golden-hair": "2026-05-04T19:22:26.416Z"
+      "sister-golden-hair": "2026-05-04T19:22:26.416Z",
+      "spaceman": "2026-05-04T21:56:16.944Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -305,10 +306,15 @@
       "burial-untrue": "2026-05-02T15:41:18.767Z",
       "cher-believe": "2026-05-02T21:35:54.952Z",
       "creedence-clearwater-revival-willy-and-the-poor-boys": "2026-05-03T15:41:51.753Z",
-      "dire-straits-dire-straits": "2026-05-04T02:28:01.623Z"
+      "dire-straits-dire-straits": "2026-05-04T02:28:01.623Z",
+      "elton-john-madman-across-the-water": "2026-05-04T21:56:16.944Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-04T21:56:16.944Z",
+      "summary": "song:spaceman, album:elton-john-madman-across-the-water"
+    },
     {
       "timestamp": "2026-05-04T19:22:26.416Z",
       "summary": "song:sister-golden-hair"
@@ -344,10 +350,6 @@
     {
       "timestamp": "2026-05-03T15:41:51.753Z",
       "summary": "song:november-rain, album:creedence-clearwater-revival-willy-and-the-poor-boys"
-    },
-    {
-      "timestamp": "2026-05-03T12:59:19.687Z",
-      "summary": "song:my-favourite-game"
     }
   ]
 }
