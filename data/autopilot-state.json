@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 44,
-    "album": 34
+    "song": 45,
+    "album": 35
   },
   "lastTouched": {
     "artist": {
@@ -234,7 +234,8 @@
       "sexyback": "2026-05-04T16:28:24.712Z",
       "sister-golden-hair": "2026-05-04T19:22:26.416Z",
       "spaceman": "2026-05-04T21:56:16.944Z",
-      "starboy": "2026-05-05T02:22:56.563Z"
+      "starboy": "2026-05-05T02:22:56.563Z",
+      "stronger": "2026-05-05T05:38:52.751Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -314,6 +315,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-05T05:38:52.751Z",
+      "summary": "song:stronger"
+    },
+    {
       "timestamp": "2026-05-05T02:22:56.563Z",
       "summary": "song:starboy, album:eurythmics-sweet-dreams-are-made-of-this"
     },
@@ -348,10 +353,6 @@
     {
       "timestamp": "2026-05-03T21:37:26.316Z",
       "summary": "song:paparazzi"
-    },
-    {
-      "timestamp": "2026-05-03T18:52:43.341Z",
-      "summary": "song:organ-donor"
     }
   ]
 }
