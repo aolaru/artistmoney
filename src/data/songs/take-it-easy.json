@@ -4,5 +4,16 @@
   "artist": "the-eagles",
   "estimated_revenue": "$500K-$1.5M/year",
   "album": "Eagles",
-  "year": 1972
+  "year": 1972,
+  "meaning_summary": "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay.",
+  "revenue_drivers": [
+    "Classic replay value and catalog streaming keep major rock songs relevant.",
+    "Cultural familiarity supports long-tail listener demand.",
+    "Sync placements and live-culture recognition help extend the song's revenue life."
+  ],
+  "related_songs": [
+    "best-of-my-love",
+    "desperado",
+    "hotel-california"
+  ]
 }
