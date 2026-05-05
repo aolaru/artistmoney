@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 43,
-    "album": 33
+    "song": 44,
+    "album": 34
   },
   "lastTouched": {
     "artist": {
@@ -233,7 +233,8 @@
       "roads": "2026-05-04T13:47:54.138Z",
       "sexyback": "2026-05-04T16:28:24.712Z",
       "sister-golden-hair": "2026-05-04T19:22:26.416Z",
-      "spaceman": "2026-05-04T21:56:16.944Z"
+      "spaceman": "2026-05-04T21:56:16.944Z",
+      "starboy": "2026-05-05T02:22:56.563Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -307,10 +308,15 @@
       "cher-believe": "2026-05-02T21:35:54.952Z",
       "creedence-clearwater-revival-willy-and-the-poor-boys": "2026-05-03T15:41:51.753Z",
       "dire-straits-dire-straits": "2026-05-04T02:28:01.623Z",
-      "elton-john-madman-across-the-water": "2026-05-04T21:56:16.944Z"
+      "elton-john-madman-across-the-water": "2026-05-04T21:56:16.944Z",
+      "eurythmics-sweet-dreams-are-made-of-this": "2026-05-05T02:22:56.563Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-05T02:22:56.563Z",
+      "summary": "song:starboy, album:eurythmics-sweet-dreams-are-made-of-this"
+    },
     {
       "timestamp": "2026-05-04T21:56:16.944Z",
       "summary": "song:spaceman, album:elton-john-madman-across-the-water"
@@ -346,10 +352,6 @@
     {
       "timestamp": "2026-05-03T18:52:43.341Z",
       "summary": "song:organ-donor"
-    },
-    {
-      "timestamp": "2026-05-03T15:41:51.753Z",
-      "summary": "song:november-rain, album:creedence-clearwater-revival-willy-and-the-poor-boys"
     }
   ]
 }

@@ -13116,5 +13116,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/madman-across-the-water/1440643462?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Elton%20John%20Madman%20Across%20the%20Water"
     }
+  },
+  "eurythmics-sweet-dreams-are-made-of-this": {
+    "releaseDate": "1983-01-04",
+    "label": "SONY BMG MUSIC ENTERTAINMENT (UK) Limited",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Love Is a Stranger",
+        "durationMs": 223467
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "I've Got an Angel",
+        "durationMs": 165400
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Wrap It Up",
+        "durationMs": 213933
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "I Could Give You (A Mirror)",
+        "durationMs": 230600
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "The Walk",
+        "durationMs": 282067
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Sweet Dreams (Are Made of This)",
+        "durationMs": 217093
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Jennifer",
+        "durationMs": 308333
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "This Is the House",
+        "durationMs": 300800
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Somebody Told Me",
+        "durationMs": 209627
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "This City Never Sleeps",
+        "durationMs": 400173
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Eurythmics%20Sweet%20Dreams%20(Are%20Made%20of%20This)",
+      "appleMusic": "https://music.apple.com/us/album/sweet-dreams-are-made-of-this/255965840?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Eurythmics%20Sweet%20Dreams%20(Are%20Made%20of%20This)"
+    }
   }
 } as const;
