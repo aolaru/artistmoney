@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 46,
-    "album": 36
+    "song": 47,
+    "album": 37
   },
   "lastTouched": {
     "artist": {
@@ -236,7 +236,8 @@
       "spaceman": "2026-05-04T21:56:16.944Z",
       "starboy": "2026-05-05T02:22:56.563Z",
       "stronger": "2026-05-05T05:38:52.751Z",
-      "take-it-easy": "2026-05-05T08:02:27.347Z"
+      "take-it-easy": "2026-05-05T08:02:27.347Z",
+      "the-next-episode": "2026-05-05T10:42:22.362Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -316,6 +317,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-05T10:42:22.362Z",
+      "summary": "song:the-next-episode"
+    },
+    {
       "timestamp": "2026-05-05T08:02:27.347Z",
       "summary": "song:take-it-easy"
     },
@@ -350,10 +355,6 @@
     {
       "timestamp": "2026-05-04T06:07:47.341Z",
       "summary": "song:protect-ya-neck"
-    },
-    {
-      "timestamp": "2026-05-04T02:28:01.623Z",
-      "summary": "song:pop-4, album:dire-straits-dire-straits"
     }
   ]
 }
