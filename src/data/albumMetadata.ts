@@ -13188,5 +13188,29 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/sweet-dreams-are-made-of-this/255965840?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Eurythmics%20Sweet%20Dreams%20(Are%20Made%20of%20This)"
     }
+  },
+  "genesis-invisible-touch": {
+    "releaseDate": "1986-01-01",
+    "label": "Rhino Entertainment Company",
+    "trackCount": 2,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Invisible Touch",
+        "durationMs": 207521
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "The Last Domino",
+        "durationMs": 377377
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Genesis%20Invisible%20Touch",
+      "appleMusic": "https://music.apple.com/us/album/invisible-touch-the-last-domino-digital-45/326623340?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Genesis%20Invisible%20Touch"
+    }
   }
 } as const;

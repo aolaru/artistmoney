@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 48,
-    "album": 38
+    "song": 49,
+    "album": 39
   },
   "lastTouched": {
     "artist": {
@@ -238,7 +238,8 @@
       "stronger": "2026-05-05T05:38:52.751Z",
       "take-it-easy": "2026-05-05T08:02:27.347Z",
       "the-next-episode": "2026-05-05T10:42:22.362Z",
-      "this-is-how-we-do-it": "2026-05-05T16:22:09.117Z"
+      "this-is-how-we-do-it": "2026-05-05T16:22:09.117Z",
+      "vl-al-5": "2026-05-05T19:12:42.204Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -313,10 +314,15 @@
       "creedence-clearwater-revival-willy-and-the-poor-boys": "2026-05-03T15:41:51.753Z",
       "dire-straits-dire-straits": "2026-05-04T02:28:01.623Z",
       "elton-john-madman-across-the-water": "2026-05-04T21:56:16.944Z",
-      "eurythmics-sweet-dreams-are-made-of-this": "2026-05-05T02:22:56.563Z"
+      "eurythmics-sweet-dreams-are-made-of-this": "2026-05-05T02:22:56.563Z",
+      "genesis-invisible-touch": "2026-05-05T19:12:42.204Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-05T19:12:42.204Z",
+      "summary": "song:vl-al-5, album:genesis-invisible-touch"
+    },
     {
       "timestamp": "2026-05-05T16:22:09.117Z",
       "summary": "song:this-is-how-we-do-it"
@@ -352,10 +358,6 @@
     {
       "timestamp": "2026-05-04T13:47:54.138Z",
       "summary": "song:roads"
-    },
-    {
-      "timestamp": "2026-05-04T11:02:20.516Z",
-      "summary": "song:replica"
     }
   ]
 }
