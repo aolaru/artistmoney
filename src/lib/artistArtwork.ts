@@ -848,6 +848,54 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
     localPath: "/images/artists/paul-mccartney.jpg",
     personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  timbaland: {
+    alt: "Timbaland speaking at Collision Conference in 2019",
+    src: localPhoto("timbaland.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Timbaland_(47903248821)_(cropped).jpg",
+    credit: "Photo by Collision Conf via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/timbaland.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "alicia-keys": {
+    alt: "Alicia Keys at the 2013 ARIA Music Awards",
+    src: localPhoto("alicia-keys.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:AliciaKeys2013.jpg",
+    credit: "Photo by Eva Rinaldi via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/alicia-keys.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "bee-gees": {
+    alt: "Bee Gees publicity photo from 1977",
+    src: localPhoto("bee-gees.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Bee_Gees_1977.JPG",
+    credit: "NBC Television publicity image via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Bee_Gees_1977.JPG",
+    localPath: "/images/artists/bee-gees.jpg"
+  },
+  "the-eagles": {
+    alt: "Eagles 1975 Asylum Records press photo",
+    src: localPhoto("the-eagles.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Eagles_1975_press_photo.png",
+    credit: "Asylum Records press photo via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Eagles_1975_press_photo.png",
+    localPath: "/images/artists/the-eagles.jpg"
+  },
+  "guns-n-roses": {
+    alt: "Guns N' Roses performing in London in 2017",
+    src: localPhoto("guns-n-roses.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:GunsNRoses160617-61_(35271773841).jpg",
+    credit: "Photo by Raph_PH via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/guns-n-roses.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
   }
 };
 
