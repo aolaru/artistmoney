@@ -10,6 +10,7 @@ export type AlbumMetadata = {
   label?: string;
   trackCount?: number;
   editionNote?: string;
+  contextNote?: string;
   fullTracklist?: AlbumTrack[];
   links?: {
     spotify?: string;
@@ -486,6 +487,7 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     "releaseDate": "2011-01-24",
     "label": "XL Recordings Ltd",
     "trackCount": 12,
+    "contextNote": "21 is a useful album benchmark because its tracked songs connect modern streaming scale with old-fashioned album durability: a compact vocal record that still behaves like a catalog blockbuster.",
     "fullTracklist": [
       {
         "discNumber": 1,
@@ -1383,6 +1385,37 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "spotify": "https://open.spotify.com/search/Beyonce%20Renaissance",
       "appleMusic": "https://music.apple.com/us/album/renaissance/1636789969?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Beyonce%20Renaissance"
+    }
+  },
+  "bee-gees-saturday-night-fever": {
+    "releaseDate": "1977-11-15",
+    "label": "RSO Records",
+    "trackCount": 17,
+    "editionNote": "Original motion picture soundtrack sequence",
+    "contextNote": "Saturday Night Fever is a soundtrack-scale catalog page: Bee Gees songs drive the core economics, but the release also captures how film, disco culture, and compilation sequencing can extend revenue beyond one artist page.",
+    "fullTracklist": [
+      { "discNumber": 1, "number": 1, "title": "Stayin' Alive" },
+      { "discNumber": 1, "number": 2, "title": "How Deep Is Your Love" },
+      { "discNumber": 1, "number": 3, "title": "Night Fever" },
+      { "discNumber": 1, "number": 4, "title": "More Than a Woman" },
+      { "discNumber": 1, "number": 5, "title": "If I Can't Have You" },
+      { "discNumber": 1, "number": 6, "title": "A Fifth of Beethoven" },
+      { "discNumber": 1, "number": 7, "title": "More Than a Woman" },
+      { "discNumber": 1, "number": 8, "title": "Manhattan Skyline" },
+      { "discNumber": 1, "number": 9, "title": "Calypso Breakdown" },
+      { "discNumber": 1, "number": 10, "title": "Night on Disco Mountain" },
+      { "discNumber": 1, "number": 11, "title": "Open Sesame" },
+      { "discNumber": 1, "number": 12, "title": "Jive Talkin'" },
+      { "discNumber": 1, "number": 13, "title": "You Should Be Dancing" },
+      { "discNumber": 1, "number": 14, "title": "Boogie Shoes" },
+      { "discNumber": 1, "number": 15, "title": "Salsation" },
+      { "discNumber": 1, "number": 16, "title": "K-Jee" },
+      { "discNumber": 1, "number": 17, "title": "Disco Inferno" }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Bee%20Gees%20Saturday%20Night%20Fever",
+      "appleMusic": "https://music.apple.com/us/search?term=Bee%20Gees%20Saturday%20Night%20Fever",
+      "youtubeMusic": "https://music.youtube.com/search?q=Bee%20Gees%20Saturday%20Night%20Fever"
     }
   },
   "billie-eilish-everything-i-wanted": {
@@ -4159,6 +4192,30 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "spotify": "https://open.spotify.com/search/Pearl%20Jam%20Ten",
       "appleMusic": "https://music.apple.com/us/album/live-on-ten-legs/412991821?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Pearl%20Jam%20Ten"
+    }
+  },
+  "pink-floyd-the-dark-side-of-the-moon": {
+    "releaseDate": "1973-03-01",
+    "label": "Harvest Records",
+    "trackCount": 10,
+    "editionNote": "Original studio album sequence",
+    "contextNote": "The Dark Side of the Moon is essential album context because its economics are album-led: the tracked songs sit inside one of rock's most durable full-release listening cycles.",
+    "fullTracklist": [
+      { "discNumber": 1, "number": 1, "title": "Speak to Me" },
+      { "discNumber": 1, "number": 2, "title": "Breathe (In the Air)" },
+      { "discNumber": 1, "number": 3, "title": "On the Run" },
+      { "discNumber": 1, "number": 4, "title": "Time" },
+      { "discNumber": 1, "number": 5, "title": "The Great Gig in the Sky" },
+      { "discNumber": 1, "number": 6, "title": "Money" },
+      { "discNumber": 1, "number": 7, "title": "Us and Them" },
+      { "discNumber": 1, "number": 8, "title": "Any Colour You Like" },
+      { "discNumber": 1, "number": 9, "title": "Brain Damage" },
+      { "discNumber": 1, "number": 10, "title": "Eclipse" }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Pink%20Floyd%20The%20Dark%20Side%20of%20the%20Moon",
+      "appleMusic": "https://music.apple.com/us/search?term=Pink%20Floyd%20The%20Dark%20Side%20of%20the%20Moon",
+      "youtubeMusic": "https://music.youtube.com/search?q=Pink%20Floyd%20The%20Dark%20Side%20of%20the%20Moon"
     }
   },
   "pink-floyd-the-wall": {
@@ -9173,6 +9230,7 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     "releaseDate": "1982-11-29",
     "label": "MJJ Productions Inc.",
     "trackCount": 9,
+    "contextNote": "Thriller is the clearest album-scale test case on the site: a short tracklist where multiple singles, video-era replay, sync demand, and estate-controlled catalog value all reinforce one another.",
     "fullTracklist": [
       {
         "discNumber": 1,
@@ -10185,6 +10243,7 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     "releaseDate": "1997-11-04",
     "label": "Mercury Records",
     "trackCount": 16,
+    "contextNote": "Come On Over is important because it bridges country, pop radio, and adult-contemporary replay, giving the album more catalog surfaces than a single-format country blockbuster.",
     "fullTracklist": [
       {
         "discNumber": 1,
@@ -11203,6 +11262,7 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     "releaseDate": "1976-02-17",
     "label": "Elektra Records",
     "trackCount": 10,
+    "contextNote": "Their Greatest Hits 1971-1975 works differently from a studio album: the page represents a concentrated catalog bundle where multiple already-evergreen songs compound the album's long-tail value.",
     "fullTracklist": [
       {
         "discNumber": 1,
@@ -11581,6 +11641,7 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     "releaseDate": "1992-11-17",
     "label": "Arista Records LLC",
     "trackCount": 12,
+    "contextNote": "The Bodyguard soundtrack is a useful hybrid page because its value is tied to both Whitney Houston's recorded catalog and the film soundtrack cycle that kept its lead songs culturally visible.",
     "fullTracklist": [
       {
         "discNumber": 1,
@@ -11838,7 +11899,8 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
   "ac-dc-back-in-black": {
     "releaseDate": "1980-07-25",
     "label": "Leidseplein Presse B.V.",
-    "trackCount": 11,
+    "trackCount": 10,
+    "contextNote": "Back in Black matters as a catalog page because the album is built around durable hard-rock standards rather than one isolated hit, so the tracked-song view captures only part of the release's long-run value.",
     "fullTracklist": [
       {
         "discNumber": 1,
@@ -12056,6 +12118,7 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     "releaseDate": "1977-02-04",
     "label": "Warner Records Inc.",
     "trackCount": 11,
+    "contextNote": "Rumours is one of the strongest catalog albums to model because its revenue is distributed across several durable songs, recurring sync interest, and decades of full-album replay.",
     "fullTracklist": [
       {
         "discNumber": 1,
@@ -12485,6 +12548,7 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     "releaseDate": "1976-12-08",
     "label": "Asylum Records. Marketed by Rhino Entertainment Company",
     "trackCount": 9,
+    "contextNote": "Hotel California is a compact album page where the title track anchors the economics, but the surrounding singles and classic-rock album identity keep the release valuable beyond one song.",
     "fullTracklist": [
       {
         "discNumber": 1,

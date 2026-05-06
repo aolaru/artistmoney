@@ -150,6 +150,7 @@ export type Album = {
     youtubeMusic?: string;
   };
   editionNote?: string;
+  contextNote?: string;
   songs: Song[];
   trackListing: Song[];
   fullTracklist?: Array<{
@@ -345,6 +346,7 @@ export const albums = [...albumEntries.values()].sort((left, right) => {
       amazonMusic: supplemental?.links?.amazonMusic ?? buildAmazonMusicSearchLink(album.artistName, album.title)
     },
     editionNote: supplemental?.editionNote,
+    contextNote: supplemental?.contextNote,
     fullTracklist: supplemental?.fullTracklist,
     revenueRange,
     normalizedRevenue: normalizeRevenue(album.estimatedRevenue),

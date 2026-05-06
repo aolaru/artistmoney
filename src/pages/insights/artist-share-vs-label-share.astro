@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout
+  title="Artist Share vs Label Share | How Much Music"
+  description="Why gross music revenue and artist-side take-home are different numbers."
+  type="article"
+>
+  <section>
+    <p class="eyebrow">Explainer</p>
+    <h1>Artist share vs label share</h1>
+    <p>
+      A song can generate a large gross revenue number while the artist keeps only part of it.
+      How Much Music separates gross track or catalog revenue from artist-side income because
+      labels, distributors, publishers, songwriters, managers, and recoupment terms can all sit
+      between the listener and the performer.
+    </p>
+  </section>
+
+  <section>
+    <h2>The simple version</h2>
+    <ul class="meta-list">
+      <li><strong>Gross revenue</strong> is the broader money pool attached to the recording, composition, or catalog.</li>
+      <li><strong>Label share</strong> usually sits on the master-recording side and can be meaningful for major-label releases.</li>
+      <li><strong>Artist share</strong> is the modeled take-home lane after relevant rights-holder splits and assumptions.</li>
+      <li><strong>Publishing share</strong> is separate from the master and may flow to songwriters, publishers, or catalog buyers.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Why the difference matters</h2>
+    <p>
+      Two songs can look similar on streaming charts but behave differently as income assets. A
+      self-controlled catalog, a favorable royalty contract, or retained publishing can make a
+      smaller gross number more valuable to the artist than a larger recording with heavy label or
+      publishing claims.
+    </p>
+    <p>
+      This is why artist pages and song pages on How Much Music show split-aware badges when the
+      estimate has enough structure to separate the artist-side and label-side ranges.
+    </p>
+  </section>
+
+  <section>
+    <h2>How to read the site</h2>
+    <ul class="meta-list">
+      <li>Use gross revenue as a scale signal, not as the artist's personal income.</li>
+      <li>Use artist-side estimates when comparing how valuable a catalog may be to the performer or estate.</li>
+      <li>Use label-side estimates to understand why recorded-music rights can remain valuable to companies and catalog buyers.</li>
+      <li>Check ownership notes because sales, publishing splits, and estate control can materially change the final picture.</li>
+    </ul>
+    <p>
+      For the broader model, read the <a href={`${baseUrl}insights/methodology/`}>full methodology</a>
+      and the <a href={`${baseUrl}insights/catalog-ownership/`}>catalog ownership explainer</a>.
+    </p>
+  </section>
+</BaseLayout>

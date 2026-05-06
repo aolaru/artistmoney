@@ -808,6 +808,46 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
     localPath: "/images/artists/justin-timberlake.jpg",
     personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "travis-scott": {
+    alt: "Travis Scott photographed in February 2023",
+    src: localPhoto("travis-scott.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Travis_Scott_2023.jpg",
+    credit: "Photo by AJ via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/travis-scott.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "elton-john": {
+    alt: "Elton John performing on the Farewell Yellow Brick Road tour in Toronto",
+    src: localPhoto("elton-john.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Elton_john_(48970556612).jpg",
+    credit: "Photo by John Bauld via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/elton-john.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "garth-brooks": {
+    alt: "Garth Brooks performing at the 2020 Library of Congress Gershwin Prize concert",
+    src: localPhoto("garth-brooks.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Garth_Brooks_(49627465292).jpg",
+    credit: "Photo by Shawn Miller / Library of Congress via Wikimedia Commons",
+    license: "CC0 1.0",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    localPath: "/images/artists/garth-brooks.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "paul-mccartney": {
+    alt: "Paul McCartney performing at Austin City Limits in 2018",
+    src: localPhoto("paul-mccartney.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:ACL18051018-169_(44619444435).jpg",
+    credit: "Photo by Raph_PH via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/paul-mccartney.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   }
 };
 

@@ -197,8 +197,9 @@ const albumSchema = {
           />
           <div class="artist-hero-copy">
             <p>
-              {album.title} groups the songs currently tracked from this release, adds release metadata where available,
-              and separates full-album context from the songs that already have dedicated earnings pages.
+              {album.contextNote ??
+                `${album.title} groups the songs currently tracked from this release, adds release metadata where available,
+                and separates full-album context from the songs that already have dedicated earnings pages.`}
             </p>
             {providerArtwork && (
               <p class="image-credit">
@@ -285,6 +286,7 @@ const albumSchema = {
 
         <section aria-labelledby="album-context-title">
           <h2 id="album-context-title">Why This Album Page Matters</h2>
+          {album.contextNote && <p>{album.contextNote}</p>}
           <ul class="song-bullet-list">
             {methodology.bullets.map((point) => (
               <li>{point}</li>
