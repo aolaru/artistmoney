@@ -13455,5 +13455,100 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/little-queen/193520066?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Heart%20Little%20Queen"
     }
+  },
+  "john-lennon-double-fantasy": {
+    "releaseDate": "1980-11-17",
+    "trackCount": 14,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "(Just Like) Starting Over",
+        "durationMs": 236688
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Kiss Kiss Kiss",
+        "durationMs": 161843
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Cleanup Time",
+        "durationMs": 178627
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Give Me Something",
+        "durationMs": 94891
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "I'm Losing You",
+        "durationMs": 237540
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "I'm Moving On",
+        "durationMs": 141440
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Beautiful Boy (Darling Boy)",
+        "durationMs": 245782
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Watching The Wheels",
+        "durationMs": 239646
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Yes, I'm Your Angel",
+        "durationMs": 189940
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Woman (Remastered 2010)",
+        "durationMs": 212780
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Beautiful Boys",
+        "durationMs": 175419
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Dear Yoko",
+        "durationMs": 154703
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Every Man Has A Woman Who Loves Him",
+        "durationMs": 241960
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Hard Times Are Over",
+        "durationMs": 199968
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/John%20Lennon%20Double%20Fantasy",
+      "appleMusic": "https://music.apple.com/us/album/double-fantasy/1440847446?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=John%20Lennon%20Double%20Fantasy"
+    }
   }
 } as const;

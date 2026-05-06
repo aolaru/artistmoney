@@ -2,5 +2,15 @@
   "title": "Champagne Supernova",
   "slug": "champagne-supernova",
   "artist": "oasis",
-  "estimated_revenue": "$500K-$1.5M/year"
+  "estimated_revenue": "$500K-$1.5M/year",
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can lift the baseline."
+  ],
+  "related_songs": [
+    "dont-look-back-in-anger",
+    "wonderwall"
+  ]
 }

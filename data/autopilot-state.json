@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 3,
-    "album": 46
+    "song": 4,
+    "album": 47
   },
   "lastTouched": {
     "artist": {
@@ -246,7 +246,8 @@
       "xtal": "2026-05-06T08:18:15.416Z",
       "99-problems": "2026-05-06T11:02:16.672Z",
       "avril-14th": "2026-05-06T13:57:01.805Z",
-      "black": "2026-05-06T16:24:34.425Z"
+      "black": "2026-05-06T16:24:34.425Z",
+      "champagne-supernova": "2026-05-06T19:30:12.460Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -323,10 +324,15 @@
       "elton-john-madman-across-the-water": "2026-05-04T21:56:16.944Z",
       "eurythmics-sweet-dreams-are-made-of-this": "2026-05-05T02:22:56.563Z",
       "genesis-invisible-touch": "2026-05-05T19:12:42.204Z",
-      "heart-little-queen": "2026-05-06T08:18:15.416Z"
+      "heart-little-queen": "2026-05-06T08:18:15.416Z",
+      "john-lennon-double-fantasy": "2026-05-06T19:30:12.460Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-06T19:30:12.460Z",
+      "summary": "song:champagne-supernova, album:john-lennon-double-fantasy"
+    },
     {
       "timestamp": "2026-05-06T16:24:34.425Z",
       "summary": "song:black"
@@ -362,10 +368,6 @@
     {
       "timestamp": "2026-05-05T16:22:09.117Z",
       "summary": "song:this-is-how-we-do-it"
-    },
-    {
-      "timestamp": "2026-05-05T10:42:22.362Z",
-      "summary": "song:the-next-episode"
     }
   ]
 }
