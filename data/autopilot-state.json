@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 51,
-    "album": 41
+    "song": 52,
+    "album": 42
   },
   "lastTouched": {
     "artist": {
@@ -241,7 +241,8 @@
       "this-is-how-we-do-it": "2026-05-05T16:22:09.117Z",
       "vl-al-5": "2026-05-05T19:12:42.204Z",
       "when-i-b-on-tha-mic": "2026-05-05T21:57:41.132Z",
-      "windowlicker": "2026-05-06T02:26:41.822Z"
+      "windowlicker": "2026-05-06T02:26:41.822Z",
+      "work": "2026-05-06T05:53:00.044Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -322,6 +323,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-06T05:53:00.044Z",
+      "summary": "song:work"
+    },
+    {
       "timestamp": "2026-05-06T02:26:41.822Z",
       "summary": "song:windowlicker"
     },
@@ -356,10 +361,6 @@
     {
       "timestamp": "2026-05-04T21:56:16.944Z",
       "summary": "song:spaceman, album:elton-john-madman-across-the-water"
-    },
-    {
-      "timestamp": "2026-05-04T19:22:26.416Z",
-      "summary": "song:sister-golden-hair"
     }
   ]
 }
