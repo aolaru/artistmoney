@@ -10,7 +10,6 @@ export type AlbumMetadata = {
   label?: string;
   trackCount?: number;
   editionNote?: string;
-  contextNote?: string;
   fullTracklist?: AlbumTrack[];
   links?: {
     spotify?: string;
@@ -1394,23 +1393,91 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     "editionNote": "Original motion picture soundtrack sequence",
     "contextNote": "Saturday Night Fever is a soundtrack-scale catalog page: Bee Gees songs drive the core economics, but the release also captures how film, disco culture, and compilation sequencing can extend revenue beyond one artist page.",
     "fullTracklist": [
-      { "discNumber": 1, "number": 1, "title": "Stayin' Alive" },
-      { "discNumber": 1, "number": 2, "title": "How Deep Is Your Love" },
-      { "discNumber": 1, "number": 3, "title": "Night Fever" },
-      { "discNumber": 1, "number": 4, "title": "More Than a Woman" },
-      { "discNumber": 1, "number": 5, "title": "If I Can't Have You" },
-      { "discNumber": 1, "number": 6, "title": "A Fifth of Beethoven" },
-      { "discNumber": 1, "number": 7, "title": "More Than a Woman" },
-      { "discNumber": 1, "number": 8, "title": "Manhattan Skyline" },
-      { "discNumber": 1, "number": 9, "title": "Calypso Breakdown" },
-      { "discNumber": 1, "number": 10, "title": "Night on Disco Mountain" },
-      { "discNumber": 1, "number": 11, "title": "Open Sesame" },
-      { "discNumber": 1, "number": 12, "title": "Jive Talkin'" },
-      { "discNumber": 1, "number": 13, "title": "You Should Be Dancing" },
-      { "discNumber": 1, "number": 14, "title": "Boogie Shoes" },
-      { "discNumber": 1, "number": 15, "title": "Salsation" },
-      { "discNumber": 1, "number": 16, "title": "K-Jee" },
-      { "discNumber": 1, "number": 17, "title": "Disco Inferno" }
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Stayin' Alive"
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "How Deep Is Your Love"
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Night Fever"
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "More Than a Woman"
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "If I Can't Have You"
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "A Fifth of Beethoven"
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "More Than a Woman"
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Manhattan Skyline"
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Calypso Breakdown"
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Night on Disco Mountain"
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Open Sesame"
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Jive Talkin'"
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "You Should Be Dancing"
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Boogie Shoes"
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Salsation"
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "K-Jee"
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "Disco Inferno"
+      }
     ],
     "links": {
       "spotify": "https://open.spotify.com/search/Bee%20Gees%20Saturday%20Night%20Fever",
@@ -4201,16 +4268,56 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
     "editionNote": "Original studio album sequence",
     "contextNote": "The Dark Side of the Moon is essential album context because its economics are album-led: the tracked songs sit inside one of rock's most durable full-release listening cycles.",
     "fullTracklist": [
-      { "discNumber": 1, "number": 1, "title": "Speak to Me" },
-      { "discNumber": 1, "number": 2, "title": "Breathe (In the Air)" },
-      { "discNumber": 1, "number": 3, "title": "On the Run" },
-      { "discNumber": 1, "number": 4, "title": "Time" },
-      { "discNumber": 1, "number": 5, "title": "The Great Gig in the Sky" },
-      { "discNumber": 1, "number": 6, "title": "Money" },
-      { "discNumber": 1, "number": 7, "title": "Us and Them" },
-      { "discNumber": 1, "number": 8, "title": "Any Colour You Like" },
-      { "discNumber": 1, "number": 9, "title": "Brain Damage" },
-      { "discNumber": 1, "number": 10, "title": "Eclipse" }
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Speak to Me"
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Breathe (In the Air)"
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "On the Run"
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Time"
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "The Great Gig in the Sky"
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Money"
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Us and Them"
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Any Colour You Like"
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Brain Damage"
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Eclipse"
+      }
     ],
     "links": {
       "spotify": "https://open.spotify.com/search/Pink%20Floyd%20The%20Dark%20Side%20of%20the%20Moon",
@@ -13275,6 +13382,78 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "spotify": "https://open.spotify.com/search/Genesis%20Invisible%20Touch",
       "appleMusic": "https://music.apple.com/us/album/invisible-touch-the-last-domino-digital-45/326623340?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Genesis%20Invisible%20Touch"
+    }
+  },
+  "heart-little-queen": {
+    "releaseDate": "1977-05-14",
+    "label": "Sony Music Entertainment Inc.",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Barracuda",
+        "durationMs": 261496
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Love Alive",
+        "durationMs": 261755
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Sylvan Song",
+        "durationMs": 132052
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Dream of the Archer",
+        "durationMs": 270108
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Kick It Out",
+        "durationMs": 159117
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Little Queen",
+        "durationMs": 311610
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Treat Me Well",
+        "durationMs": 205096
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Say Hello",
+        "durationMs": 216259
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Cry to Me",
+        "durationMs": 169570
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Go On Cry",
+        "durationMs": 353385
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Heart%20Little%20Queen",
+      "appleMusic": "https://music.apple.com/us/album/little-queen/193520066?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Heart%20Little%20Queen"
     }
   }
 } as const;

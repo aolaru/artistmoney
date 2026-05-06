@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 52,
-    "album": 42
+    "song": 53,
+    "album": 43
   },
   "lastTouched": {
     "artist": {
@@ -242,7 +242,8 @@
       "vl-al-5": "2026-05-05T19:12:42.204Z",
       "when-i-b-on-tha-mic": "2026-05-05T21:57:41.132Z",
       "windowlicker": "2026-05-06T02:26:41.822Z",
-      "work": "2026-05-06T05:53:00.044Z"
+      "work": "2026-05-06T05:53:00.044Z",
+      "xtal": "2026-05-06T08:18:15.416Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -318,10 +319,15 @@
       "dire-straits-dire-straits": "2026-05-04T02:28:01.623Z",
       "elton-john-madman-across-the-water": "2026-05-04T21:56:16.944Z",
       "eurythmics-sweet-dreams-are-made-of-this": "2026-05-05T02:22:56.563Z",
-      "genesis-invisible-touch": "2026-05-05T19:12:42.204Z"
+      "genesis-invisible-touch": "2026-05-05T19:12:42.204Z",
+      "heart-little-queen": "2026-05-06T08:18:15.416Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-06T08:18:15.416Z",
+      "summary": "song:xtal, album:heart-little-queen"
+    },
     {
       "timestamp": "2026-05-06T05:53:00.044Z",
       "summary": "song:work"
@@ -357,10 +363,6 @@
     {
       "timestamp": "2026-05-05T02:22:56.563Z",
       "summary": "song:starboy, album:eurythmics-sweet-dreams-are-made-of-this"
-    },
-    {
-      "timestamp": "2026-05-04T21:56:16.944Z",
-      "summary": "song:spaceman, album:elton-john-madman-across-the-water"
     }
   ]
 }
