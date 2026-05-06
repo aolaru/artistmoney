@@ -174,6 +174,9 @@ const updatedArtistDates = firstUpdateDateBySlug(
         })()
       ))}
     </div>
+    <div class="directory-actions">
+      <button class="load-more-button" type="button" id="artist-load-more">Show more artists</button>
+    </div>
   </section>
 </BaseLayout>
 
@@ -190,8 +193,11 @@ const updatedArtistDates = firstUpdateDateBySlug(
     const artistNote = document.querySelector("#artist-results-note");
     const artistGrid = document.querySelector("#artist-card-grid");
     const activeFilters = document.querySelector("#artist-active-filters");
+    const loadMoreButton = document.querySelector("#artist-load-more");
+    const pageSize = 48;
+    let visibleLimit = pageSize;
 
-    if (!artistSearchInput || !artistGenreSelect || !artistCountrySelect || !artistConfidenceSelect || !artistSortSelect || !artistSplitSelect || !artistImageSelect || !artistNote || !artistGrid || !activeFilters) return;
+    if (!artistSearchInput || !artistGenreSelect || !artistCountrySelect || !artistConfidenceSelect || !artistSortSelect || !artistSplitSelect || !artistImageSelect || !artistNote || !artistGrid || !activeFilters || !loadMoreButton) return;
     if (artistSearchInput.dataset.filtersBound === "true") return;
 
     const syncUrl = () => {
@@ -241,6 +247,7 @@ const updatedArtistDates = firstUpdateDateBySlug(
         artistSplitSelect.value = "";
         artistImageSelect.value = "";
         artistSortSelect.value = "earnings";
+        visibleLimit = pageSize;
         applyArtistFilters();
       }, { once: true });
     };
@@ -254,7 +261,7 @@ const updatedArtistDates = firstUpdateDateBySlug(
       const image = artistImageSelect.value;
       const sort = artistSortSelect.value;
 
-      let visible = 0;
+      let matched = 0;
 
       artistCards.forEach((card) => {
         const matchesQuery = !query || card.dataset.search?.includes(query);
@@ -265,8 +272,8 @@ const updatedArtistDates = firstUpdateDateBySlug(
         const matchesImage = !image || card.dataset.hasRealImage === image;
         const show = Boolean(matchesQuery && matchesGenre && matchesCountry && matchesConfidence && matchesSplit && matchesImage);
 
-        card.classList.toggle("is-hidden", !show);
-        if (show) visible += 1;
+        if (show) matched += 1;
+        card.dataset.matchesFilter = show ? "yes" : "no";
       });
 
       const sortedCards = [...artistCards].sort((left, right) => {
@@ -290,9 +297,25 @@ const updatedArtistDates = firstUpdateDateBySlug(
 
       sortedCards.forEach((card) => artistGrid.appendChild(card));
 
-      artistNote.textContent = `Showing ${visible} artist${visible === 1 ? "" : "s"}`;
+      let shown = 0;
+      sortedCards.forEach((card) => {
+        const matches = card.dataset.matchesFilter === "yes";
+        const withinLimit = matches && shown < visibleLimit;
+        card.classList.toggle("is-hidden", !withinLimit);
+        if (matches && withinLimit) shown += 1;
+      });
+
+      artistNote.textContent = matched > shown
+        ? `Showing ${shown} of ${matched} artists`
+        : `Showing ${matched} artist${matched === 1 ? "" : "s"}`;
+      loadMoreButton.hidden = shown >= matched;
       renderActiveFilters();
       syncUrl();
+    };
+
+    const resetLimitAndApply = () => {
+      visibleLimit = pageSize;
+      applyArtistFilters();
     };
 
     const params = new URLSearchParams(window.location.search);
@@ -305,8 +328,13 @@ const updatedArtistDates = firstUpdateDateBySlug(
     artistSortSelect.value = params.get("sort") ?? "earnings";
 
     [artistSearchInput, artistGenreSelect, artistCountrySelect, artistConfidenceSelect, artistSortSelect, artistSplitSelect, artistImageSelect].forEach((element) => {
-      element.addEventListener("input", applyArtistFilters);
-      element.addEventListener("change", applyArtistFilters);
+      element.addEventListener("input", resetLimitAndApply);
+      element.addEventListener("change", resetLimitAndApply);
+    });
+
+    loadMoreButton.addEventListener("click", () => {
+      visibleLimit += pageSize;
+      applyArtistFilters();
     });
 
     artistSearchInput.dataset.filtersBound = "true";
