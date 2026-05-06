@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 1,
-    "album": 44
+    "song": 2,
+    "album": 45
   },
   "lastTouched": {
     "artist": {
@@ -244,7 +244,8 @@
       "windowlicker": "2026-05-06T02:26:41.822Z",
       "work": "2026-05-06T05:53:00.044Z",
       "xtal": "2026-05-06T08:18:15.416Z",
-      "99-problems": "2026-05-06T11:02:16.672Z"
+      "99-problems": "2026-05-06T11:02:16.672Z",
+      "avril-14th": "2026-05-06T13:57:01.805Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -326,6 +327,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-06T13:57:01.805Z",
+      "summary": "song:avril-14th"
+    },
+    {
       "timestamp": "2026-05-06T11:02:16.672Z",
       "summary": "song:99-problems"
     },
@@ -360,10 +365,6 @@
     {
       "timestamp": "2026-05-05T08:02:27.347Z",
       "summary": "song:take-it-easy"
-    },
-    {
-      "timestamp": "2026-05-05T05:38:52.751Z",
-      "summary": "song:stronger"
     }
   ]
 }
