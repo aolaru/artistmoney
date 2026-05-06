@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getArtistConfidence, getArtistVisual, getConfidenceSummary } from "../lib/catalog";
+import { artists, getArtistConfidence, getArtistVisual, getConfidenceSummary, songs } from "../lib/catalog";
 import { getLatestGitDate } from "../lib/freshness";
 import { getCatalogUpdates } from "../lib/updates";
 
@@ -29,6 +29,23 @@ const newArtistDates = firstUpdateDateBySlug(recentUpdates.map((entry) => entry.
 const updatedArtistDates = firstUpdateDateBySlug(
   recentUpdates.map((entry) => entry.artistSlugs.filter((slug) => !entry.addedArtistSlugs.includes(slug)))
 );
+const artistBySlug = new Map(artists.map((artist) => [artist.slug, artist]));
+const songBySlug = new Map(songs.map((song) => [song.slug, song]));
+const latestNewArtists = [...new Set(recentUpdates.flatMap((entry) => entry.addedArtistSlugs))]
+  .map((slug) => artistBySlug.get(slug))
+  .filter(Boolean)
+  .slice(0, 6);
+const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
+  [
+    ...entry.artistSlugs.filter((slug) => !entry.addedArtistSlugs.includes(slug)),
+    ...entry.songSlugs
+      .map((slug) => songBySlug.get(slug)?.artist)
+      .filter(Boolean)
+  ]
+))]
+  .map((slug) => artistBySlug.get(slug))
+  .filter(Boolean)
+  .slice(0, 6);
 ---
 
 <BaseLayout
@@ -47,6 +64,36 @@ const updatedArtistDates = firstUpdateDateBySlug(
       <span>artists in How Much Music</span>
     </div>
   </section>
+
+  {(latestNewArtists.length > 0 || latestUpdatedArtists.length > 0) && (
+    <section class="directory-updates" aria-labelledby="artist-updates-title">
+      <div>
+        <p class="eyebrow">Catalog Activity</p>
+        <h2 id="artist-updates-title">Recently changed artists</h2>
+        <p class="results-note">Fresh additions and updated artist pages from the latest catalog releases.</p>
+      </div>
+      {latestNewArtists.length > 0 && (
+        <div class="directory-update-group">
+          <h3>New artist pages</h3>
+          <div class="update-links">
+            {latestNewArtists.map((artist) => (
+              <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+            ))}
+          </div>
+        </div>
+      )}
+      {latestUpdatedArtists.length > 0 && (
+        <div class="directory-update-group">
+          <h3>Recently updated</h3>
+          <div class="update-links">
+            {latestUpdatedArtists.map((artist) => (
+              <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+            ))}
+          </div>
+        </div>
+      )}
+    </section>
+  )}
 
   <section aria-labelledby="all-artists-title">
     <h2 id="all-artists-title">Artist Directory</h2>

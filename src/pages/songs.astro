@@ -29,6 +29,17 @@ const newSongDates = firstUpdateDateBySlug(recentUpdates.map((entry) => entry.ad
 const updatedSongDates = firstUpdateDateBySlug(
   recentUpdates.map((entry) => entry.songSlugs.filter((slug) => !entry.addedSongSlugs.includes(slug)))
 );
+const songBySlug = new Map(songs.map((song) => [song.slug, song]));
+const latestNewSongs = [...new Set(recentUpdates.flatMap((entry) => entry.addedSongSlugs))]
+  .map((slug) => songBySlug.get(slug))
+  .filter(Boolean)
+  .slice(0, 6);
+const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
+  entry.songSlugs.filter((slug) => !entry.addedSongSlugs.includes(slug))
+))]
+  .map((slug) => songBySlug.get(slug))
+  .filter(Boolean)
+  .slice(0, 6);
 ---
 
 <BaseLayout
@@ -47,6 +58,46 @@ const updatedSongDates = firstUpdateDateBySlug(
       <span>songs in How Much Music</span>
     </div>
   </section>
+
+  {(latestNewSongs.length > 0 || latestUpdatedSongs.length > 0) && (
+    <section class="directory-updates" aria-labelledby="song-updates-title">
+      <div>
+        <p class="eyebrow">Catalog Activity</p>
+        <h2 id="song-updates-title">Recently changed songs</h2>
+        <p class="results-note">Fresh additions and updated song pages from the latest catalog releases.</p>
+      </div>
+      {latestNewSongs.length > 0 && (
+        <div class="directory-update-group">
+          <h3>New song pages</h3>
+          <div class="update-links">
+            {latestNewSongs.map((song) => {
+              const artist = getArtist(song.artist);
+              return (
+                <a href={`${baseUrl}song/${song.slug}/`}>
+                  {song.title} <span>{artist?.name ?? song.artist}</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+      {latestUpdatedSongs.length > 0 && (
+        <div class="directory-update-group">
+          <h3>Recently updated</h3>
+          <div class="update-links">
+            {latestUpdatedSongs.map((song) => {
+              const artist = getArtist(song.artist);
+              return (
+                <a href={`${baseUrl}song/${song.slug}/`}>
+                  {song.title} <span>{artist?.name ?? song.artist}</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </section>
+  )}
 
   <section aria-labelledby="all-songs-title">
     <h2 id="all-songs-title">Song Directory</h2>
@@ -187,6 +238,9 @@ const updatedSongDates = firstUpdateDateBySlug(
         );
       })}
     </div>
+    <div class="directory-actions">
+      <button class="load-more-button" type="button" id="song-load-more">Show more songs</button>
+    </div>
   </section>
 </BaseLayout>
 
@@ -203,8 +257,11 @@ const updatedSongDates = firstUpdateDateBySlug(
     const songNote = document.querySelector("#song-results-note");
     const songGrid = document.querySelector("#song-card-grid");
     const activeFilters = document.querySelector("#song-active-filters");
+    const loadMoreButton = document.querySelector("#song-load-more");
+    const pageSize = 48;
+    let visibleLimit = pageSize;
 
-    if (!songSearchInput || !songArtistSelect || !songDecadeSelect || !songConfidenceSelect || !songSortSelect || !songSplitSelect || !songImageSelect || !songNote || !songGrid || !activeFilters) return;
+    if (!songSearchInput || !songArtistSelect || !songDecadeSelect || !songConfidenceSelect || !songSortSelect || !songSplitSelect || !songImageSelect || !songNote || !songGrid || !activeFilters || !loadMoreButton) return;
     if (songSearchInput.dataset.filtersBound === "true") return;
 
     const syncUrl = () => {
@@ -253,6 +310,7 @@ const updatedSongDates = firstUpdateDateBySlug(
         songSplitSelect.value = "";
         songImageSelect.value = "";
         songSortSelect.value = "earnings";
+        visibleLimit = pageSize;
         applySongFilters();
       }, { once: true });
     };
@@ -266,7 +324,7 @@ const updatedSongDates = firstUpdateDateBySlug(
       const image = songImageSelect.value;
       const sort = songSortSelect.value;
 
-      let visible = 0;
+      let matched = 0;
 
       songCards.forEach((card) => {
         const matchesQuery = !query || card.dataset.search?.includes(query);
@@ -277,8 +335,8 @@ const updatedSongDates = firstUpdateDateBySlug(
         const matchesImage = !image || card.dataset.hasImage === image;
         const show = Boolean(matchesQuery && matchesArtist && matchesDecade && matchesConfidence && matchesSplit && matchesImage);
 
-        card.classList.toggle("is-hidden", !show);
-        if (show) visible += 1;
+        if (show) matched += 1;
+        card.dataset.matchesFilter = show ? "yes" : "no";
       });
 
       const sortedCards = [...songCards].sort((left, right) => {
@@ -307,9 +365,25 @@ const updatedSongDates = firstUpdateDateBySlug(
 
       sortedCards.forEach((card) => songGrid.appendChild(card));
 
-      songNote.textContent = `Showing ${visible} song${visible === 1 ? "" : "s"}`;
+      let shown = 0;
+      sortedCards.forEach((card) => {
+        const matches = card.dataset.matchesFilter === "yes";
+        const withinLimit = matches && shown < visibleLimit;
+        card.classList.toggle("is-hidden", !withinLimit);
+        if (matches && withinLimit) shown += 1;
+      });
+
+      songNote.textContent = matched > shown
+        ? `Showing ${shown} of ${matched} songs`
+        : `Showing ${matched} song${matched === 1 ? "" : "s"}`;
+      loadMoreButton.hidden = shown >= matched;
       renderActiveFilters();
       syncUrl();
+    };
+
+    const resetLimitAndApply = () => {
+      visibleLimit = pageSize;
+      applySongFilters();
     };
 
     const params = new URLSearchParams(window.location.search);
@@ -322,8 +396,13 @@ const updatedSongDates = firstUpdateDateBySlug(
     songSortSelect.value = params.get("sort") ?? "earnings";
 
     [songSearchInput, songArtistSelect, songDecadeSelect, songConfidenceSelect, songSortSelect, songSplitSelect, songImageSelect].forEach((element) => {
-      element.addEventListener("input", applySongFilters);
-      element.addEventListener("change", applySongFilters);
+      element.addEventListener("input", resetLimitAndApply);
+      element.addEventListener("change", resetLimitAndApply);
+    });
+
+    loadMoreButton.addEventListener("click", () => {
+      visibleLimit += pageSize;
+      applySongFilters();
     });
 
     songSearchInput.dataset.filtersBound = "true";

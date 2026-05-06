@@ -34,6 +34,22 @@ const newAlbumDates = firstAlbumDateFromSongUpdates(recentUpdates.map((entry) =>
 const updatedAlbumDates = firstAlbumDateFromSongUpdates(
   recentUpdates.map((entry) => entry.songSlugs.filter((slug) => !entry.addedSongSlugs.includes(slug)))
 );
+const albumBySlug = new Map(albums.map((album) => [album.slug, album]));
+const latestNewAlbums = [...new Set(recentUpdates.flatMap((entry) =>
+  entry.addedSongSlugs.map((songSlug) => albumBySongSlug.get(songSlug)).filter(Boolean)
+))]
+  .map((slug) => albumBySlug.get(slug))
+  .filter(Boolean)
+  .slice(0, 6);
+const latestUpdatedAlbums = [...new Set(recentUpdates.flatMap((entry) =>
+  entry.songSlugs
+    .filter((slug) => !entry.addedSongSlugs.includes(slug))
+    .map((songSlug) => albumBySongSlug.get(songSlug))
+    .filter(Boolean)
+))]
+  .map((slug) => albumBySlug.get(slug))
+  .filter(Boolean)
+  .slice(0, 6);
 ---
 
 <BaseLayout
@@ -52,6 +68,40 @@ const updatedAlbumDates = firstAlbumDateFromSongUpdates(
       <span>albums with tracked songs</span>
     </div>
   </section>
+
+  {(latestNewAlbums.length > 0 || latestUpdatedAlbums.length > 0) && (
+    <section class="directory-updates" aria-labelledby="album-updates-title">
+      <div>
+        <p class="eyebrow">Catalog Activity</p>
+        <h2 id="album-updates-title">Recently changed albums</h2>
+        <p class="results-note">Albums touched by new tracked songs, richer tracklists, and release metadata updates.</p>
+      </div>
+      {latestNewAlbums.length > 0 && (
+        <div class="directory-update-group">
+          <h3>Newly represented albums</h3>
+          <div class="update-links">
+            {latestNewAlbums.map((album) => (
+              <a href={`${baseUrl}album/${album.slug}/`}>
+                {album.title} <span>{album.artistName}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+      {latestUpdatedAlbums.length > 0 && (
+        <div class="directory-update-group">
+          <h3>Recently updated</h3>
+          <div class="update-links">
+            {latestUpdatedAlbums.map((album) => (
+              <a href={`${baseUrl}album/${album.slug}/`}>
+                {album.title} <span>{album.artistName}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </section>
+  )}
 
   <section aria-labelledby="all-albums-title">
     <h2 id="all-albums-title">Album Directory</h2>
@@ -169,6 +219,9 @@ const updatedAlbumDates = firstAlbumDateFromSongUpdates(
         );
       })}
     </div>
+    <div class="directory-actions">
+      <button class="load-more-button" type="button" id="album-load-more">Show more albums</button>
+    </div>
   </section>
 </BaseLayout>
 
@@ -183,8 +236,11 @@ const updatedAlbumDates = firstAlbumDateFromSongUpdates(
     const albumNote = document.querySelector("#album-results-note");
     const albumGrid = document.querySelector("#album-card-grid");
     const activeFilters = document.querySelector("#album-active-filters");
+    const loadMoreButton = document.querySelector("#album-load-more");
+    const pageSize = 48;
+    let visibleLimit = pageSize;
 
-    if (!albumSearchInput || !albumDecadeSelect || !albumConfidenceSelect || !albumSortSelect || !albumTracklistSelect || !albumNote || !albumGrid || !activeFilters) return;
+    if (!albumSearchInput || !albumDecadeSelect || !albumConfidenceSelect || !albumSortSelect || !albumTracklistSelect || !albumNote || !albumGrid || !activeFilters || !loadMoreButton) return;
     if (albumSearchInput.dataset.filtersBound === "true") return;
 
     const syncUrl = () => {
@@ -227,6 +283,7 @@ const updatedAlbumDates = firstAlbumDateFromSongUpdates(
         albumConfidenceSelect.value = "";
         albumTracklistSelect.value = "";
         albumSortSelect.value = "earnings";
+        visibleLimit = pageSize;
         applyAlbumFilters();
       }, { once: true });
     };
@@ -238,7 +295,7 @@ const updatedAlbumDates = firstAlbumDateFromSongUpdates(
       const tracklist = albumTracklistSelect.value;
       const sort = albumSortSelect.value;
 
-      let visible = 0;
+      let matched = 0;
 
       albumCards.forEach((card) => {
         const matchesQuery = !query || card.dataset.search?.includes(query);
@@ -247,8 +304,8 @@ const updatedAlbumDates = firstAlbumDateFromSongUpdates(
         const matchesTracklist = !tracklist || card.dataset.hasTracklist === tracklist;
         const show = Boolean(matchesQuery && matchesDecade && matchesConfidence && matchesTracklist);
 
-        card.classList.toggle("is-hidden", !show);
-        if (show) visible += 1;
+        if (show) matched += 1;
+        card.dataset.matchesFilter = show ? "yes" : "no";
       });
 
       const sortedCards = [...albumCards].sort((left, right) => {
@@ -277,9 +334,25 @@ const updatedAlbumDates = firstAlbumDateFromSongUpdates(
 
       sortedCards.forEach((card) => albumGrid.appendChild(card));
 
-      albumNote.textContent = `Showing ${visible} album${visible === 1 ? "" : "s"}`;
+      let shown = 0;
+      sortedCards.forEach((card) => {
+        const matches = card.dataset.matchesFilter === "yes";
+        const withinLimit = matches && shown < visibleLimit;
+        card.classList.toggle("is-hidden", !withinLimit);
+        if (matches && withinLimit) shown += 1;
+      });
+
+      albumNote.textContent = matched > shown
+        ? `Showing ${shown} of ${matched} albums`
+        : `Showing ${matched} album${matched === 1 ? "" : "s"}`;
+      loadMoreButton.hidden = shown >= matched;
       renderActiveFilters();
       syncUrl();
+    };
+
+    const resetLimitAndApply = () => {
+      visibleLimit = pageSize;
+      applyAlbumFilters();
     };
 
     const params = new URLSearchParams(window.location.search);
@@ -290,8 +363,13 @@ const updatedAlbumDates = firstAlbumDateFromSongUpdates(
     albumSortSelect.value = params.get("sort") ?? "earnings";
 
     [albumSearchInput, albumDecadeSelect, albumConfidenceSelect, albumSortSelect, albumTracklistSelect].forEach((element) => {
-      element.addEventListener("input", applyAlbumFilters);
-      element.addEventListener("change", applyAlbumFilters);
+      element.addEventListener("input", resetLimitAndApply);
+      element.addEventListener("change", resetLimitAndApply);
+    });
+
+    loadMoreButton.addEventListener("click", () => {
+      visibleLimit += pageSize;
+      applyAlbumFilters();
     });
 
     albumSearchInput.dataset.filtersBound = "true";

@@ -166,6 +166,30 @@ function auditAlbum(album) {
   };
 }
 
+function buildArtistImagePriority(artists, artistImageSlugs) {
+  return sortByRevenue(artists, (artist) => artist.earnings?.artist_or_estate_share ?? artist.estimated_income)
+    .filter((artist) => !artistImageSlugs.has(artist.slug))
+    .slice(0, 25)
+    .map((artist, index) => {
+      const midpoint = parseRevenueMidpoint(artist.earnings?.artist_or_estate_share ?? artist.estimated_income);
+      const topSongCount = artist.top_songs?.length ?? 0;
+
+      return {
+        priority: index + 1,
+        slug: artist.slug,
+        name: artist.name,
+        midpoint,
+        estimatedIncome: artist.estimated_income,
+        reasons: compactIssueList([
+          "missing self-hosted artist photo",
+          midpoint ? "high modeled artist-side revenue" : null,
+          topSongCount >= 2 ? `${topSongCount} linked top songs` : null,
+          artist.genre ? `${artist.genre} catalog page` : null
+        ])
+      };
+    });
+}
+
 function summarize(entries) {
   const withIssues = entries.filter((entry) => entry.issues.length > 0);
 
@@ -188,6 +212,7 @@ async function main() {
   const songPlayerMetadata = await loadExportedDataModule(resolve("src/data/songPlayerMetadata.ts"), "songPlayerMetadata");
   const artistImageSlugs = getArtistImageSlugs();
   const albums = createAlbumEntries(songs, albumMetadata);
+  const artistImagePriority = buildArtistImagePriority(artists, artistImageSlugs);
 
   const topArtists = sortByRevenue(artists, (artist) => artist.earnings?.artist_or_estate_share ?? artist.estimated_income)
     .slice(0, TOP_LIMIT)
@@ -207,13 +232,15 @@ async function main() {
       songs: songs.length,
       albums: albums.length,
       selfHostedArtistPhotos: artistImageSlugs.size,
-      artistPhotoCoverage: Number((artistImageSlugs.size / artists.length).toFixed(3))
+      artistPhotoCoverage: Number((artistImageSlugs.size / artists.length).toFixed(3)),
+      missingArtistPhotos: artists.length - artistImageSlugs.size
     },
     summary: {
       artists: summarize(topArtists),
       songs: summarize(topSongs),
       albums: summarize(topAlbums)
     },
+    artistImagePriority,
     topArtists,
     topSongs,
     topAlbums
@@ -231,6 +258,9 @@ async function main() {
     `Page quality audit: ${issueCount} improvement flag(s) across top ${TOP_LIMIT} artist/song/album pages.`
   );
   console.log(`- Artist photo coverage: ${artistImageSlugs.size}/${artists.length}`);
+  if (artistImagePriority.length > 0) {
+    console.log(`- Next artist images: ${artistImagePriority.slice(0, 5).map((artist) => artist.name).join(", ")}`);
+  }
   console.log(`- Report: ${relative(process.cwd(), REPORT_PATH)}`);
 }
 

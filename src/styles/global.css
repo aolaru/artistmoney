@@ -594,6 +594,39 @@ mark {
   margin: 0 0 1rem;
 }
 
+.directory-updates {
+  display: grid;
+  gap: 1rem;
+  margin: 0 0 2.5rem;
+  padding: 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(30, 106, 97, 0.08), rgba(219, 200, 116, 0.12)),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.directory-update-group {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.directory-update-group h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.directory-update-group .update-links a {
+  gap: 0.35rem;
+}
+
+.directory-update-group .update-links span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .directory-actions {
   display: flex;
   justify-content: center;
