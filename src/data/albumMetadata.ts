@@ -13550,5 +13550,89 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/double-fantasy/1440847446?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=John%20Lennon%20Double%20Fantasy"
     }
+  },
+  "k-ci-and-jojo-love-always": {
+    "releaseDate": "1997-01-01",
+    "label": "Geffen Records",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Hbi",
+        "durationMs": 112067
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Last Night's Letter",
+        "durationMs": 278307
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Baby Come Back",
+        "durationMs": 256000
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Just for Your Love",
+        "durationMs": 308933
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Now and Forever",
+        "durationMs": 278800
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Don't Rush (Take Love Slowly)",
+        "durationMs": 193467
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "You Bring Me Up",
+        "durationMs": 263693
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Still Waiting",
+        "durationMs": 294707
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Love Ballad",
+        "durationMs": 234067
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "How Many Times (Will You Let Him Break Your Heart)",
+        "durationMs": 281227
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "All My Life",
+        "durationMs": 331240
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "How Could You",
+        "durationMs": 297827
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/K-Ci%20%26%20JoJo%20Love%20Always",
+      "appleMusic": "https://music.apple.com/us/album/love-always/1440488994?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=K-Ci%20%26%20JoJo%20Love%20Always"
+    }
   }
 } as const;

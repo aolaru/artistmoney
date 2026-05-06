@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 4,
-    "album": 47
+    "song": 5,
+    "album": 48
   },
   "lastTouched": {
     "artist": {
@@ -247,7 +247,8 @@
       "99-problems": "2026-05-06T11:02:16.672Z",
       "avril-14th": "2026-05-06T13:57:01.805Z",
       "black": "2026-05-06T16:24:34.425Z",
-      "champagne-supernova": "2026-05-06T19:30:12.460Z"
+      "champagne-supernova": "2026-05-06T19:30:12.460Z",
+      "comfortably-numb": "2026-05-06T21:52:49.140Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -325,10 +326,15 @@
       "eurythmics-sweet-dreams-are-made-of-this": "2026-05-05T02:22:56.563Z",
       "genesis-invisible-touch": "2026-05-05T19:12:42.204Z",
       "heart-little-queen": "2026-05-06T08:18:15.416Z",
-      "john-lennon-double-fantasy": "2026-05-06T19:30:12.460Z"
+      "john-lennon-double-fantasy": "2026-05-06T19:30:12.460Z",
+      "k-ci-and-jojo-love-always": "2026-05-06T21:52:49.140Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-06T21:52:49.140Z",
+      "summary": "song:comfortably-numb, album:k-ci-and-jojo-love-always"
+    },
     {
       "timestamp": "2026-05-06T19:30:12.460Z",
       "summary": "song:champagne-supernova, album:john-lennon-double-fantasy"
@@ -364,10 +370,6 @@
     {
       "timestamp": "2026-05-05T19:12:42.204Z",
       "summary": "song:vl-al-5, album:genesis-invisible-touch"
-    },
-    {
-      "timestamp": "2026-05-05T16:22:09.117Z",
-      "summary": "song:this-is-how-we-do-it"
     }
   ]
 }
