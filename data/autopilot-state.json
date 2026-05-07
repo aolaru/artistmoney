@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 8,
-    "album": 51
+    "song": 9,
+    "album": 52
   },
   "lastTouched": {
     "artist": {
@@ -251,7 +251,8 @@
       "comfortably-numb": "2026-05-06T21:52:49.140Z",
       "dear-mama": "2026-05-07T02:29:06.602Z",
       "dust-in-the-wind": "2026-05-07T05:57:17.451Z",
-      "everything-i-wanted": "2026-05-07T08:34:47.387Z"
+      "everything-i-wanted": "2026-05-07T08:34:47.387Z",
+      "friday-im-in-love": "2026-05-07T11:06:04.047Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -336,6 +337,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-07T11:06:04.047Z",
+      "summary": "song:friday-im-in-love"
+    },
+    {
       "timestamp": "2026-05-07T08:34:47.387Z",
       "summary": "song:everything-i-wanted"
     },
@@ -370,10 +375,6 @@
     {
       "timestamp": "2026-05-06T08:18:15.416Z",
       "summary": "song:xtal, album:heart-little-queen"
-    },
-    {
-      "timestamp": "2026-05-06T05:53:00.044Z",
-      "summary": "song:work"
     }
   ]
 }
