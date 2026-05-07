@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 7,
-    "album": 50
+    "song": 8,
+    "album": 51
   },
   "lastTouched": {
     "artist": {
@@ -250,7 +250,8 @@
       "champagne-supernova": "2026-05-06T19:30:12.460Z",
       "comfortably-numb": "2026-05-06T21:52:49.140Z",
       "dear-mama": "2026-05-07T02:29:06.602Z",
-      "dust-in-the-wind": "2026-05-07T05:57:17.451Z"
+      "dust-in-the-wind": "2026-05-07T05:57:17.451Z",
+      "everything-i-wanted": "2026-05-07T08:34:47.387Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -335,6 +336,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-07T08:34:47.387Z",
+      "summary": "song:everything-i-wanted"
+    },
+    {
       "timestamp": "2026-05-07T05:57:17.451Z",
       "summary": "song:dust-in-the-wind, album:kanye-west-my-beautiful-dark-twisted-fantasy"
     },
@@ -369,10 +374,6 @@
     {
       "timestamp": "2026-05-06T05:53:00.044Z",
       "summary": "song:work"
-    },
-    {
-      "timestamp": "2026-05-06T02:26:41.822Z",
-      "summary": "song:windowlicker"
     }
   ]
 }
