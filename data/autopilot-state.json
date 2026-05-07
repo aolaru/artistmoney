@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 10,
-    "album": 53
+    "song": 11,
+    "album": 54
   },
   "lastTouched": {
     "artist": {
@@ -253,7 +253,8 @@
       "dust-in-the-wind": "2026-05-07T05:57:17.451Z",
       "everything-i-wanted": "2026-05-07T08:34:47.387Z",
       "friday-im-in-love": "2026-05-07T11:06:04.047Z",
-      "gimme-gimme-gimme": "2026-05-07T13:55:03.969Z"
+      "gimme-gimme-gimme": "2026-05-07T13:55:03.969Z",
+      "halo": "2026-05-07T16:45:35.754Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -339,6 +340,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-07T16:45:35.754Z",
+      "summary": "song:halo"
+    },
+    {
       "timestamp": "2026-05-07T13:55:03.969Z",
       "summary": "song:gimme-gimme-gimme, album:mark-morrison-return-of-the-mack"
     },
@@ -373,10 +378,6 @@
     {
       "timestamp": "2026-05-06T13:57:01.805Z",
       "summary": "song:avril-14th"
-    },
-    {
-      "timestamp": "2026-05-06T11:02:16.672Z",
-      "summary": "song:99-problems"
     }
   ]
 }
