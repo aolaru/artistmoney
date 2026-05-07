@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 5,
-    "album": 48
+    "song": 6,
+    "album": 49
   },
   "lastTouched": {
     "artist": {
@@ -248,7 +248,8 @@
       "avril-14th": "2026-05-06T13:57:01.805Z",
       "black": "2026-05-06T16:24:34.425Z",
       "champagne-supernova": "2026-05-06T19:30:12.460Z",
-      "comfortably-numb": "2026-05-06T21:52:49.140Z"
+      "comfortably-numb": "2026-05-06T21:52:49.140Z",
+      "dear-mama": "2026-05-07T02:29:06.602Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -332,6 +333,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-07T02:29:06.602Z",
+      "summary": "song:dear-mama"
+    },
+    {
       "timestamp": "2026-05-06T21:52:49.140Z",
       "summary": "song:comfortably-numb, album:k-ci-and-jojo-love-always"
     },
@@ -366,10 +371,6 @@
     {
       "timestamp": "2026-05-05T21:57:41.132Z",
       "summary": "song:when-i-b-on-tha-mic"
-    },
-    {
-      "timestamp": "2026-05-05T19:12:42.204Z",
-      "summary": "song:vl-al-5, album:genesis-invisible-touch"
     }
   ]
 }
