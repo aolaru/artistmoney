@@ -13950,5 +13950,47 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Police%20Outlandos%20d'Amour",
       "amazonMusic": "https://music.amazon.com/search/The%20Police%20Outlandos%20d%27Amour?tag=kreativauto-20"
     }
+  },
+  "montell-jordan-this-is-how-we-do-it": {
+    "releaseDate": "1995-05-15",
+    "label": "Island Def Jam",
+    "trackCount": 5,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "This Is How We Do It (Tee's Club Mix)",
+        "durationMs": 315725
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "This Is How We Do It (Tee's Dub Mix)",
+        "durationMs": 288167
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "This Is How We Do It (Tee's Radio Mix)",
+        "durationMs": 219598
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "This Is How We Do It (Tee's Freeze)",
+        "durationMs": 316003
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "This Is How We Do It (Tee's Bonus Mix)",
+        "durationMs": 155481
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Montell%20Jordan%20This%20Is%20How%20We%20Do%20It",
+      "appleMusic": "https://music.apple.com/us/album/this-is-how-we-do-it-todd-terry-mixes-ep/1445278684?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Montell%20Jordan%20This%20Is%20How%20We%20Do%20It"
+    }
   }
 } as const;
