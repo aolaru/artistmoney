@@ -13730,5 +13730,95 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/my-beautiful-dark-twisted-fantasy/1443160553?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Kanye%20West%20My%20Beautiful%20Dark%20Twisted%20Fantasy"
     }
+  },
+  "mark-morrison-return-of-the-mack": {
+    "releaseDate": "1996-04-22",
+    "label": "Warner Music UK Ltd",
+    "trackCount": 13,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Home, Pt. 1 (Interlude)",
+        "durationMs": 69427
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Crazy",
+        "durationMs": 221733
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Let's Get Down",
+        "durationMs": 233733
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Get High With Me",
+        "durationMs": 238760
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Moan and Groan",
+        "durationMs": 327573
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Return of the Mack",
+        "durationMs": 213093
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "I Like",
+        "durationMs": 230293
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Trippin",
+        "durationMs": 285800
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Tears For You (feat. Mica Paris)",
+        "durationMs": 283933
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Horny (Radio Edit)",
+        "durationMs": 180200
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "I Really Love You",
+        "durationMs": 247107
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Crazy (D-Influence Mix)",
+        "durationMs": 262200
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Home, Pt. 2 (Interlude)",
+        "durationMs": 76027
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Mark%20Morrison%20Return%20of%20the%20Mack",
+      "appleMusic": "https://music.apple.com/us/album/return-of-the-mack/81902658?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Mark%20Morrison%20Return%20of%20the%20Mack"
+    }
   }
 } as const;
