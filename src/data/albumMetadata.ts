@@ -13634,5 +13634,101 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/love-always/1440488994?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=K-Ci%20%26%20JoJo%20Love%20Always"
     }
+  },
+  "kanye-west-my-beautiful-dark-twisted-fantasy": {
+    "releaseDate": "2010-01-01",
+    "label": "UMG Recordings",
+    "trackCount": 15,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Dark Fantasy",
+        "durationMs": 280760
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Gorgeous (feat. Kid Cudi & Raekwon)",
+        "durationMs": 357653
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Power",
+        "durationMs": 292093
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "All of the Lights (Interlude)",
+        "durationMs": 62267
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "All of the Lights",
+        "durationMs": 299600
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Monster (feat. JAŸ-Z, Rick Ross, Nicki Minaj & Bon Iver)",
+        "durationMs": 378853
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "So Appalled (feat. JAŸ-Z, Pusha T, Prynce Cy Hi, Swizz Beatz & RZA)",
+        "durationMs": 397787
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Devil In a New Dress (feat. Rick Ross)",
+        "durationMs": 352547
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Runaway (feat. Pusha T)",
+        "durationMs": 547667
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Hell of a Life",
+        "durationMs": 327827
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Blame Game (feat. John Legend)",
+        "durationMs": 469853
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Lost In the World (feat. Bon Iver)",
+        "durationMs": 256587
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Who Will Survive In America",
+        "durationMs": 98213
+      },
+      {
+        "discNumber": 2,
+        "number": 1,
+        "title": "See Me Now (feat. Beyoncé, Charlie Wilson & Big Sean) [Bonus Track]",
+        "durationMs": 363773
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Kanye%20West%20My%20Beautiful%20Dark%20Twisted%20Fantasy",
+      "appleMusic": "https://music.apple.com/us/album/my-beautiful-dark-twisted-fantasy/1443160553?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Kanye%20West%20My%20Beautiful%20Dark%20Twisted%20Fantasy"
+    }
   }
 } as const;

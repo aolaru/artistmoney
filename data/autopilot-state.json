@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 6,
-    "album": 49
+    "song": 7,
+    "album": 50
   },
   "lastTouched": {
     "artist": {
@@ -249,7 +249,8 @@
       "black": "2026-05-06T16:24:34.425Z",
       "champagne-supernova": "2026-05-06T19:30:12.460Z",
       "comfortably-numb": "2026-05-06T21:52:49.140Z",
-      "dear-mama": "2026-05-07T02:29:06.602Z"
+      "dear-mama": "2026-05-07T02:29:06.602Z",
+      "dust-in-the-wind": "2026-05-07T05:57:17.451Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -328,10 +329,15 @@
       "genesis-invisible-touch": "2026-05-05T19:12:42.204Z",
       "heart-little-queen": "2026-05-06T08:18:15.416Z",
       "john-lennon-double-fantasy": "2026-05-06T19:30:12.460Z",
-      "k-ci-and-jojo-love-always": "2026-05-06T21:52:49.140Z"
+      "k-ci-and-jojo-love-always": "2026-05-06T21:52:49.140Z",
+      "kanye-west-my-beautiful-dark-twisted-fantasy": "2026-05-07T05:57:17.451Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-07T05:57:17.451Z",
+      "summary": "song:dust-in-the-wind, album:kanye-west-my-beautiful-dark-twisted-fantasy"
+    },
     {
       "timestamp": "2026-05-07T02:29:06.602Z",
       "summary": "song:dear-mama"
@@ -367,10 +373,6 @@
     {
       "timestamp": "2026-05-06T02:26:41.822Z",
       "summary": "song:windowlicker"
-    },
-    {
-      "timestamp": "2026-05-05T21:57:41.132Z",
-      "summary": "song:when-i-b-on-tha-mic"
     }
   ]
 }
