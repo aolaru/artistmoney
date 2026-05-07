@@ -13820,5 +13820,135 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/return-of-the-mack/81902658?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Mark%20Morrison%20Return%20of%20the%20Mack"
     }
+  },
+  "the-police-synchronicity": {
+    "releaseDate": "1983-06-17",
+    "label": "A&M Records",
+    "trackCount": 10,
+    "editionNote": "Original studio album sequence.",
+    "contextNote": "Synchronicity is the Police album where one massive evergreen song and several durable album cuts combine into a strong catalog-replay page.",
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Synchronicity I"
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Walking in Your Footsteps"
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "O My God"
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Mother"
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Miss Gradenko"
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Synchronicity II"
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Every Breath You Take"
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "King of Pain"
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Wrapped Around Your Finger"
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Tea in the Sahara"
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Police%20Synchronicity",
+      "appleMusic": "https://music.apple.com/us/search?term=The%20Police%20Synchronicity",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Police%20Synchronicity",
+      "amazonMusic": "https://music.amazon.com/search/The%20Police%20Synchronicity?tag=kreativauto-20"
+    }
+  },
+  "the-police-outlandos-d-amour": {
+    "releaseDate": "1978-11-02",
+    "label": "A&M Records",
+    "trackCount": 10,
+    "editionNote": "Original studio album sequence.",
+    "contextNote": "Outlandos d'Amour is useful catalog context because it captures the Police's early punk-reggae identity before the band became a full crossover arena act.",
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Next to You"
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "So Lonely"
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Roxanne"
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Hole in My Life"
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Peanuts"
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Can't Stand Losing You"
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Truth Hits Everybody"
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Born in the 50's"
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Be My Girl - Sally"
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Masoko Tanga"
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Police%20Outlandos%20d'Amour",
+      "appleMusic": "https://music.apple.com/us/search?term=The%20Police%20Outlandos%20d%27Amour",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Police%20Outlandos%20d'Amour",
+      "amazonMusic": "https://music.amazon.com/search/The%20Police%20Outlandos%20d%27Amour?tag=kreativauto-20"
+    }
   }
 } as const;

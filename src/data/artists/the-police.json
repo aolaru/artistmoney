@@ -1,0 +1,34 @@
+{
+  "name": "The Police",
+  "slug": "the-police",
+  "estimated_income": "$4M-$14M/year",
+  "top_songs": [
+    "every-breath-you-take",
+    "roxanne"
+  ],
+  "genre": "Rock / New Wave",
+  "country": "United Kingdom",
+  "active_since": "1977",
+  "bio": "The Police still earn through one of the most durable late-1970s and 1980s catalogs, with songs that remain huge across streaming, sync, and global radio memory.",
+  "notable_for": "Cross-era rock songs with major long-tail replay, songwriter-side value, and licensing utility.",
+  "career_highlight": "Every Breath You Take remains one of the strongest recurring catalog songs from the 1980s.",
+  "revenue_drivers": [
+    "Evergreen streaming and classic-rock playlist demand sustain recurring listening.",
+    "Heavy sync and media reuse keep the biggest songs commercially active.",
+    "Strong songwriter-side value improves retained catalog economics."
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$9M-$30M/year",
+    "artist_or_estate_share": "$4M-$14M/year",
+    "label_share": "$2M-$8M/year",
+    "publisher_share": "$1M-$4M/year",
+    "writer_share": "$1.5M-$5M/year",
+    "assumptions": "Estimate models durable global streaming, classic-rock and new-wave replay, major sync utility, and unusually strong songwriter participation around the biggest songs."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing value appears especially material because Sting wrote the band's biggest recurring songs",
+    "catalog_sale_status": "No single catalog-sale adjustment is modeled on this page",
+    "notes": "The Police are modeled as a high-value catalog where songwriter-side economics can matter as much as recorded-master replay."
+  }
+}

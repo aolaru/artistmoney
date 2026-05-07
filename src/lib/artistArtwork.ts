@@ -896,6 +896,16 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
     localPath: "/images/artists/guns-n-roses.jpg",
     personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "the-police": {
+    alt: "The Police members Sting, Andy Summers, and Stewart Copeland",
+    src: localPhoto("the-police.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Police_Clockwise_(All_Members).jpg",
+    credit: "Composite by Ralph_PH, JosueJacob, JJ Le D, and Whoisjohngalt via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/the-police.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
   }
 };
 

@@ -1,0 +1,33 @@
+{
+  "title": "Roxanne",
+  "slug": "roxanne",
+  "artist": "the-police",
+  "estimated_revenue": "$450K-$1.6M/year",
+  "album": "Outlandos d'Amour",
+  "year": 1978,
+  "meaning_summary": "Roxanne remains commercially durable because its hook, vocal identity, and early Police sound still travel well across classic-rock, new-wave, and nostalgia listening.",
+  "revenue_drivers": [
+    "Classic-rock and nostalgia playlists support steady repeat listening.",
+    "Strong identity and recognizability help the song travel well in sync and catalog discovery.",
+    "Cross-generational replay keeps earnings resilient over time."
+  ],
+  "related_songs": [
+    "every-breath-you-take",
+    "boys-dont-cry",
+    "just-like-heaven"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1M-$3.5M/year",
+    "artist_or_estate_share": "$450K-$1.6M/year",
+    "label_master_share": "$250K-$950K/year",
+    "publishing_share": "$180K-$650K/year",
+    "songwriter_share": "$220K-$800K/year",
+    "assumptions": "Estimate models durable streaming, classic-rock playlist use, sync usefulness, and songwriter-side participation."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Publishing value appears materially tied to songwriter-side participation",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is an inferred annual range based on catalog behavior, not a public royalty statement."
+  }
+}

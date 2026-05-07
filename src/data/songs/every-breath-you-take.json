@@ -1,0 +1,33 @@
+{
+  "title": "Every Breath You Take",
+  "slug": "every-breath-you-take",
+  "artist": "the-police",
+  "estimated_revenue": "$1.2M-$4.5M/year",
+  "album": "Synchronicity",
+  "year": 1983,
+  "meaning_summary": "Every Breath You Take keeps earning because its instantly recognizable melody, massive radio memory, and repeated media reuse make it one of the clearest long-tail catalog earners in rock.",
+  "revenue_drivers": [
+    "Catalog streaming and radio familiarity sustain continuous replay.",
+    "Sync, interpolation, and media reuse materially extend earnings.",
+    "Strong global recognition keeps the song active across generations."
+  ],
+  "related_songs": [
+    "roxanne",
+    "everybody-wants-to-rule-the-world",
+    "enjoy-the-silence"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$2.8M-$9M/year",
+    "artist_or_estate_share": "$1.2M-$4.5M/year",
+    "label_master_share": "$700K-$2.5M/year",
+    "publishing_share": "$500K-$1.8M/year",
+    "songwriter_share": "$700K-$2.5M/year",
+    "assumptions": "Estimate reflects evergreen streaming, classic radio memory, sync demand, and the song's especially strong songwriter-side value."
+  },
+  "ownership": {
+    "master_owner": "Likely split between label-controlled masters and artist royalty participation",
+    "publishing_owner": "Writer-side value is materially tied to Sting's authorship",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is assumed here",
+    "notes": "This is a modeled gross-to-net range, not a public royalty statement."
+  }
+}

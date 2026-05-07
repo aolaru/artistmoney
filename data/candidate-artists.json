@@ -1838,7 +1838,8 @@
     ]
   },
   {
-    "checked": false,
+    "checked": true,
+    "checked_note": "Added manually to catalog on 2026-05-07.",
     "artist": {
       "name": "The Police",
       "slug": "the-police",

@@ -1048,5 +1048,27 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
       "youtubeMusic": "https://music.youtube.com/search?q=Queen%20Don't%20Stop%20Me%20Now",
       "appleMusic": "https://music.apple.com/us/album/dont-stop-me-now/1440650428?i=1440650733&uo=4"
     }
+  },
+  "every-breath-you-take": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/fe/e4/66/fee46681-9bbc-358a-ba0f-51d39feabf8b/mzaf_16980938720718099101.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/every-breath-you-take-remastered-2003/1440673959?i=1440674160&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/a4/67/ba/a467ba62-87df-9d10-98d2-c517f68ac870/16UMGIM60882.rgb.jpg/600x600bb.jpg",
+    "links": {
+      "appleMusic": "https://music.apple.com/us/album/every-breath-you-take-remastered-2003/1440673959?i=1440674160&uo=4",
+      "spotify": "https://open.spotify.com/search/The%20Police%20Every%20Breath%20You%20Take",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Police%20Every%20Breath%20You%20Take",
+      "amazonMusic": "https://music.amazon.com/search/The%20Police%20Every%20Breath%20You%20Take?tag=kreativauto-20"
+    }
+  },
+  "roxanne": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/e1/d7/c2/e1d7c2b3-8f62-b0a0-dad8-e2b53c1619c5/mzaf_4298174769759597967.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/roxanne-remastered-2003/1440797181?i=1440797616&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/47/de/29/47de29d9-5109-2020-d296-1021a7378574/16UMGIM60880.rgb.jpg/600x600bb.jpg",
+    "links": {
+      "appleMusic": "https://music.apple.com/us/album/roxanne-remastered-2003/1440797181?i=1440797616&uo=4",
+      "spotify": "https://open.spotify.com/search/The%20Police%20Roxanne",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Police%20Roxanne",
+      "amazonMusic": "https://music.amazon.com/search/The%20Police%20Roxanne?tag=kreativauto-20"
+    }
   }
 };
