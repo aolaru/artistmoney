@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 18,
-    "album": 61
+    "song": 19,
+    "album": 62
   },
   "lastTouched": {
     "artist": {
@@ -261,7 +261,8 @@
       "lithium": "2026-05-08T05:26:58.851Z",
       "man-in-the-box": "2026-05-08T07:22:47.283Z",
       "name-of-the-game": "2026-05-08T10:20:48.489Z",
-      "p-i-m-p": "2026-05-08T13:21:36.957Z"
+      "p-i-m-p": "2026-05-08T13:21:36.957Z",
+      "praise-you": "2026-05-08T16:13:56.561Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -350,6 +351,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-08T16:13:56.561Z",
+      "summary": "song:praise-you"
+    },
+    {
       "timestamp": "2026-05-08T13:21:36.957Z",
       "summary": "song:p-i-m-p"
     },
@@ -384,10 +389,6 @@
     {
       "timestamp": "2026-05-07T13:55:03.969Z",
       "summary": "song:gimme-gimme-gimme, album:mark-morrison-return-of-the-mack"
-    },
-    {
-      "timestamp": "2026-05-07T11:06:04.047Z",
-      "summary": "song:friday-im-in-love"
     }
   ]
 }
