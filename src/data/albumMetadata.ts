@@ -13992,5 +13992,71 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/this-is-how-we-do-it-todd-terry-mixes-ep/1445278684?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Montell%20Jordan%20This%20Is%20How%20We%20Do%20It"
     }
+  },
+  "new-order-brotherhood": {
+    "releaseDate": "1986-01-01",
+    "label": "Warner Records 90 Ltd",
+    "trackCount": 9,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Paradise",
+        "durationMs": 231840
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Weirdo",
+        "durationMs": 233133
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "As It Is When it Was",
+        "durationMs": 226787
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Broken Promise",
+        "durationMs": 227400
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Way of Life",
+        "durationMs": 246800
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Bizarre Love Triangle",
+        "durationMs": 261987
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "All Day Long",
+        "durationMs": 313333
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Angel Dust",
+        "durationMs": 223320
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Every Little Counts",
+        "durationMs": 268493
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/New%20Order%20Brotherhood",
+      "appleMusic": "https://music.apple.com/us/album/brotherhood/1040972118?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=New%20Order%20Brotherhood"
+    }
   }
 } as const;
