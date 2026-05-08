@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 20,
-    "album": 63
+    "song": 21,
+    "album": 64
   },
   "lastTouched": {
     "artist": {
@@ -263,7 +263,8 @@
       "name-of-the-game": "2026-05-08T10:20:48.489Z",
       "p-i-m-p": "2026-05-08T13:21:36.957Z",
       "praise-you": "2026-05-08T16:13:56.561Z",
-      "riders-on-the-storm": "2026-05-08T19:10:20.138Z"
+      "riders-on-the-storm": "2026-05-08T19:10:20.138Z",
+      "shook-ones-pt-ii": "2026-05-08T21:56:05.008Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -347,10 +348,15 @@
       "mark-morrison-return-of-the-mack": "2026-05-07T13:55:03.969Z",
       "montell-jordan-this-is-how-we-do-it": "2026-05-07T21:53:07.915Z",
       "new-order-brotherhood": "2026-05-08T05:26:58.851Z",
-      "olaru-ambitones-darker-trashed-mix": "2026-05-08T10:20:48.489Z"
+      "olaru-ambitones-darker-trashed-mix": "2026-05-08T10:20:48.489Z",
+      "prince-purple-rain": "2026-05-08T21:56:05.008Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-08T21:56:05.008Z",
+      "summary": "song:shook-ones-pt-ii, album:prince-purple-rain"
+    },
     {
       "timestamp": "2026-05-08T19:10:20.138Z",
       "summary": "song:riders-on-the-storm"
@@ -386,10 +392,6 @@
     {
       "timestamp": "2026-05-07T19:38:54.981Z",
       "summary": "song:hotline-bling"
-    },
-    {
-      "timestamp": "2026-05-07T16:45:35.754Z",
-      "summary": "song:halo"
     }
   ]
 }

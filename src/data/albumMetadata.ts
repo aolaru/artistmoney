@@ -14136,5 +14136,71 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/ambitones-darker-trashed-mix/1769006937?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Olaru%20Ambitones%20(Darker%20Trashed%20Mix)"
     }
+  },
+  "prince-purple-rain": {
+    "releaseDate": "1984-06-25",
+    "label": "Warner Records Inc.",
+    "trackCount": 9,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Let's Go Crazy",
+        "durationMs": 279240
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Take Me with U",
+        "durationMs": 234133
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "The Beautiful Ones",
+        "durationMs": 313960
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Computer Blue",
+        "durationMs": 239507
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Darling Nikki",
+        "durationMs": 254493
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "When Doves Cry",
+        "durationMs": 354133
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "I Would Die 4 U",
+        "durationMs": 169667
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Baby I'm a Star",
+        "durationMs": 264400
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Purple Rain",
+        "durationMs": 521867
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Prince%20Purple%20Rain",
+      "appleMusic": "https://music.apple.com/us/album/purple-rain/1746833068?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Prince%20Purple%20Rain"
+    }
   }
 } as const;
