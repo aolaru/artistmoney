@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 19,
-    "album": 62
+    "song": 20,
+    "album": 63
   },
   "lastTouched": {
     "artist": {
@@ -262,7 +262,8 @@
       "man-in-the-box": "2026-05-08T07:22:47.283Z",
       "name-of-the-game": "2026-05-08T10:20:48.489Z",
       "p-i-m-p": "2026-05-08T13:21:36.957Z",
-      "praise-you": "2026-05-08T16:13:56.561Z"
+      "praise-you": "2026-05-08T16:13:56.561Z",
+      "riders-on-the-storm": "2026-05-08T19:10:20.138Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -351,6 +352,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-08T19:10:20.138Z",
+      "summary": "song:riders-on-the-storm"
+    },
+    {
       "timestamp": "2026-05-08T16:13:56.561Z",
       "summary": "song:praise-you"
     },
@@ -385,10 +390,6 @@
     {
       "timestamp": "2026-05-07T16:45:35.754Z",
       "summary": "song:halo"
-    },
-    {
-      "timestamp": "2026-05-07T13:55:03.969Z",
-      "summary": "song:gimme-gimme-gimme, album:mark-morrison-return-of-the-mack"
     }
   ]
 }
