@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 15,
-    "album": 58
+    "song": 16,
+    "album": 59
   },
   "lastTouched": {
     "artist": {
@@ -258,7 +258,8 @@
       "hotline-bling": "2026-05-07T19:38:54.981Z",
       "if-you-leave-me-now": "2026-05-07T21:53:07.915Z",
       "kashmir": "2026-05-08T02:36:00.245Z",
-      "lithium": "2026-05-08T05:26:58.851Z"
+      "lithium": "2026-05-08T05:26:58.851Z",
+      "man-in-the-box": "2026-05-08T07:22:47.283Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -346,6 +347,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-08T07:22:47.283Z",
+      "summary": "song:man-in-the-box"
+    },
+    {
       "timestamp": "2026-05-08T05:26:58.851Z",
       "summary": "song:lithium, album:new-order-brotherhood"
     },
@@ -380,10 +385,6 @@
     {
       "timestamp": "2026-05-07T05:57:17.451Z",
       "summary": "song:dust-in-the-wind, album:kanye-west-my-beautiful-dark-twisted-fantasy"
-    },
-    {
-      "timestamp": "2026-05-07T02:29:06.602Z",
-      "summary": "song:dear-mama"
     }
   ]
 }
