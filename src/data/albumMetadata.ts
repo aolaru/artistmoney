@@ -14058,5 +14058,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/brotherhood/1040972118?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=New%20Order%20Brotherhood"
     }
+  },
+  "olaru-ambitones-darker-trashed-mix": {
+    "releaseDate": "2024-09-12",
+    "label": "Kreativ Sound",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Intro (Darker Trashed Mix)",
+        "durationMs": 101051
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Dystopian (Darker Trashed Mix)",
+        "durationMs": 151308
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Utopian (Darker Trashed Mix)",
+        "durationMs": 188006
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Flowers (Darker Trashed Mix)",
+        "durationMs": 196908
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Glitches (Darker Trashed Mix)",
+        "durationMs": 354797
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Nostalgia (Darker Trashed Mix)",
+        "durationMs": 248050
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Past (Darker Trashed Mix)",
+        "durationMs": 198182
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Sampling (Darker Trashed Mix)",
+        "durationMs": 152050
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Daci (Darker Trashed Mix)",
+        "durationMs": 124351
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Outro (Darker Trashed Mix)",
+        "durationMs": 134485
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Dolphins (Darker Trashed Mix)",
+        "durationMs": 317963
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Olaru%20Ambitones%20(Darker%20Trashed%20Mix)",
+      "appleMusic": "https://music.apple.com/us/album/ambitones-darker-trashed-mix/1769006937?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Olaru%20Ambitones%20(Darker%20Trashed%20Mix)"
+    }
   }
 } as const;

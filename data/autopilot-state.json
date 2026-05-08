@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 16,
-    "album": 59
+    "song": 17,
+    "album": 60
   },
   "lastTouched": {
     "artist": {
@@ -259,7 +259,8 @@
       "if-you-leave-me-now": "2026-05-07T21:53:07.915Z",
       "kashmir": "2026-05-08T02:36:00.245Z",
       "lithium": "2026-05-08T05:26:58.851Z",
-      "man-in-the-box": "2026-05-08T07:22:47.283Z"
+      "man-in-the-box": "2026-05-08T07:22:47.283Z",
+      "name-of-the-game": "2026-05-08T10:20:48.489Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -342,10 +343,15 @@
       "kanye-west-my-beautiful-dark-twisted-fantasy": "2026-05-07T05:57:17.451Z",
       "mark-morrison-return-of-the-mack": "2026-05-07T13:55:03.969Z",
       "montell-jordan-this-is-how-we-do-it": "2026-05-07T21:53:07.915Z",
-      "new-order-brotherhood": "2026-05-08T05:26:58.851Z"
+      "new-order-brotherhood": "2026-05-08T05:26:58.851Z",
+      "olaru-ambitones-darker-trashed-mix": "2026-05-08T10:20:48.489Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-08T10:20:48.489Z",
+      "summary": "song:name-of-the-game, album:olaru-ambitones-darker-trashed-mix"
+    },
     {
       "timestamp": "2026-05-08T07:22:47.283Z",
       "summary": "song:man-in-the-box"
@@ -381,10 +387,6 @@
     {
       "timestamp": "2026-05-07T08:34:47.387Z",
       "summary": "song:everything-i-wanted"
-    },
-    {
-      "timestamp": "2026-05-07T05:57:17.451Z",
-      "summary": "song:dust-in-the-wind, album:kanye-west-my-beautiful-dark-twisted-fantasy"
     }
   ]
 }
