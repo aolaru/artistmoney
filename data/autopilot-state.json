@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 25,
-    "album": 68
+    "song": 26,
+    "album": 69
   },
   "lastTouched": {
     "artist": {
@@ -268,7 +268,8 @@
       "stan": "2026-05-09T02:29:03.844Z",
       "survival-of-the-fittest": "2026-05-09T05:44:37.796Z",
       "the-sound-of-silence": "2026-05-09T07:50:23.308Z",
-      "we-belong-together": "2026-05-09T10:02:49.157Z"
+      "we-belong-together": "2026-05-09T10:02:49.157Z",
+      "without-me": "2026-05-09T13:05:50.248Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -360,6 +361,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-09T13:05:50.248Z",
+      "summary": "song:without-me"
+    },
+    {
       "timestamp": "2026-05-09T10:02:49.157Z",
       "summary": "song:we-belong-together"
     },
@@ -394,10 +399,6 @@
     {
       "timestamp": "2026-05-08T10:20:48.489Z",
       "summary": "song:name-of-the-game, album:olaru-ambitones-darker-trashed-mix"
-    },
-    {
-      "timestamp": "2026-05-08T07:22:47.283Z",
-      "summary": "song:man-in-the-box"
     }
   ]
 }
