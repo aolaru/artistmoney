@@ -599,7 +599,7 @@
     "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Lady Gaga",
       "slug": "lady-gaga",
@@ -655,10 +655,11 @@
           "bad-romance"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Gwen Stefani",
       "slug": "gwen-stefani",
@@ -714,10 +715,11 @@
           "hollaback-girl"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "No Doubt",
       "slug": "no-doubt",
@@ -773,7 +775,8 @@
           "dont-speak"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by weekly automation."
   },
   {
     "checked": false,
