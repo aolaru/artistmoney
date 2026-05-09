@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 24,
-    "album": 67
+    "song": 25,
+    "album": 68
   },
   "lastTouched": {
     "artist": {
@@ -267,7 +267,8 @@
       "shook-ones-pt-ii": "2026-05-08T21:56:05.008Z",
       "stan": "2026-05-09T02:29:03.844Z",
       "survival-of-the-fittest": "2026-05-09T05:44:37.796Z",
-      "the-sound-of-silence": "2026-05-09T07:50:23.308Z"
+      "the-sound-of-silence": "2026-05-09T07:50:23.308Z",
+      "we-belong-together": "2026-05-09T10:02:49.157Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -359,6 +360,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-09T10:02:49.157Z",
+      "summary": "song:we-belong-together"
+    },
+    {
       "timestamp": "2026-05-09T07:50:23.308Z",
       "summary": "song:the-sound-of-silence"
     },
@@ -393,10 +398,6 @@
     {
       "timestamp": "2026-05-08T07:22:47.283Z",
       "summary": "song:man-in-the-box"
-    },
-    {
-      "timestamp": "2026-05-08T05:26:58.851Z",
-      "summary": "song:lithium, album:new-order-brotherhood"
     }
   ]
 }
