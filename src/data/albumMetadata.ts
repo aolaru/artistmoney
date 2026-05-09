@@ -14292,5 +14292,119 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/jazz/1440770171?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Queen%20Jazz"
     }
+  },
+  "rakim-the-18th-letter": {
+    "releaseDate": "1997-01-01",
+    "label": "Universal Records",
+    "trackCount": 17,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Intro",
+        "durationMs": 12667
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "The 18th Letter (Always and Forever)",
+        "durationMs": 180933
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Skit 1",
+        "durationMs": 23573
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "It's Been a Long Time",
+        "durationMs": 236533
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Remember That",
+        "durationMs": 280093
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "The Saga Begins",
+        "durationMs": 262133
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Skit",
+        "durationMs": 19067
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Guess Who's Back",
+        "durationMs": 250907
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Stay a While",
+        "durationMs": 264933
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "New York (Ya Out There)",
+        "durationMs": 244133
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Show Me Love",
+        "durationMs": 258800
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Skit",
+        "durationMs": 18933
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "The Mystery (Who Is God?)",
+        "durationMs": 320560
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "When I'm Flowin'",
+        "durationMs": 304240
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "It's Been a Long Time (Suave House Mix)",
+        "durationMs": 238867
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Guess Who's Back (Alternative Mix)",
+        "durationMs": 250600
+      },
+      {
+        "discNumber": 1,
+        "number": 17,
+        "title": "Outro",
+        "durationMs": 79867
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Rakim%20The%2018th%20Letter",
+      "appleMusic": "https://music.apple.com/us/album/the-18th-letter/1440801719?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Rakim%20The%2018th%20Letter"
+    }
   }
 } as const;

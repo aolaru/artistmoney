@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 22,
-    "album": 65
+    "song": 23,
+    "album": 66
   },
   "lastTouched": {
     "artist": {
@@ -265,7 +265,8 @@
       "praise-you": "2026-05-08T16:13:56.561Z",
       "riders-on-the-storm": "2026-05-08T19:10:20.138Z",
       "shook-ones-pt-ii": "2026-05-08T21:56:05.008Z",
-      "stan": "2026-05-09T02:29:03.844Z"
+      "stan": "2026-05-09T02:29:03.844Z",
+      "survival-of-the-fittest": "2026-05-09T05:44:37.796Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -351,10 +352,15 @@
       "new-order-brotherhood": "2026-05-08T05:26:58.851Z",
       "olaru-ambitones-darker-trashed-mix": "2026-05-08T10:20:48.489Z",
       "prince-purple-rain": "2026-05-08T21:56:05.008Z",
-      "queen-jazz": "2026-05-09T02:29:03.844Z"
+      "queen-jazz": "2026-05-09T02:29:03.844Z",
+      "rakim-the-18th-letter": "2026-05-09T05:44:37.796Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-09T05:44:37.796Z",
+      "summary": "song:survival-of-the-fittest, album:rakim-the-18th-letter"
+    },
     {
       "timestamp": "2026-05-09T02:29:03.844Z",
       "summary": "song:stan, album:queen-jazz"
@@ -390,10 +396,6 @@
     {
       "timestamp": "2026-05-08T02:36:00.245Z",
       "summary": "song:kashmir"
-    },
-    {
-      "timestamp": "2026-05-07T21:53:07.915Z",
-      "summary": "song:if-you-leave-me-now, album:montell-jordan-this-is-how-we-do-it"
     }
   ]
 }
