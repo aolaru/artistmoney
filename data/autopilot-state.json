@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 23,
-    "album": 66
+    "song": 24,
+    "album": 67
   },
   "lastTouched": {
     "artist": {
@@ -266,7 +266,8 @@
       "riders-on-the-storm": "2026-05-08T19:10:20.138Z",
       "shook-ones-pt-ii": "2026-05-08T21:56:05.008Z",
       "stan": "2026-05-09T02:29:03.844Z",
-      "survival-of-the-fittest": "2026-05-09T05:44:37.796Z"
+      "survival-of-the-fittest": "2026-05-09T05:44:37.796Z",
+      "the-sound-of-silence": "2026-05-09T07:50:23.308Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -358,6 +359,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-09T07:50:23.308Z",
+      "summary": "song:the-sound-of-silence"
+    },
+    {
       "timestamp": "2026-05-09T05:44:37.796Z",
       "summary": "song:survival-of-the-fittest, album:rakim-the-18th-letter"
     },
@@ -392,10 +397,6 @@
     {
       "timestamp": "2026-05-08T05:26:58.851Z",
       "summary": "song:lithium, album:new-order-brotherhood"
-    },
-    {
-      "timestamp": "2026-05-08T02:36:00.245Z",
-      "summary": "song:kashmir"
     }
   ]
 }
