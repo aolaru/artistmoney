@@ -14202,5 +14202,95 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/purple-rain/1746833068?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Prince%20Purple%20Rain"
     }
+  },
+  "queen-jazz": {
+    "releaseDate": "1978-11-10",
+    "label": "Hollywood Records",
+    "trackCount": 13,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Mustapha",
+        "durationMs": 181134
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Fat Bottomed Girls",
+        "durationMs": 257120
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Jealousy",
+        "durationMs": 193720
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Bicycle Race",
+        "durationMs": 183427
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "If You Can't Beat Them",
+        "durationMs": 255137
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Let Me Entertain You",
+        "durationMs": 186503
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Dead On Time",
+        "durationMs": 203199
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "In Only Seven Days",
+        "durationMs": 150135
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Dreamer's Ball",
+        "durationMs": 210653
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Fun It",
+        "durationMs": 209613
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Leaving Home Ain't Easy",
+        "durationMs": 195040
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Don't Stop Me Now",
+        "durationMs": 209391
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "More of That Jazz",
+        "durationMs": 254500
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Queen%20Jazz",
+      "appleMusic": "https://music.apple.com/us/album/jazz/1440770171?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Queen%20Jazz"
+    }
   }
 } as const;

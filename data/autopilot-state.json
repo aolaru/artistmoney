@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 21,
-    "album": 64
+    "song": 22,
+    "album": 65
   },
   "lastTouched": {
     "artist": {
@@ -264,7 +264,8 @@
       "p-i-m-p": "2026-05-08T13:21:36.957Z",
       "praise-you": "2026-05-08T16:13:56.561Z",
       "riders-on-the-storm": "2026-05-08T19:10:20.138Z",
-      "shook-ones-pt-ii": "2026-05-08T21:56:05.008Z"
+      "shook-ones-pt-ii": "2026-05-08T21:56:05.008Z",
+      "stan": "2026-05-09T02:29:03.844Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -349,10 +350,15 @@
       "montell-jordan-this-is-how-we-do-it": "2026-05-07T21:53:07.915Z",
       "new-order-brotherhood": "2026-05-08T05:26:58.851Z",
       "olaru-ambitones-darker-trashed-mix": "2026-05-08T10:20:48.489Z",
-      "prince-purple-rain": "2026-05-08T21:56:05.008Z"
+      "prince-purple-rain": "2026-05-08T21:56:05.008Z",
+      "queen-jazz": "2026-05-09T02:29:03.844Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-09T02:29:03.844Z",
+      "summary": "song:stan, album:queen-jazz"
+    },
     {
       "timestamp": "2026-05-08T21:56:05.008Z",
       "summary": "song:shook-ones-pt-ii, album:prince-purple-rain"
@@ -388,10 +394,6 @@
     {
       "timestamp": "2026-05-07T21:53:07.915Z",
       "summary": "song:if-you-leave-me-now, album:montell-jordan-this-is-how-we-do-it"
-    },
-    {
-      "timestamp": "2026-05-07T19:38:54.981Z",
-      "summary": "song:hotline-bling"
     }
   ]
 }
