@@ -1,0 +1,33 @@
+{
+  "title": "Crawling",
+  "slug": "crawling",
+  "artist": "linkin-park",
+  "estimated_revenue": "$600K-$1.8M/year",
+  "album": "Hybrid Theory",
+  "year": 2000,
+  "meaning_summary": "Crawling remains a strong Hybrid Theory earner because it is one of Linkin Park's defining singles and keeps emotional replay value across rock and nostalgia playlists.",
+  "revenue_drivers": [
+    "nu-metal and alternative-rock playlist demand",
+    "strong fan replay from Hybrid Theory",
+    "long-tail nostalgia listening"
+  ],
+  "related_songs": [
+    "in-the-end",
+    "numb",
+    "smells-like-teen-spirit"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1M-$2.6M/year",
+    "artist_or_estate_share": "$600K-$1.8M/year",
+    "label_master_share": "$300K-$900K/year",
+    "publishing_share": "$140K-$450K/year",
+    "songwriter_share": "$90K-$320K/year",
+    "assumptions": "Estimate is modeled from Linkin Park catalog demand, replay intensity, and likely band-side participation."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not modeled as a fully sold song position",
+    "notes": "Hybrid Theory remains unusually concentrated in a few high-recognition singles."
+  }
+}

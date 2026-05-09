@@ -1,0 +1,33 @@
+{
+  "title": "You're My Best Friend",
+  "slug": "youre-my-best-friend",
+  "artist": "queen",
+  "estimated_revenue": "$500K-$1.5M/year",
+  "album": "A Night at the Opera",
+  "year": 1975,
+  "meaning_summary": "You're My Best Friend remains a durable Queen catalog earner because it is lighter, playlist-friendly, and pairs naturally with the band's larger evergreen hits.",
+  "revenue_drivers": [
+    "classic-rock and feel-good playlist demand",
+    "high-recognition Queen catalog replay",
+    "sync-friendly friendship and celebration use cases"
+  ],
+  "related_songs": [
+    "bohemian-rhapsody",
+    "dont-stop-me-now",
+    "dancing-queen"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$900K-$2.2M/year",
+    "artist_or_estate_share": "$500K-$1.5M/year",
+    "label_master_share": "$250K-$700K/year",
+    "publishing_share": "$120K-$400K/year",
+    "songwriter_share": "$80K-$260K/year",
+    "assumptions": "Estimate is modeled from classic-rock catalog replay, Queen brand demand, and likely split participation."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not modeled as a fully sold song position",
+    "notes": "Queen catalog estimates can be sensitive to ownership and administration arrangements."
+  }
+}

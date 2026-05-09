@@ -1,0 +1,32 @@
+{
+  "title": "STARGAZING",
+  "slug": "stargazing",
+  "artist": "travis-scott",
+  "estimated_revenue": "$400K-$1.5M/year",
+  "album": "ASTROWORLD",
+  "year": 2018,
+  "meaning_summary": "STARGAZING supports ASTROWORLD's catalog value because it works as an album opener and remains tied to the project's streaming-era mythology.",
+  "revenue_drivers": [
+    "album-opening fan replay",
+    "streaming-era hip-hop catalog demand",
+    "continued ASTROWORLD project recognition"
+  ],
+  "related_songs": [
+    "sicko-mode",
+    "goosebumps"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$800K-$2M/year",
+    "artist_or_estate_share": "$400K-$1.5M/year",
+    "label_master_share": "$220K-$700K/year",
+    "publishing_share": "$100K-$350K/year",
+    "songwriter_share": "$70K-$260K/year",
+    "assumptions": "Estimate is modeled from streaming catalog demand and Travis Scott's likely performer/writer participation."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not modeled as a fully sold song position",
+    "notes": "Streaming-era album tracks can move materially as playlist visibility changes."
+  }
+}

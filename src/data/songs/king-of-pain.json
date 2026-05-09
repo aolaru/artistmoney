@@ -1,0 +1,33 @@
+{
+  "title": "King of Pain",
+  "slug": "king-of-pain",
+  "artist": "the-police",
+  "estimated_revenue": "$300K-$1M/year",
+  "album": "Synchronicity",
+  "year": 1983,
+  "meaning_summary": "King of Pain strengthens Synchronicity's album value because it gives the record another recognizable catalog anchor beyond Every Breath You Take.",
+  "revenue_drivers": [
+    "classic-rock catalog replay",
+    "The Police singles recognition",
+    "album-level Synchronicity demand"
+  ],
+  "related_songs": [
+    "every-breath-you-take",
+    "roxanne",
+    "everybody-wants-to-rule-the-world"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$550K-$1.5M/year",
+    "artist_or_estate_share": "$300K-$1M/year",
+    "label_master_share": "$150K-$450K/year",
+    "publishing_share": "$80K-$280K/year",
+    "songwriter_share": "$60K-$220K/year",
+    "assumptions": "Estimate is modeled from classic-rock catalog replay and The Police's long-tail single demand."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not modeled as a fully sold song position",
+    "notes": "Artist-side range is directional and not based on disclosed royalty statements."
+  }
+}

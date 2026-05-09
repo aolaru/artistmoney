@@ -906,6 +906,56 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
     localPath: "/images/artists/the-police.jpg",
     personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  santana: {
+    alt: "Carlos Santana performing live in 1978",
+    src: localPhoto("santana.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Carlos_Santana-2_1978_by_Chris_Hakkens.jpg",
+    credit: "Photo by Chris Hakkens via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/santana.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  aerosmith: {
+    alt: "Aerosmith performing live in 2015",
+    src: localPhoto("aerosmith.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Aerosmith_2015.jpg",
+    credit: "Photo by Abog via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/aerosmith.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "david-bowie": {
+    alt: "David Bowie performing live in 1974",
+    src: localPhoto("david-bowie.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:David_Bowie_Live_1974_(cropped).jpg",
+    credit: "RCA Records promotional image via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:David_Bowie_Live_1974_(cropped).jpg",
+    localPath: "/images/artists/david-bowie.jpg"
+  },
+  "john-lennon": {
+    alt: "John Lennon 1974 Walls and Bridges press photo",
+    src: localPhoto("john-lennon.jpg"),
+    sourceUrl:
+      "https://commons.wikimedia.org/wiki/File:John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_(color).jpg",
+    credit: "Photo by Bob Gruen, distributed by Capitol Records, via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl:
+      "https://commons.wikimedia.org/wiki/File:John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_(color).jpg",
+    localPath: "/images/artists/john-lennon.jpg"
+  },
+  "shania-twain": {
+    alt: "Shania Twain performing at Wembley in 2004",
+    src: localPhoto("shania-twain.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Shania_Twain_2004_(cropped).jpg",
+    credit: "Photo by David Swales via Wikimedia Commons",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+    localPath: "/images/artists/shania-twain.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   }
 };
 

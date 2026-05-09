@@ -14406,5 +14406,170 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/the-18th-letter/1440801719?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Rakim%20The%2018th%20Letter"
     }
+  },
+  "dua-lipa-future-nostalgia": {
+    "releaseDate": "2020-03-27",
+    "label": "Warner Records",
+    "trackCount": 11,
+    "editionNote": "Original studio album sequence.",
+    "contextNote": "Future Nostalgia is a streaming-era pop album where several singles, not just one flagship track, support the long-tail catalog value.",
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Future Nostalgia"
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Don't Start Now"
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Cool"
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Physical"
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Levitating"
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Pretty Please"
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Hallucinate"
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Love Again"
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Break My Heart"
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Good in Bed"
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Boys Will Be Boys"
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Dua%20Lipa%20Future%20Nostalgia",
+      "appleMusic": "https://music.apple.com/us/search?term=Dua%20Lipa%20Future%20Nostalgia",
+      "youtubeMusic": "https://music.youtube.com/search?q=Dua%20Lipa%20Future%20Nostalgia",
+      "amazonMusic": "https://music.amazon.com/search/Dua%20Lipa%20Future%20Nostalgia?tag=kreativauto-20"
+    }
+  },
+  "celine-dion-let-s-talk-about-love": {
+    "releaseDate": "1997-11-14",
+    "label": "Columbia / Epic",
+    "trackCount": 16,
+    "editionNote": "International studio album sequence.",
+    "contextNote": "Let's Talk About Love is anchored by My Heart Will Go On, but the album also benefits from adult-pop ballad demand and Celine Dion's broader 1990s catalog strength.",
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "The Reason"
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Immortality"
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Treat Her Like a Lady"
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Why Oh Why"
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Love Is on the Way"
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Tell Him"
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Where Is the Love"
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "When I Need You"
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Miles to Go (Before I Sleep)"
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Us"
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Just a Little Bit of Love"
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "My Heart Will Go On"
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "I Hate You Then I Love You"
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "To Love You More"
+      },
+      {
+        "discNumber": 1,
+        "number": 15,
+        "title": "Let's Talk About Love"
+      },
+      {
+        "discNumber": 1,
+        "number": 16,
+        "title": "Amar Haciendo el Amor"
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Celine%20Dion%20Let%27s%20Talk%20About%20Love",
+      "appleMusic": "https://music.apple.com/us/search?term=Celine%20Dion%20Let%27s%20Talk%20About%20Love",
+      "youtubeMusic": "https://music.youtube.com/search?q=Celine%20Dion%20Let%27s%20Talk%20About%20Love",
+      "amazonMusic": "https://music.amazon.com/search/Celine%20Dion%20Let%27s%20Talk%20About%20Love?tag=kreativauto-20"
+    }
   }
 } as const;

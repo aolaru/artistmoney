@@ -1,0 +1,33 @@
+{
+  "title": "Money, Money, Money",
+  "slug": "money-money-money",
+  "artist": "abba",
+  "estimated_revenue": "$400K-$1.2M/year",
+  "album": "Arrival",
+  "year": 1976,
+  "meaning_summary": "Money, Money, Money keeps earning as a recognizable ABBA catalog track with strong title recall and recurring placement in pop, retro, and musical-adjacent listening.",
+  "revenue_drivers": [
+    "ABBA catalog streaming",
+    "retro-pop playlist demand",
+    "title-driven cultural recognition"
+  ],
+  "related_songs": [
+    "dancing-queen",
+    "gimme-gimme-gimme",
+    "youre-my-best-friend"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$750K-$1.8M/year",
+    "artist_or_estate_share": "$400K-$1.2M/year",
+    "label_master_share": "$200K-$600K/year",
+    "publishing_share": "$100K-$350K/year",
+    "songwriter_share": "$70K-$250K/year",
+    "assumptions": "Estimate is modeled from ABBA catalog replay, evergreen pop demand, and publishing-linked value."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not modeled as a fully sold song position",
+    "notes": "ABBA catalog value is unusually durable because performance, writing, and catalog identity reinforce each other."
+  }
+}

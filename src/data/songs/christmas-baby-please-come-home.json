@@ -1,0 +1,33 @@
+{
+  "title": "Christmas (Baby Please Come Home)",
+  "slug": "christmas-baby-please-come-home",
+  "artist": "mariah-carey",
+  "estimated_revenue": "$300K-$1.2M/year",
+  "album": "Merry Christmas",
+  "year": 1994,
+  "meaning_summary": "Mariah Carey's version keeps earning because it sits next to her seasonal flagship hit and benefits from the same annual holiday-listening surge.",
+  "revenue_drivers": [
+    "holiday playlist recurrence",
+    "album-level Christmas catalog demand",
+    "seasonal retail and radio familiarity"
+  ],
+  "related_songs": [
+    "all-i-want-for-christmas-is-you",
+    "we-belong-together",
+    "my-heart-will-go-on"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$600K-$1.8M/year",
+    "artist_or_estate_share": "$300K-$1.2M/year",
+    "label_master_share": "$180K-$550K/year",
+    "publishing_share": "$80K-$250K/year",
+    "songwriter_share": "$40K-$150K/year",
+    "assumptions": "Estimate is modeled from seasonal catalog behavior, album-level replay, and holiday compilation demand."
+  },
+  "ownership": {
+    "master_owner": "label / catalog rightsholder",
+    "publishing_owner": "publisher / songwriter split",
+    "catalog_sale_status": "not publicly modeled as a fully sold song position",
+    "notes": "Modeled artist-side revenue is directional and should be read alongside the site's methodology."
+  }
+}
