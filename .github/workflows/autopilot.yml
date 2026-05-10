@@ -2,8 +2,8 @@ name: Autopilot Improvements
 
 on:
   schedule:
-    # GitHub Actions cron uses UTC. Run every 3 hours.
-    - cron: "0 */3 * * *"
+    # GitHub Actions cron uses UTC. Run twice per day.
+    - cron: "0 6,18 * * *"
   workflow_dispatch:
 
 permissions:
@@ -72,8 +72,8 @@ jobs:
       - name: Enforce diff guardrails
         if: steps.autopilot.outputs.changed == 'true'
         run: |
-          test "${{ steps.diff.outputs.files }}" -le 4 || (echo "Too many files changed: ${{ steps.diff.outputs.files }}" && exit 1)
-          test "${{ steps.diff.outputs.total }}" -le 900 || (echo "Diff too large: ${{ steps.diff.outputs.total }} lines" && exit 1)
+          test "${{ steps.diff.outputs.files }}" -le 7 || (echo "Too many files changed: ${{ steps.diff.outputs.files }}" && exit 1)
+          test "${{ steps.diff.outputs.total }}" -le 1400 || (echo "Diff too large: ${{ steps.diff.outputs.total }} lines" && exit 1)
 
       - name: Commit changes
         if: steps.autopilot.outputs.changed == 'true'

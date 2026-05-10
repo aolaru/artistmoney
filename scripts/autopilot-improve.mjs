@@ -24,7 +24,10 @@ const bannedPhrases = [
   "long-tail long-tail",
   "easy to revisit, emotionally legible, and well-suited to long-tail catalog listening"
 ];
-const MAX_CHANGES_PER_RUN = 3;
+const MAX_ARTIST_CHANGES_PER_RUN = 2;
+const MAX_SONG_CHANGES_PER_RUN = 3;
+const MAX_ALBUM_CHANGES_PER_RUN = 1;
+const MAX_CHANGES_PER_RUN = MAX_ARTIST_CHANGES_PER_RUN + MAX_SONG_CHANGES_PER_RUN + MAX_ALBUM_CHANGES_PER_RUN;
 const COOLDOWN_HOURS = 72;
 
 function defaultState() {
@@ -117,14 +120,25 @@ function isOnCooldown(lastTouchedAt, now) {
   return now - lastTouched < COOLDOWN_HOURS * 60 * 60 * 1000;
 }
 
-function pickByCursor(entries, cursor) {
-  if (entries.length === 0) return null;
-  return entries[cursor % entries.length];
-}
+function pickBatchByCursor(entries, cursor, limit) {
+  if (entries.length === 0 || limit <= 0) {
+    return {
+      selected: [],
+      cursor
+    };
+  }
 
-function advanceCursor(current, poolSize) {
-  if (poolSize <= 0) return current;
-  return (current + 1) % poolSize;
+  const selected = [];
+  const count = Math.min(limit, entries.length);
+
+  for (let index = 0; index < count; index += 1) {
+    selected.push(entries[(cursor + index) % entries.length]);
+  }
+
+  return {
+    selected,
+    cursor: (cursor + count) % entries.length
+  };
 }
 
 function compactSentence(text) {
@@ -428,6 +442,9 @@ async function writeSummary(result) {
 
   lines.push("## Guardrails", "");
   lines.push(`- Max changes per run: ${MAX_CHANGES_PER_RUN}`);
+  lines.push(`- Artist changes per run: ${MAX_ARTIST_CHANGES_PER_RUN}`);
+  lines.push(`- Song changes per run: ${MAX_SONG_CHANGES_PER_RUN}`);
+  lines.push(`- Album changes per run: ${MAX_ALBUM_CHANGES_PER_RUN}`);
   lines.push(`- Cooldown window: ${COOLDOWN_HOURS} hours`);
   lines.push("");
 
@@ -485,17 +502,17 @@ export async function main() {
     .filter((entry) => hasAnyMissingFields(entry.data, artistMissingFields))
     .sort((left, right) => left.file.localeCompare(right.file));
   const eligibleArtists = candidateArtists.filter((entry) => !isOnCooldown(state.lastTouched.artist[entry.data.slug], now));
-  const artistEntry = pickByCursor(eligibleArtists, state.cursors.artist);
-  state.cursors.artist = advanceCursor(state.cursors.artist, eligibleArtists.length);
+  const artistBatch = pickBatchByCursor(eligibleArtists, state.cursors.artist, MAX_ARTIST_CHANGES_PER_RUN);
+  state.cursors.artist = artistBatch.cursor;
 
-  if (!artistEntry && candidateArtists.length > 0) {
+  if (artistBatch.selected.length === 0 && candidateArtists.length > 0) {
     skipped.push({
       kind: "artist",
       slug: candidateArtists[0].data.slug,
       reason: `all candidates are on cooldown for ${COOLDOWN_HOURS} hours`
     });
   }
-  if (artistEntry) {
+  for (const artistEntry of artistBatch.selected) {
     const nextArtist = mergeArtistBackfill(artistEntry.data, songMap);
     if (nextArtist) {
       validateArtistRecord(nextArtist);
@@ -514,17 +531,17 @@ export async function main() {
     .filter((entry) => hasAnyMissingFields(entry.data, songMissingFields))
     .sort((left, right) => left.file.localeCompare(right.file));
   const eligibleSongs = candidateSongs.filter((entry) => !isOnCooldown(state.lastTouched.song[entry.data.slug], now));
-  const songEntry = pickByCursor(eligibleSongs, state.cursors.song);
-  state.cursors.song = advanceCursor(state.cursors.song, eligibleSongs.length);
+  const songBatch = pickBatchByCursor(eligibleSongs, state.cursors.song, MAX_SONG_CHANGES_PER_RUN);
+  state.cursors.song = songBatch.cursor;
 
-  if (!songEntry && candidateSongs.length > 0) {
+  if (songBatch.selected.length === 0 && candidateSongs.length > 0) {
     skipped.push({
       kind: "song",
       slug: candidateSongs[0].data.slug,
       reason: `all candidates are on cooldown for ${COOLDOWN_HOURS} hours`
     });
   }
-  if (songEntry) {
+  for (const songEntry of songBatch.selected) {
     const artist = artistMap.get(songEntry.data.artist);
     const relatedSongs = (songsByArtist.get(songEntry.data.artist) ?? []).filter((entry) => entry.slug !== songEntry.data.slug);
     const nextSong = mergeSongBackfill(songEntry.data, artist, relatedSongs);
@@ -547,10 +564,10 @@ export async function main() {
     return !existing?.fullTracklist?.length;
   });
   const eligibleAlbums = incompleteAlbums.filter((album) => !isOnCooldown(state.lastTouched.album[album.slug], now));
-  const albumEntry = pickByCursor(eligibleAlbums, state.cursors.album);
-  state.cursors.album = advanceCursor(state.cursors.album, eligibleAlbums.length);
+  const albumBatch = pickBatchByCursor(eligibleAlbums, state.cursors.album, MAX_ALBUM_CHANGES_PER_RUN);
+  state.cursors.album = albumBatch.cursor;
 
-  if (!albumEntry && incompleteAlbums.length > 0) {
+  if (albumBatch.selected.length === 0 && incompleteAlbums.length > 0) {
     skipped.push({
       kind: "album",
       slug: incompleteAlbums[0].slug,
@@ -558,7 +575,7 @@ export async function main() {
     });
   }
 
-  if (albumEntry) {
+  for (const albumEntry of albumBatch.selected) {
     try {
       const nextAlbumMetadata = await fetchAlbumMetadata(albumEntry);
       if (nextAlbumMetadata.fullTracklist?.length) {
