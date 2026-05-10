@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 3,
-    "album": 73
+    "song": 4,
+    "album": 74
   },
   "lastTouched": {
     "artist": {
@@ -273,7 +273,8 @@
       "youre-the-inspiration": "2026-05-09T15:45:13.663Z",
       "an-ending-ascent": "2026-05-09T18:53:46.862Z",
       "c-r-e-a-m": "2026-05-09T21:38:29.324Z",
-      "creep": "2026-05-10T02:32:30.111Z"
+      "creep": "2026-05-10T02:32:30.111Z",
+      "even-flow": "2026-05-10T06:06:32.060Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -365,6 +366,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-10T06:06:32.060Z",
+      "summary": "song:even-flow"
+    },
+    {
       "timestamp": "2026-05-10T02:32:30.111Z",
       "summary": "song:creep"
     },
@@ -399,10 +404,6 @@
     {
       "timestamp": "2026-05-09T02:29:03.844Z",
       "summary": "song:stan, album:queen-jazz"
-    },
-    {
-      "timestamp": "2026-05-08T21:56:05.008Z",
-      "summary": "song:shook-ones-pt-ii, album:prince-purple-rain"
     }
   ]
 }
