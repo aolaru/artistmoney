@@ -1,7 +1,7 @@
 {
   "name": "Kendrick Lamar",
   "slug": "kendrick-lamar",
-  "estimated_income": "$10M-$30M/year",
+  "estimated_income": "$5.5M-$17M/year",
   "top_songs": [
     "humble",
     "dna",
@@ -19,11 +19,11 @@
     "Licensing and long-tail audience demand extend catalog value over time."
   ],
   "earnings": {
-    "gross_catalog_revenue": "$22M-$65M/year",
-    "artist_or_estate_share": "$10M-$32M/year",
-    "label_share": "$6M-$20M/year",
-    "publisher_share": "$3M-$10M/year",
-    "writer_share": "$3M-$10M/year",
+    "gross_catalog_revenue": "$14M-$42M/year",
+    "artist_or_estate_share": "$5.5M-$18M/year",
+    "label_share": "$3.6M-$12M/year",
+    "publisher_share": "$1.8M-$6M/year",
+    "writer_share": "$1.8M-$6M/year",
     "assumptions": "Modeled from elite hip-hop streaming, album-catalog depth, Pulitzer-era cultural authority, licensing value, and writer participation."
   },
   "ownership": {

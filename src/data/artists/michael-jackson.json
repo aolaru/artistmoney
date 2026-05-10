@@ -1,7 +1,7 @@
 {
   "name": "Michael Jackson",
   "slug": "michael-jackson",
-  "estimated_income": "$25M-$90M/year",
+  "estimated_income": "$14M-$50M/year",
   "top_songs": [
     "billie-jean",
     "thriller"
@@ -19,11 +19,11 @@
     "estate-led catalog management"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$60M-$180M/year",
-    "artist_or_estate_share": "$25M-$90M/year",
-    "label_share": "$18M-$60M/year",
-    "publisher_share": "$8M-$28M/year",
-    "writer_share": "$6M-$24M/year",
+    "gross_catalog_revenue": "$39M-$117M/year",
+    "artist_or_estate_share": "$14M-$50M/year",
+    "label_share": "$11M-$36M/year",
+    "publisher_share": "$4.8M-$17M/year",
+    "writer_share": "$3.6M-$14M/year",
     "assumptions": "Modeled from estate-managed catalog scale, global streaming, publishing value, licensing demand, and long-running physical and compilation revenue."
   },
   "ownership": {

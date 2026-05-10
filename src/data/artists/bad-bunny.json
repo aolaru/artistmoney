@@ -1,7 +1,7 @@
 {
   "name": "Bad Bunny",
   "slug": "bad-bunny",
-  "estimated_income": "$20M-$70M/year",
+  "estimated_income": "$11M-$39M/year",
   "top_songs": [
     "titi-me-pregunto",
     "me-porto-bonito"
@@ -19,11 +19,11 @@
     "viral and social media reuse"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$45M-$140M/year",
-    "artist_or_estate_share": "$20M-$70M/year",
-    "label_share": "$14M-$45M/year",
-    "publisher_share": "$5M-$18M/year",
-    "writer_share": "$5M-$18M/year",
+    "gross_catalog_revenue": "$29M-$91M/year",
+    "artist_or_estate_share": "$11M-$39M/year",
+    "label_share": "$8.4M-$27M/year",
+    "publisher_share": "$3M-$11M/year",
+    "writer_share": "$3M-$11M/year",
     "assumptions": "Modeled from global Latin streaming scale, playlist dominance, songwriter participation, and high current catalog velocity."
   },
   "ownership": {

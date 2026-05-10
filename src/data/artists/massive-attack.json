@@ -1,7 +1,7 @@
 {
   "name": "Massive Attack",
   "slug": "massive-attack",
-  "estimated_income": "$1M-$4M/year",
+  "estimated_income": "$550K-$2.2M/year",
   "top_songs": [
     "teardrop",
     "unfinished-sympathy"
@@ -19,11 +19,11 @@
     "cross-generational discovery"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$2M-$5M/year",
-    "artist_or_estate_share": "$1M-$4M/year",
-    "label_share": "$350K-$1.3M/year",
-    "publisher_share": "$180K-$650K/year",
-    "writer_share": "$220K-$750K/year",
+    "gross_catalog_revenue": "$1.3M-$3.3M/year",
+    "artist_or_estate_share": "$550K-$2.2M/year",
+    "label_share": "$210K-$780K/year",
+    "publisher_share": "$110K-$390K/year",
+    "writer_share": "$130K-$450K/year",
     "assumptions": "Estimate assumes durable streaming around key trip-hop staples, substantial sync utility, and meaningful writer-side participation."
   },
   "ownership": {

@@ -2,7 +2,7 @@
   "title": "Circle of Life",
   "slug": "circle-of-life",
   "artist": "disney",
-  "estimated_revenue": "$150K-$600K/year",
+  "estimated_revenue": "$85K-$330K/year",
   "album": "The Lion King",
   "year": 1994,
   "meaning_summary": "Circle of Life still monetizes because The Lion King remains one of Disney's strongest long-tail soundtrack properties.",
@@ -11,5 +11,8 @@
     "soundtrack streaming",
     "franchise familiarity"
   ],
-  "related_songs": ["can-you-feel-the-love-tonight", "let-it-go"]
+  "related_songs": [
+    "can-you-feel-the-love-tonight",
+    "let-it-go"
+  ]
 }

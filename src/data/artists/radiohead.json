@@ -1,14 +1,17 @@
 {
   "name": "Radiohead",
   "slug": "radiohead",
-  "estimated_income": "$5M-$20M/year",
-  "top_songs": ["creep", "karma-police"],
+  "estimated_income": "$2.8M-$11M/year",
+  "top_songs": [
+    "creep",
+    "karma-police"
+  ],
   "earnings": {
-    "gross_catalog_revenue": "$8M-$22M/year",
-    "artist_or_estate_share": "$5M-$20M/year",
-    "label_share": "$2M-$6M/year",
-    "publisher_share": "$800K-$2.5M/year",
-    "writer_share": "$1M-$4M/year",
+    "gross_catalog_revenue": "$5.2M-$14M/year",
+    "artist_or_estate_share": "$2.8M-$11M/year",
+    "label_share": "$1.2M-$3.6M/year",
+    "publisher_share": "$480K-$1.5M/year",
+    "writer_share": "$600K-$2.4M/year",
     "assumptions": "Estimate assumes a mature alternative catalog with stable streaming, strong vinyl and reissue demand, and relatively favorable long-term artist economics."
   },
   "ownership": {

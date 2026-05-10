@@ -1,7 +1,7 @@
 {
   "name": "Dua Lipa",
   "slug": "dua-lipa",
-  "estimated_income": "$10M-$35M/year",
+  "estimated_income": "$5.5M-$19M/year",
   "top_songs": [
     "dont-start-now",
     "levitating"
@@ -19,11 +19,11 @@
     "sync-friendly modern pop production"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$45M-$95M/year",
-    "artist_or_estate_share": "$20M-$45M/year",
-    "label_share": "$12M-$30M/year",
-    "publisher_share": "$5M-$14M/year",
-    "writer_share": "$4M-$12M/year",
+    "gross_catalog_revenue": "$29M-$62M/year",
+    "artist_or_estate_share": "$11M-$25M/year",
+    "label_share": "$7.2M-$18M/year",
+    "publisher_share": "$3M-$8.4M/year",
+    "writer_share": "$2.4M-$7.2M/year",
     "assumptions": "Modeled from current pop streaming scale, playlist velocity, dance-pop replay value, and songwriter/performer participation."
   },
   "ownership": {

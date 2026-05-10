@@ -1,7 +1,7 @@
 {
   "name": "Drake",
   "slug": "drake",
-  "estimated_income": "$20M-$50M/year",
+  "estimated_income": "$11M-$28M/year",
   "top_songs": [
     "gods-plan",
     "one-dance",
@@ -19,11 +19,11 @@
   "country": "Canada",
   "active_since": "2009",
   "earnings": {
-    "gross_catalog_revenue": "$45M-$100M/year",
-    "artist_or_estate_share": "$20M-$50M/year",
-    "label_share": "$14M-$32M/year",
-    "publisher_share": "$5M-$14M/year",
-    "writer_share": "$5M-$14M/year",
+    "gross_catalog_revenue": "$29M-$65M/year",
+    "artist_or_estate_share": "$11M-$28M/year",
+    "label_share": "$8.4M-$19M/year",
+    "publisher_share": "$3M-$8.4M/year",
+    "writer_share": "$3M-$8.4M/year",
     "assumptions": "Modeled from very large streaming catalog depth, playlist velocity, feature-driven discovery, and writer/performer participation."
   },
   "ownership": {

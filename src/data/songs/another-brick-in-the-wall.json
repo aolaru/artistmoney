@@ -2,13 +2,13 @@
   "title": "Another Brick in the Wall",
   "slug": "another-brick-in-the-wall",
   "artist": "pink-floyd",
-  "estimated_revenue": "$500K-$1.8M/year",
+  "estimated_revenue": "$280K-$990K/year",
   "earnings": {
-    "gross_track_revenue": "$1.2M-$4.2M/year",
-    "artist_or_estate_share": "$500K-$1.8M/year",
-    "label_master_share": "$350K-$1.3M/year",
-    "publishing_share": "$160K-$576K/year",
-    "songwriter_share": "$140K-$504K/year",
+    "gross_track_revenue": "$780K-$2.7M/year",
+    "artist_or_estate_share": "$280K-$990K/year",
+    "label_master_share": "$210K-$780K/year",
+    "publishing_share": "$95K-$350K/year",
+    "songwriter_share": "$85K-$300K/year",
     "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
   },
   "ownership": {

@@ -2,13 +2,13 @@
   "title": "Hey Jude",
   "slug": "hey-jude",
   "artist": "the-beatles",
-  "estimated_revenue": "$900K-$2.8M/year",
+  "estimated_revenue": "$500K-$1.5M/year",
   "earnings": {
-    "gross_track_revenue": "$2.1M-$6.6M/year",
-    "artist_or_estate_share": "$900K-$2.8M/year",
-    "label_master_share": "$630K-$2M/year",
-    "publishing_share": "$288K-$896K/year",
-    "songwriter_share": "$252K-$784K/year",
+    "gross_track_revenue": "$1.4M-$4.3M/year",
+    "artist_or_estate_share": "$500K-$1.5M/year",
+    "label_master_share": "$380K-$1.2M/year",
+    "publishing_share": "$170K-$540K/year",
+    "songwriter_share": "$150K-$470K/year",
     "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
   },
   "ownership": {

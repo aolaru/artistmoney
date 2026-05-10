@@ -2,13 +2,13 @@
   "title": "Even Flow",
   "slug": "even-flow",
   "artist": "pearl-jam",
-  "estimated_revenue": "$250K-$800K/year",
+  "estimated_revenue": "$140K-$440K/year",
   "earnings": {
-    "gross_track_revenue": "$588K-$1.9M/year",
-    "artist_or_estate_share": "$250K-$800K/year",
-    "label_master_share": "$175K-$560K/year",
-    "publishing_share": "$80K-$256K/year",
-    "songwriter_share": "$70K-$224K/year",
+    "gross_track_revenue": "$380K-$1.2M/year",
+    "artist_or_estate_share": "$140K-$440K/year",
+    "label_master_share": "$110K-$340K/year",
+    "publishing_share": "$50K-$150K/year",
+    "songwriter_share": "$40K-$130K/year",
     "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
   },
   "ownership": {

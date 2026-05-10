@@ -1,8 +1,11 @@
 {
   "name": "Alanis Morissette",
   "slug": "alanis-morissette",
-  "estimated_income": "$3M-$10M/year",
-  "top_songs": ["you-oughta-know", "ironic"],
+  "estimated_income": "$1.7M-$5.5M/year",
+  "top_songs": [
+    "you-oughta-know",
+    "ironic"
+  ],
   "genre": "Alternative Rock / Pop",
   "country": "Canada",
   "active_since": "1991",

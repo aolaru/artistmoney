@@ -1,14 +1,17 @@
 {
   "name": "Eminem",
   "slug": "eminem",
-  "estimated_income": "$10M-$30M/year",
-  "top_songs": ["lose-yourself", "stan"],
+  "estimated_income": "$5.5M-$17M/year",
+  "top_songs": [
+    "lose-yourself",
+    "stan"
+  ],
   "earnings": {
-    "gross_catalog_revenue": "$18M-$45M/year",
-    "artist_or_estate_share": "$10M-$30M/year",
-    "label_share": "$4M-$10M/year",
-    "publisher_share": "$2M-$6M/year",
-    "writer_share": "$2M-$7M/year",
+    "gross_catalog_revenue": "$12M-$29M/year",
+    "artist_or_estate_share": "$5.5M-$17M/year",
+    "label_share": "$2.4M-$6M/year",
+    "publisher_share": "$1.2M-$3.6M/year",
+    "writer_share": "$1.2M-$4.2M/year",
     "assumptions": "Estimate assumes heavy evergreen streaming and meaningful writer participation on core songs, offset by major-label master splits on parts of the catalog."
   },
   "ownership": {

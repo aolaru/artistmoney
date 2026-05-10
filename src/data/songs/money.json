@@ -2,7 +2,7 @@
   "title": "Money",
   "slug": "money",
   "artist": "pink-floyd",
-  "estimated_revenue": "$300K-$1.2M/year",
+  "estimated_revenue": "$170K-$660K/year",
   "album": "The Dark Side of the Moon",
   "year": 1973,
   "meaning_summary": "Money keeps earning because The Dark Side of the Moon still attracts new listeners and repeat album-focused listening.",
@@ -11,5 +11,8 @@
     "classic-rock catalog demand",
     "audiophile and vinyl culture"
   ],
-  "related_songs": ["time", "wish-you-were-here"]
+  "related_songs": [
+    "time",
+    "wish-you-were-here"
+  ]
 }

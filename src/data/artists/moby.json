@@ -1,7 +1,7 @@
 {
   "name": "Moby",
   "slug": "moby",
-  "estimated_income": "$2M-$8M/year",
+  "estimated_income": "$1.1M-$4.4M/year",
   "top_songs": [
     "porcelain",
     "natural-blues"
@@ -19,11 +19,11 @@
     "creator-side rights participation"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$4M-$10M/year",
-    "artist_or_estate_share": "$2M-$8M/year",
-    "label_share": "$700K-$2.2M/year",
-    "publisher_share": "$300K-$1M/year",
-    "writer_share": "$450K-$1.4M/year",
+    "gross_catalog_revenue": "$2.6M-$6.5M/year",
+    "artist_or_estate_share": "$1.1M-$4.4M/year",
+    "label_share": "$420K-$1.3M/year",
+    "publisher_share": "$180K-$600K/year",
+    "writer_share": "$270K-$840K/year",
     "assumptions": "Estimate assumes continued streaming and licensing around Play-era songs and stronger-than-average creator-side economics."
   },
   "ownership": {

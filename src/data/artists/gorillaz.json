@@ -1,8 +1,11 @@
 {
   "name": "Gorillaz",
   "slug": "gorillaz",
-  "estimated_income": "$4M-$12M/year",
-  "top_songs": ["feel-good-inc", "clint-eastwood"],
+  "estimated_income": "$2.2M-$6.6M/year",
+  "top_songs": [
+    "feel-good-inc",
+    "clint-eastwood"
+  ],
   "genre": "Alternative / Electronic / Hip-Hop Pop",
   "country": "United Kingdom",
   "active_since": "2001",

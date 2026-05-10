@@ -1,7 +1,7 @@
 {
   "name": "Olaru",
   "slug": "olaru",
-  "estimated_income": "$5K-$40K/year",
+  "estimated_income": "$3K-$20K/year",
   "top_songs": [
     "flowers-2024-remaster",
     "sampling-darker-trashed-mix"
@@ -17,11 +17,11 @@
     "Creator-controlled releases usually retain a healthier artist-side share than major-label catalogs."
   ],
   "earnings": {
-    "gross_catalog_revenue": "$8K-$55K/year",
-    "artist_or_estate_share": "$5K-$40K/year",
-    "label_share": "$0-$6K/year",
-    "publisher_share": "$1K-$5K/year",
-    "writer_share": "$2K-$8K/year",
+    "gross_catalog_revenue": "$5K-$35K/year",
+    "artist_or_estate_share": "$3K-$20K/year",
+    "label_share": "$0-$4K/year",
+    "publisher_share": "$600-$3K/year",
+    "writer_share": "$1K-$5K/year",
     "assumptions": "Estimate assumes a small but real independent streaming footprint, creator-leaning rights participation, and modest long-tail replay rather than mass-playlist scale."
   },
   "ownership": {

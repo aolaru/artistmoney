@@ -1,7 +1,7 @@
 {
   "name": "Elton John",
   "slug": "elton-john",
-  "estimated_income": "$15M-$40M/year",
+  "estimated_income": "$8.3M-$22M/year",
   "top_songs": [
     "rocket-man",
     "tiny-dancer"
@@ -18,11 +18,11 @@
     "Cross-generational recognition supports repeat listening and discovery."
   ],
   "earnings": {
-    "gross_catalog_revenue": "$35M-$80M/year",
-    "artist_or_estate_share": "$15M-$40M/year",
-    "label_share": "$8M-$24M/year",
-    "publisher_share": "$6M-$18M/year",
-    "writer_share": "$6M-$18M/year",
+    "gross_catalog_revenue": "$23M-$52M/year",
+    "artist_or_estate_share": "$8.3M-$22M/year",
+    "label_share": "$4.8M-$14M/year",
+    "publisher_share": "$3.6M-$11M/year",
+    "writer_share": "$3.6M-$11M/year",
     "assumptions": "Modeled from evergreen pop-rock streaming, songwriter participation, classic catalog licensing, compilation demand, film and biographical halo, and recurring radio-style catalog use."
   },
   "ownership": {

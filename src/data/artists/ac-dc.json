@@ -1,8 +1,11 @@
 {
   "name": "AC/DC",
   "slug": "ac-dc",
-  "estimated_income": "$8M-$25M/year",
-  "top_songs": ["back-in-black", "you-shook-me-all-night-long"],
+  "estimated_income": "$4.4M-$14M/year",
+  "top_songs": [
+    "back-in-black",
+    "you-shook-me-all-night-long"
+  ],
   "genre": "Hard Rock",
   "country": "Australia",
   "active_since": "1973",

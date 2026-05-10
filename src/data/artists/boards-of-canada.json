@@ -1,8 +1,12 @@
 {
   "name": "Boards of Canada",
   "slug": "boards-of-canada",
-  "estimated_income": "$800K-$3M/year",
-  "top_songs": ["dayvan-cowboy", "roygbiv", "everything-you-do-is-a-balloon"],
+  "estimated_income": "$440K-$1.7M/year",
+  "top_songs": [
+    "dayvan-cowboy",
+    "roygbiv",
+    "everything-you-do-is-a-balloon"
+  ],
   "genre": "Electronic / IDM",
   "country": "United Kingdom",
   "active_since": "1986",

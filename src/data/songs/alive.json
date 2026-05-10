@@ -2,13 +2,13 @@
   "title": "Alive",
   "slug": "alive",
   "artist": "pearl-jam",
-  "estimated_revenue": "$300K-$900K/year",
+  "estimated_revenue": "$170K-$500K/year",
   "earnings": {
-    "gross_track_revenue": "$705K-$2.1M/year",
-    "artist_or_estate_share": "$300K-$900K/year",
-    "label_master_share": "$210K-$630K/year",
-    "publishing_share": "$96K-$288K/year",
-    "songwriter_share": "$84K-$252K/year",
+    "gross_track_revenue": "$460K-$1.4M/year",
+    "artist_or_estate_share": "$170K-$500K/year",
+    "label_master_share": "$130K-$380K/year",
+    "publishing_share": "$60K-$170K/year",
+    "songwriter_share": "$50K-$150K/year",
     "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
   },
   "ownership": {

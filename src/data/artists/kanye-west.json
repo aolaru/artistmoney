@@ -1,7 +1,7 @@
 {
   "name": "Kanye West",
   "slug": "kanye-west",
-  "estimated_income": "$10M-$50M/year",
+  "estimated_income": "$5.5M-$28M/year",
   "top_songs": [
     "stronger",
     "power"
@@ -18,11 +18,11 @@
     "Cultural familiarity sustains long-tail demand and sync value."
   ],
   "earnings": {
-    "gross_catalog_revenue": "$25M-$100M/year",
-    "artist_or_estate_share": "$10M-$50M/year",
-    "label_share": "$8M-$30M/year",
-    "publisher_share": "$4M-$14M/year",
-    "writer_share": "$4M-$14M/year",
+    "gross_catalog_revenue": "$16M-$65M/year",
+    "artist_or_estate_share": "$5.5M-$28M/year",
+    "label_share": "$4.8M-$18M/year",
+    "publisher_share": "$2.4M-$8.4M/year",
+    "writer_share": "$2.4M-$8.4M/year",
     "assumptions": "Modeled from streaming scale, producer/songwriter participation, deep catalog replay, and licensing-sensitive cultural value."
   },
   "ownership": {

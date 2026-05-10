@@ -15,7 +15,7 @@ export function getArtistEditorial(artist: Artist, topSongs: Song[]) {
     overview:
       artist.bio ??
       `${artist.name}${region} has a catalog that still attracts listeners through recognisable songs, repeat listening, and long-tail streaming demand.`,
-    shortAnswer: `Estimated artist-side annual earnings: ${artist.earnings?.artist_or_estate_share ?? artist.estimated_income}.`,
+    shortAnswer: `Conservative modeled artist-side annual earnings: ${artist.earnings?.artist_or_estate_share ?? artist.estimated_income}.`,
     sources: artist.revenue_drivers?.length
       ? artist.revenue_drivers
       : [
@@ -41,7 +41,7 @@ export function getSongEditorial(song: Song, artist?: Artist) {
   const albumContext = song.album ? ` from ${song.album}` : "";
 
   return {
-    shortAnswer: `Estimated artist-side annual earnings: ${song.earnings?.artist_or_estate_share ?? song.estimated_revenue}.`,
+    shortAnswer: `Conservative modeled artist-side annual earnings: ${song.earnings?.artist_or_estate_share ?? song.estimated_revenue}.`,
     meaning:
       song.meaning_summary ??
       `${song.title}${albumContext} remains commercially relevant because it is emotionally legible, easy to replay, and culturally recognisable inside ${artistName}'s catalog.`,

@@ -1,7 +1,7 @@
 {
   "name": "Snoop Dogg",
   "slug": "snoop-dogg",
-  "estimated_income": "$10M-$30M/year",
+  "estimated_income": "$5.5M-$17M/year",
   "top_songs": [
     "drop-it-like-its-hot",
     "gin-and-juice"
@@ -18,11 +18,11 @@
   "country": "United States",
   "active_since": "1993",
   "earnings": {
-    "gross_catalog_revenue": "$18M-$50M/year",
-    "artist_or_estate_share": "$8M-$24M/year",
-    "label_share": "$5M-$16M/year",
-    "publisher_share": "$2M-$8M/year",
-    "writer_share": "$2M-$8M/year",
+    "gross_catalog_revenue": "$12M-$33M/year",
+    "artist_or_estate_share": "$4.4M-$13M/year",
+    "label_share": "$3M-$9.6M/year",
+    "publisher_share": "$1.2M-$4.8M/year",
+    "writer_share": "$1.2M-$4.8M/year",
     "assumptions": "Modeled from evergreen West Coast rap catalog demand, licensing value, feature visibility, and long-tail streaming."
   },
   "ownership": {

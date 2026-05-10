@@ -1,8 +1,12 @@
 {
   "name": "Brian Eno",
   "slug": "brian-eno",
-  "estimated_income": "$1M-$4M/year",
-  "top_songs": ["an-ending-ascent", "baby-s-on-fire", "music-for-airports-1-1"],
+  "estimated_income": "$550K-$2.2M/year",
+  "top_songs": [
+    "an-ending-ascent",
+    "baby-s-on-fire",
+    "music-for-airports-1-1"
+  ],
   "genre": "Ambient / Art Rock",
   "country": "United Kingdom",
   "active_since": "1971",

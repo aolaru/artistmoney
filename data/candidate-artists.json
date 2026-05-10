@@ -4,7 +4,7 @@
     "artist": {
       "name": "Madonna",
       "slug": "madonna",
-      "estimated_income": "$15M-$45M/year",
+      "estimated_income": "$8.3M-$25M/year",
       "top_songs": [
         "like-a-prayer",
         "vogue"
@@ -26,7 +26,7 @@
         "title": "Like a Prayer",
         "slug": "like-a-prayer",
         "artist": "madonna",
-        "estimated_revenue": "$700K-$2M/year",
+        "estimated_revenue": "$390K-$1.1M/year",
         "album": "Like a Prayer",
         "year": 1989,
         "meaning_summary": "This song blends spiritual imagery with pop drama, which helps explain its replay value and continued cultural relevance.",
@@ -43,7 +43,7 @@
         "title": "Vogue",
         "slug": "vogue",
         "artist": "madonna",
-        "estimated_revenue": "$500K-$1.6M/year",
+        "estimated_revenue": "$280K-$880K/year",
         "album": "I'm Breathless",
         "year": 1990,
         "meaning_summary": "This track remains commercially strong because it is rhythmically immediate, culturally iconic, and easy to rediscover.",
@@ -64,7 +64,7 @@
     "artist": {
       "name": "New Order",
       "slug": "new-order",
-      "estimated_income": "$3M-$9M/year",
+      "estimated_income": "$1.7M-$5M/year",
       "top_songs": [
         "blue-monday",
         "bizarre-love-triangle"
@@ -86,7 +86,7 @@
         "title": "Blue Monday",
         "slug": "blue-monday",
         "artist": "new-order",
-        "estimated_revenue": "$450K-$1.4M/year",
+        "estimated_revenue": "$250K-$770K/year",
         "album": "Power, Corruption & Lies",
         "year": 1983,
         "meaning_summary": "The track's mechanical groove and iconic synth structure make it exceptionally durable in both memory and commercial reuse.",
@@ -103,7 +103,7 @@
         "title": "Bizarre Love Triangle",
         "slug": "bizarre-love-triangle",
         "artist": "new-order",
-        "estimated_revenue": "$250K-$900K/year",
+        "estimated_revenue": "$140K-$500K/year",
         "album": "Brotherhood",
         "year": 1986,
         "meaning_summary": "Its melodic tension and emotional clarity help give the song unusually strong replay value decades after release.",
@@ -124,7 +124,7 @@
     "artist": {
       "name": "Air",
       "slug": "air",
-      "estimated_income": "$1M-$4M/year",
+      "estimated_income": "$550K-$2.2M/year",
       "top_songs": [
         "sexy-boy",
         "all-i-need-air"
@@ -146,7 +146,7 @@
         "title": "Sexy Boy",
         "slug": "sexy-boy",
         "artist": "air",
-        "estimated_revenue": "$180K-$650K/year",
+        "estimated_revenue": "$100K-$360K/year",
         "album": "Moon Safari",
         "year": 1998,
         "meaning_summary": "This recording remains commercially durable because its texture and mood are instantly recognizable and easy to revisit.",
@@ -163,7 +163,7 @@
         "title": "All I Need",
         "slug": "all-i-need-air",
         "artist": "air",
-        "estimated_revenue": "$140K-$500K/year",
+        "estimated_revenue": "$75K-$280K/year",
         "album": "Moon Safari",
         "year": 1998,
         "meaning_summary": "Its gentle melody and mood-centered pacing make it well suited to repeat listening and long-tail catalog use.",
@@ -184,7 +184,7 @@
     "artist": {
       "name": "The Prodigy",
       "slug": "the-prodigy",
-      "estimated_income": "$2M-$7M/year",
+      "estimated_income": "$1.1M-$3.9M/year",
       "top_songs": [
         "firestarter",
         "breathe-the-prodigy"
@@ -206,7 +206,7 @@
         "title": "Firestarter",
         "slug": "firestarter",
         "artist": "the-prodigy",
-        "estimated_revenue": "$220K-$800K/year",
+        "estimated_revenue": "$120K-$440K/year",
         "album": "The Fat of the Land",
         "year": 1996,
         "meaning_summary": "Its confrontational energy and instantly recognizable hook make it durable in both streaming and sync-heavy contexts.",
@@ -223,7 +223,7 @@
         "title": "Breathe",
         "slug": "breathe-the-prodigy",
         "artist": "the-prodigy",
-        "estimated_revenue": "$170K-$650K/year",
+        "estimated_revenue": "$95K-$360K/year",
         "album": "The Fat of the Land",
         "year": 1996,
         "meaning_summary": "This track keeps its value through a hard-edged mood, durable identity, and strong fit for energetic playlist use.",
@@ -244,7 +244,7 @@
     "artist": {
       "name": "Sade",
       "slug": "sade",
-      "estimated_income": "$4M-$12M/year",
+      "estimated_income": "$2.2M-$6.6M/year",
       "top_songs": [
         "smooth-operator",
         "no-ordinary-love"
@@ -266,7 +266,7 @@
         "title": "Smooth Operator",
         "slug": "smooth-operator",
         "artist": "sade",
-        "estimated_revenue": "$260K-$900K/year",
+        "estimated_revenue": "$140K-$500K/year",
         "album": "Diamond Life",
         "year": 1984,
         "meaning_summary": "Its elegance, melodic restraint, and unmistakable vocal performance help explain why it remains commercially durable.",
@@ -283,7 +283,7 @@
         "title": "No Ordinary Love",
         "slug": "no-ordinary-love",
         "artist": "sade",
-        "estimated_revenue": "$220K-$780K/year",
+        "estimated_revenue": "$120K-$430K/year",
         "album": "Love Deluxe",
         "year": 1992,
         "meaning_summary": "This recording stays valuable because it combines emotional clarity with a mood that still fits modern playlist listening.",
@@ -304,7 +304,7 @@
     "artist": {
       "name": "Burial",
       "slug": "burial",
-      "estimated_income": "$500K-$2M/year",
+      "estimated_income": "$280K-$1.1M/year",
       "top_songs": [
         "archangel",
         "shell-of-light"
@@ -326,7 +326,7 @@
         "title": "Archangel",
         "slug": "archangel",
         "artist": "burial",
-        "estimated_revenue": "$90K-$320K/year",
+        "estimated_revenue": "$50K-$180K/year",
         "album": "Untrue",
         "year": 2007,
         "meaning_summary": "Its fragmented vocal treatment and immersive atmosphere give it unusual replay depth for a niche electronic catalog track.",
@@ -343,7 +343,7 @@
         "title": "Shell of Light",
         "slug": "shell-of-light",
         "artist": "burial",
-        "estimated_revenue": "$70K-$260K/year",
+        "estimated_revenue": "$40K-$140K/year",
         "album": "Untrue",
         "year": 2007,
         "meaning_summary": "This song remains durable because its mood and texture invite repeat listening rather than one-time consumption.",
@@ -364,7 +364,7 @@
     "artist": {
       "name": "George Michael",
       "slug": "george-michael",
-      "estimated_income": "$4M-$12M/year",
+      "estimated_income": "$2.2M-$6.6M/year",
       "top_songs": [
         "careless-whisper",
         "faith"
@@ -386,7 +386,7 @@
         "title": "Careless Whisper",
         "slug": "careless-whisper",
         "artist": "george-michael",
-        "estimated_revenue": "$450K-$1.4M/year",
+        "estimated_revenue": "$250K-$770K/year",
         "album": "Make It Big",
         "year": 1984,
         "meaning_summary": "This song remains commercially durable because its melody, sax lead, and emotional directness make it instantly recognizable and highly replayable.",
@@ -403,7 +403,7 @@
         "title": "Faith",
         "slug": "faith",
         "artist": "george-michael",
-        "estimated_revenue": "$300K-$1M/year",
+        "estimated_revenue": "$170K-$550K/year",
         "album": "Faith",
         "year": 1987,
         "meaning_summary": "Its rhythm, vocal confidence, and broad familiarity help the track keep earning long after its original chart run.",
@@ -424,7 +424,7 @@
     "artist": {
       "name": "Michael Jackson",
       "slug": "michael-jackson",
-      "estimated_income": "$20M-$60M/year",
+      "estimated_income": "$11M-$33M/year",
       "top_songs": [
         "billie-jean",
         "beat-it"
@@ -446,7 +446,7 @@
         "title": "Billie Jean",
         "slug": "billie-jean",
         "artist": "michael-jackson",
-        "estimated_revenue": "$900K-$2.8M/year",
+        "estimated_revenue": "$500K-$1.5M/year",
         "album": "Thriller",
         "year": 1982,
         "meaning_summary": "This song keeps its value because the groove, hook, and cultural recognition remain unusually strong even decades after release.",
@@ -463,7 +463,7 @@
         "title": "Beat It",
         "slug": "beat-it",
         "artist": "michael-jackson",
-        "estimated_revenue": "$700K-$2.1M/year",
+        "estimated_revenue": "$390K-$1.2M/year",
         "album": "Thriller",
         "year": 1982,
         "meaning_summary": "Its crossover energy and instantly recognizable arrangement make it durable in both nostalgia listening and commercial reuse.",
@@ -483,7 +483,7 @@
     "artist": {
       "name": "Elton John",
       "slug": "elton-john",
-      "estimated_income": "$15M-$40M/year",
+      "estimated_income": "$8.3M-$22M/year",
       "top_songs": [
         "rocket-man",
         "tiny-dancer"
@@ -505,7 +505,7 @@
         "title": "Rocket Man",
         "slug": "rocket-man",
         "artist": "elton-john",
-        "estimated_revenue": "$350K-$1.1M/year",
+        "estimated_revenue": "$190K-$610K/year",
         "album": "Honky Chateau",
         "year": 1972,
         "meaning_summary": "Its reflective lyric and durable chorus keep the song emotionally legible and commercially resilient over time.",
@@ -522,7 +522,7 @@
         "title": "Tiny Dancer",
         "slug": "tiny-dancer",
         "artist": "elton-john",
-        "estimated_revenue": "$320K-$1M/year",
+        "estimated_revenue": "$180K-$550K/year",
         "album": "Madman Across the Water",
         "year": 1971,
         "meaning_summary": "This recording remains durable because its build, melody, and emotional payoff continue to reward repeat listening.",
@@ -543,7 +543,7 @@
     "artist": {
       "name": "Cyndi Lauper",
       "slug": "cyndi-lauper",
-      "estimated_income": "$2M-$7M/year",
+      "estimated_income": "$1.1M-$3.9M/year",
       "top_songs": [
         "girls-just-want-to-have-fun",
         "time-after-time"
@@ -565,7 +565,7 @@
         "title": "Girls Just Want to Have Fun",
         "slug": "girls-just-want-to-have-fun",
         "artist": "cyndi-lauper",
-        "estimated_revenue": "$260K-$820K/year",
+        "estimated_revenue": "$140K-$450K/year",
         "album": "She's So Unusual",
         "year": 1983,
         "meaning_summary": "Its celebratory hook and instantly recognizable chorus keep it commercially durable across decades of replay.",
@@ -582,7 +582,7 @@
         "title": "Time After Time",
         "slug": "time-after-time",
         "artist": "cyndi-lauper",
-        "estimated_revenue": "$220K-$700K/year",
+        "estimated_revenue": "$120K-$390K/year",
         "album": "She's So Unusual",
         "year": 1983,
         "meaning_summary": "Its emotional clarity and melodic simplicity help the song remain easy to revisit and commercially stable over time.",
@@ -603,7 +603,7 @@
     "artist": {
       "name": "Lady Gaga",
       "slug": "lady-gaga",
-      "estimated_income": "$15M-$45M/year",
+      "estimated_income": "$8.3M-$25M/year",
       "top_songs": [
         "bad-romance",
         "poker-face"
@@ -625,7 +625,7 @@
         "title": "Bad Romance",
         "slug": "bad-romance",
         "artist": "lady-gaga",
-        "estimated_revenue": "$600K-$1.9M/year",
+        "estimated_revenue": "$330K-$1M/year",
         "album": "The Fame Monster",
         "year": 2009,
         "meaning_summary": "This track remains commercially durable because its hook, production, and cultural imprint still feel immediate years later.",
@@ -642,7 +642,7 @@
         "title": "Poker Face",
         "slug": "poker-face",
         "artist": "lady-gaga",
-        "estimated_revenue": "$550K-$1.7M/year",
+        "estimated_revenue": "$300K-$940K/year",
         "album": "The Fame",
         "year": 2008,
         "meaning_summary": "Its clean pop structure and enduring familiarity make it easy to replay and commercially resilient.",
@@ -663,7 +663,7 @@
     "artist": {
       "name": "Gwen Stefani",
       "slug": "gwen-stefani",
-      "estimated_income": "$3M-$9M/year",
+      "estimated_income": "$1.7M-$5M/year",
       "top_songs": [
         "hollaback-girl",
         "what-you-waiting-for"
@@ -685,7 +685,7 @@
         "title": "Hollaback Girl",
         "slug": "hollaback-girl",
         "artist": "gwen-stefani",
-        "estimated_revenue": "$250K-$850K/year",
+        "estimated_revenue": "$140K-$470K/year",
         "album": "Love. Angel. Music. Baby.",
         "year": 2004,
         "meaning_summary": "Its chant-driven hook and cultural familiarity help explain why it remains commercially active over time.",
@@ -702,7 +702,7 @@
         "title": "What You Waiting For?",
         "slug": "what-you-waiting-for",
         "artist": "gwen-stefani",
-        "estimated_revenue": "$150K-$520K/year",
+        "estimated_revenue": "$85K-$290K/year",
         "album": "Love. Angel. Music. Baby.",
         "year": 2004,
         "meaning_summary": "The song keeps value through a recognizable vocal identity and a pop structure that remains easy to revisit.",
@@ -723,7 +723,7 @@
     "artist": {
       "name": "No Doubt",
       "slug": "no-doubt",
-      "estimated_income": "$3M-$10M/year",
+      "estimated_income": "$1.7M-$5.5M/year",
       "top_songs": [
         "dont-speak",
         "just-a-girl"
@@ -745,7 +745,7 @@
         "title": "Don't Speak",
         "slug": "dont-speak",
         "artist": "no-doubt",
-        "estimated_revenue": "$260K-$900K/year",
+        "estimated_revenue": "$140K-$500K/year",
         "album": "Tragic Kingdom",
         "year": 1995,
         "meaning_summary": "Its emotional directness and instantly memorable chorus keep the song commercially durable over time.",
@@ -762,7 +762,7 @@
         "title": "Just a Girl",
         "slug": "just-a-girl",
         "artist": "no-doubt",
-        "estimated_revenue": "$220K-$780K/year",
+        "estimated_revenue": "$120K-$430K/year",
         "album": "Tragic Kingdom",
         "year": 1995,
         "meaning_summary": "Its attitude, hook, and cultural identity keep the song easy to revisit and commercially durable.",
@@ -783,7 +783,7 @@
     "artist": {
       "name": "Christina Aguilera",
       "slug": "christina-aguilera",
-      "estimated_income": "$4M-$12M/year",
+      "estimated_income": "$2.2M-$6.6M/year",
       "top_songs": [
         "genie-in-a-bottle",
         "fighter"
@@ -805,7 +805,7 @@
         "title": "Genie in a Bottle",
         "slug": "genie-in-a-bottle",
         "artist": "christina-aguilera",
-        "estimated_revenue": "$200K-$650K/year",
+        "estimated_revenue": "$110K-$360K/year",
         "album": "Christina Aguilera",
         "year": 1999,
         "meaning_summary": "Its hook-driven structure and enduring familiarity make it commercially durable in long-tail pop listening.",
@@ -822,7 +822,7 @@
         "title": "Fighter",
         "slug": "fighter",
         "artist": "christina-aguilera",
-        "estimated_revenue": "$160K-$520K/year",
+        "estimated_revenue": "$90K-$290K/year",
         "album": "Stripped",
         "year": 2002,
         "meaning_summary": "Its assertive message and strong vocal identity help the song remain easy to revisit and commercially useful.",
@@ -842,7 +842,7 @@
     "artist": {
       "name": "Shakira",
       "slug": "shakira",
-      "estimated_income": "$10M-$30M/year",
+      "estimated_income": "$5.5M-$17M/year",
       "top_songs": [
         "hips-dont-lie",
         "whenever-wherever"
@@ -864,7 +864,7 @@
         "title": "Hips Don't Lie",
         "slug": "hips-dont-lie",
         "artist": "shakira",
-        "estimated_revenue": "$450K-$1.5M/year",
+        "estimated_revenue": "$250K-$830K/year",
         "album": "Oral Fixation, Vol. 2",
         "year": 2006,
         "meaning_summary": "Its rhythm, vocal identity, and global familiarity make it one of those songs that stays commercially alive through repeat listening.",
@@ -881,7 +881,7 @@
         "title": "Whenever, Wherever",
         "slug": "whenever-wherever",
         "artist": "shakira",
-        "estimated_revenue": "$320K-$1.1M/year",
+        "estimated_revenue": "$180K-$610K/year",
         "album": "Laundry Service",
         "year": 2001,
         "meaning_summary": "This song remains durable because its melodic identity and crossover appeal still fit modern playlist and catalog listening.",
@@ -901,7 +901,7 @@
     "artist": {
       "name": "Katy Perry",
       "slug": "katy-perry",
-      "estimated_income": "$8M-$25M/year",
+      "estimated_income": "$4.4M-$14M/year",
       "top_songs": [
         "firework",
         "teenage-dream"
@@ -923,7 +923,7 @@
         "title": "Firework",
         "slug": "firework",
         "artist": "katy-perry",
-        "estimated_revenue": "$350K-$1.2M/year",
+        "estimated_revenue": "$190K-$660K/year",
         "album": "Teenage Dream",
         "year": 2010,
         "meaning_summary": "Its uplifting hook and broad familiarity help the song remain commercially durable and widely replayed.",
@@ -940,7 +940,7 @@
         "title": "Teenage Dream",
         "slug": "teenage-dream",
         "artist": "katy-perry",
-        "estimated_revenue": "$280K-$950K/year",
+        "estimated_revenue": "$150K-$520K/year",
         "album": "Teenage Dream",
         "year": 2010,
         "meaning_summary": "The song stays valuable because its melodic lift and emotional nostalgia make it easy to revisit over time.",
@@ -960,7 +960,7 @@
     "artist": {
       "name": "Janet Jackson",
       "slug": "janet-jackson",
-      "estimated_income": "$5M-$18M/year",
+      "estimated_income": "$2.8M-$9.9M/year",
       "top_songs": [
         "together-again",
         "rhythm-nation"
@@ -982,7 +982,7 @@
         "title": "Together Again",
         "slug": "together-again",
         "artist": "janet-jackson",
-        "estimated_revenue": "$240K-$820K/year",
+        "estimated_revenue": "$130K-$450K/year",
         "album": "The Velvet Rope",
         "year": 1997,
         "meaning_summary": "Its emotional warmth and pop clarity help it remain commercially durable well beyond its original release cycle.",
@@ -999,7 +999,7 @@
         "title": "Rhythm Nation",
         "slug": "rhythm-nation",
         "artist": "janet-jackson",
-        "estimated_revenue": "$220K-$760K/year",
+        "estimated_revenue": "$120K-$420K/year",
         "album": "Janet Jackson's Rhythm Nation 1814",
         "year": 1989,
         "meaning_summary": "Its message, rhythm, and visual legacy give the song unusual long-tail value in both cultural memory and streaming.",
@@ -1019,7 +1019,7 @@
     "artist": {
       "name": "Erasure",
       "slug": "erasure",
-      "estimated_income": "$1M-$4M/year",
+      "estimated_income": "$550K-$2.2M/year",
       "top_songs": [
         "a-little-respect",
         "sometimes-erasure"
@@ -1041,7 +1041,7 @@
         "title": "A Little Respect",
         "slug": "a-little-respect",
         "artist": "erasure",
-        "estimated_revenue": "$110K-$360K/year",
+        "estimated_revenue": "$60K-$200K/year",
         "album": "The Innocents",
         "year": 1988,
         "meaning_summary": "Its melody and emotional clarity help the song remain commercially durable across decades of replay.",
@@ -1058,7 +1058,7 @@
         "title": "Sometimes",
         "slug": "sometimes-erasure",
         "artist": "erasure",
-        "estimated_revenue": "$90K-$300K/year",
+        "estimated_revenue": "$50K-$170K/year",
         "album": "The Circus",
         "year": 1986,
         "meaning_summary": "This song keeps value through its clear melodic shape, emotional immediacy, and fit with long-tail synth-pop listening.",
@@ -1078,7 +1078,7 @@
     "artist": {
       "name": "A-ha",
       "slug": "a-ha",
-      "estimated_income": "$2M-$6M/year",
+      "estimated_income": "$1.1M-$3.3M/year",
       "top_songs": [
         "take-on-me",
         "the-sun-always-shines-on-tv"
@@ -1100,7 +1100,7 @@
         "title": "Take On Me",
         "slug": "take-on-me",
         "artist": "a-ha",
-        "estimated_revenue": "$320K-$1M/year",
+        "estimated_revenue": "$180K-$550K/year",
         "album": "Hunting High and Low",
         "year": 1985,
         "meaning_summary": "Its melody, vocal leap, and iconic identity keep the song commercially durable across generations.",
@@ -1117,7 +1117,7 @@
         "title": "The Sun Always Shines on T.V.",
         "slug": "the-sun-always-shines-on-tv",
         "artist": "a-ha",
-        "estimated_revenue": "$90K-$320K/year",
+        "estimated_revenue": "$50K-$180K/year",
         "album": "Hunting High and Low",
         "year": 1985,
         "meaning_summary": "This song remains durable because of its emotional scale, melodic clarity, and long-tail appeal to synth-pop listeners.",
@@ -1137,7 +1137,7 @@
     "artist": {
       "name": "Duran Duran",
       "slug": "duran-duran",
-      "estimated_income": "$3M-$9M/year",
+      "estimated_income": "$1.7M-$5M/year",
       "top_songs": [
         "hungry-like-the-wolf",
         "ordinary-world"
@@ -1159,7 +1159,7 @@
         "title": "Hungry Like the Wolf",
         "slug": "hungry-like-the-wolf",
         "artist": "duran-duran",
-        "estimated_revenue": "$160K-$540K/year",
+        "estimated_revenue": "$90K-$300K/year",
         "album": "Rio",
         "year": 1982,
         "meaning_summary": "Its rhythm and instantly recognizable chorus help the song keep earning through long-tail replay and rediscovery.",
@@ -1176,7 +1176,7 @@
         "title": "Ordinary World",
         "slug": "ordinary-world",
         "artist": "duran-duran",
-        "estimated_revenue": "$140K-$480K/year",
+        "estimated_revenue": "$75K-$260K/year",
         "album": "Duran Duran (The Wedding Album)",
         "year": 1993,
         "meaning_summary": "Its emotional directness and mature pop structure help it remain commercially resilient over time.",
@@ -1196,7 +1196,7 @@
     "artist": {
       "name": "INXS",
       "slug": "inxs",
-      "estimated_income": "$2M-$7M/year",
+      "estimated_income": "$1.1M-$3.9M/year",
       "top_songs": [
         "need-you-tonight",
         "never-tear-us-apart"
@@ -1218,7 +1218,7 @@
         "title": "Need You Tonight",
         "slug": "need-you-tonight",
         "artist": "inxs",
-        "estimated_revenue": "$150K-$520K/year",
+        "estimated_revenue": "$85K-$290K/year",
         "album": "Kick",
         "year": 1987,
         "meaning_summary": "Its groove, vocal character, and compact hook help the song stay commercially durable over time.",
@@ -1235,7 +1235,7 @@
         "title": "Never Tear Us Apart",
         "slug": "never-tear-us-apart",
         "artist": "inxs",
-        "estimated_revenue": "$130K-$460K/year",
+        "estimated_revenue": "$70K-$250K/year",
         "album": "Kick",
         "year": 1987,
         "meaning_summary": "Its romantic emotional core and broad familiarity help keep it active in long-tail streaming and sync use.",
@@ -1255,7 +1255,7 @@
     "artist": {
       "name": "Vangelis",
       "slug": "vangelis",
-      "estimated_income": "$1M-$4M/year",
+      "estimated_income": "$550K-$2.2M/year",
       "top_songs": [
         "chariots-of-fire",
         "blade-runner-blues"
@@ -1277,7 +1277,7 @@
         "title": "Chariots of Fire",
         "slug": "chariots-of-fire",
         "artist": "vangelis",
-        "estimated_revenue": "$100K-$340K/year",
+        "estimated_revenue": "$55K-$190K/year",
         "album": "Chariots of Fire",
         "year": 1981,
         "meaning_summary": "Its cinematic build and broad recognition make it easy to revisit and commercially useful well beyond its original context.",
@@ -1294,7 +1294,7 @@
         "title": "Blade Runner Blues",
         "slug": "blade-runner-blues",
         "artist": "vangelis",
-        "estimated_revenue": "$70K-$240K/year",
+        "estimated_revenue": "$40K-$130K/year",
         "album": "Blade Runner",
         "year": 1982,
         "meaning_summary": "Its atmospheric depth gives the track unusual durability in ambient listening and long-tail soundtrack discovery.",
@@ -1314,7 +1314,7 @@
     "artist": {
       "name": "Jean-Michel Jarre",
       "slug": "jean-michel-jarre",
-      "estimated_income": "$1M-$5M/year",
+      "estimated_income": "$550K-$2.8M/year",
       "top_songs": [
         "oxygene-iv",
         "equinoxe-part-4"
@@ -1336,7 +1336,7 @@
         "title": "Oxygene IV",
         "slug": "oxygene-iv",
         "artist": "jean-michel-jarre",
-        "estimated_revenue": "$80K-$280K/year",
+        "estimated_revenue": "$45K-$150K/year",
         "album": "Oxygene",
         "year": 1976,
         "meaning_summary": "Its synth motif and strong atmospheric identity help the composition remain commercially durable in long-tail electronic listening.",
@@ -1353,7 +1353,7 @@
         "title": "Equinoxe Part 4",
         "slug": "equinoxe-part-4",
         "artist": "jean-michel-jarre",
-        "estimated_revenue": "$60K-$220K/year",
+        "estimated_revenue": "$35K-$120K/year",
         "album": "Equinoxe",
         "year": 1978,
         "meaning_summary": "Its texture and melodic patience make it well suited to repeat listening and durable catalog value.",
@@ -1373,7 +1373,7 @@
     "artist": {
       "name": "My Bloody Valentine",
       "slug": "my-bloody-valentine",
-      "estimated_income": "$700K-$3M/year",
+      "estimated_income": "$390K-$1.7M/year",
       "top_songs": [
         "only-shallow",
         "when-you-sleep"
@@ -1395,7 +1395,7 @@
         "title": "Only Shallow",
         "slug": "only-shallow",
         "artist": "my-bloody-valentine",
-        "estimated_revenue": "$70K-$240K/year",
+        "estimated_revenue": "$40K-$130K/year",
         "album": "Loveless",
         "year": 1991,
         "meaning_summary": "Its texture, impact, and emotional haze make it unusually durable for niche long-tail listening.",
@@ -1412,7 +1412,7 @@
         "title": "When You Sleep",
         "slug": "when-you-sleep",
         "artist": "my-bloody-valentine",
-        "estimated_revenue": "$70K-$250K/year",
+        "estimated_revenue": "$40K-$140K/year",
         "album": "Loveless",
         "year": 1991,
         "meaning_summary": "Its balance of melody and distortion keeps it highly replayable for both niche listeners and newer catalog explorers.",
@@ -1432,7 +1432,7 @@
     "artist": {
       "name": "U2",
       "slug": "u2",
-      "estimated_income": "$8M-$30M/year",
+      "estimated_income": "$4.4M-$17M/year",
       "top_songs": [
         "with-or-without-you",
         "one"
@@ -1454,7 +1454,7 @@
         "title": "With or Without You",
         "slug": "with-or-without-you",
         "artist": "u2",
-        "estimated_revenue": "$900K-$3M/year",
+        "estimated_revenue": "$500K-$1.7M/year",
         "album": "The Joshua Tree",
         "year": 1987,
         "meaning_summary": "Its emotional directness and instantly recognizable arrangement help it keep earning through repeat listening and catalog reuse.",
@@ -1471,7 +1471,7 @@
         "title": "One",
         "slug": "one",
         "artist": "u2",
-        "estimated_revenue": "$700K-$2.4M/year",
+        "estimated_revenue": "$390K-$1.3M/year",
         "album": "Achtung Baby",
         "year": 1991,
         "meaning_summary": "Its emotional clarity and enduring live and catalog status make it one of the most durable songs in the U2 catalog.",
@@ -1491,7 +1491,7 @@
     "artist": {
       "name": "The Rolling Stones",
       "slug": "the-rolling-stones",
-      "estimated_income": "$10M-$35M/year",
+      "estimated_income": "$5.5M-$19M/year",
       "top_songs": [
         "paint-it-black",
         "gimme-shelter"
@@ -1513,7 +1513,7 @@
         "title": "Paint It, Black",
         "slug": "paint-it-black",
         "artist": "the-rolling-stones",
-        "estimated_revenue": "$1M-$3.5M/year",
+        "estimated_revenue": "$550K-$1.9M/year",
         "album": "Aftermath",
         "year": 1966,
         "meaning_summary": "Its dark hook and immediate recognizability make it unusually durable in both catalog listening and sync-heavy reuse.",
@@ -1530,7 +1530,7 @@
         "title": "Gimme Shelter",
         "slug": "gimme-shelter",
         "artist": "the-rolling-stones",
-        "estimated_revenue": "$1.2M-$4M/year",
+        "estimated_revenue": "$660K-$2.2M/year",
         "album": "Let It Bleed",
         "year": 1969,
         "meaning_summary": "Its dramatic energy and constant reuse in film and media help explain why it remains one of the strongest earning Stones recordings.",
@@ -1550,7 +1550,7 @@
     "artist": {
       "name": "Bob Dylan",
       "slug": "bob-dylan",
-      "estimated_income": "$6M-$22M/year",
+      "estimated_income": "$3.3M-$12M/year",
       "top_songs": [
         "blowin-in-the-wind",
         "like-a-rolling-stone"
@@ -1572,7 +1572,7 @@
         "title": "Blowin' in the Wind",
         "slug": "blowin-in-the-wind",
         "artist": "bob-dylan",
-        "estimated_revenue": "$500K-$1.8M/year",
+        "estimated_revenue": "$280K-$990K/year",
         "album": "The Freewheelin' Bob Dylan",
         "year": 1963,
         "meaning_summary": "Its lyrical durability and songwriter importance keep it commercially relevant even outside pure streaming scale.",
@@ -1589,7 +1589,7 @@
         "title": "Like a Rolling Stone",
         "slug": "like-a-rolling-stone",
         "artist": "bob-dylan",
-        "estimated_revenue": "$700K-$2.4M/year",
+        "estimated_revenue": "$390K-$1.3M/year",
         "album": "Highway 61 Revisited",
         "year": 1965,
         "meaning_summary": "Its status as a foundational rock recording keeps it culturally active and financially durable across multiple channels.",
@@ -1609,7 +1609,7 @@
     "artist": {
       "name": "Phil Collins",
       "slug": "phil-collins",
-      "estimated_income": "$5M-$18M/year",
+      "estimated_income": "$2.8M-$9.9M/year",
       "top_songs": [
         "in-the-air-tonight",
         "another-day-in-paradise"
@@ -1631,7 +1631,7 @@
         "title": "In the Air Tonight",
         "slug": "in-the-air-tonight",
         "artist": "phil-collins",
-        "estimated_revenue": "$1M-$3.4M/year",
+        "estimated_revenue": "$550K-$1.9M/year",
         "album": "Face Value",
         "year": 1981,
         "meaning_summary": "Its distinctive mood and instantly recognizable drum break keep it commercially durable in both streaming and sync contexts.",
@@ -1648,7 +1648,7 @@
         "title": "Another Day in Paradise",
         "slug": "another-day-in-paradise",
         "artist": "phil-collins",
-        "estimated_revenue": "$500K-$1.8M/year",
+        "estimated_revenue": "$280K-$990K/year",
         "album": "...But Seriously",
         "year": 1989,
         "meaning_summary": "Its ballad structure and continued catalog familiarity help it retain long-tail earnings power.",
@@ -1668,7 +1668,7 @@
     "artist": {
       "name": "Red Hot Chili Peppers",
       "slug": "red-hot-chili-peppers",
-      "estimated_income": "$8M-$25M/year",
+      "estimated_income": "$4.4M-$14M/year",
       "top_songs": [
         "under-the-bridge",
         "californication"
@@ -1690,7 +1690,7 @@
         "title": "Under the Bridge",
         "slug": "under-the-bridge",
         "artist": "red-hot-chili-peppers",
-        "estimated_revenue": "$800K-$2.8M/year",
+        "estimated_revenue": "$440K-$1.5M/year",
         "album": "Blood Sugar Sex Magik",
         "year": 1991,
         "meaning_summary": "Its emotional directness and broad alternative-rock familiarity keep it commercially durable long after release.",
@@ -1707,7 +1707,7 @@
         "title": "Californication",
         "slug": "californication",
         "artist": "red-hot-chili-peppers",
-        "estimated_revenue": "$900K-$3M/year",
+        "estimated_revenue": "$500K-$1.7M/year",
         "album": "Californication",
         "year": 1999,
         "meaning_summary": "Its hook, recognizability, and continued playlist use make it one of the band's clearest long-tail earners.",
@@ -1727,7 +1727,7 @@
     "artist": {
       "name": "Gary Numan",
       "slug": "gary-numan",
-      "estimated_income": "$900K-$3.2M/year",
+      "estimated_income": "$500K-$1.8M/year",
       "top_songs": [
         "cars",
         "are-friends-electric"
@@ -1749,7 +1749,7 @@
         "title": "Cars",
         "slug": "cars",
         "artist": "gary-numan",
-        "estimated_revenue": "$250K-$900K/year",
+        "estimated_revenue": "$140K-$500K/year",
         "album": "The Pleasure Principle",
         "year": 1979,
         "meaning_summary": "Its cold synth hook and instantly recognizable structure help it remain commercially durable across streaming and sync-heavy contexts.",
@@ -1766,7 +1766,7 @@
         "title": "Are 'Friends' Electric?",
         "slug": "are-friends-electric",
         "artist": "gary-numan",
-        "estimated_revenue": "$180K-$700K/year",
+        "estimated_revenue": "$100K-$390K/year",
         "album": "Replicas",
         "year": 1979,
         "meaning_summary": "Its dystopian mood and distinctive electronic identity make it unusually durable for long-tail streaming and catalog discovery.",
@@ -1786,7 +1786,7 @@
     "artist": {
       "name": "Nine Inch Nails",
       "slug": "nine-inch-nails",
-      "estimated_income": "$2M-$7M/year",
+      "estimated_income": "$1.1M-$3.9M/year",
       "top_songs": [
         "closer",
         "hurt"
@@ -1808,7 +1808,7 @@
         "title": "Closer",
         "slug": "closer",
         "artist": "nine-inch-nails",
-        "estimated_revenue": "$350K-$1.2M/year",
+        "estimated_revenue": "$190K-$660K/year",
         "album": "The Downward Spiral",
         "year": 1994,
         "meaning_summary": "Its unmistakable production and cultural notoriety keep it commercially durable across streaming, nightlife, and sync-friendly reuse.",
@@ -1825,7 +1825,7 @@
         "title": "Hurt",
         "slug": "hurt",
         "artist": "nine-inch-nails",
-        "estimated_revenue": "$250K-$950K/year",
+        "estimated_revenue": "$140K-$520K/year",
         "album": "The Downward Spiral",
         "year": 1994,
         "meaning_summary": "Its emotional directness and long cultural afterlife keep it durable as both a catalog listen and a song people continue to rediscover.",
@@ -1846,7 +1846,7 @@
     "artist": {
       "name": "The Police",
       "slug": "the-police",
-      "estimated_income": "$4M-$14M/year",
+      "estimated_income": "$2.2M-$7.7M/year",
       "top_songs": [
         "every-breath-you-take",
         "roxanne"
@@ -1868,7 +1868,7 @@
         "title": "Every Breath You Take",
         "slug": "every-breath-you-take",
         "artist": "the-police",
-        "estimated_revenue": "$1.2M-$4.5M/year",
+        "estimated_revenue": "$660K-$2.5M/year",
         "album": "Synchronicity",
         "year": 1983,
         "meaning_summary": "Its instantly recognizable melody and constant cultural reuse make it one of the clearest long-tail catalog earners in the rock canon.",
@@ -1885,7 +1885,7 @@
         "title": "Roxanne",
         "slug": "roxanne",
         "artist": "the-police",
-        "estimated_revenue": "$450K-$1.6M/year",
+        "estimated_revenue": "$250K-$880K/year",
         "album": "Outlandos d'Amour",
         "year": 1978,
         "meaning_summary": "Its hook, vocal identity, and enduring familiarity keep it commercially durable decades after release.",
@@ -1905,7 +1905,7 @@
     "artist": {
       "name": "Billy Joel",
       "slug": "billy-joel",
-      "estimated_income": "$5M-$16M/year",
+      "estimated_income": "$2.8M-$8.8M/year",
       "top_songs": [
         "piano-man",
         "uptown-girl"
@@ -1927,7 +1927,7 @@
         "title": "Piano Man",
         "slug": "piano-man",
         "artist": "billy-joel",
-        "estimated_revenue": "$700K-$2.4M/year",
+        "estimated_revenue": "$390K-$1.3M/year",
         "album": "Piano Man",
         "year": 1973,
         "meaning_summary": "Its storytelling, singalong chorus, and constant rediscovery make it one of Billy Joel's most durable long-tail earners.",
@@ -1944,7 +1944,7 @@
         "title": "Uptown Girl",
         "slug": "uptown-girl",
         "artist": "billy-joel",
-        "estimated_revenue": "$450K-$1.7M/year",
+        "estimated_revenue": "$250K-$940K/year",
         "album": "An Innocent Man",
         "year": 1983,
         "meaning_summary": "Its bright hook and cross-generational pop familiarity make it commercially durable well beyond its chart life.",
@@ -1964,7 +1964,7 @@
     "artist": {
       "name": "Pet Shop Boys",
       "slug": "pet-shop-boys",
-      "estimated_income": "$2M-$7M/year",
+      "estimated_income": "$1.1M-$3.9M/year",
       "top_songs": [
         "west-end-girls",
         "its-a-sin"
@@ -1986,7 +1986,7 @@
         "title": "West End Girls",
         "slug": "west-end-girls",
         "artist": "pet-shop-boys",
-        "estimated_revenue": "$300K-$1.1M/year",
+        "estimated_revenue": "$170K-$610K/year",
         "album": "Please",
         "year": 1985,
         "meaning_summary": "Its cool vocal delivery, synth structure, and enduring recognizability help it remain commercially durable.",
@@ -2003,7 +2003,7 @@
         "title": "It's a Sin",
         "slug": "its-a-sin",
         "artist": "pet-shop-boys",
-        "estimated_revenue": "$250K-$950K/year",
+        "estimated_revenue": "$140K-$520K/year",
         "album": "Actually",
         "year": 1987,
         "meaning_summary": "Its emotional scale and strong melodic identity help the recording keep earning through replay and rediscovery.",
@@ -2023,7 +2023,7 @@
     "artist": {
       "name": "Joy Division",
       "slug": "joy-division",
-      "estimated_income": "$1.1M-$3.8M/year",
+      "estimated_income": "$610K-$2.1M/year",
       "top_songs": [
         "love-will-tear-us-apart",
         "atmosphere"
@@ -2045,7 +2045,7 @@
         "title": "Love Will Tear Us Apart",
         "slug": "love-will-tear-us-apart",
         "artist": "joy-division",
-        "estimated_revenue": "$250K-$900K/year",
+        "estimated_revenue": "$140K-$500K/year",
         "album": "Substance",
         "year": 1980,
         "meaning_summary": "Its emotional immediacy and iconic status make it commercially durable long after the original release era.",
@@ -2062,7 +2062,7 @@
         "title": "Atmosphere",
         "slug": "atmosphere",
         "artist": "joy-division",
-        "estimated_revenue": "$140K-$550K/year",
+        "estimated_revenue": "$75K-$300K/year",
         "album": "Substance",
         "year": 1980,
         "meaning_summary": "Its mood and reputation make it one of those catalog tracks that keeps finding new listeners through deep listening and alternative discovery.",
@@ -2082,7 +2082,7 @@
     "artist": {
       "name": "Kraftwerk",
       "slug": "kraftwerk",
-      "estimated_income": "$1.5M-$5M/year",
+      "estimated_income": "$830K-$2.8M/year",
       "top_songs": [
         "the-model",
         "computer-love"
@@ -2104,7 +2104,7 @@
         "title": "The Model",
         "slug": "the-model",
         "artist": "kraftwerk",
-        "estimated_revenue": "$180K-$700K/year",
+        "estimated_revenue": "$100K-$390K/year",
         "album": "The Man-Machine",
         "year": 1978,
         "meaning_summary": "Its minimalist hook and foundational synth-pop identity keep it commercially durable across decades of replay and discovery.",
@@ -2121,7 +2121,7 @@
         "title": "Computer Love",
         "slug": "computer-love",
         "artist": "kraftwerk",
-        "estimated_revenue": "$120K-$450K/year",
+        "estimated_revenue": "$65K-$250K/year",
         "album": "Computer World",
         "year": 1981,
         "meaning_summary": "Its melodic restraint and lasting influence help it remain relevant in long-tail electronic listening.",
@@ -2141,7 +2141,7 @@
     "artist": {
       "name": "The Smiths",
       "slug": "the-smiths",
-      "estimated_income": "$1.8M-$6M/year",
+      "estimated_income": "$990K-$3.3M/year",
       "top_songs": [
         "there-is-a-light-that-never-goes-out",
         "this-charming-man"
@@ -2163,7 +2163,7 @@
         "title": "There Is a Light That Never Goes Out",
         "slug": "there-is-a-light-that-never-goes-out",
         "artist": "the-smiths",
-        "estimated_revenue": "$250K-$950K/year",
+        "estimated_revenue": "$140K-$520K/year",
         "album": "The Queen Is Dead",
         "year": 1986,
         "meaning_summary": "Its emotional clarity and cult-level familiarity make it one of the most durable songs in the Smiths catalog.",
@@ -2180,7 +2180,7 @@
         "title": "This Charming Man",
         "slug": "this-charming-man",
         "artist": "the-smiths",
-        "estimated_revenue": "$180K-$700K/year",
+        "estimated_revenue": "$100K-$390K/year",
         "album": "The Smiths",
         "year": 1984,
         "meaning_summary": "Its guitar motif and instantly recognizable character make it commercially durable in long-tail alternative listening.",
@@ -2200,7 +2200,7 @@
     "artist": {
       "name": "The Killers",
       "slug": "the-killers",
-      "estimated_income": "$4M-$13M/year",
+      "estimated_income": "$2.2M-$7.2M/year",
       "top_songs": [
         "mr-brightside",
         "somebody-told-me"
@@ -2222,7 +2222,7 @@
         "title": "Mr. Brightside",
         "slug": "mr-brightside",
         "artist": "the-killers",
-        "estimated_revenue": "$1.4M-$4.5M/year",
+        "estimated_revenue": "$770K-$2.5M/year",
         "album": "Hot Fuss",
         "year": 2003,
         "meaning_summary": "Its singalong energy and constant rediscovery make it one of the most durable alternative-rock recordings of its era.",
@@ -2239,7 +2239,7 @@
         "title": "Somebody Told Me",
         "slug": "somebody-told-me",
         "artist": "the-killers",
-        "estimated_revenue": "$500K-$1.8M/year",
+        "estimated_revenue": "$280K-$990K/year",
         "album": "Hot Fuss",
         "year": 2004,
         "meaning_summary": "Its hook and early-2000s alternative identity help it remain commercially durable through replay and rediscovery.",
@@ -2259,7 +2259,7 @@
     "artist": {
       "name": "Green Day",
       "slug": "green-day",
-      "estimated_income": "$5M-$15M/year",
+      "estimated_income": "$2.8M-$8.3M/year",
       "top_songs": [
         "basket-case",
         "boulevard-of-broken-dreams"
@@ -2281,7 +2281,7 @@
         "title": "Basket Case",
         "slug": "basket-case",
         "artist": "green-day",
-        "estimated_revenue": "$700K-$2.4M/year",
+        "estimated_revenue": "$390K-$1.3M/year",
         "album": "Dookie",
         "year": 1994,
         "meaning_summary": "Its hook, pace, and enduring punk-pop familiarity make it one of Green Day's clearest long-tail earners.",
@@ -2298,7 +2298,7 @@
         "title": "Boulevard of Broken Dreams",
         "slug": "boulevard-of-broken-dreams",
         "artist": "green-day",
-        "estimated_revenue": "$650K-$2.2M/year",
+        "estimated_revenue": "$360K-$1.2M/year",
         "album": "American Idiot",
         "year": 2004,
         "meaning_summary": "Its emotional directness and broad 2000s radio familiarity keep it commercially durable well beyond its original cycle.",
@@ -2318,7 +2318,7 @@
     "artist": {
       "name": "Tom Petty",
       "slug": "tom-petty",
-      "estimated_income": "$4M-$13M/year",
+      "estimated_income": "$2.2M-$7.2M/year",
       "top_songs": [
         "free-fallin",
         "i-wont-back-down"
@@ -2340,7 +2340,7 @@
         "title": "Free Fallin'",
         "slug": "free-fallin",
         "artist": "tom-petty",
-        "estimated_revenue": "$800K-$2.7M/year",
+        "estimated_revenue": "$440K-$1.5M/year",
         "album": "Full Moon Fever",
         "year": 1989,
         "meaning_summary": "Its melody, broad familiarity, and easy replayability make it one of the clearest long-tail earners in the Tom Petty catalog.",
@@ -2357,7 +2357,7 @@
         "title": "I Won't Back Down",
         "slug": "i-wont-back-down",
         "artist": "tom-petty",
-        "estimated_revenue": "$500K-$1.8M/year",
+        "estimated_revenue": "$280K-$990K/year",
         "album": "Full Moon Fever",
         "year": 1989,
         "meaning_summary": "Its resilient message and broad familiarity help the recording stay commercially durable across decades of replay.",
@@ -2377,7 +2377,7 @@
     "artist": {
       "name": "Leonard Cohen",
       "slug": "leonard-cohen",
-      "estimated_income": "$2M-$7M/year",
+      "estimated_income": "$1.1M-$3.9M/year",
       "top_songs": [
         "hallelujah",
         "suzanne"
@@ -2399,7 +2399,7 @@
         "title": "Hallelujah",
         "slug": "hallelujah",
         "artist": "leonard-cohen",
-        "estimated_revenue": "$600K-$2.3M/year",
+        "estimated_revenue": "$330K-$1.3M/year",
         "album": "Various Positions",
         "year": 1984,
         "meaning_summary": "Its extraordinary cover history and enduring emotional resonance make it one of the strongest long-tail songwriter assets in the catalog.",
@@ -2416,7 +2416,7 @@
         "title": "Suzanne",
         "slug": "suzanne",
         "artist": "leonard-cohen",
-        "estimated_revenue": "$120K-$450K/year",
+        "estimated_revenue": "$65K-$250K/year",
         "album": "Songs of Leonard Cohen",
         "year": 1967,
         "meaning_summary": "Its lyrical identity and continuing songwriter prestige help it remain durable in long-tail catalog listening.",

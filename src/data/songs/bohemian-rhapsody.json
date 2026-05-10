@@ -2,7 +2,7 @@
   "title": "Bohemian Rhapsody",
   "slug": "bohemian-rhapsody",
   "artist": "queen",
-  "estimated_revenue": "$2M-$6M/year",
+  "estimated_revenue": "$1.1M-$3.3M/year",
   "album": "A Night at the Opera",
   "year": 1975,
   "meaning_summary": "Bohemian Rhapsody keeps earning because it is both a classic-rock standard and a cultural event song, with unusual replay value across streaming, film memory, and karaoke culture.",
@@ -17,11 +17,11 @@
     "hotel-california"
   ],
   "earnings": {
-    "gross_track_revenue": "$4M-$12M/year",
-    "artist_or_estate_share": "$2M-$6M/year",
-    "label_master_share": "$1M-$3M/year",
-    "publishing_share": "$700K-$2M/year",
-    "songwriter_share": "$700K-$2M/year",
+    "gross_track_revenue": "$2.6M-$7.8M/year",
+    "artist_or_estate_share": "$1.1M-$3.3M/year",
+    "label_master_share": "$600K-$1.8M/year",
+    "publishing_share": "$420K-$1.2M/year",
+    "songwriter_share": "$420K-$1.2M/year",
     "assumptions": "Estimate models global streaming, classic-rock replay, film-linked rediscovery, and high publishing value for a writer-led composition."
   },
   "ownership": {

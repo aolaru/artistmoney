@@ -1,8 +1,12 @@
 {
   "name": "Pearl Jam",
   "slug": "pearl-jam",
-  "estimated_income": "$4M-$12M/year",
-  "top_songs": ["alive", "even-flow", "black"],
+  "estimated_income": "$2.2M-$6.6M/year",
+  "top_songs": [
+    "alive",
+    "even-flow",
+    "black"
+  ],
   "genre": "Rock / Grunge",
   "country": "United States",
   "active_since": "1990",

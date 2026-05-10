@@ -2,7 +2,7 @@
   "title": "Nothing Else Matters",
   "slug": "nothing-else-matters",
   "artist": "metallica",
-  "estimated_revenue": "$250K-$900K/year",
+  "estimated_revenue": "$140K-$500K/year",
   "album": "Metallica",
   "year": 1991,
   "meaning_summary": "Nothing Else Matters stays commercially active because it broadens Metallica's catalog into ballad and wedding-adjacent listening contexts.",
@@ -11,5 +11,7 @@
     "cross-genre replay value",
     "playlist longevity"
   ],
-  "related_songs": ["enter-sandman"]
+  "related_songs": [
+    "enter-sandman"
+  ]
 }

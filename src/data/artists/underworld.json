@@ -1,7 +1,7 @@
 {
   "name": "Underworld",
   "slug": "underworld",
-  "estimated_income": "$1M-$4M/year",
+  "estimated_income": "$550K-$2.2M/year",
   "top_songs": [
     "born-slippy-nuxx",
     "dark-and-long-dark-train"
@@ -19,11 +19,11 @@
     "club-culture nostalgia"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$2M-$5M/year",
-    "artist_or_estate_share": "$1M-$4M/year",
-    "label_share": "$400K-$1.4M/year",
-    "publisher_share": "$180K-$600K/year",
-    "writer_share": "$220K-$700K/year",
+    "gross_catalog_revenue": "$1.3M-$3.3M/year",
+    "artist_or_estate_share": "$550K-$2.2M/year",
+    "label_share": "$240K-$840K/year",
+    "publisher_share": "$110K-$360K/year",
+    "writer_share": "$130K-$420K/year",
     "assumptions": "Estimate assumes strong long-tail streaming around Born Slippy, durable film-linked visibility, and meaningful creator participation."
   },
   "ownership": {

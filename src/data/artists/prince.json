@@ -1,8 +1,11 @@
 {
   "name": "Prince",
   "slug": "prince",
-  "estimated_income": "$8M-$30M/year",
-  "top_songs": ["purple-rain", "when-doves-cry"],
+  "estimated_income": "$4.4M-$17M/year",
+  "top_songs": [
+    "purple-rain",
+    "when-doves-cry"
+  ],
   "genre": "Pop / Funk",
   "country": "United States",
   "active_since": "1978",

@@ -2,13 +2,13 @@
   "title": "California Love",
   "slug": "california-love",
   "artist": "2pac",
-  "estimated_revenue": "$900K-$2.7M/year",
+  "estimated_revenue": "$500K-$1.5M/year",
   "earnings": {
-    "gross_track_revenue": "$2.1M-$6.3M/year",
-    "artist_or_estate_share": "$900K-$2.7M/year",
-    "label_master_share": "$630K-$1.9M/year",
-    "publishing_share": "$288K-$864K/year",
-    "songwriter_share": "$252K-$756K/year",
+    "gross_track_revenue": "$1.4M-$4.1M/year",
+    "artist_or_estate_share": "$500K-$1.5M/year",
+    "label_master_share": "$380K-$1.1M/year",
+    "publishing_share": "$170K-$520K/year",
+    "songwriter_share": "$150K-$450K/year",
     "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
   },
   "ownership": {

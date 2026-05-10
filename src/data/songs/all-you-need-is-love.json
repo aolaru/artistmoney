@@ -2,7 +2,7 @@
   "title": "All You Need Is Love",
   "slug": "all-you-need-is-love",
   "artist": "the-beatles",
-  "estimated_revenue": "$180K-$650K/year",
+  "estimated_revenue": "$100K-$360K/year",
   "album": "1",
   "year": 2000,
   "meaning_summary": "All You Need Is Love keeps earning because Beatles greatest-hits listening stays active across every generation of catalog users.",
@@ -11,5 +11,8 @@
     "playlist permanence",
     "publishing royalties"
   ],
-  "related_songs": ["yesterday", "let-it-be"]
+  "related_songs": [
+    "yesterday",
+    "let-it-be"
+  ]
 }

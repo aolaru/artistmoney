@@ -1,7 +1,7 @@
 {
   "name": "Madonna",
   "slug": "madonna",
-  "estimated_income": "$15M-$45M/year",
+  "estimated_income": "$8.3M-$25M/year",
   "top_songs": [
     "like-a-prayer",
     "vogue"
@@ -18,11 +18,11 @@
     "Multi-decade listener familiarity supports long-tail playlist and catalog performance."
   ],
   "earnings": {
-    "gross_catalog_revenue": "$30M-$90M/year",
-    "artist_or_estate_share": "$12M-$45M/year",
-    "label_share": "$10M-$30M/year",
-    "publisher_share": "$4M-$14M/year",
-    "writer_share": "$3M-$12M/year",
+    "gross_catalog_revenue": "$20M-$59M/year",
+    "artist_or_estate_share": "$6.6M-$25M/year",
+    "label_share": "$6M-$18M/year",
+    "publisher_share": "$2.4M-$8.4M/year",
+    "writer_share": "$1.8M-$7.2M/year",
     "assumptions": "Modeled from global pop catalog depth, touring halo, sync use, compilation demand, and songwriter participation across key hits."
   },
   "ownership": {

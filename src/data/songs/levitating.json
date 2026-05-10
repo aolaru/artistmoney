@@ -2,7 +2,7 @@
   "title": "Levitating",
   "slug": "levitating",
   "artist": "dua-lipa",
-  "estimated_revenue": "$500K-$1.8M/year",
+  "estimated_revenue": "$280K-$990K/year",
   "album": "Future Nostalgia",
   "year": 2020,
   "meaning_summary": "Levitating keeps monetizing because its disco-pop production and broad playlist fit make it a sticky streaming hit.",
@@ -11,5 +11,7 @@
     "playlist longevity",
     "catalog replay value"
   ],
-  "related_songs": ["dont-start-now"]
+  "related_songs": [
+    "dont-start-now"
+  ]
 }

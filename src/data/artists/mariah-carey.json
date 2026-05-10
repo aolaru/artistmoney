@@ -1,7 +1,7 @@
 {
   "name": "Mariah Carey",
   "slug": "mariah-carey",
-  "estimated_income": "$15M-$45M/year",
+  "estimated_income": "$8.3M-$25M/year",
   "top_songs": [
     "all-i-want-for-christmas-is-you",
     "we-belong-together"
@@ -19,11 +19,11 @@
     "licensing"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$35M-$95M/year",
-    "artist_or_estate_share": "$14M-$45M/year",
-    "label_share": "$10M-$28M/year",
-    "publisher_share": "$6M-$18M/year",
-    "writer_share": "$6M-$18M/year",
+    "gross_catalog_revenue": "$23M-$62M/year",
+    "artist_or_estate_share": "$7.7M-$25M/year",
+    "label_share": "$6M-$17M/year",
+    "publisher_share": "$3.6M-$11M/year",
+    "writer_share": "$3.6M-$11M/year",
     "assumptions": "Modeled from holiday-season catalog concentration, global pop/R&B streaming, publishing upside, and writer participation on key songs."
   },
   "ownership": {

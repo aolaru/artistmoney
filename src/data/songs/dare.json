@@ -2,7 +2,7 @@
   "title": "DARE",
   "slug": "dare",
   "artist": "gorillaz",
-  "estimated_revenue": "$500K-$1.6M/year",
+  "estimated_revenue": "$280K-$880K/year",
   "album": "Demon Days",
   "year": 2005,
   "meaning_summary": "DARE gives Demon Days a second tracked anchor because it captures the album's dance-pop side and remains one of Gorillaz's most replayable singles.",
@@ -17,11 +17,11 @@
     "song-2"
   ],
   "earnings": {
-    "gross_track_revenue": "$900K-$2.6M/year",
-    "artist_or_estate_share": "$500K-$1.6M/year",
-    "label_master_share": "$220K-$760K/year",
-    "publishing_share": "$140K-$420K/year",
-    "songwriter_share": "$120K-$360K/year",
+    "gross_track_revenue": "$590K-$1.7M/year",
+    "artist_or_estate_share": "$280K-$880K/year",
+    "label_master_share": "$130K-$460K/year",
+    "publishing_share": "$85K-$250K/year",
+    "songwriter_share": "$70K-$220K/year",
     "assumptions": "Estimate models Demon Days album halo, dance-playlist utility, and cross-genre catalog demand."
   },
   "ownership": {

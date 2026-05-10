@@ -2,7 +2,7 @@
   "title": "Rose",
   "slug": "rose",
   "artist": "james-horner",
-  "estimated_revenue": "$35K-$150K/year",
+  "estimated_revenue": "$20K-$85K/year",
   "album": "Titanic: Music from the Motion Picture",
   "year": 1997,
   "meaning_summary": "Rose remains active because Titanic still attracts score listeners and soundtrack-driven rediscovery.",
@@ -11,5 +11,7 @@
     "film catalog demand",
     "instrumental playlist use"
   ],
-  "related_songs": ["southampton"]
+  "related_songs": [
+    "southampton"
+  ]
 }

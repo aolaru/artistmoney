@@ -1,7 +1,7 @@
 {
   "name": "John Lennon",
   "slug": "john-lennon",
-  "estimated_income": "$4M-$14M/year",
+  "estimated_income": "$2.2M-$7.7M/year",
   "top_songs": [
     "imagine",
     "starting-over"
@@ -19,11 +19,11 @@
     "licensing and cultural reuse"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$7M-$18M/year",
-    "artist_or_estate_share": "$4M-$14M/year",
-    "label_share": "$1.4M-$4M/year",
-    "publisher_share": "$700K-$2M/year",
-    "writer_share": "$1M-$3M/year",
+    "gross_catalog_revenue": "$4.6M-$12M/year",
+    "artist_or_estate_share": "$2.2M-$7.7M/year",
+    "label_share": "$840K-$2.4M/year",
+    "publisher_share": "$420K-$1.2M/year",
+    "writer_share": "$600K-$1.8M/year",
     "assumptions": "Estimate assumes Imagine dominates annual catalog economics and that songwriter-side value materially strengthens retained earnings."
   },
   "ownership": {

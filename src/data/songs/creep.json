@@ -2,13 +2,13 @@
   "title": "Creep",
   "slug": "creep",
   "artist": "radiohead",
-  "estimated_revenue": "$700K-$2M/year",
+  "estimated_revenue": "$390K-$1.1M/year",
   "earnings": {
-    "gross_track_revenue": "$1.6M-$4.7M/year",
-    "artist_or_estate_share": "$700K-$2M/year",
-    "label_master_share": "$490K-$1.4M/year",
-    "publishing_share": "$224K-$640K/year",
-    "songwriter_share": "$196K-$560K/year",
+    "gross_track_revenue": "$1M-$3.1M/year",
+    "artist_or_estate_share": "$390K-$1.1M/year",
+    "label_master_share": "$290K-$840K/year",
+    "publishing_share": "$130K-$380K/year",
+    "songwriter_share": "$120K-$340K/year",
     "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
   },
   "ownership": {

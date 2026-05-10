@@ -2,7 +2,7 @@
   "title": "Don't Stop Me Now",
   "slug": "dont-stop-me-now",
   "artist": "queen",
-  "estimated_revenue": "$1.1M-$3.2M/year",
+  "estimated_revenue": "$610K-$1.8M/year",
   "album": "Jazz",
   "year": 1978,
   "meaning_summary": "Don’t Stop Me Now keeps earning because it is one of Queen’s most reusable feel-good records, with strong playlist, film, ad, and event value.",
@@ -17,11 +17,11 @@
     "hotel-california"
   ],
   "earnings": {
-    "gross_track_revenue": "$2.2M-$6.4M/year",
-    "artist_or_estate_share": "$1.1M-$3.2M/year",
-    "label_master_share": "$550K-$1.6M/year",
-    "publishing_share": "$350K-$1M/year",
-    "songwriter_share": "$350K-$1M/year",
+    "gross_track_revenue": "$1.4M-$4.2M/year",
+    "artist_or_estate_share": "$610K-$1.8M/year",
+    "label_master_share": "$330K-$960K/year",
+    "publishing_share": "$210K-$600K/year",
+    "songwriter_share": "$210K-$600K/year",
     "assumptions": "Estimate models classic-rock streaming, sync friendliness, event use, and writer-side participation."
   },
   "ownership": {

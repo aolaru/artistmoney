@@ -1,14 +1,17 @@
 {
   "name": "Mobb Deep",
   "slug": "mobb-deep",
-  "estimated_income": "$300K-$1.2M/year",
-  "top_songs": ["shook-ones-pt-ii", "survival-of-the-fittest"],
+  "estimated_income": "$170K-$660K/year",
+  "top_songs": [
+    "shook-ones-pt-ii",
+    "survival-of-the-fittest"
+  ],
   "earnings": {
-    "gross_catalog_revenue": "$700K-$1.8M/year",
-    "artist_or_estate_share": "$300K-$1M/year",
-    "label_share": "$200K-$600K/year",
-    "publisher_share": "$100K-$300K/year",
-    "writer_share": "$80K-$250K/year",
+    "gross_catalog_revenue": "$460K-$1.2M/year",
+    "artist_or_estate_share": "$170K-$550K/year",
+    "label_share": "$120K-$360K/year",
+    "publisher_share": "$60K-$180K/year",
+    "writer_share": "$50K-$150K/year",
     "assumptions": "Estimate assumes catalog streaming, soundtrack-style placements, and writer royalties, with artist cash flow depending on how royalties are shared between the surviving estate, members, and label-side contracts."
   },
   "ownership": {

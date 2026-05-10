@@ -1,7 +1,7 @@
 {
   "name": "Paul McCartney",
   "slug": "paul-mccartney",
-  "estimated_income": "$6M-$20M/year",
+  "estimated_income": "$3.3M-$11M/year",
   "top_songs": [
     "maybe-im-amazed",
     "live-and-let-die"
@@ -19,11 +19,11 @@
     "publishing and performance royalties"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$10M-$28M/year",
-    "artist_or_estate_share": "$6M-$20M/year",
-    "label_share": "$2M-$6M/year",
-    "publisher_share": "$900K-$3M/year",
-    "writer_share": "$1.2M-$4M/year",
+    "gross_catalog_revenue": "$6.5M-$18M/year",
+    "artist_or_estate_share": "$3.3M-$11M/year",
+    "label_share": "$1.2M-$3.6M/year",
+    "publisher_share": "$540K-$1.8M/year",
+    "writer_share": "$720K-$2.4M/year",
     "assumptions": "Estimate assumes strong publishing participation, global legacy-streaming scale, and ongoing licensing value from the biggest solo-era recordings."
   },
   "ownership": {

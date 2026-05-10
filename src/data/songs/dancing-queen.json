@@ -2,7 +2,7 @@
   "title": "Dancing Queen",
   "slug": "dancing-queen",
   "artist": "abba",
-  "estimated_revenue": "$2M-$6M/year",
+  "estimated_revenue": "$1.1M-$3.3M/year",
   "album": "Arrival",
   "year": 1976,
   "meaning_summary": "Dancing Queen remains commercially durable because it is instantly recognizable, broadly usable, and still functions as shorthand for euphoric pop.",
@@ -17,11 +17,11 @@
     "stayin-alive"
   ],
   "earnings": {
-    "gross_track_revenue": "$4M-$12M/year",
-    "artist_or_estate_share": "$2M-$6M/year",
-    "label_master_share": "$1M-$3M/year",
-    "publishing_share": "$700K-$2M/year",
-    "songwriter_share": "$700K-$2M/year",
+    "gross_track_revenue": "$2.6M-$7.8M/year",
+    "artist_or_estate_share": "$1.1M-$3.3M/year",
+    "label_master_share": "$600K-$1.8M/year",
+    "publishing_share": "$420K-$1.2M/year",
+    "songwriter_share": "$420K-$1.2M/year",
     "assumptions": "Estimate models evergreen streaming, disco nostalgia, stage and film adjacency, and strong songwriter-side participation."
   },
   "ownership": {

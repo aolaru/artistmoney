@@ -2,7 +2,7 @@
   "title": "Maria Maria",
   "slug": "maria-maria",
   "artist": "santana",
-  "estimated_revenue": "$220K-$800K/year",
+  "estimated_revenue": "$120K-$440K/year",
   "album": "Supernatural",
   "year": 1999,
   "meaning_summary": "Maria Maria continues to monetize because Supernatural-era crossover songs still attract broad replay and radio-memory demand.",
@@ -11,5 +11,7 @@
     "cross-genre playlist support",
     "long-tail radio familiarity"
   ],
-  "related_songs": ["smooth"]
+  "related_songs": [
+    "smooth"
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "name": "Coldplay",
   "slug": "coldplay",
-  "estimated_income": "$20M-$60M/year",
+  "estimated_income": "$11M-$33M/year",
   "top_songs": [
     "fix-you",
     "yellow"
@@ -18,11 +18,11 @@
     "Live relevance and broad brand familiarity increase licensing value."
   ],
   "earnings": {
-    "gross_catalog_revenue": "$45M-$120M/year",
-    "artist_or_estate_share": "$20M-$60M/year",
-    "label_share": "$14M-$38M/year",
-    "publisher_share": "$5M-$16M/year",
-    "writer_share": "$5M-$16M/year",
+    "gross_catalog_revenue": "$29M-$78M/year",
+    "artist_or_estate_share": "$11M-$33M/year",
+    "label_share": "$8.4M-$23M/year",
+    "publisher_share": "$3M-$9.6M/year",
+    "writer_share": "$3M-$9.6M/year",
     "assumptions": "Modeled from global catalog streaming, live halo, writer participation, and sync-friendly anthem catalog value."
   },
   "ownership": {

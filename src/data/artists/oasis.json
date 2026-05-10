@@ -1,14 +1,18 @@
 {
   "name": "Oasis",
   "slug": "oasis",
-  "estimated_income": "$2M-$6M/year",
-  "top_songs": ["wonderwall", "dont-look-back-in-anger", "champagne-supernova"],
+  "estimated_income": "$1.1M-$3.3M/year",
+  "top_songs": [
+    "wonderwall",
+    "dont-look-back-in-anger",
+    "champagne-supernova"
+  ],
   "earnings": {
-    "gross_catalog_revenue": "$5M-$12M/year",
-    "artist_or_estate_share": "$2M-$6M/year",
-    "label_share": "$1.5M-$4M/year",
-    "publisher_share": "$700K-$2M/year",
-    "writer_share": "$800K-$2.5M/year",
+    "gross_catalog_revenue": "$3.3M-$7.8M/year",
+    "artist_or_estate_share": "$1.1M-$3.3M/year",
+    "label_share": "$900K-$2.4M/year",
+    "publisher_share": "$420K-$1.2M/year",
+    "writer_share": "$480K-$1.5M/year",
     "assumptions": "Estimate assumes outsized writer economics around Noel Gallagher-led composition plus continued streaming, live-culture nostalgia, and sync demand."
   },
   "ownership": {

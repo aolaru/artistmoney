@@ -2,13 +2,13 @@
   "title": "Halo",
   "slug": "halo",
   "artist": "beyonce",
-  "estimated_revenue": "$900K-$2.6M/year",
+  "estimated_revenue": "$500K-$1.4M/year",
   "earnings": {
-    "gross_track_revenue": "$2.1M-$6.1M/year",
-    "artist_or_estate_share": "$900K-$2.6M/year",
-    "label_master_share": "$630K-$1.8M/year",
-    "publishing_share": "$288K-$832K/year",
-    "songwriter_share": "$252K-$728K/year",
+    "gross_track_revenue": "$1.4M-$4M/year",
+    "artist_or_estate_share": "$500K-$1.4M/year",
+    "label_master_share": "$380K-$1.1M/year",
+    "publishing_share": "$170K-$500K/year",
+    "songwriter_share": "$150K-$440K/year",
     "assumptions": "Estimate infers current annual earnings from streaming scale, catalog replay value, and sync utility, using typical rights splits across masters, publishing, and writers."
   },
   "ownership": {

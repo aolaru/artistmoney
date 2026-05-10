@@ -2,7 +2,7 @@
   "title": "Billie Jean",
   "slug": "billie-jean",
   "artist": "michael-jackson",
-  "estimated_revenue": "$1M-$4M/year",
+  "estimated_revenue": "$550K-$2.2M/year",
   "album": "Thriller",
   "year": 1982,
   "meaning_summary": "Billie Jean remains one of pop's strongest long-tail recordings because its groove, hook, and cultural familiarity never really left circulation.",
@@ -16,11 +16,11 @@
     "beat-it"
   ],
   "earnings": {
-    "gross_track_revenue": "$2M-$8M/year",
-    "artist_or_estate_share": "$1M-$4M/year",
-    "label_master_share": "$500K-$2M/year",
-    "publishing_share": "$350K-$1.2M/year",
-    "songwriter_share": "$350K-$1.2M/year",
+    "gross_track_revenue": "$1.3M-$5.2M/year",
+    "artist_or_estate_share": "$550K-$2.2M/year",
+    "label_master_share": "$300K-$1.2M/year",
+    "publishing_share": "$210K-$720K/year",
+    "songwriter_share": "$210K-$720K/year",
     "assumptions": "Estimate models global pop streaming, Thriller-era catalog demand, licensing reuse, and estate-side participation."
   },
   "ownership": {

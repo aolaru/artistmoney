@@ -2,7 +2,7 @@
   "title": "Titi Me Pregunto",
   "slug": "titi-me-pregunto",
   "artist": "bad-bunny",
-  "estimated_revenue": "$700K-$2.5M/year",
+  "estimated_revenue": "$390K-$1.4M/year",
   "album": "Un Verano Sin Ti",
   "year": 2022,
   "meaning_summary": "Titi Me Pregunto remains a major Latin catalog earner because Bad Bunny's biggest songs still operate at global streaming scale.",
@@ -11,5 +11,7 @@
     "Latin playlist dominance",
     "social media replay"
   ],
-  "related_songs": ["me-porto-bonito"]
+  "related_songs": [
+    "me-porto-bonito"
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "name": "Jay-Z",
   "slug": "jay-z",
-  "estimated_income": "$20M-$60M/year",
+  "estimated_income": "$11M-$33M/year",
   "top_songs": [
     "empire-state-of-mind",
     "99-problems"
@@ -19,11 +19,11 @@
     "ownership leverage"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$40M-$120M/year",
-    "artist_or_estate_share": "$20M-$60M/year",
-    "label_share": "$10M-$34M/year",
-    "publisher_share": "$5M-$16M/year",
-    "writer_share": "$5M-$16M/year",
+    "gross_catalog_revenue": "$26M-$78M/year",
+    "artist_or_estate_share": "$11M-$33M/year",
+    "label_share": "$6M-$20M/year",
+    "publisher_share": "$3M-$9.6M/year",
+    "writer_share": "$3M-$9.6M/year",
     "assumptions": "Modeled from premium rap catalog demand, publishing participation, ownership leverage, licensing value, and long-tail streaming."
   },
   "ownership": {

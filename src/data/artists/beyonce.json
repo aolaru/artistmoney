@@ -1,7 +1,7 @@
 {
   "name": "Beyonce",
   "slug": "beyonce",
-  "estimated_income": "$30M-$80M/year",
+  "estimated_income": "$17M-$44M/year",
   "top_songs": [
     "halo",
     "crazy-in-love",
@@ -19,11 +19,11 @@
     "Licensing and long-tail audience demand extend catalog value over time."
   ],
   "earnings": {
-    "gross_catalog_revenue": "$65M-$160M/year",
-    "artist_or_estate_share": "$30M-$80M/year",
-    "label_share": "$18M-$50M/year",
-    "publisher_share": "$7M-$22M/year",
-    "writer_share": "$6M-$20M/year",
+    "gross_catalog_revenue": "$42M-$104M/year",
+    "artist_or_estate_share": "$17M-$44M/year",
+    "label_share": "$11M-$30M/year",
+    "publisher_share": "$4.2M-$13M/year",
+    "writer_share": "$3.6M-$12M/year",
     "assumptions": "Modeled from global streaming scale, album catalog depth, touring halo, songwriter participation, and premium licensing value."
   },
   "ownership": {

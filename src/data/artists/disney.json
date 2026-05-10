@@ -1,8 +1,11 @@
 {
   "name": "Disney",
   "slug": "disney",
-  "estimated_income": "$15M-$50M/year",
-  "top_songs": ["let-it-go", "circle-of-life"],
+  "estimated_income": "$8.3M-$28M/year",
+  "top_songs": [
+    "let-it-go",
+    "circle-of-life"
+  ],
   "genre": "Soundtrack / Family Pop",
   "country": "United States",
   "active_since": "1937",
@@ -16,11 +19,11 @@
     "licensing and franchise reuse"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$50M-$150M/year",
-    "artist_or_estate_share": "$15M-$50M/year",
-    "label_share": "$18M-$55M/year",
-    "publisher_share": "$10M-$30M/year",
-    "writer_share": "$6M-$20M/year",
+    "gross_catalog_revenue": "$33M-$98M/year",
+    "artist_or_estate_share": "$8.3M-$28M/year",
+    "label_share": "$11M-$33M/year",
+    "publisher_share": "$6M-$18M/year",
+    "writer_share": "$3.6M-$12M/year",
     "assumptions": "Modeled from global Disney soundtrack streaming, evergreen family replay, film and franchise reuse, compilation demand, and publishing participation across major animated standards."
   },
   "ownership": {

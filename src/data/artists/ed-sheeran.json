@@ -1,7 +1,7 @@
 {
   "name": "Ed Sheeran",
   "slug": "ed-sheeran",
-  "estimated_income": "$20M-$60M/year",
+  "estimated_income": "$11M-$33M/year",
   "top_songs": [
     "shape-of-you",
     "castle-on-the-hill"
@@ -19,11 +19,11 @@
     "catalog permanence in modern pop"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$45M-$120M/year",
-    "artist_or_estate_share": "$20M-$60M/year",
-    "label_share": "$12M-$36M/year",
-    "publisher_share": "$6M-$18M/year",
-    "writer_share": "$6M-$18M/year",
+    "gross_catalog_revenue": "$29M-$78M/year",
+    "artist_or_estate_share": "$11M-$33M/year",
+    "label_share": "$7.2M-$22M/year",
+    "publisher_share": "$3.6M-$11M/year",
+    "writer_share": "$3.6M-$11M/year",
     "assumptions": "Modeled from extreme streaming scale, songwriter participation, durable global pop playlisting, and licensing value."
   },
   "ownership": {

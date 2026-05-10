@@ -2,7 +2,7 @@
   "title": "Yesterday",
   "slug": "yesterday",
   "artist": "the-beatles",
-  "estimated_revenue": "$250K-$900K/year",
+  "estimated_revenue": "$140K-$500K/year",
   "album": "1",
   "year": 2000,
   "meaning_summary": "Yesterday still monetizes at a high level because the Beatles' biggest songs continue to function as foundational catalog standards.",
@@ -11,5 +11,8 @@
     "catalog streaming",
     "publishing value"
   ],
-  "related_songs": ["all-you-need-is-love", "hey-jude"]
+  "related_songs": [
+    "all-you-need-is-love",
+    "hey-jude"
+  ]
 }

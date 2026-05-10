@@ -1,7 +1,7 @@
 {
   "name": "Enigma",
   "slug": "enigma",
-  "estimated_income": "$500K-$2M/year",
+  "estimated_income": "$280K-$1.1M/year",
   "top_songs": [
     "sadness-part-i",
     "return-to-innocence"
@@ -19,11 +19,11 @@
     "global nostalgia audience"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$1M-$3M/year",
-    "artist_or_estate_share": "$500K-$2M/year",
-    "label_share": "$200K-$800K/year",
-    "publisher_share": "$120K-$450K/year",
-    "writer_share": "$180K-$700K/year",
+    "gross_catalog_revenue": "$650K-$2M/year",
+    "artist_or_estate_share": "$280K-$1.1M/year",
+    "label_share": "$120K-$480K/year",
+    "publisher_share": "$70K-$270K/year",
+    "writer_share": "$110K-$420K/year",
     "assumptions": "Estimate assumes continued streaming around the best-known singles, international catalog demand, and creator-side participation through the studio-project structure."
   },
   "ownership": {

@@ -2,7 +2,7 @@
   "title": "How Deep Is Your Love",
   "slug": "how-deep-is-your-love",
   "artist": "bee-gees",
-  "estimated_revenue": "$250K-$900K/year",
+  "estimated_revenue": "$140K-$500K/year",
   "album": "Saturday Night Fever",
   "year": 1977,
   "meaning_summary": "How Deep Is Your Love still earns because it works across romantic playlists, oldies radio memory, and soundtrack-era rediscovery.",
@@ -11,5 +11,7 @@
     "romantic playlist demand",
     "soundtrack legacy"
   ],
-  "related_songs": ["stayin-alive"]
+  "related_songs": [
+    "stayin-alive"
+  ]
 }

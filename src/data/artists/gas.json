@@ -1,8 +1,11 @@
 {
   "name": "GAS",
   "slug": "gas",
-  "estimated_income": "$120K-$500K/year",
-  "top_songs": ["pop-4", "konigsforst-5"],
+  "estimated_income": "$65K-$280K/year",
+  "top_songs": [
+    "pop-4",
+    "konigsforst-5"
+  ],
   "genre": "Ambient / Minimal Techno",
   "country": "Germany",
   "active_since": "1996",

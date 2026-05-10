@@ -2,7 +2,7 @@
   "title": "Ironic",
   "slug": "ironic",
   "artist": "alanis-morissette",
-  "estimated_revenue": "$180K-$650K/year",
+  "estimated_revenue": "$100K-$360K/year",
   "album": "Jagged Little Pill",
   "year": 1995,
   "meaning_summary": "Ironic keeps earning because Jagged Little Pill remains a high-recognition catalog album for multiple listener generations.",
@@ -11,5 +11,7 @@
     "90s replay value",
     "playlist familiarity"
   ],
-  "related_songs": ["you-oughta-know"]
+  "related_songs": [
+    "you-oughta-know"
+  ]
 }

@@ -1,8 +1,11 @@
 {
   "name": "Garth Brooks",
   "slug": "garth-brooks",
-  "estimated_income": "$6M-$20M/year",
-  "top_songs": ["friends-in-low-places", "the-thunder-rolls"],
+  "estimated_income": "$3.3M-$11M/year",
+  "top_songs": [
+    "friends-in-low-places",
+    "the-thunder-rolls"
+  ],
   "genre": "Country",
   "country": "United States",
   "active_since": "1985",

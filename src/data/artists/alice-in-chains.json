@@ -1,8 +1,12 @@
 {
   "name": "Alice In Chains",
   "slug": "alice-in-chains",
-  "estimated_income": "$2M-$6M/year",
-  "top_songs": ["man-in-the-box", "would", "rooster"],
+  "estimated_income": "$1.1M-$3.3M/year",
+  "top_songs": [
+    "man-in-the-box",
+    "would",
+    "rooster"
+  ],
   "genre": "Grunge / Alternative Metal",
   "country": "United States",
   "active_since": "1987",

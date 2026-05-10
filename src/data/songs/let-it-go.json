@@ -2,7 +2,7 @@
   "title": "Let It Go",
   "slug": "let-it-go",
   "artist": "disney",
-  "estimated_revenue": "$400K-$1.5M/year",
+  "estimated_revenue": "$220K-$830K/year",
   "album": "Frozen",
   "year": 2013,
   "meaning_summary": "Let It Go keeps earning because Frozen remains one of the strongest family soundtrack properties of the streaming era.",
@@ -11,5 +11,8 @@
     "streaming and singalong demand",
     "franchise-driven catalog value"
   ],
-  "related_songs": ["do-you-want-to-build-a-snowman", "circle-of-life"]
+  "related_songs": [
+    "do-you-want-to-build-a-snowman",
+    "circle-of-life"
+  ]
 }

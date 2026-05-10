@@ -1,8 +1,12 @@
 {
   "name": "Autechre",
   "slug": "autechre",
-  "estimated_income": "$500K-$2M/year",
-  "top_songs": ["gantz-graf", "rae", "vl-al-5"],
+  "estimated_income": "$280K-$1.1M/year",
+  "top_songs": [
+    "gantz-graf",
+    "rae",
+    "vl-al-5"
+  ],
   "genre": "Electronic / IDM",
   "country": "United Kingdom",
   "active_since": "1987",

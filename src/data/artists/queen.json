@@ -1,7 +1,7 @@
 {
   "name": "Queen",
   "slug": "queen",
-  "estimated_income": "$10M-$35M/year",
+  "estimated_income": "$5.5M-$19M/year",
   "top_songs": [
     "bohemian-rhapsody",
     "dont-stop-me-now"
@@ -18,11 +18,11 @@
     "Licensing and seasonal or event-driven playback can create recurring revenue spikes."
   ],
   "earnings": {
-    "gross_catalog_revenue": "$40M-$90M/year",
-    "artist_or_estate_share": "$18M-$42M/year",
-    "label_share": "$10M-$28M/year",
-    "publisher_share": "$6M-$18M/year",
-    "writer_share": "$6M-$18M/year",
+    "gross_catalog_revenue": "$26M-$59M/year",
+    "artist_or_estate_share": "$9.9M-$23M/year",
+    "label_share": "$6M-$17M/year",
+    "publisher_share": "$3.6M-$11M/year",
+    "writer_share": "$3.6M-$11M/year",
     "assumptions": "Modeled from global classic-rock streaming, film-linked catalog resurgence, publishing value, and band/estate participation."
   },
   "ownership": {

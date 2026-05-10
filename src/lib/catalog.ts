@@ -497,7 +497,7 @@ export function getArtistOwnershipNote(artist: Artist) {
     return `${artist.name}'s reported earnings should be read alongside ownership context: ${details.join(", ")}.`;
   }
 
-  return `${artist.name}'s contract splits are not fully public, so the artist-side number on this page should be treated as a directional estimate rather than a royalty-statement equivalent.`;
+  return `${artist.name}'s contract splits are not fully public, so the artist-side number on this page should be treated as a conservative directional estimate rather than a royalty-statement equivalent.`;
 }
 
 export function getArtistOverviewText(artist: Artist) {
@@ -539,7 +539,7 @@ export function getSongOwnershipNote(song: Song, artist?: Artist) {
     return `${song.title} should be read with ownership context in mind: ${details.join(", ")}.`;
   }
 
-  return `${song.title} by ${artist?.name ?? song.artist} is modeled from the best available catalog and platform signals, but the exact master and publishing splits are not fully public.`;
+  return `${song.title} by ${artist?.name ?? song.artist} is conservatively modeled from the best available catalog and platform signals, but the exact master and publishing splits are not fully public.`;
 }
 
 export function getSongMeaningText(song: Song) {
@@ -574,7 +574,7 @@ export function getAlbumMethodology(album: Album): MethodologySnapshot {
       album.normalizedRevenue
         ? "Tracked-song revenue has been normalized into a numeric annual range for ranking and comparison."
         : "Tracked-song revenue is still partial, so ranking weight is limited.",
-      "Album economics on this site are a proxy for catalog strength, not a substitute for a full release-level royalty statement."
+      "Album economics on this site are conservative proxies for catalog strength, not a substitute for a full release-level royalty statement."
     ]
   };
 }
@@ -756,7 +756,7 @@ export function getArtistMethodology(artist: Artist): MethodologySnapshot {
       hasOwnership
         ? "Ownership notes are available here and can materially change who actually keeps the revenue shown on the page."
         : "Ownership context is still partial here, so the estimate should be treated as directional rather than contract-accurate.",
-      "All figures are annual modeled ranges based on streaming scale, catalog age, licensing usefulness, and known ownership context, not audited royalty statements."
+      "All figures are conservative annual modeled ranges based on streaming scale, catalog age, licensing usefulness, and known ownership context, not audited royalty statements."
     ]
   };
 }
@@ -786,7 +786,7 @@ export function getSongMethodology(song: Song): MethodologySnapshot {
       hasOwnership
         ? "Ownership notes on masters or publishing are included and should be read alongside the revenue number."
         : "Ownership context is incomplete here, so the estimate should be treated as directional rather than contract-precise.",
-      "All figures are annual modeled ranges based on streaming behavior, cultural replay value, sync potential, and available ownership information, not public royalty statements."
+      "All figures are conservative annual modeled ranges based on streaming behavior, cultural replay value, sync potential, and available ownership information, not public royalty statements."
     ]
   };
 }

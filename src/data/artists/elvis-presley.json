@@ -1,7 +1,7 @@
 {
   "name": "Elvis Presley",
   "slug": "elvis-presley",
-  "estimated_income": "$8M-$30M/year",
+  "estimated_income": "$4.4M-$17M/year",
   "top_songs": [
     "cant-help-falling-in-love",
     "jailhouse-rock"
@@ -19,11 +19,11 @@
     "film, documentary, and nostalgia-driven reuse"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$14M-$40M/year",
-    "artist_or_estate_share": "$8M-$30M/year",
-    "label_share": "$3M-$8M/year",
-    "publisher_share": "$1M-$3M/year",
-    "writer_share": "$1.2M-$4M/year",
+    "gross_catalog_revenue": "$9.1M-$26M/year",
+    "artist_or_estate_share": "$4.4M-$17M/year",
+    "label_share": "$1.8M-$4.8M/year",
+    "publisher_share": "$600K-$1.8M/year",
+    "writer_share": "$720K-$2.4M/year",
     "assumptions": "Estimate assumes very strong long-tail consumption, recurring licensing demand, and active estate-side monetization."
   },
   "ownership": {

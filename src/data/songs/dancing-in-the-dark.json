@@ -2,7 +2,7 @@
   "title": "Dancing in the Dark",
   "slug": "dancing-in-the-dark",
   "artist": "bruce-springsteen",
-  "estimated_revenue": "$220K-$800K/year",
+  "estimated_revenue": "$120K-$440K/year",
   "album": "Born in the U.S.A.",
   "year": 1984,
   "meaning_summary": "Dancing in the Dark still earns because it remains Bruce Springsteen's most playlist-friendly mainstream crossover hit.",
@@ -11,5 +11,7 @@
     "80s nostalgia playlists",
     "cross-generational replay"
   ],
-  "related_songs": ["born-in-the-u-s-a"]
+  "related_songs": [
+    "born-in-the-u-s-a"
+  ]
 }

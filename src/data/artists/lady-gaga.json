@@ -1,7 +1,7 @@
 {
   "name": "Lady Gaga",
   "slug": "lady-gaga",
-  "estimated_income": "$15M-$45M/year",
+  "estimated_income": "$8.3M-$25M/year",
   "top_songs": [
     "bad-romance",
     "poker-face"
@@ -18,11 +18,11 @@
     "Film, event, and brand-adjacent usage reinforce long-tail value."
   ],
   "earnings": {
-    "gross_catalog_revenue": "$30M-$90M/year",
-    "artist_or_estate_share": "$15M-$45M/year",
-    "label_share": "$9M-$28M/year",
-    "publisher_share": "$4M-$14M/year",
-    "writer_share": "$4M-$14M/year",
+    "gross_catalog_revenue": "$20M-$59M/year",
+    "artist_or_estate_share": "$8.3M-$25M/year",
+    "label_share": "$5.4M-$17M/year",
+    "publisher_share": "$2.4M-$8.4M/year",
+    "writer_share": "$2.4M-$8.4M/year",
     "assumptions": "Modeled from global pop streaming scale, writer participation, major-label master economics, sync demand, film halo, and recurring playlist visibility for core hits."
   },
   "ownership": {

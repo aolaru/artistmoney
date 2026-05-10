@@ -1,14 +1,17 @@
 {
   "name": "Adele",
   "slug": "adele",
-  "estimated_income": "$10M-$40M/year",
-  "top_songs": ["someone-like-you", "hello"],
+  "estimated_income": "$5.5M-$22M/year",
+  "top_songs": [
+    "someone-like-you",
+    "hello"
+  ],
   "earnings": {
-    "gross_catalog_revenue": "$18M-$50M/year",
-    "artist_or_estate_share": "$10M-$40M/year",
-    "label_share": "$4M-$12M/year",
-    "publisher_share": "$2M-$6M/year",
-    "writer_share": "$2M-$8M/year",
+    "gross_catalog_revenue": "$12M-$33M/year",
+    "artist_or_estate_share": "$5.5M-$22M/year",
+    "label_share": "$2.4M-$7.2M/year",
+    "publisher_share": "$1.2M-$3.6M/year",
+    "writer_share": "$1.2M-$4.8M/year",
     "assumptions": "Estimate assumes large recurring streaming, premium catalog value for evergreen ballads, and substantial songwriter participation on major records."
   },
   "ownership": {

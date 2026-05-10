@@ -1,8 +1,11 @@
 {
   "name": "Bee Gees",
   "slug": "bee-gees",
-  "estimated_income": "$6M-$18M/year",
-  "top_songs": ["stayin-alive", "how-deep-is-your-love"],
+  "estimated_income": "$3.3M-$9.9M/year",
+  "top_songs": [
+    "stayin-alive",
+    "how-deep-is-your-love"
+  ],
   "genre": "Pop / Disco",
   "country": "United Kingdom",
   "active_since": "1963",

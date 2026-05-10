@@ -1,8 +1,11 @@
 {
   "name": "Shania Twain",
   "slug": "shania-twain",
-  "estimated_income": "$4M-$14M/year",
-  "top_songs": ["youre-still-the-one", "man-i-feel-like-a-woman"],
+  "estimated_income": "$2.2M-$7.7M/year",
+  "top_songs": [
+    "youre-still-the-one",
+    "man-i-feel-like-a-woman"
+  ],
   "genre": "Country Pop",
   "country": "Canada",
   "active_since": "1993",

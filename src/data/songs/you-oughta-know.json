@@ -2,7 +2,7 @@
   "title": "You Oughta Know",
   "slug": "you-oughta-know",
   "artist": "alanis-morissette",
-  "estimated_revenue": "$200K-$750K/year",
+  "estimated_revenue": "$110K-$410K/year",
   "album": "Jagged Little Pill",
   "year": 1995,
   "meaning_summary": "You Oughta Know still monetizes because it remains one of the defining breakup records of the 1990s.",
@@ -11,5 +11,7 @@
     "catalog streaming",
     "songwriter-led value"
   ],
-  "related_songs": ["ironic"]
+  "related_songs": [
+    "ironic"
+  ]
 }

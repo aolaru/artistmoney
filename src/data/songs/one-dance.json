@@ -2,13 +2,13 @@
   "title": "One Dance",
   "slug": "one-dance",
   "artist": "drake",
-  "estimated_revenue": "$1.2M-$3.5M/year",
+  "estimated_revenue": "$660K-$1.9M/year",
   "earnings": {
-    "gross_track_revenue": "$2.4M-$7M/year",
-    "artist_or_estate_share": "$1.2M-$3.5M/year",
-    "label_master_share": "$540K-$1.6M/year",
-    "publishing_share": "$384K-$1.1M/year",
-    "songwriter_share": "$384K-$1.1M/year",
+    "gross_track_revenue": "$1.6M-$4.6M/year",
+    "artist_or_estate_share": "$660K-$1.9M/year",
+    "label_master_share": "$320K-$960K/year",
+    "publishing_share": "$230K-$660K/year",
+    "songwriter_share": "$230K-$660K/year",
     "assumptions": "Estimate infers current annual earnings from large-scale streaming, catalog replay value, and typical superstar-era rights participation."
   },
   "ownership": {

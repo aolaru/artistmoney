@@ -1,7 +1,7 @@
 {
   "name": "Bruce Springsteen",
   "slug": "bruce-springsteen",
-  "estimated_income": "$8M-$30M/year",
+  "estimated_income": "$4.4M-$17M/year",
   "top_songs": [
     "born-in-the-u-s-a",
     "dancing-in-the-dark"
@@ -19,11 +19,11 @@
     "licensing and documentary use"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$20M-$55M/year",
-    "artist_or_estate_share": "$9M-$28M/year",
-    "label_share": "$5M-$16M/year",
-    "publisher_share": "$3M-$9M/year",
-    "writer_share": "$3M-$9M/year",
+    "gross_catalog_revenue": "$13M-$36M/year",
+    "artist_or_estate_share": "$5M-$15M/year",
+    "label_share": "$3M-$9.6M/year",
+    "publisher_share": "$1.8M-$5.4M/year",
+    "writer_share": "$1.8M-$5.4M/year",
     "assumptions": "Modeled from classic-rock catalog streaming, songwriter participation, publishing value, licensing demand, and catalog-sale-adjusted visibility."
   },
   "ownership": {

@@ -1,7 +1,7 @@
 {
   "name": "Metallica",
   "slug": "metallica",
-  "estimated_income": "$12M-$35M/year",
+  "estimated_income": "$6.6M-$19M/year",
   "top_songs": [
     "enter-sandman",
     "nothing-else-matters"
@@ -19,11 +19,11 @@
     "deep live-catalog relevance"
   ],
   "earnings": {
-    "gross_catalog_revenue": "$50M-$100M/year",
-    "artist_or_estate_share": "$20M-$45M/year",
-    "label_share": "$12M-$30M/year",
-    "publisher_share": "$5M-$15M/year",
-    "writer_share": "$5M-$15M/year",
+    "gross_catalog_revenue": "$33M-$65M/year",
+    "artist_or_estate_share": "$11M-$25M/year",
+    "label_share": "$7.2M-$18M/year",
+    "publisher_share": "$3M-$9M/year",
+    "writer_share": "$3M-$9M/year",
     "assumptions": "Modeled from durable metal catalog streaming, physical/reissue demand, touring halo, sync value, and band writer participation."
   },
   "ownership": {

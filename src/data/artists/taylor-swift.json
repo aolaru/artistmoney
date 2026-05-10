@@ -1,7 +1,7 @@
 {
   "name": "Taylor Swift",
   "slug": "taylor-swift",
-  "estimated_income": "$50M-$120M/year",
+  "estimated_income": "$28M-$66M/year",
   "top_songs": [
     "blank-space",
     "shake-it-off",
@@ -19,11 +19,11 @@
     "Licensing and long-tail audience demand extend catalog value over time."
   ],
   "earnings": {
-    "gross_catalog_revenue": "$100M-$240M/year",
-    "artist_or_estate_share": "$50M-$120M/year",
-    "label_share": "$25M-$70M/year",
-    "publisher_share": "$10M-$30M/year",
-    "writer_share": "$10M-$30M/year",
+    "gross_catalog_revenue": "$65M-$156M/year",
+    "artist_or_estate_share": "$28M-$66M/year",
+    "label_share": "$15M-$42M/year",
+    "publisher_share": "$6M-$18M/year",
+    "writer_share": "$6M-$18M/year",
     "assumptions": "Modeled as a superstar catalog with unusually strong artist-side participation, songwriter share, owned/controlled rerecording upside, and global streaming scale."
   },
   "ownership": {
