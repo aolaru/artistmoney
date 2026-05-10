@@ -14571,5 +14571,88 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "youtubeMusic": "https://music.youtube.com/search?q=Celine%20Dion%20Let%27s%20Talk%20About%20Love",
       "amazonMusic": "https://music.amazon.com/search/Celine%20Dion%20Let%27s%20Talk%20About%20Love?tag=kreativauto-20"
     }
+  },
+  "simon-and-garfunkel-bookends": {
+    "releaseDate": "1968-04-03",
+    "trackCount": 12,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Bookends Theme",
+        "durationMs": 32551
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Save the Life of My Child",
+        "durationMs": 168607
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "America",
+        "durationMs": 215285
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Overs",
+        "durationMs": 139885
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Voices of Old People",
+        "durationMs": 127128
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Old Friends",
+        "durationMs": 155370
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Bookends Theme",
+        "durationMs": 83038
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Fakin' It",
+        "durationMs": 201330
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Punky's Dilemma",
+        "durationMs": 136809
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Mrs. Robinson",
+        "durationMs": 247420
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "A Hazy Shade of Winter",
+        "durationMs": 137389
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "At the Zoo",
+        "durationMs": 142154
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Simon%20%26%20Garfunkel%20Bookends",
+      "appleMusic": "https://music.apple.com/us/album/bookends/203303421?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Simon%20%26%20Garfunkel%20Bookends"
+    }
   }
 } as const;

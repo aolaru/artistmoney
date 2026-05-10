@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 5,
-    "album": 75
+    "song": 8,
+    "album": 76
   },
   "lastTouched": {
     "artist": {
@@ -275,7 +275,10 @@
       "c-r-e-a-m": "2026-05-09T21:38:29.324Z",
       "creep": "2026-05-10T02:32:30.111Z",
       "even-flow": "2026-05-10T06:06:32.060Z",
-      "gantz-graf": "2026-05-10T10:09:32.843Z"
+      "gantz-graf": "2026-05-10T10:09:32.843Z",
+      "heroes": "2026-05-10T19:09:28.034Z",
+      "i-dont-want-to-miss-a-thing": "2026-05-10T19:09:28.034Z",
+      "it-was-a-good-day": "2026-05-10T19:09:28.034Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -362,10 +365,15 @@
       "olaru-ambitones-darker-trashed-mix": "2026-05-08T10:20:48.489Z",
       "prince-purple-rain": "2026-05-08T21:56:05.008Z",
       "queen-jazz": "2026-05-09T02:29:03.844Z",
-      "rakim-the-18th-letter": "2026-05-09T05:44:37.796Z"
+      "rakim-the-18th-letter": "2026-05-09T05:44:37.796Z",
+      "simon-and-garfunkel-bookends": "2026-05-10T19:09:28.034Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-10T19:09:28.034Z",
+      "summary": "song:heroes, song:i-dont-want-to-miss-a-thing, song:it-was-a-good-day, album:simon-and-garfunkel-bookends"
+    },
     {
       "timestamp": "2026-05-10T10:09:32.843Z",
       "summary": "song:gantz-graf"
@@ -401,10 +409,6 @@
     {
       "timestamp": "2026-05-09T07:50:23.308Z",
       "summary": "song:the-sound-of-silence"
-    },
-    {
-      "timestamp": "2026-05-09T05:44:37.796Z",
-      "summary": "song:survival-of-the-fittest, album:rakim-the-18th-letter"
     }
   ]
 }
