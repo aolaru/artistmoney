@@ -16,5 +16,19 @@
     "Catalog streaming and songwriter value remain core revenue drivers.",
     "Film, documentary, and tribute use keep the catalog highly visible.",
     "Cross-generational recognition supports repeat listening and discovery."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$35M-$80M/year",
+    "artist_or_estate_share": "$15M-$40M/year",
+    "label_share": "$8M-$24M/year",
+    "publisher_share": "$6M-$18M/year",
+    "writer_share": "$6M-$18M/year",
+    "assumptions": "Modeled from evergreen pop-rock streaming, songwriter participation, classic catalog licensing, compilation demand, film and biographical halo, and recurring radio-style catalog use."
+  },
+  "ownership": {
+    "master_owner": "Mixed major-label catalog economics with artist-side royalty participation across eras",
+    "publishing_owner": "Publishing appears materially valuable because of Elton John and Bernie Taupin writer-side participation",
+    "catalog_sale_status": "No broad catalog-sale adjustment is modeled",
+    "notes": "Modeled annual artist-side range, not a public royalty statement."
+  }
 }

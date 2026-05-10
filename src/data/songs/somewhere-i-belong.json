@@ -1,0 +1,33 @@
+{
+  "title": "Somewhere I Belong",
+  "slug": "somewhere-i-belong",
+  "artist": "linkin-park",
+  "estimated_revenue": "$500K-$1.5M/year",
+  "album": "Meteora",
+  "year": 2003,
+  "meaning_summary": "Somewhere I Belong strengthens Meteora's album page because it remains one of the record's signature singles, carrying Linkin Park's emotional rock-rap crossover appeal.",
+  "revenue_drivers": [
+    "Meteora nostalgia keeps the song active across rock, alternative, and 2000s playlists.",
+    "Strong fan identification gives it repeat listening beyond chart-cycle demand.",
+    "Catalog listening around Numb pulls nearby album singles into the same revenue loop."
+  ],
+  "related_songs": [
+    "numb",
+    "in-the-end",
+    "crawling"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$900K-$2.4M/year",
+    "artist_or_estate_share": "$500K-$1.5M/year",
+    "label_master_share": "$220K-$700K/year",
+    "publishing_share": "$130K-$420K/year",
+    "songwriter_share": "$100K-$340K/year",
+    "assumptions": "Estimate models Linkin Park catalog demand, Meteora album halo, and typical band-side participation."
+  },
+  "ownership": {
+    "master_owner": "Label / catalog rightsholder with band-side royalty participation",
+    "publishing_owner": "Publishing appears shared across band writers and publisher administration",
+    "catalog_sale_status": "No song-specific catalog-sale adjustment is modeled",
+    "notes": "Modeled annual range based on catalog behavior, not a public royalty statement."
+  }
+}

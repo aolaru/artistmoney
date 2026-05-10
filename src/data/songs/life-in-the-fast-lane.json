@@ -1,0 +1,33 @@
+{
+  "title": "Life in the Fast Lane",
+  "slug": "life-in-the-fast-lane",
+  "artist": "the-eagles",
+  "estimated_revenue": "$450K-$1.4M/year",
+  "album": "Hotel California",
+  "year": 1976,
+  "meaning_summary": "Life in the Fast Lane gives Hotel California a second revenue anchor because it keeps the album tied to classic-rock replay beyond the title track.",
+  "revenue_drivers": [
+    "Classic-rock radio memory and streaming playlists keep the song in circulation.",
+    "Album-halo demand from Hotel California supports adjacent track discovery.",
+    "The riff-driven identity gives the song strong recognition in rock catalog contexts."
+  ],
+  "related_songs": [
+    "hotel-california",
+    "take-it-easy",
+    "desperado"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$850K-$2.4M/year",
+    "artist_or_estate_share": "$450K-$1.4M/year",
+    "label_master_share": "$220K-$650K/year",
+    "publishing_share": "$130K-$420K/year",
+    "songwriter_share": "$130K-$420K/year",
+    "assumptions": "Estimate models classic-rock streaming, album-halo replay, radio familiarity, and writer-side participation."
+  },
+  "ownership": {
+    "master_owner": "Major-label catalog master with band-side royalty participation",
+    "publishing_owner": "Publishing appears tied to Eagles songwriter participation and publisher administration",
+    "catalog_sale_status": "No song-specific catalog-sale adjustment is modeled",
+    "notes": "Modeled annual range, not a disclosed royalty statement."
+  }
+}

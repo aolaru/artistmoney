@@ -14,5 +14,19 @@
     "family catalog replay",
     "film-driven nostalgia",
     "licensing and franchise reuse"
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$50M-$150M/year",
+    "artist_or_estate_share": "$15M-$50M/year",
+    "label_share": "$18M-$55M/year",
+    "publisher_share": "$10M-$30M/year",
+    "writer_share": "$6M-$20M/year",
+    "assumptions": "Modeled from global Disney soundtrack streaming, evergreen family replay, film and franchise reuse, compilation demand, and publishing participation across major animated standards."
+  },
+  "ownership": {
+    "master_owner": "Disney-controlled soundtrack and label catalog economics across film and music divisions",
+    "publishing_owner": "Publishing appears controlled or administered across Disney-affiliated music entities and credited songwriters",
+    "catalog_sale_status": "No external catalog-sale adjustment is modeled",
+    "notes": "This page models the Disney soundtrack catalog as a rights-owner catalog, not a single performer royalty statement."
+  }
 }

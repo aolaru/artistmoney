@@ -1,0 +1,33 @@
+{
+  "title": "Bicycle Race",
+  "slug": "bicycle-race",
+  "artist": "queen",
+  "estimated_revenue": "$450K-$1.2M/year",
+  "album": "Jazz",
+  "year": 1978,
+  "meaning_summary": "Bicycle Race gives Jazz a second tracked song because it remains one of Queen's more recognizable playful catalog records alongside Don't Stop Me Now.",
+  "revenue_drivers": [
+    "Queen catalog listening keeps secondary singles active around the biggest hits.",
+    "Novelty, chorus recognition, and playlist context support repeat discovery.",
+    "Album-halo traffic from Jazz helps the song remain commercially visible."
+  ],
+  "related_songs": [
+    "dont-stop-me-now",
+    "bohemian-rhapsody",
+    "youre-my-best-friend"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$800K-$2.2M/year",
+    "artist_or_estate_share": "$450K-$1.2M/year",
+    "label_master_share": "$200K-$560K/year",
+    "publishing_share": "$130K-$360K/year",
+    "songwriter_share": "$130K-$360K/year",
+    "assumptions": "Estimate models Queen catalog replay, album-halo listening, and writer-side participation."
+  },
+  "ownership": {
+    "master_owner": "Major-label catalog master with band/estate royalty participation",
+    "publishing_owner": "Publishing appears valuable because of Queen writer-side participation",
+    "catalog_sale_status": "No song-specific catalog-sale adjustment is modeled",
+    "notes": "Modeled annual range, not a disclosed royalty statement."
+  }
+}

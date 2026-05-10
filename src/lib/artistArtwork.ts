@@ -172,6 +172,54 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
 const localPhoto = (fileName: string) => `${baseUrl}images/artists/${fileName}`;
 
 const artistPhotos: Record<string, ArtistPhoto> = {
+  disney: {
+    alt: "Walt Disney Animation Studios logo",
+    src: localPhoto("disney.png"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Walt_Disney_Animation_Studios_logo.svg",
+    credit: "Logo by Disney Enterprises, Inc. via Wikimedia Commons",
+    license: "Public domain in the U.S. / trademark notice applies",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Walt_Disney_Animation_Studios_logo.svg",
+    localPath: "/images/artists/disney.png"
+  },
+  "lady-gaga": {
+    alt: "Lady Gaga at the Toronto International Film Festival in 2018",
+    src: localPhoto("lady-gaga.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Lady_Gaga_(30358885287).jpg",
+    credit: "Photo by John Bauld via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/lady-gaga.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "bon-jovi": {
+    alt: "Bon Jovi publicity photo from 1986",
+    src: localPhoto("bon-jovi.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Bon_Jovi_1986.jpg",
+    credit: "Mercury Records publicity image via Wikimedia Commons",
+    license: "Public domain in the U.S.",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Bon_Jovi_1986.jpg",
+    localPath: "/images/artists/bon-jovi.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  "george-michael": {
+    alt: "George Michael at the Berlin International Film Festival in 2005",
+    src: localPhoto("george-michael.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:George_Michael.JPG",
+    credit: "Photo by Popperipopp via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:George_Michael.JPG",
+    localPath: "/images/artists/george-michael.jpg"
+  },
+  gorillaz: {
+    alt: "Gorillaz performing live in 2010",
+    src: localPhoto("gorillaz.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Gorillaz_(4742651433).jpg",
+    credit: "Photo by wonker via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/gorillaz.jpg",
+    personalityRightsWarning: "Living performers are identifiable. Editorial use is generally safer than endorsement or advertising use."
+  },
   oasis: {
     alt: "Oasis performing in Cardiff in 2025",
     src: localPhoto("oasis.jpg"),

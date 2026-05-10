@@ -1,0 +1,33 @@
+{
+  "title": "Tell Him",
+  "slug": "tell-him",
+  "artist": "celine-dion",
+  "estimated_revenue": "$300K-$950K/year",
+  "album": "Let's Talk About Love",
+  "year": 1997,
+  "meaning_summary": "Tell Him adds a second Let's Talk About Love anchor by connecting Celine Dion's blockbuster late-1990s ballad era to duet, adult-pop, and international catalog listening.",
+  "revenue_drivers": [
+    "Album-halo demand from My Heart Will Go On keeps the parent album visible.",
+    "Adult-contemporary and duet playlist contexts support steady long-tail replay.",
+    "Celine Dion's global ballad catalog helps secondary singles retain value."
+  ],
+  "related_songs": [
+    "my-heart-will-go-on",
+    "because-you-loved-me",
+    "i-will-always-love-you"
+  ],
+  "earnings": {
+    "gross_track_revenue": "$550K-$1.7M/year",
+    "artist_or_estate_share": "$300K-$950K/year",
+    "label_master_share": "$130K-$420K/year",
+    "publishing_share": "$90K-$280K/year",
+    "songwriter_share": "$70K-$220K/year",
+    "assumptions": "Estimate models adult-pop catalog demand, album halo, duet recognition, and label/publishing participation."
+  },
+  "ownership": {
+    "master_owner": "Label / catalog rightsholder with artist-side participation",
+    "publishing_owner": "Publishing appears shared across songwriters and publisher administration",
+    "catalog_sale_status": "No song-specific catalog-sale adjustment is modeled",
+    "notes": "Modeled annual range, not a public royalty statement."
+  }
+}

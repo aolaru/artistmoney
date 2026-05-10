@@ -16,5 +16,19 @@
     "Global streaming scale keeps the catalog commercially active.",
     "Large playlist presence supports consistent repeat listening.",
     "Film, event, and brand-adjacent usage reinforce long-tail value."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$30M-$90M/year",
+    "artist_or_estate_share": "$15M-$45M/year",
+    "label_share": "$9M-$28M/year",
+    "publisher_share": "$4M-$14M/year",
+    "writer_share": "$4M-$14M/year",
+    "assumptions": "Modeled from global pop streaming scale, writer participation, major-label master economics, sync demand, film halo, and recurring playlist visibility for core hits."
+  },
+  "ownership": {
+    "master_owner": "Major-label master economics with meaningful artist-side participation across the catalog",
+    "publishing_owner": "Publishing appears shared across Lady Gaga, collaborators, producers, and publisher administration",
+    "catalog_sale_status": "No broad catalog-sale adjustment is modeled",
+    "notes": "Modeled artist-side range, not a disclosed royalty statement."
+  }
 }

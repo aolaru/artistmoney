@@ -3,14 +3,30 @@
   "slug": "hotline-bling",
   "artist": "drake",
   "estimated_revenue": "$900K-$2.5M/year",
-  "meaning_summary": "This track pairs a memorable hook with strong cultural recall, which helps explain its staying power and long-tail commercial value.",
+  "album": "Views",
+  "year": 2015,
+  "meaning_summary": "Hotline Bling keeps earning because its hook, video memory, and crossover pop-rap simplicity make it one of Drake's most recognizable mid-2010s catalog records.",
   "revenue_drivers": [
-    "Catalog streaming remains the main long-tail driver for recognizable rap tracks.",
-    "Playlist placement and cultural recall help the song stay active.",
-    "Sampling, sync use, and short-form rediscovery can extend earnings."
+    "Catalog streaming remains the main long-tail driver for recognizable Drake singles.",
+    "Video-era cultural recall helps the song stay active beyond ordinary album-track behavior.",
+    "Views-era catalog listening connects the song to Drake's broader streaming ecosystem."
   ],
   "related_songs": [
     "gods-plan",
     "one-dance"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1.8M-$5M/year",
+    "artist_or_estate_share": "$900K-$2.5M/year",
+    "label_master_share": "$420K-$1.2M/year",
+    "publishing_share": "$280K-$800K/year",
+    "songwriter_share": "$260K-$760K/year",
+    "assumptions": "Estimate models streaming durability, video-driven cultural memory, superstar-era master participation, and songwriter/publisher splits."
+  },
+  "ownership": {
+    "master_owner": "Label-distributed master with significant artist-side participation",
+    "publishing_owner": "Publishing appears shared across Drake, producers, and publisher administration",
+    "catalog_sale_status": "No song-specific catalog-sale adjustment is modeled",
+    "notes": "Modeled annual range, not a public royalty statement."
+  }
 }
