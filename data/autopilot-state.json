@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 2,
-    "album": 72
+    "song": 3,
+    "album": 73
   },
   "lastTouched": {
     "artist": {
@@ -272,7 +272,8 @@
       "without-me": "2026-05-09T13:05:50.248Z",
       "youre-the-inspiration": "2026-05-09T15:45:13.663Z",
       "an-ending-ascent": "2026-05-09T18:53:46.862Z",
-      "c-r-e-a-m": "2026-05-09T21:38:29.324Z"
+      "c-r-e-a-m": "2026-05-09T21:38:29.324Z",
+      "creep": "2026-05-10T02:32:30.111Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -364,6 +365,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-10T02:32:30.111Z",
+      "summary": "song:creep"
+    },
+    {
       "timestamp": "2026-05-09T21:38:29.324Z",
       "summary": "song:c-r-e-a-m"
     },
@@ -398,10 +403,6 @@
     {
       "timestamp": "2026-05-08T21:56:05.008Z",
       "summary": "song:shook-ones-pt-ii, album:prince-purple-rain"
-    },
-    {
-      "timestamp": "2026-05-08T19:10:20.138Z",
-      "summary": "song:riders-on-the-storm"
     }
   ]
 }
