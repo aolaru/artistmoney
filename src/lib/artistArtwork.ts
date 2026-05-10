@@ -172,6 +172,55 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
 const localPhoto = (fileName: string) => `${baseUrl}images/artists/${fileName}`;
 
 const artistPhotos: Record<string, ArtistPhoto> = {
+  sade: {
+    alt: "Sade performing live in 2011",
+    src: localPhoto("sade.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Sade_band.jpg",
+    credit: "Photo by Julio Lopes via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/sade.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "alanis-morissette": {
+    alt: "Alanis Morissette performing in Los Angeles in 2013",
+    src: localPhoto("alanis-morissette.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Alanis_Morissette_10_20_2013_-4_(10395333704)_(cropped).jpg",
+    credit: "Photo by Justin Higuchi via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    localPath: "/images/artists/alanis-morissette.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "jimi-hendrix": {
+    alt: "Jimi Hendrix performing in concert in 1970",
+    src: localPhoto("jimi-hendrix.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Hendrix_performing_6-20-1970.jpg",
+    credit: "Unknown photographer via Wikimedia Commons",
+    license: "Public domain in the U.S.",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Hendrix_performing_6-20-1970.jpg",
+    localPath: "/images/artists/jimi-hendrix.jpg"
+  },
+  nas: {
+    alt: "Nas performing Illmatic XX in Paris in 2014",
+    src: localPhoto("nas.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Nas_July_2014_(cropped).jpg",
+    credit: "Photo by Coup d'Oreille via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/nas.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "no-doubt": {
+    alt: "Gwen Stefani of No Doubt performing at Global Citizen Earth Day in 2015",
+    src: localPhoto("no-doubt.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Gwen_Stefani,_No_Doubt.jpg",
+    credit: "Photo by Lorie Shaull via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/no-doubt.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
   disney: {
     alt: "Walt Disney Animation Studios logo",
     src: localPhoto("disney.png"),
