@@ -14654,5 +14654,77 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/bookends/203303421?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Simon%20%26%20Garfunkel%20Bookends"
     }
+  },
+  "squarepusher-go-plastic": {
+    "releaseDate": "2001-06-25",
+    "label": "Warp Records Limited",
+    "trackCount": 10,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "My Red Hot Car",
+        "durationMs": 282067
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Boneville Occident",
+        "durationMs": 290600
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Go! Spastic",
+        "durationMs": 381493
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Metteng Excuske V1.2",
+        "durationMs": 68133
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "The Exploding Psychology",
+        "durationMs": 403507
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "I Wish You Could Talk",
+        "durationMs": 293693
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Greenways Trajectory",
+        "durationMs": 430667
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Tommib",
+        "durationMs": 79173
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "My F*****g Sound",
+        "durationMs": 425493
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Plaistow Flex Out",
+        "durationMs": 268773
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Squarepusher%20Go%20Plastic",
+      "appleMusic": "https://music.apple.com/us/album/go-plastic/281864519?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Squarepusher%20Go%20Plastic"
+    }
   }
 } as const;

@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 8,
-    "album": 76
+    "song": 11,
+    "album": 77
   },
   "lastTouched": {
     "artist": {
@@ -278,7 +278,10 @@
       "gantz-graf": "2026-05-10T10:09:32.843Z",
       "heroes": "2026-05-10T19:09:28.034Z",
       "i-dont-want-to-miss-a-thing": "2026-05-10T19:09:28.034Z",
-      "it-was-a-good-day": "2026-05-10T19:09:28.034Z"
+      "it-was-a-good-day": "2026-05-10T19:09:28.034Z",
+      "ny-state-of-mind": "2026-05-11T09:46:51.616Z",
+      "party-up": "2026-05-11T09:46:51.616Z",
+      "put-your-hands-where-my-eyes-could-see": "2026-05-11T09:46:51.616Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -366,10 +369,15 @@
       "prince-purple-rain": "2026-05-08T21:56:05.008Z",
       "queen-jazz": "2026-05-09T02:29:03.844Z",
       "rakim-the-18th-letter": "2026-05-09T05:44:37.796Z",
-      "simon-and-garfunkel-bookends": "2026-05-10T19:09:28.034Z"
+      "simon-and-garfunkel-bookends": "2026-05-10T19:09:28.034Z",
+      "squarepusher-go-plastic": "2026-05-11T09:46:51.616Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-11T09:46:51.616Z",
+      "summary": "song:ny-state-of-mind, song:party-up, song:put-your-hands-where-my-eyes-could-see, album:squarepusher-go-plastic"
+    },
     {
       "timestamp": "2026-05-10T19:09:28.034Z",
       "summary": "song:heroes, song:i-dont-want-to-miss-a-thing, song:it-was-a-good-day, album:simon-and-garfunkel-bookends"
@@ -405,10 +413,6 @@
     {
       "timestamp": "2026-05-09T10:02:49.157Z",
       "summary": "song:we-belong-together"
-    },
-    {
-      "timestamp": "2026-05-09T07:50:23.308Z",
-      "summary": "song:the-sound-of-silence"
     }
   ]
 }
