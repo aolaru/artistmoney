@@ -16,5 +16,14 @@
     "publishing_owner": "Publishing value appears materially tied to the songwriting side",
     "catalog_sale_status": "No sale assumption baked in",
     "notes": "Ballads with broad emotional recall often keep earning through mood playlists long after peak chart life."
-  }
+  },
+  "meaning_summary": "This song combines direct emotion with a strong melodic center, making it easy to revisit and commercially durable.",
+  "revenue_drivers": [
+    "Streaming scale and playlist inclusion remain the largest recurring drivers.",
+    "A durable hook and broad familiarity help the song keep earning across catalog listening.",
+    "Sync, social reuse, and seasonal spikes can lift the baseline."
+  ],
+  "related_songs": [
+    "hello"
+  ]
 }

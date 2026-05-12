@@ -2,5 +2,15 @@
   "title": "Rooster",
   "slug": "rooster",
   "artist": "alice-in-chains",
-  "estimated_revenue": "$110K-$390K/year"
+  "estimated_revenue": "$110K-$390K/year",
+  "meaning_summary": "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay.",
+  "revenue_drivers": [
+    "Classic replay value and catalog streaming keep major rock songs relevant.",
+    "Cultural familiarity supports long-tail listener demand.",
+    "Sync placements and live-culture recognition help extend the song's revenue life."
+  ],
+  "related_songs": [
+    "man-in-the-box",
+    "would"
+  ]
 }

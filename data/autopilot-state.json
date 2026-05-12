@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 5,
-    "album": 79
+    "song": 8,
+    "album": 80
   },
   "lastTouched": {
     "artist": {
@@ -287,7 +287,10 @@
       "whole-lotta-love": "2026-05-11T19:52:34.818Z",
       "do-i-wanna-know": "2026-05-12T08:45:08.123Z",
       "flava-in-ya-ear": "2026-05-12T08:45:08.123Z",
-      "glory-box": "2026-05-12T08:45:08.123Z"
+      "glory-box": "2026-05-12T08:45:08.123Z",
+      "rooster": "2026-05-12T19:57:50.044Z",
+      "someone-like-you": "2026-05-12T19:57:50.044Z",
+      "still-dre": "2026-05-12T19:57:50.044Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -381,6 +384,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-12T19:57:50.044Z",
+      "summary": "song:rooster, song:someone-like-you, song:still-dre"
+    },
+    {
       "timestamp": "2026-05-12T08:45:08.123Z",
       "summary": "song:do-i-wanna-know, song:flava-in-ya-ear, song:glory-box"
     },
@@ -415,10 +422,6 @@
     {
       "timestamp": "2026-05-09T18:53:46.862Z",
       "summary": "song:an-ending-ascent"
-    },
-    {
-      "timestamp": "2026-05-09T15:45:13.663Z",
-      "summary": "song:youre-the-inspiration"
     }
   ]
 }
