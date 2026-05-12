@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 14,
-    "album": 78
+    "song": 5,
+    "album": 79
   },
   "lastTouched": {
     "artist": {
@@ -284,7 +284,10 @@
       "put-your-hands-where-my-eyes-could-see": "2026-05-11T09:46:51.616Z",
       "the-chain": "2026-05-11T19:52:34.818Z",
       "touch-it": "2026-05-11T19:52:34.818Z",
-      "whole-lotta-love": "2026-05-11T19:52:34.818Z"
+      "whole-lotta-love": "2026-05-11T19:52:34.818Z",
+      "do-i-wanna-know": "2026-05-12T08:45:08.123Z",
+      "flava-in-ya-ear": "2026-05-12T08:45:08.123Z",
+      "glory-box": "2026-05-12T08:45:08.123Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -378,6 +381,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-12T08:45:08.123Z",
+      "summary": "song:do-i-wanna-know, song:flava-in-ya-ear, song:glory-box"
+    },
+    {
       "timestamp": "2026-05-11T19:52:34.818Z",
       "summary": "song:the-chain, song:touch-it, song:whole-lotta-love"
     },
@@ -412,10 +419,6 @@
     {
       "timestamp": "2026-05-09T15:45:13.663Z",
       "summary": "song:youre-the-inspiration"
-    },
-    {
-      "timestamp": "2026-05-09T13:05:50.248Z",
-      "summary": "song:without-me"
     }
   ]
 }

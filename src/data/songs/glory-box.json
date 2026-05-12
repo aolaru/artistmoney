@@ -4,5 +4,14 @@
   "artist": "portishead",
   "estimated_revenue": "$140K-$440K/year",
   "album": "Dummy",
-  "year": 1994
+  "year": 1994,
+  "meaning_summary": "Glory Box stays durable because it is easy to revisit and well suited to long-tail catalog listening.",
+  "revenue_drivers": [
+    "Streaming and catalog discovery keep the song generating recurring revenue.",
+    "Playlist longevity supports steady repeat listening.",
+    "Licensing and cultural familiarity can add earnings beyond baseline streams."
+  ],
+  "related_songs": [
+    "roads"
+  ]
 }
