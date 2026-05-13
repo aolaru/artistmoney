@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 5,
-    "album": 81
+    "song": 2,
+    "album": 82
   },
   "lastTouched": {
     "artist": {
@@ -293,7 +293,10 @@
       "still-dre": "2026-05-12T19:57:50.044Z",
       "let-it-be": "2026-05-13T08:49:09.738Z",
       "lost-but-never-alone": "2026-05-13T08:49:09.738Z",
-      "mrs-robinson": "2026-05-13T08:49:09.738Z"
+      "mrs-robinson": "2026-05-13T08:49:09.738Z",
+      "x-gon-give-it-to-ya": "2026-05-13T19:59:39.561Z",
+      "be-yourself": "2026-05-13T19:59:39.561Z",
+      "cold-as-ice": "2026-05-13T19:59:39.561Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -388,6 +391,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-13T19:59:39.561Z",
+      "summary": "song:x-gon-give-it-to-ya, song:be-yourself, song:cold-as-ice"
+    },
+    {
       "timestamp": "2026-05-13T08:49:09.738Z",
       "summary": "song:let-it-be, song:lost-but-never-alone, song:mrs-robinson, album:the-chemical-brothers-dig-your-own-hole"
     },
@@ -422,10 +429,6 @@
     {
       "timestamp": "2026-05-10T02:32:30.111Z",
       "summary": "song:creep"
-    },
-    {
-      "timestamp": "2026-05-09T21:38:29.324Z",
-      "summary": "song:c-r-e-a-m"
     }
   ]
 }
