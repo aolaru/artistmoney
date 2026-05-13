@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 0,
-    "song": 8,
-    "album": 80
+    "song": 5,
+    "album": 81
   },
   "lastTouched": {
     "artist": {
@@ -290,7 +290,10 @@
       "glory-box": "2026-05-12T08:45:08.123Z",
       "rooster": "2026-05-12T19:57:50.044Z",
       "someone-like-you": "2026-05-12T19:57:50.044Z",
-      "still-dre": "2026-05-12T19:57:50.044Z"
+      "still-dre": "2026-05-12T19:57:50.044Z",
+      "let-it-be": "2026-05-13T08:49:09.738Z",
+      "lost-but-never-alone": "2026-05-13T08:49:09.738Z",
+      "mrs-robinson": "2026-05-13T08:49:09.738Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -379,10 +382,15 @@
       "queen-jazz": "2026-05-09T02:29:03.844Z",
       "rakim-the-18th-letter": "2026-05-09T05:44:37.796Z",
       "simon-and-garfunkel-bookends": "2026-05-10T19:09:28.034Z",
-      "squarepusher-go-plastic": "2026-05-11T09:46:51.616Z"
+      "squarepusher-go-plastic": "2026-05-11T09:46:51.616Z",
+      "the-chemical-brothers-dig-your-own-hole": "2026-05-13T08:49:09.738Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-13T08:49:09.738Z",
+      "summary": "song:let-it-be, song:lost-but-never-alone, song:mrs-robinson, album:the-chemical-brothers-dig-your-own-hole"
+    },
     {
       "timestamp": "2026-05-12T19:57:50.044Z",
       "summary": "song:rooster, song:someone-like-you, song:still-dre"
@@ -418,10 +426,6 @@
     {
       "timestamp": "2026-05-09T21:38:29.324Z",
       "summary": "song:c-r-e-a-m"
-    },
-    {
-      "timestamp": "2026-05-09T18:53:46.862Z",
-      "summary": "song:an-ending-ascent"
     }
   ]
 }

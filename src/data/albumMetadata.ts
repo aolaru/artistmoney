@@ -14726,5 +14726,83 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/go-plastic/281864519?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Squarepusher%20Go%20Plastic"
     }
+  },
+  "the-chemical-brothers-dig-your-own-hole": {
+    "releaseDate": "1997-04-07",
+    "label": "Virgin Records Limited",
+    "trackCount": 11,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Block Rockin' Beats",
+        "durationMs": 313667
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Dig Your Own Hole",
+        "durationMs": 327267
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Elektrobank",
+        "durationMs": 498693
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Piku",
+        "durationMs": 295133
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Setting Sun",
+        "durationMs": 328733
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "It Doesn't Matter",
+        "durationMs": 374240
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "Don't Stop the Rock",
+        "durationMs": 289827
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Get Up On It Like This",
+        "durationMs": 166733
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "Lost In the K-Hole",
+        "durationMs": 232707
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Where Do I Begin",
+        "durationMs": 416867
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "The Private Psychedelic Reel",
+        "durationMs": 561733
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Chemical%20Brothers%20Dig%20Your%20Own%20Hole",
+      "appleMusic": "https://music.apple.com/us/album/dig-your-own-hole/714366008?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Chemical%20Brothers%20Dig%20Your%20Own%20Hole"
+    }
   }
 } as const;
