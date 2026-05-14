@@ -1,0 +1,20 @@
+{
+  "name": "Katy Perry",
+  "slug": "katy-perry",
+  "estimated_income": "$4.4M-$14M/year",
+  "top_songs": [
+    "firework",
+    "teenage-dream"
+  ],
+  "genre": "Pop",
+  "country": "United States",
+  "active_since": "2008",
+  "bio": "Katy Perry's catalog keeps earning through large-scale pop streaming, enduring playlist visibility, and event-driven replay around her biggest singles.",
+  "notable_for": "Big-chorus pop songs with strong long-tail streaming value.",
+  "career_highlight": "Her peak-era singles remain commercially durable across global pop platforms.",
+  "revenue_drivers": [
+    "Global streaming and playlist placement support recurring revenue.",
+    "Signature hooks keep the catalog easy to rediscover.",
+    "Event, sports, and media usage can amplify replay cycles."
+  ]
+}
