@@ -58,6 +58,10 @@ jobs:
           git add src/data/platformMetrics.ts
           git commit -m "Refresh public platform metrics"
 
+      - name: Rebase on latest main
+        if: steps.diff.outputs.changed == 'true'
+        run: git pull --rebase origin main
+
       - name: Push to main
         if: steps.diff.outputs.changed == 'true'
         run: git push origin HEAD:main

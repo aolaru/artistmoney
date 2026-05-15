@@ -5,6 +5,20 @@
   "estimated_revenue": "$75K-$260K/year",
   "album": "Out of Exile",
   "year": 2005,
+  "earnings": {
+    "gross_track_revenue": "$218K-$754K/year",
+    "artist_or_estate_share": "$75K-$260K/year",
+    "label_master_share": "$71K-$247K/year",
+    "publishing_share": "$23K-$78K/year",
+    "songwriter_share": "$32K-$109K/year",
+    "assumptions": "Estimate keeps the current headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Be Yourself is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  },
   "meaning_summary": "This song holds value through a recognizable core riff or chorus, strong emotional payoff, and steady replay.",
   "revenue_drivers": [
     "Classic replay value and catalog streaming keep major rock songs relevant.",

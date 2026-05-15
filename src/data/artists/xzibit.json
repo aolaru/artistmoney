@@ -16,5 +16,19 @@
     "Recognizable catalog cuts keep drawing repeat streaming long after the original release cycle.",
     "Playlist memory and cultural recall help the strongest records stay active.",
     "Sampling, sync use, and nostalgia spikes can lift the baseline."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$924K-$3.1M/year",
+    "artist_or_estate_share": "$330K-$1.1M/year",
+    "label_share": "$314K-$1M/year",
+    "publisher_share": "$92K-$308K/year",
+    "writer_share": "$139K-$462K/year",
+    "assumptions": "Estimate keeps Xzibit's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Xzibit's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

@@ -12,5 +12,19 @@
   "related_songs": [
     "come-as-you-are",
     "smells-like-teen-spirit"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$957K-$2.9M/year",
+    "artist_or_estate_share": "$330K-$990K/year",
+    "label_master_share": "$314K-$941K/year",
+    "publishing_share": "$99K-$297K/year",
+    "songwriter_share": "$139K-$416K/year",
+    "assumptions": "Estimate keeps the current headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Lithium is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  }
 }

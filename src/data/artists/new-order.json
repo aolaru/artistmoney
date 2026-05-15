@@ -16,5 +16,19 @@
     "Playlist and club-oriented listening keep the catalog active.",
     "Cross-generational discovery supports long-tail streaming.",
     "Licensing and documentary use reinforce their catalog relevance."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$4.8M-$14M/year",
+    "artist_or_estate_share": "$1.7M-$5M/year",
+    "label_share": "$1.6M-$4.8M/year",
+    "publisher_share": "$476K-$1.4M/year",
+    "writer_share": "$714K-$2.1M/year",
+    "assumptions": "Estimate keeps New Order's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "New Order's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

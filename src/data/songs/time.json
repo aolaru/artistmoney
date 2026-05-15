@@ -14,5 +14,19 @@
   "related_songs": [
     "money",
     "comfortably-numb"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$406K-$1.5M/year",
+    "artist_or_estate_share": "$140K-$520K/year",
+    "label_master_share": "$133K-$494K/year",
+    "publishing_share": "$42K-$156K/year",
+    "songwriter_share": "$59K-$218K/year",
+    "assumptions": "Estimate keeps the current headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Time is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  }
 }

@@ -13,5 +13,19 @@
   ],
   "related_songs": [
     "this-is-how-we-do-it"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$189K-$667K/year",
+    "artist_or_estate_share": "$65K-$230K/year",
+    "label_master_share": "$62K-$219K/year",
+    "publishing_share": "$20K-$69K/year",
+    "songwriter_share": "$27K-$97K/year",
+    "assumptions": "Estimate keeps the current headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Get It On Tonite is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  }
 }

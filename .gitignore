@@ -3,3 +3,6 @@ dist/
 node_modules/
 .autopilot/
 .reports/
+.DS_Store
+.playwright-mcp/
+**/*conflicted copy*

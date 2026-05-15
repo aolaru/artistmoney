@@ -17,5 +17,19 @@
     "soundtrack nostalgia",
     "wedding and event-driven listening",
     "publishing and performance royalties"
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$12M-$42M/year",
+    "artist_or_estate_share": "$4.4M-$15M/year",
+    "label_share": "$4.2M-$14M/year",
+    "publisher_share": "$1.2M-$4.2M/year",
+    "writer_share": "$1.8M-$6.3M/year",
+    "assumptions": "Estimate keeps Celine Dion's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Celine Dion's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

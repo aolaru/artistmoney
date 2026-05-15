@@ -16,5 +16,19 @@
     "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
     "Generational rediscovery supports durable long-tail listening.",
     "Film, television, sports, and trailer use can reactivate familiar recordings."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$3.1M-$11M/year",
+    "artist_or_estate_share": "$1.1M-$3.9M/year",
+    "label_share": "$1M-$3.7M/year",
+    "publisher_share": "$308K-$1.1M/year",
+    "writer_share": "$462K-$1.6M/year",
+    "assumptions": "Estimate keeps Creedence Clearwater Revival's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Creedence Clearwater Revival's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

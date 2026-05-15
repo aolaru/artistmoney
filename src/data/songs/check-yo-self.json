@@ -13,5 +13,19 @@
   ],
   "related_songs": [
     "it-was-a-good-day"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$290K-$957K/year",
+    "artist_or_estate_share": "$100K-$330K/year",
+    "label_master_share": "$95K-$314K/year",
+    "publishing_share": "$30K-$99K/year",
+    "songwriter_share": "$42K-$139K/year",
+    "assumptions": "Estimate keeps the current headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Check Yo Self is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  }
 }

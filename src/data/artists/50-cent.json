@@ -16,5 +16,19 @@
   ],
   "genre": "Hip-hop",
   "country": "United States",
-  "active_since": "2002"
+  "active_since": "2002",
+  "earnings": {
+    "gross_catalog_revenue": "$7.8M-$23M/year",
+    "artist_or_estate_share": "$2.8M-$8.3M/year",
+    "label_share": "$2.7M-$7.9M/year",
+    "publisher_share": "$784K-$2.3M/year",
+    "writer_share": "$1.2M-$3.5M/year",
+    "assumptions": "Estimate keeps 50 Cent's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "50 Cent's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

@@ -13,5 +13,19 @@
   ],
   "related_songs": [
     "bad-romance"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$870K-$2.7M/year",
+    "artist_or_estate_share": "$300K-$940K/year",
+    "label_master_share": "$285K-$893K/year",
+    "publishing_share": "$90K-$282K/year",
+    "songwriter_share": "$126K-$395K/year",
+    "assumptions": "Estimate keeps the current headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Poker Face is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  }
 }

@@ -83,6 +83,10 @@ jobs:
           git add src/data/artists src/data/songs src/data/albumMetadata.ts data/autopilot-state.json
           git commit -m "Backfill existing page content"
 
+      - name: Rebase on latest main
+        if: steps.autopilot.outputs.changed == 'true'
+        run: git pull --rebase origin main
+
       - name: Push to main
         if: steps.autopilot.outputs.changed == 'true'
         run: git push origin HEAD:main

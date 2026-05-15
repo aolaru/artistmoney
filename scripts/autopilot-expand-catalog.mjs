@@ -10,7 +10,7 @@ const songDir = path.join(rootDir, "src", "data", "songs");
 const summaryDir = path.join(rootDir, ".autopilot");
 const summaryPath = path.join(summaryDir, "catalog-summary.md");
 const outputPath = path.join(summaryDir, "catalog-result.json");
-const batchSize = 3;
+const batchSize = 1;
 
 function ensureArray(value, label) {
   if (!Array.isArray(value) || value.length === 0) {
@@ -101,7 +101,7 @@ async function writeSummary(result) {
   await mkdir(summaryDir, { recursive: true });
 
   const lines = [
-    "# Weekly catalog expansion summary",
+    "# Daily catalog expansion summary",
     "",
     `- Candidates processed: ${result.changes.length}`,
     `- Validation: ${result.validation}`,
@@ -122,7 +122,7 @@ async function writeSummary(result) {
   lines.push(
     "## Scope",
     "",
-    "- Added up to 3 unchecked artists from `data/candidate-artists.json`",
+    "- Added the next unchecked artist from `data/candidate-artists.json`",
     "- Wrote artist and song JSON files only",
     "- Marked processed queue entries as checked",
     "- Build must pass before a PR is opened",
@@ -162,7 +162,7 @@ async function main() {
     }
 
     candidate.checked = true;
-    candidate.checked_note = "Added to catalog by weekly automation.";
+    candidate.checked_note = "Added to catalog by daily automation.";
     changes.push({
       artist: {
         slug: candidate.artist.slug,
@@ -191,7 +191,7 @@ async function main() {
 
 main().catch(async (error) => {
   await mkdir(summaryDir, { recursive: true });
-  await writeFile(summaryPath, `# Weekly catalog expansion summary\n\n- Validation: failed\n- Error: ${error.message}\n`, "utf8");
+  await writeFile(summaryPath, `# Daily catalog expansion summary\n\n- Validation: failed\n- Error: ${error.message}\n`, "utf8");
   console.error(error);
   process.exit(1);
 });

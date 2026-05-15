@@ -13,5 +13,19 @@
   ],
   "related_songs": [
     "wanted-dead-or-alive"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$1.5M-$4.4M/year",
+    "artist_or_estate_share": "$500K-$1.5M/year",
+    "label_master_share": "$475K-$1.4M/year",
+    "publishing_share": "$150K-$450K/year",
+    "songwriter_share": "$210K-$630K/year",
+    "assumptions": "Estimate keeps the current headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Livin' on a Prayer is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  }
 }

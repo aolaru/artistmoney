@@ -96,8 +96,22 @@ async function refreshSpotifyMetrics(metrics, songs, artistMap) {
     return 0;
   }
 
+  const orderedSongs = [...songs].sort((left, right) => {
+    const leftMetric = metrics[left.slug];
+    const rightMetric = metrics[right.slug];
+    const leftSeeded = leftMetric ? 1 : 0;
+    const rightSeeded = rightMetric ? 1 : 0;
+    const leftNeedsSpotify = leftMetric?.spotifyPopularity === undefined ? 1 : 0;
+    const rightNeedsSpotify = rightMetric?.spotifyPopularity === undefined ? 1 : 0;
+
+    return (
+      rightSeeded - leftSeeded ||
+      rightNeedsSpotify - leftNeedsSpotify ||
+      left.slug.localeCompare(right.slug)
+    );
+  });
   let updated = 0;
-  for (const song of songs.slice(0, limit)) {
+  for (const song of orderedSongs.slice(0, limit)) {
     const artistName = artistMap.get(song.artist)?.name ?? song.artist;
     const current = metrics[song.slug] ?? {};
 
@@ -132,6 +146,12 @@ async function refreshYouTubeMetrics(metrics) {
 
   const entries = Object.entries(metrics)
     .filter(([, metric]) => metric.youtubeVideoId)
+    .sort(([leftSlug, leftMetric], [rightSlug, rightMetric]) => {
+      const leftNeedsViews = leftMetric.youtubeViews === undefined ? 1 : 0;
+      const rightNeedsViews = rightMetric.youtubeViews === undefined ? 1 : 0;
+
+      return rightNeedsViews - leftNeedsViews || leftSlug.localeCompare(rightSlug);
+    })
     .slice(0, limit);
   let updated = 0;
 

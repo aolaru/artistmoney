@@ -16,5 +16,19 @@
     "Repeat streaming and playlist familiarity help the biggest songs keep earning after release.",
     "Broad recognition supports social reuse, rediscovery, and steady catalog listening.",
     "Licensing and event-driven playback can create recurring spikes."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$784K-$2.8M/year",
+    "artist_or_estate_share": "$280K-$990K/year",
+    "label_share": "$266K-$941K/year",
+    "publisher_share": "$78K-$277K/year",
+    "writer_share": "$118K-$416K/year",
+    "assumptions": "Estimate keeps K-Ci & JoJo's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "K-Ci & JoJo's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

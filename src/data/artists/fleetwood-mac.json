@@ -16,5 +16,19 @@
     "Repeat streaming and playlist familiarity help the strongest songs keep earning after release.",
     "Broad catalog recognition improves resilience across radio memory, social reuse, and rediscovery.",
     "Licensing and seasonal or event-driven playback can create recurring revenue spikes."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$12M-$39M/year",
+    "artist_or_estate_share": "$4.4M-$14M/year",
+    "label_share": "$4.2M-$13M/year",
+    "publisher_share": "$1.2M-$3.9M/year",
+    "writer_share": "$1.8M-$5.9M/year",
+    "assumptions": "Estimate keeps Fleetwood Mac's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Fleetwood Mac's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

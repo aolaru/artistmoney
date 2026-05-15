@@ -269,6 +269,55 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     localPath: "/images/artists/gorillaz.jpg",
     personalityRightsWarning: "Living performers are identifiable. Editorial use is generally safer than endorsement or advertising use."
   },
+  "gwen-stefani": {
+    alt: "Gwen Stefani performing in Las Vegas in 2019",
+    src: localPhoto("gwen-stefani.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Gwen_Stefani_Las_Vegas_2019.jpg",
+    credit: "Photo by Sanne649 via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    localPath: "/images/artists/gwen-stefani.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "new-order": {
+    alt: "New Order performing in Chile in 2019",
+    src: localPhoto("new-order.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:New_Order,_Chile_2019_(39751785423).jpg",
+    credit: "Photo by RL GNZLZ via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/new-order.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  bjork: {
+    alt: "Bjork performing at Pitchfork Music Festival in 2013",
+    src: localPhoto("bjork.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Bjork_Pitchfork_Music_Festival_7_19_2013_(9332459464).jpg",
+    credit: "Photo by swimfinfan via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    localPath: "/images/artists/bjork.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "black-sabbath": {
+    alt: "Black Sabbath promotional photo from 1970",
+    src: localPhoto("black-sabbath.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Black_Sabbath_(1970).jpg",
+    credit: "Vertigo Records promotional image via Wikimedia Commons",
+    license: "Public domain in the U.S.",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Black_Sabbath_(1970).jpg",
+    localPath: "/images/artists/black-sabbath.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  marvel: {
+    alt: "Marvel Studios logo",
+    src: localPhoto("marvel.png"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Marvel_Studios_2016_logo.svg",
+    credit: "Marvel Studios / The Walt Disney Company via Wikimedia Commons",
+    license: "Public domain in the U.S. / trademark notice applies",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Marvel_Studios_2016_logo.svg",
+    localPath: "/images/artists/marvel.png"
+  },
   oasis: {
     alt: "Oasis performing in Cardiff in 2025",
     src: localPhoto("oasis.jpg"),
@@ -730,22 +779,22 @@ const artistPhotos: Record<string, ArtistPhoto> = {
   },
   rihanna: {
     alt: "Rihanna in 2018",
-    src: localPhoto("rihanna.png"),
+    src: localPhoto("rihanna.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Rihanna_Fenty_2018.png",
     credit: "Photo by SIGMA via Wikimedia Commons",
     license: "CC BY 3.0",
     licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
-    localPath: "/images/artists/rihanna.png",
+    localPath: "/images/artists/rihanna.jpg",
     personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   "taylor-swift": {
     alt: "Taylor Swift at the 2023 MTV Video Music Awards",
-    src: localPhoto("taylor-swift.png"),
+    src: localPhoto("taylor-swift.jpg"),
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Taylor_Swift_at_the_2023_MTV_Video_Music_Awards_(3).png",
     credit: "Photo by iHeartRadioCA via Wikimedia Commons",
     license: "CC BY 3.0",
     licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
-    localPath: "/images/artists/taylor-swift.png",
+    localPath: "/images/artists/taylor-swift.jpg",
     personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
   },
   "the-weeknd": {

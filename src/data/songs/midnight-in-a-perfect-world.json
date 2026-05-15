@@ -13,5 +13,19 @@
   ],
   "related_songs": [
     "organ-donor"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$116K-$348K/year",
+    "artist_or_estate_share": "$40K-$120K/year",
+    "label_master_share": "$38K-$114K/year",
+    "publishing_share": "$12K-$36K/year",
+    "songwriter_share": "$17K-$50K/year",
+    "assumptions": "Estimate keeps the current headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Midnight in a Perfect World is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  }
 }

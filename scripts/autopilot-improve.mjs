@@ -15,8 +15,18 @@ const summaryDir = path.join(rootDir, ".autopilot");
 const summaryPath = path.join(summaryDir, "summary.md");
 const outputPath = path.join(summaryDir, "result.json");
 
-const artistMissingFields = ["genre", "country", "active_since", "bio", "notable_for", "career_highlight", "revenue_drivers"];
-const songMissingFields = ["meaning_summary", "revenue_drivers", "related_songs"];
+const artistMissingFields = [
+  "genre",
+  "country",
+  "active_since",
+  "bio",
+  "notable_for",
+  "career_highlight",
+  "revenue_drivers",
+  "earnings",
+  "ownership"
+];
+const songMissingFields = ["meaning_summary", "revenue_drivers", "related_songs", "earnings", "ownership"];
 const albumMissingFields = ["fullTracklist"];
 const bannedPhrases = [
   "catalog catalog",
@@ -143,6 +153,86 @@ function pickBatchByCursor(entries, cursor, limit) {
 
 function compactSentence(text) {
   return text.replace(/\s+/g, " ").trim();
+}
+
+function parseMoneyToken(token) {
+  const clean = token.replace(/[$,/year\s]/g, "").toUpperCase();
+  const match = clean.match(/([0-9.]+)([KMB]?)/);
+  if (!match) return null;
+
+  const value = Number(match[1]);
+  const multiplier = match[2] === "B" ? 1_000_000_000 : match[2] === "M" ? 1_000_000 : match[2] === "K" ? 1_000 : 1;
+
+  return value * multiplier;
+}
+
+function parseRevenueRange(value) {
+  const matches = String(value ?? "").match(/\$?[0-9][0-9.,]*(?:\.\d+)?\s*[KMB]?/gi) ?? [];
+  const values = matches.map(parseMoneyToken).filter(Number.isFinite);
+
+  if (values.length >= 2) return [values[0], values[1]];
+  if (values.length === 1) return [values[0] * 0.75, values[0] * 1.25];
+
+  return [100_000, 300_000];
+}
+
+function formatMoney(value) {
+  if (value >= 1_000_000) {
+    const millions = value / 1_000_000;
+    return `$${millions >= 10 ? Math.round(millions) : Math.round(millions * 10) / 10}M`;
+  }
+
+  if (value >= 1_000) return `$${Math.round(value / 1_000)}K`;
+
+  return `$${Math.round(value)}`;
+}
+
+function scaleRevenueRange(range, factor) {
+  return `${formatMoney(range[0] * factor)}-${formatMoney(range[1] * factor)}/year`;
+}
+
+function modeledArtistEarnings(artist) {
+  const artistSideRange = parseRevenueRange(artist.earnings?.artist_or_estate_share ?? artist.estimated_income);
+
+  return {
+    gross_catalog_revenue: scaleRevenueRange(artistSideRange, 2.8),
+    artist_or_estate_share: artist.estimated_income,
+    label_share: scaleRevenueRange(artistSideRange, 0.95),
+    publisher_share: scaleRevenueRange(artistSideRange, 0.28),
+    writer_share: scaleRevenueRange(artistSideRange, 0.42),
+    assumptions: `Estimate keeps ${artist.name}'s headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range.`
+  };
+}
+
+function modeledArtistOwnership(artist) {
+  return {
+    master_owner: "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    publishing_owner: "Writer and publisher splits materially affect final artist-side income",
+    catalog_sale_status: "No full catalog sale assumption baked into this modeled range",
+    notes: `${artist.name}'s page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics.`
+  };
+}
+
+function modeledSongEarnings(song) {
+  const artistSideRange = parseRevenueRange(song.earnings?.artist_or_estate_share ?? song.estimated_revenue);
+
+  return {
+    gross_track_revenue: scaleRevenueRange(artistSideRange, 2.9),
+    artist_or_estate_share: song.estimated_revenue,
+    label_master_share: scaleRevenueRange(artistSideRange, 0.95),
+    publishing_share: scaleRevenueRange(artistSideRange, 0.3),
+    songwriter_share: scaleRevenueRange(artistSideRange, 0.42),
+    assumptions: "Estimate keeps the headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  };
+}
+
+function modeledSongOwnership(song) {
+  return {
+    master_owner: "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    publishing_owner: "Writer and publisher splits affect the publishing share shown here",
+    catalog_sale_status: "No specific catalog sale adjustment is modeled for this track",
+    notes: `${song.title} is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements.`
+  };
 }
 
 function artistRevenueDrivers(artist) {
@@ -395,6 +485,14 @@ function mergeArtistBackfill(artist, songMap) {
     updates.revenue_drivers = artistRevenueDrivers(artist);
   }
 
+  if (!artist.earnings) {
+    updates.earnings = modeledArtistEarnings(artist);
+  }
+
+  if (!artist.ownership) {
+    updates.ownership = modeledArtistOwnership(artist);
+  }
+
   return Object.keys(updates).length > 0 ? { ...artist, ...updates } : null;
 }
 
@@ -411,6 +509,14 @@ function mergeSongBackfill(song, artist, relatedSongs) {
 
   if (!song.related_songs && relatedSongs.length > 0) {
     updates.related_songs = relatedSongs.slice(0, 3).map((entry) => entry.slug);
+  }
+
+  if (!song.earnings) {
+    updates.earnings = modeledSongEarnings(song);
+  }
+
+  if (!song.ownership) {
+    updates.ownership = modeledSongOwnership(song);
   }
 
   return Object.keys(updates).length > 0 ? { ...song, ...updates } : null;

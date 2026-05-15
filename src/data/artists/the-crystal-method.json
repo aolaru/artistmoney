@@ -16,5 +16,19 @@
     "Long-tail streaming and mood-based playlists keep the catalog commercially active.",
     "Deep-fan listening and reissue interest add value beyond the headline tracks.",
     "Instrumental or atmosphere-driven tracks can stay useful for sync over time."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$476K-$1.8M/year",
+    "artist_or_estate_share": "$170K-$660K/year",
+    "label_share": "$162K-$627K/year",
+    "publisher_share": "$48K-$185K/year",
+    "writer_share": "$71K-$277K/year",
+    "assumptions": "Estimate keeps The Crystal Method's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "The Crystal Method's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

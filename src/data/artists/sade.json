@@ -16,5 +16,19 @@
     "Streaming playlists focused on calm, soul, and late-night listening support recurring revenue.",
     "Cross-generational listener familiarity keeps the core catalog active.",
     "Selective sync use and prestige cultural placement support long-tail value."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$6.2M-$18M/year",
+    "artist_or_estate_share": "$2.2M-$6.6M/year",
+    "label_share": "$2.1M-$6.3M/year",
+    "publisher_share": "$616K-$1.8M/year",
+    "writer_share": "$924K-$2.8M/year",
+    "assumptions": "Estimate keeps Sade's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Sade's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

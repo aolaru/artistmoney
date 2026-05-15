@@ -16,5 +16,19 @@
     "Catalog streaming keeps the best-known songs active well beyond the original release cycle.",
     "Generational rediscovery supports durable long-tail listening.",
     "Film, television, sports, and trailer use can reactivate familiar recordings."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$1.1M-$3.9M/year",
+    "artist_or_estate_share": "$390K-$1.4M/year",
+    "label_share": "$371K-$1.3M/year",
+    "publisher_share": "$109K-$392K/year",
+    "writer_share": "$164K-$588K/year",
+    "assumptions": "Estimate keeps America's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "America's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

@@ -13,5 +13,19 @@
   ],
   "related_songs": [
     "iron-man"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$812K-$2.4M/year",
+    "artist_or_estate_share": "$280K-$830K/year",
+    "label_master_share": "$266K-$789K/year",
+    "publishing_share": "$84K-$249K/year",
+    "songwriter_share": "$118K-$349K/year",
+    "assumptions": "Estimate keeps the current headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Paranoid is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  }
 }

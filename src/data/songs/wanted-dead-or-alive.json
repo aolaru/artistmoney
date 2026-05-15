@@ -13,5 +13,19 @@
   ],
   "related_songs": [
     "livin-on-a-prayer"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$725K-$2.2M/year",
+    "artist_or_estate_share": "$250K-$770K/year",
+    "label_master_share": "$238K-$732K/year",
+    "publishing_share": "$75K-$231K/year",
+    "songwriter_share": "$105K-$323K/year",
+    "assumptions": "Estimate keeps the current headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Wanted Dead or Alive is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  }
 }

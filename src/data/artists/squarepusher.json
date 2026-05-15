@@ -16,5 +16,19 @@
     "Electronic deep-catalog listening sustains older key releases.",
     "Production-led cult status helps tracks stay relevant in genre communities.",
     "Reissues, live reputation, and specialty fandom support long-tail value."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$392K-$1.4M/year",
+    "artist_or_estate_share": "$140K-$500K/year",
+    "label_share": "$133K-$475K/year",
+    "publisher_share": "$39K-$140K/year",
+    "writer_share": "$59K-$210K/year",
+    "assumptions": "Estimate keeps Squarepusher's current headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Squarepusher's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }
