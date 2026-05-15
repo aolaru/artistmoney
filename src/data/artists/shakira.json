@@ -16,5 +16,19 @@
     "Global streaming keeps core singles active across markets.",
     "Dance and workout playlists support repeat listening.",
     "International recognition helps maintain long-tail demand."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$15M-$48M/year",
+    "artist_or_estate_share": "$5.5M-$17M/year",
+    "label_share": "$5.2M-$16M/year",
+    "publisher_share": "$1.5M-$4.8M/year",
+    "writer_share": "$2.3M-$7.1M/year",
+    "assumptions": "Estimate keeps Shakira's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Shakira's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

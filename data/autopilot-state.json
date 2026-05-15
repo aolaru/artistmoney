@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 2,
-    "song": 5,
-    "album": 83
+    "artist": 0,
+    "song": 2,
+    "album": 84
   },
   "lastTouched": {
     "artist": {
@@ -77,7 +77,8 @@
       "dmx": "2026-04-24T13:13:43.475Z",
       "simon-and-garfunkel": "2026-04-24T16:01:59.161Z",
       "christina-aguilera": "2026-05-15T08:52:48.645Z",
-      "katy-perry": "2026-05-15T08:52:48.645Z"
+      "katy-perry": "2026-05-15T08:52:48.645Z",
+      "shakira": "2026-05-15T19:42:39.816Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -301,7 +302,10 @@
       "cold-as-ice": "2026-05-13T19:59:39.561Z",
       "genie-in-a-bottle": "2026-05-15T08:52:48.645Z",
       "hips-dont-lie": "2026-05-15T08:52:48.645Z",
-      "teenage-dream": "2026-05-15T08:52:48.645Z"
+      "teenage-dream": "2026-05-15T08:52:48.645Z",
+      "whenever-wherever": "2026-05-15T19:42:39.816Z",
+      "fighter": "2026-05-15T19:42:39.816Z",
+      "firework": "2026-05-15T19:42:39.816Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -396,6 +400,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-15T19:42:39.816Z",
+      "summary": "artist:shakira, song:whenever-wherever, song:fighter, song:firework"
+    },
+    {
       "timestamp": "2026-05-15T08:52:48.645Z",
       "summary": "artist:christina-aguilera, artist:katy-perry, song:genie-in-a-bottle, song:hips-dont-lie, song:teenage-dream"
     },
@@ -430,10 +438,6 @@
     {
       "timestamp": "2026-05-10T10:09:32.843Z",
       "summary": "song:gantz-graf"
-    },
-    {
-      "timestamp": "2026-05-10T06:06:32.060Z",
-      "summary": "song:even-flow"
     }
   ]
 }
