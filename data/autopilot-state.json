@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 0,
-    "song": 2,
-    "album": 82
+    "artist": 2,
+    "song": 5,
+    "album": 83
   },
   "lastTouched": {
     "artist": {
@@ -75,7 +75,9 @@
       "beyonce": "2026-04-24T05:31:15.240Z",
       "xzibit": "2026-04-24T10:18:06.812Z",
       "dmx": "2026-04-24T13:13:43.475Z",
-      "simon-and-garfunkel": "2026-04-24T16:01:59.161Z"
+      "simon-and-garfunkel": "2026-04-24T16:01:59.161Z",
+      "christina-aguilera": "2026-05-15T08:52:48.645Z",
+      "katy-perry": "2026-05-15T08:52:48.645Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -296,7 +298,10 @@
       "mrs-robinson": "2026-05-13T08:49:09.738Z",
       "x-gon-give-it-to-ya": "2026-05-13T19:59:39.561Z",
       "be-yourself": "2026-05-13T19:59:39.561Z",
-      "cold-as-ice": "2026-05-13T19:59:39.561Z"
+      "cold-as-ice": "2026-05-13T19:59:39.561Z",
+      "genie-in-a-bottle": "2026-05-15T08:52:48.645Z",
+      "hips-dont-lie": "2026-05-15T08:52:48.645Z",
+      "teenage-dream": "2026-05-15T08:52:48.645Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -391,6 +396,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-15T08:52:48.645Z",
+      "summary": "artist:christina-aguilera, artist:katy-perry, song:genie-in-a-bottle, song:hips-dont-lie, song:teenage-dream"
+    },
+    {
       "timestamp": "2026-05-13T19:59:39.561Z",
       "summary": "song:x-gon-give-it-to-ya, song:be-yourself, song:cold-as-ice"
     },
@@ -425,10 +434,6 @@
     {
       "timestamp": "2026-05-10T06:06:32.060Z",
       "summary": "song:even-flow"
-    },
-    {
-      "timestamp": "2026-05-10T02:32:30.111Z",
-      "summary": "song:creep"
     }
   ]
 }
