@@ -959,7 +959,7 @@
     "checked_note": "Added to catalog by weekly automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Janet Jackson",
       "slug": "janet-jackson",
@@ -1015,7 +1015,8 @@
           "together-again"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,
