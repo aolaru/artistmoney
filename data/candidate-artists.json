@@ -1019,7 +1019,7 @@
     "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Erasure",
       "slug": "erasure",
@@ -1075,7 +1075,8 @@
           "a-little-respect"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,
