@@ -3,7 +3,7 @@
   "cursors": {
     "artist": 0,
     "song": 0,
-    "album": 85
+    "album": 86
   },
   "lastTouched": {
     "artist": {
@@ -79,7 +79,8 @@
       "christina-aguilera": "2026-05-15T08:52:48.645Z",
       "katy-perry": "2026-05-15T08:52:48.645Z",
       "shakira": "2026-05-15T19:42:39.816Z",
-      "janet-jackson": "2026-05-16T19:09:57.996Z"
+      "janet-jackson": "2026-05-16T19:09:57.996Z",
+      "erasure": "2026-05-22T09:33:06.381Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -308,7 +309,9 @@
       "fighter": "2026-05-15T19:42:39.816Z",
       "firework": "2026-05-15T19:42:39.816Z",
       "rhythm-nation": "2026-05-16T19:09:57.996Z",
-      "together-again": "2026-05-16T19:09:57.996Z"
+      "together-again": "2026-05-16T19:09:57.996Z",
+      "a-little-respect": "2026-05-22T09:33:06.381Z",
+      "sometimes-erasure": "2026-05-22T09:33:06.381Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -398,10 +401,15 @@
       "rakim-the-18th-letter": "2026-05-09T05:44:37.796Z",
       "simon-and-garfunkel-bookends": "2026-05-10T19:09:28.034Z",
       "squarepusher-go-plastic": "2026-05-11T09:46:51.616Z",
-      "the-chemical-brothers-dig-your-own-hole": "2026-05-13T08:49:09.738Z"
+      "the-chemical-brothers-dig-your-own-hole": "2026-05-13T08:49:09.738Z",
+      "steve-hauschildt-where-all-is-fled": "2026-05-22T09:33:06.381Z"
     }
   },
   "recentRuns": [
+    {
+      "timestamp": "2026-05-22T09:33:06.381Z",
+      "summary": "artist:erasure, song:a-little-respect, song:sometimes-erasure, album:steve-hauschildt-where-all-is-fled"
+    },
     {
       "timestamp": "2026-05-16T19:09:57.996Z",
       "summary": "artist:janet-jackson, song:rhythm-nation, song:together-again"
@@ -437,10 +445,6 @@
     {
       "timestamp": "2026-05-11T09:46:51.616Z",
       "summary": "song:ny-state-of-mind, song:party-up, song:put-your-hands-where-my-eyes-could-see, album:squarepusher-go-plastic"
-    },
-    {
-      "timestamp": "2026-05-10T19:09:28.034Z",
-      "summary": "song:heroes, song:i-dont-want-to-miss-a-thing, song:it-was-a-good-day, album:simon-and-garfunkel-bookends"
     }
   ]
 }

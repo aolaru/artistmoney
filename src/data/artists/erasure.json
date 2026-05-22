@@ -16,5 +16,19 @@
     "Catalog streaming and synth-pop playlists support recurring plays.",
     "Dedicated fan listening helps stabilize long-tail catalog value.",
     "Media reuse and retrospective programming renew attention."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$1.5M-$6.2M/year",
+    "artist_or_estate_share": "$550K-$2.2M/year",
+    "label_share": "$523K-$2.1M/year",
+    "publisher_share": "$154K-$616K/year",
+    "writer_share": "$231K-$924K/year",
+    "assumptions": "Estimate keeps Erasure's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Erasure's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

@@ -14804,5 +14804,101 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/dig-your-own-hole/714366008?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Chemical%20Brothers%20Dig%20Your%20Own%20Hole"
     }
+  },
+  "steve-hauschildt-where-all-is-fled": {
+    "releaseDate": "2015-09-25",
+    "label": "kranky",
+    "trackCount": 14,
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Eyelids Gently Dreaming",
+        "durationMs": 357019
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Arpeggiare",
+        "durationMs": 452621
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "A Reflecting Pool",
+        "durationMs": 190115
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Anesthesia",
+        "durationMs": 265087
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Vicinities",
+        "durationMs": 301926
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Edgewater Prelude",
+        "durationMs": 82569
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "In Spite of Time's Disguise",
+        "durationMs": 327469
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Where All Is Fled",
+        "durationMs": 262944
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "The World Is Too Much with Us",
+        "durationMs": 302446
+      },
+      {
+        "discNumber": 1,
+        "number": 10,
+        "title": "Aequus",
+        "durationMs": 378263
+      },
+      {
+        "discNumber": 1,
+        "number": 11,
+        "title": "Caduceus",
+        "durationMs": 304031
+      },
+      {
+        "discNumber": 1,
+        "number": 12,
+        "title": "Sundialed",
+        "durationMs": 334732
+      },
+      {
+        "discNumber": 1,
+        "number": 13,
+        "title": "Lifelike",
+        "durationMs": 236379
+      },
+      {
+        "discNumber": 1,
+        "number": 14,
+        "title": "Centrifuge",
+        "durationMs": 228039
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/Steve%20Hauschildt%20Where%20All%20Is%20Fled",
+      "appleMusic": "https://music.apple.com/us/album/where-all-is-fled/1024117511?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=Steve%20Hauschildt%20Where%20All%20Is%20Fled"
+    }
   }
 } as const;
