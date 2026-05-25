@@ -13,5 +13,19 @@
   ],
   "related_songs": [
     "ordinary-world"
-  ]
+  ],
+  "earnings": {
+    "gross_track_revenue": "$261K-$870K/year",
+    "artist_or_estate_share": "$90K-$300K/year",
+    "label_master_share": "$86K-$285K/year",
+    "publishing_share": "$27K-$90K/year",
+    "songwriter_share": "$38K-$126K/year",
+    "assumptions": "Estimate keeps the headline range as the artist-side figure and models gross track, label, publishing, and songwriter lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely controlled through the recording label or distributor unless a specific rights sale is known",
+    "publishing_owner": "Writer and publisher splits affect the publishing share shown here",
+    "catalog_sale_status": "No specific catalog sale adjustment is modeled for this track",
+    "notes": "Hungry Like the Wolf is modeled from public-facing catalog behavior and conservative rights-split assumptions, not from audited royalty statements."
+  }
 }
