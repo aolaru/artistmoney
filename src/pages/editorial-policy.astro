@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout
+  title="Editorial Policy | How Much Music"
+  description="How Much Music's editorial policy for estimates, sources, corrections, and page quality."
+>
+  <Breadcrumbs items={[{ label: "Home", href: baseUrl }, { label: "Editorial Policy" }]} />
+
+  <section>
+    <p class="eyebrow">Editorial Policy</p>
+    <h1>How Estimates and Pages Are Reviewed</h1>
+    <p>
+      How Much Music publishes modeled estimates about music economics. The site does not claim to
+      have access to private royalty statements, confidential contracts, distributor dashboards, or
+      complete platform-level payout data.
+    </p>
+  </section>
+
+  <section>
+    <h2>Estimate Rules</h2>
+    <ul class="meta-list">
+      <li>Revenue figures are shown as annual ranges rather than exact totals.</li>
+      <li>Artist-side estimates are separated from gross catalog or track revenue when ownership context allows it.</li>
+      <li>Pages use confidence labels to show whether the estimate has strong, partial, or limited supporting context.</li>
+      <li>Pages with weak original context may be kept available for navigation but excluded from search indexing.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Source Handling</h2>
+    <p>
+      The site favors public, checkable context: official artist and platform pages, public catalog
+      sale reporting, rights and licensing notes, platform signals, release metadata, and reusable
+      image-license pages. A source can support context without making the displayed revenue range
+      an audited fact.
+    </p>
+  </section>
+
+  <section>
+    <h2>Corrections</h2>
+    <p>
+      Corrections are reviewed when a public source shows that a page has outdated ownership
+      context, incorrect release information, broken image attribution, or a materially misleading
+      estimate. Send corrections through the contact page.
+    </p>
+  </section>
+
+  <section>
+    <h2>Advertising Separation</h2>
+    <p>
+      Advertising does not determine which artists, songs, albums, or estimates are included. Pages
+      are selected and updated according to editorial relevance, available context, and catalog
+      research value.
+    </p>
+  </section>
+</BaseLayout>

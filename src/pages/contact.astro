@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout
+  title="Contact | How Much Music"
+  description="Contact How Much Music for corrections, source suggestions, rights questions, and editorial feedback."
+>
+  <Breadcrumbs items={[{ label: "Home", href: baseUrl }, { label: "Contact" }]} />
+
+  <section>
+    <p class="eyebrow">Contact</p>
+    <h1>Contact How Much Music</h1>
+    <p>
+      Send corrections, source suggestions, rights questions, and editorial feedback to
+      <a href="mailto:contact@howmuchmusic.com">contact@howmuchmusic.com</a>.
+    </p>
+  </section>
+
+  <section>
+    <h2>What to Include</h2>
+    <ul class="meta-list">
+      <li><strong>Corrections:</strong> include the page URL, the claim in question, and a public source when possible.</li>
+      <li><strong>Rights questions:</strong> include the image, track, artist, or page involved and the nature of the concern.</li>
+      <li><strong>Source suggestions:</strong> include links to public filings, interviews, platform pages, catalog-sale reports, or official artist materials.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Editorial Response</h2>
+    <p>
+      Corrections are reviewed against the site methodology before a page is updated. If an issue
+      affects ownership, image rights, or a materially incorrect estimate, the affected page can be
+      revised or removed from indexing while it is checked.
+    </p>
+  </section>
+</BaseLayout>

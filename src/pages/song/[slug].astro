@@ -186,6 +186,12 @@ const hasPlatformSignals = Boolean(
   platformMetrics?.spotifyTrackId ||
   platformMetrics?.youtubeVideoId
 );
+const editorialBasis = [
+  ...(article?.breakdown ?? []),
+  ...(article?.whyItStillMakesMoney ?? []),
+  song.ownership?.notes ? `Ownership note: ${song.ownership.notes}` : undefined,
+  hasPlatformSignals ? "Public platform signals are included where Spotify or YouTube identifiers are configured." : undefined
+].filter(Boolean);
 const intentQuestions = [
   {
     question: `How much did ${song.title} make in total?`,
@@ -267,6 +273,7 @@ const songSchema = {
   imageAlt={artist ? `${song.title} by ${artist.name}` : song.title}
   type="article"
   jsonLd={songSchema}
+  noindex={!article}
 >
   <article>
     <Breadcrumbs items={[
@@ -499,6 +506,21 @@ const songSchema = {
             ))}
           </div>
         </section>
+
+        {article && editorialBasis.length > 0 && (
+          <section aria-labelledby="editorial-basis-title">
+            <h2 id="editorial-basis-title">Editorial Basis</h2>
+            <p class="results-note">
+              These points explain the public context used to frame this page. They support a
+              directional model, not an audited royalty statement.
+            </p>
+            <ul class="meta-list">
+              {editorialBasis.slice(0, 8).map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <details class="details-card">
           <summary>Show ownership and assumptions</summary>

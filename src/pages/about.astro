@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout
+  title="About | How Much Music"
+  description="About How Much Music, an editorial catalog explaining music earnings, ownership, and long-tail song economics."
+>
+  <Breadcrumbs items={[{ label: "Home", href: baseUrl }, { label: "About" }]} />
+
+  <section>
+    <p class="eyebrow">About</p>
+    <h1>About How Much Music</h1>
+    <p>
+      How Much Music is an editorial research site about music earnings, catalog ownership, and why
+      some songs keep generating value years after release. The site focuses on modeled annual
+      ranges, not private royalty statements or exact accounting claims.
+    </p>
+    <p>
+      The main audience is readers who want a plain-language view of music economics: fans,
+      creators, catalog buyers, writers, and people trying to understand how streaming, publishing,
+      master ownership, and licensing interact.
+    </p>
+  </section>
+
+  <section>
+    <h2>What the Site Publishes</h2>
+    <ul class="meta-list">
+      <li>Artist pages that separate artist-side income from gross catalog value where enough context exists.</li>
+      <li>Song pages that explain replay demand, ownership context, platform signals, and licensing potential.</li>
+      <li>Methodology explainers about streaming payouts, catalog sales, label share, publishing, and sync licensing.</li>
+      <li>Image credits and source notes for artwork and self-hosted artist photos.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Editorial Standard</h2>
+    <p>
+      Estimates are written as directional ranges and should be read as editorial models. When a
+      page lacks enough ownership or platform detail, it is labeled with lower confidence and may be
+      excluded from search indexing until it has stronger editorial coverage.
+    </p>
+    <p>
+      For corrections, source suggestions, or rights concerns, use the contact page.
+    </p>
+    <p><a href={`${baseUrl}editorial-policy/`}>Read the editorial policy.</a></p>
+  </section>
+</BaseLayout>
