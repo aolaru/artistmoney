@@ -1079,7 +1079,7 @@
     "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "A-ha",
       "slug": "a-ha",
@@ -1135,7 +1135,8 @@
           "take-on-me"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,
