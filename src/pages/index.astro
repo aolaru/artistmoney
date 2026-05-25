@@ -1,56 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
-  albums,
-  artists,
   getArtist,
-  getArtistConfidence,
-  getArtistMethodology,
   getArtistVisual,
   getConfidenceSummary,
   getSongConfidence,
   getSongMethodology,
-  getAlbumConfidence,
-  rankedAlbums,
-  rankedArtists,
   rankedSongs,
   songs
 } from "../lib/catalog";
-import { getArtistEditorial, getSongEditorial } from "../lib/editorial";
+import { getSongEditorial } from "../lib/editorial";
 import { formatRevenueMidpoint } from "../lib/revenue";
-import { getCatalogUpdates } from "../lib/updates";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
-const topArtists = rankedArtists.slice(0, 3);
-const topSongs = rankedSongs.slice(0, 3);
-const topCatalogs = rankedAlbums.slice(0, 3);
-const recentUpdates = getCatalogUpdates(5);
-const manualUpdates = recentUpdates.filter((entry) => entry.sourceType === "manual");
-const autopilotUpdates = recentUpdates.filter((entry) => entry.sourceType === "autopilot");
-
-const latestArtistSlugs = recentUpdates.flatMap((entry) => entry.artistSlugs);
-const latestSongSlugs = recentUpdates.flatMap((entry) => entry.songSlugs);
-const latestAddedArtistSlugs = recentUpdates.flatMap((entry) => entry.addedArtistSlugs);
-const latestAddedSongSlugs = recentUpdates.flatMap((entry) => entry.addedSongSlugs);
-const latestArtists = [...new Set(latestArtistSlugs)]
-  .map((slug) => artists.find((artist) => artist.slug === slug))
-  .filter(Boolean)
-  .slice(0, 3);
-const latestSongs = [...new Set(latestSongSlugs)]
-  .map((slug) => songs.find((song) => song.slug === slug))
-  .filter(Boolean)
-  .slice(0, 3);
-const latestAddedArtists = [...new Set(latestAddedArtistSlugs)]
-  .map((slug) => artists.find((artist) => artist.slug === slug))
-  .filter(Boolean)
-  .slice(0, 3);
-const latestAddedSongs = [...new Set(latestAddedSongSlugs)]
-  .map((slug) => songs.find((song) => song.slug === slug))
-  .filter(Boolean)
-  .slice(0, 3);
+const topSongs = rankedSongs.slice(0, 6);
 
 const insightLinks = [
   {
@@ -75,77 +41,54 @@ const insightLinks = [
   }
 ];
 
-const spotlightArtist = topArtists[0]?.artist;
 const spotlightSong = topSongs[0]?.song;
-const spotlightAlbum = topCatalogs[0]?.album;
 const spotlightSongMethodology = spotlightSong ? getSongMethodology(spotlightSong) : undefined;
-const spotlightArtistEditorial = spotlightArtist
-  ? getArtistEditorial(
-      spotlightArtist,
-      spotlightArtist.top_songs
-        .map((slug) => songs.find((song) => song.slug === slug))
-        .filter(Boolean)
-    )
-  : null;
 const spotlightSongEditorial = spotlightSong
   ? getSongEditorial(spotlightSong, getArtist(spotlightSong.artist))
   : null;
 const evergreenEntry = rankedSongs.find(({ song }) => (song.year ?? 9999) <= 2000);
 const evergreenSong = evergreenEntry?.song;
 const evergreenArtist = evergreenSong ? getArtist(evergreenSong.artist) : undefined;
-const homepageMethodology = spotlightArtist ? getArtistMethodology(spotlightArtist) : undefined;
-const splitAwareArtists = rankedArtists
-  .filter(({ artist }) => artist.earnings?.artist_or_estate_share && artist.earnings?.label_share)
-  .slice(0, 6);
-const highConfidenceArtists = rankedArtists
-  .filter(({ artist }) => getArtistConfidence(artist).level === "high")
-  .slice(0, 3);
 const highConfidenceSongs = rankedSongs
   .filter(({ song }) => getSongConfidence(song).level === "high")
-  .slice(0, 3);
+  .slice(0, 6);
 const trustSignals = [
   {
     title: "Modeled annual ranges",
     detail: "Every earnings figure is presented as a modeled yearly range, not a claimed audited royalty statement."
   },
   {
-    title: "Artist-side first",
-    detail: "Pages try to separate artist or estate take-home from gross catalog revenue whenever split data exists."
+    title: "Song-side first",
+    detail: "The homepage now points visitors into song pages first, where artist and catalog context can be reached from the recording."
   },
   {
     title: "Confidence labels",
     detail: "High, medium, and low confidence pages reflect how much ownership, split, and catalog context is actually available."
   },
   {
-    title: "Split-aware coverage",
-    detail: `${splitAwareArtists.length} of the homepage's leading ranked artists currently expose both artist-side and label-side modeled ranges.`
+    title: "Controlled review surface",
+    detail: "The main navigation and homepage discovery path focus on songs while broader utility indexes stay noindex."
   }
 ];
 ---
 
 <BaseLayout
   title="How Much Music | Understand Music Emotionally and Financially"
-  description="How Much Music tracks artist, song, and album pages with modeled music earnings data, ownership context, and catalog insights."
+  description="How Much Music tracks song economics with modeled music earnings data, ownership context, and catalog insights."
 >
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">How Much Music</p>
-      <h1>Music earnings, catalog value, and long-tail song economics</h1>
+      <h1>Song earnings, catalog value, and long-tail music economics</h1>
       <p>
-        How Much Music tracks what songs and catalogs may generate, what artists or estates likely
-        keep, and why certain recordings continue to earn long after release.
+        How Much Music tracks what songs may generate, why certain recordings keep earning long
+        after release, and how ownership context changes the money behind a track.
       </p>
-      {(spotlightArtist && spotlightSong && spotlightAlbum) && (
+      {spotlightSong && (
         <p>
-          Right now the strongest modeled pages in the catalog are
+          Start with the strongest modeled song page:
           {" "}
-          <a href={`${baseUrl}artist/${spotlightArtist.slug}/`}>{spotlightArtist.name}</a>,
-          {" "}
-          <a href={`${baseUrl}song/${spotlightSong.slug}/`}>{spotlightSong.title}</a>,
-          {" "}
-          and
-          {" "}
-          <a href={`${baseUrl}album/${spotlightAlbum.slug}/`}>{spotlightAlbum.title}</a>.
+          <a href={`${baseUrl}song/${spotlightSong.slug}/`}>{spotlightSong.title}</a>.
         </p>
       )}
     </div>
@@ -154,13 +97,9 @@ const trustSignals = [
         <strong>{songs.length}</strong>
         <span>songs tracked</span>
       </a>
-      <a class="hero-stat-pill" href={`${baseUrl}artists/`}>
-        <strong>{artists.length}</strong>
-        <span>artists</span>
-      </a>
-      <a class="hero-stat-pill" href={`${baseUrl}albums/`}>
-        <strong>{albums.length}</strong>
-        <span>albums</span>
+      <a class="hero-stat-pill" href={`${baseUrl}songs/`}>
+        <strong>{highConfidenceSongs.length}</strong>
+        <span>high-confidence songs highlighted</span>
       </a>
     </div>
   </section>
@@ -172,15 +111,15 @@ const trustSignals = [
         <p class="eyebrow">Trust Snapshot</p>
         <h3>What the homepage is measuring</h3>
         <ul class="meta-list">
-          <li><strong>Top artist midpoint:</strong> {topArtists[0] ? formatRevenueMidpoint(topArtists[0].revenueScore) : "Not available"}</li>
           <li><strong>Top song midpoint:</strong> {topSongs[0] ? formatRevenueMidpoint(topSongs[0].revenueScore) : "Not available"}</li>
-          <li><strong>Top catalog midpoint:</strong> {topCatalogs[0] ? formatRevenueMidpoint(topCatalogs[0].revenueScore) : "Not available"}</li>
+          <li><strong>Song pages tracked:</strong> {songs.length}</li>
+          <li><strong>High-confidence songs:</strong> {highConfidenceSongs.length}</li>
         </ul>
       </article>
       <article class="trust-card">
         <p class="eyebrow">Methodology</p>
         <h3>What the numbers mean</h3>
-        <p>{homepageMethodology?.summary ?? "The site models annual catalog behavior using the best available ownership, split, and replay context."}</p>
+        <p>{spotlightSongMethodology?.summary ?? "The site models annual song behavior using the best available ownership, split, and replay context."}</p>
         <p class="results-note">
           <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
         </p>
@@ -199,18 +138,6 @@ const trustSignals = [
   <section aria-labelledby="editorial-title">
     <h2 id="editorial-title">Editorial Front Page</h2>
     <div class="editorial-grid">
-      {spotlightArtist && spotlightArtistEditorial && (
-        <article class="card editorial-card">
-          <div class="artist-card-body">
-            <p class="eyebrow">Featured Artist Deep Dive</p>
-            <h3><a href={`${baseUrl}artist/${spotlightArtist.slug}/`}>{spotlightArtist.name}</a></h3>
-            <p>{spotlightArtistEditorial.overview}</p>
-            <p class="artist-card-meta">
-              Artist-side midpoint: {formatRevenueMidpoint(topArtists[0]?.revenueScore)}
-            </p>
-          </div>
-        </article>
-      )}
       {spotlightSong && spotlightSongEditorial && (
         <article class="card editorial-card">
           <div class="artist-card-body">
@@ -241,15 +168,15 @@ const trustSignals = [
     </div>
   </section>
 
-  {homepageMethodology && (
+  {spotlightSongMethodology && (
     <section aria-labelledby="why-matters-title">
       <h2 id="why-matters-title">Why These Numbers Matter</h2>
       <div class="trust-grid">
         <div class="methodology-card">
-          <p class="methodology-badge">{homepageMethodology.confidenceLabel}</p>
-          <p>{homepageMethodology.summary}</p>
+          <p class="methodology-badge">{spotlightSongMethodology.confidenceLabel}</p>
+          <p>{spotlightSongMethodology.summary}</p>
           <ul class="meta-list">
-            {homepageMethodology.bullets.map((point) => (
+            {spotlightSongMethodology.bullets.map((point) => (
               <li>{point}</li>
             ))}
           </ul>
@@ -258,115 +185,41 @@ const trustSignals = [
           </p>
         </div>
         <div class="methodology-card">
-          <p class="methodology-badge">{spotlightSongMethodology?.confidenceLabel ?? "Cross-check"}</p>
+          <p class="methodology-badge">Song-first review surface</p>
           <p>
-            Song and artist pages now surface confidence, ownership context, and modeled artist-side ranges near the top instead of hiding the explanation below the fold.
+            The homepage now sends visitors into song pages first. Artist and album context remains
+            available from relevant song pages without putting broad directory pages in the primary
+            path.
           </p>
           <ul class="meta-list">
-            <li>{highConfidenceArtists.length} homepage-ranked artists currently score high confidence.</li>
             <li>{highConfidenceSongs.length} homepage-ranked songs currently score high confidence.</li>
-            <li>Split-aware pages surface artist-side and label-side ranges separately when available.</li>
+            <li>The Songs directory remains noindex while acting as the only public catalog doorway.</li>
+            <li>Broader utility pages are still outside the main homepage path.</li>
           </ul>
         </div>
       </div>
     </section>
   )}
 
-  {(highConfidenceArtists.length > 0 || highConfidenceSongs.length > 0) && (
+  {highConfidenceSongs.length > 0 && (
     <section aria-labelledby="confidence-title">
-      <h2 id="confidence-title">High-Confidence Pages</h2>
+      <h2 id="confidence-title">High-Confidence Songs</h2>
       <div class="editorial-grid">
-        {highConfidenceArtists.length > 0 && (
-          <article class="card editorial-card">
-            <div class="artist-card-body">
-              <p class="eyebrow">Artists</p>
-              <h3>Pages with stronger ownership and split context</h3>
-              <ul class="meta-list">
-                {highConfidenceArtists.map(({ artist }) => (
-                  <li>
-                    <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
-                    <span class="meta-inline"> · {artist.earnings?.artist_or_estate_share ?? artist.estimated_income}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        )}
-        {highConfidenceSongs.length > 0 && (
-          <article class="card editorial-card">
-            <div class="artist-card-body">
-              <p class="eyebrow">Songs</p>
-              <h3>Pages with clearer modeled take-home context</h3>
-              <ul class="meta-list">
-                {highConfidenceSongs.map(({ song }) => (
-                  <li>
-                    <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
-                    <span class="meta-inline"> · {song.estimated_revenue}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        )}
+        <article class="card editorial-card">
+          <div class="artist-card-body">
+            <p class="eyebrow">Songs</p>
+            <h3>Pages with clearer modeled take-home context</h3>
+            <ul class="meta-list">
+              {highConfidenceSongs.map(({ song }) => (
+                <li>
+                  <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+                  <span class="meta-inline"> · {song.estimated_revenue}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
       </div>
-    </section>
-  )}
-
-  <section id="artists" aria-labelledby="top-artists-title">
-    <h2 id="top-artists-title">Top Artists</h2>
-    <p class="results-note">Ranked by normalized artist-side annual earnings midpoint. Where available, cards also show the modeled label share for comparison.</p>
-    <div class="card-grid">
-      {topArtists.map(({ artist, revenueScore }) => {
-        const artistVisual = getArtistVisual(artist);
-        const confidence = getArtistConfidence(artist);
-        return (
-          <article class="card artist-card">
-            <img
-              class="artist-card-image"
-              src={artistVisual.src}
-              alt={artistVisual.alt}
-              loading="lazy"
-              width="1200"
-              height="900"
-              referrerpolicy="no-referrer"
-            />
-            <div class="artist-card-body">
-              <p class="eyebrow">Artist</p>
-              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
-              <p class="confidence-note">
-                {getConfidenceSummary(confidence)}
-                {" "}
-                <a href={`${baseUrl}insights/methodology/`}>Why?</a>
-              </p>
-              <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
-              {(artist.genre || artist.country) && (
-                <p class="artist-card-meta">{[artist.genre, artist.country].filter(Boolean).join(" · ")}</p>
-              )}
-              <p><strong>Artist-side:</strong> {artist.earnings?.artist_or_estate_share ?? artist.estimated_income}</p>
-              <p><strong>Label side:</strong> {artist.earnings?.label_share ?? "Not modeled yet"}</p>
-              <p class="artist-card-meta">Modeled midpoint: {formatRevenueMidpoint(revenueScore)}</p>
-            </div>
-          </article>
-        );
-      })}
-    </div>
-  </section>
-
-  {splitAwareArtists.length > 0 && (
-    <section aria-labelledby="split-title">
-      <h2 id="split-title">Artist vs Label: Who Keeps What</h2>
-      <p class="results-note">These modeled ranges compare what the artist or estate may keep each year versus the label-side share when split data exists.</p>
-      <ul class="meta-list">
-        {splitAwareArtists.map(({ artist }) => (
-          <li>
-            <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
-            <span class="meta-inline">
-              {" "}· artist-side {artist.earnings?.artist_or_estate_share}
-              {" "}· label side {artist.earnings?.label_share}
-            </span>
-          </li>
-        ))}
-      </ul>
     </section>
   )}
 
@@ -413,139 +266,6 @@ const trustSignals = [
         );
       })}
     </div>
-  </section>
-
-  <section aria-labelledby="catalogs-title">
-    <h2 id="catalogs-title">Top Catalogs</h2>
-    <ul class="meta-list">
-      {topCatalogs.map(({ album, revenueScore }) => {
-        const confidence = getAlbumConfidence(album);
-        return (
-        <li>
-          <a href={`${baseUrl}album/${album.slug}/`}>{album.title}</a>
-          <span class="meta-inline">
-            {" "}· {album.artistName} · {album.estimatedRevenue} · midpoint {formatRevenueMidpoint(revenueScore)}
-          </span>
-          <br />
-          <span class="meta-inline">
-            {confidence.level} confidence · {getConfidenceSummary(confidence)}
-          </span>
-        </li>
-        );
-      })}
-    </ul>
-  </section>
-
-  <section aria-labelledby="updates-title">
-    <h2 id="updates-title">Latest Updates</h2>
-    <div class="editorial-grid">
-      <article class="card editorial-card">
-        <div class="artist-card-body">
-          <p class="eyebrow">Manual Releases</p>
-          <h3>{manualUpdates.length}</h3>
-          <p>Direct editorial and catalog updates shipped by hand in the latest window.</p>
-          <ul class="compact-update-list">
-            {manualUpdates.slice(0, 3).map((entry) => (
-              <li>
-                <a href={`${baseUrl}updates/`}>{entry.summary}</a>
-                <span class="meta-inline"> · {entry.date}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </article>
-      <article class="card editorial-card">
-        <div class="artist-card-body">
-          <p class="eyebrow">Assisted Refreshes</p>
-          <h3>{autopilotUpdates.length}</h3>
-          <p>Existing-page refreshes that improved metadata or editorial coverage.</p>
-          <ul class="compact-update-list">
-            {autopilotUpdates.slice(0, 3).map((entry) => (
-              <li>
-                <a href={`${baseUrl}updates/`}>{entry.summary}</a>
-                <span class="meta-inline"> · {entry.date}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section aria-labelledby="new-pages-title">
-    <h2 id="new-pages-title">Latest Additions</h2>
-    <div class="card-grid">
-      {latestAddedArtists.map((artist) => {
-        const artistVisual = getArtistVisual(artist);
-        return (
-          <article class="card artist-card">
-            <img
-              class="artist-card-image"
-              src={artistVisual.src}
-              alt={artistVisual.alt}
-              loading="lazy"
-              width="1200"
-              height="900"
-              referrerpolicy="no-referrer"
-            />
-            <div class="artist-card-body">
-              <p class="eyebrow">Recent artist</p>
-              <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
-              <p>{artist.estimated_income}</p>
-            </div>
-          </article>
-        );
-      })}
-      {latestAddedSongs.map((song) => {
-        const artist = getArtist(song.artist);
-        const artistVisual = artist ? getArtistVisual(artist) : undefined;
-        return (
-          <article class="card artist-card">
-            <img
-              class="artist-card-image"
-              src={artistVisual?.src ?? ""}
-              alt={artistVisual?.alt ?? song.title}
-              loading="lazy"
-              width="1200"
-              height="900"
-              referrerpolicy="no-referrer"
-            />
-            <div class="artist-card-body">
-              <p class="eyebrow">Recent song</p>
-              <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
-              <p>{song.estimated_revenue}</p>
-            </div>
-          </article>
-        );
-      })}
-    </div>
-  </section>
-
-  <section aria-labelledby="freshness-title">
-    <h2 id="freshness-title">Freshness Signals</h2>
-    <ul class="meta-list">
-      <li>
-        <strong>Recently touched artists:</strong>
-        {" "}
-        {latestArtists.map((artist) => (
-          <>
-            <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>{" "}
-          </>
-        ))}
-      </li>
-      <li>
-        <strong>Recently touched songs:</strong>
-        {" "}
-        {latestSongs.map((song) => (
-          <>
-            <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>{" "}
-          </>
-        ))}
-      </li>
-      <li>
-        <a href={`${baseUrl}updates/`}>Open the full changelog</a>
-      </li>
-    </ul>
   </section>
 
   <section aria-labelledby="insights-title">
