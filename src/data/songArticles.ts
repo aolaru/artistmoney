@@ -1,3 +1,9 @@
+export type ArticleReference = {
+  label: string;
+  url: string;
+  note: string;
+};
+
 export type SongArticle = {
   seoTitle: string;
   shortAnswer: string;
@@ -5,6 +11,9 @@ export type SongArticle = {
   lifetimeEstimate: string;
   whyItStillMakesMoney: string[];
   insight: string;
+  evidence?: string[];
+  methodologyNotes?: string[];
+  references?: ArticleReference[];
 };
 
 export const songArticles: Record<string, SongArticle> = {
@@ -106,11 +115,11 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "all-i-want-for-christmas-is-you": {
     "seoTitle": "How much money does All I Want for Christmas Is You make per year?",
-    "shortAnswer": "All I Want for Christmas Is You by Mariah Carey is modeled at $4.4M-$11M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "All I Want for Christmas Is You by Mariah Carey is modeled at $4.4M-$11M/year on the artist side, with a separate gross-track range of $9.1M-$23M/year.",
     "breakdown": [
-      "Streaming and catalog replay form the baseline annual revenue lane.",
-      "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
-      "Sync, social rediscovery, and playlist reuse can create spikes above the modeled baseline."
+      "The model treats this as a seasonal catalog asset, not a normal year-round streaming single.",
+      "The song file separates gross track revenue from artist-side participation, publishing, and songwriter shares.",
+      "Holiday replay is the main reason the annual estimate can sit above most non-seasonal catalog songs."
     ],
     "lifetimeEstimate": "Lifetime value depends on how long All I Want for Christmas Is You keeps playlist, search, and catalog demand beyond the current annual modeled range.",
     "whyItStillMakesMoney": [
@@ -118,15 +127,32 @@ export const songArticles: Record<string, SongArticle> = {
       "Radio, retail, playlist, and social reuse keep the song visible every December.",
       "Mariah Carey writer participation makes publishing materially more important than on performer-only hits."
     ],
-    "insight": "All I Want for Christmas Is You works as a catalog asset because the revenue story depends on replay durability, rights splits, and ownership context, not only on the original release year."
+    "insight": "The important reading is not just that the song is popular each December. It is that the modeled artist-side range, publishing range, and seasonal replay pattern all point in the same direction: this is one of the rare holiday songs that behaves like a major annual catalog business.",
+    "evidence": [
+      "Internal song data lists estimated gross track revenue at $9.1M-$23M/year and artist-side share at $4.4M-$11M/year.",
+      "The ownership note says the publishing appears exceptionally valuable because of writer-side participation.",
+      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
+    ],
+    "methodologyNotes": [
+      "The estimate is directional and annualized; it is not a Mariah Carey royalty statement.",
+      "Seasonal songs can swing materially from year to year, so the page uses a range rather than a single number.",
+      "Platform links are used for public track identity and listening context, not as audited payout disclosures."
+    ],
+    "references": [
+      {
+        "label": "RIAA Gold & Platinum database lookup",
+        "url": "https://www.riaa.com/gold-platinum/?ar=Mariah+Carey&ti=All+I+Want+for+Christmas+Is+You&tab_active=default-award",
+        "note": "Official RIAA search page used for certification-scale context, not for royalty totals."
+      }
+    ]
   },
   "blinding-lights": {
     "seoTitle": "How much money does Blinding Lights make per year?",
-    "shortAnswer": "Blinding Lights by The Weeknd is modeled at $1.1M-$3.3M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Blinding Lights by The Weeknd is modeled at $1.1M-$3.3M/year on the artist side, with gross track revenue modeled at $3.9M-$9.1M/year.",
     "breakdown": [
-      "Streaming and catalog replay form the baseline annual revenue lane.",
-      "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
-      "Sync, social rediscovery, and playlist reuse can create spikes above the modeled baseline."
+      "The page separates the larger gross track estimate from the smaller artist-side range after rights splits.",
+      "The song is treated as a modern superstar catalog track where streaming scale is the main recurring driver.",
+      "Publishing and songwriter ranges are shown separately because the performer-side number is not the whole song economy."
     ],
     "lifetimeEstimate": "Lifetime value depends on how long Blinding Lights keeps playlist, search, and catalog demand beyond the current annual modeled range.",
     "whyItStillMakesMoney": [
@@ -134,15 +160,32 @@ export const songArticles: Record<string, SongArticle> = {
       "A durable hook and broad familiarity help the song keep earning across catalog listening.",
       "Sync, social reuse, and seasonal spikes can lift the baseline."
     ],
-    "insight": "Blinding Lights works as a catalog asset because the revenue story depends on replay durability, rights splits, and ownership context, not only on the original release year."
+    "insight": "Blinding Lights is useful because it shows why a very large modern hit can have a wide gap between gross song revenue and artist-side take-home. The page keeps those figures separate instead of presenting one headline number as if every dollar reaches the performer.",
+    "evidence": [
+      "Internal song data lists estimated gross track revenue at $3.9M-$9.1M/year and artist-side share at $1.1M-$3.3M/year.",
+      "The ownership note describes a mix of label and artist-affiliated participation, which is why gross and take-home are separated.",
+      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
+    ],
+    "methodologyNotes": [
+      "The estimate is a modeled annual range, not a disclosed royalty statement from The Weeknd or a label.",
+      "The model does not assume one universal per-stream rate because platform, territory, and contract terms vary.",
+      "External platform links are identity and listening references, not proof of the modeled payout range."
+    ],
+    "references": [
+      {
+        "label": "RIAA Gold & Platinum database lookup",
+        "url": "https://www.riaa.com/gold-platinum/?ar=The+Weeknd&ti=Blinding+Lights&tab_active=default-award",
+        "note": "Official RIAA search page used for certification-scale context, not for royalty totals."
+      }
+    ]
   },
   "bohemian-rhapsody": {
     "seoTitle": "How much money does Bohemian Rhapsody make per year?",
-    "shortAnswer": "Bohemian Rhapsody by Queen is modeled at $1.1M-$3.3M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Bohemian Rhapsody by Queen is modeled at $1.1M-$3.3M/year on the artist side, with gross track revenue modeled at $2.6M-$7.8M/year.",
     "breakdown": [
-      "Streaming and catalog replay form the baseline annual revenue lane.",
-      "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
-      "Sync, social rediscovery, and playlist reuse can create spikes above the modeled baseline."
+      "The page treats the song as a legacy catalog asset where long-tail recognition matters more than release-week performance.",
+      "Gross track revenue, artist-side share, publishing, and songwriter ranges are shown separately to avoid collapsing the economics into one number.",
+      "The ownership note flags Freddie Mercury writer-side participation as part of the publishing context."
     ],
     "lifetimeEstimate": "Lifetime value depends on how long Bohemian Rhapsody keeps playlist, search, and catalog demand beyond the current annual modeled range.",
     "whyItStillMakesMoney": [
@@ -150,15 +193,32 @@ export const songArticles: Record<string, SongArticle> = {
       "Film, television, and event use reinforce the song as a high-recognition catalog asset.",
       "Its unusual structure makes it memorable enough to keep outperforming ordinary legacy singles."
     ],
-    "insight": "Bohemian Rhapsody works as a catalog asset because the revenue story depends on replay durability, rights splits, and ownership context, not only on the original release year."
+    "insight": "Bohemian Rhapsody is a strong example of why older catalog songs need a different revenue reading from current hits. The estimate depends on durable replay, rights participation, and publishing context, not only on current chart activity.",
+    "evidence": [
+      "Internal song data lists estimated gross track revenue at $2.6M-$7.8M/year and artist-side share at $1.1M-$3.3M/year.",
+      "The ownership note says the master is major-label controlled with band or estate royalty participation.",
+      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
+    ],
+    "methodologyNotes": [
+      "The estimate is a modeled annual range and not a disclosed Queen royalty statement.",
+      "Legacy catalog value can come from streaming, licensing, and recurring public use, but the split between those channels is not publicly audited here.",
+      "External links are used to document public song identity and context, not to calculate exact royalty checks."
+    ],
+    "references": [
+      {
+        "label": "RIAA Gold & Platinum database lookup",
+        "url": "https://www.riaa.com/gold-platinum/?ar=Queen&ti=Bohemian+Rhapsody&tab_active=default-award",
+        "note": "Official RIAA search page used for certification-scale context, not for royalty totals."
+      }
+    ]
   },
   "dancing-queen": {
     "seoTitle": "How much money does Dancing Queen make per year?",
-    "shortAnswer": "Dancing Queen by ABBA is modeled at $1.1M-$3.3M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Dancing Queen by ABBA is modeled at $1.1M-$3.3M/year on the artist side, with gross track revenue modeled at $2.6M-$7.8M/year.",
     "breakdown": [
-      "Streaming and catalog replay form the baseline annual revenue lane.",
-      "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
-      "Sync, social rediscovery, and playlist reuse can create spikes above the modeled baseline."
+      "The song is modeled as a global pop catalog track where repeat listening and licensing context matter.",
+      "The internal data separates artist-side share from publishing and songwriter ranges because ABBA songwriting is central to the economics.",
+      "The estimate does not assume a song-specific catalog sale adjustment."
     ],
     "lifetimeEstimate": "Lifetime value depends on how long Dancing Queen keeps playlist, search, and catalog demand beyond the current annual modeled range.",
     "whyItStillMakesMoney": [
@@ -166,15 +226,32 @@ export const songArticles: Record<string, SongArticle> = {
       "Film, party, wedding, and stage-musical associations reinforce recurring demand.",
       "Its melody and title recognition make it unusually sync-friendly for a 1970s pop single."
     ],
-    "insight": "Dancing Queen works as a catalog asset because the revenue story depends on replay durability, rights splits, and ownership context, not only on the original release year."
+    "insight": "Dancing Queen reads less like a one-time 1970s hit and more like a durable catalog standard. The useful number is the range after separating gross revenue, artist-side participation, and writer-side value.",
+    "evidence": [
+      "Internal song data lists estimated gross track revenue at $2.6M-$7.8M/year and artist-side share at $1.1M-$3.3M/year.",
+      "The ownership note says publishing appears highly valuable because ABBA songwriting is central to catalog economics.",
+      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
+    ],
+    "methodologyNotes": [
+      "The estimate is a modeled annual range, not an ABBA royalty disclosure.",
+      "The page does not convert certifications or public listening pages directly into earnings.",
+      "The range should be read as directional catalog economics, not as a precise accounting statement."
+    ],
+    "references": [
+      {
+        "label": "RIAA Gold & Platinum database lookup",
+        "url": "https://www.riaa.com/gold-platinum/?ar=ABBA&ti=Dancing+Queen&tab_active=default-award",
+        "note": "Official RIAA search page used for certification-scale context, not for royalty totals."
+      }
+    ]
   },
   "sicko-mode": {
     "seoTitle": "How much money does SICKO MODE make per year?",
-    "shortAnswer": "SICKO MODE by Travis Scott is modeled at $1.1M-$3.3M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "SICKO MODE by Travis Scott is modeled at $1.1M-$3.3M/year on the artist side, with gross track revenue modeled at $2.6M-$7.8M/year.",
     "breakdown": [
-      "Streaming and catalog replay form the baseline annual revenue lane.",
-      "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
-      "Sync, social rediscovery, and playlist reuse can create spikes above the modeled baseline."
+      "The page separates performer-side economics from publishing because the ownership notes describe multiple writer, producer, and publisher participants.",
+      "Catalog streaming is treated as the main recurring driver, with sync and short-form rediscovery left as possible upside rather than guaranteed income.",
+      "The estimate does not include a song-specific catalog sale adjustment."
     ],
     "lifetimeEstimate": "Lifetime value depends on how long SICKO MODE keeps playlist, search, and catalog demand beyond the current annual modeled range.",
     "whyItStillMakesMoney": [
@@ -182,15 +259,32 @@ export const songArticles: Record<string, SongArticle> = {
       "Playlist placement and cultural recall help the song stay active.",
       "Sampling, sync use, and short-form rediscovery can extend earnings."
     ],
-    "insight": "SICKO MODE works as a catalog asset because the revenue story depends on replay durability, rights splits, and ownership context, not only on the original release year."
+    "insight": "SICKO MODE is a useful page because the headline artist-side number is only part of the economics. The gross-track range, label participation, and publishing split all matter before deciding what the song may actually deliver to any one participant.",
+    "evidence": [
+      "Internal song data lists estimated gross track revenue at $2.6M-$7.8M/year and artist-side share at $1.1M-$3.3M/year.",
+      "The ownership note says publishing appears split across multiple writers, producers, and publishers.",
+      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
+    ],
+    "methodologyNotes": [
+      "The estimate is a modeled annual range and not a Travis Scott royalty statement.",
+      "The page does not assume public streams translate into one fixed per-stream payout.",
+      "Certification and platform references provide public context, not audited income."
+    ],
+    "references": [
+      {
+        "label": "RIAA Gold & Platinum database lookup",
+        "url": "https://www.riaa.com/gold-platinum/?ar=Travis+Scott&ti=SICKO+MODE&tab_active=default-award",
+        "note": "Official RIAA search page used for certification-scale context, not for royalty totals."
+      }
+    ]
   },
   "shake-it-off": {
     "seoTitle": "How much money does Shake It Off make per year?",
-    "shortAnswer": "Shake It Off by Taylor Swift is modeled at $940K-$2.8M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Shake It Off by Taylor Swift is modeled at $940K-$2.8M/year on the artist side, with gross track revenue modeled at $2.2M-$6.5M/year.",
     "breakdown": [
-      "Streaming and catalog replay form the baseline annual revenue lane.",
-      "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
-      "Sync, social rediscovery, and playlist reuse can create spikes above the modeled baseline."
+      "The page separates gross track revenue from the artist-side range because label-controlled masters and royalty participation can produce different outcomes.",
+      "Publishing and songwriter ranges are shown separately instead of being folded into the headline estimate.",
+      "The model uses current catalog behavior and does not confirm a song-specific sale adjustment."
     ],
     "lifetimeEstimate": "Lifetime value depends on how long Shake It Off keeps playlist, search, and catalog demand beyond the current annual modeled range.",
     "whyItStillMakesMoney": [
@@ -198,7 +292,24 @@ export const songArticles: Record<string, SongArticle> = {
       "A durable hook and broad familiarity help the song keep earning across catalog listening.",
       "Sync, social reuse, and seasonal spikes can lift the baseline."
     ],
-    "insight": "Shake It Off works as a catalog asset because the revenue story depends on replay durability, rights splits, and ownership context, not only on the original release year."
+    "insight": "Shake It Off shows why a large pop hit should be read through rights splits, not just public familiarity. The page keeps the gross-track estimate, performer-side estimate, and publishing estimate visible as separate lanes.",
+    "evidence": [
+      "Internal song data lists estimated gross track revenue at $2.2M-$6.5M/year and artist-side share at $940K-$2.8M/year.",
+      "The ownership note describes a mix of label-controlled masters and meaningful artist-side royalty participation.",
+      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
+    ],
+    "methodologyNotes": [
+      "The estimate is an inferred annual range, not a public Taylor Swift royalty statement.",
+      "The page does not claim a universal per-stream payout for the song.",
+      "External references support public context and identity; they do not independently verify the modeled earnings range."
+    ],
+    "references": [
+      {
+        "label": "RIAA Gold & Platinum database lookup",
+        "url": "https://www.riaa.com/gold-platinum/?ar=Taylor+Swift&ti=Shake+It+Off&tab_active=default-award",
+        "note": "Official RIAA search page used for certification-scale context, not for royalty totals."
+      }
+    ]
   },
   "blank-space": {
     "seoTitle": "How much money does Blank Space make per year?",

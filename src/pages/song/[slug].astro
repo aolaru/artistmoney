@@ -187,13 +187,23 @@ const hasPlatformSignals = Boolean(
   platformMetrics?.spotifyTrackId ||
   platformMetrics?.youtubeVideoId
 );
-const editorialBasis = [
-  ...(article?.breakdown ?? []),
-  ...(article?.whyItStillMakesMoney ?? []),
+const evidenceItems = article?.evidence ?? [];
+const methodologyNotes = article?.methodologyNotes ?? [];
+const modelNotes = [
   song.ownership?.notes ? `Ownership note: ${song.ownership.notes}` : undefined,
   hasPlatformSignals ? "Public platform signals are included where Spotify or YouTube identifiers are configured." : undefined
 ].filter(Boolean);
 const referenceLinks = getSongReferenceLinks(song);
+const articleReferenceLinks = article?.references ?? [];
+const allReferenceLinks = [...articleReferenceLinks, ...referenceLinks].filter((link, index, links) =>
+  links.findIndex((candidate) => candidate.url === link.url) === index
+);
+const hasSourceContext = Boolean(
+  evidenceItems.length ||
+  methodologyNotes.length ||
+  modelNotes.length ||
+  allReferenceLinks.length
+);
 const intentQuestions = [
   {
     question: `How much did ${song.title} make in total?`,
@@ -266,6 +276,45 @@ const songSchema = {
     article?.shortAnswer ??
     `${song.title} song page with earnings estimates and catalog insights on How Much Music.`
 };
+const articleSchema = article
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: article.seoTitle,
+      description: article.shortAnswer,
+      url: new URL(`${baseUrl}song/${song.slug}/`, Astro.site).toString(),
+      image: imageSrc,
+      author: {
+        "@type": "Organization",
+        name: "How Much Music"
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "How Much Music",
+        url: new URL(baseUrl, Astro.site).toString()
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": new URL(`${baseUrl}song/${song.slug}/`, Astro.site).toString()
+      },
+      about: {
+        "@type": "MusicRecording",
+        name: song.title,
+        byArtist: artist
+          ? {
+              "@type": "MusicGroup",
+              name: artist.name,
+              url: new URL(`${baseUrl}artist/${artist.slug}/`, Astro.site).toString()
+            }
+          : {
+              "@type": "MusicGroup",
+              name: song.artist
+            }
+      },
+      isAccessibleForFree: true
+    }
+  : undefined;
+const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
 ---
 
 <BaseLayout
@@ -274,7 +323,7 @@ const songSchema = {
   image={imageSrc}
   imageAlt={artist ? `${song.title} by ${artist.name}` : song.title}
   type="article"
-  jsonLd={songSchema}
+  jsonLd={pageJsonLd}
   noindex={!article}
 >
   <article>
@@ -509,23 +558,57 @@ const songSchema = {
           </div>
         </section>
 
-        {article && (editorialBasis.length > 0 || referenceLinks.length > 0) && (
+        {article && hasSourceContext && (
           <section aria-labelledby="editorial-basis-title">
             <h2 id="editorial-basis-title">Sources and References</h2>
             <p class="results-note">
               These points explain the public context used to frame this page. They support a
               directional model, not an audited royalty statement.
             </p>
-            {editorialBasis.length > 0 && (
+            <p class="results-note">
+              Published by How Much Music using the site methodology. If a source or estimate needs
+              correction, use the <a href="/contact/">contact page</a>.
+            </p>
+            {evidenceItems.length > 0 && (
+              <>
+                <h3>Evidence used</h3>
+                <ul class="meta-list">
+                  {evidenceItems.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {modelNotes.length > 0 && (
+              <>
+                <h3>Model notes</h3>
+                <ul class="meta-list">
+                  {modelNotes.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {methodologyNotes.length > 0 && (
+              <>
+                <h3>Methodology limits</h3>
+                <ul class="meta-list">
+                  {methodologyNotes.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {evidenceItems.length === 0 && methodologyNotes.length === 0 && modelNotes.length === 0 && (
               <ul class="meta-list">
-                {editorialBasis.slice(0, 8).map((point) => (
+                {[...detailedBreakdown, ...conciseWhy].slice(0, 8).map((point) => (
                   <li>{point}</li>
                 ))}
               </ul>
             )}
-            {referenceLinks.length > 0 && (
+            {allReferenceLinks.length > 0 && (
               <div class="reference-list">
-                {referenceLinks.slice(0, 6).map((reference) => (
+                {allReferenceLinks.slice(0, 7).map((reference) => (
                   <article class="reference-item">
                     <h3><a href={reference.url} rel="noreferrer" target="_blank">{reference.label}</a></h3>
                     <p>{reference.note}</p>
