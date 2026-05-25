@@ -1021,6 +1021,27 @@ mark {
   margin: 0;
 }
 
+.reference-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.reference-item {
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.reference-item h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.reference-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .traffic-magnet-note {
   margin: 0.85rem 0 0;
   padding: 0.85rem 0.95rem;

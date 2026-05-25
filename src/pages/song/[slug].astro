@@ -20,6 +20,7 @@ import {
 } from "../../lib/catalog";
 import { getSongEditorial } from "../../lib/editorial";
 import { formatFreshnessDate, getLatestGitDate } from "../../lib/freshness";
+import { getSongReferenceLinks } from "../../lib/references";
 import { formatRevenueMidpoint } from "../../lib/revenue";
 
 export function getStaticPaths() {
@@ -192,6 +193,7 @@ const editorialBasis = [
   song.ownership?.notes ? `Ownership note: ${song.ownership.notes}` : undefined,
   hasPlatformSignals ? "Public platform signals are included where Spotify or YouTube identifiers are configured." : undefined
 ].filter(Boolean);
+const referenceLinks = getSongReferenceLinks(song);
 const intentQuestions = [
   {
     question: `How much did ${song.title} make in total?`,
@@ -507,18 +509,30 @@ const songSchema = {
           </div>
         </section>
 
-        {article && editorialBasis.length > 0 && (
+        {article && (editorialBasis.length > 0 || referenceLinks.length > 0) && (
           <section aria-labelledby="editorial-basis-title">
-            <h2 id="editorial-basis-title">Editorial Basis</h2>
+            <h2 id="editorial-basis-title">Sources and References</h2>
             <p class="results-note">
               These points explain the public context used to frame this page. They support a
               directional model, not an audited royalty statement.
             </p>
-            <ul class="meta-list">
-              {editorialBasis.slice(0, 8).map((point) => (
-                <li>{point}</li>
-              ))}
-            </ul>
+            {editorialBasis.length > 0 && (
+              <ul class="meta-list">
+                {editorialBasis.slice(0, 8).map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            )}
+            {referenceLinks.length > 0 && (
+              <div class="reference-list">
+                {referenceLinks.slice(0, 6).map((reference) => (
+                  <article class="reference-item">
+                    <h3><a href={reference.url} rel="noreferrer" target="_blank">{reference.label}</a></h3>
+                    <p>{reference.note}</p>
+                  </article>
+                ))}
+              </div>
+            )}
           </section>
         )}
 

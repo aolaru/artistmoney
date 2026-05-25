@@ -18,6 +18,7 @@ import {
 } from "../../lib/catalog";
 import { getArtistEditorial } from "../../lib/editorial";
 import { formatFreshnessDate, getLatestGitDate } from "../../lib/freshness";
+import { getArtistReferenceLinks } from "../../lib/references";
 import { formatRevenueMidpoint, normalizeRevenue } from "../../lib/revenue";
 
 export function getStaticPaths() {
@@ -43,6 +44,7 @@ const ownershipNote = getArtistOwnershipNote(artist);
 const relatedArtists = getRelatedArtists(artist, 4);
 const overviewText = getArtistOverviewText(artist);
 const revenueContext = getArtistRevenueContext(artist).slice(0, 3);
+const referenceLinks = getArtistReferenceLinks(artistSongs);
 const artistRank = rankedArtists.findIndex((entry) => entry.artist.slug === artist.slug) + 1;
 const artistPercentile = artistRank > 0 ? Math.max(1, Math.round((artistRank / rankedArtists.length) * 100)) : undefined;
 const activeSinceYear = artist.active_since ? Number(artist.active_since.match(/\d{4}/)?.[0]) : undefined;
@@ -351,6 +353,31 @@ const artistSchema = {
           </div>
         </section>
 
+        {article && ((article.sources ?? editorial.sources).length > 0 || referenceLinks.length > 0) && (
+          <section aria-labelledby="sources-title">
+            <h2 id="sources-title">Sources and References</h2>
+            <p class="results-note">
+              These notes and links explain the public context used to frame the page. They support
+              a directional model, not an audited royalty statement.
+            </p>
+            <ul class="meta-list">
+              {(article.sources ?? editorial.sources).map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+            {referenceLinks.length > 0 && (
+              <div class="reference-list">
+                {referenceLinks.map((reference) => (
+                  <article class="reference-item">
+                    <h3><a href={reference.url} rel="noreferrer" target="_blank">{reference.label}</a></h3>
+                    <p>{reference.note}</p>
+                  </article>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
+
         <details class="details-card">
           <summary>Show ownership and assumptions</summary>
           <div class="details-card-body">
@@ -407,14 +434,6 @@ const artistSchema = {
                 <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
               </p>
             </div>
-            <section aria-labelledby="sources-title">
-              <h2 id="sources-title">Sources</h2>
-              <ul class="meta-list">
-                {(article?.sources ?? editorial.sources).map((point) => (
-                  <li>{point}</li>
-                ))}
-              </ul>
-            </section>
           </div>
         </details>
 
