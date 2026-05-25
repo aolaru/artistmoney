@@ -1139,7 +1139,7 @@
     "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Duran Duran",
       "slug": "duran-duran",
@@ -1195,7 +1195,8 @@
           "hungry-like-the-wolf"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,
