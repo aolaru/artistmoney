@@ -172,6 +172,107 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
 const localPhoto = (fileName: string) => `${baseUrl}images/artists/${fileName}`;
 
 const artistPhotos: Record<string, ArtistPhoto> = {
+  shakira: {
+    alt: "Shakira at a FIFA World Cup press conference in 2014",
+    src: localPhoto("shakira.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Shakira_2014.jpg",
+    credit: "Photo by Marcello Casal Jr / Agencia Brasil via Wikimedia Commons",
+    license: "CC BY 3.0 BR",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0/br/deed.en",
+    localPath: "/images/artists/shakira.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "katy-perry": {
+    alt: "Katy Perry performing at Westminster Central Hall in 2024",
+    src: localPhoto("katy-perry.jpg"),
+    sourceUrl:
+      "https://commons.wikimedia.org/wiki/File:KatyPerryWestminst111224_(81_of_95)_(54206733094)_(cropped_2).jpg",
+    credit: "Photo by Raph_PH via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    localPath: "/images/artists/katy-perry.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "janet-jackson": {
+    alt: "Janet Jackson performing live in concert",
+    src: localPhoto("janet-jackson.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Janet_Jackson_4_(cropped).jpg",
+    credit: "Photo by Andy L via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
+    localPath: "/images/artists/janet-jackson.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "christina-aguilera": {
+    alt: "Christina Aguilera headlining the EuroPride Valletta 2023 concert",
+    src: localPhoto("christina-aguilera.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Christina_Aguilera_headlining_EuroPride_Valletta_2023_Concert.jpg",
+    credit: "Photo by Martin Galea De Giovanni via Wikimedia Commons",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+    localPath: "/images/artists/christina-aguilera.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "duran-duran": {
+    alt: "Duran Duran publicity photo from 1983",
+    src: localPhoto("duran-duran.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Duran_Duran_1983.jpg",
+    credit: "Photo by Brian Aris / Capitol Records via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Duran_Duran_1983.jpg",
+    localPath: "/images/artists/duran-duran.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  "nelly-furtado": {
+    alt: "Nelly Furtado in 2012",
+    src: localPhoto("nelly-furtado.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Nelly_Furtado_2012.jpg",
+    credit: "Photo by Roy Stephens via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    localPath: "/images/artists/nelly-furtado.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "simon-and-garfunkel": {
+    alt: "Simon & Garfunkel publicity photo from 1968",
+    src: localPhoto("simon-and-garfunkel.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Simon_and_Garfunkel_1968.jpg",
+    credit: "GAC / Columbia Records publicity image via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Simon_and_Garfunkel_1968.jpg",
+    localPath: "/images/artists/simon-and-garfunkel.jpg",
+    personalityRightsWarning: "Living artists depicted. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  blur: {
+    alt: "Blur performing at Provinssirock in 2013",
+    src: localPhoto("blur.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Provinssirock_20130614_-_Blur_-_22.jpg",
+    credit: "Photo by Cecil via Wikimedia Commons",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
+    localPath: "/images/artists/blur.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "busta-rhymes": {
+    alt: "Busta Rhymes at an event in 2022",
+    src: localPhoto("busta-rhymes.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Busta_Rhymes_(52380599657)_(cropped).jpg",
+    credit: "Photo by All-Pro Reels via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
+    localPath: "/images/artists/busta-rhymes.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  chicago: {
+    alt: "Chicago band publicity photo from 1973",
+    src: localPhoto("chicago.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Chicago_band_1973.jpg",
+    credit: "Columbia Records publicity image via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Chicago_band_1973.jpg",
+    localPath: "/images/artists/chicago.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
+  },
   sade: {
     alt: "Sade performing live in 2011",
     src: localPhoto("sade.jpg"),
