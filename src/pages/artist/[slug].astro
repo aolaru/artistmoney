@@ -45,6 +45,7 @@ const relatedArtists = getRelatedArtists(artist, 4);
 const overviewText = getArtistOverviewText(artist);
 const revenueContext = getArtistRevenueContext(artist).slice(0, 3);
 const referenceLinks = getArtistReferenceLinks(artistSongs);
+const articleSourceNotes = article?.sources ?? editorial.sources;
 const artistRank = rankedArtists.findIndex((entry) => entry.artist.slug === artist.slug) + 1;
 const artistPercentile = artistRank > 0 ? Math.max(1, Math.round((artistRank / rankedArtists.length) * 100)) : undefined;
 const activeSinceYear = artist.active_since ? Number(artist.active_since.match(/\d{4}/)?.[0]) : undefined;
@@ -152,20 +153,63 @@ const trafficMagnetNote = artistRank > 0 && artistPercentile
 const topArtistsByEarnings = rankedArtists
   .filter((entry) => entry.artist.slug !== artist.slug)
   .slice(0, 5);
-const lastUpdated = formatFreshnessDate(
-  getLatestGitDate([
-    `src/data/artists/${artist.slug}.json`,
-    "src/data/artistMetadata.ts",
-    "src/data/artistArticles.ts",
-    "src/pages/artist/[slug].astro"
-  ])
-);
+const lastUpdatedDate = getLatestGitDate([
+  `src/data/artists/${artist.slug}.json`,
+  "src/data/artistMetadata.ts",
+  "src/data/artistArticles.ts",
+  "src/pages/artist/[slug].astro"
+]);
+const lastUpdated = formatFreshnessDate(lastUpdatedDate);
 const artistTrustItems = [
   { label: "Modeled artist-side range", value: leadRevenue },
   { label: "Gross catalog revenue", value: artist.earnings?.gross_catalog_revenue ?? "Not separated on this page" },
   { label: "Ownership context", value: artist.ownership ? "Included below" : "High-level only" },
   { label: "Last updated", value: lastUpdated ?? "Current build" }
 ];
+const artistEvidenceItems = [
+  artist.earnings?.gross_catalog_revenue && leadRevenue
+    ? `Internal artist data separates gross catalog revenue (${artist.earnings.gross_catalog_revenue}) from modeled artist-side share (${leadRevenue}).`
+    : leadRevenue
+      ? `Internal artist data lists a modeled annual earnings range of ${leadRevenue}.`
+      : undefined,
+  artist.earnings?.publisher_share || artist.earnings?.writer_share
+    ? `Publishing and writer lanes are shown separately where available: ${[
+        artist.earnings?.publisher_share ? `publisher ${artist.earnings.publisher_share}` : undefined,
+        artist.earnings?.writer_share ? `writer ${artist.earnings.writer_share}` : undefined
+      ].filter(Boolean).join("; ")}.`
+    : undefined,
+  artistSongs.length
+    ? `This page is supported by ${artistSongs.length} tracked top ${artistSongs.length === 1 ? "song" : "songs"}: ${artistSongs.map((song) => song.title).join(", ")}.`
+    : undefined,
+  artist.ownership
+    ? `Ownership fields include ${[
+        artist.ownership.master_owner ? "master context" : undefined,
+        artist.ownership.publishing_owner ? "publishing context" : undefined,
+        artist.ownership.catalog_sale_status ? "catalog-sale status" : undefined
+      ].filter(Boolean).join(", ")}.`
+    : undefined,
+  [artist.genre, artist.country, artist.active_since].filter(Boolean).length
+    ? `Catalog metadata lists ${[
+        artist.genre ? `genre: ${artist.genre}` : undefined,
+        artist.country ? `country: ${artist.country}` : undefined,
+        artist.active_since ? `active since: ${artist.active_since}` : undefined
+      ].filter(Boolean).join("; ")}.`
+    : undefined
+].filter(Boolean);
+const artistMethodologyNotes = [
+  "The estimate is a modeled annual range, not a public royalty statement from the artist, estate, label, publisher, or distributor.",
+  hasDetailedEarnings
+    ? "Gross catalog revenue, artist-side share, label share, publisher share, and writer share are separated only where structured split data exists."
+    : "When split data is unavailable, the page stays with a single directional artist-income range.",
+  "Top-song links and platform references are public context signals; they are not audited payout disclosures.",
+  "Catalog sale fields are included only where present in the local data; absence of a sale adjustment does not prove no transaction exists."
+];
+const hasArtistSourceContext = Boolean(
+  artistEvidenceItems.length ||
+  articleSourceNotes.length ||
+  artistMethodologyNotes.length ||
+  referenceLinks.length
+);
 const artistSchema = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
@@ -183,6 +227,37 @@ const artistSchema = {
     url: new URL(`${baseUrl}song/${song.slug}/`, Astro.site).toString()
   }))
 };
+const articleSchema = article
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: article.seoTitle,
+      description: article.shortAnswer,
+      url: new URL(`${baseUrl}artist/${artist.slug}/`, Astro.site).toString(),
+      image: imageSrc,
+      author: {
+        "@type": "Organization",
+        name: "How Much Music"
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "How Much Music",
+        url: new URL(baseUrl, Astro.site).toString()
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": new URL(`${baseUrl}artist/${artist.slug}/`, Astro.site).toString()
+      },
+      dateModified: lastUpdatedDate,
+      about: {
+        "@type": "MusicGroup",
+        name: artist.name,
+        url: new URL(`${baseUrl}artist/${artist.slug}/`, Astro.site).toString()
+      },
+      isAccessibleForFree: true
+    }
+  : undefined;
+const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
 ---
 
 <BaseLayout
@@ -191,7 +266,7 @@ const artistSchema = {
   image={imageSrc}
   imageAlt={artistVisual.alt}
   type="article"
-  jsonLd={artistSchema}
+  jsonLd={pageJsonLd}
   noindex={!article}
 >
   <article class="artist-profile">
@@ -353,18 +428,47 @@ const artistSchema = {
           </div>
         </section>
 
-        {article && ((article.sources ?? editorial.sources).length > 0 || referenceLinks.length > 0) && (
+        {article && hasArtistSourceContext && (
           <section aria-labelledby="sources-title">
             <h2 id="sources-title">Sources and References</h2>
             <p class="results-note">
               These notes and links explain the public context used to frame the page. They support
               a directional model, not an audited royalty statement.
             </p>
-            <ul class="meta-list">
-              {(article.sources ?? editorial.sources).map((point) => (
-                <li>{point}</li>
-              ))}
-            </ul>
+            <p class="results-note">
+              Published by How Much Music using the site methodology. If a source or estimate needs
+              correction, use the <a href={`${baseUrl}contact/`}>contact page</a>.
+            </p>
+            {artistEvidenceItems.length > 0 && (
+              <>
+                <h3>Evidence used</h3>
+                <ul class="meta-list">
+                  {artistEvidenceItems.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {articleSourceNotes.length > 0 && (
+              <>
+                <h3>Editorial context</h3>
+                <ul class="meta-list">
+                  {articleSourceNotes.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {artistMethodologyNotes.length > 0 && (
+              <>
+                <h3>Methodology limits</h3>
+                <ul class="meta-list">
+                  {artistMethodologyNotes.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </>
+            )}
             {referenceLinks.length > 0 && (
               <div class="reference-list">
                 {referenceLinks.map((reference) => (

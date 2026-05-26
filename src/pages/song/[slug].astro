@@ -187,8 +187,44 @@ const hasPlatformSignals = Boolean(
   platformMetrics?.spotifyTrackId ||
   platformMetrics?.youtubeVideoId
 );
-const evidenceItems = article?.evidence ?? [];
-const methodologyNotes = article?.methodologyNotes ?? [];
+const generatedEvidenceItems = [
+  song.earnings?.gross_track_revenue && song.earnings?.artist_or_estate_share
+    ? `Internal song data separates gross track revenue (${song.earnings.gross_track_revenue}) from modeled artist-side share (${song.earnings.artist_or_estate_share}).`
+    : leadRevenue
+      ? `Internal song data lists a modeled annual earnings range of ${leadRevenue}.`
+      : undefined,
+  song.earnings?.publishing_share || song.earnings?.songwriter_share
+    ? `Publishing and songwriter lanes are shown separately where available: ${[
+        song.earnings?.publishing_share ? `publishing ${song.earnings.publishing_share}` : undefined,
+        song.earnings?.songwriter_share ? `songwriter ${song.earnings.songwriter_share}` : undefined
+      ].filter(Boolean).join("; ")}.`
+    : undefined,
+  song.ownership
+    ? `Ownership fields on this page include ${[
+        song.ownership.master_owner ? "master context" : undefined,
+        song.ownership.publishing_owner ? "publishing context" : undefined,
+        song.ownership.catalog_sale_status ? "catalog-sale status" : undefined
+      ].filter(Boolean).join(", ")}.`
+    : undefined,
+  artist
+    ? `Catalog metadata links the recording to ${artist.name}${song.album ? `, ${song.album}` : ""}${song.year ? `, ${song.year}` : ""}.`
+    : undefined,
+  hasPlatformSignals
+    ? "Configured Spotify or YouTube identifiers are used as public platform context when available."
+    : playerLinks.length > 0
+      ? "External listening links are used as public track-identity references."
+      : undefined
+].filter(Boolean);
+const generatedMethodologyNotes = [
+  "The estimate is a modeled annual range, not a public royalty statement.",
+  hasDetailedEarnings
+    ? "Gross track revenue, artist-side share, label share, publishing, and songwriter lanes are separated only where the page has structured split data."
+    : "When detailed split data is unavailable, the page stays with a single directional earnings range.",
+  "Platform, certification, and listening links are context signals; they are not converted directly into royalty totals.",
+  "Per-stream payouts vary by platform, territory, subscription tier, and rights contract, so this page does not claim one universal song rate."
+];
+const evidenceItems = article?.evidence?.length ? article.evidence : generatedEvidenceItems;
+const methodologyNotes = article?.methodologyNotes?.length ? article.methodologyNotes : generatedMethodologyNotes;
 const modelNotes = [
   song.ownership?.notes ? `Ownership note: ${song.ownership.notes}` : undefined,
   hasPlatformSignals ? "Public platform signals are included where Spotify or YouTube identifiers are configured." : undefined
@@ -224,15 +260,14 @@ const intentQuestions = [
 const topEarningSongs = rankedSongs
   .filter((entry) => entry.song.slug !== song.slug)
   .slice(0, 5);
-const lastUpdated = formatFreshnessDate(
-  getLatestGitDate([
-    `src/data/songs/${song.slug}.json`,
-    "src/data/songMetadata.ts",
-    "src/data/songArticles.ts",
-    "src/data/platformMetrics.ts",
-    "src/pages/song/[slug].astro"
-  ])
-);
+const lastUpdatedDate = getLatestGitDate([
+  `src/data/songs/${song.slug}.json`,
+  "src/data/songMetadata.ts",
+  "src/data/songArticles.ts",
+  "src/data/platformMetrics.ts",
+  "src/pages/song/[slug].astro"
+]);
+const lastUpdated = formatFreshnessDate(lastUpdatedDate);
 const trafficMagnetNote = songRank > 0 && catalogPercentile
   ? `${song.title} sits in the top ${catalogPercentile}% of tracked songs on the site by modeled artist-side earnings.`
   : `${song.title} is positioned here using the same catalog ranking model applied across the site.`;
@@ -297,6 +332,7 @@ const articleSchema = article
         "@type": "WebPage",
         "@id": new URL(`${baseUrl}song/${song.slug}/`, Astro.site).toString()
       },
+      dateModified: lastUpdatedDate,
       about: {
         "@type": "MusicRecording",
         name: song.title,
