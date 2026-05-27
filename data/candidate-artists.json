@@ -1199,7 +1199,7 @@
     "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "INXS",
       "slug": "inxs",
@@ -1255,7 +1255,8 @@
           "need-you-tonight"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,
