@@ -3,7 +3,7 @@
   "cursors": {
     "artist": 0,
     "song": 0,
-    "album": 88
+    "album": 89
   },
   "lastTouched": {
     "artist": {
@@ -82,7 +82,8 @@
       "janet-jackson": "2026-05-16T19:09:57.996Z",
       "erasure": "2026-05-22T09:33:06.381Z",
       "a-ha": "2026-05-25T19:45:19.161Z",
-      "duran-duran": "2026-05-25T19:45:19.161Z"
+      "duran-duran": "2026-05-25T19:45:19.161Z",
+      "inxs": "2026-05-31T07:27:00.944Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -317,7 +318,9 @@
       "hungry-like-the-wolf": "2026-05-25T19:45:19.161Z",
       "ordinary-world": "2026-05-25T19:45:19.161Z",
       "take-on-me": "2026-05-25T19:45:19.161Z",
-      "the-sun-always-shines-on-tv": "2026-05-26T10:02:06.725Z"
+      "the-sun-always-shines-on-tv": "2026-05-26T10:02:06.725Z",
+      "need-you-tonight": "2026-05-31T07:27:00.944Z",
+      "never-tear-us-apart": "2026-05-31T07:27:00.944Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -413,6 +416,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-05-31T07:27:00.944Z",
+      "summary": "artist:inxs, song:need-you-tonight, song:never-tear-us-apart"
+    },
+    {
       "timestamp": "2026-05-26T10:02:06.725Z",
       "summary": "song:the-sun-always-shines-on-tv"
     },
@@ -447,10 +454,6 @@
     {
       "timestamp": "2026-05-12T19:57:50.044Z",
       "summary": "song:rooster, song:someone-like-you, song:still-dre"
-    },
-    {
-      "timestamp": "2026-05-12T08:45:08.123Z",
-      "summary": "song:do-i-wanna-know, song:flava-in-ya-ear, song:glory-box"
     }
   ]
 }
