@@ -979,6 +979,46 @@ export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/happy-from-despicable-me-2/863835302?i=863835363&uo=4"
     }
   },
+  "gimme-shelter": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4e/e5/10/4ee51039-55ec-0f60-30da-be26a19d5ce1/mzaf_8054372248147236391.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/gimme-shelter-remastered-2019/1500642838?i=1500642840&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/69/64/67/696467fe-9ed1-b65e-1016-a10d07e6464d/20UMGIM14087.rgb.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Rolling%20Stones%20Gimme%20Shelter",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Rolling%20Stones%20Gimme%20Shelter",
+      "appleMusic": "https://music.apple.com/us/album/gimme-shelter-remastered-2019/1500642838?i=1500642840&uo=4"
+    }
+  },
+  "in-the-air-tonight": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/aa/64/8c/aa648c0e-a166-0c26-f491-65d6ec769f78/mzaf_11832742059273415828.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/in-the-air-tonight/1076779219?i=1076779225&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e2/64/d1/e264d18c-2b20-051d-3fc3-68b3424f8cde/603497880249.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/Phil%20Collins%20In%20the%20Air%20Tonight",
+      "youtubeMusic": "https://music.youtube.com/search?q=Phil%20Collins%20In%20the%20Air%20Tonight",
+      "appleMusic": "https://music.apple.com/us/album/in-the-air-tonight/1076779219?i=1076779225&uo=4"
+    }
+  },
+  "paint-it-black": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/da/f5/ec/daf5ece2-6853-c6a4-d481-389001453f75/mzaf_3869995397273029315.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/paint-it-black/1440745549?i=1440745782&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cd/89/04/cd890449-e58f-7257-2c60-9c8c31f24ce3/13ABKIM00063.rgb.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Rolling%20Stones%20Paint%20It%20Black",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Rolling%20Stones%20Paint%20It%20Black",
+      "appleMusic": "https://music.apple.com/us/album/paint-it-black/1440745549?i=1440745782&uo=4"
+    }
+  },
+  "you-cant-always-get-what-you-want": {
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9d/5c/ab/9d5cab23-6252-22c0-4d64-3be96588c30c/mzaf_16910003894030107355.plus.aac.p.m4a",
+    "appleMusic": "https://music.apple.com/us/album/you-cant-always-get-what-you-want-remastered-2019/1500642838?i=1500643065&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/69/64/67/696467fe-9ed1-b65e-1016-a10d07e6464d/20UMGIM14087.rgb.jpg/600x600bb.jpg",
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Rolling%20Stones%20You%20Can't%20Always%20Get%20What%20You%20Want",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Rolling%20Stones%20You%20Can't%20Always%20Get%20What%20You%20Want",
+      "appleMusic": "https://music.apple.com/us/album/you-cant-always-get-what-you-want-remastered-2019/1500642838?i=1500643065&uo=4"
+    }
+  },
   "dreams": {
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d4/37/e7/d437e72a-c41b-332c-f196-bee295a9d673/mzaf_11574904347171701919.plus.aac.p.m4a",
     "appleMusic": "https://music.apple.com/us/album/dreams/594061854?i=594061856&uo=4",

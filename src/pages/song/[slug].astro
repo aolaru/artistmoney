@@ -281,6 +281,26 @@ const songTrustItems = [
   },
   { label: "Last updated", value: lastUpdated ?? "Current build" }
 ];
+const editorialBasisItems = [
+  {
+    label: "Article status",
+    value: "Article-backed estimate with page-specific context."
+  },
+  {
+    label: "How the range is framed",
+    value: hasDetailedEarnings
+      ? "Structured track splits separate gross revenue, artist-side share, and rights-owner lanes where available."
+      : "A modeled annual range is shown only as directional song context."
+  },
+  {
+    label: "What the page does not claim",
+    value: "No private royalty statement, contract, distributor dashboard, or platform payout file is used as proof."
+  },
+  {
+    label: "Correction path",
+    value: "Public corrections are handled through the contact page when a source shows outdated or misleading context."
+  }
+];
 const metadataBits = [
   artist ? artist.name : song.artist,
   song.album ? song.album : undefined,
@@ -413,6 +433,32 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
               </a>
             )}
           </p>
+        )}
+
+        {article && (
+          <section class="editorial-basis-card" aria-labelledby="song-editorial-basis-title">
+            <div class="editorial-basis-heading">
+              <p class="eyebrow">Editorial Basis</p>
+              <h2 id="song-editorial-basis-title">How this estimate should be read</h2>
+              <p>
+                This page is designed to answer one narrow question: how {song.title}
+                {artist ? ` by ${artist.name}` : ""} is modeled as a catalog asset. The estimate is
+                presented as a documented range, not as a verified royalty total.
+              </p>
+            </div>
+            <div class="editorial-basis-grid">
+              {editorialBasisItems.map((item) => (
+                <div class="editorial-basis-item">
+                  <strong>{item.label}</strong>
+                  <span>{item.value}</span>
+                </div>
+              ))}
+            </div>
+            <p class="results-note">
+              See the <a href={`${baseUrl}editorial-policy/`}>Editorial Policy</a> for the site-wide
+              source and correction rules.
+            </p>
+          </section>
         )}
 
         <section aria-labelledby="short-answer-title" class="song-intro-card">

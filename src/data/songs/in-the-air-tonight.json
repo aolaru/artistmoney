@@ -1,0 +1,32 @@
+{
+  "title": "In the Air Tonight",
+  "slug": "in-the-air-tonight",
+  "artist": "phil-collins",
+  "estimated_revenue": "$550K-$1.9M/year",
+  "album": "Face Value",
+  "year": 1981,
+  "earnings": {
+    "gross_track_revenue": "$1.6M-$5.5M/year",
+    "artist_or_estate_share": "$550K-$1.9M/year",
+    "label_master_share": "$520K-$1.8M/year",
+    "publishing_share": "$250K-$860K/year",
+    "songwriter_share": "$170K-$570K/year",
+    "assumptions": "The headline range is treated as artist-side participation, with gross track, label, publishing, and writer lanes modeled from catalog streaming, sync, and rediscovery behavior."
+  },
+  "ownership": {
+    "master_owner": "Major-label Face Value master in current digital catalog availability.",
+    "publishing_owner": "Phil Collins is modeled with meaningful writer-side participation because he wrote the song.",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is modeled.",
+    "notes": "The estimate separates gross track economics from artist-side and writer-side participation rather than treating all revenue as performer income."
+  },
+  "meaning_summary": "Its distinctive mood and instantly recognizable drum break keep it commercially durable in both streaming and sync contexts.",
+  "revenue_drivers": [
+    "Catalog streaming and classic-pop playlists sustain recurring listening.",
+    "Sync and viral rediscovery can materially lift the baseline.",
+    "Strong cultural memory keeps the track relevant across generations."
+  ],
+  "related_songs": [
+    "another-day-in-paradise",
+    "every-breath-you-take"
+  ]
+}

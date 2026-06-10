@@ -1,0 +1,32 @@
+{
+  "title": "You Can't Always Get What You Want",
+  "slug": "you-cant-always-get-what-you-want",
+  "artist": "the-rolling-stones",
+  "estimated_revenue": "$440K-$1.4M/year",
+  "album": "Let It Bleed",
+  "year": 1969,
+  "earnings": {
+    "gross_track_revenue": "$1.3M-$4.1M/year",
+    "artist_or_estate_share": "$440K-$1.4M/year",
+    "label_master_share": "$420K-$1.3M/year",
+    "publishing_share": "$200K-$630K/year",
+    "songwriter_share": "$130K-$420K/year",
+    "assumptions": "The estimate uses a conservative artist-side range below Gimme Shelter and models gross track, label, publishing, and writer lanes from the song's legacy catalog and sync potential."
+  },
+  "ownership": {
+    "master_owner": "ABKCO-controlled Rolling Stones 1960s master in current digital catalog availability.",
+    "publishing_owner": "Writer-side value is modeled separately because Jagger/Richards songwriting participation is central to the composition.",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is modeled.",
+    "notes": "The track is included to give Let It Bleed more than one modeled song support point without treating the estimate as a disclosed royalty statement."
+  },
+  "meaning_summary": "Its choir-led opening, long build, and repeated use in film, television, and public events keep it active as a classic-rock catalog song.",
+  "revenue_drivers": [
+    "Catalog streaming and classic-rock playlist inclusion support recurring listening.",
+    "Sync and event reuse can lift annual demand beyond baseline streaming.",
+    "Recognition across generations keeps the song commercially useful decades after release."
+  ],
+  "related_songs": [
+    "gimme-shelter",
+    "paint-it-black"
+  ]
+}

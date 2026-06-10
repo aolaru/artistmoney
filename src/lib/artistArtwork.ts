@@ -273,6 +273,118 @@ const artistPhotos: Record<string, ArtistPhoto> = {
     localPath: "/images/artists/chicago.jpg",
     personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
   },
+  "creedence-clearwater-revival": {
+    alt: "Creedence Clearwater Revival publicity photo from 1968",
+    src: localPhoto("creedence-clearwater-revival.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Creedence_Clearwater_Revival_1968.jpg",
+    credit: "Fantasy Records publicity image via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Creedence_Clearwater_Revival_1968.jpg",
+    localPath: "/images/artists/creedence-clearwater-revival.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  "cyndi-lauper": {
+    alt: "Cyndi Lauper at the Library of Congress in 2023",
+    src: localPhoto("cyndi-lauper.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Cyndi_Lauper_March_2023.jpg",
+    credit: "Photo by Library of Congress Life via Wikimedia Commons",
+    license: "CC0 1.0",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    localPath: "/images/artists/cyndi-lauper.jpg",
+    personalityRightsWarning: "Living artist depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "dire-straits": {
+    alt: "Dire Straits performing live in Hamburg in 1978",
+    src: localPhoto("dire-straits.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Dire_Straits_1978_Hamburg_1.jpg",
+    credit: "Photo by Heinrich Klaffs via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
+    localPath: "/images/artists/dire-straits.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Editorial use is generally safer than endorsement or advertising use."
+  },
+  foreigner: {
+    alt: "Foreigner performing live in 2009",
+    src: localPhoto("foreigner.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Foreigner2009.jpg",
+    credit: "Photo by Abdoozy via Wikimedia Commons",
+    license: "CC BY-SA 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
+    localPath: "/images/artists/foreigner.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Editorial use is generally safer than endorsement or advertising use."
+  },
+  ludacris: {
+    alt: "Ludacris performing at NAS Patuxent River",
+    src: localPhoto("ludacris.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Ludacris_at_NAS_Pax_River_1.jpg",
+    credit: "Photo by Peter Fitzpatrick via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Ludacris_at_NAS_Pax_River_1.jpg",
+    localPath: "/images/artists/ludacris.jpg",
+    personalityRightsWarning: "Living artist depicted. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  "the-doors": {
+    alt: "The Doors publicity photo from 1968",
+    src: localPhoto("the-doors.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:The_Doors_1968.JPG",
+    credit: "Joel Brodsky / Agency for the Performing Arts publicity image via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:The_Doors_1968.JPG",
+    localPath: "/images/artists/the-doors.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  "the-prodigy": {
+    alt: "The Prodigy performing at O2 Academy Leeds in 2022",
+    src: localPhoto("the-prodigy.jpg"),
+    sourceUrl:
+      "https://commons.wikimedia.org/wiki/File:The_Prodigy_-_15.07.2022_-_O2_Academy_Leeds_-_53402072168_(band_crop).jpg",
+    credit: "Photo by aliina s. via Wikimedia Commons",
+    license: "CC BY 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/2.0",
+    localPath: "/images/artists/the-prodigy.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "the-rolling-stones": {
+    alt: "The Rolling Stones in a 1965 London Records trade advertisement",
+    src: localPhoto("the-rolling-stones.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Rolling_Stones_1965.jpg",
+    credit: "London Records trade advertisement via Wikimedia Commons",
+    license: "Public domain",
+    licenseUrl: "https://commons.wikimedia.org/wiki/File:Rolling_Stones_1965.jpg",
+    localPath: "/images/artists/the-rolling-stones.jpg",
+    personalityRightsWarning: "Living band members are identifiable. Public-domain status does not remove publicity or personality-rights considerations."
+  },
+  "the-smashing-pumpkins": {
+    alt: "The Smashing Pumpkins performing at Festival Cruilla in 2024",
+    src: localPhoto("the-smashing-pumpkins.jpg"),
+    sourceUrl:
+      "https://commons.wikimedia.org/wiki/File:The_Smashing_Pumpkins_al_Festival_Cru%C3%AFlla_2024_20240714_05.jpg",
+    credit: "Photo by Aniol via Wikimedia Commons",
+    license: "CC0 1.0",
+    licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    localPath: "/images/artists/the-smashing-pumpkins.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "wu-tang-clan": {
+    alt: "Wu-Tang Clan performing live on stage",
+    src: localPhoto("wu-tang-clan.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:Wu_Tang_Clan_on_Stage.jpg",
+    credit: "Photo by Napalm filled tires via Wikimedia Commons",
+    license: "CC BY-SA 2.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/2.0",
+    localPath: "/images/artists/wu-tang-clan.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
+  "a-ha": {
+    alt: "A-ha performing live in Kyiv",
+    src: localPhoto("a-ha.jpg"),
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:A-ha_in_kiev.JPG",
+    credit: "Photo by sergey-astral via Wikimedia Commons",
+    license: "CC BY 3.0",
+    licenseUrl: "https://creativecommons.org/licenses/by/3.0",
+    localPath: "/images/artists/a-ha.jpg",
+    personalityRightsWarning: "Living artists depicted. Editorial use is generally safer than endorsement or advertising use."
+  },
   sade: {
     alt: "Sade performing live in 2011",
     src: localPhoto("sade.jpg"),

@@ -1,0 +1,32 @@
+{
+  "title": "Paint It, Black",
+  "slug": "paint-it-black",
+  "artist": "the-rolling-stones",
+  "estimated_revenue": "$550K-$1.9M/year",
+  "album": "Aftermath",
+  "year": 1966,
+  "earnings": {
+    "gross_track_revenue": "$1.6M-$5.5M/year",
+    "artist_or_estate_share": "$550K-$1.9M/year",
+    "label_master_share": "$520K-$1.8M/year",
+    "publishing_share": "$250K-$860K/year",
+    "songwriter_share": "$170K-$570K/year",
+    "assumptions": "The headline range is treated as artist-side participation, with gross track, label, publishing, and writer lanes modeled from classic-rock streaming, playlist, and sync demand."
+  },
+  "ownership": {
+    "master_owner": "ABKCO-controlled Rolling Stones 1960s master in current digital catalog availability.",
+    "publishing_owner": "Writer-side value is modeled separately because Jagger/Richards songwriting participation is central to the composition.",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is modeled.",
+    "notes": "The estimate keeps master, artist-side, and publishing lanes separate because the song sits in the band's ABKCO-era catalog."
+  },
+  "meaning_summary": "Its dark hook and immediate recognizability make it unusually durable in both catalog listening and sync-heavy reuse.",
+  "revenue_drivers": [
+    "Classic-rock playlists support steady recurring streaming.",
+    "Heavy sync potential keeps the track active beyond baseline listening.",
+    "Multigenerational recognition sustains long-tail replay."
+  ],
+  "related_songs": [
+    "gimme-shelter",
+    "you-cant-always-get-what-you-want"
+  ]
+}

@@ -5802,6 +5802,73 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "youtubeMusic": "https://music.youtube.com/search?q=The%20Irrepressibles%20Nude"
     }
   },
+  "the-rolling-stones-let-it-bleed": {
+    "releaseDate": "1969-11-28",
+    "label": "ABKCO Music & Records, Inc.",
+    "trackCount": 9,
+    "editionNote": "Apple Music current edition is the 2019 remaster.",
+    "fullTracklist": [
+      {
+        "discNumber": 1,
+        "number": 1,
+        "title": "Gimme Shelter (Remastered 2019)",
+        "durationMs": 270549
+      },
+      {
+        "discNumber": 1,
+        "number": 2,
+        "title": "Love In Vain (Remastered 2019)",
+        "durationMs": 259162
+      },
+      {
+        "discNumber": 1,
+        "number": 3,
+        "title": "Country Honk (Remastered 2019)",
+        "durationMs": 187503
+      },
+      {
+        "discNumber": 1,
+        "number": 4,
+        "title": "Live with Me (Remastered 2019)",
+        "durationMs": 213125
+      },
+      {
+        "discNumber": 1,
+        "number": 5,
+        "title": "Let It Bleed (Remastered 2019)",
+        "durationMs": 328012
+      },
+      {
+        "discNumber": 1,
+        "number": 6,
+        "title": "Midnight Rambler (Remastered 2019)",
+        "durationMs": 412635
+      },
+      {
+        "discNumber": 1,
+        "number": 7,
+        "title": "You Got the Silver (Remastered 2019)",
+        "durationMs": 170969
+      },
+      {
+        "discNumber": 1,
+        "number": 8,
+        "title": "Monkey Man (Remastered 2019)",
+        "durationMs": 251759
+      },
+      {
+        "discNumber": 1,
+        "number": 9,
+        "title": "You Can't Always Get What You Want (Remastered 2019)",
+        "durationMs": 448255
+      }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/search/The%20Rolling%20Stones%20Let%20It%20Bleed",
+      "appleMusic": "https://music.apple.com/us/album/let-it-bleed-remastered-2019/1500642838?uo=4",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Rolling%20Stones%20Let%20It%20Bleed"
+    }
+  },
   "the-weeknd-after-hours": {
     "releaseDate": "2020-03-20",
     "label": "The Weeknd XO",

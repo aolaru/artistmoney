@@ -1319,7 +1319,7 @@
     "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Jean-Michel Jarre",
       "slug": "jean-michel-jarre",
@@ -1375,10 +1375,11 @@
           "oxygene-iv"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "My Bloody Valentine",
       "slug": "my-bloody-valentine",
@@ -1434,10 +1435,11 @@
           "only-shallow"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "U2",
       "slug": "u2",
@@ -1493,10 +1495,11 @@
           "with-or-without-you"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "The Rolling Stones",
       "slug": "the-rolling-stones",
@@ -1552,10 +1555,11 @@
           "paint-it-black"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Bob Dylan",
       "slug": "bob-dylan",
@@ -1611,10 +1615,11 @@
           "blowin-in-the-wind"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Phil Collins",
       "slug": "phil-collins",
@@ -1670,10 +1675,11 @@
           "in-the-air-tonight"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Red Hot Chili Peppers",
       "slug": "red-hot-chili-peppers",
@@ -1729,10 +1735,11 @@
           "under-the-bridge"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Gary Numan",
       "slug": "gary-numan",
@@ -1788,7 +1795,8 @@
           "cars"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,

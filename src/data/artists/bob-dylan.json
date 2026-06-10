@@ -1,0 +1,20 @@
+{
+  "name": "Bob Dylan",
+  "slug": "bob-dylan",
+  "estimated_income": "$3.3M-$12M/year",
+  "top_songs": [
+    "blowin-in-the-wind",
+    "like-a-rolling-stone"
+  ],
+  "genre": "Folk Rock / Singer-Songwriter",
+  "country": "United States",
+  "active_since": "1962",
+  "bio": "Bob Dylan's catalog remains unusually valuable because songwriting ownership, canonical status, and cross-generational reuse reinforce each other over time.",
+  "notable_for": "Writer-led catalog strength with deep publishing significance.",
+  "career_highlight": "Signature songs still earn through catalog streaming, covers, licensing, and songwriter-side value.",
+  "revenue_drivers": [
+    "Songwriter-side economics materially strengthen the long-tail value of the catalog.",
+    "Canonical songs attract ongoing rediscovery and cover-version interest.",
+    "Publishing, licensing, and repertoire prestige reinforce catalog demand."
+  ]
+}

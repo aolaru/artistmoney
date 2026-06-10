@@ -1,0 +1,32 @@
+{
+  "title": "Gimme Shelter",
+  "slug": "gimme-shelter",
+  "artist": "the-rolling-stones",
+  "estimated_revenue": "$660K-$2.2M/year",
+  "album": "Let It Bleed",
+  "year": 1969,
+  "earnings": {
+    "gross_track_revenue": "$1.9M-$6.4M/year",
+    "artist_or_estate_share": "$660K-$2.2M/year",
+    "label_master_share": "$630K-$2.1M/year",
+    "publishing_share": "$300K-$990K/year",
+    "songwriter_share": "$200K-$660K/year",
+    "assumptions": "The headline range is treated as artist-side participation, with gross track, label, publishing, and writer lanes modeled from the song's classic-rock streaming and sync profile."
+  },
+  "ownership": {
+    "master_owner": "ABKCO-controlled Rolling Stones 1960s master in current digital catalog availability.",
+    "publishing_owner": "Writer-side value is modeled separately because Jagger/Richards songwriting participation is central to the composition.",
+    "catalog_sale_status": "No song-specific catalog sale adjustment is modeled.",
+    "notes": "The track is treated as a legacy catalog asset where sync reuse can materially widen annual outcomes."
+  },
+  "meaning_summary": "Its dramatic energy and constant reuse in film and media help explain why it remains one of the strongest earning Stones recordings.",
+  "revenue_drivers": [
+    "Sync placements materially extend the song's commercial life.",
+    "Catalog streaming and best-of listening keep demand steady.",
+    "Cultural familiarity supports continuing discovery."
+  ],
+  "related_songs": [
+    "paint-it-black",
+    "you-cant-always-get-what-you-want"
+  ]
+}

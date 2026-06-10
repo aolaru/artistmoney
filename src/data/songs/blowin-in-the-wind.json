@@ -1,0 +1,17 @@
+{
+  "title": "Blowin' in the Wind",
+  "slug": "blowin-in-the-wind",
+  "artist": "bob-dylan",
+  "estimated_revenue": "$280K-$990K/year",
+  "album": "The Freewheelin' Bob Dylan",
+  "year": 1963,
+  "meaning_summary": "Its lyrical durability and songwriter importance keep it commercially relevant even outside pure streaming scale.",
+  "revenue_drivers": [
+    "Publishing and cover-version value matter as much as direct recording revenue.",
+    "Canonical status supports catalog discovery and reuse.",
+    "Licensing and educational/cultural circulation extend the long tail."
+  ],
+  "related_songs": [
+    "like-a-rolling-stone"
+  ]
+}

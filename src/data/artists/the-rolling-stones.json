@@ -1,0 +1,35 @@
+{
+  "name": "The Rolling Stones",
+  "slug": "the-rolling-stones",
+  "estimated_income": "$5.5M-$19M/year",
+  "top_songs": [
+    "paint-it-black",
+    "gimme-shelter",
+    "you-cant-always-get-what-you-want"
+  ],
+  "genre": "Rock / Classic Rock",
+  "country": "United Kingdom",
+  "active_since": "1962",
+  "bio": "The Rolling Stones remain one of the clearest examples of a rock catalog that still throws off major earnings through streaming, sync, and perpetual cultural familiarity.",
+  "notable_for": "One of the deepest and most reusable classic-rock catalogs in popular music.",
+  "career_highlight": "Songs like Paint It, Black and Gimme Shelter continue to anchor the catalog's modern earning power.",
+  "revenue_drivers": [
+    "Classic-rock streaming and playlist longevity sustain recurring listening.",
+    "Film, television, trailer, and sports use keep the catalog commercially relevant.",
+    "Global recognition supports long-tail replay across multiple generations."
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$15M-$53M/year",
+    "artist_or_estate_share": "$5.5M-$19M/year",
+    "label_share": "$5M-$18M/year",
+    "publisher_share": "$2M-$7M/year",
+    "writer_share": "$2M-$7M/year",
+    "assumptions": "The artist-side range keeps the page's headline estimate and models larger gross catalog, label, publishing, and writer lanes from classic-rock streaming, sync, and catalog-reuse behavior."
+  },
+  "ownership": {
+    "master_owner": "Mixed Rolling Stones catalog position, with 1960s recordings commonly represented through ABKCO-controlled catalog releases and later recordings under separate label arrangements.",
+    "publishing_owner": "Writer-side value is modeled separately because Jagger/Richards compositions remain central to the catalog economics.",
+    "catalog_sale_status": "No single band-wide catalog sale adjustment is modeled on this page.",
+    "notes": "Ownership treatment is conservative because the Stones catalog spans different recording eras, labels, and rights structures."
+  }
+}

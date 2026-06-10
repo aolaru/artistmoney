@@ -1,282 +1,146 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { songArticles } from "../data/songArticles";
 import {
   getArtist,
   getArtistVisual,
-  getConfidenceSummary,
   getSongConfidence,
   getSongMethodology,
   rankedSongs,
   songs
 } from "../lib/catalog";
-import { getSongEditorial } from "../lib/editorial";
 import { formatRevenueMidpoint } from "../lib/revenue";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
-const topSongs = rankedSongs.slice(0, 6);
-
-const insightLinks = [
-  {
-    label: "How streaming payouts work",
-    href: `${baseUrl}insights/streaming-payouts/`,
-    detail: "Why per-stream revenue is a range, not one universal payout."
-  },
-  {
-    label: "What catalog ownership means",
-    href: `${baseUrl}insights/catalog-ownership/`,
-    detail: "How masters, publishing, and catalog sales change who actually gets paid."
-  },
-  {
-    label: "Artist share vs label share",
-    href: `${baseUrl}insights/artist-share-vs-label-share/`,
-    detail: "Why top-line catalog revenue is not the same as artist-side income."
-  },
-  {
-    label: "Why sync licensing matters",
-    href: `${baseUrl}insights/sync-licensing/`,
-    detail: "How placements in film, TV, trailers, and ads reset catalog economics."
-  }
-];
-
-const spotlightSong = topSongs[0]?.song;
-const spotlightSongMethodology = spotlightSong ? getSongMethodology(spotlightSong) : undefined;
-const spotlightSongEditorial = spotlightSong
-  ? getSongEditorial(spotlightSong, getArtist(spotlightSong.artist))
-  : null;
-const evergreenEntry = rankedSongs.find(({ song }) => (song.year ?? 9999) <= 2000);
-const evergreenSong = evergreenEntry?.song;
-const evergreenArtist = evergreenSong ? getArtist(evergreenSong.artist) : undefined;
-const highConfidenceSongs = rankedSongs
-  .filter(({ song }) => getSongConfidence(song).level === "high")
+const reviewedSongEntries = rankedSongs
+  .filter(({ song }) => songArticles[song.slug])
   .slice(0, 6);
-const trustSignals = [
-  {
-    title: "Modeled annual ranges",
-    detail: "Every earnings figure is presented as a modeled yearly range, not a claimed audited royalty statement."
-  },
-  {
-    title: "Song-side first",
-    detail: "The homepage now points visitors into song pages first, where artist and catalog context can be reached from the recording."
-  },
-  {
-    title: "Confidence labels",
-    detail: "High, medium, and low confidence pages reflect how much ownership, split, and catalog context is actually available."
-  },
-  {
-    title: "Controlled review surface",
-    detail: "The main navigation and homepage discovery path focus on songs while broader utility indexes stay noindex."
-  }
-];
+const leadSongEntry = reviewedSongEntries[0];
+const leadSong = leadSongEntry?.song;
+const leadSongMethodology = leadSong ? getSongMethodology(leadSong) : undefined;
 ---
 
 <BaseLayout
-  title="How Much Music | Understand Music Emotionally and Financially"
-  description="How Much Music tracks song economics with modeled music earnings data, ownership context, and catalog insights."
+  title="How Much Music | Song Earnings and Catalog Value"
+  description="Search song earnings estimates, explore reviewed music catalog pages, and understand how How Much Music models annual song value."
 >
-  <section class="hero">
+  <section class="hero home-hero">
     <div class="hero-copy">
       <p class="eyebrow">How Much Music</p>
-      <h1>Song earnings, catalog value, and long-tail music economics</h1>
+      <h1>Find out what songs may earn each year.</h1>
       <p>
-        How Much Music tracks what songs may generate, why certain recordings keep earning long
-        after release, and how ownership context changes the money behind a track.
+        How Much Music explains song earnings, catalog value, and ownership context with modeled
+        annual ranges. Start with a song, then read how the estimate was built.
       </p>
-      {spotlightSong && (
-        <p>
-          Start with the strongest modeled song page:
-          {" "}
-          <a href={`${baseUrl}song/${spotlightSong.slug}/`}>{spotlightSong.title}</a>.
-        </p>
-      )}
     </div>
-    <div class="hero-panel" aria-label="Site summary">
-      <a class="hero-stat-pill hero-stat-pill-primary" href={`${baseUrl}songs/`}>
-        <strong>{songs.length}</strong>
-        <span>songs tracked</span>
-      </a>
-      <a class="hero-stat-pill" href={`${baseUrl}songs/`}>
-        <strong>{highConfidenceSongs.length}</strong>
-        <span>high-confidence songs highlighted</span>
-      </a>
-    </div>
-  </section>
 
-  <section aria-labelledby="snapshot-title">
-    <h2 id="snapshot-title">How to Read the Catalog</h2>
-    <div class="trust-grid">
-      <article class="trust-card">
-        <p class="eyebrow">Trust Snapshot</p>
-        <h3>What the homepage is measuring</h3>
-        <ul class="meta-list">
-          <li><strong>Top song midpoint:</strong> {topSongs[0] ? formatRevenueMidpoint(topSongs[0].revenueScore) : "Not available"}</li>
-          <li><strong>Song pages tracked:</strong> {songs.length}</li>
-          <li><strong>High-confidence songs:</strong> {highConfidenceSongs.length}</li>
-        </ul>
-      </article>
-      <article class="trust-card">
-        <p class="eyebrow">Methodology</p>
-        <h3>What the numbers mean</h3>
-        <p>{spotlightSongMethodology?.summary ?? "The site models annual song behavior using the best available ownership, split, and replay context."}</p>
-        <p class="results-note">
-          <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
-        </p>
-      </article>
-    </div>
-    <div class="trust-grid">
-      {trustSignals.map((signal) => (
-        <article class="trust-card">
-          <h3>{signal.title}</h3>
-          <p>{signal.detail}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section aria-labelledby="editorial-title">
-    <h2 id="editorial-title">Editorial Front Page</h2>
-    <div class="editorial-grid">
-      {spotlightSong && spotlightSongEditorial && (
-        <article class="card editorial-card">
-          <div class="artist-card-body">
-            <p class="eyebrow">Featured Song Story</p>
-            <h3><a href={`${baseUrl}song/${spotlightSong.slug}/`}>{spotlightSong.title}</a></h3>
-            <p>{spotlightSongEditorial.meaning}</p>
-            <p class="artist-card-meta">
-              Song midpoint: {formatRevenueMidpoint(topSongs[0]?.revenueScore)}
-            </p>
-          </div>
-        </article>
-      )}
-      {evergreenSong && (
-        <article class="card editorial-card">
-          <div class="artist-card-body">
-            <p class="eyebrow">Evergreen Signal</p>
-            <h3><a href={`${baseUrl}song/${evergreenSong.slug}/`}>{evergreenSong.title}</a></h3>
-            <p>
-              {evergreenSong.title} by {evergreenArtist?.name ?? evergreenSong.artist} shows how older catalog songs can
-              stay economically relevant decades after release when replay value and playlist fit remain strong.
-            </p>
-            <p class="artist-card-meta">
-              Released {evergreenSong.year} · midpoint {formatRevenueMidpoint(evergreenEntry?.revenueScore)}
-            </p>
-          </div>
-        </article>
-      )}
-    </div>
-  </section>
-
-  {spotlightSongMethodology && (
-    <section aria-labelledby="why-matters-title">
-      <h2 id="why-matters-title">Why These Numbers Matter</h2>
-      <div class="trust-grid">
-        <div class="methodology-card">
-          <p class="methodology-badge">{spotlightSongMethodology.confidenceLabel}</p>
-          <p>{spotlightSongMethodology.summary}</p>
-          <ul class="meta-list">
-            {spotlightSongMethodology.bullets.map((point) => (
-              <li>{point}</li>
-            ))}
-          </ul>
-          <p>
-            <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
-          </p>
-        </div>
-        <div class="methodology-card">
-          <p class="methodology-badge">Song-first review surface</p>
-          <p>
-            The homepage now sends visitors into song pages first. Artist and album context remains
-            available from relevant song pages without putting broad directory pages in the primary
-            path.
-          </p>
-          <ul class="meta-list">
-            <li>{highConfidenceSongs.length} homepage-ranked songs currently score high confidence.</li>
-            <li>The Songs directory remains noindex while acting as the only public catalog doorway.</li>
-            <li>Broader utility pages are still outside the main homepage path.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  )}
-
-  {highConfidenceSongs.length > 0 && (
-    <section aria-labelledby="confidence-title">
-      <h2 id="confidence-title">High-Confidence Songs</h2>
-      <div class="editorial-grid">
-        <article class="card editorial-card">
-          <div class="artist-card-body">
-            <p class="eyebrow">Songs</p>
-            <h3>Pages with clearer modeled take-home context</h3>
-            <ul class="meta-list">
-              {highConfidenceSongs.map(({ song }) => (
-                <li>
-                  <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
-                  <span class="meta-inline"> · {song.estimated_revenue}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-  )}
-
-  <section id="songs" aria-labelledby="top-songs-title">
-    <h2 id="top-songs-title">Top Songs</h2>
-    <p class="results-note">Ranked by normalized annual song revenue midpoint.</p>
-    <div class="card-grid">
-      {topSongs.map(({ song, revenueScore }) => {
-        const artist = getArtist(song.artist);
-        const artistName = artist?.name ?? song.artist;
-        const artistVisual = artist ? getArtistVisual(artist) : undefined;
-        const confidence = getSongConfidence(song);
-
-        return (
-          <article class="card artist-card">
-            <img
-              class="artist-card-image"
-              src={artistVisual?.src ?? ""}
-              alt={artistVisual?.alt ?? `Artwork for ${artistName}`}
-              loading="lazy"
-              width="1200"
-              height="900"
-              referrerpolicy="no-referrer"
+    <div class="hero-panel home-search-panel" aria-label="Primary homepage actions">
+      <p class="eyebrow">Start Here</p>
+      <h2>Choose one path</h2>
+      <div class="home-primary-actions">
+        <article class="home-primary-action">
+          <p class="eyebrow">1. Search</p>
+          <h3>Search a song</h3>
+          <form class="home-search-form" action={`${baseUrl}search/`} method="get">
+            <label class="sr-only" for="home-song-search">Search songs</label>
+            <input
+              id="home-song-search"
+              name="q"
+              type="search"
+              placeholder="Try “Bohemian Rhapsody”"
+              autocomplete="off"
+              spellcheck="false"
             />
-            <div class="artist-card-body">
-              <p class="eyebrow">Song</p>
-              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
-              <p class="confidence-note">
-                {getConfidenceSummary(confidence)}
-                {" "}
-                <a href={`${baseUrl}insights/methodology/`}>Why?</a>
-              </p>
-              <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
-              <p class="artist-card-meta">
-                By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
-              </p>
-              {(song.album || song.year) && (
-                <p class="artist-card-meta">{[song.album, song.year].filter(Boolean).join(" · ")}</p>
-              )}
-              <p>Estimated revenue: {song.estimated_revenue}</p>
-              <p class="artist-card-meta">Modeled midpoint: {formatRevenueMidpoint(revenueScore)}</p>
-            </div>
-          </article>
-        );
-      })}
+            <button type="submit">Search</button>
+          </form>
+          <p class="results-note">{songs.length} songs tracked.</p>
+        </article>
+        <article class="home-primary-action">
+          <p class="eyebrow">2. Reviewed</p>
+          <h3>See top reviewed songs</h3>
+          <p>Start with article-backed song pages instead of the full generated catalog.</p>
+          <a class="home-action-link" href="#top-reviewed-songs">See reviewed songs</a>
+        </article>
+        <article class="home-primary-action">
+          <p class="eyebrow">3. Methodology</p>
+          <h3>Understand the estimates</h3>
+          <p>Learn why every number is a modeled range, not a public royalty statement.</p>
+          <a class="home-action-link" href={`${baseUrl}insights/methodology/`}>Read methodology</a>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section aria-labelledby="insights-title">
-    <h2 id="insights-title">Insights</h2>
-    <ul class="meta-list">
-      {insightLinks.map((link) => (
-        <li>
-          <a href={link.href}>{link.label}</a>
-          <span class="meta-inline"> {" "}· {link.detail}</span>
-        </li>
-      ))}
-    </ul>
+  {reviewedSongEntries.length > 0 && (
+    <section id="top-reviewed-songs" aria-labelledby="top-reviewed-title">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">Reviewed Songs</p>
+          <h2 id="top-reviewed-title">Top reviewed song pages</h2>
+        </div>
+        <a class="home-action-link" href={`${baseUrl}songs/`}>Browse songs</a>
+      </div>
+      <p class="results-note">
+        These pages have article entries and visible methodology notes. They are a better starting
+        point than the full generated catalog.
+      </p>
+      <div class="card-grid reviewed-song-grid">
+        {reviewedSongEntries.map(({ song, revenueScore }) => {
+          const artist = getArtist(song.artist);
+          const artistName = artist?.name ?? song.artist;
+          const artistVisual = artist ? getArtistVisual(artist) : undefined;
+          const confidence = getSongConfidence(song);
+
+          return (
+            <article class="card artist-card reviewed-song-card">
+              <img
+                class="artist-card-image"
+                src={artistVisual?.src ?? ""}
+                alt={artistVisual?.alt ?? `Artwork for ${artistName}`}
+                loading="lazy"
+                width="1200"
+                height="900"
+                referrerpolicy="no-referrer"
+              />
+              <div class="artist-card-body">
+                <p class="eyebrow">Song</p>
+                <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+                <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
+                <p class="artist-card-meta">
+                  By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
+                </p>
+                <p class="artist-card-meta">
+                  Modeled midpoint: {formatRevenueMidpoint(revenueScore)}
+                </p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <section aria-labelledby="methodology-title" class="home-methodology-section">
+    <div class="methodology-card home-methodology-card">
+      <p class="methodology-badge">How to read the numbers</p>
+      <h2 id="methodology-title">Modeled ranges, not royalty statements</h2>
+      <p>
+        {leadSongMethodology?.summary ??
+          "The site models annual song behavior using available ownership, split, and replay context."}
+      </p>
+      <ul class="meta-list">
+        <li>Every estimate is a directional annual range.</li>
+        <li>Song pages separate artist-side and gross revenue only where structured context exists.</li>
+        <li>Corrections and source updates are handled through the contact page.</li>
+      </ul>
+      <p>
+        <a href={`${baseUrl}insights/methodology/`}>Read the full methodology</a>
+        {" "}or{" "}
+        <a href={`${baseUrl}editorial-policy/`}>review the editorial policy</a>.
+      </p>
+    </div>
   </section>
 </BaseLayout>
