@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 0,
-    "song": 0,
-    "album": 90
+    "artist": 2,
+    "song": 3,
+    "album": 91
   },
   "lastTouched": {
     "artist": {
@@ -84,7 +84,9 @@
       "a-ha": "2026-05-25T19:45:19.161Z",
       "duran-duran": "2026-05-25T19:45:19.161Z",
       "inxs": "2026-05-31T07:27:00.944Z",
-      "vangelis": "2026-06-08T07:55:00.173Z"
+      "vangelis": "2026-06-08T07:55:00.173Z",
+      "bob-dylan": "2026-06-11T19:07:13.021Z",
+      "gary-numan": "2026-06-11T19:07:13.021Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -323,7 +325,10 @@
       "need-you-tonight": "2026-05-31T07:27:00.944Z",
       "never-tear-us-apart": "2026-05-31T07:27:00.944Z",
       "blade-runner-blues": "2026-06-08T07:55:00.173Z",
-      "chariots-of-fire": "2026-06-08T07:55:00.173Z"
+      "chariots-of-fire": "2026-06-08T07:55:00.173Z",
+      "another-day-in-paradise": "2026-06-11T19:07:13.021Z",
+      "are-friends-electric": "2026-06-11T19:07:13.021Z",
+      "blowin-in-the-wind": "2026-06-11T19:07:13.021Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -419,6 +424,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-06-11T19:07:13.021Z",
+      "summary": "artist:bob-dylan, artist:gary-numan, song:another-day-in-paradise, song:are-friends-electric, song:blowin-in-the-wind"
+    },
+    {
       "timestamp": "2026-06-08T07:55:00.173Z",
       "summary": "artist:vangelis, song:blade-runner-blues, song:chariots-of-fire"
     },
@@ -453,10 +462,6 @@
     {
       "timestamp": "2026-05-13T19:59:39.561Z",
       "summary": "song:x-gon-give-it-to-ya, song:be-yourself, song:cold-as-ice"
-    },
-    {
-      "timestamp": "2026-05-13T08:49:09.738Z",
-      "summary": "song:let-it-be, song:lost-but-never-alone, song:mrs-robinson, album:the-chemical-brothers-dig-your-own-hole"
     }
   ]
 }

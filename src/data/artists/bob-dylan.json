@@ -16,5 +16,19 @@
     "Songwriter-side economics materially strengthen the long-tail value of the catalog.",
     "Canonical songs attract ongoing rediscovery and cover-version interest.",
     "Publishing, licensing, and repertoire prestige reinforce catalog demand."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$9.2M-$34M/year",
+    "artist_or_estate_share": "$3.3M-$12M/year",
+    "label_share": "$3.1M-$11M/year",
+    "publisher_share": "$924K-$3.4M/year",
+    "writer_share": "$1.4M-$5M/year",
+    "assumptions": "Estimate keeps Bob Dylan's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Bob Dylan's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }
