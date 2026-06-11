@@ -18,7 +18,7 @@ import {
 } from "../../lib/catalog";
 import { getArtistEditorial } from "../../lib/editorial";
 import { formatFreshnessDate, getLatestGitDate } from "../../lib/freshness";
-import { getArtistReferenceLinks } from "../../lib/references";
+import { getArtistReviewReferences, isArtistReviewReady } from "../../lib/reviewReady";
 import { formatRevenueMidpoint, normalizeRevenue } from "../../lib/revenue";
 
 export function getStaticPaths() {
@@ -44,7 +44,8 @@ const ownershipNote = getArtistOwnershipNote(artist);
 const relatedArtists = getRelatedArtists(artist, 4);
 const overviewText = getArtistOverviewText(artist);
 const revenueContext = getArtistRevenueContext(artist).slice(0, 3);
-const referenceLinks = getArtistReferenceLinks(artistSongs);
+const allReferenceLinks = getArtistReviewReferences(artist, artistSongs);
+const isReviewReady = isArtistReviewReady(artist, artistSongs) && artistVisual.provider === "artistPhoto";
 const articleSourceNotes = article?.sources ?? editorial.sources;
 const artistRank = rankedArtists.findIndex((entry) => entry.artist.slug === artist.slug) + 1;
 const artistPercentile = artistRank > 0 ? Math.max(1, Math.round((artistRank / rankedArtists.length) * 100)) : undefined;
@@ -228,7 +229,7 @@ const hasArtistSourceContext = Boolean(
   artistEvidenceItems.length ||
   articleSourceNotes.length ||
   artistMethodologyNotes.length ||
-  referenceLinks.length
+  allReferenceLinks.length
 );
 const artistSchema = {
   "@context": "https://schema.org",
@@ -247,7 +248,7 @@ const artistSchema = {
     url: new URL(`${baseUrl}song/${song.slug}/`, Astro.site).toString()
   }))
 };
-const articleSchema = article
+const articleSchema = isReviewReady && article
   ? {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -287,7 +288,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
   imageAlt={artistVisual.alt}
   type="article"
   jsonLd={pageJsonLd}
-  noindex={!article}
+  noindex={!isReviewReady}
 >
   <article class="artist-profile">
     <Breadcrumbs items={[
@@ -407,6 +408,28 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
           </div>
         </section>
 
+        {isReviewReady && allReferenceLinks.length > 0 && (
+          <section class="editorial-basis-card source-snapshot-card" aria-labelledby="source-snapshot-title">
+            <div class="editorial-basis-heading">
+              <p class="eyebrow">Key Sources</p>
+              <h2 id="source-snapshot-title">Public context used on this page</h2>
+              <p>
+                These links support artist, song, release, or platform context. They help document
+                the model inputs without claiming access to private royalty statements.
+              </p>
+            </div>
+            <div class="reference-list source-snapshot-list">
+              {allReferenceLinks.slice(0, 3).map((reference) => (
+                <article class="reference-item">
+                  <h3><a href={reference.url} rel="noreferrer" target="_blank">{reference.label}</a></h3>
+                  <p>{reference.note}</p>
+                </article>
+              ))}
+            </div>
+            <p class="results-note"><a href="#sources-title">Read the full source notes.</a></p>
+          </section>
+        )}
+
         {comparisonArtists.length > 0 && (
           <section aria-labelledby="comparison-title" class="comparison-section">
             <h2 id="comparison-title">How It Compares</h2>
@@ -515,9 +538,9 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
                 </ul>
               </>
             )}
-            {referenceLinks.length > 0 && (
+            {allReferenceLinks.length > 0 && (
               <div class="reference-list">
-                {referenceLinks.map((reference) => (
+                {allReferenceLinks.map((reference) => (
                   <article class="reference-item">
                     <h3><a href={reference.url} rel="noreferrer" target="_blank">{reference.label}</a></h3>
                     <p>{reference.note}</p>

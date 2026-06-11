@@ -965,6 +965,23 @@ mark {
   max-width: 760px;
 }
 
+.source-snapshot-card {
+  background:
+    radial-gradient(circle at top right, rgba(30, 106, 97, 0.12), transparent 34%),
+    var(--surface);
+}
+
+.source-snapshot-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.source-snapshot-list .reference-item {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
 .editorial-basis-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1639,6 +1656,7 @@ mark {
   .context-grid,
   .platform-signal-grid,
   .trust-points,
+  .source-snapshot-list,
   .editorial-basis-grid {
     grid-template-columns: 1fr;
   }

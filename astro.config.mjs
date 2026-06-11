@@ -1,14 +1,8 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import { readFileSync } from "node:fs";
+import { getReviewReadyPages } from "./scripts/review-ready-pages.mjs";
 
-function articleSlugs(filePath) {
-  const source = readFileSync(new URL(filePath, import.meta.url), "utf8");
-  return new Set([...source.matchAll(/["']([^"']+)["']\s*:/g)].map((match) => match[1]));
-}
-
-const artistArticleSlugs = articleSlugs("./src/data/artistArticles.ts");
-const songArticleSlugs = articleSlugs("./src/data/songArticles.ts");
+const reviewReadyPages = await getReviewReadyPages();
 
 function shouldIncludeInSitemap(page) {
   const pathname = new URL(page).pathname;
@@ -19,17 +13,18 @@ function shouldIncludeInSitemap(page) {
     "/privacy/",
     "/editorial-policy/",
     "/credits/",
-    "/insights/"
+    "/insights/",
+    "/reviewed-songs/"
   ]);
 
   if (alwaysIndex.has(pathname)) return true;
   if (pathname.startsWith("/insights/")) return true;
 
   const artistMatch = pathname.match(/^\/artist\/([^/]+)\/$/);
-  if (artistMatch) return artistArticleSlugs.has(artistMatch[1]);
+  if (artistMatch) return reviewReadyPages.artistSlugs.has(artistMatch[1]);
 
   const songMatch = pathname.match(/^\/song\/([^/]+)\/$/);
-  if (songMatch) return songArticleSlugs.has(songMatch[1]);
+  if (songMatch) return reviewReadyPages.songSlugs.has(songMatch[1]);
 
   return false;
 }

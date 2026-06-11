@@ -3,6 +3,11 @@ export type ArtistArticle = {
   shortAnswer: string;
   sources: string[];
   insight: string;
+  references?: Array<{
+    label: string;
+    url: string;
+    note: string;
+  }>;
 };
 
 export const artistArticles: Record<string, ArtistArticle> = {

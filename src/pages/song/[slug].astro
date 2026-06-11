@@ -20,7 +20,7 @@ import {
 } from "../../lib/catalog";
 import { getSongEditorial } from "../../lib/editorial";
 import { formatFreshnessDate, getLatestGitDate } from "../../lib/freshness";
-import { getSongReferenceLinks } from "../../lib/references";
+import { getSongReviewReferences, isSongReviewReady } from "../../lib/reviewReady";
 import { formatRevenueMidpoint } from "../../lib/revenue";
 
 export function getStaticPaths() {
@@ -229,11 +229,8 @@ const modelNotes = [
   song.ownership?.notes ? `Ownership note: ${song.ownership.notes}` : undefined,
   hasPlatformSignals ? "Public platform signals are included where Spotify or YouTube identifiers are configured." : undefined
 ].filter(Boolean);
-const referenceLinks = getSongReferenceLinks(song);
-const articleReferenceLinks = article?.references ?? [];
-const allReferenceLinks = [...articleReferenceLinks, ...referenceLinks].filter((link, index, links) =>
-  links.findIndex((candidate) => candidate.url === link.url) === index
-);
+const isReviewReady = isSongReviewReady(song);
+const allReferenceLinks = getSongReviewReferences(song);
 const hasSourceContext = Boolean(
   evidenceItems.length ||
   methodologyNotes.length ||
@@ -331,7 +328,7 @@ const songSchema = {
     article?.shortAnswer ??
     `${song.title} song page with earnings estimates and catalog insights on How Much Music.`
 };
-const articleSchema = article
+const articleSchema = isReviewReady && article
   ? {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -380,7 +377,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
   imageAlt={artist ? `${song.title} by ${artist.name}` : song.title}
   type="article"
   jsonLd={pageJsonLd}
-  noindex={!article}
+  noindex={!isReviewReady}
 >
   <article>
     <Breadcrumbs items={[
@@ -494,6 +491,28 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
             {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
           </div>
         </section>
+
+        {isReviewReady && allReferenceLinks.length > 0 && (
+          <section class="editorial-basis-card source-snapshot-card" aria-labelledby="source-snapshot-title">
+            <div class="editorial-basis-heading">
+              <p class="eyebrow">Key Sources</p>
+              <h2 id="source-snapshot-title">Public context used on this page</h2>
+              <p>
+                These links support track identity, platform context, release context, or public
+                catalog signals. They do not prove the modeled royalty range by themselves.
+              </p>
+            </div>
+            <div class="reference-list source-snapshot-list">
+              {allReferenceLinks.slice(0, 3).map((reference) => (
+                <article class="reference-item">
+                  <h3><a href={reference.url} rel="noreferrer" target="_blank">{reference.label}</a></h3>
+                  <p>{reference.note}</p>
+                </article>
+              ))}
+            </div>
+            <p class="results-note"><a href="#sources-title">Read the full source notes.</a></p>
+          </section>
+        )}
 
         {comparisonSongs.length > 0 && (
           <section aria-labelledby="comparison-title" class="comparison-section">
@@ -641,8 +660,8 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
         </section>
 
         {article && hasSourceContext && (
-          <section aria-labelledby="editorial-basis-title">
-            <h2 id="editorial-basis-title">Sources and References</h2>
+          <section aria-labelledby="sources-title">
+            <h2 id="sources-title">Sources and References</h2>
             <p class="results-note">
               These points explain the public context used to frame this page. They support a
               directional model, not an audited royalty statement.

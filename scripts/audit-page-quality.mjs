@@ -1,6 +1,7 @@
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import { loadExportedDataModule } from "./load-data-module.mjs";
+import { getReviewReadyPages } from "./review-ready-pages.mjs";
 
 const REPORT_DIR = resolve(".reports");
 const REPORT_PATH = join(REPORT_DIR, "page-quality-audit.json");
@@ -213,6 +214,7 @@ async function main() {
   const artistImageSlugs = getArtistImageSlugs();
   const albums = createAlbumEntries(songs, albumMetadata);
   const artistImagePriority = buildArtistImagePriority(artists, artistImageSlugs);
+  const reviewReadyPages = await getReviewReadyPages();
 
   const topArtists = sortByRevenue(artists, (artist) => artist.earnings?.artist_or_estate_share ?? artist.estimated_income)
     .slice(0, TOP_LIMIT)
@@ -223,6 +225,12 @@ async function main() {
   const topAlbums = sortByRevenue(albums, (album) => String(album.estimatedMidpoint))
     .slice(0, TOP_LIMIT)
     .map(auditAlbum);
+  const reviewReadyArtists = artists
+    .filter((artist) => reviewReadyPages.artistSlugs.has(artist.slug))
+    .map((artist) => auditArtist(artist, artistImageSlugs, artistMetadata, artistArticles));
+  const reviewReadySongs = songs
+    .filter((song) => reviewReadyPages.songSlugs.has(song.slug))
+    .map((song) => auditSong(song, songs, songPlayerMetadata, songMetadata, songArticles));
 
   const report = {
     generatedAt: new Date().toISOString(),
@@ -240,6 +248,15 @@ async function main() {
       songs: summarize(topSongs),
       albums: summarize(topAlbums)
     },
+    reviewReadyGate: {
+      counts: reviewReadyPages.counts,
+      summary: {
+        artists: summarize(reviewReadyArtists),
+        songs: summarize(reviewReadySongs)
+      },
+      artists: reviewReadyArtists,
+      songs: reviewReadySongs
+    },
     artistImagePriority,
     topArtists,
     topSongs,
@@ -256,6 +273,15 @@ async function main() {
 
   console.log(
     `Page quality audit: ${issueCount} improvement flag(s) across top ${TOP_LIMIT} artist/song/album pages.`
+  );
+  const reviewReadyIssueCount =
+    report.reviewReadyGate.summary.artists.issueCount +
+    report.reviewReadyGate.summary.songs.issueCount;
+  console.log(
+    `Review-ready audit: ${reviewReadyIssueCount} improvement flag(s) across ${reviewReadyArtists.length} artist and ${reviewReadySongs.length} song pages.`
+  );
+  console.log(
+    `- Review-ready gate: ${reviewReadyPages.counts.reviewReadyArtists}/${reviewReadyPages.counts.artistArticles} artist articles, ${reviewReadyPages.counts.reviewReadySongs}/${reviewReadyPages.counts.songArticles} song articles.`
   );
   console.log(`- Artist photo coverage: ${artistImageSlugs.size}/${artists.length}`);
   if (artistImagePriority.length > 0) {

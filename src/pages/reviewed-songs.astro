@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  getArtist,
+  getArtistVisual,
+  getSongConfidence,
+  rankedSongs
+} from "../lib/catalog";
+import { isSongReviewReady } from "../lib/reviewReady";
+import { formatRevenueMidpoint } from "../lib/revenue";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
+---
+
+<BaseLayout
+  title="Reviewed Songs | How Much Music"
+  description="Reviewed song earnings pages with source context, ownership notes, and methodology-backed annual estimates."
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Reviewed Songs</p>
+      <h1>Start with the strongest song pages.</h1>
+      <p>
+        These song pages pass the review-ready gate: article-specific context, visible references,
+        artist-side and gross revenue framing, ownership notes, and methodology explanations.
+      </p>
+      <p>
+        Looking for something specific? <a href={`${baseUrl}search/`}>Search the full catalog</a>.
+      </p>
+    </div>
+    <div class="hero-panel" aria-label="Reviewed song count">
+      <strong>{reviewedSongs.length}</strong>
+      <span>review-ready song pages</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="reviewed-song-list-title">
+    <div class="section-heading-row">
+      <div>
+        <p class="eyebrow">Article-backed</p>
+        <h2 id="reviewed-song-list-title">Reviewed song pages</h2>
+      </div>
+      <a class="home-action-link" href={`${baseUrl}insights/methodology/`}>How estimates work</a>
+    </div>
+    <p class="results-note">
+      Ranked by modeled artist-side annual midpoint. Full catalog browsing remains available through
+      search and the footer, but these pages are the best starting point for readers and reviewers.
+    </p>
+
+    <div class="card-grid reviewed-song-grid">
+      {reviewedSongs.map(({ song, revenueScore }) => {
+        const artist = getArtist(song.artist);
+        const artistName = artist?.name ?? song.artist;
+        const artistVisual = artist ? getArtistVisual(artist) : undefined;
+        const confidence = getSongConfidence(song);
+
+        return (
+          <article class="card artist-card reviewed-song-card">
+            <img
+              class="artist-card-image"
+              src={artistVisual?.src ?? ""}
+              alt={artistVisual?.alt ?? `Artwork for ${artistName}`}
+              loading="lazy"
+              width="1200"
+              height="900"
+              referrerpolicy="no-referrer"
+            />
+            <div class="artist-card-body">
+              <p class="eyebrow">Reviewed Song</p>
+              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+              <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
+              <p class="artist-card-meta">
+                By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
+              </p>
+              <p class="artist-card-meta">
+                Modeled midpoint: {formatRevenueMidpoint(revenueScore)}
+              </p>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
