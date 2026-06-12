@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 4,
-    "song": 6,
-    "album": 92
+    "artist": 1,
+    "song": 2,
+    "album": 93
   },
   "lastTouched": {
     "artist": {
@@ -87,7 +87,9 @@
       "vangelis": "2026-06-08T07:55:00.173Z",
       "bob-dylan": "2026-06-11T19:07:13.021Z",
       "gary-numan": "2026-06-11T19:07:13.021Z",
-      "phil-collins": "2026-06-12T07:47:16.621Z"
+      "phil-collins": "2026-06-12T07:47:16.621Z",
+      "u2": "2026-06-12T18:47:42.748Z",
+      "jean-michel-jarre": "2026-06-12T18:47:42.748Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -332,7 +334,10 @@
       "blowin-in-the-wind": "2026-06-11T19:07:13.021Z",
       "like-a-rolling-stone": "2026-06-12T07:47:16.621Z",
       "one": "2026-06-12T07:47:16.621Z",
-      "only-shallow": "2026-06-12T07:47:16.621Z"
+      "only-shallow": "2026-06-12T07:47:16.621Z",
+      "with-or-without-you": "2026-06-12T18:47:42.748Z",
+      "californication": "2026-06-12T18:47:42.748Z",
+      "cars": "2026-06-12T18:47:42.748Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -428,6 +433,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-06-12T18:47:42.748Z",
+      "summary": "artist:u2, artist:jean-michel-jarre, song:with-or-without-you, song:californication, song:cars"
+    },
+    {
       "timestamp": "2026-06-12T07:47:16.621Z",
       "summary": "artist:phil-collins, song:like-a-rolling-stone, song:one, song:only-shallow"
     },
@@ -462,10 +471,6 @@
     {
       "timestamp": "2026-05-15T19:42:39.816Z",
       "summary": "artist:shakira, song:whenever-wherever, song:fighter, song:firework"
-    },
-    {
-      "timestamp": "2026-05-15T08:52:48.645Z",
-      "summary": "artist:christina-aguilera, artist:katy-perry, song:genie-in-a-bottle, song:hips-dont-lie, song:teenage-dream"
     }
   ]
 }
