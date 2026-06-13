@@ -16,5 +16,19 @@
     "Alternative-rock streaming and playlist longevity sustain recurring listening.",
     "Cross-era hit density supports strong catalog discovery.",
     "Live-culture familiarity and sync use help extend the songs' commercial life."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$12M-$39M/year",
+    "artist_or_estate_share": "$4.4M-$14M/year",
+    "label_share": "$4.2M-$13M/year",
+    "publisher_share": "$1.2M-$3.9M/year",
+    "writer_share": "$1.8M-$5.9M/year",
+    "assumptions": "Estimate keeps Red Hot Chili Peppers's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Red Hot Chili Peppers's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

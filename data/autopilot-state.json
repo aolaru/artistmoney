@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 1,
-    "song": 2,
-    "album": 93
+    "artist": 0,
+    "song": 1,
+    "album": 94
   },
   "lastTouched": {
     "artist": {
@@ -89,7 +89,8 @@
       "gary-numan": "2026-06-11T19:07:13.021Z",
       "phil-collins": "2026-06-12T07:47:16.621Z",
       "u2": "2026-06-12T18:47:42.748Z",
-      "jean-michel-jarre": "2026-06-12T18:47:42.748Z"
+      "jean-michel-jarre": "2026-06-12T18:47:42.748Z",
+      "red-hot-chili-peppers": "2026-06-13T07:27:04.287Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -337,7 +338,10 @@
       "only-shallow": "2026-06-12T07:47:16.621Z",
       "with-or-without-you": "2026-06-12T18:47:42.748Z",
       "californication": "2026-06-12T18:47:42.748Z",
-      "cars": "2026-06-12T18:47:42.748Z"
+      "cars": "2026-06-12T18:47:42.748Z",
+      "under-the-bridge": "2026-06-13T07:27:04.287Z",
+      "when-you-sleep": "2026-06-13T07:27:04.287Z",
+      "equinoxe-part-4": "2026-06-13T07:27:04.287Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -433,6 +437,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-06-13T07:27:04.287Z",
+      "summary": "artist:red-hot-chili-peppers, song:under-the-bridge, song:when-you-sleep, song:equinoxe-part-4"
+    },
+    {
       "timestamp": "2026-06-12T18:47:42.748Z",
       "summary": "artist:u2, artist:jean-michel-jarre, song:with-or-without-you, song:californication, song:cars"
     },
@@ -467,10 +475,6 @@
     {
       "timestamp": "2026-05-16T19:09:57.996Z",
       "summary": "artist:janet-jackson, song:rhythm-nation, song:together-again"
-    },
-    {
-      "timestamp": "2026-05-15T19:42:39.816Z",
-      "summary": "artist:shakira, song:whenever-wherever, song:fighter, song:firework"
     }
   ]
 }
