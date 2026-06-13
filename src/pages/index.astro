@@ -6,8 +6,7 @@ import {
   getArtistVisual,
   getSongConfidence,
   getSongMethodology,
-  rankedSongs,
-  songs
+  rankedSongs
 } from "../lib/catalog";
 import { isSongReviewReady } from "../lib/reviewReady";
 import { formatRevenueMidpoint } from "../lib/revenue";
@@ -16,9 +15,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
-const reviewedSongEntries = rankedSongs
-  .filter(({ song }) => isSongReviewReady(song))
-  .slice(0, 6);
+const allReviewedSongEntries = rankedSongs.filter(({ song }) => isSongReviewReady(song));
+const reviewedSongEntries = allReviewedSongEntries.slice(0, 6);
 const leadSongEntry = reviewedSongEntries[0];
 const leadSong = leadSongEntry?.song;
 const leadSongMethodology = leadSong ? getSongMethodology(leadSong) : undefined;
@@ -57,7 +55,7 @@ const leadSongMethodology = leadSong ? getSongMethodology(leadSong) : undefined;
             />
             <button type="submit">Search</button>
           </form>
-          <p class="results-note">{songs.length} songs tracked.</p>
+          <p class="results-note">{allReviewedSongEntries.length} reviewed song pages available.</p>
         </article>
         <article class="home-primary-action">
           <p class="eyebrow">2. Reviewed</p>

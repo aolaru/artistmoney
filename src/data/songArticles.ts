@@ -2,6 +2,7 @@ export type ArticleReference = {
   label: string;
   url: string;
   note: string;
+  category?: string;
 };
 
 export type SongArticle = {

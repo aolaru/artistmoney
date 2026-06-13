@@ -1,16 +1,46 @@
 import { artistArticles } from "../data/artistArticles";
 import { songArticles } from "../data/songArticles";
 import type { Artist, Song } from "./catalog";
-import { getArtistReferenceLinks, getSongReferenceLinks, type ReferenceLink } from "./references";
+import { getArtistReferenceLinks, getSongReferenceLinks, type ReferenceLink, withReferenceCategory } from "./references";
 
 function uniqueReferences(references: ReferenceLink[]) {
   const seen = new Set<string>();
 
-  return references.filter((reference) => {
+  return references.map(withReferenceCategory).filter((reference) => {
     if (!reference.url || seen.has(reference.url)) return false;
     seen.add(reference.url);
     return true;
   });
+}
+
+function countUnique(values: Array<string | undefined>) {
+  return new Set(values.filter(Boolean)).size;
+}
+
+function getStrictSongReferenceCount(song: Song) {
+  const links = song.player?.links ?? {};
+
+  return countUnique([
+    links.appleMusic ?? song.player?.appleMusic,
+    links.spotify,
+    links.youtubeMusic,
+    ...(songArticles[song.slug]?.references ?? []).map((reference) => reference.url)
+  ]);
+}
+
+function getStrictArtistReferenceCount(artist: Artist, topSongs: Song[]) {
+  const articleReferenceUrls = (artistArticles[artist.slug]?.references ?? []).map((reference) => reference.url);
+  const topSongReferenceUrls = topSongs.flatMap((song) => {
+    const links = song.player?.links ?? {};
+
+    return [
+      links.appleMusic ?? song.player?.appleMusic,
+      links.spotify,
+      links.youtubeMusic
+    ].filter(Boolean).slice(0, 2);
+  });
+
+  return countUnique([...articleReferenceUrls, ...topSongReferenceUrls]);
 }
 
 export function getSongReviewReferences(song: Song) {
@@ -43,7 +73,7 @@ export function isSongReviewReady(song: Song) {
       links.appleMusic &&
       links.spotify &&
       links.youtubeMusic &&
-      getSongReviewReferences(song).length >= 2
+      getStrictSongReferenceCount(song) >= 2
   );
 }
 
@@ -61,6 +91,6 @@ export function isArtistReviewReady(artist: Artist, topSongs: Song[]) {
       artist.earnings?.artist_or_estate_share &&
       artist.earnings?.gross_catalog_revenue &&
       artist.ownership &&
-      getArtistReviewReferences(artist, topSongs).length >= 2
+      getStrictArtistReferenceCount(artist, topSongs) >= 2
   );
 }

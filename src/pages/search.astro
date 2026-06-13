@@ -9,15 +9,15 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
 
 <BaseLayout
   title="Search | How Much Music"
-  description="Search artists, songs, and albums across How Much Music."
+  description="Search reviewed music earnings pages first, with optional full-catalog lookup."
   noindex
 >
   <section class="search-page-hero">
     <p class="eyebrow">Search</p>
-    <h1>Search the catalog</h1>
+    <h1>Search reviewed pages first</h1>
     <p>
-      Find artists, songs, and albums across the modeled earnings catalog. Results are grouped by
-      type and scored by title, subtitle, and broader metadata match.
+      Reviewed artist and song pages are shown by default because they have stronger source,
+      ownership, and methodology coverage. Full catalog lookup is still available when needed.
     </p>
   </section>
 
@@ -37,13 +37,17 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
     </form>
 
     <div class="search-page-controls">
+      <div class="search-filter-chips" role="tablist" aria-label="Search scope">
+        <button type="button" class="search-filter-chip is-active" data-search-scope="reviewed">Reviewed pages</button>
+        <button type="button" class="search-filter-chip" data-search-scope="all">Full catalog</button>
+      </div>
       <div class="search-filter-chips" role="tablist" aria-label="Search result type">
         <button type="button" class="search-filter-chip is-active" data-search-filter="all">All</button>
         <button type="button" class="search-filter-chip" data-search-filter="artist">Artists</button>
         <button type="button" class="search-filter-chip" data-search-filter="song">Songs</button>
         <button type="button" class="search-filter-chip" data-search-filter="album">Albums</button>
       </div>
-      <p class="results-note" data-search-status>Start typing or submit a query to search the catalog.</p>
+      <p class="results-note" data-search-status>Start typing or submit a query to search reviewed pages.</p>
     </div>
 
     <div class="search-results-shell" data-search-results></div>
@@ -116,27 +120,34 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
         const resultsRoot = root.querySelector("[data-search-results]");
         const status = root.querySelector("[data-search-status]");
         const filterButtons = [...root.querySelectorAll("[data-search-filter]")];
+        const scopeButtons = [...root.querySelectorAll("[data-search-scope]")];
 
-        if (!form || !input || !resultsRoot || !status || filterButtons.length === 0) return;
+        if (!form || !input || !resultsRoot || !status || filterButtons.length === 0 || scopeButtons.length === 0) return;
 
         const params = new URLSearchParams(window.location.search);
         const query = params.get("q") ?? "";
         const filter = (params.get("type") ?? "all").toLowerCase();
+        const scope = params.get("scope") === "all" ? "all" : "reviewed";
         input.value = query;
 
         filterButtons.forEach((button) => {
           button.classList.toggle("is-active", button.dataset.searchFilter === filter);
+        });
+        scopeButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.searchScope === scope);
         });
 
         const normalizedQuery = normalize(query);
         if (!normalizedQuery) {
           resultsRoot.innerHTML = `
             <div class="trust-card">
-              <h2>Search artists, songs, or albums</h2>
-              <p>Try an artist name, a song title, an album, or a mix like “mariah christmas” or “pink floyd moon”.</p>
+              <h2>Search reviewed artists or songs</h2>
+              <p>Try an artist name, a song title, or a mix like “mariah christmas” or “pink floyd”. Switch to full catalog only when you need draft/noindex records too.</p>
             </div>
           `;
-          status.textContent = "Start typing or submit a query to search the catalog.";
+          status.textContent = scope === "all"
+            ? "Start typing or submit a query to search the full catalog."
+            : "Start typing or submit a query to search reviewed pages.";
           return;
         }
 
@@ -144,11 +155,12 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
 
         try {
           const items = await fetchSearchItems();
-          const matches = items
+          const scoredMatches = items
             .map((item) => ({ item, score: scoreItem(item, normalizedQuery) }))
             .filter((entry) => entry.score > 0)
             .sort((left, right) => right.score - left.score || left.item.title.localeCompare(right.item.title));
 
+          const matches = scope === "all" ? scoredMatches : scoredMatches.filter(({ item }) => item.reviewed);
           const filteredMatches =
             filter === "all" ? matches : matches.filter(({ item }) => item.typeKey === filter);
 
@@ -160,14 +172,19 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
 
           const total = filteredMatches.length;
           status.textContent = total > 0
-            ? `${total} result${total === 1 ? "" : "s"} for “${query}”`
-            : `No results for “${query}”`;
+            ? `${total} ${scope === "all" ? "full-catalog" : "reviewed"} result${total === 1 ? "" : "s"} for “${query}”`
+            : `No ${scope === "all" ? "full-catalog" : "reviewed"} results for “${query}”`;
 
           if (total === 0) {
+            const hasFullCatalogMatches = scoredMatches.length > 0;
             resultsRoot.innerHTML = `
               <div class="trust-card">
                 <h2>No results found</h2>
-                <p>Try a shorter query, an artist name, or part of an album title.</p>
+                <p>${
+                  scope === "reviewed" && hasFullCatalogMatches
+                    ? "There are draft catalog matches for this query. Switch to full catalog to see noindex/draft records."
+                    : "Try a shorter query, an artist name, or part of an album title."
+                }</p>
               </div>
             `;
             return;
@@ -190,6 +207,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
                     <article class="search-result-card">
                       <p class="eyebrow">${item.type}</p>
                       <h3><a href="${item.url}">${highlight(item.title, normalizedQuery)}</a></h3>
+                      <p class="search-result-status ${item.reviewed ? "is-reviewed" : "is-draft"}">${escapeHtml(item.status ?? "")}</p>
                       ${item.subtitle ? `<p class="artist-card-meta">${highlight(item.subtitle, normalizedQuery)}</p>` : ""}
                     </article>
                   `).join("")}
@@ -228,8 +246,9 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
         const form = root.querySelector(".search-page-form");
         const input = root.querySelector(".search-page-input");
         const filterButtons = [...root.querySelectorAll("[data-search-filter]")];
+        const scopeButtons = [...root.querySelectorAll("[data-search-scope]")];
 
-        if (!form || !input || filterButtons.length === 0) return;
+        if (!form || !input || filterButtons.length === 0 || scopeButtons.length === 0) return;
 
         form.addEventListener("submit", (event) => {
           event.preventDefault();
@@ -248,6 +267,13 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
         filterButtons.forEach((button) => {
           button.addEventListener("click", () => {
             updateQueryParam("type", button.dataset.searchFilter === "all" ? "" : button.dataset.searchFilter);
+            renderResults();
+          });
+        });
+
+        scopeButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            updateQueryParam("scope", button.dataset.searchScope === "all" ? "all" : "");
             renderResults();
           });
         });

@@ -4,6 +4,7 @@ export type ReferenceLink = {
   label: string;
   url: string;
   note: string;
+  category?: string;
 };
 
 function dedupeLinks(links: ReferenceLink[]) {
@@ -15,6 +16,26 @@ function dedupeLinks(links: ReferenceLink[]) {
   });
 }
 
+export function withReferenceCategory(reference: ReferenceLink): ReferenceLink {
+  if (reference.category) return reference;
+
+  const combined = `${reference.label} ${reference.url} ${reference.note}`.toLowerCase();
+  if (combined.includes("riaa") || combined.includes("gold-platinum") || combined.includes("certification")) {
+    return { ...reference, category: "Certification context" };
+  }
+  if (combined.includes("apple") || combined.includes("spotify") || combined.includes("youtube") || combined.includes("amazon")) {
+    return { ...reference, category: "Platform identity" };
+  }
+  if (combined.includes("catalog") || combined.includes("ownership") || combined.includes("publishing") || combined.includes("master")) {
+    return { ...reference, category: "Ownership context" };
+  }
+  if (combined.includes("release") || combined.includes("album") || combined.includes("track")) {
+    return { ...reference, category: "Release metadata" };
+  }
+
+  return { ...reference, category: "Public context" };
+}
+
 export function getSongReferenceLinks(song: Song): ReferenceLink[] {
   const links = song.player?.links ?? {};
   const references: ReferenceLink[] = [];
@@ -23,6 +44,7 @@ export function getSongReferenceLinks(song: Song): ReferenceLink[] {
     references.push({
       label: "Official YouTube video",
       url: `https://www.youtube.com/watch?v=${song.platformMetrics.youtubeVideoId}`,
+      category: "Platform identity",
       note: song.platformMetrics.youtubeSource
         ? `Configured as ${song.platformMetrics.youtubeSource.replaceAll("_", " ")} in the platform signal dataset.`
         : "Configured public YouTube reference for this song."
@@ -33,6 +55,7 @@ export function getSongReferenceLinks(song: Song): ReferenceLink[] {
     references.push({
       label: "Apple Music track page",
       url: links.appleMusic ?? song.player?.appleMusic ?? "",
+      category: "Release metadata",
       note: "Used for track identity, artwork, preview availability, and release context."
     });
   }
@@ -41,6 +64,7 @@ export function getSongReferenceLinks(song: Song): ReferenceLink[] {
     references.push({
       label: "Spotify reference",
       url: links.spotify,
+      category: "Platform identity",
       note: song.platformMetrics?.spotifyTrackId
         ? "Linked to the configured Spotify track signal."
         : "Used as a public Spotify lookup reference for track identity."
@@ -51,19 +75,12 @@ export function getSongReferenceLinks(song: Song): ReferenceLink[] {
     references.push({
       label: "YouTube Music reference",
       url: links.youtubeMusic,
+      category: "Platform identity",
       note: "Used as a public listening-platform reference for the song."
     });
   }
 
-  if (links.amazonMusic) {
-    references.push({
-      label: "Amazon Music reference",
-      url: links.amazonMusic,
-      note: "Used as an additional public catalog lookup reference."
-    });
-  }
-
-  return dedupeLinks(references.filter((link) => link.url));
+  return dedupeLinks(references.filter((link) => link.url)).map(withReferenceCategory);
 }
 
 export function getArtistReferenceLinks(topSongs: Song[], limit = 6): ReferenceLink[] {
@@ -71,8 +88,9 @@ export function getArtistReferenceLinks(topSongs: Song[], limit = 6): ReferenceL
     topSongs.flatMap((song) =>
       getSongReferenceLinks(song).slice(0, 2).map((link) => ({
         ...link,
+        category: link.category ?? "Top-song context",
         label: `${song.title}: ${link.label}`
       }))
     )
-  ).slice(0, limit);
+  ).slice(0, limit).map(withReferenceCategory);
 }

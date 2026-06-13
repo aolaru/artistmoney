@@ -186,6 +186,27 @@ a {
   text-transform: uppercase;
 }
 
+.header-search-status,
+.search-result-status,
+.reference-category {
+  width: fit-content;
+  margin: 0;
+  padding: 0.18rem 0.48rem;
+  border-radius: 999px;
+  background: rgba(30, 106, 97, 0.08);
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.search-result-status.is-draft {
+  background: rgba(139, 94, 60, 0.12);
+  color: #7a4b2d;
+}
+
 .header-search-meta {
   color: var(--muted);
   font-size: 0.9rem;
@@ -357,6 +378,12 @@ p {
   gap: 0.8rem 1rem;
 }
 
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
 .search-filter-chips {
   display: flex;
   flex-wrap: wrap;
@@ -411,6 +438,11 @@ p {
 
 .search-result-card h3 {
   margin-bottom: 0.25rem;
+}
+
+.search-result-card {
+  display: grid;
+  gap: 0.35rem;
 }
 
 mark {

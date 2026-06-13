@@ -303,6 +303,41 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
         <h1 id="artist-title">{artist.name}</h1>
         <p class="song-kicker">{[artist.genre, artist.country, artist.active_since].filter(Boolean).join(" · ")}</p>
         <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+
+        <section aria-labelledby="short-answer-title" class="song-intro-card">
+          <h2 id="short-answer-title">Short Answer</h2>
+          <p class="seo-question"><strong>{snippetQuestion}</strong></p>
+          <p class="song-lead-answer"><strong>{snippetLead}</strong></p>
+          <p class="song-takeaway"><strong>Takeaway:</strong> {takeaway}</p>
+          <p>{article?.shortAnswer ?? editorial.shortAnswer}</p>
+
+          <div class="song-intro-grid">
+            <div class="song-intro-panel">
+              <h3>Did You Know?</h3>
+              <ul class="song-bullet-list">
+                {statItems.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="song-intro-panel">
+              <h3>Why This Catalog Still Works</h3>
+              <ul class="song-bullet-list">
+                {revenueContext.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p class="traffic-magnet-note">{trafficMagnetNote}</p>
+          <div class="song-intro-footer">
+            <p class="results-note">{snippetSupport}</p>
+            {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
+          </div>
+        </section>
+
         <section class="trust-snapshot" aria-label="Page trust snapshot">
           <p class="confidence-note">
             {getConfidenceSummary(confidence)}
@@ -374,40 +409,6 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
           </section>
         )}
 
-        <section aria-labelledby="short-answer-title" class="song-intro-card">
-          <h2 id="short-answer-title">Short Answer</h2>
-          <p class="seo-question"><strong>{snippetQuestion}</strong></p>
-          <p class="song-lead-answer"><strong>{snippetLead}</strong></p>
-          <p class="song-takeaway"><strong>Takeaway:</strong> {takeaway}</p>
-          <p>{article?.shortAnswer ?? editorial.shortAnswer}</p>
-
-          <div class="song-intro-grid">
-            <div class="song-intro-panel">
-              <h3>Did You Know?</h3>
-              <ul class="song-bullet-list">
-                {statItems.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div class="song-intro-panel">
-              <h3>Why This Catalog Still Works</h3>
-              <ul class="song-bullet-list">
-                {revenueContext.map((point) => (
-                  <li>{point}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <p class="traffic-magnet-note">{trafficMagnetNote}</p>
-          <div class="song-intro-footer">
-            <p class="results-note">{snippetSupport}</p>
-            {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
-          </div>
-        </section>
-
         {isReviewReady && allReferenceLinks.length > 0 && (
           <section class="editorial-basis-card source-snapshot-card" aria-labelledby="source-snapshot-title">
             <div class="editorial-basis-heading">
@@ -421,6 +422,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
             <div class="reference-list source-snapshot-list">
               {allReferenceLinks.slice(0, 3).map((reference) => (
                 <article class="reference-item">
+                  <p class="reference-category">{reference.category ?? "Public context"}</p>
                   <h3><a href={reference.url} rel="noreferrer" target="_blank">{reference.label}</a></h3>
                   <p>{reference.note}</p>
                 </article>
@@ -542,6 +544,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
               <div class="reference-list">
                 {allReferenceLinks.map((reference) => (
                   <article class="reference-item">
+                    <p class="reference-category">{reference.category ?? "Public context"}</p>
                     <h3><a href={reference.url} rel="noreferrer" target="_blank">{reference.label}</a></h3>
                     <p>{reference.note}</p>
                   </article>

@@ -7,6 +7,7 @@ export type ArtistArticle = {
     label: string;
     url: string;
     note: string;
+    category?: string;
   }>;
 };
 

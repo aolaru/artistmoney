@@ -14,6 +14,7 @@ function shouldIncludeInSitemap(page) {
     "/editorial-policy/",
     "/credits/",
     "/insights/",
+    "/reviewed-artists/",
     "/reviewed-songs/"
   ]);
 

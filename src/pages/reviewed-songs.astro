@@ -29,7 +29,7 @@ const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
         artist-side and gross revenue framing, ownership notes, and methodology explanations.
       </p>
       <p>
-        Looking for something specific? <a href={`${baseUrl}search/`}>Search the full catalog</a>.
+        Looking for artist pages? <a href={`${baseUrl}reviewed-artists/`}>Open reviewed artists</a>.
       </p>
     </div>
     <div class="hero-panel" aria-label="Reviewed song count">
@@ -44,11 +44,14 @@ const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
         <p class="eyebrow">Article-backed</p>
         <h2 id="reviewed-song-list-title">Reviewed song pages</h2>
       </div>
-      <a class="home-action-link" href={`${baseUrl}insights/methodology/`}>How estimates work</a>
+      <div class="section-actions">
+        <a class="home-action-link" href={`${baseUrl}reviewed-artists/`}>Reviewed artists</a>
+        <a class="home-action-link" href={`${baseUrl}insights/methodology/`}>How estimates work</a>
+      </div>
     </div>
     <p class="results-note">
-      Ranked by modeled artist-side annual midpoint. Full catalog browsing remains available through
-      search and the footer, but these pages are the best starting point for readers and reviewers.
+      Ranked by modeled artist-side annual midpoint. Full catalog lookup remains available through
+      explicit full-catalog search, but these pages are the best starting point for readers and reviewers.
     </p>
 
     <div class="card-grid reviewed-song-grid">

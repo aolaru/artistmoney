@@ -72,4 +72,41 @@ const explainers = [
       ))}
     </div>
   </section>
+
+  <section aria-labelledby="insight-workflow-title">
+    <h2 id="insight-workflow-title">How to use these explainers</h2>
+    <div class="editorial-grid">
+      <article class="card editorial-card">
+        <div class="artist-card-body">
+          <p class="eyebrow">Step 1</p>
+          <h3>Start with reviewed pages</h3>
+          <p>
+            Use <a href={`${baseUrl}reviewed-songs/`}>reviewed songs</a> or
+            {" "}<a href={`${baseUrl}reviewed-artists/`}>reviewed artists</a> before opening draft
+            catalog records.
+          </p>
+        </div>
+      </article>
+      <article class="card editorial-card">
+        <div class="artist-card-body">
+          <p class="eyebrow">Step 2</p>
+          <h3>Check the split</h3>
+          <p>
+            Read gross revenue separately from artist-side income. Ownership context often matters
+            as much as popularity.
+          </p>
+        </div>
+      </article>
+      <article class="card editorial-card">
+        <div class="artist-card-body">
+          <p class="eyebrow">Step 3</p>
+          <h3>Read the source label</h3>
+          <p>
+            Platform, release, certification, and ownership links support different claims. None of
+            them should be treated as private royalty disclosures.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
 </BaseLayout>
