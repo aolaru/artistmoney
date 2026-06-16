@@ -15,8 +15,6 @@ const albumTouchCount = updates.filter((entry) => entry.includesAlbumMetadata).l
 const newArtistCount = updates.reduce((count, entry) => count + entry.addedArtistSlugs.length, 0);
 const newSongCount = updates.reduce((count, entry) => count + entry.addedSongSlugs.length, 0);
 const editorialCount = updates.filter((entry) => entry.includesArtistEditorial || entry.includesSongEditorial).length;
-const assistedCount = updates.filter((entry) => entry.sourceType === "autopilot").length;
-const manualCount = updates.filter((entry) => entry.sourceType === "manual").length;
 
 const latestNewArtists = [...new Set(updates.flatMap((entry) => entry.addedArtistSlugs))]
   .map((slug) => artistMap.get(slug))
@@ -41,14 +39,14 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "How Much Music Updates",
-  description: "Recent artist, song, and album updates across the How Much Music catalog.",
+  description: "Recent artist, song, and album improvements.",
   url: new URL(`${baseUrl}updates/`, Astro.site).toString()
 };
 ---
 
 <BaseLayout
   title="Updates | How Much Music"
-  description="A public changelog for new artists, new songs, album enrichments, and editorial upgrades on How Much Music."
+  description="Recent artist, song, album, and editorial improvements."
   jsonLd={jsonLd}
   noindex
 >
@@ -57,20 +55,19 @@ const jsonLd = {
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Updates</p>
-      <h1>Public changelog for the catalog</h1>
+      <h1>Recently improved pages</h1>
       <p>
-        This page summarizes recent catalog work. It separates new artists and songs from album
-        enrichments and editorial refreshes so visitors can see what changed.
+        Recent additions and page improvements, grouped by artists, songs, albums, and editorial
+        context.
       </p>
     </div>
     <div class="hero-panel" aria-label="Update totals">
       <strong>{updates.length}</strong>
-      <span>recent changelog entries</span>
+      <span>recent update entries</span>
       <span>{newArtistCount} new artists</span>
       <span>{newSongCount} new songs</span>
       <span>{editorialCount} editorial refreshes</span>
       <span>{albumTouchCount} album enrichments</span>
-      <span>{assistedCount} assisted refreshes</span>
     </div>
   </section>
 
@@ -81,10 +78,10 @@ const jsonLd = {
         <div class="artist-card-body">
           <p class="eyebrow">New Artists</p>
           <h3>{newArtistCount}</h3>
-          <p>New artist pages added across the current changelog window.</p>
+          <p>New artist pages added recently.</p>
           <div class="update-links">
             {latestNewArtists.map((artist) => (
-              <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+              <span class="active-filter-chip">{artist.name}</span>
             ))}
           </div>
         </div>
@@ -93,10 +90,10 @@ const jsonLd = {
         <div class="artist-card-body">
           <p class="eyebrow">New Songs</p>
           <h3>{newSongCount}</h3>
-          <p>Fresh song pages linked into the catalog.</p>
+          <p>New song pages with earnings and ownership context.</p>
           <div class="update-links">
             {latestNewSongs.map((song) => (
-              <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+              <span class="active-filter-chip">{song.title}</span>
             ))}
           </div>
         </div>
@@ -105,7 +102,7 @@ const jsonLd = {
         <div class="artist-card-body">
           <p class="eyebrow">Album Enrichments</p>
           <h3>{albumTouchCount}</h3>
-          <p>Album metadata, release context, and tracklist improvements shipped recently.</p>
+          <p>Album metadata, release context, and tracklist improvements.</p>
           <p><a href={`${baseUrl}albums/`}>Browse all albums</a></p>
         </div>
       </article>
@@ -113,30 +110,20 @@ const jsonLd = {
         <div class="artist-card-body">
           <p class="eyebrow">Editorial Refreshes</p>
           <h3>{editorialCount}</h3>
-          <p>Artist and song pages enriched with stronger copy, metadata, and methodology context.</p>
+          <p>Artist and song pages improved with clearer copy, metadata, and methodology context.</p>
           <p><a href={`${baseUrl}insights/methodology/`}>Read the methodology</a></p>
-        </div>
-      </article>
-      <article class="card editorial-card">
-        <div class="artist-card-body">
-          <p class="eyebrow">Assisted vs Manual</p>
-          <h3>{assistedCount} / {manualCount}</h3>
-          <p>Recent updates separated by assisted catalog refreshes versus direct editorial releases.</p>
-          <p><a href={`${baseUrl}updates/`}>Review the full changelog split</a></p>
         </div>
       </article>
     </div>
   </section>
 
   <section aria-labelledby="snapshot-title">
-    <h2 id="snapshot-title">Changelog Snapshot</h2>
+    <h2 id="snapshot-title">Update Snapshot</h2>
     <ul class="meta-list">
-      <li><strong>Artist touches:</strong> {artistTouchCount}</li>
-      <li><strong>Song touches:</strong> {songTouchCount}</li>
+      <li><strong>Artist pages updated:</strong> {artistTouchCount}</li>
+      <li><strong>Song pages updated:</strong> {songTouchCount}</li>
       <li><strong>Album enrichments:</strong> {albumTouchCount}</li>
       <li><strong>Editorial refreshes:</strong> {editorialCount}</li>
-      <li><strong>Manual releases:</strong> {manualCount}</li>
-      <li><strong>Assisted refreshes:</strong> {assistedCount}</li>
     </ul>
   </section>
 
@@ -144,8 +131,7 @@ const jsonLd = {
     <h2 id="updates-title">Recent changes</h2>
     {updates.length === 0 ? (
       <p>
-        No update history is available in this build. This usually means the build ran without full
-        git history.
+        No recent update details are available right now.
       </p>
     ) : (
       <div class="updates-list">
@@ -157,14 +143,13 @@ const jsonLd = {
             <article class="card update-card">
               <div class="artist-card-body">
                 <div class="update-header">
-                  <p class="eyebrow">Commit {entry.shortHash}</p>
+                  <p class="eyebrow">Update</p>
                   <p class="update-date">{entry.date}</p>
                 </div>
                 <h3>{entry.summary}</h3>
 
                 <div class="update-tags" aria-label="Update scope">
                   <span class="rank-badge">{categoryLabels[entry.category]}</span>
-                  <span class="rank-badge">{entry.sourceType === "autopilot" ? "Assisted refresh" : "Manual"}</span>
                   {entry.addedArtistSlugs.length > 0 && (
                     <span class="rank-badge">
                       {entry.addedArtistSlugs.length} new artist page{entry.addedArtistSlugs.length === 1 ? "" : "s"}
@@ -197,7 +182,7 @@ const jsonLd = {
                     <div class="update-links">
                       {entry.addedArtistSlugs.map((slug) => {
                         const artist = artistMap.get(slug);
-                        return <a href={`${baseUrl}artist/${slug}/`}>{artist?.name ?? slug}</a>;
+                        return <span class="active-filter-chip">{artist?.name ?? slug}</span>;
                       })}
                     </div>
                   </>
@@ -209,7 +194,7 @@ const jsonLd = {
                     <div class="update-links">
                       {updatedArtistSlugs.map((slug) => {
                         const artist = artistMap.get(slug);
-                        return <a href={`${baseUrl}artist/${slug}/`}>{artist?.name ?? slug}</a>;
+                        return <span class="active-filter-chip">{artist?.name ?? slug}</span>;
                       })}
                     </div>
                   </>
@@ -221,7 +206,7 @@ const jsonLd = {
                     <div class="update-links">
                       {entry.addedSongSlugs.map((slug) => {
                         const song = songMap.get(slug);
-                        return <a href={`${baseUrl}song/${slug}/`}>{song?.title ?? slug}</a>;
+                        return <span class="active-filter-chip">{song?.title ?? slug}</span>;
                       })}
                     </div>
                   </>
@@ -233,7 +218,7 @@ const jsonLd = {
                     <div class="update-links">
                       {updatedSongSlugs.map((slug) => {
                         const song = songMap.get(slug);
-                        return <a href={`${baseUrl}song/${slug}/`}>{song?.title ?? slug}</a>;
+                        return <span class="active-filter-chip">{song?.title ?? slug}</span>;
                       })}
                     </div>
                   </>

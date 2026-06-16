@@ -130,7 +130,7 @@ export const songArticles: Record<string, SongArticle> = {
     ],
     "insight": "The important reading is not just that the song is popular each December. It is that the modeled artist-side range, publishing range, and seasonal replay pattern all point in the same direction: this is one of the rare holiday songs that behaves like a major annual catalog business.",
     "evidence": [
-      "Internal song data lists estimated gross track revenue at $9.1M-$23M/year and artist-side share at $4.4M-$11M/year.",
+      "The available revenue fields list estimated gross track revenue at $9.1M-$23M/year and artist-side share at $4.4M-$11M/year.",
       "The ownership note says the publishing appears exceptionally valuable because of writer-side participation.",
       "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
     ],
@@ -163,7 +163,7 @@ export const songArticles: Record<string, SongArticle> = {
     ],
     "insight": "Blinding Lights is useful because it shows why a very large modern hit can have a wide gap between gross song revenue and artist-side take-home. The page keeps those figures separate instead of presenting one headline number as if every dollar reaches the performer.",
     "evidence": [
-      "Internal song data lists estimated gross track revenue at $3.9M-$9.1M/year and artist-side share at $1.1M-$3.3M/year.",
+      "The available revenue fields list estimated gross track revenue at $3.9M-$9.1M/year and artist-side share at $1.1M-$3.3M/year.",
       "The ownership note describes a mix of label and artist-affiliated participation, which is why gross and take-home are separated.",
       "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
     ],
@@ -196,7 +196,7 @@ export const songArticles: Record<string, SongArticle> = {
     ],
     "insight": "Bohemian Rhapsody is a strong example of why older catalog songs need a different revenue reading from current hits. The estimate depends on durable replay, rights participation, and publishing context, not only on current chart activity.",
     "evidence": [
-      "Internal song data lists estimated gross track revenue at $2.6M-$7.8M/year and artist-side share at $1.1M-$3.3M/year.",
+      "The available revenue fields list estimated gross track revenue at $2.6M-$7.8M/year and artist-side share at $1.1M-$3.3M/year.",
       "The ownership note says the master is major-label controlled with band or estate royalty participation.",
       "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
     ],
@@ -218,7 +218,7 @@ export const songArticles: Record<string, SongArticle> = {
     "shortAnswer": "Dancing Queen by ABBA is modeled at $1.1M-$3.3M/year on the artist side, with gross track revenue modeled at $2.6M-$7.8M/year.",
     "breakdown": [
       "The song is modeled as a global pop catalog track where repeat listening and licensing context matter.",
-      "The internal data separates artist-side share from publishing and songwriter ranges because ABBA songwriting is central to the economics.",
+      "The estimate separates artist-side share from publishing and songwriter ranges because ABBA songwriting is central to the economics.",
       "The estimate does not assume a song-specific catalog sale adjustment."
     ],
     "lifetimeEstimate": "Lifetime value depends on how long Dancing Queen keeps playlist, search, and catalog demand beyond the current annual modeled range.",
@@ -229,7 +229,7 @@ export const songArticles: Record<string, SongArticle> = {
     ],
     "insight": "Dancing Queen reads less like a one-time 1970s hit and more like a durable catalog standard. The useful number is the range after separating gross revenue, artist-side participation, and writer-side value.",
     "evidence": [
-      "Internal song data lists estimated gross track revenue at $2.6M-$7.8M/year and artist-side share at $1.1M-$3.3M/year.",
+      "The available revenue fields list estimated gross track revenue at $2.6M-$7.8M/year and artist-side share at $1.1M-$3.3M/year.",
       "The ownership note says publishing appears highly valuable because ABBA songwriting is central to catalog economics.",
       "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
     ],
@@ -262,7 +262,7 @@ export const songArticles: Record<string, SongArticle> = {
     ],
     "insight": "SICKO MODE is a useful page because the headline artist-side number is only part of the economics. The gross-track range, label participation, and publishing split all matter before deciding what the song may actually deliver to any one participant.",
     "evidence": [
-      "Internal song data lists estimated gross track revenue at $2.6M-$7.8M/year and artist-side share at $1.1M-$3.3M/year.",
+      "The available revenue fields list estimated gross track revenue at $2.6M-$7.8M/year and artist-side share at $1.1M-$3.3M/year.",
       "The ownership note says publishing appears split across multiple writers, producers, and publishers.",
       "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
     ],
@@ -295,7 +295,7 @@ export const songArticles: Record<string, SongArticle> = {
     ],
     "insight": "Shake It Off shows why a large pop hit should be read through rights splits, not just public familiarity. The page keeps the gross-track estimate, performer-side estimate, and publishing estimate visible as separate lanes.",
     "evidence": [
-      "Internal song data lists estimated gross track revenue at $2.2M-$6.5M/year and artist-side share at $940K-$2.8M/year.",
+      "The available revenue fields list estimated gross track revenue at $2.2M-$6.5M/year and artist-side share at $940K-$2.8M/year.",
       "The ownership note describes a mix of label-controlled masters and meaningful artist-side royalty participation.",
       "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
     ],
@@ -314,7 +314,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "blank-space": {
     "seoTitle": "How much money does Blank Space make per year?",
-    "shortAnswer": "Blank Space by Taylor Swift is modeled at $830K-$2.5M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Blank Space by Taylor Swift is modeled at $830K-$2.5M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -330,7 +330,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "in-the-end": {
     "seoTitle": "How much money does In the End make per year?",
-    "shortAnswer": "In the End by Linkin Park is modeled at $830K-$2.5M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "In the End by Linkin Park is modeled at $830K-$2.5M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -346,7 +346,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "every-breath-you-take": {
     "seoTitle": "How much money does Every Breath You Take make per year?",
-    "shortAnswer": "Every Breath You Take by The Police is modeled at $660K-$2.5M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Every Breath You Take by The Police is modeled at $660K-$2.5M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -362,7 +362,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "gods-plan": {
     "seoTitle": "How much money does God's Plan make per year?",
-    "shortAnswer": "God's Plan by Drake is modeled at $830K-$2.2M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "God's Plan by Drake is modeled at $830K-$2.2M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -378,7 +378,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "happy": {
     "seoTitle": "How much money does Happy make per year?",
-    "shortAnswer": "Happy by Pharrell Williams is modeled at $830K-$2.2M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Happy by Pharrell Williams is modeled at $830K-$2.2M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -394,7 +394,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "lose-yourself": {
     "seoTitle": "How much money does Lose Yourself make per year?",
-    "shortAnswer": "Lose Yourself by Eminem is modeled at $720K-$2.2M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Lose Yourself by Eminem is modeled at $720K-$2.2M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -410,7 +410,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "dreams": {
     "seoTitle": "How much money does Dreams make per year?",
-    "shortAnswer": "Dreams by Fleetwood Mac is modeled at $720K-$2.1M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Dreams by Fleetwood Mac is modeled at $720K-$2.1M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -426,7 +426,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "numb": {
     "seoTitle": "How much money does Numb make per year?",
-    "shortAnswer": "Numb by Linkin Park is modeled at $660K-$2.1M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Numb by Linkin Park is modeled at $660K-$2.1M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -442,7 +442,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "starboy": {
     "seoTitle": "How much money does Starboy make per year?",
-    "shortAnswer": "Starboy by The Weeknd is modeled at $660K-$2.1M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Starboy by The Weeknd is modeled at $660K-$2.1M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -458,7 +458,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "billie-jean": {
     "seoTitle": "How much money does Billie Jean make per year?",
-    "shortAnswer": "Billie Jean by Michael Jackson is modeled at $550K-$2.2M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Billie Jean by Michael Jackson is modeled at $550K-$2.2M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -474,7 +474,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "shape-of-you": {
     "seoTitle": "How much money does Shape of You make per year?",
-    "shortAnswer": "Shape of You by Ed Sheeran is modeled at $550K-$2.2M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Shape of You by Ed Sheeran is modeled at $550K-$2.2M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -490,7 +490,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "hotel-california": {
     "seoTitle": "How much money does Hotel California make per year?",
-    "shortAnswer": "Hotel California by The Eagles is modeled at $660K-$1.9M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Hotel California by The Eagles is modeled at $660K-$1.9M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -506,7 +506,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "one-dance": {
     "seoTitle": "How much money does One Dance make per year?",
-    "shortAnswer": "One Dance by Drake is modeled at $660K-$1.9M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "One Dance by Drake is modeled at $660K-$1.9M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -522,7 +522,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "save-your-tears": {
     "seoTitle": "How much money does Save Your Tears make per year?",
-    "shortAnswer": "Save Your Tears by The Weeknd is modeled at $610K-$1.9M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Save Your Tears by The Weeknd is modeled at $610K-$1.9M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -538,7 +538,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "my-heart-will-go-on": {
     "seoTitle": "How much money does My Heart Will Go On make per year?",
-    "shortAnswer": "My Heart Will Go On by Celine Dion is modeled at $550K-$1.9M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "My Heart Will Go On by Celine Dion is modeled at $550K-$1.9M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -554,7 +554,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "anti-hero": {
     "seoTitle": "How much money does Anti-Hero make per year?",
-    "shortAnswer": "Anti-Hero by Taylor Swift is modeled at $610K-$1.8M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Anti-Hero by Taylor Swift is modeled at $610K-$1.8M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -570,7 +570,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "dont-stop-me-now": {
     "seoTitle": "How much money does Don't Stop Me Now make per year?",
-    "shortAnswer": "Don't Stop Me Now by Queen is modeled at $610K-$1.8M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Don't Stop Me Now by Queen is modeled at $610K-$1.8M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -586,7 +586,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "hello": {
     "seoTitle": "How much money does Hello make per year?",
-    "shortAnswer": "Hello by Adele is modeled at $610K-$1.8M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Hello by Adele is modeled at $610K-$1.8M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -602,7 +602,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "smells-like-teen-spirit": {
     "seoTitle": "How much money does Smells Like Teen Spirit make per year?",
-    "shortAnswer": "Smells Like Teen Spirit by Nirvana is modeled at $610K-$1.8M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Smells Like Teen Spirit by Nirvana is modeled at $610K-$1.8M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -618,7 +618,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "crazy-in-love": {
     "seoTitle": "How much money does Crazy in Love make per year?",
-    "shortAnswer": "Crazy in Love by Beyonce is modeled at $550K-$1.7M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Crazy in Love by Beyonce is modeled at $550K-$1.7M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -634,7 +634,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "feel-good-inc": {
     "seoTitle": "How much money does Feel Good Inc. make per year?",
-    "shortAnswer": "Feel Good Inc. by Gorillaz is modeled at $550K-$1.7M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Feel Good Inc. by Gorillaz is modeled at $550K-$1.7M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -650,7 +650,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "get-lucky": {
     "seoTitle": "How much money does Get Lucky make per year?",
-    "shortAnswer": "Get Lucky by Daft Punk is modeled at $550K-$1.7M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Get Lucky by Daft Punk is modeled at $550K-$1.7M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -666,7 +666,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "let-it-be": {
     "seoTitle": "How much money does Let It Be make per year?",
-    "shortAnswer": "Let It Be by The Beatles is modeled at $550K-$1.7M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Let It Be by The Beatles is modeled at $550K-$1.7M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -682,7 +682,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "stronger": {
     "seoTitle": "How much money does Stronger make per year?",
-    "shortAnswer": "Stronger by Kanye West is modeled at $550K-$1.7M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Stronger by Kanye West is modeled at $550K-$1.7M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -698,7 +698,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "umbrella": {
     "seoTitle": "How much money does Umbrella make per year?",
-    "shortAnswer": "Umbrella by Rihanna is modeled at $550K-$1.7M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Umbrella by Rihanna is modeled at $550K-$1.7M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -714,7 +714,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "i-will-always-love-you": {
     "seoTitle": "How much money does I Will Always Love You make per year?",
-    "shortAnswer": "I Will Always Love You by Whitney Houston is modeled at $500K-$1.7M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "I Will Always Love You by Whitney Houston is modeled at $500K-$1.7M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -730,7 +730,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "thriller": {
     "seoTitle": "How much money does Thriller make per year?",
-    "shortAnswer": "Thriller by Michael Jackson is modeled at $500K-$1.7M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Thriller by Michael Jackson is modeled at $500K-$1.7M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -746,7 +746,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "bad-guy": {
     "seoTitle": "How much money does Bad Guy make per year?",
-    "shortAnswer": "Bad Guy by Billie Eilish is modeled at $500K-$1.5M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Bad Guy by Billie Eilish is modeled at $500K-$1.5M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -762,7 +762,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "california-love": {
     "seoTitle": "How much money does California Love make per year?",
-    "shortAnswer": "California Love by 2Pac is modeled at $500K-$1.5M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "California Love by 2Pac is modeled at $500K-$1.5M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -778,7 +778,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "hey-jude": {
     "seoTitle": "How much money does Hey Jude make per year?",
-    "shortAnswer": "Hey Jude by The Beatles is modeled at $500K-$1.5M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Hey Jude by The Beatles is modeled at $500K-$1.5M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -794,7 +794,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "livin-on-a-prayer": {
     "seoTitle": "How much money does Livin' on a Prayer make per year?",
-    "shortAnswer": "Livin' on a Prayer by Bon Jovi is modeled at $500K-$1.5M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Livin' on a Prayer by Bon Jovi is modeled at $500K-$1.5M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -810,7 +810,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "someone-like-you": {
     "seoTitle": "How much money does Someone Like You make per year?",
-    "shortAnswer": "Someone Like You by Adele is modeled at $500K-$1.5M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Someone Like You by Adele is modeled at $500K-$1.5M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -826,7 +826,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "sweet-child-o-mine": {
     "seoTitle": "How much money does Sweet Child O' Mine make per year?",
-    "shortAnswer": "Sweet Child O' Mine by Guns N' Roses is modeled at $500K-$1.5M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Sweet Child O' Mine by Guns N' Roses is modeled at $500K-$1.5M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",
@@ -842,7 +842,7 @@ export const songArticles: Record<string, SongArticle> = {
   },
   "without-me": {
     "seoTitle": "How much money does Without Me make per year?",
-    "shortAnswer": "Without Me by Eminem is modeled at $500K-$1.5M/year per year on the artist side, before reading the separate gross-track and publishing context.",
+    "shortAnswer": "Without Me by Eminem is modeled at $500K-$1.5M/year on the artist side, before reading the separate gross-track and publishing context.",
     "breakdown": [
       "Streaming and catalog replay form the baseline annual revenue lane.",
       "Publishing and songwriter shares can matter materially when the writer-side participation is strong.",

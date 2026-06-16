@@ -1,12 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { getArtistConfidence, getArtistVisual, getConfidenceSummary, rankedArtists } from "../lib/catalog";
+import { getArtistConfidence, getArtistVisual, getConfidenceSummary, rankedArtists, songs, type Artist } from "../lib/catalog";
+import { isArtistReviewReady } from "../lib/reviewReady";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const entries = rankedArtists.filter((entry) => entry.revenueRange).slice(0, 25);
+const hasPublicArtistPage = (artist: Artist) => {
+  const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
+  return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
+};
+const entries = rankedArtists.filter((entry) => entry.revenueRange && hasPublicArtistPage(entry.artist)).slice(0, 25);
 ---
 
 <BaseLayout

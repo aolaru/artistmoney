@@ -35,7 +35,7 @@ const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.
         <article class="card">
           <div class="artist-card-body">
             <p class="eyebrow">Decade</p>
-            <h3><a href={`${baseUrl}decade/${decade.slug}/`}>{decade.name}</a></h3>
+            <h3>{decade.name}</h3>
             <p>{decade.count} tracked song{decade.count === 1 ? "" : "s"}</p>
           </div>
         </article>

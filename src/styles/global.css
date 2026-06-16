@@ -1,14 +1,19 @@
 :root {
-  --background: #f4f1ea;
-  --surface: rgba(255, 255, 255, 0.82);
-  --surface-strong: #fcfaf6;
-  --text: #1f2329;
-  --muted: #626b77;
-  --border: rgba(31, 35, 41, 0.1);
-  --accent: #1e6a61;
-  --accent-strong: #8b5e3c;
-  --accent-soft: rgba(30, 106, 97, 0.08);
-  --shadow: 0 18px 50px rgba(33, 32, 28, 0.08);
+  --background: #f2eee5;
+  --surface: rgba(255, 253, 247, 0.88);
+  --surface-strong: #fffdf8;
+  --text: #171b1f;
+  --muted: #4e5964;
+  --border: rgba(23, 27, 31, 0.13);
+  --accent: #0f665c;
+  --accent-strong: #0a473f;
+  --accent-soft: rgba(15, 102, 92, 0.11);
+  --earth: #7a4d2d;
+  --earth-soft: rgba(122, 77, 45, 0.12);
+  --gold: #7a5a10;
+  --gold-soft: rgba(181, 138, 42, 0.2);
+  --focus-ring: rgba(15, 102, 92, 0.24);
+  --shadow: 0 18px 50px rgba(29, 28, 24, 0.1);
 }
 
 * {
@@ -25,17 +30,17 @@ html {
     sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(139, 94, 60, 0.08), transparent 28%),
-    radial-gradient(circle at top right, rgba(30, 106, 97, 0.08), transparent 26%),
-    linear-gradient(180deg, #faf8f3 0%, var(--background) 100%);
+    radial-gradient(circle at top left, rgba(122, 77, 45, 0.1), transparent 28%),
+    radial-gradient(circle at top right, rgba(15, 102, 92, 0.1), transparent 26%),
+    linear-gradient(180deg, #fbf7ef 0%, var(--background) 100%);
 }
 
 body {
   margin: 0;
   min-height: 100vh;
   background-image:
-    linear-gradient(rgba(31, 35, 41, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(31, 35, 41, 0.025) 1px, transparent 1px);
+    linear-gradient(rgba(23, 27, 31, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 27, 31, 0.028) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
@@ -52,7 +57,7 @@ a {
 
 .site-header {
   border-bottom: 1px solid var(--border);
-  background: rgba(250, 248, 243, 0.76);
+  background: rgba(251, 247, 239, 0.84);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -111,15 +116,15 @@ a {
   padding: 0.8rem 0.95rem;
   border: 1px solid var(--border);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 253, 247, 0.9);
   color: var(--text);
   font: inherit;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .header-search-input:focus {
-  outline: 2px solid rgba(30, 106, 97, 0.18);
-  border-color: rgba(30, 106, 97, 0.35);
+  outline: 3px solid var(--focus-ring);
+  border-color: rgba(15, 102, 92, 0.42);
 }
 
 .header-search-panel {
@@ -130,7 +135,7 @@ a {
   padding: 0.55rem;
   border: 1px solid var(--border);
   border-radius: 18px;
-  background: rgba(252, 250, 246, 0.98);
+  background: rgba(255, 253, 248, 0.98);
   box-shadow: var(--shadow);
   z-index: 20;
 }
@@ -167,7 +172,7 @@ a {
 
 .header-search-item.is-active,
 .header-search-item:hover {
-  background: rgba(30, 106, 97, 0.08);
+  background: var(--accent-soft);
 }
 
 .header-search-link {
@@ -193,7 +198,7 @@ a {
   margin: 0;
   padding: 0.18rem 0.48rem;
   border-radius: 999px;
-  background: rgba(30, 106, 97, 0.08);
+  background: var(--accent-soft);
   color: var(--accent-strong);
   font-size: 0.72rem;
   font-weight: 700;
@@ -203,8 +208,8 @@ a {
 }
 
 .search-result-status.is-draft {
-  background: rgba(139, 94, 60, 0.12);
-  color: #7a4b2d;
+  background: var(--earth-soft);
+  color: var(--earth);
 }
 
 .header-search-meta {
@@ -218,7 +223,7 @@ main.container {
 
 .site-footer {
   border-top: 1px solid var(--border);
-  background: rgba(250, 248, 243, 0.82);
+  background: rgba(251, 247, 239, 0.9);
   margin-top: 2rem;
 }
 
@@ -363,11 +368,21 @@ p {
 
 .search-page-submit {
   padding: 0.95rem 1.1rem;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(10, 71, 63, 0.18);
   border-radius: 14px;
-  background: var(--accent);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)),
+    var(--accent);
   color: white;
   cursor: pointer;
+  box-shadow: 0 12px 24px rgba(10, 71, 63, 0.16);
+}
+
+.search-page-submit:hover,
+.search-page-submit:focus-visible {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0)),
+    var(--accent-strong);
 }
 
 .search-page-controls {
@@ -402,7 +417,8 @@ p {
 
 .search-filter-chip.is-active {
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-strong);
+  border-color: rgba(15, 102, 92, 0.28);
 }
 
 .search-results-shell {
@@ -448,7 +464,7 @@ p {
 mark {
   padding: 0 0.12em;
   border-radius: 0.2em;
-  background: rgba(219, 200, 116, 0.45);
+  background: var(--gold-soft);
   color: inherit;
 }
 
@@ -465,9 +481,9 @@ mark {
   justify-content: space-between;
   gap: 0.85rem;
   padding: 0.85rem 0.95rem;
-  border: 1px solid rgba(30, 106, 97, 0.16);
+  border: 1px solid rgba(15, 102, 92, 0.18);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 253, 247, 0.9);
   color: var(--text);
   text-decoration: none;
   transition:
@@ -477,8 +493,8 @@ mark {
 }
 
 .hero-stat-pill:hover {
-  border-color: rgba(30, 106, 97, 0.38);
-  box-shadow: 0 14px 32px rgba(31, 42, 50, 0.08);
+  border-color: rgba(15, 102, 92, 0.4);
+  box-shadow: 0 14px 32px rgba(23, 31, 36, 0.1);
   transform: translateY(-1px);
 }
 
@@ -538,8 +554,8 @@ mark {
   border: 1px solid var(--border);
   border-radius: 18px;
   background:
-    linear-gradient(135deg, rgba(30, 106, 97, 0.08), rgba(255, 255, 255, 0) 58%),
-    rgba(255, 255, 255, 0.54);
+    linear-gradient(135deg, rgba(15, 102, 92, 0.1), rgba(255, 255, 255, 0) 58%),
+    rgba(255, 253, 247, 0.64);
 }
 
 .home-primary-action h3,
@@ -571,14 +587,25 @@ mark {
 }
 
 .home-search-form input {
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 253, 247, 0.94);
   color: var(--text);
 }
 
 .home-search-form button {
-  background: var(--accent);
+  border-color: rgba(10, 71, 63, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)),
+    var(--accent);
   color: #fff;
   cursor: pointer;
+  box-shadow: 0 12px 24px rgba(10, 71, 63, 0.16);
+}
+
+.home-search-form button:hover,
+.home-search-form button:focus-visible {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0)),
+    var(--accent-strong);
 }
 
 .home-actions-section {
@@ -601,7 +628,7 @@ mark {
   border: 1px solid var(--border);
   border-radius: 20px;
   background:
-    linear-gradient(135deg, rgba(30, 106, 97, 0.08), rgba(255, 255, 255, 0) 52%),
+    linear-gradient(135deg, rgba(15, 102, 92, 0.1), rgba(255, 255, 255, 0) 52%),
     var(--surface);
   box-shadow: var(--shadow);
 }
@@ -618,16 +645,17 @@ mark {
   width: fit-content;
   margin-top: 0.2rem;
   padding: 0.62rem 0.9rem;
-  border: 1px solid rgba(30, 106, 97, 0.18);
+  border: 1px solid rgba(15, 102, 92, 0.24);
   border-radius: 999px;
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-strong);
   font-weight: 750;
   text-decoration: none;
 }
 
 .home-action-link:hover {
-  border-color: rgba(30, 106, 97, 0.36);
+  border-color: rgba(15, 102, 92, 0.42);
+  background: rgba(15, 102, 92, 0.15);
   color: var(--accent-strong);
 }
 
@@ -699,6 +727,14 @@ mark {
   font: inherit;
 }
 
+.search-page-input:focus,
+.filter-field input:focus,
+.filter-field select:focus,
+.home-search-form input:focus {
+  outline: 3px solid var(--focus-ring);
+  border-color: rgba(15, 102, 92, 0.42);
+}
+
 .results-note,
 .artist-card-meta,
 .meta-inline {
@@ -717,8 +753,8 @@ mark {
   align-items: center;
   padding: 0.3rem 0.6rem;
   border-radius: 999px;
-  background: rgba(30, 106, 97, 0.08);
-  color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
   font-size: 0.78rem;
   font-weight: 650;
   line-height: 1;
@@ -736,12 +772,12 @@ mark {
 }
 
 .status-chip-new {
-  background: rgba(219, 200, 116, 0.28);
-  color: #73570d;
+  background: var(--gold-soft);
+  color: var(--gold);
 }
 
 .status-chip-updated {
-  background: rgba(30, 106, 97, 0.12);
+  background: rgba(15, 102, 92, 0.14);
   color: var(--accent-strong);
 }
 
@@ -783,7 +819,7 @@ mark {
   border: 1px solid var(--border);
   border-radius: 22px;
   background:
-    linear-gradient(135deg, rgba(30, 106, 97, 0.08), rgba(219, 200, 116, 0.12)),
+    linear-gradient(135deg, var(--accent-soft), var(--gold-soft)),
     var(--surface);
   box-shadow: var(--shadow);
 }
@@ -815,7 +851,7 @@ mark {
 }
 
 .load-more-button {
-  border: 1px solid rgba(30, 106, 97, 0.22);
+  border: 1px solid rgba(15, 102, 92, 0.28);
   border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent-strong);
@@ -823,12 +859,12 @@ mark {
   font: inherit;
   font-weight: 750;
   padding: 0.85rem 1.2rem;
-  box-shadow: 0 12px 28px rgba(31, 35, 41, 0.08);
+  box-shadow: 0 12px 28px rgba(23, 27, 31, 0.1);
 }
 
 .load-more-button:hover,
 .load-more-button:focus-visible {
-  background: rgba(30, 106, 97, 0.14);
+  background: rgba(15, 102, 92, 0.16);
 }
 
 .load-more-button[hidden] {
@@ -862,7 +898,7 @@ mark {
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-strong);
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -950,9 +986,9 @@ mark {
   gap: 0.8rem;
   margin: -0.2rem 0 0.95rem;
   padding: 1rem 1.05rem;
-  border: 1px solid rgba(30, 106, 97, 0.14);
+  border: 1px solid rgba(15, 102, 92, 0.18);
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(30, 106, 97, 0.06), rgba(255, 255, 255, 0.92));
+  background: linear-gradient(180deg, rgba(15, 102, 92, 0.08), rgba(255, 253, 247, 0.94));
 }
 
 .trust-summary {
@@ -972,7 +1008,7 @@ mark {
   padding: 0.85rem 0.9rem;
   border: 1px solid var(--border);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 253, 247, 0.9);
 }
 
 .trust-point strong {
@@ -987,9 +1023,9 @@ mark {
 }
 
 .editorial-basis-card {
-  border-color: rgba(139, 94, 60, 0.2);
+  border-color: rgba(122, 77, 45, 0.22);
   background:
-    linear-gradient(135deg, rgba(139, 94, 60, 0.08), rgba(255, 255, 255, 0) 48%),
+    linear-gradient(135deg, rgba(122, 77, 45, 0.1), rgba(255, 255, 255, 0) 48%),
     var(--surface);
 }
 
@@ -999,7 +1035,7 @@ mark {
 
 .source-snapshot-card {
   background:
-    radial-gradient(circle at top right, rgba(30, 106, 97, 0.12), transparent 34%),
+    radial-gradient(circle at top right, rgba(15, 102, 92, 0.14), transparent 34%),
     var(--surface);
 }
 
@@ -1011,7 +1047,7 @@ mark {
   padding: 1rem;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 253, 247, 0.88);
 }
 
 .editorial-basis-grid {
@@ -1027,7 +1063,7 @@ mark {
   padding: 1rem 1.05rem;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 253, 247, 0.84);
 }
 
 .editorial-basis-item strong {
@@ -1056,7 +1092,7 @@ mark {
 .song-takeaway {
   padding: 0.9rem 1rem;
   border-radius: 14px;
-  background: rgba(30, 106, 97, 0.08);
+  background: var(--accent-soft);
   color: var(--text);
 }
 
@@ -1094,7 +1130,7 @@ mark {
 }
 
 .comparison-section {
-  border-color: rgba(30, 106, 97, 0.18);
+  border-color: rgba(15, 102, 92, 0.2);
 }
 
 .comparison-summary {
@@ -1125,8 +1161,8 @@ mark {
 }
 
 .comparison-current {
-  background: rgba(30, 106, 97, 0.08);
-  border-color: rgba(30, 106, 97, 0.25);
+  background: var(--accent-soft);
+  border-color: rgba(15, 102, 92, 0.3);
 }
 
 .comparison-reason {
@@ -1181,7 +1217,7 @@ mark {
 }
 
 .platform-signals-section {
-  border-color: rgba(30, 106, 97, 0.18);
+  border-color: rgba(15, 102, 92, 0.2);
 }
 
 .platform-signal-grid {
@@ -1224,7 +1260,7 @@ mark {
 .platform-meter {
   height: 0.72rem;
   border-radius: 999px;
-  background: rgba(30, 106, 97, 0.1);
+  background: var(--accent-soft);
   overflow: hidden;
 }
 
@@ -1284,7 +1320,7 @@ mark {
   margin: 0.85rem 0 0;
   padding: 0.85rem 0.95rem;
   border-radius: 14px;
-  background: rgba(30, 106, 97, 0.08);
+  background: var(--accent-soft);
   color: var(--text);
 }
 
@@ -1517,7 +1553,7 @@ mark {
 
 .active-filter-chip {
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 
 .filter-reset {
@@ -1541,17 +1577,17 @@ mark {
 }
 
 .confidence-high {
-  background: rgba(30, 106, 97, 0.12);
-  color: var(--accent);
-}
-
-.confidence-medium {
-  background: rgba(139, 94, 60, 0.12);
+  background: rgba(15, 102, 92, 0.14);
   color: var(--accent-strong);
 }
 
+.confidence-medium {
+  background: var(--earth-soft);
+  color: var(--earth);
+}
+
 .confidence-low {
-  background: rgba(31, 35, 41, 0.09);
+  background: rgba(23, 27, 31, 0.1);
   color: var(--muted);
 }
 

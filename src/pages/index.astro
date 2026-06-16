@@ -1,14 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { songArticles } from "../data/songArticles";
 import {
   getArtist,
   getArtistVisual,
   getSongConfidence,
   getSongMethodology,
-  rankedSongs
+  rankedSongs,
+  songs,
+  type Artist
 } from "../lib/catalog";
-import { isSongReviewReady } from "../lib/reviewReady";
+import { isArtistReviewReady, isSongReviewReady } from "../lib/reviewReady";
 import { formatRevenueMidpoint } from "../lib/revenue";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
@@ -20,19 +21,23 @@ const reviewedSongEntries = allReviewedSongEntries.slice(0, 6);
 const leadSongEntry = reviewedSongEntries[0];
 const leadSong = leadSongEntry?.song;
 const leadSongMethodology = leadSong ? getSongMethodology(leadSong) : undefined;
+const hasPublicArtistPage = (artist: Artist) => {
+  const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
+  return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
+};
 ---
 
 <BaseLayout
   title="How Much Music | Song Earnings and Catalog Value"
-  description="Search song earnings estimates, explore reviewed music catalog pages, and understand how How Much Music models annual song value."
+  description="Search song earnings estimates, explore reviewed music catalog pages, and understand modeled annual song value."
 >
   <section class="hero home-hero">
     <div class="hero-copy">
       <p class="eyebrow">How Much Music</p>
       <h1>Find out what songs may earn each year.</h1>
       <p>
-        How Much Music explains song earnings, catalog value, and ownership context with modeled
-        annual ranges. Start with a song, then read how the estimate was built.
+        Explore song earnings, catalog value, and ownership context through conservative annual
+        ranges. Start with a song, then read the evidence and assumptions behind the estimate.
       </p>
     </div>
 
@@ -60,7 +65,7 @@ const leadSongMethodology = leadSong ? getSongMethodology(leadSong) : undefined;
         <article class="home-primary-action">
           <p class="eyebrow">2. Reviewed</p>
           <h3>See top reviewed songs</h3>
-          <p>Start with article-backed song pages instead of the full generated catalog.</p>
+          <p>Start with the song pages that have the clearest source and ownership context.</p>
           <a class="home-action-link" href={`${baseUrl}reviewed-songs/`}>See reviewed songs</a>
         </article>
         <article class="home-primary-action">
@@ -69,6 +74,31 @@ const leadSongMethodology = leadSong ? getSongMethodology(leadSong) : undefined;
           <p>Learn why every number is a modeled range, not a public royalty statement.</p>
           <a class="home-action-link" href={`${baseUrl}insights/methodology/`}>Read methodology</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial-basis-card home-reader-guide" aria-labelledby="home-reader-guide-title">
+    <div class="editorial-basis-heading">
+      <p class="eyebrow">Reader Guide</p>
+      <h2 id="home-reader-guide-title">How to use the site</h2>
+      <p>
+        Start with the pages that have the clearest editorial context, visible references, and
+        estimate limits.
+      </p>
+    </div>
+    <div class="editorial-basis-grid">
+      <div class="editorial-basis-item">
+        <strong>Reviewed first</strong>
+        <span>Search and homepage links prioritize artist and song pages with stronger supporting context.</span>
+      </div>
+      <div class="editorial-basis-item">
+        <strong>Modeled estimates</strong>
+        <span>Numbers are directional annual ranges, not private royalty statements or platform dashboards.</span>
+      </div>
+      <div class="editorial-basis-item">
+        <strong>Visible limits</strong>
+        <span>Each reviewed page explains what public context supports the estimate and what it does not prove.</span>
       </div>
     </div>
   </section>
@@ -84,13 +114,14 @@ const leadSongMethodology = leadSong ? getSongMethodology(leadSong) : undefined;
       </div>
       <p class="results-note">
         These pages have article entries and visible methodology notes. They are a better starting
-        point than the full generated catalog.
+        point than broad catalog browsing.
       </p>
       <div class="card-grid reviewed-song-grid">
         {reviewedSongEntries.map(({ song, revenueScore }) => {
           const artist = getArtist(song.artist);
           const artistName = artist?.name ?? song.artist;
           const artistVisual = artist ? getArtistVisual(artist) : undefined;
+          const artistIsPublic = artist ? hasPublicArtistPage(artist) : false;
           const confidence = getSongConfidence(song);
 
           return (
@@ -109,7 +140,7 @@ const leadSongMethodology = leadSong ? getSongMethodology(leadSong) : undefined;
                 <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
                 <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
                 <p class="artist-card-meta">
-                  By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
+                  By {artist && artistIsPublic ? <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a> : artistName}
                 </p>
                 <p class="artist-card-meta">
                   Modeled midpoint: {formatRevenueMidpoint(revenueScore)}
@@ -128,7 +159,7 @@ const leadSongMethodology = leadSong ? getSongMethodology(leadSong) : undefined;
       <h2 id="methodology-title">Modeled ranges, not royalty statements</h2>
       <p>
         {leadSongMethodology?.summary ??
-          "The site models annual song behavior using available ownership, split, and replay context."}
+          "Annual estimates use available ownership, split, and replay context."}
       </p>
       <ul class="meta-list">
         <li>Every estimate is a directional annual range.</li>

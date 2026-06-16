@@ -60,9 +60,9 @@ const entries = rankedAlbums.filter((entry) => entry.revenueRange).slice(0, 25);
             <p class="eyebrow">Album</p>
             <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
             <p class="confidence-note">{getConfidenceSummary(confidence)} <a href={`${baseUrl}insights/methodology/`}>Why?</a></p>
-            <h3><a href={`${baseUrl}album/${album.slug}/`}>{album.title}</a></h3>
+            <h3>{album.title}</h3>
             <p class="artist-card-meta">
-              By <a href={`${baseUrl}artist/${album.artistSlug}/`}>{album.artistName}</a>
+              By {album.artistName}
             </p>
             <p class="artist-card-meta">
               {[album.releaseDate ?? album.year, album.trackCount ? `${album.trackCount} tracks` : "", `${album.trackedSongCount} tracked songs`]

@@ -50,7 +50,7 @@ export function getSongReviewReferences(song: Song) {
 
 export function getArtistReviewReferences(artist: Artist, topSongs: Song[]) {
   const articleReferences = artistArticles[artist.slug]?.references ?? [];
-  return uniqueReferences([...articleReferences, ...getArtistReferenceLinks(topSongs)]);
+  return uniqueReferences([...articleReferences, ...getArtistReferenceLinks(artist, topSongs)]);
 }
 
 export function isSongReviewReady(song: Song) {

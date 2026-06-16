@@ -1,14 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getAlbumSlug, getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, songs } from "../lib/catalog";
+import { artists, getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, songs, type Artist } from "../lib/catalog";
 import { getLatestGitDate } from "../lib/freshness";
+import { isArtistReviewReady, isSongReviewReady } from "../lib/reviewReady";
 import { getCatalogUpdates } from "../lib/updates";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const artistOptions = artists.map((artist) => ({ slug: artist.slug, name: artist.name }));
-const decades = [...new Set(songs.map((song) => (song.year ? `${Math.floor(song.year / 10) * 10}s` : null)).filter(Boolean))].sort();
+const hasPublicArtistPage = (artist: Artist) => {
+  const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
+  return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
+};
+const reviewedSongs = songs.filter(isSongReviewReady);
+const reviewedArtistSlugs = new Set(reviewedSongs.map((song) => song.artist));
+const artistOptions = artists
+  .filter((artist) => reviewedArtistSlugs.has(artist.slug))
+  .map((artist) => ({ slug: artist.slug, name: artist.name }));
+const decades = [...new Set(reviewedSongs.map((song) => (song.year ? `${Math.floor(song.year / 10) * 10}s` : null)).filter(Boolean))].sort();
 const recentUpdates = getCatalogUpdates(20);
 
 function firstUpdateDateBySlug(slugLists: string[][]) {
@@ -29,7 +38,7 @@ const newSongDates = firstUpdateDateBySlug(recentUpdates.map((entry) => entry.ad
 const updatedSongDates = firstUpdateDateBySlug(
   recentUpdates.map((entry) => entry.songSlugs.filter((slug) => !entry.addedSongSlugs.includes(slug)))
 );
-const songBySlug = new Map(songs.map((song) => [song.slug, song]));
+const songBySlug = new Map(reviewedSongs.map((song) => [song.slug, song]));
 const latestNewSongs = [...new Set(recentUpdates.flatMap((entry) => entry.addedSongSlugs))]
   .map((slug) => songBySlug.get(slug))
   .filter(Boolean)
@@ -44,19 +53,19 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
 
 <BaseLayout
   title="Songs | How Much Music"
-  description="Browse all songs tracked on How Much Music."
+  description="Browse reviewed song earnings pages."
   noindex
 >
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Songs</p>
-      <h1>All songs in the catalog</h1>
-      <p>Browse the full song index and jump into earnings-focused song pages.</p>
+      <h1>Reviewed songs in the catalog</h1>
+      <p>Browse song pages with article-specific context, visible references, and methodology notes.</p>
       <p><a href={`${baseUrl}insights/methodology/`}>Confidence badges explain how complete each song estimate is.</a></p>
     </div>
     <div class="hero-panel" aria-label="Song count">
-      <strong>{songs.length}</strong>
-      <span>songs in How Much Music</span>
+      <strong>{reviewedSongs.length}</strong>
+      <span>reviewed songs in How Much Music</span>
     </div>
   </section>
 
@@ -160,12 +169,13 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
       </label>
     </div>
     <div class="active-filters" id="song-active-filters"></div>
-    <p class="results-note" id="song-results-note">Showing {songs.length} songs</p>
+    <p class="results-note" id="song-results-note">Showing {reviewedSongs.length} reviewed songs</p>
     <div class="card-grid" id="song-card-grid">
-      {songs.map((song) => {
+      {reviewedSongs.map((song) => {
         const artist = getArtist(song.artist);
         const artistName = artist?.name ?? song.artist;
         const artistVisual = artist ? getArtistVisual(artist) : undefined;
+        const artistIsPublic = artist ? hasPublicArtistPage(artist) : false;
         const decade = song.year ? `${Math.floor(song.year / 10) * 10}s` : "";
         const confidence = getSongConfidence(song);
         const revenueMidpoint = song.normalizedRevenue?.artistSide?.midpoint ?? 0;
@@ -212,13 +222,11 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
                 <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
               </h3>
               <p class="artist-card-meta">
-                By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
+                By {artist && artistIsPublic ? <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a> : artistName}
               </p>
               {(song.album || song.year) && (
                 <p class="artist-card-meta">
-                  {song.album && (
-                    <a href={`${baseUrl}album/${getAlbumSlug(song.artist, song.album)}/`}>{song.album}</a>
-                  )}
+                  {song.album}
                   {song.album && song.year && " · "}
                   {song.year}
                 </p>

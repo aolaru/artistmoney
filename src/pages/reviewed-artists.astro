@@ -46,8 +46,8 @@ const reviewedArtists = rankedArtists
       <p class="eyebrow">Reviewed Artists</p>
       <h1>Start with the strongest artist pages.</h1>
       <p>
-        These artist pages pass the review-ready gate: page-specific editorial notes, structured
-        earnings fields, visible references, ownership context, and self-hosted artist images.
+        These artist pages have page-specific editorial notes, structured earnings fields, visible
+        references, ownership context, and self-hosted artist images.
       </p>
       <p>
         Looking for songs instead? <a href={`${baseUrl}reviewed-songs/`}>Open reviewed songs</a>.
@@ -56,6 +56,31 @@ const reviewedArtists = rankedArtists
     <div class="hero-panel" aria-label="Reviewed artist count">
       <strong>{reviewedArtists.length}</strong>
       <span>review-ready artist pages</span>
+    </div>
+  </section>
+
+  <section class="editorial-basis-card" aria-labelledby="reviewed-artists-guide-title">
+    <div class="editorial-basis-heading">
+      <p class="eyebrow">Reader Guide</p>
+      <h2 id="reviewed-artists-guide-title">What makes these pages stronger</h2>
+      <p>
+        Each linked page has page-specific editorial notes, structured earnings fields, public
+        references, ownership context, and a self-hosted artist image.
+      </p>
+    </div>
+    <div class="editorial-basis-grid">
+      <div class="editorial-basis-item">
+        <strong>Estimate type</strong>
+        <span>Artist-side ranges are modeled annual estimates, not private statements from artists, estates, labels, or publishers.</span>
+      </div>
+      <div class="editorial-basis-item">
+        <strong>Source role</strong>
+        <span>References support public catalog context, top-song identity, or certification lookup context where records exist.</span>
+      </div>
+      <div class="editorial-basis-item">
+        <strong>Confidence role</strong>
+        <span>Confidence labels describe how complete the public context is, not guaranteed payout accuracy.</span>
+      </div>
     </div>
   </section>
 
@@ -68,8 +93,8 @@ const reviewedArtists = rankedArtists
       <a class="home-action-link" href={`${baseUrl}insights/catalog-ownership/`}>Understand ownership</a>
     </div>
     <p class="results-note">
-      Ranked by modeled artist-side annual midpoint. Draft artist pages remain searchable only
-      through full-catalog mode.
+      Ranked by modeled artist-side annual midpoint, with priority given to pages that have stronger
+      source and ownership context.
     </p>
 
     <div class="card-grid reviewed-song-grid">

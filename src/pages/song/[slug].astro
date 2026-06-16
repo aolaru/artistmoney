@@ -4,13 +4,10 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { songArticles } from "../../data/songArticles";
 import { createSongArtwork } from "../../lib/artistArtwork";
 import {
-  getAlbum,
-  getAlbumSlug,
   getArtist,
   getConfidenceSummary,
   getContextSongs,
   getMoreSongsFromAlbum,
-  getRelatedAlbumsForSong,
   getSongConfidence,
   getSongMethodology,
   getSongOwnershipNote,
@@ -20,14 +17,17 @@ import {
 } from "../../lib/catalog";
 import { getSongEditorial } from "../../lib/editorial";
 import { formatFreshnessDate, getLatestGitDate } from "../../lib/freshness";
+import { hasPublicArtistPage } from "../../lib/publicPages";
 import { getSongReviewReferences, isSongReviewReady } from "../../lib/reviewReady";
 import { formatRevenueMidpoint } from "../../lib/revenue";
 
 export function getStaticPaths() {
-  return songs.map((song) => ({
-    params: { slug: song.slug },
-    props: { song }
-  }));
+  return songs
+    .filter(isSongReviewReady)
+    .map((song) => ({
+      params: { slug: song.slug },
+      props: { song }
+    }));
 }
 
 const { song } = Astro.props as { song: Song };
@@ -35,12 +35,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const artist = getArtist(song.artist);
-const album = song.album ? getAlbum(getAlbumSlug(song.artist, song.album)) : undefined;
+const artistHasPublicPage = artist ? hasPublicArtistPage(artist) : false;
 const relatedSongs = (song.related_songs?.length
   ? song.related_songs
       .map((slug) => songs.find((entry) => entry.slug === slug))
       .filter(Boolean)
-  : songs.filter((entry) => entry.artist === song.artist && entry.slug !== song.slug).slice(0, 3)) as Song[];
+  : songs.filter((entry) => entry.artist === song.artist && entry.slug !== song.slug)) as Song[];
+const publicRelatedSongs = relatedSongs.filter(isSongReviewReady).slice(0, 3);
 const article = songArticles[song.slug];
 const hasDetailedEarnings = Boolean(song.earnings || song.ownership);
 const providerArtwork = song.player?.artwork;
@@ -54,14 +55,13 @@ const editorial = getSongEditorial(song, artist);
 const methodology = getSongMethodology(song);
 const confidence = getSongConfidence(song);
 const ownershipNote = getSongOwnershipNote(song, artist);
-const moreFromAlbum = getMoreSongsFromAlbum(song, 4);
-const relatedAlbums = getRelatedAlbumsForSong(song, 3);
-const contextSongs = getContextSongs(song, 4);
+const moreFromAlbum = getMoreSongsFromAlbum(song, 6).filter(isSongReviewReady).slice(0, 4);
+const contextSongs = getContextSongs(song, 8).filter(isSongReviewReady).slice(0, 4);
 const leadRevenue = song.earnings?.artist_or_estate_share ?? song.estimated_revenue;
 const conciseWhy = (song.revenue_drivers ?? article?.whyItStillMakesMoney ?? [...editorial.why]).slice(0, 3);
 const detailedBreakdown = article?.breakdown ?? [...editorial.breakdown];
 const comparisonSongs = rankedSongs
-  .filter((entry) => entry.song.slug !== song.slug)
+  .filter((entry) => entry.song.slug !== song.slug && isSongReviewReady(entry.song))
   .map((entry) => {
     const entrySongArtist = getArtist(entry.song.artist);
     const sameArtist = entry.song.artist === song.artist;
@@ -119,13 +119,13 @@ const artistRank = rankedSongs
   .findIndex((entry) => entry.song.slug === song.slug) + 1;
 const snippetQuestion = `How much money does ${song.title} make?`;
 const snippetLead = hasDetailedEarnings
-  ? `${song.title}${artist ? ` by ${artist.name}` : ""} is modeled at ${leadRevenue} per year on the artist side, with gross track revenue and ownership context separated below.`
-  : `${song.title}${artist ? ` by ${artist.name}` : ""} earns an estimated ${leadRevenue} per year from streaming, licensing, and long-tail catalog replay value.`;
+  ? `${song.title}${artist ? ` by ${artist.name}` : ""} is estimated at ${leadRevenue} per year on the artist side, with gross track revenue and ownership context separated below.`
+  : `${song.title}${artist ? ` by ${artist.name}` : ""} is estimated at ${leadRevenue} per year from streaming, licensing, and long-tail catalog replay value.`;
 const snippetSupport = yearsOld && yearsOld >= 10
   ? `The song still reads as an evergreen catalog asset roughly ${yearsOld} years after release.`
   : artistRank > 0 && artistSongCount > 1
     ? `It currently ranks #${artistRank} among the tracked songs for ${artist?.name ?? song.artist}.`
-    : `This page focuses on the annual earnings range rather than claiming an audited lifetime total.`;
+    : `The estimate focuses on the annual earnings range rather than claiming an audited lifetime total.`;
 const takeaway = hasDetailedEarnings
   ? `${song.title} is one of the stronger modeled catalog earners here because replay demand and ownership context both support a durable annual range.`
   : `${song.title} keeps earning because it still shows up in long-tail streaming, playlist rotation, and broader catalog memory.`;
@@ -133,7 +133,6 @@ const statItems = [
   songRank > 0 ? `Currently ranks around the top ${catalogPercentile}% of tracked songs by modeled artist-side earnings` : undefined,
   song.year ? `Released in ${song.year}${yearsOld ? ` and still shows earnings power roughly ${yearsOld} years later` : ""}` : undefined,
   artistRank > 0 && artistSongCount > 1 ? `Ranks #${artistRank} among ${artistSongCount} tracked songs for ${artist?.name ?? song.artist}` : undefined,
-  album?.trackCount ? `${album.trackCount} tracks on the linked album page` : undefined,
   song.player?.previewUrl ? "Apple Music preview available" : "External listening links available",
   `${confidence.level} confidence estimate`
 ].filter(Boolean);
@@ -187,11 +186,11 @@ const hasPlatformSignals = Boolean(
   platformMetrics?.spotifyTrackId ||
   platformMetrics?.youtubeVideoId
 );
-const generatedEvidenceItems = [
+const fallbackEvidenceItems = [
   song.earnings?.gross_track_revenue && song.earnings?.artist_or_estate_share
-    ? `Internal song data separates gross track revenue (${song.earnings.gross_track_revenue}) from modeled artist-side share (${song.earnings.artist_or_estate_share}).`
+    ? `The available revenue fields separate gross track revenue (${song.earnings.gross_track_revenue}) from estimated artist-side share (${song.earnings.artist_or_estate_share}).`
     : leadRevenue
-      ? `Internal song data lists a modeled annual earnings range of ${leadRevenue}.`
+      ? `The available revenue fields list an estimated annual earnings range of ${leadRevenue}.`
       : undefined,
   song.earnings?.publishing_share || song.earnings?.songwriter_share
     ? `Publishing and songwriter lanes are shown separately where available: ${[
@@ -200,7 +199,7 @@ const generatedEvidenceItems = [
       ].filter(Boolean).join("; ")}.`
     : undefined,
   song.ownership
-    ? `Ownership fields on this page include ${[
+    ? `Ownership context includes ${[
         song.ownership.master_owner ? "master context" : undefined,
         song.ownership.publishing_owner ? "publishing context" : undefined,
         song.ownership.catalog_sale_status ? "catalog-sale status" : undefined
@@ -210,24 +209,24 @@ const generatedEvidenceItems = [
     ? `Catalog metadata links the recording to ${artist.name}${song.album ? `, ${song.album}` : ""}${song.year ? `, ${song.year}` : ""}.`
     : undefined,
   hasPlatformSignals
-    ? "Configured Spotify or YouTube identifiers are used as public platform context when available."
+    ? "Spotify or YouTube identifiers are used as public platform context when available."
     : playerLinks.length > 0
       ? "External listening links are used as public track-identity references."
       : undefined
 ].filter(Boolean);
-const generatedMethodologyNotes = [
+const fallbackMethodologyNotes = [
   "The estimate is a modeled annual range, not a public royalty statement.",
   hasDetailedEarnings
     ? "Gross track revenue, artist-side share, label share, publishing, and songwriter lanes are separated only where the page has structured split data."
     : "When detailed split data is unavailable, the page stays with a single directional earnings range.",
   "Platform, certification, and listening links are context signals; they are not converted directly into royalty totals.",
-  "Per-stream payouts vary by platform, territory, subscription tier, and rights contract, so this page does not claim one universal song rate."
+  "Per-stream payouts vary by platform, territory, subscription tier, and rights contract, so the estimate does not claim one universal song rate."
 ];
-const evidenceItems = article?.evidence?.length ? article.evidence : generatedEvidenceItems;
-const methodologyNotes = article?.methodologyNotes?.length ? article.methodologyNotes : generatedMethodologyNotes;
+const evidenceItems = article?.evidence?.length ? article.evidence : fallbackEvidenceItems;
+const methodologyNotes = article?.methodologyNotes?.length ? article.methodologyNotes : fallbackMethodologyNotes;
 const modelNotes = [
   song.ownership?.notes ? `Ownership note: ${song.ownership.notes}` : undefined,
-  hasPlatformSignals ? "Public platform signals are included where Spotify or YouTube identifiers are configured." : undefined
+  hasPlatformSignals ? "Public platform signals are included when Spotify or YouTube identifiers are available." : undefined
 ].filter(Boolean);
 const isReviewReady = isSongReviewReady(song);
 const allReferenceLinks = getSongReviewReferences(song);
@@ -242,8 +241,8 @@ const intentQuestions = [
     question: `How much did ${song.title} make in total?`,
     answer:
       article?.lifetimeEstimate
-        ? `${song.title} is currently modeled at ${article.lifetimeEstimate} in lifetime earnings, based on the annual range and long-tail replay assumptions shown on this page.`
-        : `${song.title} does not have a public lifetime total, so this page stays focused on modeled annual earnings instead of claiming an audited career total.`
+        ? `${song.title} is currently modeled at ${article.lifetimeEstimate} in lifetime earnings, based on the annual range and long-tail replay assumptions shown here.`
+        : `${song.title} does not have a public lifetime total, so the estimate stays focused on modeled annual earnings instead of claiming an audited career total.`
   },
   {
     question: `How much does ${song.title} make per stream?`,
@@ -255,7 +254,7 @@ const intentQuestions = [
   }
 ];
 const topEarningSongs = rankedSongs
-  .filter((entry) => entry.song.slug !== song.slug)
+  .filter((entry) => entry.song.slug !== song.slug && isSongReviewReady(entry.song))
   .slice(0, 5);
 const lastUpdatedDate = getLatestGitDate([
   `src/data/songs/${song.slug}.json`,
@@ -266,11 +265,11 @@ const lastUpdatedDate = getLatestGitDate([
 ]);
 const lastUpdated = formatFreshnessDate(lastUpdatedDate);
 const trafficMagnetNote = songRank > 0 && catalogPercentile
-  ? `${song.title} sits in the top ${catalogPercentile}% of tracked songs on the site by modeled artist-side earnings.`
-  : `${song.title} is positioned here using the same catalog ranking model applied across the site.`;
+  ? `${song.title} lands in the top ${catalogPercentile}% of tracked songs by estimated artist-side earnings.`
+  : `${song.title} is grouped with songs that show comparable catalog-demand signals.`;
 const songTrustItems = [
   { label: "Modeled artist-side range", value: leadRevenue },
-  { label: "Gross track revenue", value: song.earnings?.gross_track_revenue ?? "Not separated on this page" },
+  { label: "Gross track revenue", value: song.earnings?.gross_track_revenue ?? "Not separated for this estimate" },
   { label: "Ownership context", value: song.ownership ? "Included below" : "High-level only" },
   {
     label: "Platform signals",
@@ -313,7 +312,7 @@ const songSchema = {
     ? {
         "@type": "MusicGroup",
         name: artist.name,
-        url: new URL(`${baseUrl}artist/${artist.slug}/`, Astro.site).toString()
+        ...(artistHasPublicPage ? { url: new URL(`${baseUrl}artist/${artist.slug}/`, Astro.site).toString() } : {})
       }
     : undefined,
   inAlbum: song.album
@@ -326,7 +325,7 @@ const songSchema = {
   description:
     song.meaning_summary ??
     article?.shortAnswer ??
-    `${song.title} song page with earnings estimates and catalog insights on How Much Music.`
+    `${song.title} song page with earnings estimates, ownership context, and catalog insights.`
 };
 const articleSchema = isReviewReady && article
   ? {
@@ -357,7 +356,7 @@ const articleSchema = isReviewReady && article
           ? {
               "@type": "MusicGroup",
               name: artist.name,
-              url: new URL(`${baseUrl}artist/${artist.slug}/`, Astro.site).toString()
+              ...(artistHasPublicPage ? { url: new URL(`${baseUrl}artist/${artist.slug}/`, Astro.site).toString() } : {})
             }
           : {
               "@type": "MusicGroup",
@@ -372,7 +371,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
 
 <BaseLayout
   title={article?.seoTitle ?? `${song.title} | How Much Music`}
-  description={article?.shortAnswer ?? `${song.title} meaning, earnings, and insights on How Much Music.`}
+  description={article?.shortAnswer ?? `${song.title} meaning, earnings, ownership context, and catalog insights.`}
   image={imageSrc}
   imageAlt={artist ? `${song.title} by ${artist.name}` : song.title}
   type="article"
@@ -473,8 +472,8 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
               <p class="eyebrow">Editorial Basis</p>
               <h2 id="song-editorial-basis-title">How this estimate should be read</h2>
               <p>
-                This page is designed to answer one narrow question: how {song.title}
-                {artist ? ` by ${artist.name}` : ""} is modeled as a catalog asset. The estimate is
+                The estimate focuses on one question: how {song.title}
+                {artist ? ` by ${artist.name}` : ""} behaves as a catalog asset. It is
                 presented as a documented range, not as a verified royalty total.
               </p>
             </div>
@@ -497,7 +496,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
           <section class="editorial-basis-card source-snapshot-card" aria-labelledby="source-snapshot-title">
             <div class="editorial-basis-heading">
               <p class="eyebrow">Key Sources</p>
-              <h2 id="source-snapshot-title">Public context used on this page</h2>
+              <h2 id="source-snapshot-title">Public context for the estimate</h2>
               <p>
                 These links support track identity, platform context, release context, or public
                 catalog signals. They do not prove the modeled royalty range by themselves.
@@ -531,7 +530,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
               <div class="comparison-row comparison-current">
                 <div>
                   <a href={`${baseUrl}song/${song.slug}/`}><strong>{song.title}</strong></a>
-                  <div class="comparison-reason">current page</div>
+                  <div class="comparison-reason">selected song</div>
                 </div>
                 <span>{artist?.name ?? song.artist}</span>
                 <strong>{formatRevenueMidpoint(song.normalizedRevenue?.artistSide?.midpoint)}</strong>
@@ -591,7 +590,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
                     </div>
                   </>
                 ) : (
-                  <p>Popularity score not checked yet.</p>
+                  <p>Popularity score not available yet.</p>
                 )}
               </article>
 
@@ -606,14 +605,14 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
                     <p>{platformMetrics.youtubeSource ? youtubeSourceLabels[platformMetrics.youtubeSource] : "Tracked video"}</p>
                   </>
                 ) : (
-                  <p>{platformMetrics?.youtubeVideoId ? "Official video configured; view count will appear after the API refresh runs." : "No tracked video yet."}</p>
+                  <p>{platformMetrics?.youtubeVideoId ? "Official video identified; view count will appear after the next platform refresh." : "No tracked video yet."}</p>
                 )}
               </article>
             </div>
             <p class="results-note">
               {platformMetrics?.lastChecked
                 ? `Last platform refresh: ${platformMetrics.lastChecked}.`
-                : "Platform metrics are ready for refresh once API keys are configured."}
+                : "Platform metrics will update when the next public platform refresh runs."}
             </p>
           </section>
         )}
@@ -665,12 +664,11 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
           <section aria-labelledby="sources-title">
             <h2 id="sources-title">Sources and References</h2>
             <p class="results-note">
-              These points explain the public context used to frame this page. They support a
+              These points explain the public context used to frame the estimate. They support a
               directional model, not an audited royalty statement.
             </p>
             <p class="results-note">
-              Published by How Much Music using the site methodology. If a source or estimate needs
-              correction, use the <a href="/contact/">contact page</a>.
+              If a source or estimate needs correction, use the <a href="/contact/">contact page</a>.
             </p>
             {evidenceItems.length > 0 && (
               <>
@@ -780,13 +778,13 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
                 ))}
               </ul>
               <p>
-                <a href={`${baseUrl}insights/methodology/`}>Read the full site methodology.</a>
+                <a href={`${baseUrl}insights/methodology/`}>Read the full methodology.</a>
               </p>
             </div>
           </div>
         </details>
 
-        {(moreFromAlbum.length > 0 || relatedAlbums.length > 0 || contextSongs.length > 0) && (
+        {(moreFromAlbum.length > 0 || contextSongs.length > 0) && (
           <section aria-labelledby="more-context-title" class="song-context-section">
             <h2 id="more-context-title">More Context</h2>
             <div class="context-grid">
@@ -798,19 +796,6 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
                       <li>
                         <a href={`${baseUrl}song/${albumSong.slug}/`}>{albumSong.title}</a>
                         <span class="meta-inline"> · {albumSong.estimated_revenue}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {relatedAlbums.length > 0 && (
-                <div class="context-card">
-                  <h3>Related Albums</h3>
-                  <ul class="meta-list">
-                    {relatedAlbums.map((relatedAlbum) => (
-                      <li>
-                        <a href={`${baseUrl}album/${relatedAlbum.slug}/`}>{relatedAlbum.title}</a>
-                        <span class="meta-inline"> · {relatedAlbum.artistName}{relatedAlbum.year ? ` · ${relatedAlbum.year}` : ""}</span>
                       </li>
                     ))}
                   </ul>
@@ -842,11 +827,14 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
           <p class="eyebrow">Earnings Snapshot</p>
           <h2>{leadRevenue}</h2>
           <ul class="stat-list">
-            <li><strong>Artist:</strong> {artist ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : song.artist}</li>
+            <li>
+              <strong>Artist:</strong>{" "}
+              {artist && artistHasPublicPage ? <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a> : (artist?.name ?? song.artist)}
+            </li>
             {song.album && (
               <li>
                 <strong>Album:</strong>{" "}
-                {album ? <a href={`${baseUrl}album/${album.slug}/`}>{song.album}</a> : song.album}
+                {song.album}
               </li>
             )}
             {song.year && <li><strong>Released:</strong> {song.year}</li>}
@@ -854,11 +842,11 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
           </ul>
         </div>
 
-        {relatedSongs.length > 0 && (
+        {publicRelatedSongs.length > 0 && (
           <section aria-labelledby="related-title">
             <h2 id="related-title">Related Songs</h2>
             <ul class="meta-list">
-              {relatedSongs.map((relatedSong) => (
+              {publicRelatedSongs.map((relatedSong) => (
                 <li>
                   <a href={`${baseUrl}song/${relatedSong.slug}/`}>{relatedSong.title}</a>
                 </li>

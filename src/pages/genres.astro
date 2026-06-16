@@ -58,7 +58,7 @@ const genres = [...genreMap.entries()]
         <article class="card">
           <div class="artist-card-body">
             <p class="eyebrow">Genre</p>
-            <h3><a href={`${baseUrl}genre/${genre.slug}/`}>{genre.name}</a></h3>
+            <h3>{genre.name}</h3>
             {genre.names.length > 1 && <p class="artist-card-meta">Includes {genre.names.slice(1).join(" · ")}</p>}
             <p>{genre.count} artist{genre.count === 1 ? "" : "s"} in the catalog</p>
           </div>

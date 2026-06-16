@@ -1,4 +1,4 @@
-import type { Song } from "./catalog";
+import type { Artist, Song } from "./catalog";
 
 export type ReferenceLink = {
   label: string;
@@ -46,8 +46,8 @@ export function getSongReferenceLinks(song: Song): ReferenceLink[] {
       url: `https://www.youtube.com/watch?v=${song.platformMetrics.youtubeVideoId}`,
       category: "Platform identity",
       note: song.platformMetrics.youtubeSource
-        ? `Configured as ${song.platformMetrics.youtubeSource.replaceAll("_", " ")} in the platform signal dataset.`
-        : "Configured public YouTube reference for this song."
+        ? `Listed as ${song.platformMetrics.youtubeSource.replaceAll("_", " ")} in the public platform context.`
+        : "Public YouTube reference for this song."
     });
   }
 
@@ -66,7 +66,7 @@ export function getSongReferenceLinks(song: Song): ReferenceLink[] {
       url: links.spotify,
       category: "Platform identity",
       note: song.platformMetrics?.spotifyTrackId
-        ? "Linked to the configured Spotify track signal."
+        ? "Linked to the public Spotify track reference."
         : "Used as a public Spotify lookup reference for track identity."
     });
   }
@@ -83,14 +83,26 @@ export function getSongReferenceLinks(song: Song): ReferenceLink[] {
   return dedupeLinks(references.filter((link) => link.url)).map(withReferenceCategory);
 }
 
-export function getArtistReferenceLinks(topSongs: Song[], limit = 6): ReferenceLink[] {
+function getRiaaArtistLookupUrl(artist: Artist) {
+  return `https://www.riaa.com/gold-platinum/?ar=${encodeURIComponent(artist.name)}&tab_active=default-award`;
+}
+
+export function getArtistReferenceLinks(artist: Artist, topSongs: Song[], limit = 6): ReferenceLink[] {
   return dedupeLinks(
-    topSongs.flatMap((song) =>
-      getSongReferenceLinks(song).slice(0, 2).map((link) => ({
-        ...link,
-        category: link.category ?? "Top-song context",
-        label: `${song.title}: ${link.label}`
-      }))
-    )
+    [
+      {
+        label: "RIAA artist certification lookup",
+        url: getRiaaArtistLookupUrl(artist),
+        category: "Certification context",
+        note: "Official RIAA lookup used as public certification-scale context where records exist; not used as royalty proof."
+      },
+      ...topSongs.flatMap((song) =>
+        getSongReferenceLinks(song).slice(0, 2).map((link) => ({
+          ...link,
+          category: link.category ?? "Top-song context",
+          label: `${song.title}: ${link.label}`
+        }))
+      )
+    ]
   ).slice(0, limit).map(withReferenceCategory);
 }

@@ -1,12 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, rankedSongs } from "../lib/catalog";
+import { getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, rankedSongs, songs, type Artist } from "../lib/catalog";
+import { isArtistReviewReady, isSongReviewReady } from "../lib/reviewReady";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const entries = rankedSongs.filter((entry) => entry.revenueRange).slice(0, 30);
+const hasPublicArtistPage = (artist: Artist) => {
+  const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
+  return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
+};
+const entries = rankedSongs.filter((entry) => entry.revenueRange && isSongReviewReady(entry.song)).slice(0, 30);
 ---
 
 <BaseLayout
@@ -42,6 +47,7 @@ const entries = rankedSongs.filter((entry) => entry.revenueRange).slice(0, 30);
         const artist = getArtist(song.artist);
         const artistName = artist?.name ?? song.artist;
         const artistVisual = artist ? getArtistVisual(artist) : undefined;
+        const artistIsPublic = artist ? hasPublicArtistPage(artist) : false;
         const confidence = getSongConfidence(song);
 
         return (
@@ -62,7 +68,7 @@ const entries = rankedSongs.filter((entry) => entry.revenueRange).slice(0, 30);
               <p class="confidence-note">{getConfidenceSummary(confidence)} <a href={`${baseUrl}insights/methodology/`}>Why?</a></p>
               <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
               <p class="artist-card-meta">
-                By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
+                By {artist && artistIsPublic ? <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a> : artistName}
               </p>
               {(song.album || song.year) && (
                 <p class="artist-card-meta">{[song.album, song.year].filter(Boolean).join(" · ")}</p>

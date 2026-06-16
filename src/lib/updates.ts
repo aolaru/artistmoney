@@ -124,7 +124,7 @@ export function getCatalogUpdates(limit = 24): CatalogUpdate[] {
         ].filter(Boolean) as string[];
 
         if (sourceType === "autopilot") {
-          highlights.push("autopilot refresh");
+          highlights.push("catalog context refreshed");
         } else {
           highlights.push("manual editorial release");
         }

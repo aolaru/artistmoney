@@ -4,24 +4,7 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { artists, getArtistVisual } from "../../lib/catalog";
 
 export function getStaticPaths() {
-  const genreMap = new Map<string, string[]>();
-
-  artists.forEach((artist) => {
-    if (!artist.genre) return;
-    const slug = artist.genre
-      .toLowerCase()
-      .replace(/&/g, "and")
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
-    const existing = genreMap.get(slug) ?? [];
-    if (!existing.includes(artist.genre)) existing.push(artist.genre);
-    genreMap.set(slug, existing);
-  });
-
-  return [...genreMap.entries()].map(([slug, names]) => ({
-    params: { slug },
-    props: { genre: { slug, names } }
-  }));
+  return [];
 }
 
 const { genre } = Astro.props as { genre: { slug: string; names: string[] } };

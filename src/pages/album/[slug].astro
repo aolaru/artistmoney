@@ -17,10 +17,7 @@ import {
 import { formatRevenueMidpoint } from "../../lib/revenue";
 
 export function getStaticPaths() {
-  return albums.map((album) => ({
-    params: { slug: album.slug },
-    props: { album }
-  }));
+  return [];
 }
 
 const { album } = Astro.props as { album: Album };
@@ -48,12 +45,12 @@ const leadRevenue = album.estimatedRevenue ?? "Tracked revenue still partial";
 const snippetQuestion = `How much money does ${album.title} make?`;
 const snippetLead = album.estimatedRevenue
   ? `${album.title} is modeled at ${album.estimatedRevenue} per year across the songs currently tracked from the release, not as a full-album royalty statement.`
-  : `${album.title} has partial tracked revenue on the site, but the page is still mainly useful for album context, linked songs, and catalog position.`;
+  : `${album.title} has partial tracked revenue, but the page is still mainly useful for album context, linked songs, and catalog position.`;
 const snippetSupport = album.fullTracklist?.length
-  ? `This page has a matched full tracklist, which makes the album context stronger than a songs-only view.`
-  : `This page still relies on tracked songs only, so the revenue view is partial even if the album itself is important.`;
+  ? `A matched full tracklist makes the album context stronger than a songs-only view.`
+  : `The revenue view is partial because only selected songs currently have estimates.`;
 const takeaway = album.fullTracklist?.length
-  ? `${album.title} is one of the stronger album pages on the site because the tracked songs sit inside a matched release frame instead of floating without album context.`
+  ? `${album.title} has stronger album context because the tracked songs sit inside a matched release frame instead of floating without album context.`
   : `${album.title} is useful as a catalog page, but the economics are still partial until more songs or a fuller release picture are attached to it.`;
 const statItems = [
   albumRank > 0 ? `Currently ranks around the top ${albumPercentile}% of tracked albums by modeled revenue` : undefined,
@@ -116,7 +113,7 @@ const intentQuestions = [
   },
   {
     question: `Is this full-album revenue or just tracked songs?`,
-    answer: "Album pages on How Much Music model tracked-song revenue and album context. They are not full release-level royalty statements unless every revenue input is explicitly available."
+    answer: "Album estimates focus on tracked-song revenue and album context. They are not full release-level royalty statements unless every revenue input is explicitly available."
   }
 ];
 const topAlbumsByEarnings = rankedAlbums
@@ -161,7 +158,7 @@ const albumSchema = {
 
 <BaseLayout
   title={`${album.title} | How Much Music`}
-  description={`${album.title} album page with linked songs, tracked revenue, and catalog context on How Much Music.`}
+  description={`${album.title} album page with linked songs, tracked revenue, and catalog context.`}
   image={imageSrc}
   imageAlt={`${album.title} by ${album.artistName}`}
   type="article"
@@ -182,7 +179,7 @@ const albumSchema = {
         <p class="song-kicker">{[album.artistName, album.releaseDate ?? album.year, album.label].filter(Boolean).join(" · ")}</p>
         <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
         <p class="confidence-note">
-          This page models tracked-song album economics, not a full release-level royalty statement.
+          This estimate covers tracked-song album economics, not a full release-level royalty statement.
           {" "}
           <a href={`${baseUrl}insights/methodology/`}>Why?</a>
         </p>
@@ -229,8 +226,8 @@ const albumSchema = {
           </ul>
           <p class="results-note">
             {albumRank > 0 && albumPercentile
-              ? `${album.title} sits in the top ${albumPercentile}% of tracked albums on the site by modeled revenue.`
-              : `${album.title} is ranked using the same album model applied across the site.`}
+              ? `${album.title} lands in the top ${albumPercentile}% of tracked albums by estimated revenue.`
+              : `${album.title} is grouped with albums that show comparable release and catalog signals.`}
           </p>
           {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
         </section>
@@ -377,7 +374,7 @@ const albumSchema = {
                 </span>
                 <span>
                   {album.trackCount ? `${album.trackCount} tracks on the matched edition` : "Track count is still partial"} · {" "}
-                  {album.trackedSongCount} tracked song{album.trackedSongCount === 1 ? "" : "s"} on the site
+                  {album.trackedSongCount} tracked song{album.trackedSongCount === 1 ? "" : "s"} covered
                 </span>
                 {album.editionNote && <span>Matched edition: {album.editionNote}</span>}
               </article>
@@ -396,7 +393,7 @@ const albumSchema = {
               <h2 id="album-tracklisting-title">Full Tracklist</h2>
               <p class="results-note">
                 {album.fullTracklist?.length
-                  ? "This full tracklist comes from the matched release edition used for this page."
+                    ? "This full tracklist comes from the matched release edition used for the estimate."
                   : "A full tracklist is not available yet for this album."}
               </p>
               <ul class="meta-list">
@@ -413,7 +410,7 @@ const albumSchema = {
             </section>
 
             <section aria-labelledby="tracked-songs-title">
-              <h2 id="tracked-songs-title">Tracked Songs on How Much Music</h2>
+              <h2 id="tracked-songs-title">Tracked Songs</h2>
               <p class="results-note">These are the songs from this album that currently have dedicated earnings pages in the catalog.</p>
               <ul class="meta-list">
                 {album.trackListing.map((song, index) => (
@@ -464,7 +461,7 @@ const albumSchema = {
               Browse all albums: <a href={`${baseUrl}albums/`}>Albums</a>
             </li>
             <li>
-              Methodology: <a href={`${baseUrl}insights/methodology/`}>How Much Music models revenue</a>
+              Methodology: <a href={`${baseUrl}insights/methodology/`}>How revenue is modeled</a>
             </li>
             {album.links?.appleMusic && (
               <li>

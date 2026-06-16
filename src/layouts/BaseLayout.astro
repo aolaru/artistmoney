@@ -13,7 +13,7 @@ interface Props {
 
 const {
   title,
-  description = "How Much Music tracks artist, song, and album pages with modeled music earnings data.",
+  description = "Music earnings estimates with artist, song, album, ownership, and catalog context.",
   image,
   imageAlt = title,
   type = "website",
@@ -240,7 +240,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
               if (suggestions.length === 0) {
                 empty.hidden = false;
                 empty.textContent = query
-                  ? "No reviewed page matched. Open search to include draft catalog records."
+                  ? "No reviewed page matched. Try a shorter artist or song name."
                   : "Start typing to search reviewed pages.";
                 openPanel();
                 return;

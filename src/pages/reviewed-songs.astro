@@ -4,9 +4,11 @@ import {
   getArtist,
   getArtistVisual,
   getSongConfidence,
-  rankedSongs
+  rankedSongs,
+  songs,
+  type Artist
 } from "../lib/catalog";
-import { isSongReviewReady } from "../lib/reviewReady";
+import { isArtistReviewReady, isSongReviewReady } from "../lib/reviewReady";
 import { formatRevenueMidpoint } from "../lib/revenue";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
@@ -14,6 +16,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   : `${import.meta.env.BASE_URL}/`;
 
 const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
+const hasPublicArtistPage = (artist: Artist) => {
+  const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
+  return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
+};
 ---
 
 <BaseLayout
@@ -25,8 +31,8 @@ const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
       <p class="eyebrow">Reviewed Songs</p>
       <h1>Start with the strongest song pages.</h1>
       <p>
-        These song pages pass the review-ready gate: article-specific context, visible references,
-        artist-side and gross revenue framing, ownership notes, and methodology explanations.
+        These song pages have article-specific context, visible references, artist-side and gross
+        revenue framing, ownership notes, and methodology explanations.
       </p>
       <p>
         Looking for artist pages? <a href={`${baseUrl}reviewed-artists/`}>Open reviewed artists</a>.
@@ -35,6 +41,31 @@ const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
     <div class="hero-panel" aria-label="Reviewed song count">
       <strong>{reviewedSongs.length}</strong>
       <span>review-ready song pages</span>
+    </div>
+  </section>
+
+  <section class="editorial-basis-card" aria-labelledby="reviewed-songs-guide-title">
+    <div class="editorial-basis-heading">
+      <p class="eyebrow">Reader Guide</p>
+      <h2 id="reviewed-songs-guide-title">What makes these pages stronger</h2>
+      <p>
+        Each linked page has article-specific context, ownership framing, visible source links, and
+        a methodology note.
+      </p>
+    </div>
+    <div class="editorial-basis-grid">
+      <div class="editorial-basis-item">
+        <strong>Estimate type</strong>
+        <span>Annual ranges are modeled and directional, not audited lifetime royalty totals.</span>
+      </div>
+      <div class="editorial-basis-item">
+        <strong>Source role</strong>
+        <span>Public links support identity, release, platform, or ownership context; they do not prove private payouts.</span>
+      </div>
+      <div class="editorial-basis-item">
+        <strong>Confidence role</strong>
+        <span>Confidence labels describe source completeness and split clarity, not certainty.</span>
+      </div>
     </div>
   </section>
 
@@ -50,8 +81,8 @@ const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
       </div>
     </div>
     <p class="results-note">
-      Ranked by modeled artist-side annual midpoint. Full catalog lookup remains available through
-      explicit full-catalog search, but these pages are the best starting point for readers and reviewers.
+      Ranked by modeled artist-side annual midpoint. These reviewed pages are the best starting
+      point for readers and reviewers.
     </p>
 
     <div class="card-grid reviewed-song-grid">
@@ -59,6 +90,7 @@ const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
         const artist = getArtist(song.artist);
         const artistName = artist?.name ?? song.artist;
         const artistVisual = artist ? getArtistVisual(artist) : undefined;
+        const artistIsPublic = artist ? hasPublicArtistPage(artist) : false;
         const confidence = getSongConfidence(song);
 
         return (
@@ -77,7 +109,7 @@ const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
               <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
               <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
               <p class="artist-card-meta">
-                By <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a>
+                By {artist && artistIsPublic ? <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a> : artistName}
               </p>
               <p class="artist-card-meta">
                 Modeled midpoint: {formatRevenueMidpoint(revenueScore)}

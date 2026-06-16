@@ -54,7 +54,7 @@ const latestUpdatedAlbums = [...new Set(recentUpdates.flatMap((entry) =>
 
 <BaseLayout
   title="Albums | How Much Music"
-  description="Browse albums tracked on How Much Music and explore their linked songs."
+  description="Browse albums with linked song earnings pages."
   noindex
 >
   <section class="hero">
@@ -82,9 +82,9 @@ const latestUpdatedAlbums = [...new Set(recentUpdates.flatMap((entry) =>
           <h3>Newly represented albums</h3>
           <div class="update-links">
             {latestNewAlbums.map((album) => (
-              <a href={`${baseUrl}album/${album.slug}/`}>
+              <span class="active-filter-chip">
                 {album.title} <span>{album.artistName}</span>
-              </a>
+              </span>
             ))}
           </div>
         </div>
@@ -94,9 +94,9 @@ const latestUpdatedAlbums = [...new Set(recentUpdates.flatMap((entry) =>
           <h3>Recently updated</h3>
           <div class="update-links">
             {latestUpdatedAlbums.map((album) => (
-              <a href={`${baseUrl}album/${album.slug}/`}>
+              <span class="active-filter-chip">
                 {album.title} <span>{album.artistName}</span>
-              </a>
+              </span>
             ))}
           </div>
         </div>
@@ -191,11 +191,9 @@ const latestUpdatedAlbums = [...new Set(recentUpdates.flatMap((entry) =>
               <p class="eyebrow">Album</p>
               <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
               <p class="confidence-note">{getConfidenceSummary(confidence)} <a href={`${baseUrl}insights/methodology/`}>Why?</a></p>
-              <h3>
-                <a href={`${baseUrl}album/${album.slug}/`}>{album.title}</a>
-              </h3>
+              <h3>{album.title}</h3>
               <p class="artist-card-meta">
-                By <a href={`${baseUrl}artist/${album.artistSlug}/`}>{album.artistName}</a>
+                By {album.artistName}
               </p>
               <p class="artist-card-meta">
                 {[album.releaseDate ?? album.year, album.trackCount ? `${album.trackCount} tracks` : "", `${album.trackedSongCount} tracked song${album.trackedSongCount === 1 ? "" : "s"}`]
@@ -213,7 +211,7 @@ const latestUpdatedAlbums = [...new Set(recentUpdates.flatMap((entry) =>
               </div>
               {album.estimatedRevenue && <p>Tracked song revenue: {album.estimatedRevenue}</p>}
               <p class="artist-card-meta">
-                {album.label ?? "Label metadata still partial"} · {album.fullTracklist?.length ? "Full tracklist on album page" : "Tracklist still partial"}
+                {album.label ?? "Label metadata still partial"} · {album.fullTracklist?.length ? "Full tracklist available" : "Tracklist still partial"}
               </p>
             </div>
           </article>

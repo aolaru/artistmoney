@@ -1,14 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getArtistConfidence, getArtistVisual, getConfidenceSummary, songs } from "../lib/catalog";
+import { artists, getArtistConfidence, getArtistVisual, getConfidenceSummary, songs, type Artist } from "../lib/catalog";
 import { getLatestGitDate } from "../lib/freshness";
+import { isArtistReviewReady } from "../lib/reviewReady";
 import { getCatalogUpdates } from "../lib/updates";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const genres = [...new Set(artists.map((artist) => artist.genre).filter(Boolean))].sort();
-const countries = [...new Set(artists.map((artist) => artist.country).filter(Boolean))].sort();
+const hasPublicArtistPage = (artist: Artist) => {
+  const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
+  return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
+};
+const publicArtists = artists.filter(hasPublicArtistPage);
+const genres = [...new Set(publicArtists.map((artist) => artist.genre).filter(Boolean))].sort();
+const countries = [...new Set(publicArtists.map((artist) => artist.country).filter(Boolean))].sort();
 const recentUpdates = getCatalogUpdates(20);
 
 function firstUpdateDateBySlug(slugLists: string[][]) {
@@ -29,7 +35,7 @@ const newArtistDates = firstUpdateDateBySlug(recentUpdates.map((entry) => entry.
 const updatedArtistDates = firstUpdateDateBySlug(
   recentUpdates.map((entry) => entry.artistSlugs.filter((slug) => !entry.addedArtistSlugs.includes(slug)))
 );
-const artistBySlug = new Map(artists.map((artist) => [artist.slug, artist]));
+const artistBySlug = new Map(publicArtists.map((artist) => [artist.slug, artist]));
 const songBySlug = new Map(songs.map((song) => [song.slug, song]));
 const latestNewArtists = [...new Set(recentUpdates.flatMap((entry) => entry.addedArtistSlugs))]
   .map((slug) => artistBySlug.get(slug))
@@ -50,19 +56,19 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
 
 <BaseLayout
   title="Artists | How Much Music"
-  description="Browse all artists tracked on How Much Music."
+  description="Browse reviewed artist earnings pages."
   noindex
 >
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Artists</p>
-      <h1>All artists in the catalog</h1>
-      <p>Browse the full artist index and jump into income-focused artist pages.</p>
+      <h1>Reviewed artists in the catalog</h1>
+      <p>Browse artist pages with source context, ownership notes, and reviewed public images.</p>
       <p><a href={`${baseUrl}insights/methodology/`}>Confidence badges link back to the site methodology.</a></p>
     </div>
     <div class="hero-panel" aria-label="Artist count">
-      <strong>{artists.length}</strong>
-      <span>artists in How Much Music</span>
+      <strong>{publicArtists.length}</strong>
+      <span>reviewed artists in How Much Music</span>
     </div>
   </section>
 
@@ -155,9 +161,9 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
       </label>
     </div>
     <div class="active-filters" id="artist-active-filters"></div>
-    <p class="results-note" id="artist-results-note">Showing {artists.length} artists</p>
+    <p class="results-note" id="artist-results-note">Showing {publicArtists.length} reviewed artists</p>
     <div class="card-grid" id="artist-card-grid">
-      {artists.map((artist) => (
+      {publicArtists.map((artist) => (
         (() => {
           const artistVisual = getArtistVisual(artist);
           const confidence = getArtistConfidence(artist);

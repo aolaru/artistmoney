@@ -384,7 +384,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "taylor-swift": {
     "seoTitle": "How much money does Taylor Swift make from music?",
-    "shortAnswer": "Taylor Swift is modeled at $28M-$66M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Taylor Swift is modeled at $28M-$66M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Blank Space and Shake It Off remain the clearest catalog anchors for the page.",
       "Pop catalog streaming supports recurring long-tail demand.",
@@ -394,7 +394,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "michael-jackson": {
     "seoTitle": "How much money does Michael Jackson make from music?",
-    "shortAnswer": "Michael Jackson is modeled at $14M-$50M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Michael Jackson is modeled at $14M-$50M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Billie Jean and Thriller remain the clearest catalog anchors for the page.",
       "Pop / R&B catalog streaming supports recurring long-tail demand.",
@@ -404,7 +404,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "beyonce": {
     "seoTitle": "How much money does Beyonce make from music?",
-    "shortAnswer": "Beyonce is modeled at $17M-$44M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Beyonce is modeled at $17M-$44M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Halo and Crazy in Love remain the clearest catalog anchors for the page.",
       "Pop / R&B catalog streaming supports recurring long-tail demand.",
@@ -414,7 +414,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "rihanna": {
     "seoTitle": "How much money does Rihanna make from music?",
-    "shortAnswer": "Rihanna is modeled at $14M-$39M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Rihanna is modeled at $14M-$39M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Diamonds and Umbrella remain the clearest catalog anchors for the page.",
       "Pop / R&B catalog streaming supports recurring long-tail demand.",
@@ -424,7 +424,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "bad-bunny": {
     "seoTitle": "How much money does Bad Bunny make from music?",
-    "shortAnswer": "Bad Bunny is modeled at $11M-$39M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Bad Bunny is modeled at $11M-$39M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Titi Me Pregunto and Me Porto Bonito remain the clearest catalog anchors for the page.",
       "Catalog streaming supports recurring long-tail demand.",
@@ -434,7 +434,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "coldplay": {
     "seoTitle": "How much money does Coldplay make from music?",
-    "shortAnswer": "Coldplay is modeled at $11M-$33M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Coldplay is modeled at $11M-$33M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Fix You and Yellow remain the clearest catalog anchors for the page.",
       "Alternative rock / Pop catalog streaming supports recurring long-tail demand.",
@@ -444,7 +444,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "ed-sheeran": {
     "seoTitle": "How much money does Ed Sheeran make from music?",
-    "shortAnswer": "Ed Sheeran is modeled at $11M-$33M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Ed Sheeran is modeled at $11M-$33M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Shape of You and Castle on the Hill remain the clearest catalog anchors for the page.",
       "Pop catalog streaming supports recurring long-tail demand.",
@@ -454,7 +454,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "drake": {
     "seoTitle": "How much money does Drake make from music?",
-    "shortAnswer": "Drake is modeled at $11M-$28M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Drake is modeled at $11M-$28M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "God's Plan and One Dance remain the clearest catalog anchors for the page.",
       "Hip-hop / Pop catalog streaming supports recurring long-tail demand.",
@@ -464,7 +464,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "disney": {
     "seoTitle": "How much money does Disney make from music?",
-    "shortAnswer": "Disney is modeled at $8.3M-$28M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Disney is modeled at $8.3M-$28M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Let It Go and Circle of Life remain the clearest catalog anchors for the page.",
       "Soundtrack / Family Pop catalog streaming supports recurring long-tail demand.",
@@ -474,7 +474,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "dua-lipa": {
     "seoTitle": "How much money does Dua Lipa make from music?",
-    "shortAnswer": "Dua Lipa is modeled at $11M-$25M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Dua Lipa is modeled at $11M-$25M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Don't Start Now and Levitating remain the clearest catalog anchors for the page.",
       "Pop catalog streaming supports recurring long-tail demand.",
@@ -484,7 +484,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "metallica": {
     "seoTitle": "How much money does Metallica make from music?",
-    "shortAnswer": "Metallica is modeled at $11M-$25M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Metallica is modeled at $11M-$25M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Enter Sandman and Nothing Else Matters remain the clearest catalog anchors for the page.",
       "Heavy Metal catalog streaming supports recurring long-tail demand.",
@@ -494,7 +494,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "kanye-west": {
     "seoTitle": "How much money does Kanye West make from music?",
-    "shortAnswer": "Kanye West is modeled at $5.5M-$28M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Kanye West is modeled at $5.5M-$28M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Stronger and Power remain the clearest catalog anchors for the page.",
       "Hip-hop / Pop catalog streaming supports recurring long-tail demand.",
@@ -504,7 +504,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "lady-gaga": {
     "seoTitle": "How much money does Lady Gaga make from music?",
-    "shortAnswer": "Lady Gaga is modeled at $8.3M-$25M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Lady Gaga is modeled at $8.3M-$25M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Bad Romance and Poker Face remain the clearest catalog anchors for the page.",
       "Pop / Dance-pop catalog streaming supports recurring long-tail demand.",
@@ -514,7 +514,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "queen": {
     "seoTitle": "How much money does Queen make from music?",
-    "shortAnswer": "Queen is modeled at $9.9M-$23M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Queen is modeled at $9.9M-$23M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Bohemian Rhapsody and Don't Stop Me Now remain the clearest catalog anchors for the page.",
       "Classic Rock / Pop catalog streaming supports recurring long-tail demand.",
@@ -524,7 +524,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "madonna": {
     "seoTitle": "How much money does Madonna make from music?",
-    "shortAnswer": "Madonna is modeled at $6.6M-$25M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Madonna is modeled at $6.6M-$25M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Like a Prayer and Vogue remain the clearest catalog anchors for the page.",
       "Pop / Dance-pop catalog streaming supports recurring long-tail demand.",
@@ -534,7 +534,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "elton-john": {
     "seoTitle": "How much money does Elton John make from music?",
-    "shortAnswer": "Elton John is modeled at $8.3M-$22M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Elton John is modeled at $8.3M-$22M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Rocket Man and Tiny Dancer remain the clearest catalog anchors for the page.",
       "Pop / Rock catalog streaming supports recurring long-tail demand.",
@@ -544,7 +544,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "adele": {
     "seoTitle": "How much money does Adele make from music?",
-    "shortAnswer": "Adele is modeled at $5.5M-$22M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Adele is modeled at $5.5M-$22M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Someone Like You and Hello remain the clearest catalog anchors for the page.",
       "Pop / Soul catalog streaming supports recurring long-tail demand.",
@@ -554,7 +554,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "kendrick-lamar": {
     "seoTitle": "How much money does Kendrick Lamar make from music?",
-    "shortAnswer": "Kendrick Lamar is modeled at $5.5M-$18M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Kendrick Lamar is modeled at $5.5M-$18M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "HUMBLE. and DNA. remain the clearest catalog anchors for the page.",
       "Hip-hop catalog streaming supports recurring long-tail demand.",
@@ -564,7 +564,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "eminem": {
     "seoTitle": "How much money does Eminem make from music?",
-    "shortAnswer": "Eminem is modeled at $5.5M-$17M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Eminem is modeled at $5.5M-$17M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Lose Yourself and Stan remain the clearest catalog anchors for the page.",
       "Hip-hop catalog streaming supports recurring long-tail demand.",
@@ -574,7 +574,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "prince": {
     "seoTitle": "How much money does Prince make from music?",
-    "shortAnswer": "Prince is modeled at $4.4M-$17M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Prince is modeled at $4.4M-$17M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Purple Rain and When Doves Cry remain the clearest catalog anchors for the page.",
       "Pop / Funk catalog streaming supports recurring long-tail demand.",
@@ -584,7 +584,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "bruce-springsteen": {
     "seoTitle": "How much money does Bruce Springsteen make from music?",
-    "shortAnswer": "Bruce Springsteen is modeled at $5M-$15M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Bruce Springsteen is modeled at $5M-$15M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Born in the U.S.A. and Dancing in the Dark remain the clearest catalog anchors for the page.",
       "Rock / Heartland Rock catalog streaming supports recurring long-tail demand.",
@@ -594,7 +594,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "abba": {
     "seoTitle": "How much money does ABBA make from music?",
-    "shortAnswer": "ABBA is modeled at $4.4M-$14M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "ABBA is modeled at $4.4M-$14M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Dancing Queen and Gimme! Gimme! Gimme! (A Man After Midnight) remain the clearest catalog anchors for the page.",
       "Pop catalog streaming supports recurring long-tail demand.",
@@ -604,7 +604,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "ac-dc": {
     "seoTitle": "How much money does AC/DC make from music?",
-    "shortAnswer": "AC/DC is modeled at $4.4M-$14M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "AC/DC is modeled at $4.4M-$14M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Back in Black and You Shook Me All Night Long remain the clearest catalog anchors for the page.",
       "Hard Rock catalog streaming supports recurring long-tail demand.",
@@ -614,7 +614,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "billie-eilish": {
     "seoTitle": "How much money does Billie Eilish make from music?",
-    "shortAnswer": "Billie Eilish is modeled at $4.4M-$14M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Billie Eilish is modeled at $4.4M-$14M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Bad Guy and Happier Than Ever remain the clearest catalog anchors for the page.",
       "Pop catalog streaming supports recurring long-tail demand.",
@@ -624,7 +624,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "fleetwood-mac": {
     "seoTitle": "How much money does Fleetwood Mac make from music?",
-    "shortAnswer": "Fleetwood Mac is modeled at $4.4M-$14M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Fleetwood Mac is modeled at $4.4M-$14M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Dreams and The Chain remain the clearest catalog anchors for the page.",
       "Classic Rock / Pop Rock catalog streaming supports recurring long-tail demand.",
@@ -634,7 +634,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "snoop-dogg": {
     "seoTitle": "How much money does Snoop Dogg make from music?",
-    "shortAnswer": "Snoop Dogg is modeled at $4.4M-$13M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Snoop Dogg is modeled at $4.4M-$13M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Drop It Like It's Hot and Gin and Juice remain the clearest catalog anchors for the page.",
       "Hip-hop catalog streaming supports recurring long-tail demand.",
@@ -644,7 +644,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "the-beatles": {
     "seoTitle": "How much money does The Beatles make from music?",
-    "shortAnswer": "The Beatles is modeled at $4.4M-$11M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "The Beatles is modeled at $4.4M-$11M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Hey Jude and Let It Be remain the clearest catalog anchors for the page.",
       "Rock / Pop catalog streaming supports recurring long-tail demand.",
@@ -654,7 +654,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "garth-brooks": {
     "seoTitle": "How much money does Garth Brooks make from music?",
-    "shortAnswer": "Garth Brooks is modeled at $3.3M-$11M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Garth Brooks is modeled at $3.3M-$11M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Friends in Low Places and The Thunder Rolls remain the clearest catalog anchors for the page.",
       "Catalog streaming supports recurring long-tail demand.",
@@ -664,7 +664,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "radiohead": {
     "seoTitle": "How much money does Radiohead make from music?",
-    "shortAnswer": "Radiohead is modeled at $2.8M-$11M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Radiohead is modeled at $2.8M-$11M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Creep and Karma Police remain the clearest catalog anchors for the page.",
       "Alternative rock catalog streaming supports recurring long-tail demand.",
@@ -674,7 +674,7 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "bee-gees": {
     "seoTitle": "How much money does Bee Gees make from music?",
-    "shortAnswer": "Bee Gees is modeled at $3.3M-$9.9M/year per year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
+    "shortAnswer": "Bee Gees is modeled at $3.3M-$9.9M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
       "Stayin' Alive and How Deep Is Your Love remain the clearest catalog anchors for the page.",
       "Pop / Disco catalog streaming supports recurring long-tail demand.",
