@@ -61,6 +61,9 @@ const hasPublicArtistPage = (artist: Artist) => {
             <button type="submit">Search</button>
           </form>
           <p class="results-note">{allReviewedSongEntries.length} reviewed song pages available.</p>
+          <p class="results-note">
+            Looking for an artist? <a href={`${baseUrl}artists/`}>Browse the artist catalog</a>.
+          </p>
         </article>
         <article class="home-primary-action">
           <p class="eyebrow">2. Reviewed</p>
