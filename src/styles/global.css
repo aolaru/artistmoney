@@ -760,6 +760,11 @@ mark {
   line-height: 1;
 }
 
+.quality-chip-muted {
+  background: var(--surface-strong);
+  color: var(--muted);
+}
+
 .status-chip {
   display: inline-flex;
   align-items: center;

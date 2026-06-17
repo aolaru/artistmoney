@@ -23,7 +23,6 @@ import { formatRevenueMidpoint } from "../../lib/revenue";
 
 export function getStaticPaths() {
   return songs
-    .filter(isSongReviewReady)
     .map((song) => ({
       params: { slug: song.slug },
       props: { song }
@@ -119,8 +118,8 @@ const artistRank = rankedSongs
   .findIndex((entry) => entry.song.slug === song.slug) + 1;
 const snippetQuestion = `How much money does ${song.title} make?`;
 const snippetLead = hasDetailedEarnings
-  ? `${song.title}${artist ? ` by ${artist.name}` : ""} is estimated at ${leadRevenue} per year on the artist side, with gross track revenue and ownership context separated below.`
-  : `${song.title}${artist ? ` by ${artist.name}` : ""} is estimated at ${leadRevenue} per year from streaming, licensing, and long-tail catalog replay value.`;
+  ? `${song.title}${artist ? ` by ${artist.name}` : ""} is estimated at ${leadRevenue} on the artist side, with gross track revenue and ownership context separated below.`
+  : `${song.title}${artist ? ` by ${artist.name}` : ""} is estimated at ${leadRevenue} from streaming, licensing, and long-tail catalog replay value.`;
 const snippetSupport = yearsOld && yearsOld >= 10
   ? `The song still reads as an evergreen catalog asset roughly ${yearsOld} years after release.`
   : artistRank > 0 && artistSongCount > 1

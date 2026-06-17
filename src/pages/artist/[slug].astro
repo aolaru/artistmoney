@@ -24,7 +24,6 @@ import { formatRevenueMidpoint, normalizeRevenue } from "../../lib/revenue";
 
 export function getStaticPaths() {
   return artists
-    .filter(hasPublicArtistPage)
     .map((artist) => ({
       params: { slug: artist.slug },
       props: { artist }
@@ -58,8 +57,8 @@ const yearsActive = activeSinceYear ? new Date().getFullYear() - activeSinceYear
 const leadRevenue = artist.earnings?.artist_or_estate_share ?? artist.estimated_income;
 const snippetQuestion = `How much money does ${artist.name} make?`;
 const snippetLead = hasDetailedEarnings
-  ? `${artist.name} is estimated at ${leadRevenue} per year on the artist side, with gross catalog revenue and ownership context separated below.`
-  : `${artist.name} is estimated at ${leadRevenue} per year from streaming, publishing, licensing, and long-tail catalog demand.`;
+  ? `${artist.name} is estimated at ${leadRevenue} on the artist side, with gross catalog revenue and ownership context separated below.`
+  : `${artist.name} is estimated at ${leadRevenue} from streaming, publishing, licensing, and long-tail catalog demand.`;
 const snippetSupport = yearsActive && yearsActive >= 10
   ? `${artist.name} still reads as an earning catalog roughly ${yearsActive} years after becoming active.`
   : artistRank > 0

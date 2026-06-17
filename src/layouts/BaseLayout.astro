@@ -82,13 +82,13 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
           <img class="brand-logo" src={`${baseUrl}logo.svg`} alt="How Much Music" />
         </a>
         <form class="header-search" data-header-search action={`${baseUrl}search/`} method="get">
-          <label class="sr-only" for="site-search">Search reviewed artists and songs</label>
+          <label class="sr-only" for="site-search">Search artists and songs</label>
           <input
             id="site-search"
             class="header-search-input"
             type="search"
             name="q"
-            placeholder="Search reviewed artists, songs"
+            placeholder="Search artists, songs"
             autocomplete="off"
             spellcheck="false"
             aria-autocomplete="list"
@@ -96,7 +96,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
             aria-expanded="false"
           />
           <div class="header-search-panel" id="header-search-results" hidden>
-            <div class="header-search-empty">Start typing to search reviewed pages.</div>
+            <div class="header-search-empty">Start typing to search catalog pages.</div>
             <ul class="header-search-results" role="listbox"></ul>
             <a class="header-search-all-link" href={`${baseUrl}search/`}>Open search page</a>
           </div>
@@ -240,8 +240,8 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
               if (suggestions.length === 0) {
                 empty.hidden = false;
                 empty.textContent = query
-                  ? "No reviewed page matched. Try a shorter artist or song name."
-                  : "Start typing to search reviewed pages.";
+                  ? "No catalog page matched. Try a shorter artist or song name."
+                  : "Start typing to search catalog pages.";
                 openPanel();
                 return;
               }
@@ -288,7 +288,6 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
               try {
                 const items = await fetchSearchItems();
                 suggestions = items
-                  .filter((item) => item.reviewed)
                   .map((item) => ({ item, score: scoreItem(item, query) }))
                   .filter((entry) => entry.score > 0)
                   .sort((left, right) => right.score - left.score || left.item.title.localeCompare(right.item.title))

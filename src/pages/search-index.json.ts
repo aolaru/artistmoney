@@ -8,29 +8,29 @@ const searchItems = [
     const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
     const reviewed = isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
 
-    return reviewed ? [{
+    return [{
       type: "Artist",
       title: artist.name,
       subtitle: [artist.genre, artist.country].filter(Boolean).join(" · "),
       url: `/artist/${artist.slug}/`,
       searchText: [artist.name, artist.genre, artist.country, artist.active_since].filter(Boolean).join(" "),
       reviewed,
-      status: "Reviewed artist page"
-    }] : [];
+      status: reviewed ? "Reviewed artist page" : "Catalog artist profile"
+    }];
   }),
   ...songs.flatMap((song) => {
     const artist = artists.find((entry) => entry.slug === song.artist);
     const reviewed = isSongReviewReady(song);
 
-    return reviewed ? [{
+    return [{
       type: "Song",
       title: song.title,
       subtitle: [artist?.name ?? song.artist, song.album, song.year].filter(Boolean).join(" · "),
       url: `/song/${song.slug}/`,
       searchText: [song.title, artist?.name ?? song.artist, song.album, song.year].filter(Boolean).join(" "),
       reviewed,
-      status: "Reviewed song page"
-    }] : [];
+      status: reviewed ? "Reviewed song page" : "Catalog song profile"
+    }];
   })
 ].sort((left, right) => left.title.localeCompare(right.title));
 

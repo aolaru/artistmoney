@@ -44,7 +44,7 @@ const yearsOld = album.year ? new Date().getFullYear() - album.year : undefined;
 const leadRevenue = album.estimatedRevenue ?? "Tracked revenue still partial";
 const snippetQuestion = `How much money does ${album.title} make?`;
 const snippetLead = album.estimatedRevenue
-  ? `${album.title} is modeled at ${album.estimatedRevenue} per year across the songs currently tracked from the release, not as a full-album royalty statement.`
+  ? `${album.title} is modeled at ${album.estimatedRevenue} across the songs currently tracked from the release, not as a full-album royalty statement.`
   : `${album.title} has partial tracked revenue, but the page is still mainly useful for album context, linked songs, and catalog position.`;
 const snippetSupport = album.fullTracklist?.length
   ? `A matched full tracklist makes the album context stronger than a songs-only view.`
