@@ -39,9 +39,16 @@ const hasPublicArtistPage = (artist: Artist) => {
         Looking for artist pages? <a href={`${baseUrl}reviewed-artists/`}>Open reviewed artists</a>.
       </p>
     </div>
-    <div class="hero-panel" aria-label="Reviewed song count">
-      <strong>{reviewedSongs.length}</strong>
-      <span>reviewed song pages</span>
+    <div class="hero-panel" aria-label="Reviewed song summary">
+      <p class="eyebrow">Reviewed Set</p>
+      <a class="hero-stat-pill hero-stat-pill-primary" href="#reviewed-song-list-title">
+        <strong>{reviewedSongs.length}</strong>
+        <span>reviewed song pages</span>
+      </a>
+      <a class="hero-stat-pill" href={`${baseUrl}songs/`}>
+        <strong>All</strong>
+        <span>browse song catalog</span>
+      </a>
     </div>
   </section>
 

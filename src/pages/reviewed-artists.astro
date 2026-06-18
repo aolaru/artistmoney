@@ -34,7 +34,7 @@ const reviewedArtists = rankedArtists
 
 <BaseLayout
   title="Reviewed Artists | How Much Music"
-  description="Reviewed artist earnings pages with source context, ownership notes, and methodology-backed annual estimates."
+  description="Reviewed artist earnings pages with visible references, ownership notes, and methodology-backed annual estimates."
 >
   <Breadcrumbs items={[
     { label: "Home", href: baseUrl },
@@ -53,9 +53,16 @@ const reviewedArtists = rankedArtists
         Looking for songs instead? <a href={`${baseUrl}reviewed-songs/`}>Open reviewed songs</a>.
       </p>
     </div>
-    <div class="hero-panel" aria-label="Reviewed artist count">
-      <strong>{reviewedArtists.length}</strong>
-      <span>review-ready artist pages</span>
+    <div class="hero-panel" aria-label="Reviewed artist summary">
+      <p class="eyebrow">Reviewed Set</p>
+      <a class="hero-stat-pill hero-stat-pill-primary" href="#reviewed-artist-list-title">
+        <strong>{reviewedArtists.length}</strong>
+        <span>reviewed artist pages</span>
+      </a>
+      <a class="hero-stat-pill" href={`${baseUrl}artists/`}>
+        <strong>All</strong>
+        <span>browse artist catalog</span>
+      </a>
     </div>
   </section>
 

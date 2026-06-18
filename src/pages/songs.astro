@@ -64,10 +64,16 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
       <p>Browse song earnings pages. Reviewed entries include page-specific context, visible references, and methodology notes; the full catalog remains available for discovery.</p>
       <p><a href={`${baseUrl}reviewed-songs/`}>Open reviewed songs only</a> or <a href={`${baseUrl}insights/methodology/`}>read the methodology</a>.</p>
     </div>
-    <div class="hero-panel" aria-label="Song count">
-      <strong>{songs.length}</strong>
-      <span>song pages</span>
-      <span>{reviewedSongCount} reviewed</span>
+    <div class="hero-panel" aria-label="Song catalog summary">
+      <p class="eyebrow">Catalog Snapshot</p>
+      <a class="hero-stat-pill hero-stat-pill-primary" href="#all-songs-title">
+        <strong>{songs.length}</strong>
+        <span>song pages</span>
+      </a>
+      <a class="hero-stat-pill" href={`${baseUrl}reviewed-songs/`}>
+        <strong>{reviewedSongCount}</strong>
+        <span>reviewed songs</span>
+      </a>
     </div>
   </section>
 

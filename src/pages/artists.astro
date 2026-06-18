@@ -66,10 +66,16 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
       <p>Browse artist earnings pages. Reviewed entries have stronger notes, ownership context, and public images; the full catalog remains available for discovery.</p>
       <p><a href={`${baseUrl}reviewed-artists/`}>Open reviewed artists only</a> or <a href={`${baseUrl}insights/methodology/`}>read the methodology</a>.</p>
     </div>
-    <div class="hero-panel" aria-label="Artist count">
-      <strong>{artists.length}</strong>
-      <span>artist pages</span>
-      <span>{reviewedArtistCount} reviewed</span>
+    <div class="hero-panel" aria-label="Artist catalog summary">
+      <p class="eyebrow">Catalog Snapshot</p>
+      <a class="hero-stat-pill hero-stat-pill-primary" href="#all-artists-title">
+        <strong>{artists.length}</strong>
+        <span>artist pages</span>
+      </a>
+      <a class="hero-stat-pill" href={`${baseUrl}reviewed-artists/`}>
+        <strong>{reviewedArtistCount}</strong>
+        <span>reviewed artists</span>
+      </a>
     </div>
   </section>
 

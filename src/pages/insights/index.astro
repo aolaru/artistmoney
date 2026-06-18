@@ -52,9 +52,16 @@ const explainers = [
         catalogs stay commercially alive for decades.
       </p>
     </div>
-    <div class="hero-panel" aria-label="Explainer count">
-      <strong>{explainers.length}</strong>
-      <span>editorial explainers</span>
+    <div class="hero-panel" aria-label="Insight summary">
+      <p class="eyebrow">Reader Path</p>
+      <a class="hero-stat-pill hero-stat-pill-primary" href="#insights-directory-title">
+        <strong>{explainers.length}</strong>
+        <span>editorial explainers</span>
+      </a>
+      <a class="hero-stat-pill" href={`${baseUrl}insights/methodology/`}>
+        <strong>Start</strong>
+        <span>with methodology</span>
+      </a>
     </div>
   </section>
 
