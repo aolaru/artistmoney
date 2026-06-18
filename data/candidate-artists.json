@@ -1799,7 +1799,7 @@
     "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Nine Inch Nails",
       "slug": "nine-inch-nails",
@@ -1855,7 +1855,8 @@
           "closer"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": true,
