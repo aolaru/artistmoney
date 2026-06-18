@@ -10,6 +10,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section>
     <p class="eyebrow">Explainer</p>
     <h1>How streaming payouts work</h1>
+    <p class="page-updated">Updated June 18, 2026</p>
     <p>
       There is no single universal payout per stream. Services pool subscription and ad revenue,
       keep their platform share, then allocate the rest through rights holders based on territory,
@@ -17,7 +18,24 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </p>
   </section>
 
-  <section>
+  <section class="quick-answer-card" aria-labelledby="streaming-quick-answer-title">
+    <p class="eyebrow">Quick Answer</p>
+    <h2 id="streaming-quick-answer-title">Streams feed revenue pools; contracts decide who keeps what.</h2>
+    <p>
+      A song’s public play count can help explain demand, but it does not reveal the listener mix,
+      territory mix, platform revenue pool, label deal, publishing split, or recoupment status.
+    </p>
+  </section>
+
+  <nav class="page-jump-list" aria-label="Streaming payout sections">
+    <a href="#streaming-matters">What matters</a>
+    <a href="#streaming-rate">No fixed rate</a>
+    <a href="#streaming-path">Payout path</a>
+    <a href="#streaming-ranges">Why ranges</a>
+    <a href="#streaming-song-pages">Use on song pages</a>
+  </nav>
+
+  <section id="streaming-matters">
     <h2>What matters most</h2>
     <ul class="meta-list">
       <li>Premium streams usually monetize better than ad-supported streams.</li>
@@ -27,7 +45,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </ul>
   </section>
 
-  <section>
+  <section id="streaming-rate">
     <h2>Why there is no fixed per-stream rate</h2>
     <p>
       A stream is an allocation event, not a fixed coin drop. Services collect money from
@@ -41,7 +59,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </p>
   </section>
 
-  <section>
+  <section id="streaming-path">
     <h2>The payout path in plain English</h2>
     <ul class="meta-list">
       <li><strong>Listener activity:</strong> Plays happen across paid subscriptions, ad-supported sessions, videos, and territory-specific products.</li>
@@ -52,7 +70,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </ul>
   </section>
 
-  <section>
+  <section class="example-card" aria-labelledby="streaming-example-title">
+    <p class="eyebrow">Example</p>
+    <h2 id="streaming-example-title">Why a stream count alone can mislead</h2>
+    <p>
+      One million paid-subscription streams in a high-revenue market and one million ad-supported
+      streams in a lower-yield market can produce different rights-holder pools before any artist,
+      label, writer, or publisher split is applied.
+    </p>
+  </section>
+
+  <section id="streaming-ranges">
     <h2>Why ranges are more useful</h2>
     <p>
       A precise public payout figure is usually not available. The defensible approach is to model a
@@ -65,7 +93,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </p>
   </section>
 
-  <section>
+  <section id="streaming-song-pages">
     <h2>How to use this on song pages</h2>
     <ul class="meta-list">
       <li>Read streaming as one revenue lane, not the whole business.</li>
@@ -73,5 +101,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <li>Check whether the page separates gross revenue from artist-side take-home.</li>
       <li>Use platform links as listening context, not audited royalty evidence.</li>
     </ul>
+  </section>
+
+  <section class="related-reading-card" aria-labelledby="streaming-sources-title">
+    <h2 id="streaming-sources-title">Useful background</h2>
+    <p>These references explain streaming revenue context; they do not verify any single estimate on this site.</p>
+    <div class="related-link-row">
+      <a href="https://loudandclear.byspotify.com/">Spotify Loud &amp; Clear</a>
+      <a href="https://www.riaa.com/u-s-sales-database/">RIAA revenue database</a>
+      <a href="https://www.themlc.com/">The Mechanical Licensing Collective</a>
+    </div>
   </section>
 </BaseLayout>

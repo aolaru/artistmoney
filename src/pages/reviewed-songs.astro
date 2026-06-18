@@ -24,15 +24,16 @@ const hasPublicArtistPage = (artist: Artist) => {
 
 <BaseLayout
   title="Reviewed Songs | How Much Music"
-  description="Reviewed song earnings pages with source context, ownership notes, and methodology-backed annual estimates."
+  description="Reviewed song earnings pages with visible references, ownership notes, and methodology-backed annual estimates."
 >
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Reviewed Songs</p>
       <h1>Start with the strongest song pages.</h1>
       <p>
-        These song pages have article-specific context, visible references, artist-side and gross
-        revenue framing, ownership notes, and methodology explanations.
+        These pages are the best first stop for readers: each one has a focused article entry,
+        visible references, ownership notes, and a clear explanation of what the estimate can and
+        cannot show.
       </p>
       <p>
         Looking for artist pages? <a href={`${baseUrl}reviewed-artists/`}>Open reviewed artists</a>.
@@ -40,7 +41,7 @@ const hasPublicArtistPage = (artist: Artist) => {
     </div>
     <div class="hero-panel" aria-label="Reviewed song count">
       <strong>{reviewedSongs.length}</strong>
-      <span>review-ready song pages</span>
+      <span>reviewed song pages</span>
     </div>
   </section>
 
@@ -49,8 +50,8 @@ const hasPublicArtistPage = (artist: Artist) => {
       <p class="eyebrow">Reader Guide</p>
       <h2 id="reviewed-songs-guide-title">What makes these pages stronger</h2>
       <p>
-        Each linked page has article-specific context, ownership framing, visible source links, and
-        a methodology note.
+        Each linked page gives readers more context than a ranking alone: what drives the modeled
+        range, what sources support the page, and where uncertainty remains.
       </p>
     </div>
     <div class="editorial-basis-grid">
@@ -81,8 +82,8 @@ const hasPublicArtistPage = (artist: Artist) => {
       </div>
     </div>
     <p class="results-note">
-      Ranked by modeled artist-side annual midpoint. These reviewed pages are the best starting
-      point for readers and reviewers.
+      Ranked by modeled artist-side annual midpoint. These are the strongest starting points before
+      browsing the full song catalog.
     </p>
 
     <div class="card-grid reviewed-song-grid">

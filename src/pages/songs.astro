@@ -54,14 +54,14 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
 
 <BaseLayout
   title="Songs | How Much Music"
-  description="Browse song earnings pages, including reviewed pages and noindex catalog profiles."
+  description="Browse song earnings pages, with reviewed entries highlighted for stronger notes and clearer estimate limits."
   noindex
 >
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Songs</p>
       <h1>Song catalog</h1>
-      <p>Browse all song pages. Reviewed pages have article-specific context, visible references, and methodology notes; catalog profiles remain available for navigation.</p>
+      <p>Browse song earnings pages. Reviewed entries include page-specific context, visible references, and methodology notes; the full catalog remains available for discovery.</p>
       <p><a href={`${baseUrl}reviewed-songs/`}>Open reviewed songs only</a> or <a href={`${baseUrl}insights/methodology/`}>read the methodology</a>.</p>
     </div>
     <div class="hero-panel" aria-label="Song count">
@@ -71,16 +71,34 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
     </div>
   </section>
 
+  <section class="catalog-path-grid" aria-label="Song browsing options">
+    <a class="catalog-path-card" href={`${baseUrl}reviewed-songs/`}>
+      <span class="eyebrow">Best Start</span>
+      <strong>Reviewed songs</strong>
+      <span>Use these first when source depth matters.</span>
+    </a>
+    <a class="catalog-path-card" href={`${baseUrl}search/?type=song`}>
+      <span class="eyebrow">Find One</span>
+      <strong>Search songs</strong>
+      <span>Jump directly to a title, artist, or album.</span>
+    </a>
+    <a class="catalog-path-card" href="#all-songs-title">
+      <span class="eyebrow">Browse</span>
+      <strong>Full song list</strong>
+      <span>Filter by artist, decade, confidence, or image status.</span>
+    </a>
+  </section>
+
   {(latestNewSongs.length > 0 || latestUpdatedSongs.length > 0) && (
-    <section class="directory-updates" aria-labelledby="song-updates-title">
-      <div>
-        <p class="eyebrow">Catalog Activity</p>
+    <details class="directory-updates directory-updates-collapsed">
+      <summary>
+        <p class="eyebrow">Recent Updates</p>
         <h2 id="song-updates-title">Recently changed songs</h2>
-        <p class="results-note">Fresh additions and updated song pages from the latest catalog releases.</p>
-      </div>
+        <span>Open recent additions and updated pages.</span>
+      </summary>
       {latestNewSongs.length > 0 && (
         <div class="directory-update-group">
-          <h3>New song pages</h3>
+          <h3>New songs</h3>
           <div class="update-links">
             {latestNewSongs.map((song) => {
               const artist = getArtist(song.artist);
@@ -108,76 +126,80 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
           </div>
         </div>
       )}
-    </section>
+    </details>
   )}
 
   <section aria-labelledby="all-songs-title">
     <h2 id="all-songs-title">Song Directory</h2>
-    <div class="filters" data-filter-root="songs">
-      <label class="filter-field">
-        <span>Search</span>
-        <input id="song-search" type="search" placeholder="Search songs or albums" />
-      </label>
-      <label class="filter-field">
-        <span>Status</span>
-        <select id="song-status">
-          <option value="">All song pages</option>
-          <option value="reviewed">Reviewed only</option>
-          <option value="catalog">Catalog profiles</option>
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Artist</span>
-        <select id="song-artist">
-          <option value="">All artists</option>
-          {artistOptions.map((artist) => (
-            <option value={artist.slug}>{artist.name}</option>
-          ))}
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Decade</span>
-        <select id="song-decade">
-          <option value="">All decades</option>
-          {decades.map((decade) => (
-            <option value={decade}>{decade}</option>
-          ))}
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Confidence</span>
-        <select id="song-confidence">
-          <option value="">All confidence levels</option>
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Sort</span>
-        <select id="song-sort">
-          <option value="earnings">Highest earnings</option>
-          <option value="alpha">Alphabetical</option>
-          <option value="year">Newest release year</option>
-          <option value="confidence">Highest confidence</option>
-          <option value="updated">Last updated</option>
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Split-aware</span>
-        <select id="song-split">
-          <option value="">All pages</option>
-          <option value="yes">Artist-side and gross modeled</option>
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Image</span>
-        <select id="song-image">
-          <option value="">All artwork states</option>
-          <option value="yes">Sourced image only</option>
-        </select>
-      </label>
-    </div>
+    <p class="results-note">Use the search field for a quick lookup, or open filters when you want to narrow the full catalog.</p>
+    <details class="advanced-filters">
+      <summary>Search, filter, and sort songs</summary>
+      <div class="filters" data-filter-root="songs">
+        <label class="filter-field">
+          <span>Search</span>
+          <input id="song-search" type="search" placeholder="Search songs or albums" />
+        </label>
+        <label class="filter-field">
+          <span>Status</span>
+          <select id="song-status">
+            <option value="">All song pages</option>
+            <option value="reviewed">Reviewed only</option>
+            <option value="catalog">Catalog entries</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Artist</span>
+          <select id="song-artist">
+            <option value="">All artists</option>
+            {artistOptions.map((artist) => (
+              <option value={artist.slug}>{artist.name}</option>
+            ))}
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Decade</span>
+          <select id="song-decade">
+            <option value="">All decades</option>
+            {decades.map((decade) => (
+              <option value={decade}>{decade}</option>
+            ))}
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Confidence</span>
+          <select id="song-confidence">
+            <option value="">All confidence levels</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Sort</span>
+          <select id="song-sort">
+            <option value="earnings">Highest earnings</option>
+            <option value="alpha">Alphabetical</option>
+            <option value="year">Newest release year</option>
+            <option value="confidence">Highest confidence</option>
+            <option value="updated">Last updated</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Split detail</span>
+          <select id="song-split">
+            <option value="">All pages</option>
+            <option value="yes">Artist-side and gross ranges shown</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Image</span>
+          <select id="song-image">
+            <option value="">All image states</option>
+            <option value="yes">Sourced image only</option>
+          </select>
+        </label>
+      </div>
+    </details>
     <div class="active-filters" id="song-active-filters"></div>
     <p class="results-note" id="song-results-note">Showing {songs.length} songs</p>
     <div class="card-grid" id="song-card-grid">

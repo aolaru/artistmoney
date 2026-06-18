@@ -21,13 +21,31 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   <section>
     <p class="eyebrow">Methodology</p>
     <h1>How earnings are modeled</h1>
+    <p class="page-updated">Updated June 18, 2026</p>
     <p>
       The estimates use conservative modeled ranges, not audited royalty statements. The goal is to
       make catalog economics legible without pretending to have access to private contracts.
     </p>
   </section>
 
-  <section>
+  <section class="quick-answer-card" aria-labelledby="methodology-quick-answer-title">
+    <p class="eyebrow">Quick Answer</p>
+    <h2 id="methodology-quick-answer-title">The number is a conservative annual range.</h2>
+    <p>
+      A page starts with public context, then separates gross catalog activity from the smaller
+      artist-side or estate-side share when the available information supports that split.
+    </p>
+  </section>
+
+  <nav class="page-jump-list" aria-label="Methodology sections">
+    <a href="#methodology-represents">What estimates represent</a>
+    <a href="#methodology-ready">Ready for readers</a>
+    <a href="#methodology-sources">Source labels</a>
+    <a href="#methodology-rankings">Rankings</a>
+    <a href="#methodology-uncertainty">Uncertainty</a>
+  </nav>
+
+  <section id="methodology-represents">
     <h2>What the estimates represent</h2>
     <ul class="meta-list">
       <li>Artist and song pages use conservative annual earnings ranges as editorial estimates.</li>
@@ -37,7 +55,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     </ul>
   </section>
 
-  <section>
+  <section id="methodology-ready">
     <h2>What makes a page ready for readers</h2>
     <p>
       A reviewed page needs enough structured context to answer the reader's question without
@@ -50,7 +68,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     </ul>
   </section>
 
-  <section>
+  <section id="methodology-sources">
     <h2>How source labels should be read</h2>
     <ul class="meta-list">
       <li><strong>Platform identity</strong> links confirm public song or artist identity on listening platforms.</li>
@@ -61,7 +79,17 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     </ul>
   </section>
 
-  <section>
+  <section class="example-card" aria-labelledby="methodology-example-title">
+    <p class="eyebrow">Example</p>
+    <h2 id="methodology-example-title">Why two popular songs can show different ranges</h2>
+    <p>
+      A newer streaming hit, a seasonal standard, and a song with durable sync licensing potential
+      can all produce different annual value patterns. The model is more useful when it explains
+      those differences instead of flattening every play into one public per-stream number.
+    </p>
+  </section>
+
+  <section id="methodology-rankings">
     <h2>How rankings work</h2>
     <ul class="meta-list">
       <li>Rankings use the midpoint of the displayed revenue range.</li>
@@ -70,7 +98,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     </ul>
   </section>
 
-  <section>
+  <section id="methodology-uncertainty">
     <h2>What still introduces uncertainty</h2>
     <ul class="meta-list">
       <li>Legacy contract terms are rarely public.</li>
@@ -78,5 +106,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
       <li>Streaming mix, geography, and licensing activity change over time.</li>
       <li>Platform-reported play counts do not map cleanly to take-home earnings, so lower directional ranges are favored over maximum-case estimates.</li>
     </ul>
+  </section>
+
+  <section class="related-reading-card" aria-labelledby="methodology-sources-title">
+    <h2 id="methodology-sources-title">Useful background</h2>
+    <p>These links explain parts of the public music-economics context; they do not verify any single estimate on this site.</p>
+    <div class="related-link-row">
+      <a href="https://loudandclear.byspotify.com/">Spotify Loud &amp; Clear</a>
+      <a href="https://www.riaa.com/u-s-sales-database/">RIAA revenue database</a>
+      <a href="https://www.copyright.gov/music-modernization/">U.S. Copyright Office: Music Modernization Act</a>
+    </div>
   </section>
 </BaseLayout>

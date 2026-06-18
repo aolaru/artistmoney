@@ -56,14 +56,14 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
 
 <BaseLayout
   title="Artists | How Much Music"
-  description="Browse artist earnings pages, including reviewed pages and noindex catalog profiles."
+  description="Browse artist earnings pages, with reviewed entries highlighted for stronger notes and clearer estimate limits."
   noindex
 >
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Artists</p>
       <h1>Artist catalog</h1>
-      <p>Browse all artist pages. Reviewed pages have stronger source context, ownership notes, and public images; catalog profiles remain available for navigation.</p>
+      <p>Browse artist earnings pages. Reviewed entries have stronger notes, ownership context, and public images; the full catalog remains available for discovery.</p>
       <p><a href={`${baseUrl}reviewed-artists/`}>Open reviewed artists only</a> or <a href={`${baseUrl}insights/methodology/`}>read the methodology</a>.</p>
     </div>
     <div class="hero-panel" aria-label="Artist count">
@@ -73,16 +73,34 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
     </div>
   </section>
 
+  <section class="catalog-path-grid" aria-label="Artist browsing options">
+    <a class="catalog-path-card" href={`${baseUrl}reviewed-artists/`}>
+      <span class="eyebrow">Best Start</span>
+      <strong>Reviewed artists</strong>
+      <span>Use these first when source depth matters.</span>
+    </a>
+    <a class="catalog-path-card" href={`${baseUrl}search/?type=artist`}>
+      <span class="eyebrow">Find One</span>
+      <strong>Search artists</strong>
+      <span>Jump directly to a name or related song.</span>
+    </a>
+    <a class="catalog-path-card" href="#all-artists-title">
+      <span class="eyebrow">Browse</span>
+      <strong>Full artist list</strong>
+      <span>Filter by genre, country, confidence, or image status.</span>
+    </a>
+  </section>
+
   {(latestNewArtists.length > 0 || latestUpdatedArtists.length > 0) && (
-    <section class="directory-updates" aria-labelledby="artist-updates-title">
-      <div>
-        <p class="eyebrow">Catalog Activity</p>
+    <details class="directory-updates directory-updates-collapsed">
+      <summary>
+        <p class="eyebrow">Recent Updates</p>
         <h2 id="artist-updates-title">Recently changed artists</h2>
-        <p class="results-note">Fresh additions and updated artist pages from the latest catalog releases.</p>
-      </div>
+        <span>Open recent additions and updated pages.</span>
+      </summary>
       {latestNewArtists.length > 0 && (
         <div class="directory-update-group">
-          <h3>New artist pages</h3>
+          <h3>New artists</h3>
           <div class="update-links">
             {latestNewArtists.map((artist) => (
               <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
@@ -100,75 +118,79 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
           </div>
         </div>
       )}
-    </section>
+    </details>
   )}
 
   <section aria-labelledby="all-artists-title">
     <h2 id="all-artists-title">Artist Directory</h2>
-    <div class="filters" data-filter-root="artists">
-      <label class="filter-field">
-        <span>Search</span>
-        <input id="artist-search" type="search" placeholder="Search artists" />
-      </label>
-      <label class="filter-field">
-        <span>Status</span>
-        <select id="artist-status">
-          <option value="">All artist pages</option>
-          <option value="reviewed">Reviewed only</option>
-          <option value="catalog">Catalog profiles</option>
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Genre</span>
-        <select id="artist-genre">
-          <option value="">All genres</option>
-          {genres.map((genre) => (
-            <option value={genre}>{genre}</option>
-          ))}
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Country</span>
-        <select id="artist-country">
-          <option value="">All countries</option>
-          {countries.map((country) => (
-            <option value={country}>{country}</option>
-          ))}
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Confidence</span>
-        <select id="artist-confidence">
-          <option value="">All confidence levels</option>
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Sort</span>
-        <select id="artist-sort">
-          <option value="earnings">Highest earnings</option>
-          <option value="alpha">Alphabetical</option>
-          <option value="confidence">Highest confidence</option>
-          <option value="updated">Last updated</option>
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Split-aware</span>
-        <select id="artist-split">
-          <option value="">All pages</option>
-          <option value="yes">Artist-side vs label-side modeled</option>
-        </select>
-      </label>
-      <label class="filter-field">
-        <span>Image</span>
-        <select id="artist-image">
-          <option value="">All artwork states</option>
-          <option value="yes">Real photo only</option>
-        </select>
-      </label>
-    </div>
+    <p class="results-note">Use the search field for a quick lookup, or open filters when you want to narrow the full catalog.</p>
+    <details class="advanced-filters">
+      <summary>Search, filter, and sort artists</summary>
+      <div class="filters" data-filter-root="artists">
+        <label class="filter-field">
+          <span>Search</span>
+          <input id="artist-search" type="search" placeholder="Search artists" />
+        </label>
+        <label class="filter-field">
+          <span>Status</span>
+          <select id="artist-status">
+            <option value="">All artist pages</option>
+            <option value="reviewed">Reviewed only</option>
+            <option value="catalog">Catalog entries</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Genre</span>
+          <select id="artist-genre">
+            <option value="">All genres</option>
+            {genres.map((genre) => (
+              <option value={genre}>{genre}</option>
+            ))}
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Country</span>
+          <select id="artist-country">
+            <option value="">All countries</option>
+            {countries.map((country) => (
+              <option value={country}>{country}</option>
+            ))}
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Confidence</span>
+          <select id="artist-confidence">
+            <option value="">All confidence levels</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Sort</span>
+          <select id="artist-sort">
+            <option value="earnings">Highest earnings</option>
+            <option value="alpha">Alphabetical</option>
+            <option value="confidence">Highest confidence</option>
+            <option value="updated">Last updated</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Split detail</span>
+          <select id="artist-split">
+            <option value="">All pages</option>
+            <option value="yes">Artist and label shares shown</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>Image</span>
+          <select id="artist-image">
+            <option value="">All image states</option>
+            <option value="yes">Public photo only</option>
+          </select>
+        </label>
+      </div>
+    </details>
     <div class="active-filters" id="artist-active-filters"></div>
     <p class="results-note" id="artist-results-note">Showing {artists.length} artists</p>
     <div class="card-grid" id="artist-card-grid">

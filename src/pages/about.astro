@@ -16,6 +16,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   <section>
     <p class="eyebrow">About</p>
     <h1>About How Much Music</h1>
+    <p class="page-updated">Updated June 18, 2026</p>
     <p>
       How Much Music is an editorial research site about music earnings, catalog ownership, and why
       some songs keep generating value years after release. The site focuses on modeled annual
@@ -25,6 +26,15 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
       The main audience is readers who want a plain-language view of music economics: fans,
       creators, catalog buyers, writers, and people trying to understand how streaming, publishing,
       master ownership, and licensing interact.
+    </p>
+  </section>
+
+  <section class="quick-answer-card" aria-labelledby="about-quick-answer-title">
+    <p class="eyebrow">In Short</p>
+    <h2 id="about-quick-answer-title">The site explains estimates, not private royalty statements.</h2>
+    <p>
+      Every public number should be read as a directional editorial model. When the available
+      public context is thin, pages are kept lower-confidence or left out of the reviewed set.
     </p>
   </section>
 
@@ -39,15 +49,41 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   </section>
 
   <section>
+    <h2>Who Publishes and Reviews Pages</h2>
+    <div class="editorial-basis-grid">
+      <div class="editorial-basis-item">
+        <strong>Publisher</strong>
+        <span>Pages are published and maintained by How Much Music.</span>
+      </div>
+      <div class="editorial-basis-item">
+        <strong>Review approach</strong>
+        <span>Reviewed pages are checked for page-specific context, visible references, and clear estimate limits.</span>
+      </div>
+      <div class="editorial-basis-item">
+        <strong>Corrections</strong>
+        <span>Readers can send source updates, rights concerns, or image attribution issues through the contact page.</span>
+      </div>
+      <div class="editorial-basis-item">
+        <strong>Advertising</strong>
+        <span>Advertising status does not decide which artists, songs, or estimates are included.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <h2>Editorial Standard</h2>
     <p>
       Estimates are written as directional ranges and should be read as editorial models. When a
       page lacks enough ownership or platform detail, it is labeled with lower confidence and may be
-      excluded from search indexing until it has stronger editorial coverage.
+      kept out of the reviewed set until it has stronger editorial coverage.
     </p>
     <p>
       For corrections, source suggestions, or rights concerns, use the contact page.
     </p>
-    <p><a href={`${baseUrl}editorial-policy/`}>Read the editorial policy.</a></p>
+    <div class="related-link-row">
+      <a href={`${baseUrl}editorial-policy/`}>Read the editorial policy</a>
+      <a href={`${baseUrl}contact/`}>Send a correction</a>
+      <a href={`${baseUrl}credits/`}>Review image credits</a>
+    </div>
   </section>
 </BaseLayout>

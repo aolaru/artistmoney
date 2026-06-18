@@ -16,6 +16,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   <section>
     <p class="eyebrow">Editorial Policy</p>
     <h1>How Estimates and Pages Are Reviewed</h1>
+    <p class="page-updated">Updated June 18, 2026</p>
     <p>
       How Much Music publishes modeled estimates about music economics. These estimates do not rely
       on private royalty statements, confidential contracts, distributor dashboards, or complete
@@ -23,7 +24,24 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     </p>
   </section>
 
-  <section>
+  <section class="quick-answer-card" aria-labelledby="policy-quick-answer-title">
+    <p class="eyebrow">Quick Answer</p>
+    <h2 id="policy-quick-answer-title">A reviewed page must be useful without pretending to be an audit.</h2>
+    <p>
+      We look for page-specific context, visible public references, clear estimate limits, and plain
+      language that separates modeled ranges from private royalty data.
+    </p>
+  </section>
+
+  <nav class="page-jump-list" aria-label="Editorial policy sections">
+    <a href="#policy-publish">What we publish</a>
+    <a href="#policy-estimates">Estimate rules</a>
+    <a href="#policy-sources">Sources</a>
+    <a href="#policy-indexing">Publication gate</a>
+    <a href="#policy-corrections">Corrections</a>
+  </nav>
+
+  <section id="policy-publish">
     <h2>What We Publish and Why</h2>
     <div class="editorial-basis-grid">
       <div class="editorial-basis-item">
@@ -57,17 +75,17 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     </div>
   </section>
 
-  <section>
+  <section id="policy-estimates">
     <h2>Estimate Rules</h2>
     <ul class="meta-list">
       <li>Revenue figures are shown as annual ranges rather than exact totals.</li>
       <li>Artist-side estimates are separated from gross catalog or track revenue when ownership context allows it.</li>
       <li>Pages use confidence labels to show whether the estimate has strong, partial, or limited supporting context.</li>
-      <li>Pages with weak original context may be kept available for navigation but excluded from search indexing.</li>
+      <li>Pages with weak original context may stay available for browsing without being promoted as reviewed pages.</li>
     </ul>
   </section>
 
-  <section>
+  <section id="policy-sources">
     <h2>Source Handling</h2>
     <p>
       Editorial review favors public, checkable context: official artist and platform pages, public catalog
@@ -77,13 +95,13 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     </p>
   </section>
 
-  <section>
-    <h2>Publication and Indexing Gate</h2>
+  <section id="policy-indexing">
+    <h2>Publication and Reader Gate</h2>
     <p>
-      Not every catalog profile is treated as an indexable article. Artist and song pages are included
-      in the public sitemap only after they have an editorial article entry with page-specific
-      context. Utility directories, incomplete catalog profiles, update logs, album pages, and broad
-      browsing pages can remain available for navigation while being excluded from search indexing.
+      Not every artist or song entry is treated as a finished article. Artist and song pages are
+      promoted only after they have an editorial article entry with page-specific context. Utility
+      directories, incomplete entries, update logs, album pages, and broad browsing pages can remain
+      available for navigation while the strongest article pages are emphasized for new readers.
     </p>
   </section>
 
@@ -97,7 +115,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     </ul>
   </section>
 
-  <section>
+  <section id="policy-corrections">
     <h2>Corrections</h2>
     <p>
       Corrections are reviewed when a public source shows that a page has outdated ownership
@@ -113,5 +131,14 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
       are selected and updated according to editorial relevance, available context, and catalog
       research value.
     </p>
+  </section>
+
+  <section class="related-reading-card" aria-labelledby="policy-related-title">
+    <h2 id="policy-related-title">Related pages</h2>
+    <div class="related-link-row">
+      <a href={`${baseUrl}about/`}>About the site</a>
+      <a href={`${baseUrl}contact/`}>Send a correction</a>
+      <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
+    </div>
   </section>
 </BaseLayout>

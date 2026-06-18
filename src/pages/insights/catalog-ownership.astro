@@ -10,13 +10,30 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section>
     <p class="eyebrow">Explainer</p>
     <h1>What catalog ownership means</h1>
+    <p class="page-updated">Updated June 18, 2026</p>
     <p>
       The gross revenue earned by a song is not the same as the amount an artist or estate keeps.
       Catalog ownership determines where money lands before it reaches the performer, writer, or heirs.
     </p>
   </section>
 
-  <section>
+  <section class="quick-answer-card" aria-labelledby="ownership-quick-answer-title">
+    <p class="eyebrow">Quick Answer</p>
+    <h2 id="ownership-quick-answer-title">A song can earn money in more than one rights lane.</h2>
+    <p>
+      The master recording, the composition, and any catalog-sale history can point revenue to
+      different people or companies before it reaches an artist, writer, estate, or buyer.
+    </p>
+  </section>
+
+  <nav class="page-jump-list" aria-label="Catalog ownership sections">
+    <a href="#ownership-layers">Core layers</a>
+    <a href="#ownership-artist-side">Artist-side number</a>
+    <a href="#ownership-split">Why splits matter</a>
+    <a href="#ownership-notes">Ownership notes</a>
+  </nav>
+
+  <section id="ownership-layers">
     <h2>Core layers</h2>
     <ul class="meta-list">
       <li><strong>Masters:</strong> The sound recording side, often controlled by a label or catalog buyer.</li>
@@ -25,7 +42,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </ul>
   </section>
 
-  <section>
+  <section id="ownership-artist-side">
     <h2>What changes the artist-side number</h2>
     <ul class="meta-list">
       <li>A performer who also wrote the song may participate in both master-side and publishing-side income.</li>
@@ -35,7 +52,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </ul>
   </section>
 
-  <section>
+  <section id="ownership-split">
     <h2>Why the split matters</h2>
     <p>
       Two catalogs can generate similar gross revenue while delivering very different artist-side
@@ -47,7 +64,17 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </p>
   </section>
 
-  <section>
+  <section class="example-card" aria-labelledby="ownership-example-title">
+    <p class="eyebrow">Example</p>
+    <h2 id="ownership-example-title">Why gross value is not take-home income</h2>
+    <p>
+      A recording can show strong listening demand while the artist-side share remains smaller
+      because a label controls the master, publishing is split among multiple writers, or future
+      income was sold as part of a catalog transaction.
+    </p>
+  </section>
+
+  <section id="ownership-notes">
     <h2>How to read ownership notes</h2>
     <ul class="meta-list">
       <li>Treat ownership notes as context for the modeled range, not as a complete contract history.</li>
@@ -55,5 +82,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <li>Give more weight to pages with public ownership or catalog-sale references than pages with platform links alone.</li>
       <li>Use the contact page if a rights note needs correction or a better public source.</li>
     </ul>
+  </section>
+
+  <section class="related-reading-card" aria-labelledby="ownership-sources-title">
+    <h2 id="ownership-sources-title">Useful background</h2>
+    <p>These references explain music-rights context; they do not verify any single estimate on this site.</p>
+    <div class="related-link-row">
+      <a href="https://www.copyright.gov/circs/circ56a.pdf">U.S. Copyright Office: compositions and sound recordings</a>
+      <a href="https://www.copyright.gov/music-modernization/">U.S. Copyright Office: Music Modernization Act</a>
+      <a href="https://www.themlc.com/">The Mechanical Licensing Collective</a>
+    </div>
   </section>
 </BaseLayout>

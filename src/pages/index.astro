@@ -34,16 +34,21 @@ const hasPublicArtistPage = (artist: Artist) => {
   <section class="hero home-hero">
     <div class="hero-copy">
       <p class="eyebrow">How Much Music</p>
-      <h1>Find out what songs may earn each year.</h1>
+      <h1>Search song earnings and catalog value.</h1>
       <p>
-        Explore song earnings, catalog value, and ownership context through conservative annual
-        ranges. Start with a song, then read the evidence and assumptions behind the estimate.
+        Start with a song, then read the ownership context, source notes, and assumptions behind
+        each modeled annual range.
       </p>
+      <ul class="hero-proof-list" aria-label="Site highlights">
+        <li><strong>{allReviewedSongEntries.length}</strong><span>reviewed song pages</span></li>
+        <li><strong>2</strong><span>browsable catalogs</span></li>
+        <li><strong>No</strong><span>royalty-statement claims</span></li>
+      </ul>
     </div>
 
     <div class="hero-panel home-search-panel" aria-label="Primary homepage actions">
       <p class="eyebrow">Start Here</p>
-      <h2>Choose one path</h2>
+      <h2>Search first, then compare.</h2>
       <div class="home-primary-actions">
         <article class="home-primary-action">
           <p class="eyebrow">1. Search</p>
@@ -60,49 +65,22 @@ const hasPublicArtistPage = (artist: Artist) => {
             />
             <button type="submit">Search</button>
           </form>
-          <p class="results-note">{allReviewedSongEntries.length} reviewed song pages available.</p>
           <p class="results-note">
+            {allReviewedSongEntries.length} reviewed song pages available.
             Browse the <a href={`${baseUrl}artists/`}>artist catalog</a> or
             <a href={`${baseUrl}songs/`}>song catalog</a>.
           </p>
         </article>
         <article class="home-primary-action">
           <p class="eyebrow">2. Reviewed</p>
-          <h3>See top reviewed songs</h3>
-          <p>Start with the song pages that have the clearest source and ownership context.</p>
+          <h3>Open reviewed pages</h3>
           <a class="home-action-link" href={`${baseUrl}reviewed-songs/`}>See reviewed songs</a>
         </article>
         <article class="home-primary-action">
           <p class="eyebrow">3. Methodology</p>
           <h3>Understand the estimates</h3>
-          <p>Learn why every number is a modeled range, not a public royalty statement.</p>
           <a class="home-action-link" href={`${baseUrl}insights/methodology/`}>Read methodology</a>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="editorial-basis-card home-reader-guide" aria-labelledby="home-reader-guide-title">
-    <div class="editorial-basis-heading">
-      <p class="eyebrow">Reader Guide</p>
-      <h2 id="home-reader-guide-title">How to use the site</h2>
-      <p>
-        Start with the pages that have the clearest editorial context, visible references, and
-        estimate limits.
-      </p>
-    </div>
-    <div class="editorial-basis-grid">
-      <div class="editorial-basis-item">
-        <strong>Reviewed first</strong>
-        <span>Search and homepage links prioritize artist and song pages with stronger supporting context.</span>
-      </div>
-      <div class="editorial-basis-item">
-        <strong>Modeled estimates</strong>
-        <span>Numbers are directional annual ranges, not private royalty statements or platform dashboards.</span>
-      </div>
-      <div class="editorial-basis-item">
-        <strong>Visible limits</strong>
-        <span>Each reviewed page explains what public context supports the estimate and what it does not prove.</span>
       </div>
     </div>
   </section>

@@ -9,15 +9,15 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
 
 <BaseLayout
   title="Search | How Much Music"
-  description="Search music earnings pages, including reviewed pages and noindex catalog profiles."
+  description="Search How Much Music for artist and song earnings pages."
   noindex
 >
   <section class="search-page-hero">
     <p class="eyebrow">Search</p>
     <h1>Search artists and songs</h1>
     <p>
-      Search reviewed pages and noindex catalog profiles. Reviewed pages have stronger source
-      context; catalog profiles remain available for navigation and comparison.
+      Find artist and song pages, then start with the entries marked reviewed when you want the
+      strongest source notes and ownership context.
     </p>
   </section>
 
@@ -131,12 +131,23 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
         const normalizedQuery = normalize(query);
         if (!normalizedQuery) {
           resultsRoot.innerHTML = `
-            <div class="trust-card">
-              <h2>Search artists or songs</h2>
-              <p>Try an artist name, a song title, or a mix like “mariah christmas” or “pink floyd”. Reviewed pages are labeled separately from catalog profiles.</p>
+            <div class="search-start-card">
+              <div>
+                <p class="eyebrow">Start Here</p>
+                <h2>Try a song, artist, or both.</h2>
+                <p>Search works best with a familiar title, an artist name, or a phrase like “mariah christmas” or “pink floyd”.</p>
+              </div>
+              <div class="search-starter-grid" aria-label="Suggested searches and browse links">
+                <a href="${baseUrl}search/?q=taylor%20swift">Taylor Swift</a>
+                <a href="${baseUrl}search/?q=all%20i%20want%20for%20christmas">All I Want for Christmas</a>
+                <a href="${baseUrl}search/?q=blinding%20lights">Blinding Lights</a>
+                <a href="${baseUrl}reviewed-songs/">Reviewed songs</a>
+                <a href="${baseUrl}artists/">All artists</a>
+                <a href="${baseUrl}songs/">All songs</a>
+              </div>
             </div>
           `;
-          status.textContent = "Start typing or submit a query to search catalog pages.";
+          status.textContent = "Start typing or choose one of the suggestions below.";
           return;
         }
 
