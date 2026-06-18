@@ -324,13 +324,21 @@ export const artistArticles: Record<string, ArtistArticle> = {
   },
   "cher": {
     "seoTitle": "Does Cher still make money from old hits?",
-    "shortAnswer": "Yes — estimated $6M-$18M/year.",
+    "shortAnswer": "Cher is modeled at $3.3M-$9.9M/year on the artist side, with gross catalog, label, publishing, and writer lanes separated below.",
     "sources": [
-      "Believe remains one of the strongest long-tail dance-pop recordings of the late 1990s.",
-      "If I Could Turn Back Time and other classics keep the catalog active across nostalgia and recurrent-play listening.",
-      "Cross-generational recognition gives Cher unusually durable replay value."
+      "Believe and If I Could Turn Back Time are the clearest anchors for recurring listener demand on this page.",
+      "The estimate treats Cher as a multi-era catalog, not as a single-song legacy page.",
+      "Label-era differences, publishing splits, and licensing context are why the artist-side range is lower than modeled gross catalog revenue."
     ],
-    "insight": "Multi-era catalogs age well when they bridge classic-pop familiarity and modern playlist-friendly production."
+    "insight": "Cher's page should answer one narrow question: how much recurring catalog value could plausibly reach the artist side after old-recording ownership and publishing splits are considered.",
+    "references": [
+      {
+        "label": "Cher official website",
+        "url": "https://www.cher.com/",
+        "note": "Official artist site used for public artist identity and current catalog context.",
+        "category": "Official artist source"
+      }
+    ]
   },
   "tina-turner": {
     "seoTitle": "Does Tina Turner still make money from her catalog?",
@@ -386,11 +394,19 @@ export const artistArticles: Record<string, ArtistArticle> = {
     "seoTitle": "How much money does Taylor Swift make from music?",
     "shortAnswer": "Taylor Swift is modeled at $28M-$66M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Blank Space and Shake It Off remain the clearest catalog anchors for the page.",
-      "Pop catalog streaming supports recurring long-tail demand.",
-      "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
+      "Blank Space, Shake It Off, and Anti-Hero are the clearest tracked-song anchors for this page.",
+      "The model separates gross catalog demand from artist-side economics because master ownership, distribution, and rerecording context can point in different directions.",
+      "Writer-side participation is treated as material, but the page does not claim access to private royalty statements."
     ],
-    "insight": "Taylor Swift's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Taylor Swift's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side after recording and publishing economics.",
+    "references": [
+      {
+        "label": "Taylor Swift official website",
+        "url": "https://www.taylorswift.com/",
+        "note": "Official artist site used for public artist identity, releases, and current catalog context.",
+        "category": "Official artist source"
+      }
+    ]
   },
   "michael-jackson": {
     "seoTitle": "How much money does Michael Jackson make from music?",
@@ -446,11 +462,19 @@ export const artistArticles: Record<string, ArtistArticle> = {
     "seoTitle": "How much money does Ed Sheeran make from music?",
     "shortAnswer": "Ed Sheeran is modeled at $11M-$33M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Shape of You and Castle on the Hill remain the clearest catalog anchors for the page.",
-      "Pop catalog streaming supports recurring long-tail demand.",
-      "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
+      "Shape of You and Castle on the Hill are the clearest tracked-song anchors for this page.",
+      "The estimate treats Sheeran as a songwriter-performer catalog, so publishing and writer participation are part of the economic picture.",
+      "The page keeps gross catalog revenue separate from artist-side income because label distribution and publishing splits can materially change take-home economics."
     ],
-    "insight": "Ed Sheeran's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Ed Sheeran's page should be read as a songwriter-performer model: the catalog can earn from both recording demand and writer-side participation, but neither number is a disclosed royalty statement.",
+    "references": [
+      {
+        "label": "Ed Sheeran official website",
+        "url": "https://www.edsheeran.com/",
+        "note": "Official artist site used for public artist identity, releases, and current catalog context.",
+        "category": "Official artist source"
+      }
+    ]
   },
   "drake": {
     "seoTitle": "How much money does Drake make from music?",

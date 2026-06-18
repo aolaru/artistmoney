@@ -120,7 +120,7 @@ export const songArticles: Record<string, SongArticle> = {
     "breakdown": [
       "The model treats this as a seasonal catalog asset, not a normal year-round streaming single.",
       "The song file separates gross track revenue from artist-side participation, publishing, and songwriter shares.",
-      "Holiday replay is the main reason the annual estimate can sit above most non-seasonal catalog songs."
+      "Holiday replay is the main reason the annual estimate can sit above most non-seasonal catalog songs, but the page still uses a range because seasonality changes year to year."
     ],
     "lifetimeEstimate": "Lifetime value depends on how long All I Want for Christmas Is You keeps playlist, search, and catalog demand beyond the current annual modeled range.",
     "whyItStillMakesMoney": [
@@ -132,7 +132,8 @@ export const songArticles: Record<string, SongArticle> = {
     "evidence": [
       "The available revenue fields list estimated gross track revenue at $9.1M-$23M/year and artist-side share at $4.4M-$11M/year.",
       "The ownership note says the publishing appears exceptionally valuable because of writer-side participation.",
-      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
+      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income.",
+      "Mariah Carey's official site and platform links are used for public identity and listening context, not as payout evidence."
     ],
     "methodologyNotes": [
       "The estimate is directional and annualized; it is not a Mariah Carey royalty statement.",
@@ -144,6 +145,12 @@ export const songArticles: Record<string, SongArticle> = {
         "label": "RIAA Gold & Platinum database lookup",
         "url": "https://www.riaa.com/gold-platinum/?ar=Mariah+Carey&ti=All+I+Want+for+Christmas+Is+You&tab_active=default-award",
         "note": "Official RIAA search page used for certification-scale context, not for royalty totals."
+      },
+      {
+        "label": "Mariah Carey official website",
+        "url": "https://mariahcarey.com/",
+        "note": "Official artist site used for public artist identity and current catalog context.",
+        "category": "Official artist source"
       }
     ]
   },
@@ -165,7 +172,8 @@ export const songArticles: Record<string, SongArticle> = {
     "evidence": [
       "The available revenue fields list estimated gross track revenue at $3.9M-$9.1M/year and artist-side share at $1.1M-$3.3M/year.",
       "The ownership note describes a mix of label and artist-affiliated participation, which is why gross and take-home are separated.",
-      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
+      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income.",
+      "The Weeknd's official site and platform links are used for public identity and listening context, not as payout evidence."
     ],
     "methodologyNotes": [
       "The estimate is a modeled annual range, not a disclosed royalty statement from The Weeknd or a label.",
@@ -177,6 +185,12 @@ export const songArticles: Record<string, SongArticle> = {
         "label": "RIAA Gold & Platinum database lookup",
         "url": "https://www.riaa.com/gold-platinum/?ar=The+Weeknd&ti=Blinding+Lights&tab_active=default-award",
         "note": "Official RIAA search page used for certification-scale context, not for royalty totals."
+      },
+      {
+        "label": "The Weeknd official website",
+        "url": "https://www.theweeknd.com/",
+        "note": "Official artist site used for public artist identity and current catalog context.",
+        "category": "Official artist source"
       }
     ]
   },
@@ -252,7 +266,7 @@ export const songArticles: Record<string, SongArticle> = {
     "breakdown": [
       "The page separates performer-side economics from publishing because the ownership notes describe multiple writer, producer, and publisher participants.",
       "Catalog streaming is treated as the main recurring driver, with sync and short-form rediscovery left as possible upside rather than guaranteed income.",
-      "The estimate does not include a song-specific catalog sale adjustment."
+      "The estimate does not include a song-specific catalog sale adjustment, so the range should be read as operating catalog income rather than a sale valuation."
     ],
     "lifetimeEstimate": "Lifetime value depends on how long SICKO MODE keeps playlist, search, and catalog demand beyond the current annual modeled range.",
     "whyItStillMakesMoney": [
@@ -264,7 +278,8 @@ export const songArticles: Record<string, SongArticle> = {
     "evidence": [
       "The available revenue fields list estimated gross track revenue at $2.6M-$7.8M/year and artist-side share at $1.1M-$3.3M/year.",
       "The ownership note says publishing appears split across multiple writers, producers, and publishers.",
-      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income."
+      "The RIAA certification database link is included for public certification context; certification records do not disclose royalty income.",
+      "Travis Scott's official site and platform links are used for public identity and listening context, not as payout evidence."
     ],
     "methodologyNotes": [
       "The estimate is a modeled annual range and not a Travis Scott royalty statement.",
@@ -276,6 +291,12 @@ export const songArticles: Record<string, SongArticle> = {
         "label": "RIAA Gold & Platinum database lookup",
         "url": "https://www.riaa.com/gold-platinum/?ar=Travis+Scott&ti=SICKO+MODE&tab_active=default-award",
         "note": "Official RIAA search page used for certification-scale context, not for royalty totals."
+      },
+      {
+        "label": "Travis Scott official website",
+        "url": "https://www.travisscott.com/",
+        "note": "Official artist site used for public artist identity and current catalog context.",
+        "category": "Official artist source"
       }
     ]
   },

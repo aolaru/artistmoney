@@ -105,6 +105,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
           <a href={baseUrl}>Home</a>
           <a href={`${baseUrl}search/`}>Search</a>
           <a href={`${baseUrl}artists/`}>Artists</a>
+          <a href={`${baseUrl}songs/`}>Songs</a>
           <a href={`${baseUrl}reviewed-songs/`}>Reviewed Songs</a>
           <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
           <a href={`${baseUrl}about/`}>About</a>
@@ -132,6 +133,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
             <a href={baseUrl}>Home</a>
             <a href={`${baseUrl}search/`}>Search</a>
             <a href={`${baseUrl}artists/`}>Artists</a>
+            <a href={`${baseUrl}songs/`}>Songs</a>
             <a href={`${baseUrl}reviewed-songs/`}>Reviewed Songs</a>
             <a href={`${baseUrl}reviewed-artists/`}>Reviewed Artists</a>
             <a href={`${baseUrl}insights/`}>Insights</a>
@@ -171,6 +173,47 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
         let searchItemsPromise;
 
         const normalize = (value) => value.toLowerCase().trim();
+        const trackEvent = (name, params = {}) => {
+          if (typeof window.gtag === "function") {
+            window.gtag("event", name, params);
+          }
+        };
+        window.hmmTrackEvent = trackEvent;
+
+        const trackSearchSubmit = (query, location) => {
+          const searchTerm = query.trim();
+          if (!searchTerm) return;
+          trackEvent("search_submitted", {
+            search_term: searchTerm,
+            search_location: location
+          });
+        };
+
+        const trackSearchResultOpen = (location, item) => {
+          trackEvent("search_result_opened", {
+            search_location: location,
+            result_type: item.type,
+            result_title: item.title,
+            result_url: item.url,
+            result_reviewed: item.reviewed ? "true" : "false"
+          });
+        };
+
+        document.addEventListener("submit", (event) => {
+          const form = event.target;
+          if (!(form instanceof HTMLFormElement)) return;
+          const action = form.getAttribute("action") ?? "";
+          if (!action.includes("search/")) return;
+          if (form.classList.contains("search-page-form")) return;
+          const input = form.querySelector('input[name="q"]');
+          if (!(input instanceof HTMLInputElement)) return;
+          const location = form.classList.contains("header-search")
+            ? "header"
+            : form.classList.contains("home-search-form")
+              ? "homepage"
+              : "search_page";
+          trackSearchSubmit(input.value, location);
+        }, true);
 
         const scoreItem = (item, query) => {
           const title = item.titleLower;
@@ -259,6 +302,9 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
                 const link = document.createElement("a");
                 link.href = item.url;
                 link.className = "header-search-link";
+                link.addEventListener("click", () => {
+                  trackSearchResultOpen("header_suggest", item);
+                });
                 link.innerHTML = `
                   <span class="header-search-type">${item.type}</span>
                   <strong>${item.title}</strong>
@@ -338,6 +384,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
 
               if (event.key === "Enter" && activeIndex >= 0 && suggestions[activeIndex]) {
                 event.preventDefault();
+                trackSearchResultOpen("header_suggest", suggestions[activeIndex]);
                 window.location.href = suggestions[activeIndex].url;
                 return;
               }
