@@ -3,7 +3,7 @@
   "cursors": {
     "artist": 0,
     "song": 0,
-    "album": 95
+    "album": 96
   },
   "lastTouched": {
     "artist": {
@@ -91,7 +91,8 @@
       "u2": "2026-06-12T18:47:42.748Z",
       "jean-michel-jarre": "2026-06-12T18:47:42.748Z",
       "red-hot-chili-peppers": "2026-06-13T07:27:04.287Z",
-      "my-bloody-valentine": "2026-06-13T18:36:28.340Z"
+      "my-bloody-valentine": "2026-06-13T18:36:28.340Z",
+      "nine-inch-nails": "2026-06-19T08:02:18.152Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -343,7 +344,9 @@
       "under-the-bridge": "2026-06-13T07:27:04.287Z",
       "when-you-sleep": "2026-06-13T07:27:04.287Z",
       "equinoxe-part-4": "2026-06-13T07:27:04.287Z",
-      "oxygene-iv": "2026-06-13T18:36:28.340Z"
+      "oxygene-iv": "2026-06-13T18:36:28.340Z",
+      "closer": "2026-06-19T08:02:18.152Z",
+      "hurt": "2026-06-19T08:02:18.152Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -439,6 +442,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-06-19T08:02:18.152Z",
+      "summary": "artist:nine-inch-nails, song:closer, song:hurt"
+    },
+    {
       "timestamp": "2026-06-13T18:36:28.340Z",
       "summary": "artist:my-bloody-valentine, song:oxygene-iv"
     },
@@ -473,10 +480,6 @@
     {
       "timestamp": "2026-05-25T19:45:19.161Z",
       "summary": "artist:a-ha, artist:duran-duran, song:hungry-like-the-wolf, song:ordinary-world, song:take-on-me"
-    },
-    {
-      "timestamp": "2026-05-22T09:33:06.381Z",
-      "summary": "artist:erasure, song:a-little-respect, song:sometimes-erasure, album:steve-hauschildt-where-all-is-fled"
     }
   ]
 }
