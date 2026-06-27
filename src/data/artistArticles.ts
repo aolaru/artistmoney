@@ -3,6 +3,8 @@ export type ArtistArticle = {
   shortAnswer: string;
   sources: string[];
   insight: string;
+  evidence?: string[];
+  methodologyNotes?: string[];
   references?: Array<{
     label: string;
     url: string;
@@ -10,6 +12,35 @@ export type ArtistArticle = {
     category?: string;
   }>;
 };
+
+function artistReviewContext({
+  name,
+  officialUrl,
+  anchors,
+  ownershipContext,
+  modelContext
+}) {
+  return {
+    evidence: [
+      `${anchors} are the tracked-song anchors used to ground the catalog estimate on this page.`,
+      ownershipContext,
+      modelContext
+    ],
+    methodologyNotes: [
+      "The estimate is a modeled annual range, not a royalty statement or distributor dashboard.",
+      "Gross catalog demand and artist-side share are kept separate when structured split fields are available.",
+      "Official artist and platform links support identity and catalog context; they do not prove the displayed income range."
+    ],
+    references: [
+      {
+        label: `${name} official website`,
+        url: officialUrl,
+        note: "Official artist site used for public artist identity, release activity, and current catalog context.",
+        category: "Official artist source"
+      }
+    ]
+  };
+}
 
 export const artistArticles: Record<string, ArtistArticle> = {
   "mobb-deep": {
@@ -40,7 +71,14 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "Placement across major international playlists.",
       "Sync and brand deals expand earnings beyond pure streaming."
     ],
-    "insight": "Scale + global reach = exponential income."
+    "insight": "Scale + global reach = exponential income.",
+    ...artistReviewContext({
+      name: "The Weeknd",
+      officialUrl: "https://www.theweeknd.com/",
+      anchors: "Blinding Lights and Starboy",
+      ownershipContext: "The page separates label-era recording economics from artist-side participation instead of treating gross listening demand as take-home income.",
+      modelContext: "The model treats The Weeknd as a modern streaming-scale catalog where worldwide replay, playlist durability, and writer participation can all matter."
+    })
   },
   "daft-punk": {
     "seoTitle": "Do Daft Punk still make money after retiring?",
@@ -260,7 +298,14 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "We Belong Together and other major hits continue to stream at high legacy-pop scale.",
       "Songwriter participation materially increases the value of perennial songs."
     ],
-    "insight": "A single truly evergreen seasonal song can transform a catalog into an annual cash-flow engine."
+    "insight": "A single truly evergreen seasonal song can transform a catalog into an annual cash-flow engine.",
+    ...artistReviewContext({
+      name: "Mariah Carey",
+      officialUrl: "https://mariahcarey.com/",
+      anchors: "All I Want for Christmas Is You and We Belong Together",
+      ownershipContext: "The page treats holiday replay and writer-side participation as separate context from headline gross track revenue.",
+      modelContext: "The model gives extra weight to seasonal catalog behavior because annual demand is concentrated and can change materially from year to year."
+    })
   },
   "linkin-park": {
     "seoTitle": "Does Linkin Park still make money from old songs?",
@@ -396,47 +441,67 @@ export const artistArticles: Record<string, ArtistArticle> = {
     "sources": [
       "Blank Space, Shake It Off, and Anti-Hero are the clearest tracked-song anchors for this page.",
       "The model separates gross catalog demand from artist-side economics because master ownership, distribution, and rerecording context can point in different directions.",
-      "Writer-side participation is treated as material, but the page does not claim access to private royalty statements."
+      "Writer-side participation is treated as material, while private royalty statements remain outside the evidence base."
     ],
-    "insight": "Taylor Swift's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side after recording and publishing economics.",
-    "references": [
-      {
-        "label": "Taylor Swift official website",
-        "url": "https://www.taylorswift.com/",
-        "note": "Official artist site used for public artist identity, releases, and current catalog context.",
-        "category": "Official artist source"
-      }
-    ]
+    "insight": "Taylor Swift is best read as a split-aware catalog case: the useful question is how recording control, publishing, and rerecording context change the artist-side range.",
+    ...artistReviewContext({
+      name: "Taylor Swift",
+      officialUrl: "https://www.taylorswift.com/",
+      anchors: "Blank Space, Shake It Off, and Anti-Hero",
+      ownershipContext: "The page separates master, distribution, and writer-side context because rerecording and publishing economics can point in different directions.",
+      modelContext: "The model treats Taylor Swift as a current superstar catalog where new-release activity, old-catalog replay, and songwriter participation all affect the range."
+    })
   },
   "michael-jackson": {
     "seoTitle": "How much money does Michael Jackson make from music?",
     "shortAnswer": "Michael Jackson is modeled at $14M-$50M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Billie Jean and Thriller remain the clearest catalog anchors for the page.",
+      "Billie Jean and Thriller are the main tracked anchors for the page.",
       "Pop / R&B catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Michael Jackson's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Michael Jackson's catalog needs an estate-aware reading because public popularity, licensing, publishing, and artist-side participation are not the same lane.",
+    ...artistReviewContext({
+      name: "Michael Jackson",
+      officialUrl: "https://www.michaeljackson.com/",
+      anchors: "Billie Jean and Thriller",
+      ownershipContext: "The page treats estate, master, publishing, and licensing context as separate from public playback demand.",
+      modelContext: "The model emphasizes long-tail replay and cultural reuse because the strongest songs behave more like legacy standards than release-cycle singles."
+    })
   },
   "beyonce": {
     "seoTitle": "How much money does Beyonce make from music?",
     "shortAnswer": "Beyonce is modeled at $17M-$44M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Halo and Crazy in Love remain the clearest catalog anchors for the page.",
+      "Halo and Crazy in Love are the main tracked anchors for the page.",
       "Pop / R&B catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Beyonce's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Beyonce's estimate works best as a multi-era catalog reading, with performer, writer, label, and publishing economics kept separate.",
+    ...artistReviewContext({
+      name: "Beyonce",
+      officialUrl: "https://www.beyonce.com/",
+      anchors: "Halo and Crazy in Love",
+      ownershipContext: "The page separates performer, writer, label, and publishing context where structured catalog fields support that split.",
+      modelContext: "The model treats Beyonce as a multi-era catalog where streaming replay, cultural moments, and writer-side participation can all support annual value."
+    })
   },
   "rihanna": {
     "seoTitle": "How much money does Rihanna make from music?",
     "shortAnswer": "Rihanna is modeled at $14M-$39M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Diamonds and Umbrella remain the clearest catalog anchors for the page.",
+      "Diamonds and Umbrella are the main tracked anchors for the page.",
       "Pop / R&B catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Rihanna's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Rihanna's catalog is less about one headline total than about how a large hit base continues to monetize after label and publishing splits.",
+    ...artistReviewContext({
+      name: "Rihanna",
+      officialUrl: "https://www.rihannanow.com/",
+      anchors: "Diamonds and Umbrella",
+      ownershipContext: "The page keeps label-era recording economics separate from artist-side and writer-side participation.",
+      modelContext: "The model treats Rihanna as a catalog with broad pop replay, strong hit density, and durable playlist demand."
+    })
   },
   "bad-bunny": {
     "seoTitle": "How much money does Bad Bunny make from music?",
@@ -467,24 +532,30 @@ export const artistArticles: Record<string, ArtistArticle> = {
       "The page keeps gross catalog revenue separate from artist-side income because label distribution and publishing splits can materially change take-home economics."
     ],
     "insight": "Ed Sheeran's page should be read as a songwriter-performer model: the catalog can earn from both recording demand and writer-side participation, but neither number is a disclosed royalty statement.",
-    "references": [
-      {
-        "label": "Ed Sheeran official website",
-        "url": "https://www.edsheeran.com/",
-        "note": "Official artist site used for public artist identity, releases, and current catalog context.",
-        "category": "Official artist source"
-      }
-    ]
+    ...artistReviewContext({
+      name: "Ed Sheeran",
+      officialUrl: "https://www.edsheeran.com/",
+      anchors: "Shape of You and Castle on the Hill",
+      ownershipContext: "The page separates artist-side recording income from writer and publishing context because songwriter-performer catalogs can earn on more than one lane.",
+      modelContext: "The model gives weight to global replay and songwriter participation rather than reading the catalog as performer income only."
+    })
   },
   "drake": {
     "seoTitle": "How much money does Drake make from music?",
     "shortAnswer": "Drake is modeled at $11M-$28M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "God's Plan and One Dance remain the clearest catalog anchors for the page.",
+      "God's Plan and One Dance are the main tracked anchors for the page.",
       "Hip-hop / Pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Drake's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Drake's page is a streaming-scale catalog model: the estimate separates public listening demand from label, publishing, and artist-side economics.",
+    ...artistReviewContext({
+      name: "Drake",
+      officialUrl: "https://drakerelated.com/",
+      anchors: "God's Plan and One Dance",
+      ownershipContext: "The page separates streaming-scale gross demand from label, publishing, and artist-side context.",
+      modelContext: "The model treats Drake as a high-volume modern catalog where playlist durability and hit density drive the annual range."
+    })
   },
   "disney": {
     "seoTitle": "How much money does Disney make from music?",
@@ -540,11 +611,18 @@ export const artistArticles: Record<string, ArtistArticle> = {
     "seoTitle": "How much money does Queen make from music?",
     "shortAnswer": "Queen is modeled at $9.9M-$23M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Bohemian Rhapsody and Don't Stop Me Now remain the clearest catalog anchors for the page.",
+      "Bohemian Rhapsody and Don't Stop Me Now are the main tracked anchors for the page.",
       "Classic Rock / Pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Queen's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Queen's estimate depends on durable public replay, estate or band participation, and publishing context rather than one undivided catalog total.",
+    ...artistReviewContext({
+      name: "Queen",
+      officialUrl: "https://www.queenonline.com/",
+      anchors: "Bohemian Rhapsody and Don't Stop Me Now",
+      ownershipContext: "The page separates band or estate participation, master control, and publishing context rather than collapsing the catalog into one gross figure.",
+      modelContext: "The model emphasizes legacy replay, media reuse, and durable classic-rock familiarity because those are the main annual drivers."
+    })
   },
   "madonna": {
     "seoTitle": "How much money does Madonna make from music?",

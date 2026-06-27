@@ -10,7 +10,8 @@ const songDir = path.join(rootDir, "src", "data", "songs");
 const summaryDir = path.join(rootDir, ".autopilot");
 const summaryPath = path.join(summaryDir, "catalog-summary.md");
 const outputPath = path.join(summaryDir, "catalog-result.json");
-const batchSize = 1;
+const requestedBatchSize = Number.parseInt(process.env.CATALOG_BATCH_SIZE ?? "1", 10);
+const batchSize = Number.isFinite(requestedBatchSize) && requestedBatchSize > 0 ? requestedBatchSize : 1;
 
 function ensureArray(value, label) {
   if (!Array.isArray(value) || value.length === 0) {

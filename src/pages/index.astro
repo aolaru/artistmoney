@@ -5,6 +5,7 @@ import {
   getArtistVisual,
   getSongConfidence,
   getSongMethodology,
+  rankedArtists,
   rankedSongs,
   songs,
   type Artist
@@ -25,6 +26,7 @@ const hasPublicArtistPage = (artist: Artist) => {
   const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
   return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
 };
+const allReviewedArtistEntries = rankedArtists.filter(({ artist }) => hasPublicArtistPage(artist));
 ---
 
 <BaseLayout
@@ -41,18 +43,18 @@ const hasPublicArtistPage = (artist: Artist) => {
       </p>
       <ul class="hero-proof-list" aria-label="Site highlights">
         <li><strong>{allReviewedSongEntries.length}</strong><span>reviewed song pages</span></li>
-        <li><strong>2</strong><span>browsable catalogs</span></li>
+        <li><strong>{allReviewedArtistEntries.length}</strong><span>reviewed artist pages</span></li>
         <li><strong>No</strong><span>royalty-statement claims</span></li>
       </ul>
     </div>
 
     <div class="hero-panel home-search-panel" aria-label="Primary homepage actions">
       <p class="eyebrow">Start Here</p>
-      <h2>Search first, then compare.</h2>
+      <h2>Search first, then choose a reviewed path.</h2>
       <div class="home-primary-actions">
         <article class="home-primary-action">
           <p class="eyebrow">1. Search</p>
-          <h3>Search a song</h3>
+          <h3>Search songs or artists</h3>
           <form class="home-search-form" action={`${baseUrl}search/`} method="get">
             <label class="sr-only" for="home-song-search">Search songs</label>
             <input
@@ -66,18 +68,23 @@ const hasPublicArtistPage = (artist: Artist) => {
             <button type="submit">Search</button>
           </form>
           <p class="results-note">
-            {allReviewedSongEntries.length} reviewed song pages available.
+            {allReviewedSongEntries.length} reviewed songs and {allReviewedArtistEntries.length} reviewed artists available.
             Browse the <a href={`${baseUrl}artists/`}>artist catalog</a> or
             <a href={`${baseUrl}songs/`}>song catalog</a>.
           </p>
         </article>
         <article class="home-primary-action">
-          <p class="eyebrow">2. Reviewed</p>
-          <h3>Open reviewed pages</h3>
+          <p class="eyebrow">2. Songs</p>
+          <h3>Reviewed songs</h3>
           <a class="home-action-link" href={`${baseUrl}reviewed-songs/`}>See reviewed songs</a>
         </article>
         <article class="home-primary-action">
-          <p class="eyebrow">3. Methodology</p>
+          <p class="eyebrow">3. Artists</p>
+          <h3>Reviewed artists</h3>
+          <a class="home-action-link" href={`${baseUrl}reviewed-artists/`}>See reviewed artists</a>
+        </article>
+        <article class="home-primary-action">
+          <p class="eyebrow">4. Methodology</p>
           <h3>Understand the estimates</h3>
           <a class="home-action-link" href={`${baseUrl}insights/methodology/`}>Read methodology</a>
         </article>

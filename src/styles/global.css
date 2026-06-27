@@ -611,7 +611,7 @@ mark {
 
 .home-primary-actions {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
   margin-top: 0.85rem;
 }
@@ -753,6 +753,39 @@ mark {
 
 .reviewed-song-grid {
   margin-top: 1rem;
+}
+
+.editorial-route-section {
+  margin: 2rem 0;
+}
+
+.editorial-route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0.9rem;
+}
+
+.editorial-route-card {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top right, rgba(201, 128, 68, 0.12), transparent 36%),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.editorial-route-card h3,
+.editorial-route-card p {
+  margin: 0;
+}
+
+.editorial-route-card .meta-list {
+  margin-top: 0.25rem;
 }
 
 .reviewed-song-card .confidence-note {
@@ -1950,16 +1983,16 @@ mark {
     grid-template-columns: 1fr;
   }
 
-  .home-primary-actions {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .home-search-form {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.5rem;
   }
 
   .catalog-path-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-route-grid {
     grid-template-columns: 1fr;
   }
 

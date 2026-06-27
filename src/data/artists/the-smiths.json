@@ -1,0 +1,20 @@
+{
+  "name": "The Smiths",
+  "slug": "the-smiths",
+  "estimated_income": "$990K-$3.3M/year",
+  "top_songs": [
+    "there-is-a-light-that-never-goes-out",
+    "this-charming-man"
+  ],
+  "genre": "Alternative Rock / Indie",
+  "country": "United Kingdom",
+  "active_since": "1982",
+  "bio": "The Smiths keep earning through one of the most durable alternative catalogs, with songs that continue to travel through streaming, fandom, and cultural rediscovery.",
+  "notable_for": "Indie classics with unusually strong emotional replay value and cross-generational recognition.",
+  "career_highlight": "There Is a Light That Never Goes Out remains one of the defining long-tail songs in the alternative canon.",
+  "revenue_drivers": [
+    "Alternative and indie playlists support recurring replay.",
+    "Deep fan listening and continual rediscovery keep the catalog active.",
+    "Strong song identity supports sync and retrospective reuse."
+  ]
+}

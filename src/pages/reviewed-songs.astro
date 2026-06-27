@@ -16,6 +16,23 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   : `${import.meta.env.BASE_URL}/`;
 
 const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
+const reviewedSongGroups = [
+  {
+    title: "Best source-backed starts",
+    description: "Use these when you want the strongest estimate notes and public context first.",
+    items: reviewedSongs.slice(0, 4)
+  },
+  {
+    title: "Classic catalog",
+    description: "Older recordings where long-tail replay, cultural memory, and ownership context matter.",
+    items: reviewedSongs.filter(({ song }) => song.year && song.year < 1995).slice(0, 4)
+  },
+  {
+    title: "Modern streaming",
+    description: "Newer hits where platform scale and playlist durability are central to the estimate.",
+    items: reviewedSongs.filter(({ song }) => song.year && song.year >= 2010).slice(0, 4)
+  }
+].filter((group) => group.items.length > 0);
 const hasPublicArtistPage = (artist: Artist) => {
   const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
   return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
@@ -76,6 +93,36 @@ const hasPublicArtistPage = (artist: Artist) => {
       </div>
     </div>
   </section>
+
+  {reviewedSongGroups.length > 0 && (
+    <section class="editorial-route-section" aria-labelledby="reviewed-song-routes-title">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">Editorial Routes</p>
+          <h2 id="reviewed-song-routes-title">Choose a stronger starting point</h2>
+        </div>
+      </div>
+      <div class="editorial-route-grid">
+        {reviewedSongGroups.map((group) => (
+          <article class="editorial-route-card">
+            <h3>{group.title}</h3>
+            <p>{group.description}</p>
+            <ul class="meta-list">
+              {group.items.map(({ song }) => {
+                const artist = getArtist(song.artist);
+                return (
+                  <li>
+                    <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
+                    <span class="meta-inline"> · {artist?.name ?? song.artist}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
 
   <section aria-labelledby="reviewed-song-list-title">
     <div class="section-heading-row">

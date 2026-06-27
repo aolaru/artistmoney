@@ -392,7 +392,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
         <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
 
         <section aria-labelledby="short-answer-title" class="song-intro-card">
-          <h2 id="short-answer-title">Short Answer</h2>
+          <h2 id="short-answer-title">Estimate at a glance</h2>
           <p class="seo-question"><strong>{snippetQuestion}</strong></p>
           <p class="song-lead-answer"><strong>{snippetLead}</strong></p>
           <p class="song-takeaway"><strong>Takeaway:</strong> {takeaway}</p>
@@ -400,7 +400,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
 
           <div class="song-intro-grid">
             <div class="song-intro-panel">
-              <h3>Did You Know?</h3>
+              <h3>What stands out</h3>
               <ul class="song-bullet-list">
                 {statItems.map((item) => (
                   <li>{item}</li>
@@ -409,7 +409,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
             </div>
 
             <div class="song-intro-panel">
-              <h3>Why It Still Works</h3>
+              <h3>Why the song still earns</h3>
               <ul class="song-bullet-list">
                 {conciseWhy.map((point) => (
                   <li>{point}</li>
@@ -468,8 +468,8 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
         {article && (
           <section class="editorial-basis-card" aria-labelledby="song-editorial-basis-title">
             <div class="editorial-basis-heading">
-              <p class="eyebrow">Editorial Basis</p>
-              <h2 id="song-editorial-basis-title">How this estimate should be read</h2>
+              <p class="eyebrow">Estimate Notes</p>
+              <h2 id="song-editorial-basis-title">What this estimate means</h2>
               <p>
                 The estimate focuses on one question: how {song.title}
                 {artist ? ` by ${artist.name}` : ""} behaves as a catalog asset. It is
@@ -648,7 +648,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
         )}
 
         <section aria-labelledby="questions-title">
-          <h2 id="questions-title">More Questions About {song.title}</h2>
+          <h2 id="questions-title">Reader questions about {song.title}</h2>
           <div class="intent-question-list">
             {intentQuestions.map((item) => (
               <article class="intent-question-card">

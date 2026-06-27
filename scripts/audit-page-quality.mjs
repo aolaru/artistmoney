@@ -167,6 +167,56 @@ function auditAlbum(album) {
   };
 }
 
+function includesRepeatedTemplateLanguage(article) {
+  const text = [
+    article?.seoTitle,
+    article?.shortAnswer,
+    ...(article?.sources ?? []),
+    ...(article?.breakdown ?? []),
+    ...(article?.whyItStillMakesMoney ?? []),
+    article?.insight
+  ].filter(Boolean).join(" ").toLowerCase();
+
+  return [
+    "strongest when read as a split-aware catalog model",
+    "clearest catalog anchors",
+    "not just gross demand",
+    "does not claim access to private royalty statements"
+  ].some((phrase) => text.includes(phrase));
+}
+
+function auditHumanQualityArtist(artist, artistArticles) {
+  const article = artistArticles[artist.slug];
+
+  return {
+    slug: artist.slug,
+    name: artist.name,
+    issues: compactIssueList([
+      !article && "missing artist article entry",
+      article && !article.references?.length && "missing article-level external reference",
+      article && !article.evidence?.length && "missing page-specific evidence notes",
+      article && !article.methodologyNotes?.length && "missing methodology-limit notes",
+      article && includesRepeatedTemplateLanguage(article) && "contains repeated template phrasing"
+    ])
+  };
+}
+
+function auditHumanQualitySong(song, songArticles) {
+  const article = songArticles[song.slug];
+
+  return {
+    slug: song.slug,
+    title: song.title,
+    issues: compactIssueList([
+      !article && "missing song article entry",
+      article && !article.references?.length && "missing article-level external reference",
+      article && !article.evidence?.length && "missing page-specific evidence notes",
+      article && !article.methodologyNotes?.length && "missing methodology-limit notes",
+      article && includesRepeatedTemplateLanguage(article) && "contains repeated template phrasing"
+    ])
+  };
+}
+
 function buildArtistImagePriority(artists, artistImageSlugs) {
   return sortByRevenue(artists, (artist) => artist.earnings?.artist_or_estate_share ?? artist.estimated_income)
     .filter((artist) => !artistImageSlugs.has(artist.slug))
@@ -231,6 +281,12 @@ async function main() {
   const reviewReadySongs = songs
     .filter((song) => reviewReadyPages.songSlugs.has(song.slug))
     .map((song) => auditSong(song, songs, songPlayerMetadata, songMetadata, songArticles));
+  const humanQualityArtists = artists
+    .filter((artist) => reviewReadyPages.artistSlugs.has(artist.slug))
+    .map((artist) => auditHumanQualityArtist(artist, artistArticles));
+  const humanQualitySongs = songs
+    .filter((song) => reviewReadyPages.songSlugs.has(song.slug))
+    .map((song) => auditHumanQualitySong(song, songArticles));
 
   const report = {
     generatedAt: new Date().toISOString(),
@@ -257,6 +313,15 @@ async function main() {
       artists: reviewReadyArtists,
       songs: reviewReadySongs
     },
+    humanQuality: {
+      scope: "Review-ready artist and song pages; flags editorial depth and repeated wording, not required-field validity",
+      summary: {
+        artists: summarize(humanQualityArtists),
+        songs: summarize(humanQualitySongs)
+      },
+      artists: humanQualityArtists,
+      songs: humanQualitySongs
+    },
     artistImagePriority,
     topArtists,
     topSongs,
@@ -282,6 +347,12 @@ async function main() {
   );
   console.log(
     `- Review-ready gate: ${reviewReadyPages.counts.reviewReadyArtists}/${reviewReadyPages.counts.artistArticles} artist articles, ${reviewReadyPages.counts.reviewReadySongs}/${reviewReadyPages.counts.songArticles} song articles.`
+  );
+  const humanQualityIssueCount =
+    report.humanQuality.summary.artists.issueCount +
+    report.humanQuality.summary.songs.issueCount;
+  console.log(
+    `- Human quality audit: ${humanQualityIssueCount} editorial flag(s) across review-ready pages.`
   );
   console.log(`- Artist photo coverage: ${artistImageSlugs.size}/${artists.length}`);
   if (artistImagePriority.length > 0) {

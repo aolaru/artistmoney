@@ -30,6 +30,24 @@ const reviewedArtists = rankedArtists
     };
   })
   .filter((entry) => entry.isReviewReady);
+const getActiveYear = (value?: string) => Number(value?.match(/\d{4}/)?.[0] ?? 0);
+const reviewedArtistGroups = [
+  {
+    title: "Best source-backed starts",
+    description: "Use these first when visible references and split-aware estimate notes matter most.",
+    items: reviewedArtists.slice(0, 4)
+  },
+  {
+    title: "Legacy catalogs",
+    description: "Older catalogs where estates, labels, publishing, and media reuse can change the artist-side range.",
+    items: reviewedArtists.filter(({ artist }) => getActiveYear(artist.active_since) && getActiveYear(artist.active_since) < 1985).slice(0, 4)
+  },
+  {
+    title: "Modern streaming scale",
+    description: "Artists where current platform demand and high-volume replay carry more of the estimate.",
+    items: reviewedArtists.filter(({ artist }) => getActiveYear(artist.active_since) >= 2000).slice(0, 4)
+  }
+].filter((group) => group.items.length > 0);
 ---
 
 <BaseLayout
@@ -90,6 +108,33 @@ const reviewedArtists = rankedArtists
       </div>
     </div>
   </section>
+
+  {reviewedArtistGroups.length > 0 && (
+    <section class="editorial-route-section" aria-labelledby="reviewed-artist-routes-title">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">Editorial Routes</p>
+          <h2 id="reviewed-artist-routes-title">Choose a stronger starting point</h2>
+        </div>
+      </div>
+      <div class="editorial-route-grid">
+        {reviewedArtistGroups.map((group) => (
+          <article class="editorial-route-card">
+            <h3>{group.title}</h3>
+            <p>{group.description}</p>
+            <ul class="meta-list">
+              {group.items.map(({ artist, references }) => (
+                <li>
+                  <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
+                  <span class="meta-inline"> · {references.length} public references</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
 
   <section aria-labelledby="reviewed-artist-list-title">
     <div class="section-heading-row">

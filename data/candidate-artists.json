@@ -1919,7 +1919,7 @@
     ]
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Billy Joel",
       "slug": "billy-joel",
@@ -1975,10 +1975,11 @@
           "piano-man"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Pet Shop Boys",
       "slug": "pet-shop-boys",
@@ -2034,10 +2035,11 @@
           "west-end-girls"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Joy Division",
       "slug": "joy-division",
@@ -2093,10 +2095,11 @@
           "love-will-tear-us-apart"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Kraftwerk",
       "slug": "kraftwerk",
@@ -2152,10 +2155,11 @@
           "the-model"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "The Smiths",
       "slug": "the-smiths",
@@ -2211,10 +2215,11 @@
           "there-is-a-light-that-never-goes-out"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "The Killers",
       "slug": "the-killers",
@@ -2270,10 +2275,11 @@
           "mr-brightside"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Green Day",
       "slug": "green-day",
@@ -2329,10 +2335,11 @@
           "basket-case"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Tom Petty",
       "slug": "tom-petty",
@@ -2388,10 +2395,11 @@
           "free-fallin"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Leonard Cohen",
       "slug": "leonard-cohen",
@@ -2447,10 +2455,11 @@
           "hallelujah-leonard-cohen"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "The Beach Boys",
       "slug": "the-beach-boys",
@@ -2506,10 +2515,11 @@
           "good-vibrations"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "The Who",
       "slug": "the-who",
@@ -2565,10 +2575,11 @@
           "baba-o-riley"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "The Kinks",
       "slug": "the-kinks",
@@ -2624,10 +2635,11 @@
           "you-really-got-me"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "The Clash",
       "slug": "the-clash",
@@ -2683,10 +2695,11 @@
           "london-calling"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Ramones",
       "slug": "ramones",
@@ -2742,7 +2755,8 @@
           "blitzkrieg-bop"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,
