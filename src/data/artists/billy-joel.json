@@ -16,5 +16,19 @@
     "Classic-pop and singer-songwriter streaming sustain recurring listening.",
     "Event, wedding, and nostalgia-driven replay support durable catalog demand.",
     "Strong writer-side participation improves retained value."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$7.8M-$25M/year",
+    "artist_or_estate_share": "$2.8M-$8.8M/year",
+    "label_share": "$2.7M-$8.4M/year",
+    "publisher_share": "$784K-$2.5M/year",
+    "writer_share": "$1.2M-$3.7M/year",
+    "assumptions": "Estimate keeps Billy Joel's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Billy Joel's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

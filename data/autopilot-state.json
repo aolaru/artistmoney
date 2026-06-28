@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 0,
-    "song": 0,
-    "album": 96
+    "artist": 2,
+    "song": 3,
+    "album": 97
   },
   "lastTouched": {
     "artist": {
@@ -92,7 +92,9 @@
       "jean-michel-jarre": "2026-06-12T18:47:42.748Z",
       "red-hot-chili-peppers": "2026-06-13T07:27:04.287Z",
       "my-bloody-valentine": "2026-06-13T18:36:28.340Z",
-      "nine-inch-nails": "2026-06-19T08:02:18.152Z"
+      "nine-inch-nails": "2026-06-19T08:02:18.152Z",
+      "billy-joel": "2026-06-28T07:29:45.062Z",
+      "green-day": "2026-06-28T07:29:45.062Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -346,7 +348,10 @@
       "equinoxe-part-4": "2026-06-13T07:27:04.287Z",
       "oxygene-iv": "2026-06-13T18:36:28.340Z",
       "closer": "2026-06-19T08:02:18.152Z",
-      "hurt": "2026-06-19T08:02:18.152Z"
+      "hurt": "2026-06-19T08:02:18.152Z",
+      "atmosphere": "2026-06-28T07:29:45.062Z",
+      "baba-o-riley": "2026-06-28T07:29:45.062Z",
+      "basket-case": "2026-06-28T07:29:45.062Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -442,6 +447,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-06-28T07:29:45.062Z",
+      "summary": "artist:billy-joel, artist:green-day, song:atmosphere, song:baba-o-riley, song:basket-case"
+    },
+    {
       "timestamp": "2026-06-19T08:02:18.152Z",
       "summary": "artist:nine-inch-nails, song:closer, song:hurt"
     },
@@ -476,10 +485,6 @@
     {
       "timestamp": "2026-05-26T10:02:06.725Z",
       "summary": "song:the-sun-always-shines-on-tv"
-    },
-    {
-      "timestamp": "2026-05-25T19:45:19.161Z",
-      "summary": "artist:a-ha, artist:duran-duran, song:hungry-like-the-wolf, song:ordinary-world, song:take-on-me"
     }
   ]
 }
