@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 2,
-    "song": 3,
-    "album": 97
+    "artist": 4,
+    "song": 6,
+    "album": 98
   },
   "lastTouched": {
     "artist": {
@@ -94,7 +94,8 @@
       "my-bloody-valentine": "2026-06-13T18:36:28.340Z",
       "nine-inch-nails": "2026-06-19T08:02:18.152Z",
       "billy-joel": "2026-06-28T07:29:45.062Z",
-      "green-day": "2026-06-28T07:29:45.062Z"
+      "green-day": "2026-06-28T07:29:45.062Z",
+      "leonard-cohen": "2026-06-28T18:31:08.817Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -351,7 +352,10 @@
       "hurt": "2026-06-19T08:02:18.152Z",
       "atmosphere": "2026-06-28T07:29:45.062Z",
       "baba-o-riley": "2026-06-28T07:29:45.062Z",
-      "basket-case": "2026-06-28T07:29:45.062Z"
+      "basket-case": "2026-06-28T07:29:45.062Z",
+      "free-fallin": "2026-06-28T18:31:08.817Z",
+      "god-only-knows": "2026-06-28T18:31:08.817Z",
+      "good-vibrations": "2026-06-28T18:31:08.817Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -447,6 +451,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-06-28T18:31:08.817Z",
+      "summary": "artist:leonard-cohen, song:free-fallin, song:god-only-knows, song:good-vibrations"
+    },
+    {
       "timestamp": "2026-06-28T07:29:45.062Z",
       "summary": "artist:billy-joel, artist:green-day, song:atmosphere, song:baba-o-riley, song:basket-case"
     },
@@ -481,10 +489,6 @@
     {
       "timestamp": "2026-05-31T07:27:00.944Z",
       "summary": "artist:inxs, song:need-you-tonight, song:never-tear-us-apart"
-    },
-    {
-      "timestamp": "2026-05-26T10:02:06.725Z",
-      "summary": "song:the-sun-always-shines-on-tv"
     }
   ]
 }
