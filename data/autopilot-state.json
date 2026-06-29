@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 4,
-    "song": 6,
-    "album": 98
+    "artist": 6,
+    "song": 9,
+    "album": 99
   },
   "lastTouched": {
     "artist": {
@@ -95,7 +95,9 @@
       "nine-inch-nails": "2026-06-19T08:02:18.152Z",
       "billy-joel": "2026-06-28T07:29:45.062Z",
       "green-day": "2026-06-28T07:29:45.062Z",
-      "leonard-cohen": "2026-06-28T18:31:08.817Z"
+      "leonard-cohen": "2026-06-28T18:31:08.817Z",
+      "ramones": "2026-06-29T07:56:09.346Z",
+      "the-beach-boys": "2026-06-29T07:56:09.346Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -355,7 +357,10 @@
       "basket-case": "2026-06-28T07:29:45.062Z",
       "free-fallin": "2026-06-28T18:31:08.817Z",
       "god-only-knows": "2026-06-28T18:31:08.817Z",
-      "good-vibrations": "2026-06-28T18:31:08.817Z"
+      "good-vibrations": "2026-06-28T18:31:08.817Z",
+      "its-a-sin": "2026-06-29T07:56:09.346Z",
+      "london-calling": "2026-06-29T07:56:09.346Z",
+      "love-will-tear-us-apart": "2026-06-29T07:56:09.346Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -451,6 +456,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-06-29T07:56:09.346Z",
+      "summary": "artist:ramones, artist:the-beach-boys, song:its-a-sin, song:london-calling, song:love-will-tear-us-apart"
+    },
+    {
       "timestamp": "2026-06-28T18:31:08.817Z",
       "summary": "artist:leonard-cohen, song:free-fallin, song:god-only-knows, song:good-vibrations"
     },
@@ -485,10 +494,6 @@
     {
       "timestamp": "2026-06-08T07:55:00.173Z",
       "summary": "artist:vangelis, song:blade-runner-blues, song:chariots-of-fire"
-    },
-    {
-      "timestamp": "2026-05-31T07:27:00.944Z",
-      "summary": "artist:inxs, song:need-you-tonight, song:never-tear-us-apart"
     }
   ]
 }

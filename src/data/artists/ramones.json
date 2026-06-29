@@ -16,5 +16,19 @@
     "Catalog streaming and playlist use keep the core songs active.",
     "Live-culture recognition and sync use can renew demand.",
     "Long-tail fan discovery supports recurring earnings beyond release cycles."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$2.5M-$9.8M/year",
+    "artist_or_estate_share": "$900K-$3.5M/year",
+    "label_share": "$855K-$3.3M/year",
+    "publisher_share": "$252K-$980K/year",
+    "writer_share": "$378K-$1.5M/year",
+    "assumptions": "Estimate keeps Ramones's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Ramones's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }
