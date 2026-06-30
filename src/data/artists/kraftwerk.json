@@ -16,5 +16,19 @@
     "Electronic discovery and influence-driven listening sustain catalog replay.",
     "Sampling history and cultural reference value support long-tail relevance.",
     "Specialist fan listening keeps the core catalog active over time."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$2.3M-$7.8M/year",
+    "artist_or_estate_share": "$830K-$2.8M/year",
+    "label_share": "$789K-$2.7M/year",
+    "publisher_share": "$232K-$784K/year",
+    "writer_share": "$349K-$1.2M/year",
+    "assumptions": "Estimate keeps Kraftwerk's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Kraftwerk's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }

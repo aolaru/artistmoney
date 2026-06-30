@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 8,
-    "song": 12,
-    "album": 100
+    "artist": 2,
+    "song": 15,
+    "album": 101
   },
   "lastTouched": {
     "artist": {
@@ -99,7 +99,9 @@
       "ramones": "2026-06-29T07:56:09.346Z",
       "the-beach-boys": "2026-06-29T07:56:09.346Z",
       "the-kinks": "2026-06-29T18:48:11.462Z",
-      "the-smiths": "2026-06-29T18:48:11.462Z"
+      "the-smiths": "2026-06-29T18:48:11.462Z",
+      "joy-division": "2026-06-30T07:27:27.643Z",
+      "kraftwerk": "2026-06-30T07:27:27.643Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -365,7 +367,10 @@
       "love-will-tear-us-apart": "2026-06-29T07:56:09.346Z",
       "should-i-stay-or-should-i-go": "2026-06-29T18:48:11.462Z",
       "somebody-told-me": "2026-06-29T18:48:11.462Z",
-      "suzanne": "2026-06-29T18:48:11.462Z"
+      "suzanne": "2026-06-29T18:48:11.462Z",
+      "uptown-girl": "2026-06-30T07:27:27.643Z",
+      "waterloo-sunset": "2026-06-30T07:27:27.643Z",
+      "west-end-girls": "2026-06-30T07:27:27.643Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -461,6 +466,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-06-30T07:27:27.643Z",
+      "summary": "artist:joy-division, artist:kraftwerk, song:uptown-girl, song:waterloo-sunset, song:west-end-girls"
+    },
+    {
       "timestamp": "2026-06-29T18:48:11.462Z",
       "summary": "artist:the-kinks, artist:the-smiths, song:should-i-stay-or-should-i-go, song:somebody-told-me, song:suzanne"
     },
@@ -495,10 +504,6 @@
     {
       "timestamp": "2026-06-12T07:47:16.621Z",
       "summary": "artist:phil-collins, song:like-a-rolling-stone, song:one, song:only-shallow"
-    },
-    {
-      "timestamp": "2026-06-11T19:07:13.021Z",
-      "summary": "artist:bob-dylan, artist:gary-numan, song:another-day-in-paradise, song:are-friends-electric, song:blowin-in-the-wind"
     }
   ]
 }

@@ -16,5 +16,19 @@
     "Alternative and post-punk playlists sustain steady replay.",
     "Cultural influence and constant rediscovery keep the catalog active.",
     "Strong identity and sync utility extend value beyond baseline streaming."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$1.7M-$5.9M/year",
+    "artist_or_estate_share": "$610K-$2.1M/year",
+    "label_share": "$580K-$2M/year",
+    "publisher_share": "$171K-$588K/year",
+    "writer_share": "$256K-$882K/year",
+    "assumptions": "Estimate keeps Joy Division's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Joy Division's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }
