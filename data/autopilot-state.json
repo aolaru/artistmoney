@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 2,
-    "song": 15,
-    "album": 101
+    "artist": 4,
+    "song": 5,
+    "album": 102
   },
   "lastTouched": {
     "artist": {
@@ -101,7 +101,9 @@
       "the-kinks": "2026-06-29T18:48:11.462Z",
       "the-smiths": "2026-06-29T18:48:11.462Z",
       "joy-division": "2026-06-30T07:27:27.643Z",
-      "kraftwerk": "2026-06-30T07:27:27.643Z"
+      "kraftwerk": "2026-06-30T07:27:27.643Z",
+      "the-clash": "2026-06-30T18:44:31.212Z",
+      "the-killers": "2026-06-30T18:44:31.212Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -370,7 +372,10 @@
       "suzanne": "2026-06-29T18:48:11.462Z",
       "uptown-girl": "2026-06-30T07:27:27.643Z",
       "waterloo-sunset": "2026-06-30T07:27:27.643Z",
-      "west-end-girls": "2026-06-30T07:27:27.643Z"
+      "west-end-girls": "2026-06-30T07:27:27.643Z",
+      "computer-love": "2026-06-30T18:44:31.212Z",
+      "hallelujah-leonard-cohen": "2026-06-30T18:44:31.212Z",
+      "i-wanna-be-sedated": "2026-06-30T18:44:31.212Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -466,6 +471,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-06-30T18:44:31.212Z",
+      "summary": "artist:the-clash, artist:the-killers, song:computer-love, song:hallelujah-leonard-cohen, song:i-wanna-be-sedated"
+    },
+    {
       "timestamp": "2026-06-30T07:27:27.643Z",
       "summary": "artist:joy-division, artist:kraftwerk, song:uptown-girl, song:waterloo-sunset, song:west-end-girls"
     },
@@ -500,10 +509,6 @@
     {
       "timestamp": "2026-06-12T18:47:42.748Z",
       "summary": "artist:u2, artist:jean-michel-jarre, song:with-or-without-you, song:californication, song:cars"
-    },
-    {
-      "timestamp": "2026-06-12T07:47:16.621Z",
-      "summary": "artist:phil-collins, song:like-a-rolling-stone, song:one, song:only-shallow"
     }
   ]
 }

@@ -16,5 +16,19 @@
     "Alternative-pop playlist presence sustains major recurring listening.",
     "Social, bar, and event-driven replay reinforce long-tail demand.",
     "Cross-generational familiarity keeps core songs visible to new listeners."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$6.2M-$20M/year",
+    "artist_or_estate_share": "$2.2M-$7.2M/year",
+    "label_share": "$2.1M-$6.8M/year",
+    "publisher_share": "$616K-$2M/year",
+    "writer_share": "$924K-$3M/year",
+    "assumptions": "Estimate keeps The Killers's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "The Killers's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }
