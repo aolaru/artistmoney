@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 2,
-    "song": 8,
-    "album": 103
+    "artist": 1,
+    "song": 4,
+    "album": 104
   },
   "lastTouched": {
     "artist": {
@@ -104,7 +104,8 @@
       "kraftwerk": "2026-06-30T07:27:27.643Z",
       "the-clash": "2026-06-30T18:44:31.212Z",
       "the-killers": "2026-06-30T18:44:31.212Z",
-      "pet-shop-boys": "2026-07-01T07:39:50.947Z"
+      "pet-shop-boys": "2026-07-01T07:39:50.947Z",
+      "tom-petty": "2026-07-01T18:46:21.711Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -379,7 +380,10 @@
       "i-wanna-be-sedated": "2026-06-30T18:44:31.212Z",
       "piano-man": "2026-07-01T07:39:50.947Z",
       "the-model": "2026-07-01T07:39:50.947Z",
-      "there-is-a-light-that-never-goes-out": "2026-07-01T07:39:50.947Z"
+      "there-is-a-light-that-never-goes-out": "2026-07-01T07:39:50.947Z",
+      "boulevard-of-broken-dreams": "2026-07-01T18:46:21.711Z",
+      "i-wont-back-down": "2026-07-01T18:46:21.711Z",
+      "mr-brightside": "2026-07-01T18:46:21.711Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -475,6 +479,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-07-01T18:46:21.711Z",
+      "summary": "artist:tom-petty, song:boulevard-of-broken-dreams, song:i-wont-back-down, song:mr-brightside"
+    },
+    {
       "timestamp": "2026-07-01T07:39:50.947Z",
       "summary": "artist:pet-shop-boys, song:piano-man, song:the-model, song:there-is-a-light-that-never-goes-out"
     },
@@ -509,10 +517,6 @@
     {
       "timestamp": "2026-06-13T18:36:28.340Z",
       "summary": "artist:my-bloody-valentine, song:oxygene-iv"
-    },
-    {
-      "timestamp": "2026-06-13T07:27:04.287Z",
-      "summary": "artist:red-hot-chili-peppers, song:under-the-bridge, song:when-you-sleep, song:equinoxe-part-4"
     }
   ]
 }
