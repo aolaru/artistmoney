@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 4,
-    "song": 5,
-    "album": 102
+    "artist": 2,
+    "song": 8,
+    "album": 103
   },
   "lastTouched": {
     "artist": {
@@ -103,7 +103,8 @@
       "joy-division": "2026-06-30T07:27:27.643Z",
       "kraftwerk": "2026-06-30T07:27:27.643Z",
       "the-clash": "2026-06-30T18:44:31.212Z",
-      "the-killers": "2026-06-30T18:44:31.212Z"
+      "the-killers": "2026-06-30T18:44:31.212Z",
+      "pet-shop-boys": "2026-07-01T07:39:50.947Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -375,7 +376,10 @@
       "west-end-girls": "2026-06-30T07:27:27.643Z",
       "computer-love": "2026-06-30T18:44:31.212Z",
       "hallelujah-leonard-cohen": "2026-06-30T18:44:31.212Z",
-      "i-wanna-be-sedated": "2026-06-30T18:44:31.212Z"
+      "i-wanna-be-sedated": "2026-06-30T18:44:31.212Z",
+      "piano-man": "2026-07-01T07:39:50.947Z",
+      "the-model": "2026-07-01T07:39:50.947Z",
+      "there-is-a-light-that-never-goes-out": "2026-07-01T07:39:50.947Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -471,6 +475,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-07-01T07:39:50.947Z",
+      "summary": "artist:pet-shop-boys, song:piano-man, song:the-model, song:there-is-a-light-that-never-goes-out"
+    },
+    {
       "timestamp": "2026-06-30T18:44:31.212Z",
       "summary": "artist:the-clash, artist:the-killers, song:computer-love, song:hallelujah-leonard-cohen, song:i-wanna-be-sedated"
     },
@@ -505,10 +513,6 @@
     {
       "timestamp": "2026-06-13T07:27:04.287Z",
       "summary": "artist:red-hot-chili-peppers, song:under-the-bridge, song:when-you-sleep, song:equinoxe-part-4"
-    },
-    {
-      "timestamp": "2026-06-12T18:47:42.748Z",
-      "summary": "artist:u2, artist:jean-michel-jarre, song:with-or-without-you, song:californication, song:cars"
     }
   ]
 }
