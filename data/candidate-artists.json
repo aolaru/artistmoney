@@ -2759,7 +2759,7 @@
     "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Talking Heads",
       "slug": "talking-heads",
@@ -2815,7 +2815,8 @@
           "once-in-a-lifetime"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,
