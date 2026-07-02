@@ -2,8 +2,8 @@
   "version": 1,
   "cursors": {
     "artist": 1,
-    "song": 4,
-    "album": 104
+    "song": 3,
+    "album": 105
   },
   "lastTouched": {
     "artist": {
@@ -105,7 +105,8 @@
       "the-clash": "2026-06-30T18:44:31.212Z",
       "the-killers": "2026-06-30T18:44:31.212Z",
       "pet-shop-boys": "2026-07-01T07:39:50.947Z",
-      "tom-petty": "2026-07-01T18:46:21.711Z"
+      "tom-petty": "2026-07-01T18:46:21.711Z",
+      "the-who": "2026-07-02T07:15:46.547Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -383,7 +384,10 @@
       "there-is-a-light-that-never-goes-out": "2026-07-01T07:39:50.947Z",
       "boulevard-of-broken-dreams": "2026-07-01T18:46:21.711Z",
       "i-wont-back-down": "2026-07-01T18:46:21.711Z",
-      "mr-brightside": "2026-07-01T18:46:21.711Z"
+      "mr-brightside": "2026-07-01T18:46:21.711Z",
+      "blitzkrieg-bop": "2026-07-02T07:15:46.547Z",
+      "my-generation": "2026-07-02T07:15:46.547Z",
+      "this-charming-man": "2026-07-02T07:15:46.547Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -479,6 +483,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-07-02T07:15:46.547Z",
+      "summary": "artist:the-who, song:blitzkrieg-bop, song:my-generation, song:this-charming-man"
+    },
+    {
       "timestamp": "2026-07-01T18:46:21.711Z",
       "summary": "artist:tom-petty, song:boulevard-of-broken-dreams, song:i-wont-back-down, song:mr-brightside"
     },
@@ -513,10 +521,6 @@
     {
       "timestamp": "2026-06-19T08:02:18.152Z",
       "summary": "artist:nine-inch-nails, song:closer, song:hurt"
-    },
-    {
-      "timestamp": "2026-06-13T18:36:28.340Z",
-      "summary": "artist:my-bloody-valentine, song:oxygene-iv"
     }
   ]
 }

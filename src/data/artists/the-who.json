@@ -16,5 +16,19 @@
     "Classic catalog streaming keeps the best-known songs active across generations.",
     "Radio memory, playlists, and sync use support durable long-tail earnings.",
     "Publishing and master rights can materially change the final artist-side share."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$3.1M-$12M/year",
+    "artist_or_estate_share": "$1.1M-$4.4M/year",
+    "label_share": "$1M-$4.2M/year",
+    "publisher_share": "$308K-$1.2M/year",
+    "writer_share": "$462K-$1.8M/year",
+    "assumptions": "Estimate keeps The Who's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "The Who's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }
