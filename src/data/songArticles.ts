@@ -114,6 +114,45 @@ export const songArticles: Record<string, SongArticle> = {
     ],
     "insight": "Music is one of the few assets that generates income forever."
   },
+  "mr-brightside": {
+    "seoTitle": "How much money does Mr. Brightside make per year?",
+    "shortAnswer": "Mr. Brightside by The Killers is modeled at $770K-$2.5M/year on the artist side, with gross track revenue modeled at $2.2M-$7.3M/year.",
+    "breakdown": [
+      "The page treats Mr. Brightside as an evergreen alternative-rock song rather than a release-cycle hit.",
+      "The model separates gross track revenue from the smaller artist-side range after label, publishing, and songwriter lanes.",
+      "Event-driven replay, playlist visibility, and cross-generational recognition are the main reasons the annual range stays meaningful."
+    ],
+    "lifetimeEstimate": "Lifetime value depends on how long Mr. Brightside keeps playlist, event, and catalog demand beyond the current annual modeled range.",
+    "whyItStillMakesMoney": [
+      "The song remains unusually durable for 2000s alternative rock because it keeps working as a singalong and nostalgia record.",
+      "Playlist and social replay help the track reach listeners well beyond its original release cycle.",
+      "The separate gross and artist-side fields keep the estimate from treating every dollar of track activity as performer take-home income."
+    ],
+    "insight": "Mr. Brightside is useful as a catalog case study because its value comes from repeat use across contexts, not only from current chart momentum. The estimate should be read as an annual modeled range, not as a royalty statement from The Killers or a label.",
+    "evidence": [
+      "The available revenue fields list estimated gross track revenue at $2.2M-$7.3M/year and artist-side share at $770K-$2.5M/year.",
+      "The ownership note says no specific catalog-sale adjustment is modeled for this track.",
+      "Official platform links are used for public track identity and listening context; they do not disclose royalty income."
+    ],
+    "methodologyNotes": [
+      "The estimate is directional and annualized, not a private royalty statement.",
+      "Gross track revenue, artist-side share, label share, publishing share, and songwriter share are separated because the structured data supports those lanes.",
+      "The model does not assume one universal per-stream rate because platform mix, territory, and contract terms vary."
+    ],
+    "references": [
+      {
+        "label": "The Killers official website",
+        "url": "https://www.thekillersmusic.com/",
+        "note": "Official artist site used for public artist identity and current catalog context.",
+        "category": "Official artist source"
+      },
+      {
+        "label": "RIAA Gold & Platinum database lookup",
+        "url": "https://www.riaa.com/gold-platinum/?ar=The+Killers&ti=Mr.+Brightside&tab_active=default-award",
+        "note": "Official RIAA search page used for certification-scale context, not for royalty totals."
+      }
+    ]
+  },
   "all-i-want-for-christmas-is-you": {
     "seoTitle": "How much money does All I Want for Christmas Is You make per year?",
     "shortAnswer": "All I Want for Christmas Is You by Mariah Carey is modeled at $4.4M-$11M/year on the artist side, with a separate gross-track range of $9.1M-$23M/year.",

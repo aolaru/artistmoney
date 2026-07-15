@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getArtistConfidence, getArtistVisual, getConfidenceSummary, songs, type Artist } from "../lib/catalog";
+import { artists, getArtistConfidence, getArtistVisual, getConfidenceSummary, rankedArtists, songs, type Artist } from "../lib/catalog";
 import { getLatestGitDate } from "../lib/freshness";
 import { isArtistReviewReady } from "../lib/reviewReady";
 import { getCatalogUpdates } from "../lib/updates";
@@ -13,6 +13,8 @@ const hasPublicArtistPage = (artist: Artist) => {
   return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
 };
 const reviewedArtistCount = artists.filter(hasPublicArtistPage).length;
+const visualArtistLimit = 96;
+const visualArtists = rankedArtists.map((entry) => entry.artist).slice(0, visualArtistLimit);
 const genres = [...new Set(artists.map((artist) => artist.genre).filter(Boolean))].sort();
 const countries = [...new Set(artists.map((artist) => artist.country).filter(Boolean))].sort();
 const recentUpdates = getCatalogUpdates(20);
@@ -92,8 +94,8 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
     </a>
     <a class="catalog-path-card" href="#all-artists-title">
       <span class="eyebrow">Browse</span>
-      <strong>Full artist list</strong>
-      <span>Filter by genre, country, confidence, or image status.</span>
+      <strong>Featured artist cards</strong>
+      <span>Filter the strongest visual set, then open the complete text list below.</span>
     </a>
   </section>
 
@@ -129,7 +131,7 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
 
   <section aria-labelledby="all-artists-title">
     <h2 id="all-artists-title">Artist Directory</h2>
-    <p class="results-note">Use the search field for a quick lookup, or open filters when you want to narrow the full catalog.</p>
+    <p class="results-note">The card grid shows the strongest {visualArtists.length} visual entries. The complete catalog remains available as a compact text list below.</p>
     <details class="advanced-filters">
       <summary>Search, filter, and sort artists</summary>
       <div class="filters" data-filter-root="artists">
@@ -198,11 +200,12 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
       </div>
     </details>
     <div class="active-filters" id="artist-active-filters"></div>
-    <p class="results-note" id="artist-results-note">Showing {artists.length} artists</p>
+    <p class="results-note" id="artist-results-note">Showing {visualArtists.length} featured artist cards</p>
     <div class="card-grid" id="artist-card-grid">
-      {artists.map((artist) => (
+      {visualArtists.map((artist) => (
         (() => {
           const artistVisual = getArtistVisual(artist);
+          const imageSrc = artistVisual.provider === "generated" ? `${baseUrl}artist-placeholder.svg` : artistVisual.src;
           const confidence = getArtistConfidence(artist);
           const isReviewed = hasPublicArtistPage(artist);
           const revenueMidpoint = artist.normalizedRevenue?.artistSide?.midpoint ?? 0;
@@ -233,7 +236,7 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
         >
           <img
             class="artist-card-image"
-            src={artistVisual.src}
+            src={imageSrc}
             alt={artistVisual.alt}
             loading="lazy"
             width="1200"
@@ -271,6 +274,20 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
     <div class="directory-actions">
       <button class="load-more-button" type="button" id="artist-load-more">Show more artists</button>
     </div>
+    <details class="compact-directory">
+      <summary>
+        <span>Open complete artist list</span>
+        <strong>{artists.length} total artist pages</strong>
+      </summary>
+      <div class="compact-directory-grid">
+        {artists.map((artist) => (
+          <a href={`${baseUrl}artist/${artist.slug}/`}>
+            <strong>{artist.name}</strong>
+            <span>{[artist.genre, artist.country].filter(Boolean).join(" · ") || "Catalog profile"}</span>
+          </a>
+        ))}
+      </div>
+    </details>
   </section>
 </BaseLayout>
 

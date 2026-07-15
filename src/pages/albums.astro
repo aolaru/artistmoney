@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { createAlbumArtwork } from "../lib/artistArtwork";
-import { albums, getAlbumConfidence, getConfidenceSummary } from "../lib/catalog";
+import { albums, getAlbumConfidence, getConfidenceSummary, rankedAlbums } from "../lib/catalog";
 import { getLatestGitDate } from "../lib/freshness";
 import { getCatalogUpdates } from "../lib/updates";
 
@@ -9,6 +8,8 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
+const visualAlbumLimit = 72;
+const visualAlbums = rankedAlbums.map((entry) => entry.album).slice(0, visualAlbumLimit);
 const decades = [...new Set(albums.map((album) => (album.year ? `${Math.floor(album.year / 10) * 10}s` : null)).filter(Boolean))].sort();
 const recentUpdates = getCatalogUpdates(20);
 const albumBySongSlug = new Map(
@@ -106,6 +107,7 @@ const latestUpdatedAlbums = [...new Set(recentUpdates.flatMap((entry) =>
 
   <section aria-labelledby="all-albums-title">
     <h2 id="all-albums-title">Album Directory</h2>
+    <p class="results-note">The card grid shows the strongest {visualAlbums.length} tracked albums. The full album list is available below as a compact text directory.</p>
     <div class="filters" data-filter-root="albums">
       <label class="filter-field">
         <span>Search</span>
@@ -148,9 +150,9 @@ const latestUpdatedAlbums = [...new Set(recentUpdates.flatMap((entry) =>
       </label>
     </div>
     <div class="active-filters" id="album-active-filters"></div>
-    <p class="results-note" id="album-results-note">Showing {albums.length} albums</p>
+    <p class="results-note" id="album-results-note">Showing {visualAlbums.length} featured album cards</p>
     <div class="card-grid" id="album-card-grid">
-      {albums.map((album) => {
+      {visualAlbums.map((album) => {
         const decade = album.year ? `${Math.floor(album.year / 10) * 10}s` : "";
         const confidence = getAlbumConfidence(album);
         const revenueMidpoint = album.normalizedRevenue?.midpoint ?? 0;
@@ -177,11 +179,7 @@ const latestUpdatedAlbums = [...new Set(recentUpdates.flatMap((entry) =>
           >
             <img
               class="artist-card-image album-cover-image"
-              src={createAlbumArtwork(album.title, album.artistName, album.slug, {
-                releaseDate: album.releaseDate,
-                label: album.label,
-                trackCount: album.trackCount
-              })}
+              src={`${baseUrl}album-placeholder.svg`}
               alt={`Cover artwork for ${album.title} by ${album.artistName}`}
               loading="lazy"
               width="1200"
@@ -221,6 +219,20 @@ const latestUpdatedAlbums = [...new Set(recentUpdates.flatMap((entry) =>
     <div class="directory-actions">
       <button class="load-more-button" type="button" id="album-load-more">Show more albums</button>
     </div>
+    <details class="compact-directory">
+      <summary>
+        <span>Open complete album list</span>
+        <strong>{albums.length} total albums</strong>
+      </summary>
+      <div class="compact-directory-grid">
+        {albums.map((album) => (
+          <span>
+            <strong>{album.title}</strong>
+            <span>{[album.artistName, album.year, album.trackedSongCount ? `${album.trackedSongCount} tracked` : ""].filter(Boolean).join(" · ")}</span>
+          </span>
+        ))}
+      </div>
+    </details>
   </section>
 </BaseLayout>
 

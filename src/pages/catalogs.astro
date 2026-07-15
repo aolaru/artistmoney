@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { createAlbumArtwork } from "../lib/artistArtwork";
 import { getAlbumConfidence, getConfidenceSummary, rankedAlbums } from "../lib/catalog";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
@@ -45,11 +44,7 @@ const entries = rankedAlbums.filter((entry) => entry.revenueRange).slice(0, 25);
         <article class="card artist-card ranked-card">
           <img
             class="artist-card-image album-cover-image"
-            src={createAlbumArtwork(album.title, album.artistName, album.slug, {
-              releaseDate: album.releaseDate,
-              label: album.label,
-              trackCount: album.trackCount
-            })}
+            src={`${baseUrl}album-placeholder.svg`}
             alt={`Cover artwork for ${album.title} by ${album.artistName}`}
             loading="lazy"
             width="1200"

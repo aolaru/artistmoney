@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="Album placeholder">
+  <defs>
+    <linearGradient id="album-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f1e6da"/>
+      <stop offset="100%" stop-color="#fffaf4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" rx="64" fill="url(#album-bg)"/>
+  <circle cx="972" cy="238" r="168" fill="#c79d72" opacity=".22"/>
+  <circle cx="254" cy="922" r="122" fill="#fff" opacity=".18"/>
+  <rect x="84" y="84" width="1032" height="1032" rx="52" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="6"/>
+  <g transform="translate(600 612) rotate(-8)">
+    <rect x="-318" y="-318" width="636" height="636" rx="48" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.36)" stroke-width="8"/>
+    <circle cx="0" cy="0" r="176" fill="rgba(19,29,39,.18)"/>
+    <circle cx="0" cy="0" r="56" fill="#0f665c" opacity=".74"/>
+    <circle cx="0" cy="0" r="18" fill="#fff" opacity=".85"/>
+  </g>
+  <text x="86" y="122" fill="rgba(20,31,45,.58)" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" letter-spacing="6">CATALOG ALBUM</text>
+  <text x="88" y="1088" fill="rgba(20,31,45,.56)" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" letter-spacing="3">TRACKED SONG CONTEXT</text>
+</svg>

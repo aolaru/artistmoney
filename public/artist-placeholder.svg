@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Artist placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e5ece4"/>
+      <stop offset="58%" stop-color="#8aa485"/>
+      <stop offset="100%" stop-color="#fbfdf9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" rx="54" fill="url(#bg)"/>
+  <circle cx="250" cy="220" r="44" fill="#fff" opacity=".34"/>
+  <circle cx="920" cy="180" r="78" fill="#0f665c" opacity=".16"/>
+  <circle cx="860" cy="680" r="58" fill="#fff" opacity=".18"/>
+  <g transform="translate(600 450) rotate(14)">
+    <rect x="-280" y="-280" width="560" height="560" rx="68" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="8"/>
+    <rect x="-220" y="-220" width="440" height="440" rx="54" fill="rgba(255,255,255,.18)"/>
+  </g>
+  <text x="88" y="136" fill="rgba(27,41,58,.46)" font-family="Georgia,serif" font-size="28" letter-spacing="6">HOW MUCH MUSIC</text>
+  <text x="88" y="750" fill="rgba(20,31,45,.82)" font-family="Georgia,serif" font-size="190" font-weight="700">HMM</text>
+  <path d="M88 784H500" stroke="rgba(20,31,45,.44)" stroke-width="8" stroke-linecap="round"/>
+</svg>

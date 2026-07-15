@@ -1135,6 +1135,63 @@ mark {
   display: none;
 }
 
+.compact-directory {
+  margin-top: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.compact-directory summary {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  font-weight: 750;
+}
+
+.compact-directory summary span {
+  color: var(--accent-strong);
+}
+
+.compact-directory summary strong {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.compact-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  padding: 0 1.1rem 1.1rem;
+}
+
+.compact-directory-grid a,
+.compact-directory-grid > span {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.compact-directory-grid strong {
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.compact-directory-grid span span,
+.compact-directory-grid a span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
 .artist-card {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -1989,6 +2046,16 @@ mark {
   }
 
   .catalog-path-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-directory summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .compact-directory-grid {
     grid-template-columns: 1fr;
   }
 

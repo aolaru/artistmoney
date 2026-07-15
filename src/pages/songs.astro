@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, songs, type Artist } from "../lib/catalog";
+import { artists, getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, rankedSongs, songs, type Artist } from "../lib/catalog";
 import { getLatestGitDate } from "../lib/freshness";
 import { isArtistReviewReady, isSongReviewReady } from "../lib/reviewReady";
 import { getCatalogUpdates } from "../lib/updates";
@@ -14,6 +14,10 @@ const hasPublicArtistPage = (artist: Artist) => {
 };
 const reviewedSongs = songs.filter(isSongReviewReady);
 const reviewedSongCount = reviewedSongs.length;
+const visualSongLimit = 96;
+const visualSongs = rankedSongs.map((entry) => entry.song).slice(0, visualSongLimit);
+const visualSongSlugs = new Set(visualSongs.map((song) => song.slug));
+const compactSongs = songs.filter((song) => !visualSongSlugs.has(song.slug));
 const songArtistSlugs = new Set(songs.map((song) => song.artist));
 const artistOptions = artists
   .filter((artist) => songArtistSlugs.has(artist.slug))
@@ -90,8 +94,8 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
     </a>
     <a class="catalog-path-card" href="#all-songs-title">
       <span class="eyebrow">Browse</span>
-      <strong>Full song list</strong>
-      <span>Filter by artist, decade, confidence, or image status.</span>
+      <strong>Featured catalog cards</strong>
+      <span>Filter the strongest visual set, then open the complete text list below.</span>
     </a>
   </section>
 
@@ -137,7 +141,7 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
 
   <section aria-labelledby="all-songs-title">
     <h2 id="all-songs-title">Song Directory</h2>
-    <p class="results-note">Use the search field for a quick lookup, or open filters when you want to narrow the full catalog.</p>
+    <p class="results-note">The card grid shows the strongest {visualSongs.length} visual entries. The complete catalog remains available as a compact text list below.</p>
     <details class="advanced-filters">
       <summary>Search, filter, and sort songs</summary>
       <div class="filters" data-filter-root="songs">
@@ -207,12 +211,13 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
       </div>
     </details>
     <div class="active-filters" id="song-active-filters"></div>
-    <p class="results-note" id="song-results-note">Showing {songs.length} songs</p>
+    <p class="results-note" id="song-results-note">Showing {visualSongs.length} featured song cards</p>
     <div class="card-grid" id="song-card-grid">
-      {songs.map((song) => {
+      {visualSongs.map((song) => {
         const artist = getArtist(song.artist);
         const artistName = artist?.name ?? song.artist;
         const artistVisual = artist ? getArtistVisual(artist) : undefined;
+        const imageSrc = !artistVisual || artistVisual.provider === "generated" ? `${baseUrl}artist-placeholder.svg` : artistVisual.src;
         const artistIsPublic = artist ? hasPublicArtistPage(artist) : false;
         const isReviewed = isSongReviewReady(song);
         const decade = song.year ? `${Math.floor(song.year / 10) * 10}s` : "";
@@ -247,7 +252,7 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
           >
             <img
               class="artist-card-image"
-              src={artistVisual?.src ?? ""}
+              src={imageSrc}
               alt={artistVisual?.alt ?? `Artwork for ${artistName}`}
               loading="lazy"
               width="1200"
@@ -291,6 +296,25 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
     <div class="directory-actions">
       <button class="load-more-button" type="button" id="song-load-more">Show more songs</button>
     </div>
+    {compactSongs.length > 0 && (
+      <details class="compact-directory">
+        <summary>
+          <span>Open complete song list</span>
+          <strong>{songs.length} total song pages</strong>
+        </summary>
+        <div class="compact-directory-grid">
+          {songs.map((song) => {
+            const artist = getArtist(song.artist);
+            return (
+              <a href={`${baseUrl}song/${song.slug}/`}>
+                <strong>{song.title}</strong>
+                <span>{[artist?.name ?? song.artist, song.year].filter(Boolean).join(" · ")}</span>
+              </a>
+            );
+          })}
+        </div>
+      </details>
+    )}
   </section>
 </BaseLayout>
 
