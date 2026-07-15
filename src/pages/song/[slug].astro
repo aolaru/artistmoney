@@ -42,6 +42,9 @@ const relatedSongs = (song.related_songs?.length
   : songs.filter((entry) => entry.artist === song.artist && entry.slug !== song.slug)) as Song[];
 const publicRelatedSongs = relatedSongs.filter(isSongReviewReady).slice(0, 3);
 const article = songArticles[song.slug];
+const pageDescription = article?.shortAnswer && article.shortAnswer.length >= 70
+  ? article.shortAnswer
+  : `${song.title}${artist ? ` by ${artist.name}` : ""} earnings estimate with modeled annual range, ownership context, source notes, and replay-demand context.`;
 const hasDetailedEarnings = Boolean(song.earnings || song.ownership);
 const providerArtwork = song.player?.artwork;
 const providerArtworkLink = song.player?.links?.appleMusic ?? song.player?.appleMusic;
@@ -181,9 +184,7 @@ const spotifyTrackUrl = platformMetrics?.spotifyTrackId
   : song.player?.links?.spotify;
 const hasPlatformSignals = Boolean(
   platformMetrics?.spotifyPopularity !== undefined ||
-  platformMetrics?.youtubeViews !== undefined ||
-  platformMetrics?.spotifyTrackId ||
-  platformMetrics?.youtubeVideoId
+  platformMetrics?.youtubeViews !== undefined
 );
 const fallbackEvidenceItems = [
   song.earnings?.gross_track_revenue && song.earnings?.artist_or_estate_share
@@ -239,9 +240,11 @@ const intentQuestions = [
   {
     question: `How much did ${song.title} make in total?`,
     answer:
-      article?.lifetimeEstimate
-        ? `${song.title} is currently modeled at ${article.lifetimeEstimate} in lifetime earnings, based on the annual range and long-tail replay assumptions shown here.`
-        : `${song.title} does not have a public lifetime total, so the estimate stays focused on modeled annual earnings instead of claiming an audited career total.`
+      article?.lifetimeEstimate && /^estimated/i.test(article.lifetimeEstimate.trim())
+        ? `${song.title} is currently modeled at ${article.lifetimeEstimate.replace(/^Estimated lifetime earnings:\s*/i, "")} in lifetime earnings, based on the annual range and long-tail replay assumptions shown here.`
+        : article?.lifetimeEstimate
+          ? `${song.title} does not have a public audited lifetime total. ${article.lifetimeEstimate}`
+          : `${song.title} does not have a public lifetime total, so the estimate stays focused on modeled annual earnings instead of claiming an audited career total.`
   },
   {
     question: `How much does ${song.title} make per stream?`,
@@ -272,7 +275,7 @@ const songTrustItems = [
   { label: "Ownership context", value: song.ownership ? "Included below" : "High-level only" },
   {
     label: "Platform signals",
-    value: hasPlatformSignals ? "Included below" : "Listening links only"
+    value: hasPlatformSignals ? "Measured context below" : "Listening links only"
   },
   { label: "Last updated", value: lastUpdated ?? "Current build" }
 ];
@@ -370,7 +373,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
 
 <BaseLayout
   title={article?.seoTitle ?? `${song.title} | How Much Music`}
-  description={article?.shortAnswer ?? `${song.title} meaning, earnings, ownership context, and catalog insights.`}
+  description={pageDescription}
   image={imageSrc}
   imageAlt={artist ? `${song.title} by ${artist.name}` : song.title}
   type="article"
@@ -573,46 +576,38 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
           <section aria-labelledby="platform-signals-title" class="platform-signals-section">
             <h2 id="platform-signals-title">Platform Signals</h2>
             <p class="results-note">
-              Public platform indicators, not complete streaming totals. Spotify exposes popularity, while YouTube exposes public video views.
+              Public platform indicators, not complete streaming totals. These metrics are shown only when a public value is available.
             </p>
             <div class="platform-signal-grid">
-              <article class="platform-signal-card">
-                <div class="platform-signal-heading">
-                  <span>Spotify</span>
-                  {spotifyTrackUrl && <a href={spotifyTrackUrl} rel="noreferrer" target="_blank">Open</a>}
-                </div>
-                {platformMetrics?.spotifyPopularity !== undefined ? (
+              {platformMetrics?.spotifyPopularity !== undefined && (
+                <article class="platform-signal-card">
+                  <div class="platform-signal-heading">
+                    <span>Spotify</span>
+                    {spotifyTrackUrl && <a href={spotifyTrackUrl} rel="noreferrer" target="_blank">Open</a>}
+                  </div>
                   <>
                     <strong>{platformMetrics.spotifyPopularity}/100 popularity</strong>
                     <div class="platform-meter" aria-label={`Spotify popularity ${platformMetrics.spotifyPopularity} out of 100`}>
                       <span style={`width: ${platformMetrics.spotifyPopularity}%`}></span>
                     </div>
                   </>
-                ) : (
-                  <p>Popularity score not available yet.</p>
-                )}
-              </article>
+                </article>
+              )}
 
-              <article class="platform-signal-card">
-                <div class="platform-signal-heading">
-                  <span>YouTube</span>
-                  {youtubeVideoUrl && <a href={youtubeVideoUrl} rel="noreferrer" target="_blank">Open</a>}
-                </div>
-                {platformMetrics?.youtubeViews !== undefined ? (
+              {platformMetrics?.youtubeViews !== undefined && (
+                <article class="platform-signal-card">
+                  <div class="platform-signal-heading">
+                    <span>YouTube</span>
+                    {youtubeVideoUrl && <a href={youtubeVideoUrl} rel="noreferrer" target="_blank">Open</a>}
+                  </div>
                   <>
                     <strong>{numberFormatter.format(platformMetrics.youtubeViews)} public views</strong>
                     <p>{platformMetrics.youtubeSource ? youtubeSourceLabels[platformMetrics.youtubeSource] : "Tracked video"}</p>
                   </>
-                ) : (
-                  <p>{platformMetrics?.youtubeVideoId ? "Official video identified; view count will appear after the next platform refresh." : "No tracked video yet."}</p>
-                )}
-              </article>
+                </article>
+              )}
             </div>
-            <p class="results-note">
-              {platformMetrics?.lastChecked
-                ? `Last platform refresh: ${platformMetrics.lastChecked}.`
-                : "Platform metrics will update when the next public platform refresh runs."}
-            </p>
+            {platformMetrics?.lastChecked && <p class="results-note">Last platform refresh: {platformMetrics.lastChecked}.</p>}
           </section>
         )}
 

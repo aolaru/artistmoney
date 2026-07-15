@@ -30,6 +30,14 @@ const jsonLdPayload = jsonLd
   ? JSON.stringify(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
   : null;
 const searchIndexUrl = `${baseUrl}search-index.json`;
+const trustPagePaths = new Set([
+  "/about/",
+  "/contact/",
+  "/credits/",
+  "/editorial-policy/",
+  "/privacy/"
+]);
+const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -66,10 +74,12 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
       gtag("js", new Date());
       gtag("config", "G-8WMBDVPWEG");
     </script>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4706844277814411"
-      crossorigin="anonymous"></script>
+    {shouldLoadAds && (
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4706844277814411"
+        crossorigin="anonymous"></script>
+    )}
     <title>{title}</title>
     {jsonLdPayload && (
       <script type="application/ld+json" set:html={jsonLdPayload} />
@@ -96,7 +106,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
             aria-expanded="false"
           />
           <div class="header-search-panel" id="header-search-results" hidden>
-            <div class="header-search-empty">Start typing to search catalog pages.</div>
+            <div class="header-search-empty">Start typing to search reviewed pages.</div>
             <ul class="header-search-results" role="listbox"></ul>
             <a class="header-search-all-link" href={`${baseUrl}search/`}>Open search page</a>
           </div>
@@ -106,7 +116,8 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
           <a href={`${baseUrl}search/`}>Search</a>
           <a href={`${baseUrl}artists/`}>Artists</a>
           <a href={`${baseUrl}songs/`}>Songs</a>
-          <a href={`${baseUrl}reviewed-songs/`}>Reviewed</a>
+          <a href={`${baseUrl}reviewed-songs/`}>Reviewed Songs</a>
+          <a href={`${baseUrl}reviewed-artists/`}>Reviewed Artists</a>
           <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
           <a href={`${baseUrl}about/`}>About</a>
         </nav>
@@ -227,6 +238,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
           if (subtitle.startsWith(query)) score += 70;
           if (subtitle.includes(query)) score += 40;
           if (searchText.includes(query)) score += 20;
+          if (item.reviewed) score += 40;
           return score;
         };
 
@@ -285,8 +297,8 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
               if (suggestions.length === 0) {
                 empty.hidden = false;
                 empty.textContent = query
-                  ? "No catalog page matched. Try a shorter artist or song name."
-                  : "Start typing to search catalog pages.";
+                  ? "No reviewed page matched. Try a shorter artist or song name, or open the full catalogs."
+                  : "Start typing to search reviewed pages.";
                 openPanel();
                 return;
               }

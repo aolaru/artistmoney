@@ -7,6 +7,7 @@ const searchItems = [
   ...artists.flatMap((artist) => {
     const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
     const reviewed = isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
+    if (!reviewed) return [];
 
     return [{
       type: "Artist",
@@ -21,6 +22,7 @@ const searchItems = [
   ...songs.flatMap((song) => {
     const artist = artists.find((entry) => entry.slug === song.artist);
     const reviewed = isSongReviewReady(song);
+    if (!reviewed) return [];
 
     return [{
       type: "Song",

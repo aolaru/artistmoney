@@ -15,7 +15,7 @@ export type CatalogUpdate = {
   includesArtistEditorial: boolean;
   includesSongEditorial: boolean;
   category: "catalog-expansion" | "album-enrichment" | "editorial-upgrade" | "mixed";
-  sourceType: "autopilot" | "manual";
+  sourceType: "assisted" | "manual";
   highlights: string[];
 };
 
@@ -108,7 +108,7 @@ export function getCatalogUpdates(limit = 24): CatalogUpdate[] {
         const sourceType =
           summary.toLowerCase().includes("backfill existing page content") ||
           summary.toLowerCase().includes("autopilot")
-            ? "autopilot"
+            ? "assisted"
             : "manual";
 
         const highlights = [
@@ -123,7 +123,7 @@ export function getCatalogUpdates(limit = 24): CatalogUpdate[] {
           includesSongEditorial ? "song editorial refreshed" : null
         ].filter(Boolean) as string[];
 
-        if (sourceType === "autopilot") {
+        if (sourceType === "assisted") {
           highlights.push("catalog context refreshed");
         } else {
           highlights.push("manual editorial release");

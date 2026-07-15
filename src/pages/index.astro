@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
   getArtist,
+  getArtistConfidence,
   getArtistVisual,
   getSongConfidence,
   getSongMethodology,
@@ -27,6 +28,7 @@ const hasPublicArtistPage = (artist: Artist) => {
   return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
 };
 const allReviewedArtistEntries = rankedArtists.filter(({ artist }) => hasPublicArtistPage(artist));
+const reviewedArtistEntries = allReviewedArtistEntries.slice(0, 4);
 ---
 
 <BaseLayout
@@ -130,6 +132,53 @@ const allReviewedArtistEntries = rankedArtists.filter(({ artist }) => hasPublicA
                 <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
                 <p class="artist-card-meta">
                   By {artist && artistIsPublic ? <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a> : artistName}
+                </p>
+                <p class="artist-card-meta">
+                  Modeled midpoint: {formatRevenueMidpoint(revenueScore)}
+                </p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  {reviewedArtistEntries.length > 0 && (
+    <section id="top-reviewed-artists" aria-labelledby="top-reviewed-artists-title">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">Reviewed Artists</p>
+          <h2 id="top-reviewed-artists-title">Top reviewed artist pages</h2>
+        </div>
+        <a class="home-action-link" href={`${baseUrl}reviewed-artists/`}>Open reviewed artists</a>
+      </div>
+      <p class="results-note">
+        These artist pages have self-hosted images, ownership notes, visible references, and
+        structured catalog earnings context.
+      </p>
+      <div class="card-grid reviewed-song-grid">
+        {reviewedArtistEntries.map(({ artist, revenueScore }) => {
+          const artistVisual = getArtistVisual(artist);
+          const confidence = getArtistConfidence(artist);
+
+          return (
+            <article class="card artist-card reviewed-song-card">
+              <img
+                class="artist-card-image"
+                src={artistVisual.src}
+                alt={artistVisual.alt}
+                loading="lazy"
+                width="1200"
+                height="900"
+                referrerpolicy="no-referrer"
+              />
+              <div class="artist-card-body">
+                <p class="eyebrow">Artist</p>
+                <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+                <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
+                <p class="artist-card-meta">
+                  {[artist.genre, artist.country].filter(Boolean).join(" · ")}
                 </p>
                 <p class="artist-card-meta">
                   Modeled midpoint: {formatRevenueMidpoint(revenueScore)}

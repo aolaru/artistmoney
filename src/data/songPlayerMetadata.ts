@@ -11,6 +11,15 @@ export type SongPlayerMetadata = {
 };
 
 export const songPlayerMetadata: Record<string, SongPlayerMetadata> = {
+  "mr-brightside": {
+    "appleMusic": "https://music.apple.com/us/album/mr-brightside/1526194184?i=1526194192&uo=4",
+    "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/07/1a/5a/071a5aee-6e42-060c-35b9-6a6e45b9ea59/06UMGIM10441.rgb.jpg/600x600bb.jpg",
+    "links": {
+      "appleMusic": "https://music.apple.com/us/album/mr-brightside/1526194184?i=1526194192&uo=4",
+      "spotify": "https://open.spotify.com/track/48N4mYueMakUMcKpTbJDyJ",
+      "youtubeMusic": "https://music.youtube.com/search?q=The%20Killers%20Mr.%20Brightside"
+    }
+  },
   "505": {
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/32/bc/c1/32bcc1f1-f812-e765-5b4e-340e5c9ab373/mzaf_7885353230840382876.plus.aac.p.m4a",
     "appleMusic": "https://music.apple.com/us/album/505/251499221?i=251499791&uo=4",

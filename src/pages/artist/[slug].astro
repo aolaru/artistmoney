@@ -51,6 +51,9 @@ const allReferenceLinks = getArtistReviewReferences(artist, artistSongs);
 const isReviewReady = isArtistReviewReady(artist, artistSongs) && artistVisual.provider === "artistPhoto";
 const articleSourceNotes = article?.sources ?? editorial.sources;
 const articleEvidence = article?.evidence ?? [];
+const pageDescription = article?.shortAnswer && article.shortAnswer.length >= 70
+  ? article.shortAnswer
+  : `${artist.name} catalog earnings estimate with modeled annual range, ownership context, source notes, and top-song support.`;
 const artistRank = rankedArtists.findIndex((entry) => entry.artist.slug === artist.slug) + 1;
 const artistPercentile = artistRank > 0 ? Math.max(1, Math.round((artistRank / rankedArtists.length) * 100)) : undefined;
 const activeSinceYear = artist.active_since ? Number(artist.active_since.match(/\d{4}/)?.[0]) : undefined;
@@ -291,7 +294,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
 
 <BaseLayout
   title={article?.seoTitle ?? `${artist.name} | How Much Music`}
-  description={article?.shortAnswer ?? `${artist.name} income estimate with songs, ownership context, and catalog revenue strategy.`}
+  description={pageDescription}
   image={imageSrc}
   imageAlt={artistVisual.alt}
   type="article"

@@ -507,21 +507,21 @@ export const artistArticles: Record<string, ArtistArticle> = {
     "seoTitle": "How much money does Bad Bunny make from music?",
     "shortAnswer": "Bad Bunny is modeled at $11M-$39M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Titi Me Pregunto and Me Porto Bonito remain the clearest catalog anchors for the page.",
+      "Titi Me Pregunto and Me Porto Bonito are the main tracked-song anchors for this estimate.",
       "Catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Bad Bunny's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Bad Bunny's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "coldplay": {
     "seoTitle": "How much money does Coldplay make from music?",
     "shortAnswer": "Coldplay is modeled at $11M-$33M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Fix You and Yellow remain the clearest catalog anchors for the page.",
+      "Fix You and Yellow are the main tracked-song anchors for this estimate.",
       "Alternative rock / Pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Coldplay's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Coldplay's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "ed-sheeran": {
     "seoTitle": "How much money does Ed Sheeran make from music?",
@@ -561,51 +561,51 @@ export const artistArticles: Record<string, ArtistArticle> = {
     "seoTitle": "How much money does Disney make from music?",
     "shortAnswer": "Disney is modeled at $8.3M-$28M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Let It Go and Circle of Life remain the clearest catalog anchors for the page.",
+      "Let It Go and Circle of Life are the main tracked-song anchors for this estimate.",
       "Soundtrack / Family Pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Disney's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Disney's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "dua-lipa": {
     "seoTitle": "How much money does Dua Lipa make from music?",
     "shortAnswer": "Dua Lipa is modeled at $11M-$25M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Don't Start Now and Levitating remain the clearest catalog anchors for the page.",
+      "Don't Start Now and Levitating are the main tracked-song anchors for this estimate.",
       "Pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Dua Lipa's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Dua Lipa's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "metallica": {
     "seoTitle": "How much money does Metallica make from music?",
     "shortAnswer": "Metallica is modeled at $11M-$25M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Enter Sandman and Nothing Else Matters remain the clearest catalog anchors for the page.",
+      "Enter Sandman and Nothing Else Matters are the main tracked-song anchors for this estimate.",
       "Heavy Metal catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Metallica's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Metallica's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "kanye-west": {
     "seoTitle": "How much money does Kanye West make from music?",
     "shortAnswer": "Kanye West is modeled at $5.5M-$28M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Stronger and Power remain the clearest catalog anchors for the page.",
+      "Stronger and Power are the main tracked-song anchors for this estimate.",
       "Hip-hop / Pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Kanye West's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Kanye West's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "lady-gaga": {
     "seoTitle": "How much money does Lady Gaga make from music?",
     "shortAnswer": "Lady Gaga is modeled at $8.3M-$25M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Bad Romance and Poker Face remain the clearest catalog anchors for the page.",
+      "Bad Romance and Poker Face are the main tracked-song anchors for this estimate.",
       "Pop / Dance-pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Lady Gaga's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Lady Gaga's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "queen": {
     "seoTitle": "How much money does Queen make from music?",
@@ -628,160 +628,160 @@ export const artistArticles: Record<string, ArtistArticle> = {
     "seoTitle": "How much money does Madonna make from music?",
     "shortAnswer": "Madonna is modeled at $6.6M-$25M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Like a Prayer and Vogue remain the clearest catalog anchors for the page.",
+      "Like a Prayer and Vogue are the main tracked-song anchors for this estimate.",
       "Pop / Dance-pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Madonna's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Madonna's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "elton-john": {
     "seoTitle": "How much money does Elton John make from music?",
     "shortAnswer": "Elton John is modeled at $8.3M-$22M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Rocket Man and Tiny Dancer remain the clearest catalog anchors for the page.",
+      "Rocket Man and Tiny Dancer are the main tracked-song anchors for this estimate.",
       "Pop / Rock catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Elton John's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Elton John's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "adele": {
     "seoTitle": "How much money does Adele make from music?",
     "shortAnswer": "Adele is modeled at $5.5M-$22M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Someone Like You and Hello remain the clearest catalog anchors for the page.",
+      "Someone Like You and Hello are the main tracked-song anchors for this estimate.",
       "Pop / Soul catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Adele's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Adele's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "kendrick-lamar": {
     "seoTitle": "How much money does Kendrick Lamar make from music?",
     "shortAnswer": "Kendrick Lamar is modeled at $5.5M-$18M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "HUMBLE. and DNA. remain the clearest catalog anchors for the page.",
+      "HUMBLE. and DNA. are the main tracked-song anchors for this estimate.",
       "Hip-hop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Kendrick Lamar's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Kendrick Lamar's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "eminem": {
     "seoTitle": "How much money does Eminem make from music?",
     "shortAnswer": "Eminem is modeled at $5.5M-$17M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Lose Yourself and Stan remain the clearest catalog anchors for the page.",
+      "Lose Yourself and Stan are the main tracked-song anchors for this estimate.",
       "Hip-hop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Eminem's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Eminem's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "prince": {
     "seoTitle": "How much money does Prince make from music?",
     "shortAnswer": "Prince is modeled at $4.4M-$17M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Purple Rain and When Doves Cry remain the clearest catalog anchors for the page.",
+      "Purple Rain and When Doves Cry are the main tracked-song anchors for this estimate.",
       "Pop / Funk catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Prince's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Prince's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "bruce-springsteen": {
     "seoTitle": "How much money does Bruce Springsteen make from music?",
     "shortAnswer": "Bruce Springsteen is modeled at $5M-$15M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Born in the U.S.A. and Dancing in the Dark remain the clearest catalog anchors for the page.",
+      "Born in the U.S.A. and Dancing in the Dark are the main tracked-song anchors for this estimate.",
       "Rock / Heartland Rock catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Bruce Springsteen's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Bruce Springsteen's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "abba": {
     "seoTitle": "How much money does ABBA make from music?",
     "shortAnswer": "ABBA is modeled at $4.4M-$14M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Dancing Queen and Gimme! Gimme! Gimme! (A Man After Midnight) remain the clearest catalog anchors for the page.",
+      "Dancing Queen and Gimme! Gimme! Gimme! (A Man After Midnight) are the main tracked-song anchors for this estimate.",
       "Pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "ABBA's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "ABBA's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "ac-dc": {
     "seoTitle": "How much money does AC/DC make from music?",
     "shortAnswer": "AC/DC is modeled at $4.4M-$14M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Back in Black and You Shook Me All Night Long remain the clearest catalog anchors for the page.",
+      "Back in Black and You Shook Me All Night Long are the main tracked-song anchors for this estimate.",
       "Hard Rock catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "AC/DC's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "AC/DC's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "billie-eilish": {
     "seoTitle": "How much money does Billie Eilish make from music?",
     "shortAnswer": "Billie Eilish is modeled at $4.4M-$14M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Bad Guy and Happier Than Ever remain the clearest catalog anchors for the page.",
+      "Bad Guy and Happier Than Ever are the main tracked-song anchors for this estimate.",
       "Pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Billie Eilish's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Billie Eilish's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "fleetwood-mac": {
     "seoTitle": "How much money does Fleetwood Mac make from music?",
     "shortAnswer": "Fleetwood Mac is modeled at $4.4M-$14M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Dreams and The Chain remain the clearest catalog anchors for the page.",
+      "Dreams and The Chain are the main tracked-song anchors for this estimate.",
       "Classic Rock / Pop Rock catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Fleetwood Mac's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Fleetwood Mac's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "snoop-dogg": {
     "seoTitle": "How much money does Snoop Dogg make from music?",
     "shortAnswer": "Snoop Dogg is modeled at $4.4M-$13M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Drop It Like It's Hot and Gin and Juice remain the clearest catalog anchors for the page.",
+      "Drop It Like It's Hot and Gin and Juice are the main tracked-song anchors for this estimate.",
       "Hip-hop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Snoop Dogg's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Snoop Dogg's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "the-beatles": {
     "seoTitle": "How much money does The Beatles make from music?",
     "shortAnswer": "The Beatles is modeled at $4.4M-$11M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Hey Jude and Let It Be remain the clearest catalog anchors for the page.",
+      "Hey Jude and Let It Be are the main tracked-song anchors for this estimate.",
       "Rock / Pop catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "The Beatles's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "The Beatles's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "garth-brooks": {
     "seoTitle": "How much money does Garth Brooks make from music?",
     "shortAnswer": "Garth Brooks is modeled at $3.3M-$11M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Friends in Low Places and The Thunder Rolls remain the clearest catalog anchors for the page.",
+      "Friends in Low Places and The Thunder Rolls are the main tracked-song anchors for this estimate.",
       "Catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Garth Brooks's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Garth Brooks's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "radiohead": {
     "seoTitle": "How much money does Radiohead make from music?",
     "shortAnswer": "Radiohead is modeled at $2.8M-$11M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Creep and Karma Police remain the clearest catalog anchors for the page.",
+      "Creep and Karma Police are the main tracked-song anchors for this estimate.",
       "Alternative rock catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Radiohead's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Radiohead's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   },
   "bee-gees": {
     "seoTitle": "How much money does Bee Gees make from music?",
     "shortAnswer": "Bee Gees is modeled at $3.3M-$9.9M/year on the artist side, with catalog, label, publishing, and writer economics separated where possible.",
     "sources": [
-      "Stayin' Alive and How Deep Is Your Love remain the clearest catalog anchors for the page.",
+      "Stayin' Alive and How Deep Is Your Love are the main tracked-song anchors for this estimate.",
       "Pop / Disco catalog streaming supports recurring long-tail demand.",
       "Publishing, licensing, and ownership splits can materially change the artist-side share versus gross catalog revenue."
     ],
-    "insight": "Bee Gees's page is strongest when read as a split-aware catalog model: the useful number is not just gross demand, but how much of that demand can plausibly reach the artist side."
+    "insight": "Bee Gees's page separates audience demand from the share that may plausibly reach the artist side, so the artist-side range matters more than the gross catalog total."
   }
 };

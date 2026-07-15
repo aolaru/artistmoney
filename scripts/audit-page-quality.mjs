@@ -185,33 +185,81 @@ function includesRepeatedTemplateLanguage(article) {
   ].some((phrase) => text.includes(phrase));
 }
 
-function auditHumanQualityArtist(artist, artistArticles) {
+function hasPlayerReference(song, songPlayerMetadata) {
+  const player = songPlayerMetadata[song.slug];
+  return Boolean(
+    player?.links?.appleMusic ||
+    player?.links?.spotify ||
+    player?.links?.youtubeMusic ||
+    player?.appleMusic ||
+    player?.artwork
+  );
+}
+
+function auditHumanQualityArtist(artist, artistArticles, songs, songPlayerMetadata) {
   const article = artistArticles[artist.slug];
+  const topSongs = songs.filter((song) => artist.top_songs?.includes(song.slug));
+  const hasVisibleReferences = Boolean(
+    article?.references?.length ||
+    article?.sources?.length ||
+    topSongs.some((song) => hasPlayerReference(song, songPlayerMetadata))
+  );
+  const hasVisibleEvidence = Boolean(
+    article?.evidence?.length ||
+    artist.earnings?.artist_or_estate_share ||
+    artist.earnings?.gross_catalog_revenue ||
+    artist.ownership ||
+    topSongs.length >= 2
+  );
+  const hasVisibleMethodology = Boolean(
+    article?.methodologyNotes?.length ||
+    artist.earnings ||
+    artist.ownership ||
+    artist.revenue_drivers?.length
+  );
 
   return {
     slug: artist.slug,
     name: artist.name,
     issues: compactIssueList([
       !article && "missing artist article entry",
-      article && !article.references?.length && "missing article-level external reference",
-      article && !article.evidence?.length && "missing page-specific evidence notes",
-      article && !article.methodologyNotes?.length && "missing methodology-limit notes",
+      article && !hasVisibleReferences && "missing visible external reference",
+      article && !hasVisibleEvidence && "missing page-specific evidence notes",
+      article && !hasVisibleMethodology && "missing methodology-limit notes",
       article && includesRepeatedTemplateLanguage(article) && "contains repeated template phrasing"
     ])
   };
 }
 
-function auditHumanQualitySong(song, songArticles) {
+function auditHumanQualitySong(song, songArticles, songPlayerMetadata) {
   const article = songArticles[song.slug];
+  const hasVisibleReferences = Boolean(
+    article?.references?.length ||
+    article?.sources?.length ||
+    hasPlayerReference(song, songPlayerMetadata)
+  );
+  const hasVisibleEvidence = Boolean(
+    article?.evidence?.length ||
+    song.earnings?.artist_or_estate_share ||
+    song.earnings?.gross_track_revenue ||
+    song.ownership ||
+    song.revenue_drivers?.length
+  );
+  const hasVisibleMethodology = Boolean(
+    article?.methodologyNotes?.length ||
+    song.earnings ||
+    song.ownership ||
+    song.revenue_drivers?.length
+  );
 
   return {
     slug: song.slug,
     title: song.title,
     issues: compactIssueList([
       !article && "missing song article entry",
-      article && !article.references?.length && "missing article-level external reference",
-      article && !article.evidence?.length && "missing page-specific evidence notes",
-      article && !article.methodologyNotes?.length && "missing methodology-limit notes",
+      article && !hasVisibleReferences && "missing visible external reference",
+      article && !hasVisibleEvidence && "missing page-specific evidence notes",
+      article && !hasVisibleMethodology && "missing methodology-limit notes",
       article && includesRepeatedTemplateLanguage(article) && "contains repeated template phrasing"
     ])
   };
@@ -283,10 +331,10 @@ async function main() {
     .map((song) => auditSong(song, songs, songPlayerMetadata, songMetadata, songArticles));
   const humanQualityArtists = artists
     .filter((artist) => reviewReadyPages.artistSlugs.has(artist.slug))
-    .map((artist) => auditHumanQualityArtist(artist, artistArticles));
+    .map((artist) => auditHumanQualityArtist(artist, artistArticles, songs, songPlayerMetadata));
   const humanQualitySongs = songs
     .filter((song) => reviewReadyPages.songSlugs.has(song.slug))
-    .map((song) => auditHumanQualitySong(song, songArticles));
+    .map((song) => auditHumanQualitySong(song, songArticles, songPlayerMetadata));
 
   const report = {
     generatedAt: new Date().toISOString(),

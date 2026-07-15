@@ -9,15 +9,15 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
 
 <BaseLayout
   title="Search | How Much Music"
-  description="Search How Much Music for artist and song earnings pages."
+  description="Search reviewed How Much Music artist and song earnings pages with stronger source context."
   noindex
 >
   <section class="search-page-hero">
     <p class="eyebrow">Search</p>
-    <h1>Search artists and songs</h1>
+    <h1>Search reviewed artists and songs</h1>
     <p>
-      Find artist and song pages, then start with the entries marked reviewed when you want the
-      strongest source notes and ownership context.
+      Search the reviewed pages first. Use the full artist and song catalogs when you want every
+      noindex catalog profile.
     </p>
   </section>
 
@@ -42,7 +42,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
         <button type="button" class="search-filter-chip" data-search-filter="artist">Artists</button>
         <button type="button" class="search-filter-chip" data-search-filter="song">Songs</button>
       </div>
-      <p class="results-note" data-search-status>Start typing or submit a query to search catalog pages.</p>
+      <p class="results-note" data-search-status>Start typing or submit a query to search reviewed pages.</p>
     </div>
 
     <div class="search-results-shell" data-search-results></div>
@@ -134,14 +134,15 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
             <div class="search-start-card">
               <div>
                 <p class="eyebrow">Start Here</p>
-                <h2>Try a song, artist, or both.</h2>
-                <p>Search works best with a familiar title, an artist name, or a phrase like “mariah christmas” or “pink floyd”.</p>
+                <h2>Try a reviewed song or artist.</h2>
+                <p>Search covers reviewed pages with stronger source context. Full catalogs remain available below.</p>
               </div>
               <div class="search-starter-grid" aria-label="Suggested searches and browse links">
                 <a href="${baseUrl}search/?q=taylor%20swift">Taylor Swift</a>
                 <a href="${baseUrl}search/?q=all%20i%20want%20for%20christmas">All I Want for Christmas</a>
                 <a href="${baseUrl}search/?q=blinding%20lights">Blinding Lights</a>
                 <a href="${baseUrl}reviewed-songs/">Reviewed songs</a>
+                <a href="${baseUrl}reviewed-artists/">Reviewed artists</a>
                 <a href="${baseUrl}artists/">All artists</a>
                 <a href="${baseUrl}songs/">All songs</a>
               </div>
@@ -176,8 +177,8 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
           if (total === 0) {
             resultsRoot.innerHTML = `
               <div class="trust-card">
-                <h2>No results found</h2>
-                <p>Try a shorter query, an artist name, or part of a song title.</p>
+                <h2>No reviewed results found</h2>
+                <p>Try a shorter query, or browse the <a href="${baseUrl}artists/">artist catalog</a> and <a href="${baseUrl}songs/">song catalog</a>.</p>
               </div>
             `;
             return;
@@ -223,7 +224,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
           resultsRoot.innerHTML = `
             <div class="trust-card">
               <h2>Search is unavailable</h2>
-              <p>The catalog index could not be loaded right now. Try refreshing the page.</p>
+              <p>The reviewed-page index could not be loaded right now. Try refreshing the page.</p>
             </div>
           `;
         }

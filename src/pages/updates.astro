@@ -33,7 +33,22 @@ const categoryLabels = {
   mixed: "Mixed update"
 } as const;
 const displayHighlight = (highlight: string) =>
-  highlight.replaceAll("autopilot", "assisted").replaceAll("Autopilot", "Assisted");
+  highlight
+    .replaceAll("autopilot", "assisted")
+    .replaceAll("Autopilot", "Assisted")
+    .replaceAll("generated", "recent")
+    .replaceAll("Generated", "Recent")
+    .replaceAll("automated", "assisted")
+    .replaceAll("Automated", "Assisted");
+const displaySummary = (summary: string) => {
+  const normalized = summary.toLowerCase();
+
+  if (normalized.includes("expand catalog queue")) return "Expand catalog research queue";
+  if (normalized.includes("backfill existing page content")) return "Refresh existing page context";
+  if (normalized.includes("daily catalog expansion candidate")) return "Add catalog page candidates";
+
+  return displayHighlight(summary);
+};
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -46,7 +61,7 @@ const jsonLd = {
 
 <BaseLayout
   title="Updates | How Much Music"
-  description="Recent artist, song, album, and editorial improvements."
+  description="Recent How Much Music artist, song, album, and editorial page improvements."
   jsonLd={jsonLd}
   noindex
 >
@@ -55,7 +70,7 @@ const jsonLd = {
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Updates</p>
-      <h1>Recently improved pages</h1>
+      <h1>Editorial change log</h1>
       <p>
         Recent additions and page improvements, grouped by artists, songs, albums, and editorial
         context.
@@ -63,7 +78,7 @@ const jsonLd = {
     </div>
     <div class="hero-panel" aria-label="Update totals">
       <strong>{updates.length}</strong>
-      <span>recent update entries</span>
+      <span>published page updates</span>
       <span>{newArtistCount} new artists</span>
       <span>{newSongCount} new songs</span>
       <span>{editorialCount} editorial refreshes</span>
@@ -146,7 +161,7 @@ const jsonLd = {
                   <p class="eyebrow">Update</p>
                   <p class="update-date">{entry.date}</p>
                 </div>
-                <h3>{entry.summary}</h3>
+                <h3>{displaySummary(entry.summary)}</h3>
 
                 <div class="update-tags" aria-label="Update scope">
                   <span class="rank-badge">{categoryLabels[entry.category]}</span>

@@ -14967,5 +14967,50 @@ export const albumMetadata: Record<string, AlbumMetadata> = {
       "appleMusic": "https://music.apple.com/us/album/where-all-is-fled/1024117511?uo=4",
       "youtubeMusic": "https://music.youtube.com/search?q=Steve%20Hauschildt%20Where%20All%20Is%20Fled"
     }
+  },
+  "the-killers-hot-fuss": {
+    "releaseDate": "2004-06-07",
+    "label": "Island Records",
+    "trackCount": 11,
+    "fullTracklist": [
+      { "number": 1, "title": "Jenny Was a Friend of Mine" },
+      { "number": 2, "title": "Mr. Brightside" },
+      { "number": 3, "title": "Smile Like You Mean It" },
+      { "number": 4, "title": "Somebody Told Me" },
+      { "number": 5, "title": "All These Things That I've Done" },
+      { "number": 6, "title": "Andy, You're a Star" },
+      { "number": 7, "title": "On Top" },
+      { "number": 8, "title": "Change Your Mind" },
+      { "number": 9, "title": "Believe Me Natalie" },
+      { "number": 10, "title": "Midnight Show" },
+      { "number": 11, "title": "Everything Will Be Alright" }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/album/4piJq7R3gjUOxnYs6lDCTg",
+      "appleMusic": "https://music.apple.com/us/album/hot-fuss/1526194184"
+    }
+  },
+  "tom-petty-full-moon-fever": {
+    "releaseDate": "1989-04-24",
+    "label": "MCA Records",
+    "trackCount": 12,
+    "fullTracklist": [
+      { "number": 1, "title": "Free Fallin'" },
+      { "number": 2, "title": "I Won't Back Down" },
+      { "number": 3, "title": "Love Is a Long Road" },
+      { "number": 4, "title": "A Face in the Crowd" },
+      { "number": 5, "title": "Runnin' Down a Dream" },
+      { "number": 6, "title": "Feel a Whole Lot Better" },
+      { "number": 7, "title": "Yer So Bad" },
+      { "number": 8, "title": "Depending on You" },
+      { "number": 9, "title": "The Apartment Song" },
+      { "number": 10, "title": "Alright for Now" },
+      { "number": 11, "title": "A Mind with a Heart of Its Own" },
+      { "number": 12, "title": "Zombie Zoo" }
+    ],
+    "links": {
+      "spotify": "https://open.spotify.com/album/5d71Imt5CIb7LpQwDMQ093",
+      "appleMusic": "https://music.apple.com/us/album/full-moon-fever/1440825367"
+    }
   }
 } as const;
