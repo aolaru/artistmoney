@@ -1,0 +1,20 @@
+{
+  "name": "Blondie",
+  "slug": "blondie",
+  "estimated_income": "$2M-$8M/year",
+  "top_songs": [
+    "heart-of-glass",
+    "call-me"
+  ],
+  "genre": "Pop",
+  "country": "United States",
+  "active_since": "1974",
+  "bio": "Blondie has a catalog with durable streaming, playlist, publishing, and licensing value that makes it a useful future addition to How Much Music.",
+  "notable_for": "Blondie is best known here for signature songs that remain recognizable enough to support long-tail catalog demand.",
+  "career_highlight": "Songs like Heart of Glass and Call Me can anchor the artist page with clear catalog economics and internal links.",
+  "revenue_drivers": [
+    "Global streaming and broad playlist fit support recurring catalog demand.",
+    "High recognition creates repeat listening across generations.",
+    "Sync, social reuse, and event-driven spikes can lift the annual baseline."
+  ]
+}

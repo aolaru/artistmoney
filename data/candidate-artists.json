@@ -2819,7 +2819,7 @@
     "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "Blondie",
       "slug": "blondie",
@@ -2875,7 +2875,8 @@
           "heart-of-glass"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,
