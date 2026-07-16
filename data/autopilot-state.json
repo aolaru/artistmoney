@@ -3,7 +3,7 @@
   "cursors": {
     "artist": 0,
     "song": 0,
-    "album": 106
+    "album": 107
   },
   "lastTouched": {
     "artist": {
@@ -106,7 +106,8 @@
       "the-killers": "2026-06-30T18:44:31.212Z",
       "pet-shop-boys": "2026-07-01T07:39:50.947Z",
       "tom-petty": "2026-07-01T18:46:21.711Z",
-      "the-who": "2026-07-02T07:15:46.547Z"
+      "the-who": "2026-07-02T07:15:46.547Z",
+      "talking-heads": "2026-07-16T08:18:13.234Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -388,7 +389,9 @@
       "blitzkrieg-bop": "2026-07-02T07:15:46.547Z",
       "my-generation": "2026-07-02T07:15:46.547Z",
       "this-charming-man": "2026-07-02T07:15:46.547Z",
-      "you-really-got-me": "2026-07-02T19:28:40.226Z"
+      "you-really-got-me": "2026-07-02T19:28:40.226Z",
+      "once-in-a-lifetime": "2026-07-16T08:18:13.234Z",
+      "psycho-killer": "2026-07-16T08:18:13.234Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -484,6 +487,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-07-16T08:18:13.234Z",
+      "summary": "artist:talking-heads, song:once-in-a-lifetime, song:psycho-killer"
+    },
+    {
       "timestamp": "2026-07-02T19:28:40.226Z",
       "summary": "song:you-really-got-me"
     },
@@ -518,10 +525,6 @@
     {
       "timestamp": "2026-06-28T18:31:08.817Z",
       "summary": "artist:leonard-cohen, song:free-fallin, song:god-only-knows, song:good-vibrations"
-    },
-    {
-      "timestamp": "2026-06-28T07:29:45.062Z",
-      "summary": "artist:billy-joel, artist:green-day, song:atmosphere, song:baba-o-riley, song:basket-case"
     }
   ]
 }

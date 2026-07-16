@@ -16,5 +16,19 @@
     "Alternative and nostalgia playlists keep the catalog discoverable.",
     "Distinctive songs can travel well through sync and social rediscovery.",
     "Deep fan loyalty supports long-tail streaming stability."
-  ]
+  ],
+  "earnings": {
+    "gross_catalog_revenue": "$2.1M-$8.4M/year",
+    "artist_or_estate_share": "$750K-$3M/year",
+    "label_share": "$713K-$2.9M/year",
+    "publisher_share": "$210K-$840K/year",
+    "writer_share": "$315K-$1.3M/year",
+    "assumptions": "Estimate keeps Talking Heads's headline range as the artist-side figure and models gross catalog, label, publishing, and writer lanes from that conservative annual range."
+  },
+  "ownership": {
+    "master_owner": "Likely split across label, distributor, and artist-affiliated rights depending on recording era",
+    "publishing_owner": "Writer and publisher splits materially affect final artist-side income",
+    "catalog_sale_status": "No full catalog sale assumption baked into this modeled range",
+    "notes": "Talking Heads's page should be read as modeled artist-side annual income, not a public royalty statement. Ownership and label terms can materially change take-home economics."
+  }
 }
