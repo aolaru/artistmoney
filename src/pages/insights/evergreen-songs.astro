@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import EditorialSources from "../../components/EditorialSources.astro";
+import { editorialSources } from "../../data/editorialSources";
 ---
 
 <BaseLayout
@@ -10,6 +12,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section>
     <p class="eyebrow">Explainer</p>
     <h1>Why old songs still make money</h1>
+    <p class="page-updated">Updated July 29, 2026</p>
     <p>
       Evergreen songs survive because they stay useful. They fit playlists, trigger nostalgia,
       support sync use, and remain legible to new listeners long after their release cycle is over.
@@ -34,9 +37,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       replay it.
     </p>
     <p>
-      Some evergreen tracks are seasonal, some are emotionally durable, and some are licensing
-      machines. The strongest ones combine several of those patterns, which is why their annual
-      earnings can remain meaningful long after the original chart peak.
+      Some evergreen tracks are seasonal, some remain visible through charts and playlists, and
+      some are repeatedly licensed. Those patterns can explain durable demand, but they do not by
+      themselves disclose the artist's share of that demand.
     </p>
   </section>
 
@@ -61,10 +64,12 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section>
     <h2>How evergreen value is modeled</h2>
     <ul class="meta-list">
-      <li>Older songs with persistent replay get more credit than songs with one short viral spike.</li>
-      <li>Sync-friendly songs can justify stronger catalog assumptions than streaming alone suggests.</li>
-      <li>Holiday and event songs are treated as seasonal assets because their demand is concentrated but repeatable.</li>
-      <li>Ownership notes still matter because evergreen gross revenue is not the same as artist-side income.</li>
+      <li>Public chart or certification history can show durable demand but cannot establish a royalty total.</li>
+      <li>A public placement may support discussion of renewed attention, not an undisclosed sync fee.</li>
+      <li>Holiday and event songs can show repeatable demand patterns without revealing artist-side income.</li>
+      <li>Ownership notes still matter because long-term gross activity is not the same as artist-side income.</li>
     </ul>
   </section>
+
+  <EditorialSources sources={editorialSources.evergreen} title="Examples and rights background" />
 </BaseLayout>

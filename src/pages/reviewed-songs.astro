@@ -1,178 +1,73 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import {
-  getArtist,
-  getArtistVisual,
-  getSongConfidence,
-  rankedSongs,
-  songs,
-  type Artist
-} from "../lib/catalog";
-import { isArtistReviewReady, isSongReviewReady } from "../lib/reviewReady";
-import { formatRevenueMidpoint } from "../lib/revenue";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-
-const reviewedSongs = rankedSongs.filter(({ song }) => isSongReviewReady(song));
-const reviewedSongGroups = [
-  {
-    title: "Best source-backed starts",
-    description: "Use these when you want the strongest estimate notes and public context first.",
-    items: reviewedSongs.slice(0, 4)
-  },
-  {
-    title: "Classic catalog",
-    description: "Older recordings where long-tail replay, cultural memory, and ownership context matter.",
-    items: reviewedSongs.filter(({ song }) => song.year && song.year < 1995).slice(0, 4)
-  },
-  {
-    title: "Modern streaming",
-    description: "Newer hits where platform scale and playlist durability are central to the estimate.",
-    items: reviewedSongs.filter(({ song }) => song.year && song.year >= 2010).slice(0, 4)
-  }
-].filter((group) => group.items.length > 0);
-const hasPublicArtistPage = (artist: Artist) => {
-  const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
-  return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
-};
 ---
 
 <BaseLayout
-  title="Reviewed Songs | How Much Music"
-  description="Reviewed song earnings pages with visible references, ownership notes, and methodology-backed annual estimates."
+  title="Song Research Queue | How Much Music"
+  description="How Much Music's research queue for song profiles awaiting source-backed editorial review."
+  noindex
 >
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">Reviewed Songs</p>
-      <h1>Start with the strongest song pages.</h1>
+      <p class="eyebrow">Research Queue</p>
+      <h1>Song profiles awaiting evidence review.</h1>
       <p>
-        These pages are the best first stop for readers: each one has a focused article entry,
-        visible references, ownership notes, and a clear explanation of what the estimate can and
-        cannot show.
+        The catalog remains available for navigation and comparison. It is not currently presented
+        as a collection of finished editorial case studies.
       </p>
       <p>
-        Looking for artist pages? <a href={`${baseUrl}reviewed-artists/`}>Open reviewed artists</a>.
+        Browse the <a href={`${baseUrl}songs/`}>song catalog</a> or read the
+        <a href={`${baseUrl}editorial-policy/`}>publication standard</a>.
       </p>
     </div>
-    <div class="hero-panel" aria-label="Reviewed song summary">
-      <p class="eyebrow">Reviewed Set</p>
-      <a class="hero-stat-pill hero-stat-pill-primary" href="#reviewed-song-list-title">
-        <strong>{reviewedSongs.length}</strong>
-        <span>reviewed song pages</span>
-      </a>
+    <div class="hero-panel" aria-label="Publication status">
+      <p class="eyebrow">Publication Status</p>
+      <div class="hero-stat-pill hero-stat-pill-primary">
+        <strong>0</strong>
+        <span>published song case studies</span>
+      </div>
       <a class="hero-stat-pill" href={`${baseUrl}songs/`}>
-        <strong>All</strong>
-        <span>browse song catalog</span>
+        <strong>Catalog</strong>
+        <span>browse song profiles</span>
       </a>
     </div>
   </section>
 
-  <section class="editorial-basis-card" aria-labelledby="reviewed-songs-guide-title">
+  <section class="editorial-basis-card" aria-labelledby="song-standard-title">
     <div class="editorial-basis-heading">
-      <p class="eyebrow">Reader Guide</p>
-      <h2 id="reviewed-songs-guide-title">What makes these pages stronger</h2>
+      <p class="eyebrow">Publication Standard</p>
+      <h2 id="song-standard-title">What a published song case study must include</h2>
       <p>
-        Each linked page gives readers more context than a ranking alone: what drives the modeled
-        range, what sources support the page, and where uncertainty remains.
+        A page is published only when a reader can see the public evidence, the model inputs, and
+        the limits of the conclusion without relying on generic catalog copy.
       </p>
     </div>
     <div class="editorial-basis-grid">
       <div class="editorial-basis-item">
-        <strong>Estimate type</strong>
-        <span>Annual ranges are modeled and directional, not audited lifetime royalty totals.</span>
+        <strong>Evidence</strong>
+        <span>At least three substantive public sources, across at least two evidence roles.</span>
       </div>
       <div class="editorial-basis-item">
-        <strong>Source role</strong>
-        <span>Public links support identity, release, platform, or ownership context; they do not prove private payouts.</span>
+        <strong>Model record</strong>
+        <span>Inputs, assumptions, limitations, author, and review date must be visible on the page.</span>
       </div>
       <div class="editorial-basis-item">
-        <strong>Confidence role</strong>
-        <span>Confidence labels describe source completeness and split clarity, not certainty.</span>
+        <strong>Publication rule</strong>
+        <span>Platform and artist-homepage links help with identity but do not qualify a financial claim.</span>
       </div>
     </div>
   </section>
 
-  {reviewedSongGroups.length > 0 && (
-    <section class="editorial-route-section" aria-labelledby="reviewed-song-routes-title">
-      <div class="section-heading-row">
-        <div>
-          <p class="eyebrow">Editorial Routes</p>
-          <h2 id="reviewed-song-routes-title">Choose a stronger starting point</h2>
-        </div>
-      </div>
-      <div class="editorial-route-grid">
-        {reviewedSongGroups.map((group) => (
-          <article class="editorial-route-card">
-            <h3>{group.title}</h3>
-            <p>{group.description}</p>
-            <ul class="meta-list">
-              {group.items.map(({ song }) => {
-                const artist = getArtist(song.artist);
-                return (
-                  <li>
-                    <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
-                    <span class="meta-inline"> · {artist?.name ?? song.artist}</span>
-                  </li>
-                );
-              })}
-            </ul>
-          </article>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <section aria-labelledby="reviewed-song-list-title">
-    <div class="section-heading-row">
-      <div>
-        <p class="eyebrow">Article-backed</p>
-        <h2 id="reviewed-song-list-title">Reviewed song pages</h2>
-      </div>
-      <div class="section-actions">
-        <a class="home-action-link" href={`${baseUrl}reviewed-artists/`}>Reviewed artists</a>
-        <a class="home-action-link" href={`${baseUrl}insights/methodology/`}>How estimates work</a>
-      </div>
-    </div>
-    <p class="results-note">
-      Ranked by modeled artist-side annual midpoint. These are the strongest starting points before
-      browsing the full song catalog.
-    </p>
-
-    <div class="card-grid reviewed-song-grid">
-      {reviewedSongs.map(({ song, revenueScore }) => {
-        const artist = getArtist(song.artist);
-        const artistName = artist?.name ?? song.artist;
-        const artistVisual = artist ? getArtistVisual(artist) : undefined;
-        const artistIsPublic = artist ? hasPublicArtistPage(artist) : false;
-        const confidence = getSongConfidence(song);
-
-        return (
-          <article class="card artist-card reviewed-song-card">
-            <img
-              class="artist-card-image"
-              src={artistVisual?.src ?? ""}
-              alt={artistVisual?.alt ?? `Artwork for ${artistName}`}
-              loading="lazy"
-              width="1200"
-              height="900"
-              referrerpolicy="no-referrer"
-            />
-            <div class="artist-card-body">
-              <p class="eyebrow">Reviewed Song</p>
-              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
-              <h3><a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a></h3>
-              <p class="artist-card-meta">
-                By {artist && artistIsPublic ? <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a> : artistName}
-              </p>
-              <p class="artist-card-meta">
-                Modeled midpoint: {formatRevenueMidpoint(revenueScore)}
-              </p>
-            </div>
-          </article>
-        );
-      })}
+  <section class="related-reading-card" aria-labelledby="song-queue-next-title">
+    <h2 id="song-queue-next-title">What readers can use now</h2>
+    <div class="related-link-row">
+      <a href={`${baseUrl}songs/`}>Browse catalog profiles</a>
+      <a href={`${baseUrl}insights/`}>Read source-led explainers</a>
+      <a href={`${baseUrl}insights/methodology/`}>Understand the methodology</a>
     </div>
   </section>
 </BaseLayout>

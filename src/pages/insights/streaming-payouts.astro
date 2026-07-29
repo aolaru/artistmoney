@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import EditorialSources from "../../components/EditorialSources.astro";
+import { editorialSources } from "../../data/editorialSources";
 ---
 
 <BaseLayout
@@ -10,7 +12,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section>
     <p class="eyebrow">Explainer</p>
     <h1>How streaming payouts work</h1>
-    <p class="page-updated">Updated June 18, 2026</p>
+    <p class="page-updated">Updated July 29, 2026</p>
     <p>
       There is no single universal payout per stream. Services pool subscription and ad revenue,
       keep their platform share, then allocate the rest through rights holders based on territory,
@@ -66,7 +68,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <li><strong>Platform pool:</strong> Each service calculates rights-holder payments from revenue pools, not from a universal public rate.</li>
       <li><strong>Rights-holder layer:</strong> The master recording and composition are paid through different rights paths.</li>
       <li><strong>Contract layer:</strong> Labels, distributors, publishers, writers, producers, artists, and estates divide money according to deal terms that are usually private.</li>
-      <li><strong>Artist-side estimate:</strong> A conservative range is more useful than presenting gross revenue as take-home income.</li>
+      <li><strong>Editorial conclusion:</strong> A page should not publish an artist-side range unless its public inputs and limitations can be shown.</li>
     </ul>
   </section>
 
@@ -83,8 +85,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section id="streaming-ranges">
     <h2>Why ranges are more useful</h2>
     <p>
-      A precise public payout figure is usually not available. The defensible approach is to model a
-      range and then explain what assumptions sit behind the artist-side estimate.
+      A precise public payout figure is usually not available. That uncertainty is not a license to
+      invent precision: a range belongs on a published page only when its inputs and limitations are
+      visible and checkable.
     </p>
     <p>
       The range is most useful when paired with context: whether the song is evergreen,
@@ -103,13 +106,5 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </ul>
   </section>
 
-  <section class="related-reading-card" aria-labelledby="streaming-sources-title">
-    <h2 id="streaming-sources-title">Useful background</h2>
-    <p>These references explain streaming revenue context; they do not verify any single estimate on this site.</p>
-    <div class="related-link-row">
-      <a href="https://loudandclear.byspotify.com/">Spotify Loud &amp; Clear</a>
-      <a href="https://www.riaa.com/u-s-sales-database/">RIAA revenue database</a>
-      <a href="https://www.themlc.com/">The Mechanical Licensing Collective</a>
-    </div>
-  </section>
+  <EditorialSources sources={editorialSources.streaming} />
 </BaseLayout>

@@ -9,15 +9,15 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
 
 <BaseLayout
   title="Search | How Much Music"
-  description="Search reviewed How Much Music artist and song earnings pages with stronger source context."
+  description="Search How Much Music catalog research profiles and source-led explainers about music rights and ownership."
   noindex
 >
   <section class="search-page-hero">
     <p class="eyebrow">Search</p>
-    <h1>Search reviewed artists and songs</h1>
+    <h1>Search artists and songs</h1>
     <p>
-      Search the reviewed pages first. Use the full artist and song catalogs when you want every
-      noindex catalog profile.
+      Search catalog research profiles by artist or song. Profiles remain available for navigation
+      while source-backed editorial case studies are prepared.
     </p>
   </section>
 
@@ -42,7 +42,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
         <button type="button" class="search-filter-chip" data-search-filter="artist">Artists</button>
         <button type="button" class="search-filter-chip" data-search-filter="song">Songs</button>
       </div>
-      <p class="results-note" data-search-status>Start typing or submit a query to search reviewed pages.</p>
+      <p class="results-note" data-search-status>Start typing or submit a query to search catalog profiles.</p>
     </div>
 
     <div class="search-results-shell" data-search-results></div>
@@ -134,16 +134,16 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
             <div class="search-start-card">
               <div>
                 <p class="eyebrow">Start Here</p>
-                <h2>Try a reviewed song or artist.</h2>
-                <p>Search covers reviewed pages with stronger source context. Full catalogs remain available below.</p>
+                <h2>Find a catalog profile.</h2>
+                <p>Catalog profiles are available for navigation. Published case studies appear only after evidence review.</p>
               </div>
               <div class="search-starter-grid" aria-label="Suggested searches and browse links">
                 <a href="${baseUrl}search/?q=taylor%20swift">Taylor Swift</a>
                 <a href="${baseUrl}search/?q=mr%20brightside">Mr. Brightside</a>
                 <a href="${baseUrl}search/?q=all%20i%20want%20for%20christmas">All I Want for Christmas</a>
                 <a href="${baseUrl}search/?q=blinding%20lights">Blinding Lights</a>
-                <a href="${baseUrl}reviewed-songs/">Reviewed songs</a>
-                <a href="${baseUrl}reviewed-artists/">Reviewed artists</a>
+                <a href="${baseUrl}insights/">Source-led explainers</a>
+                <a href="${baseUrl}editorial-policy/">Research standards</a>
                 <a href="${baseUrl}artists/">All artists</a>
                 <a href="${baseUrl}songs/">All songs</a>
               </div>

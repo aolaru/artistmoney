@@ -16,48 +16,27 @@ function getArtistImageSlugs(directory) {
   );
 }
 
-function countUnique(values) {
-  return new Set(values.filter(Boolean)).size;
+function hasDocumentedResearch(article) {
+  return Boolean(
+    article?.research?.author &&
+      article.research.reviewedOn &&
+      (article.research.modelInputs?.length ?? 0) >= 2 &&
+      (article.research.limitations?.length ?? 0) >= 2
+  );
 }
 
-function getSongReferenceCount(song, article, songPlayerMetadata) {
-  const player = songPlayerMetadata[song.slug] ?? {};
-  const links = player.links ?? {};
+function hasQualifiedEvidence(references = []) {
+  const substantive = references.filter((reference) =>
+    ["primary-record", "independent-reporting", "rights-context"].includes(reference.evidenceRole)
+  );
+  const uniqueUrls = new Set(substantive.map((reference) => reference.url).filter(Boolean));
+  const roles = new Set(substantive.map((reference) => reference.evidenceRole));
 
-  return countUnique([
-    links.appleMusic ?? player.appleMusic,
-    links.spotify,
-    links.youtubeMusic,
-    links.amazonMusic,
-    ...(article?.references ?? []).map((reference) => reference.url)
-  ]);
-}
-
-function getArtistReferenceCount(artist, article, songBySlug, songPlayerMetadata) {
-  const articleReferenceUrls = (article?.references ?? []).map((reference) => reference.url);
-  const topSongReferenceUrls = (artist.top_songs ?? []).flatMap((songSlug) => {
-    const song = songBySlug.get(songSlug);
-    if (!song) return [];
-
-    const player = songPlayerMetadata[song.slug] ?? {};
-    const links = player.links ?? {};
-
-    return [
-      links.appleMusic ?? player.appleMusic,
-      links.spotify,
-      links.youtubeMusic,
-      links.amazonMusic
-    ].filter(Boolean).slice(0, 2);
-  });
-
-  return countUnique([...articleReferenceUrls, ...topSongReferenceUrls]);
+  return uniqueUrls.size >= 3 && roles.size >= 2;
 }
 
 function isReviewReadySong(song, article, songPlayerMetadata) {
   if (!song || !article) return false;
-  const player = songPlayerMetadata[song.slug] ?? {};
-  const links = player.links ?? {};
-
   return Boolean(
     article.shortAnswer &&
       (article.breakdown?.length ?? 0) >= 2 &&
@@ -68,11 +47,9 @@ function isReviewReadySong(song, article, songPlayerMetadata) {
       song.earnings?.artist_or_estate_share &&
       song.earnings?.gross_track_revenue &&
       song.ownership &&
-      player.artwork &&
-      links.appleMusic &&
-      links.spotify &&
-      links.youtubeMusic &&
-      getSongReferenceCount(song, article, songPlayerMetadata) >= 2
+      (songPlayerMetadata[song.slug] ?? {}).artwork &&
+      hasDocumentedResearch(article) &&
+      hasQualifiedEvidence(article.references)
   );
 }
 
@@ -90,7 +67,8 @@ function isReviewReadyArtist(artist, article, songBySlug, songPlayerMetadata, ar
       artist.earnings?.artist_or_estate_share &&
       artist.earnings?.gross_catalog_revenue &&
       artist.ownership &&
-      getArtistReferenceCount(artist, article, songBySlug, songPlayerMetadata) >= 2
+      hasDocumentedResearch(article) &&
+      hasQualifiedEvidence(article.references)
   );
 }
 

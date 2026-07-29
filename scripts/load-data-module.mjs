@@ -3,6 +3,7 @@ import vm from "node:vm";
 
 function stripTypeDeclarations(source) {
   return source
+    .replace(/^import type .*?;\n?/gm, "")
     .replace(/^export type [^=;]+ = \{[\s\S]*?\n};\n?/gm, "")
     .replace(/^export type [^=;]+ = [^;\n]+;\n?/gm, "");
 }

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { publisher } from "../lib/publication";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -16,20 +17,20 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   <section>
     <p class="eyebrow">Editorial Policy</p>
     <h1>How Estimates and Pages Are Reviewed</h1>
-    <p class="page-updated">Updated June 18, 2026</p>
+    <p class="page-updated">Updated July 29, 2026</p>
     <p>
-      How Much Music publishes modeled estimates about music economics. These estimates do not rely
-      on private royalty statements, confidential contracts, distributor dashboards, or complete
-      platform-level payout data.
+      How Much Music publishes source-led explainers and, when evidence permits, documented catalog
+      case studies. We do not treat private royalty statements, confidential contracts, distributor
+      dashboards, or unverified model fields as public evidence.
     </p>
   </section>
 
   <section class="quick-answer-card" aria-labelledby="policy-quick-answer-title">
     <p class="eyebrow">Quick Answer</p>
-    <h2 id="policy-quick-answer-title">A reviewed page must be useful without pretending to be an audit.</h2>
+    <h2 id="policy-quick-answer-title">A case study must show what supports it, what the model uses, and what remains unknown.</h2>
     <p>
-      We look for page-specific context, visible public references, clear estimate limits, and plain
-      language that separates modeled ranges from private royalty data.
+      Catalog profiles are kept out of search indexing until they meet this standard. They are not
+      called reviewed pages merely because they have platform links or structured metadata.
     </p>
   </section>
 
@@ -47,29 +48,29 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
       <div class="editorial-basis-item">
         <strong>Purpose</strong>
         <span>
-          Explain music catalog economics in plain language: estimated annual ranges, rights
-          context, replay demand, and why older songs or artists can still earn.
+          Explain music catalog economics in plain language, with public sources that readers can
+          inspect and clear limits around private financial information.
         </span>
       </div>
       <div class="editorial-basis-item">
         <strong>Publisher</strong>
         <span>
-          Pages are published by How Much Music. Reader corrections, source updates, and attribution
-          issues should be sent through the contact page.
+          Pages are published by {publisher.name}. Reader corrections, source updates, and
+          attribution issues should be sent to <a href={`mailto:${publisher.contactEmail}`}>{publisher.contactEmail}</a>.
         </span>
       </div>
       <div class="editorial-basis-item">
         <strong>Evidence Standard</strong>
         <span>
-          A page can use structured catalog data, public platform links, release metadata, ownership
-          fields, catalog-sale context, and public references where available.
+          A case study needs at least three substantive public sources across at least two evidence
+          roles: primary record, independent reporting, or rights context.
         </span>
       </div>
       <div class="editorial-basis-item">
         <strong>Limits</strong>
         <span>
-          A source can support artist, song, ownership, or platform context without proving the
-          displayed revenue range as an audited fact.
+          Model inputs, assumptions, limitations, author, and review date must be visible before a
+          financial range can be published as editorial research.
         </span>
       </div>
     </div>
@@ -78,30 +79,29 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   <section id="policy-estimates">
     <h2>Estimate Rules</h2>
     <ul class="meta-list">
-      <li>Revenue figures are shown as annual ranges rather than exact totals.</li>
-      <li>Artist-side estimates are separated from gross catalog or track revenue when ownership context allows it.</li>
-      <li>Pages use confidence labels to show whether the estimate has strong, partial, or limited supporting context.</li>
-      <li>Pages with weak original context may stay available for browsing without being promoted as reviewed pages.</li>
+      <li>A range is published only when its public inputs and source roles can be described on the page.</li>
+      <li>Artist-side and gross activity are separated only when the available evidence supports that distinction.</li>
+      <li>Private contracts, royalties, and recoupment cannot be inferred from a stream count, chart position, or artist homepage.</li>
+      <li>Profiles that fail the standard remain browseable, noindex, and excluded from advertising and the sitemap.</li>
     </ul>
   </section>
 
   <section id="policy-sources">
     <h2>Source Handling</h2>
     <p>
-      Editorial review favors public, checkable context: official artist and platform pages, public catalog
-      sale reporting, rights and licensing notes, platform signals, release metadata, and reusable
-      image-license pages. A source can support context without making the displayed revenue range
-      an audited fact.
+      Editorial review distinguishes source roles. Primary records, independent reporting, and rights
+      context can support different parts of an analysis. Artist homepages and platform links can
+      establish identity or availability, but cannot qualify a financial claim on their own.
     </p>
   </section>
 
   <section id="policy-indexing">
     <h2>Publication and Reader Gate</h2>
     <p>
-      Not every artist or song entry is treated as a finished article. Artist and song pages are
-      promoted only after they have an editorial article entry with page-specific context. Utility
-      directories, incomplete entries, update logs, album pages, and broad browsing pages can remain
-      available for navigation while the strongest article pages are emphasized for new readers.
+      Not every artist or song entry is treated as a finished article. A page is promoted only after
+      it has page-specific evidence, a documented model record, named editorial responsibility, and
+      a visible corrections path. Utility directories, incomplete profiles, update logs, album pages,
+      and broad browsing pages remain available for navigation but are excluded from search indexing.
     </p>
   </section>
 

@@ -1,6 +1,7 @@
 import { artistArticles } from "../data/artistArticles";
 import { songArticles } from "../data/songArticles";
 import type { Artist, Song } from "./catalog";
+import { hasDocumentedResearch, isSubstantiveEvidenceRole, type EvidenceRole } from "./publication";
 import { getArtistReferenceLinks, getSongReferenceLinks, type ReferenceLink, withReferenceCategory } from "./references";
 
 function uniqueReferences(references: ReferenceLink[]) {
@@ -13,34 +14,12 @@ function uniqueReferences(references: ReferenceLink[]) {
   });
 }
 
-function countUnique(values: Array<string | undefined>) {
-  return new Set(values.filter(Boolean)).size;
-}
+function hasQualifiedEvidence(references: Array<{ url: string; evidenceRole?: EvidenceRole }> = []) {
+  const substantive = references.filter((reference) => isSubstantiveEvidenceRole(reference.evidenceRole));
+  const uniqueUrls = new Set(substantive.map((reference) => reference.url).filter(Boolean));
+  const roles = new Set(substantive.map((reference) => reference.evidenceRole));
 
-function getStrictSongReferenceCount(song: Song) {
-  const links = song.player?.links ?? {};
-
-  return countUnique([
-    links.appleMusic ?? song.player?.appleMusic,
-    links.spotify,
-    links.youtubeMusic,
-    ...(songArticles[song.slug]?.references ?? []).map((reference) => reference.url)
-  ]);
-}
-
-function getStrictArtistReferenceCount(artist: Artist, topSongs: Song[]) {
-  const articleReferenceUrls = (artistArticles[artist.slug]?.references ?? []).map((reference) => reference.url);
-  const topSongReferenceUrls = topSongs.flatMap((song) => {
-    const links = song.player?.links ?? {};
-
-    return [
-      links.appleMusic ?? song.player?.appleMusic,
-      links.spotify,
-      links.youtubeMusic
-    ].filter(Boolean).slice(0, 2);
-  });
-
-  return countUnique([...articleReferenceUrls, ...topSongReferenceUrls]);
+  return uniqueUrls.size >= 3 && roles.size >= 2;
 }
 
 export function getSongReviewReferences(song: Song) {
@@ -57,8 +36,6 @@ export function isSongReviewReady(song: Song) {
   const article = songArticles[song.slug];
   if (!article) return false;
 
-  const links = song.player?.links ?? {};
-
   return Boolean(
     article.shortAnswer &&
       (article.breakdown?.length ?? 0) >= 2 &&
@@ -70,10 +47,8 @@ export function isSongReviewReady(song: Song) {
       song.earnings?.gross_track_revenue &&
       song.ownership &&
       song.player?.artwork &&
-      links.appleMusic &&
-      links.spotify &&
-      links.youtubeMusic &&
-      getStrictSongReferenceCount(song) >= 2
+      hasDocumentedResearch(article.research) &&
+      hasQualifiedEvidence(article.references)
   );
 }
 
@@ -91,6 +66,7 @@ export function isArtistReviewReady(artist: Artist, topSongs: Song[]) {
       artist.earnings?.artist_or_estate_share &&
       artist.earnings?.gross_catalog_revenue &&
       artist.ownership &&
-      getStrictArtistReferenceCount(artist, topSongs) >= 2
+      hasDocumentedResearch(article.research) &&
+      hasQualifiedEvidence(article.references)
   );
 }

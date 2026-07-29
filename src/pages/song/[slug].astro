@@ -42,9 +42,10 @@ const relatedSongs = (song.related_songs?.length
   : songs.filter((entry) => entry.artist === song.artist && entry.slug !== song.slug)) as Song[];
 const publicRelatedSongs = relatedSongs.filter(isSongReviewReady).slice(0, 3);
 const article = songArticles[song.slug];
-const pageDescription = article?.shortAnswer && article.shortAnswer.length >= 70
+const isReviewReady = isSongReviewReady(song);
+const pageDescription = isReviewReady && article?.shortAnswer && article.shortAnswer.length >= 70
   ? article.shortAnswer
-  : `${song.title}${artist ? ` by ${artist.name}` : ""} earnings estimate with modeled annual range, ownership context, source notes, and replay-demand context.`;
+  : `${song.title}${artist ? ` by ${artist.name}` : ""} catalog research profile with release and listening context. This page is not a published earnings case study.`;
 const hasDetailedEarnings = Boolean(song.earnings || song.ownership);
 const providerArtwork = song.player?.artwork;
 const providerArtworkLink = song.player?.links?.appleMusic ?? song.player?.appleMusic;
@@ -120,7 +121,9 @@ const artistRank = rankedSongs
   .filter((entry) => entry.song.artist === song.artist)
   .findIndex((entry) => entry.song.slug === song.slug) + 1;
 const snippetQuestion = `How much money does ${song.title} make?`;
-const snippetLead = hasDetailedEarnings
+const snippetLead = !isReviewReady
+  ? `${song.title}${artist ? ` by ${artist.name}` : ""} is a catalog research profile. Its claims and any model inputs are being reviewed before the page can be published as an editorial case study.`
+  : hasDetailedEarnings
   ? `${song.title}${artist ? ` by ${artist.name}` : ""} is estimated at ${leadRevenue} on the artist side, with gross track revenue and ownership context separated below.`
   : `${song.title}${artist ? ` by ${artist.name}` : ""} is estimated at ${leadRevenue} from streaming, licensing, and long-tail catalog replay value.`;
 const snippetSupport = yearsOld && yearsOld >= 10
@@ -128,16 +131,23 @@ const snippetSupport = yearsOld && yearsOld >= 10
   : artistRank > 0 && artistSongCount > 1
     ? `It currently ranks #${artistRank} among the tracked songs for ${artist?.name ?? song.artist}.`
     : `The estimate focuses on the annual earnings range rather than claiming an audited lifetime total.`;
-const takeaway = hasDetailedEarnings
+const takeaway = !isReviewReady
+  ? "Use this page for basic catalog navigation and public listening context. It is not published as an independently evidenced earnings claim."
+  : hasDetailedEarnings
   ? `${song.title} is one of the stronger modeled catalog earners here because replay demand and ownership context both support a durable annual range.`
   : `${song.title} keeps earning because it still shows up in long-tail streaming, playlist rotation, and broader catalog memory.`;
-const statItems = [
+const statItems = (isReviewReady ? [
   songRank > 0 ? `Currently ranks around the top ${catalogPercentile}% of tracked songs by modeled artist-side earnings` : undefined,
   song.year ? `Released in ${song.year}${yearsOld ? ` and still shows earnings power roughly ${yearsOld} years later` : ""}` : undefined,
   artistRank > 0 && artistSongCount > 1 ? `Ranks #${artistRank} among ${artistSongCount} tracked songs for ${artist?.name ?? song.artist}` : undefined,
   song.player?.previewUrl ? "Apple Music preview available" : "External listening links available",
   `${confidence.level} confidence estimate`
-].filter(Boolean);
+] : [
+  "Catalog research profile; not a published editorial case study.",
+  song.year ? `Release year listed as ${song.year}.` : undefined,
+  song.album ? `Album listed as ${song.album}.` : undefined,
+  "See the editorial policy for the publication standard."
+]).filter(Boolean);
 const revenueBarCandidates = [
   song.normalizedRevenue?.grossTrack
     ? {
@@ -228,7 +238,6 @@ const modelNotes = [
   song.ownership?.notes ? `Ownership note: ${song.ownership.notes}` : undefined,
   hasPlatformSignals ? "Public platform signals are included when Spotify or YouTube identifiers are available." : undefined
 ].filter(Boolean);
-const isReviewReady = isSongReviewReady(song);
 const allReferenceLinks = getSongReviewReferences(song);
 const hasSourceContext = Boolean(
   evidenceItems.length ||
@@ -392,14 +401,34 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
         <p class="eyebrow">Song</p>
         <h1 id="song-title">{song.title}</h1>
         {metadataBits.length > 0 && <p class="song-kicker">{metadataBits.join(" · ")}</p>}
-        <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+        <p class={`confidence-badge confidence-${isReviewReady ? confidence.level : "limited"}`}>
+          {isReviewReady ? `${confidence.level} confidence` : "research in progress"}
+        </p>
+
+        {!isReviewReady && (
+          <section class="quick-answer-card" aria-label="Research status">
+            <p class="eyebrow">Publication Status</p>
+            <h2>Catalog profile, not a published estimate</h2>
+            <p>
+              This page is excluded from search indexing and advertising until its sources, model inputs,
+              author, review date, and limitations meet the editorial policy.
+            </p>
+          </section>
+        )}
 
         <section aria-labelledby="short-answer-title" class="song-intro-card">
-          <h2 id="short-answer-title">Estimate at a glance</h2>
-          <p class="seo-question"><strong>{snippetQuestion}</strong></p>
+          <h2 id="short-answer-title">{isReviewReady ? "Estimate at a glance" : "Catalog profile"}</h2>
+          <p class="seo-question"><strong>{isReviewReady ? snippetQuestion : `What is documented on this ${song.title} profile?`}</strong></p>
           <p class="song-lead-answer"><strong>{snippetLead}</strong></p>
           <p class="song-takeaway"><strong>Takeaway:</strong> {takeaway}</p>
-          <p>{song.meaning_summary ?? editorial.meaning}</p>
+          {isReviewReady ? (
+            <p>{song.meaning_summary ?? editorial.meaning}</p>
+          ) : (
+            <p>
+              This entry records basic release and listening information. It does not publish an earnings
+              analysis until the underlying evidence and editorial record are complete.
+            </p>
+          )}
 
           <div class="song-intro-grid">
             <div class="song-intro-panel">
@@ -411,24 +440,41 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
               </ul>
             </div>
 
-            <div class="song-intro-panel">
-              <h3>Why the song still earns</h3>
-              <ul class="song-bullet-list">
-                {conciseWhy.map((point) => (
-                  <li>{point}</li>
-                ))}
-              </ul>
-            </div>
+            {isReviewReady ? (
+              <div class="song-intro-panel">
+                <h3>Why the song still earns</h3>
+                <ul class="song-bullet-list">
+                  {conciseWhy.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div class="song-intro-panel">
+                <h3>What is still needed</h3>
+                <ul class="song-bullet-list">
+                  <li>Page-specific public sources.</li>
+                  <li>Visible model inputs and limitations.</li>
+                  <li>A named author and review date.</li>
+                </ul>
+              </div>
+            )}
           </div>
 
-          <p class="traffic-magnet-note">{trafficMagnetNote}</p>
+          {isReviewReady && <p class="traffic-magnet-note">{trafficMagnetNote}</p>}
           <div class="song-intro-footer">
-            <p class="results-note">{snippetSupport}</p>
-            {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
+            {isReviewReady ? (
+              <>
+                <p class="results-note">{snippetSupport}</p>
+                {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
+              </>
+            ) : (
+              <p class="results-note"><a href={`${baseUrl}editorial-policy/`}>Read the publication standard.</a></p>
+            )}
           </div>
         </section>
 
-        <section class="trust-snapshot" aria-label="Page trust snapshot">
+        {isReviewReady && <section class="trust-snapshot" aria-label="Page trust snapshot">
           <p class="confidence-note">
             {getConfidenceSummary(confidence)}
             {" "}
@@ -443,7 +489,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
               </div>
             ))}
           </div>
-        </section>
+        </section>}
 
         <div class="song-visual">
           <img
@@ -468,7 +514,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
           </p>
         )}
 
-        {article && (
+        {article && isReviewReady && (
           <section class="editorial-basis-card" aria-labelledby="song-editorial-basis-title">
             <div class="editorial-basis-heading">
               <p class="eyebrow">Estimate Notes</p>
@@ -517,7 +563,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
           </section>
         )}
 
-        {comparisonSongs.length > 0 && (
+        {isReviewReady && comparisonSongs.length > 0 && (
           <section aria-labelledby="comparison-title" class="comparison-section">
             <h2 id="comparison-title">How It Compares</h2>
             <p class="comparison-summary">
@@ -551,7 +597,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
           </section>
         )}
 
-        {revenueBars.length > 1 && (
+        {isReviewReady && revenueBars.length > 1 && (
           <section aria-labelledby="revenue-visual-title">
             <h2 id="revenue-visual-title">Revenue Breakdown</h2>
             <div class="revenue-bars">
@@ -642,7 +688,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
           </section>
         )}
 
-        <section aria-labelledby="questions-title">
+        {isReviewReady && <section aria-labelledby="questions-title">
           <h2 id="questions-title">Reader questions about {song.title}</h2>
           <div class="intent-question-list">
             {intentQuestions.map((item) => (
@@ -652,9 +698,9 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
               </article>
             ))}
           </div>
-        </section>
+        </section>}
 
-        {article && hasSourceContext && (
+        {article && isReviewReady && hasSourceContext && (
           <section aria-labelledby="sources-title">
             <h2 id="sources-title">Sources and References</h2>
             <p class="results-note">
@@ -715,7 +761,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
           </section>
         )}
 
-        <details class="details-card">
+        {isReviewReady && <details class="details-card">
           <summary>Show ownership and assumptions</summary>
           <div class="details-card-body">
             <p>{ownershipNote}</p>
@@ -776,7 +822,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
               </p>
             </div>
           </div>
-        </details>
+        </details>}
 
         {(moreFromAlbum.length > 0 || contextSongs.length > 0) && (
           <section aria-labelledby="more-context-title" class="song-context-section">
@@ -789,7 +835,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
                     {moreFromAlbum.map((albumSong) => (
                       <li>
                         <a href={`${baseUrl}song/${albumSong.slug}/`}>{albumSong.title}</a>
-                        <span class="meta-inline"> · {albumSong.estimated_revenue}</span>
+                        {isReviewReady && <span class="meta-inline"> · {albumSong.estimated_revenue}</span>}
                       </li>
                     ))}
                   </ul>
@@ -818,8 +864,8 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
 
       <aside class="song-sidebar">
         <div class="song-summary-card">
-          <p class="eyebrow">Earnings Snapshot</p>
-          <h2>{leadRevenue}</h2>
+          <p class="eyebrow">{isReviewReady ? "Earnings Snapshot" : "Research Status"}</p>
+          <h2>{isReviewReady ? leadRevenue : "In review"}</h2>
           <ul class="stat-list">
             <li>
               <strong>Artist:</strong>{" "}
@@ -832,7 +878,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
               </li>
             )}
             {song.year && <li><strong>Released:</strong> {song.year}</li>}
-            <li><strong>Confidence:</strong> {confidence.level}</li>
+            <li><strong>Status:</strong> {isReviewReady ? `${confidence.level} confidence` : "not published as an earnings case study"}</li>
           </ul>
         </div>
 

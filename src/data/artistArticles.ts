@@ -1,3 +1,5 @@
+import type { EvidenceRole, ResearchRecord } from "../lib/publication";
+
 export type ArtistArticle = {
   seoTitle: string;
   shortAnswer: string;
@@ -10,7 +12,9 @@ export type ArtistArticle = {
     url: string;
     note: string;
     category?: string;
+    evidenceRole?: EvidenceRole;
   }>;
+  research?: ResearchRecord;
 };
 
 function artistReviewContext({

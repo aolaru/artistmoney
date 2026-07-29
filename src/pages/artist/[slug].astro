@@ -51,16 +51,18 @@ const allReferenceLinks = getArtistReviewReferences(artist, artistSongs);
 const isReviewReady = isArtistReviewReady(artist, artistSongs) && artistVisual.provider === "artistPhoto";
 const articleSourceNotes = article?.sources ?? editorial.sources;
 const articleEvidence = article?.evidence ?? [];
-const pageDescription = article?.shortAnswer && article.shortAnswer.length >= 70
+const pageDescription = isReviewReady && article?.shortAnswer && article.shortAnswer.length >= 70
   ? article.shortAnswer
-  : `${artist.name} catalog earnings estimate with modeled annual range, ownership context, source notes, and top-song support.`;
+  : `${artist.name} catalog research profile with public career and catalog context. This page is not a published earnings case study.`;
 const artistRank = rankedArtists.findIndex((entry) => entry.artist.slug === artist.slug) + 1;
 const artistPercentile = artistRank > 0 ? Math.max(1, Math.round((artistRank / rankedArtists.length) * 100)) : undefined;
 const activeSinceYear = artist.active_since ? Number(artist.active_since.match(/\d{4}/)?.[0]) : undefined;
 const yearsActive = activeSinceYear ? new Date().getFullYear() - activeSinceYear : undefined;
 const leadRevenue = artist.earnings?.artist_or_estate_share ?? artist.estimated_income;
 const snippetQuestion = `How much money does ${artist.name} make?`;
-const snippetLead = hasDetailedEarnings
+const snippetLead = !isReviewReady
+  ? `${artist.name} is a catalog research profile. Its claims and any model inputs are being reviewed before the page can be published as an editorial case study.`
+  : hasDetailedEarnings
   ? `${artist.name} is estimated at ${leadRevenue} on the artist side, with gross catalog revenue and ownership context separated below.`
   : `${artist.name} is estimated at ${leadRevenue} from streaming, publishing, licensing, and long-tail catalog demand.`;
 const snippetSupport = yearsActive && yearsActive >= 10
@@ -68,16 +70,23 @@ const snippetSupport = yearsActive && yearsActive >= 10
   : artistRank > 0
     ? `${artist.name} currently ranks around the top ${artistPercentile}% of tracked artists by estimated artist-side earnings.`
     : `${artist.name} is evaluated against the same catalog-demand signals used for other artist estimates.`;
-const takeaway = hasDetailedEarnings
+const takeaway = !isReviewReady
+  ? "Use this page for basic catalog navigation and public career context. It is not published as an independently evidenced earnings claim."
+  : hasDetailedEarnings
   ? `${artist.name} works as a durable earnings page because the artist-side estimate, ownership context, and gross catalog framing can all be separated cleanly.`
   : `${artist.name} keeps earning because the catalog still shows replay demand across streaming, publishing, licensing, and broader cultural memory.`;
-const statItems = [
+const statItems = (isReviewReady ? [
   artistRank > 0 ? `Currently ranks around the top ${artistPercentile}% of reviewed artists by estimated artist-side earnings` : undefined,
   activeSinceYear ? `Active since ${activeSinceYear}${yearsActive ? ` and still commercially relevant roughly ${yearsActive} years later` : ""}` : undefined,
   artistSongs.length ? `${artistSongs.length} top songs anchor this estimate` : undefined,
   artist.genre ? `${artist.genre} remains the clearest genre lane for this catalog` : undefined,
   `${confidence.level} confidence estimate`
-].filter(Boolean);
+] : [
+  "Catalog research profile; not a published editorial case study.",
+  activeSinceYear ? `Active since ${activeSinceYear}.` : undefined,
+  artist.genre ? `Catalog genre listed as ${artist.genre}.` : undefined,
+  "See the editorial policy for the publication standard."
+]).filter(Boolean);
 const revenueBarCandidates = [
   artist.earnings?.gross_catalog_revenue
     ? {
@@ -313,14 +322,34 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
         <p class="eyebrow">Artist</p>
         <h1 id="artist-title">{artist.name}</h1>
         <p class="song-kicker">{[artist.genre, artist.country, artist.active_since].filter(Boolean).join(" · ")}</p>
-        <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
+        <p class={`confidence-badge confidence-${isReviewReady ? confidence.level : "limited"}`}>
+          {isReviewReady ? `${confidence.level} confidence` : "research in progress"}
+        </p>
+
+        {!isReviewReady && (
+          <section class="quick-answer-card" aria-label="Research status">
+            <p class="eyebrow">Publication Status</p>
+            <h2>Catalog profile, not a published estimate</h2>
+            <p>
+              This page is excluded from search indexing and advertising until its sources, model inputs,
+              author, review date, and limitations meet the editorial policy.
+            </p>
+          </section>
+        )}
 
         <section aria-labelledby="short-answer-title" class="song-intro-card">
-          <h2 id="short-answer-title">Estimate at a glance</h2>
-          <p class="seo-question"><strong>{snippetQuestion}</strong></p>
+          <h2 id="short-answer-title">{isReviewReady ? "Estimate at a glance" : "Catalog profile"}</h2>
+          <p class="seo-question"><strong>{isReviewReady ? snippetQuestion : `What is documented on this ${artist.name} profile?`}</strong></p>
           <p class="song-lead-answer"><strong>{snippetLead}</strong></p>
           <p class="song-takeaway"><strong>Takeaway:</strong> {takeaway}</p>
-          <p>{article?.shortAnswer ?? editorial.shortAnswer}</p>
+          {isReviewReady ? (
+            <p>{article?.shortAnswer ?? editorial.shortAnswer}</p>
+          ) : (
+            <p>
+              This entry records basic catalog information. It does not publish an earnings analysis until
+              the underlying evidence and editorial record are complete.
+            </p>
+          )}
 
           <div class="song-intro-grid">
             <div class="song-intro-panel">
@@ -332,24 +361,41 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
               </ul>
             </div>
 
-            <div class="song-intro-panel">
-              <h3>Why the catalog still earns</h3>
-              <ul class="song-bullet-list">
-                {revenueContext.map((point) => (
-                  <li>{point}</li>
-                ))}
-              </ul>
-            </div>
+            {isReviewReady ? (
+              <div class="song-intro-panel">
+                <h3>Why the catalog still earns</h3>
+                <ul class="song-bullet-list">
+                  {revenueContext.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div class="song-intro-panel">
+                <h3>What is still needed</h3>
+                <ul class="song-bullet-list">
+                  <li>Page-specific public sources.</li>
+                  <li>Visible model inputs and limitations.</li>
+                  <li>A named author and review date.</li>
+                </ul>
+              </div>
+            )}
           </div>
 
-          <p class="traffic-magnet-note">{trafficMagnetNote}</p>
+          {isReviewReady && <p class="traffic-magnet-note">{trafficMagnetNote}</p>}
           <div class="song-intro-footer">
-            <p class="results-note">{snippetSupport}</p>
-            {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
+            {isReviewReady ? (
+              <>
+                <p class="results-note">{snippetSupport}</p>
+                {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
+              </>
+            ) : (
+              <p class="results-note"><a href={`${baseUrl}editorial-policy/`}>Read the publication standard.</a></p>
+            )}
           </div>
         </section>
 
-        <section class="trust-snapshot" aria-label="Page trust snapshot">
+        {isReviewReady && <section class="trust-snapshot" aria-label="Page trust snapshot">
           <p class="confidence-note">
             {getConfidenceSummary(confidence)}
             {" "}
@@ -364,7 +410,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
               </div>
             ))}
           </div>
-        </section>
+        </section>}
 
         <div class="artist-hero">
           <img
@@ -394,7 +440,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
           </div>
         </div>
 
-        {article && (
+        {article && isReviewReady && (
           <section class="editorial-basis-card" aria-labelledby="artist-editorial-basis-title">
             <div class="editorial-basis-heading">
               <p class="eyebrow">Estimate Notes</p>
@@ -443,7 +489,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
           </section>
         )}
 
-        {comparisonArtists.length > 0 && (
+        {isReviewReady && comparisonArtists.length > 0 && (
           <section aria-labelledby="comparison-title" class="comparison-section">
             <h2 id="comparison-title">How It Compares</h2>
             <p class="comparison-summary">
@@ -477,7 +523,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
           </section>
         )}
 
-        {revenueBars.length > 1 && (
+        {isReviewReady && revenueBars.length > 1 && (
           <section aria-labelledby="revenue-visual-title">
             <h2 id="revenue-visual-title">Revenue Breakdown</h2>
             <div class="revenue-bars">
@@ -498,7 +544,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
           </section>
         )}
 
-        <section aria-labelledby="questions-title">
+        {isReviewReady && <section aria-labelledby="questions-title">
           <h2 id="questions-title">Reader questions about {artist.name}</h2>
           <div class="intent-question-list">
             {intentQuestions.map((item) => (
@@ -508,9 +554,9 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
               </article>
             ))}
           </div>
-        </section>
+        </section>}
 
-        {article && hasArtistSourceContext && (
+        {article && isReviewReady && hasArtistSourceContext && (
           <section aria-labelledby="sources-title">
             <h2 id="sources-title">Sources and References</h2>
             <p class="results-note">
@@ -564,7 +610,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
           </section>
         )}
 
-        <details class="details-card">
+        {isReviewReady && <details class="details-card">
           <summary>Show ownership and assumptions</summary>
           <div class="details-card-body">
             <p>{ownershipNote}</p>
@@ -621,7 +667,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
               </p>
             </div>
           </div>
-        </details>
+        </details>}
 
         {(relatedArtists.length > 0 || artist.notable_for || artist.career_highlight || article?.insight || editorial.insight) && (
           <section aria-labelledby="more-context-title" class="song-context-section">
@@ -666,13 +712,13 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
 
       <aside class="song-sidebar">
         <div class="song-summary-card">
-          <p class="eyebrow">Earnings Snapshot</p>
-          <h2>{leadRevenue}</h2>
+          <p class="eyebrow">{isReviewReady ? "Earnings Snapshot" : "Research Status"}</p>
+          <h2>{isReviewReady ? leadRevenue : "In review"}</h2>
           <ul class="stat-list">
             {artist.genre && <li><strong>Genre:</strong> {artist.genre}</li>}
             {artist.country && <li><strong>Country:</strong> {artist.country}</li>}
             {artist.active_since && <li><strong>Active since:</strong> {artist.active_since}</li>}
-            <li><strong>Confidence:</strong> {confidence.level}</li>
+            <li><strong>Status:</strong> {isReviewReady ? `${confidence.level} confidence` : "not published as an earnings case study"}</li>
           </ul>
         </div>
 

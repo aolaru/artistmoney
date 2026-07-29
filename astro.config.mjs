@@ -12,10 +12,7 @@ function shouldIncludeInSitemap(page) {
     "/contact/",
     "/privacy/",
     "/editorial-policy/",
-    "/credits/",
-    "/insights/",
-    "/reviewed-artists/",
-    "/reviewed-songs/"
+    "/insights/"
   ]);
 
   if (alwaysIndex.has(pathname)) return true;

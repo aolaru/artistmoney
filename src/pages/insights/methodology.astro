@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import EditorialSources from "../../components/EditorialSources.astro";
+import { editorialSources } from "../../data/editorialSources";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -21,7 +23,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   <section>
     <p class="eyebrow">Methodology</p>
     <h1>How earnings are modeled</h1>
-    <p class="page-updated">Updated June 18, 2026</p>
+    <p class="page-updated">Updated July 29, 2026</p>
     <p>
       The estimates use conservative modeled ranges, not audited royalty statements. The goal is to
       make catalog economics legible without pretending to have access to private contracts.
@@ -30,10 +32,10 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
 
   <section class="quick-answer-card" aria-labelledby="methodology-quick-answer-title">
     <p class="eyebrow">Quick Answer</p>
-    <h2 id="methodology-quick-answer-title">The number is a conservative annual range.</h2>
+    <h2 id="methodology-quick-answer-title">A number is published only when its public inputs can be explained.</h2>
     <p>
-      A page starts with public context, then separates gross catalog activity from the smaller
-      artist-side or estate-side share when the available information supports that split.
+      Catalog profiles can remain available for navigation, but a page becomes an indexable case
+      study only after its evidence, model inputs, author, review date, and limitations are visible.
     </p>
   </section>
 
@@ -48,34 +50,34 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   <section id="methodology-represents">
     <h2>What the estimates represent</h2>
     <ul class="meta-list">
-      <li>Artist and song pages use conservative annual earnings ranges as editorial estimates.</li>
-      <li>Where possible, pages separate gross catalog revenue from the artist-side retained share.</li>
-      <li>Ownership notes explain when labels, publishers, estates, or catalog buyers likely absorb a large part of the revenue.</li>
-      <li>Headline artist-side ranges are intentionally discounted against aggressive top-line assumptions, because public stream counts rarely reveal contract splits, geography, ad-supported share, or recoupment.</li>
+      <li>A published range must identify the public inputs used to create it and the source attached to each input.</li>
+      <li>Gross activity and artist-side participation are kept separate only when the public evidence supports that distinction.</li>
+      <li>Ownership context can explain where value may flow, but it cannot substitute for a private contract or royalty statement.</li>
+      <li>When public evidence cannot support a range, the page remains a noindex catalog profile instead of a published estimate.</li>
     </ul>
   </section>
 
   <section id="methodology-ready">
     <h2>What makes a page ready for readers</h2>
     <p>
-      A reviewed page needs enough structured context to answer the reader's question without
-      leaning on repeated generic copy.
+      A case study must answer a page-specific question with evidence a reader can inspect.
     </p>
     <ul class="meta-list">
-      <li>Song pages need a page-specific article entry, ownership context, platform references, artwork, related songs, and separated gross and artist-side revenue fields.</li>
-      <li>Artist pages need a page-specific article entry, structured catalog earnings, ownership context, top-song support, and visible public references.</li>
-      <li>Pages with limited context are not promoted as reviewed editorial pages.</li>
+      <li>It needs at least three substantive public sources across at least two evidence roles, such as primary records, independent reporting, and rights context.</li>
+      <li>It needs a named editorial desk, review date, model inputs, assumptions, and at least two specific limitations.</li>
+      <li>Platform and artist-homepage links may support identity, but do not qualify a financial claim.</li>
+      <li>Pages with incomplete research remain available for navigation but are noindex and excluded from the sitemap.</li>
     </ul>
   </section>
 
   <section id="methodology-sources">
     <h2>How source labels should be read</h2>
     <ul class="meta-list">
-      <li><strong>Platform identity</strong> links confirm public song or artist identity on listening platforms.</li>
-      <li><strong>Release metadata</strong> links support track, album, artwork, or release context.</li>
-      <li><strong>Certification context</strong> links show public certification-scale context where available.</li>
-      <li><strong>Ownership context</strong> links support catalog, master, publishing, or rights-control discussion where available.</li>
-      <li>No source label should be read as proof of a private royalty statement unless the source itself discloses royalty data.</li>
+      <li><strong>Primary record</strong> links point to public agencies, registries, or rightsholder disclosures.</li>
+      <li><strong>Independent reporting</strong> links document public commercial context without being treated as a royalty statement.</li>
+      <li><strong>Rights context</strong> links explain how a relevant music-rights system works.</li>
+      <li><strong>Identity context</strong> links confirm public artist or track identity and cannot qualify an estimate by themselves.</li>
+      <li>No source label is read as proof of a private royalty statement unless the source itself discloses royalty data.</li>
     </ul>
   </section>
 
@@ -83,18 +85,18 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     <p class="eyebrow">Example</p>
     <h2 id="methodology-example-title">Why two popular songs can show different ranges</h2>
     <p>
-      A newer streaming hit, a seasonal standard, and a song with durable sync licensing potential
-      can all produce different annual value patterns. The model is more useful when it explains
-      those differences instead of flattening every play into one public per-stream number.
+      Two songs can have similar public demand but different rightsholder structures. A responsible
+      case study states what public evidence supports that difference and does not fill the gaps
+      with generic language or a precise-looking number.
     </p>
   </section>
 
   <section id="methodology-rankings">
     <h2>How rankings work</h2>
     <ul class="meta-list">
-      <li>Rankings use the midpoint of the displayed revenue range.</li>
-      <li>Album rankings aggregate the tracked songs currently covered, not the whole commercial album unless every track is covered.</li>
-      <li>That makes the rankings useful for comparison, not as a substitute for accounting data.</li>
+      <li>Rankings are not published while the underlying case studies are in the research queue.</li>
+      <li>A future ranking will include only pages that meet the same evidence and documentation standard.</li>
+      <li>Any future comparison remains editorial context, not a substitute for accounting data.</li>
     </ul>
   </section>
 
@@ -104,17 +106,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
       <li>Legacy contract terms are rarely public.</li>
       <li>Catalog-sale details can materially alter the performer or estate share.</li>
       <li>Streaming mix, geography, and licensing activity change over time.</li>
-      <li>Platform-reported play counts do not map cleanly to take-home earnings, so lower directional ranges are favored over maximum-case estimates.</li>
+      <li>Platform-reported play counts do not map cleanly to take-home earnings, so an unsupported range is not published.</li>
     </ul>
   </section>
 
-  <section class="related-reading-card" aria-labelledby="methodology-sources-title">
-    <h2 id="methodology-sources-title">Useful background</h2>
-    <p>These links explain parts of the public music-economics context; they do not verify any single estimate on this site.</p>
-    <div class="related-link-row">
-      <a href="https://loudandclear.byspotify.com/">Spotify Loud &amp; Clear</a>
-      <a href="https://www.riaa.com/u-s-sales-database/">RIAA revenue database</a>
-      <a href="https://www.copyright.gov/music-modernization/">U.S. Copyright Office: Music Modernization Act</a>
-    </div>
-  </section>
+  <EditorialSources sources={editorialSources.methodology} />
 </BaseLayout>

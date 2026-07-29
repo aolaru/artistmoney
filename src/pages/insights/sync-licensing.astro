@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import EditorialSources from "../../components/EditorialSources.astro";
+import { editorialSources } from "../../data/editorialSources";
 ---
 
 <BaseLayout
@@ -10,9 +12,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section>
     <p class="eyebrow">Explainer</p>
     <h1>Why sync licensing matters</h1>
+    <p class="page-updated">Updated July 29, 2026</p>
     <p>
-      A sync placement can create a sharp revenue spike and also restart a song's streaming life.
-      The immediate fee matters, but the secondary discovery effect often matters just as much.
+      A sync placement can create direct licensing income and renewed listener attention. The size
+      of a particular fee is usually private, so it should not be inferred from the visibility of a placement.
     </p>
   </section>
 
@@ -39,7 +42,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     <h2>Why it changes long-term earnings</h2>
     <p>
       Sync use can push an older recording back into playlists, charts, social media edits, and
-      catalog discovery. That is why a single placement can keep paying long after the fee clears.
+      catalog discovery. That public attention can be discussed separately from any private fee.
     </p>
     <p>
       The important distinction is direct versus indirect value. Direct value is the placement
@@ -47,4 +50,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       again in a new cultural context.
     </p>
   </section>
+
+  <EditorialSources sources={editorialSources.sync} title="Licensing and rights background" />
 </BaseLayout>

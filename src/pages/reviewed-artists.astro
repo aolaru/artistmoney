@@ -1,187 +1,73 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
-import {
-  getArtistConfidence,
-  getArtistVisual,
-  getConfidenceSummary,
-  rankedArtists,
-  songs
-} from "../lib/catalog";
-import { getArtistReviewReferences, isArtistReviewReady } from "../lib/reviewReady";
-import { formatRevenueMidpoint } from "../lib/revenue";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-
-const reviewedArtists = rankedArtists
-  .map((entry) => {
-    const topSongs = songs.filter((song) => entry.artist.top_songs.includes(song.slug));
-    const visual = getArtistVisual(entry.artist);
-    const references = getArtistReviewReferences(entry.artist, topSongs);
-
-    return {
-      ...entry,
-      topSongs,
-      visual,
-      references,
-      isReviewReady: isArtistReviewReady(entry.artist, topSongs) && visual.provider === "artistPhoto"
-    };
-  })
-  .filter((entry) => entry.isReviewReady);
-const getActiveYear = (value?: string) => Number(value?.match(/\d{4}/)?.[0] ?? 0);
-const reviewedArtistGroups = [
-  {
-    title: "Best source-backed starts",
-    description: "Use these first when visible references and split-aware estimate notes matter most.",
-    items: reviewedArtists.slice(0, 4)
-  },
-  {
-    title: "Legacy catalogs",
-    description: "Older catalogs where estates, labels, publishing, and media reuse can change the artist-side range.",
-    items: reviewedArtists.filter(({ artist }) => getActiveYear(artist.active_since) && getActiveYear(artist.active_since) < 1985).slice(0, 4)
-  },
-  {
-    title: "Modern streaming scale",
-    description: "Artists where current platform demand and high-volume replay carry more of the estimate.",
-    items: reviewedArtists.filter(({ artist }) => getActiveYear(artist.active_since) >= 2000).slice(0, 4)
-  }
-].filter((group) => group.items.length > 0);
 ---
 
 <BaseLayout
-  title="Reviewed Artists | How Much Music"
-  description="Reviewed artist earnings pages with visible references, ownership notes, and methodology-backed annual estimates."
+  title="Artist Research Queue | How Much Music"
+  description="How Much Music's research queue for artist profiles awaiting source-backed editorial review."
+  noindex
 >
-  <Breadcrumbs items={[
-    { label: "Home", href: baseUrl },
-    { label: "Reviewed Artists" }
-  ]} />
-
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">Reviewed Artists</p>
-      <h1>Start with the strongest artist pages.</h1>
+      <p class="eyebrow">Research Queue</p>
+      <h1>Artist profiles awaiting evidence review.</h1>
       <p>
-        These artist pages have page-specific editorial notes, structured earnings fields, visible
-        references, ownership context, and self-hosted artist images.
+        The catalog remains available for navigation and comparison. It is not currently presented
+        as a collection of finished editorial case studies.
       </p>
       <p>
-        Looking for songs instead? <a href={`${baseUrl}reviewed-songs/`}>Open reviewed songs</a>.
+        Browse the <a href={`${baseUrl}artists/`}>artist catalog</a> or read the
+        <a href={`${baseUrl}editorial-policy/`}>publication standard</a>.
       </p>
     </div>
-    <div class="hero-panel" aria-label="Reviewed artist summary">
-      <p class="eyebrow">Reviewed Set</p>
-      <a class="hero-stat-pill hero-stat-pill-primary" href="#reviewed-artist-list-title">
-        <strong>{reviewedArtists.length}</strong>
-        <span>reviewed artist pages</span>
-      </a>
+    <div class="hero-panel" aria-label="Publication status">
+      <p class="eyebrow">Publication Status</p>
+      <div class="hero-stat-pill hero-stat-pill-primary">
+        <strong>0</strong>
+        <span>published artist case studies</span>
+      </div>
       <a class="hero-stat-pill" href={`${baseUrl}artists/`}>
-        <strong>All</strong>
-        <span>browse artist catalog</span>
+        <strong>Catalog</strong>
+        <span>browse artist profiles</span>
       </a>
     </div>
   </section>
 
-  <section class="editorial-basis-card" aria-labelledby="reviewed-artists-guide-title">
+  <section class="editorial-basis-card" aria-labelledby="artist-standard-title">
     <div class="editorial-basis-heading">
-      <p class="eyebrow">Reader Guide</p>
-      <h2 id="reviewed-artists-guide-title">What makes these pages stronger</h2>
+      <p class="eyebrow">Publication Standard</p>
+      <h2 id="artist-standard-title">What a published artist case study must include</h2>
       <p>
-        Each linked page has page-specific editorial notes, structured earnings fields, public
-        references, ownership context, and a self-hosted artist image.
+        A page is published only when a reader can see the public evidence, the model inputs, and
+        the limits of the conclusion without relying on generic catalog copy.
       </p>
     </div>
     <div class="editorial-basis-grid">
       <div class="editorial-basis-item">
-        <strong>Estimate type</strong>
-        <span>Artist-side ranges are modeled annual estimates, not private statements from artists, estates, labels, or publishers.</span>
+        <strong>Evidence</strong>
+        <span>At least three substantive public sources, across at least two evidence roles.</span>
       </div>
       <div class="editorial-basis-item">
-        <strong>Source role</strong>
-        <span>References support public catalog context, top-song identity, or certification lookup context where records exist.</span>
+        <strong>Model record</strong>
+        <span>Inputs, assumptions, limitations, author, and review date must be visible on the page.</span>
       </div>
       <div class="editorial-basis-item">
-        <strong>Confidence role</strong>
-        <span>Confidence labels describe how complete the public context is, not guaranteed payout accuracy.</span>
+        <strong>Publication rule</strong>
+        <span>Platform and artist-homepage links help with identity but do not qualify a financial claim.</span>
       </div>
     </div>
   </section>
 
-  {reviewedArtistGroups.length > 0 && (
-    <section class="editorial-route-section" aria-labelledby="reviewed-artist-routes-title">
-      <div class="section-heading-row">
-        <div>
-          <p class="eyebrow">Editorial Routes</p>
-          <h2 id="reviewed-artist-routes-title">Choose a stronger starting point</h2>
-        </div>
-      </div>
-      <div class="editorial-route-grid">
-        {reviewedArtistGroups.map((group) => (
-          <article class="editorial-route-card">
-            <h3>{group.title}</h3>
-            <p>{group.description}</p>
-            <ul class="meta-list">
-              {group.items.map(({ artist, references }) => (
-                <li>
-                  <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
-                  <span class="meta-inline"> · {references.length} public references</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <section aria-labelledby="reviewed-artist-list-title">
-    <div class="section-heading-row">
-      <div>
-        <p class="eyebrow">Article-backed</p>
-        <h2 id="reviewed-artist-list-title">Reviewed artist pages</h2>
-      </div>
-      <a class="home-action-link" href={`${baseUrl}insights/catalog-ownership/`}>Understand ownership</a>
-    </div>
-    <p class="results-note">
-      Ranked by modeled artist-side annual midpoint, with priority given to pages that have stronger
-      source and ownership context.
-    </p>
-
-    <div class="card-grid reviewed-song-grid">
-      {reviewedArtists.map(({ artist, revenueScore, visual, references }) => {
-        const confidence = getArtistConfidence(artist);
-
-        return (
-          <article class="card artist-card reviewed-song-card">
-            <img
-              class="artist-card-image"
-              src={visual.src}
-              alt={visual.alt}
-              loading="lazy"
-              width="1200"
-              height="900"
-              referrerpolicy="no-referrer"
-            />
-            <div class="artist-card-body">
-              <p class="eyebrow">Reviewed Artist</p>
-              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
-              <p class="confidence-note">{getConfidenceSummary(confidence)} <a href={`${baseUrl}insights/methodology/`}>Why?</a></p>
-              <h3><a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a></h3>
-              <p class="artist-card-meta">
-                {[artist.genre, artist.country].filter(Boolean).join(" · ")}
-              </p>
-              <p class="artist-card-meta">
-                Modeled midpoint: {formatRevenueMidpoint(revenueScore)}
-              </p>
-              <p class="artist-card-meta">
-                {references.length} public reference{references.length === 1 ? "" : "s"} linked.
-              </p>
-            </div>
-          </article>
-        );
-      })}
+  <section class="related-reading-card" aria-labelledby="artist-queue-next-title">
+    <h2 id="artist-queue-next-title">What readers can use now</h2>
+    <div class="related-link-row">
+      <a href={`${baseUrl}artists/`}>Browse catalog profiles</a>
+      <a href={`${baseUrl}insights/`}>Read source-led explainers</a>
+      <a href={`${baseUrl}insights/catalog-ownership/`}>Understand catalog ownership</a>
     </div>
   </section>
 </BaseLayout>

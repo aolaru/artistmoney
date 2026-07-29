@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import EditorialSources from "../../components/EditorialSources.astro";
+import { editorialSources } from "../../data/editorialSources";
 ---
 
 <BaseLayout
@@ -10,7 +12,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <section>
     <p class="eyebrow">Explainer</p>
     <h1>What catalog ownership means</h1>
-    <p class="page-updated">Updated June 18, 2026</p>
+    <p class="page-updated">Updated July 29, 2026</p>
     <p>
       The gross revenue earned by a song is not the same as the amount an artist or estate keeps.
       Catalog ownership determines where money lands before it reaches the performer, writer, or heirs.
@@ -84,13 +86,5 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     </ul>
   </section>
 
-  <section class="related-reading-card" aria-labelledby="ownership-sources-title">
-    <h2 id="ownership-sources-title">Useful background</h2>
-    <p>These references explain music-rights context; they do not verify any single estimate on this site.</p>
-    <div class="related-link-row">
-      <a href="https://www.copyright.gov/circs/circ56a.pdf">U.S. Copyright Office: compositions and sound recordings</a>
-      <a href="https://www.copyright.gov/music-modernization/">U.S. Copyright Office: Music Modernization Act</a>
-      <a href="https://www.themlc.com/">The Mechanical Licensing Collective</a>
-    </div>
-  </section>
+  <EditorialSources sources={editorialSources.ownership} />
 </BaseLayout>

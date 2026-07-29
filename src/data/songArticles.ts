@@ -1,8 +1,11 @@
+import type { EvidenceRole, ResearchRecord } from "../lib/publication";
+
 export type ArticleReference = {
   label: string;
   url: string;
   note: string;
   category?: string;
+  evidenceRole?: EvidenceRole;
 };
 
 export type SongArticle = {
@@ -15,6 +18,7 @@ export type SongArticle = {
   evidence?: string[];
   methodologyNotes?: string[];
   references?: ArticleReference[];
+  research?: ResearchRecord;
 };
 
 export const songArticles: Record<string, SongArticle> = {

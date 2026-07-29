@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { publisher } from "../lib/publication";
 
 interface Props {
   title: string;
@@ -114,8 +115,7 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
         <nav aria-label="Primary navigation">
           <a href={baseUrl}>Home</a>
           <a href={`${baseUrl}search/`}>Search</a>
-          <a href={`${baseUrl}reviewed-songs/`}>Reviewed Songs</a>
-          <a href={`${baseUrl}reviewed-artists/`}>Reviewed Artists</a>
+          <a href={`${baseUrl}insights/`}>Insights</a>
           <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
           <a href={`${baseUrl}about/`}>About</a>
         </nav>
@@ -131,8 +131,7 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
         <div>
           <p class="eyebrow">How Much Music</p>
           <p>
-            Music earnings, catalog value, and artist-side estimates presented as editorial
-            research.
+            Source-led explainers and catalog research about music rights, ownership, and long-tail value.
           </p>
         </div>
 
@@ -143,8 +142,7 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
             <a href={`${baseUrl}search/`}>Search</a>
             <a href={`${baseUrl}artists/`}>Artists</a>
             <a href={`${baseUrl}songs/`}>Songs</a>
-            <a href={`${baseUrl}reviewed-songs/`}>Reviewed Songs</a>
-            <a href={`${baseUrl}reviewed-artists/`}>Reviewed Artists</a>
+            <a href={`${baseUrl}reviewed-songs/`}>Research queue</a>
             <a href={`${baseUrl}insights/`}>Insights</a>
             <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
             <a href={`${baseUrl}about/`}>About</a>
@@ -166,11 +164,12 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
         <div>
           <p class="footer-heading">Notes</p>
           <p class="footer-note">
-            Earnings are estimates, not public royalty statements. Image licenses and rights notes
-            are listed on the credits page.
+            Catalog profiles are research records, not published royalty reporting. Image licenses
+            and rights notes are listed on the credits page.
           </p>
           <nav class="footer-nav" aria-label="Publisher information navigation">
-            <a href={`${baseUrl}contact/`}>Contact</a>
+            <a href={`mailto:${publisher.contactEmail}`}>{publisher.contactEmail}</a>
+            <a href={`${baseUrl}contact/`}>Contact and corrections</a>
             <a href={`${baseUrl}privacy/`}>Privacy</a>
           </nav>
           <p class="footer-note">© 2026 How Much Music</p>

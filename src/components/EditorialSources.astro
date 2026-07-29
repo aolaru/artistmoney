@@ -1,0 +1,27 @@
+---
+import type { EditorialSource } from "../data/editorialSources";
+
+interface Props {
+  sources: EditorialSource[];
+  title?: string;
+}
+
+const { sources, title = "Sources and further reading" } = Astro.props as Props;
+---
+
+<section class="editorial-basis-card source-snapshot-card" aria-labelledby="editorial-sources-title">
+  <div class="editorial-basis-heading">
+    <p class="eyebrow">Sources</p>
+    <h2 id="editorial-sources-title">{title}</h2>
+    <p>Each link is included for the specific context described below. None is a private royalty statement.</p>
+  </div>
+  <div class="reference-list source-snapshot-list">
+    {sources.map((source) => (
+      <article class="reference-item">
+        <p class="reference-category">{source.role.replaceAll("-", " ")}</p>
+        <h3><a href={source.url} rel="noreferrer" target="_blank">{source.label}</a></h3>
+        <p>{source.note}</p>
+      </article>
+    ))}
+  </div>
+</section>
