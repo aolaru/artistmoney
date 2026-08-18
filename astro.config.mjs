@@ -12,6 +12,7 @@ function shouldIncludeInSitemap(page) {
     "/contact/",
     "/privacy/",
     "/editorial-policy/",
+    "/author/andrei-olaru/",
     "/insights/"
   ]);
 

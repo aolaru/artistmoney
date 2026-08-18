@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { publisher } from "../../lib/publication";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout
+  title={`${publisher.editorName} | How Much Music`}
+  description={`Author and responsible editor profile for ${publisher.editorName} at How Much Music.`}
+>
+  <Breadcrumbs
+    items={[
+      { label: "Home", href: baseUrl },
+      { label: "About", href: `${baseUrl}about/` },
+      { label: publisher.editorName }
+    ]}
+  />
+
+  <section>
+    <p class="eyebrow">Author and Responsible Editor</p>
+    <h1>{publisher.editorName}</h1>
+    <p class="page-updated">Updated August 18, 2026</p>
+    <p>
+      {publisher.editorName} is the owner and responsible editor of How Much Music, published
+      under the name {publisher.tradingAs}. The site is operated by an {publisher.entityType.toLowerCase()}
+      in {publisher.location}.
+    </p>
+    <p>
+      The editor reviews the site’s published case studies and is accountable for their editorial framing,
+      source links, stated limitations, and correction decisions.
+    </p>
+  </section>
+
+  <section class="quick-answer-card" aria-labelledby="editorial-role-title">
+    <p class="eyebrow">Editorial Role</p>
+    <h2 id="editorial-role-title">What review means on this site</h2>
+    <p>
+      A published case study separates what a public source documents from editorial interpretation.
+      It does not treat private contracts, royalty statements, or unavailable rights data as known facts.
+    </p>
+  </section>
+
+  <section>
+    <h2>How to raise a correction</h2>
+    <p>
+      Send factual corrections, source suggestions, rights concerns, or image-attribution issues to
+      <a href={`mailto:${publisher.contactEmail}`}> {publisher.contactEmail}</a> or use the contact page.
+      Corrections are assessed against public, checkable evidence.
+    </p>
+    <div class="related-link-row">
+      <a href={`${baseUrl}editorial-policy/`}>Read the editorial policy</a>
+      <a href={`${baseUrl}case-studies/`}>Read case studies</a>
+      <a href={`${baseUrl}contact/`}>Contact the editor</a>
+    </div>
+  </section>
+</BaseLayout>
