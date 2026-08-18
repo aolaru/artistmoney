@@ -107,13 +107,14 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
             aria-expanded="false"
           />
           <div class="header-search-panel" id="header-search-results" hidden>
-            <div class="header-search-empty">Start typing to search reviewed pages.</div>
+            <div class="header-search-empty">Start typing to search catalog records.</div>
             <ul class="header-search-results" role="listbox"></ul>
             <a class="header-search-all-link" href={`${baseUrl}search/`}>Open search page</a>
           </div>
         </form>
         <nav aria-label="Primary navigation">
           <a href={baseUrl}>Home</a>
+          <a href={`${baseUrl}case-studies/`}>Case studies</a>
           <a href={`${baseUrl}search/`}>Search</a>
           <a href={`${baseUrl}insights/`}>Insights</a>
           <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
@@ -139,6 +140,7 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
           <p class="footer-heading">Browse</p>
           <nav class="footer-nav" aria-label="Footer navigation">
             <a href={baseUrl}>Home</a>
+            <a href={`${baseUrl}case-studies/`}>Case studies</a>
             <a href={`${baseUrl}search/`}>Search</a>
             <a href={`${baseUrl}artists/`}>Artists</a>
             <a href={`${baseUrl}songs/`}>Songs</a>
@@ -295,7 +297,7 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
                 empty.hidden = false;
                 empty.textContent = query
                   ? "No reviewed page matched. Try a shorter artist or song name, or open the full catalogs."
-                  : "Start typing to search reviewed pages.";
+                  : "Start typing to search catalog records.";
                 openPanel();
                 return;
               }

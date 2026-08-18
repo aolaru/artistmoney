@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { caseStudies } from "../data/caseStudies";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -39,8 +40,8 @@ const explainers = [
       <h1>Understand how music rights create value.</h1>
       <p>
         How Much Music publishes source-led explainers about streaming, catalog ownership, and
-        licensing. Catalog profiles are available to browse while individual case studies are
-        researched to a higher editorial standard.
+        licensing. Start with published case studies, then use catalog profiles as research records
+        rather than finished reporting.
       </p>
       <ul class="hero-proof-list" aria-label="Site approach">
         <li><strong>Sources</strong><span>explained on every editorial page</span></li>
@@ -51,12 +52,12 @@ const explainers = [
 
     <div class="hero-panel home-search-panel" aria-label="Primary homepage actions">
       <p class="eyebrow">Start Here</p>
-      <h2>Read the evidence, then browse the catalog.</h2>
+      <h2>Read a case study, then browse the catalog.</h2>
       <div class="home-primary-actions">
         <article class="home-primary-action">
-          <p class="eyebrow">1. Explain</p>
-          <h3>How music money moves</h3>
-          <a class="home-action-link" href={`${baseUrl}insights/`}>Read explainers</a>
+          <p class="eyebrow">1. Case Studies</p>
+          <h3>See public evidence in context</h3>
+          <a class="home-action-link" href={`${baseUrl}case-studies/`}>Read case studies</a>
         </article>
         <article class="home-primary-action">
           <p class="eyebrow">2. Method</p>
@@ -72,6 +73,31 @@ const explainers = [
     </div>
   </section>
 
+  <section aria-labelledby="case-studies-title">
+    <div class="section-heading-row">
+      <div>
+        <p class="eyebrow">Published Reporting</p>
+        <h2 id="case-studies-title">Start with a source-backed case study</h2>
+      </div>
+      <a class="home-action-link" href={`${baseUrl}case-studies/`}>Open all case studies</a>
+    </div>
+    <p class="results-note">
+      Each article examines one specific rights question, links the public record, and states what that record does not prove.
+    </p>
+    <div class="card-grid case-study-grid">
+      {caseStudies.slice(0, 3).map((caseStudy) => (
+        <article class="card case-study-card">
+          <div class="artist-card-body">
+            <p class="eyebrow">{caseStudy.focus}</p>
+            <h3><a href={`${baseUrl}case-studies/${caseStudy.slug}/`}>{caseStudy.title}</a></h3>
+            <p class="card-byline">{caseStudy.artist}</p>
+            <p>{caseStudy.summary}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
   <section aria-labelledby="editorial-guides-title">
     <div class="section-heading-row">
       <div>
@@ -81,7 +107,7 @@ const explainers = [
       <a class="home-action-link" href={`${baseUrl}insights/`}>Open all explainers</a>
     </div>
     <p class="results-note">
-      These pages explain the relevant rights, evidence, and uncertainty before applying those ideas to a catalog profile.
+      These pages explain the relevant rights, evidence, and uncertainty behind the case-study approach.
     </p>
     <div class="card-grid reviewed-song-grid">
       {explainers.map((explainer) => (
@@ -99,7 +125,7 @@ const explainers = [
   <section class="editorial-basis-card" aria-labelledby="catalog-use-title">
     <div class="editorial-basis-heading">
       <p class="eyebrow">Catalog Research</p>
-      <h2 id="catalog-use-title">Browse profiles without mistaking them for published reporting</h2>
+      <h2 id="catalog-use-title">Browse records without mistaking them for published reporting</h2>
       <p>
         Artist and song profiles are useful navigation records. They are kept out of search indexing
         and advertising while their claims, sources, and model inputs are independently documented.

@@ -1400,6 +1400,61 @@ mark {
   line-height: 1.6;
 }
 
+.case-study-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-study-card {
+  display: flex;
+}
+
+.case-study-card .artist-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.case-study-card .home-action-link {
+  margin-top: auto;
+}
+
+.case-study-article {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 860px;
+}
+
+.case-study-header {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.case-study-header h1,
+.case-study-header p {
+  margin: 0;
+}
+
+.case-study-artist {
+  color: var(--muted);
+}
+
+.case-study-summary {
+  max-width: 68ch;
+  color: var(--text);
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+.case-study-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  padding-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .seo-question,
 .song-lead-answer,
 .song-takeaway {
@@ -2087,7 +2142,8 @@ mark {
   .platform-signal-grid,
   .trust-points,
   .source-snapshot-list,
-  .editorial-basis-grid {
+  .editorial-basis-grid,
+  .case-study-grid {
     grid-template-columns: 1fr;
   }
 

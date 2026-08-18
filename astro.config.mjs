@@ -17,6 +17,7 @@ function shouldIncludeInSitemap(page) {
 
   if (alwaysIndex.has(pathname)) return true;
   if (pathname.startsWith("/insights/")) return true;
+  if (pathname === "/case-studies/" || pathname.startsWith("/case-studies/")) return true;
 
   const artistMatch = pathname.match(/^\/artist\/([^/]+)\/$/);
   if (artistMatch) return reviewReadyPages.artistSlugs.has(artistMatch[1]);

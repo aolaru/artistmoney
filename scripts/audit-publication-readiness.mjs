@@ -41,7 +41,7 @@ async function main() {
     },
     totals: {
       catalogArticles: queue.length,
-      publishedCaseStudies: ready.length,
+      catalogProfilesReadyForPublication: ready.length,
       researchQueue: queue.length - ready.length
     },
     ready,
@@ -51,7 +51,7 @@ async function main() {
   mkdirSync(reportDirectory, { recursive: true });
   writeFileSync(reportPath, JSON.stringify(report, null, 2));
   console.log(
-    `Publication readiness: ${report.totals.publishedCaseStudies}/${report.totals.catalogArticles} case studies published; ${report.totals.researchQueue} profiles remain in the research queue.`
+    `Catalog publication readiness: ${report.totals.catalogProfilesReadyForPublication}/${report.totals.catalogArticles} profiles meet the financial-model standard; ${report.totals.researchQueue} profiles remain in the research queue.`
   );
   console.log(`- Report: .reports/publication-readiness.json`);
 }

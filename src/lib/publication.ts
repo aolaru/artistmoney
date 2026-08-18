@@ -12,7 +12,7 @@ export type ResearchRecord = {
 };
 
 export const publisher = {
-  name: "How Much Music Editorial Desk",
+  name: "How Much Music",
   contactEmail: "info@howmuchmusic.com",
   correctionsUrl: "/contact/"
 };

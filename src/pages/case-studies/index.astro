@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { caseStudies } from "../../data/caseStudies";
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout
+  title="Music Rights Case Studies | How Much Music"
+  description="Source-backed editorial case studies about music rights, chart evidence, catalog demand, and the limits of public earnings claims."
+>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Editorial Case Studies</p>
+      <h1>What public music records can, and cannot, prove.</h1>
+      <p>
+        These articles examine specific songs using visible chart, certification, award, and rights-framework sources.
+        They do not turn popularity into invented royalty totals.
+      </p>
+    </div>
+    <div class="hero-panel" aria-label="Case study standards">
+      <p class="eyebrow">Publication Standard</p>
+      <div class="hero-stat-pill hero-stat-pill-primary">
+        <strong>{caseStudies.length}</strong>
+        <span>source-backed case studies</span>
+      </div>
+      <div class="hero-stat-pill">
+        <strong>3 links</strong>
+        <span>minimum context on every page</span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="case-studies-title">
+    <div class="section-heading-row">
+      <div>
+        <p class="eyebrow">Published Work</p>
+        <h2 id="case-studies-title">Read a specific evidence question</h2>
+      </div>
+      <a class="home-action-link" href={`${baseUrl}editorial-policy/`}>Read editorial policy</a>
+    </div>
+    <p class="results-note">
+      Each case identifies its evidence, explains the editorial reading, and states what the public record does not show.
+    </p>
+    <div class="card-grid case-study-grid">
+      {caseStudies.map((caseStudy) => (
+        <article class="card case-study-card">
+          <div class="artist-card-body">
+            <p class="eyebrow">{caseStudy.focus}</p>
+            <h3><a href={`${baseUrl}case-studies/${caseStudy.slug}/`}>{caseStudy.title}</a></h3>
+            <p class="card-byline">{caseStudy.artist}</p>
+            <p>{caseStudy.summary}</p>
+            <a class="home-action-link" href={`${baseUrl}case-studies/${caseStudy.slug}/`}>Read case study</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="editorial-basis-card" aria-labelledby="catalog-boundary-title">
+    <div class="editorial-basis-heading">
+      <p class="eyebrow">Catalog Boundary</p>
+      <h2 id="catalog-boundary-title">The browseable catalog remains research material</h2>
+      <p>
+        Artist and song profiles remain available for discovery but are not presented here as completed reporting.
+        They stay out of search indexing and advertising until they meet the publication standard.
+      </p>
+    </div>
+    <div class="related-link-row">
+      <a href={`${baseUrl}search/`}>Search catalog records</a>
+      <a href={`${baseUrl}artists/`}>Browse artist records</a>
+      <a href={`${baseUrl}songs/`}>Browse song records</a>
+      <a href={`${baseUrl}contact/`}>Suggest a public source</a>
+    </div>
+  </section>
+</BaseLayout>

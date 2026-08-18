@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EditorialSources from "../../components/EditorialSources.astro";
+import { caseStudies, caseStudyBySlug } from "../../data/caseStudies";
+import { publisher } from "../../lib/publication";
+
+export function getStaticPaths() {
+  return caseStudies.map((caseStudy) => ({ params: { slug: caseStudy.slug } }));
+}
+
+const { slug } = Astro.params;
+const caseStudy = caseStudyBySlug.get(slug ?? "");
+
+if (!caseStudy) {
+  throw new Error(`Unknown case study: ${slug}`);
+}
+
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const canonicalUrl = new URL(`case-studies/${caseStudy.slug}/`, Astro.site).toString();
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: caseStudy.title,
+  description: caseStudy.summary,
+  datePublished: "2026-08-18",
+  dateModified: "2026-08-18",
+  author: { "@type": "Organization", name: publisher.name },
+  publisher: { "@type": "Organization", name: publisher.name },
+  mainEntityOfPage: canonicalUrl
+};
+---
+
+<BaseLayout
+  title={`${caseStudy.title} | How Much Music`}
+  description={caseStudy.summary}
+  type="article"
+  jsonLd={jsonLd}
+>
+  <article class="case-study-article">
+    <header class="case-study-header">
+      <p class="eyebrow">Editorial Case Study</p>
+      <h1>{caseStudy.title}</h1>
+      <p class="case-study-artist">By subject: <strong>{caseStudy.artist}</strong></p>
+      <p class="case-study-summary">{caseStudy.summary}</p>
+      <div class="case-study-meta" aria-label="Editorial details">
+        <span>Reviewed {caseStudy.reviewedOn}</span>
+        <span>Published by {publisher.name}</span>
+        <a href={`${baseUrl}contact/`}>Suggest a correction</a>
+      </div>
+    </header>
+
+    <section aria-labelledby="documented-record-title">
+      <p class="eyebrow">Documented Record</p>
+      <h2 id="documented-record-title">What the linked public sources establish</h2>
+      <ul class="meta-list">
+        {caseStudy.documentedRecord.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section aria-labelledby="editorial-reading-title">
+      <p class="eyebrow">Editorial Reading</p>
+      <h2 id="editorial-reading-title">How to read that evidence</h2>
+      {caseStudy.editorialReading.map((paragraph) => <p>{paragraph}</p>)}
+    </section>
+
+    <section class="quick-answer-card" aria-labelledby="rights-question-title">
+      <p class="eyebrow">Rights Question</p>
+      <h2 id="rights-question-title">{caseStudy.rightsQuestion}</h2>
+      <p>
+        The answer requires title-specific rights and contract evidence. Where that evidence is not public,
+        this article says so rather than filling the gap with an estimate.
+      </p>
+    </section>
+
+    <section aria-labelledby="case-limitations-title">
+      <p class="eyebrow">Limits</p>
+      <h2 id="case-limitations-title">What this case study does not show</h2>
+      <ul class="meta-list">
+        {caseStudy.limitations.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <EditorialSources sources={caseStudy.sources} title="Sources used for this case study" />
+  </article>
+
+  <nav class="related-link-row" aria-label="Continue reading">
+    <a href={`${baseUrl}case-studies/`}>All case studies</a>
+    <a href={`${baseUrl}insights/`}>Music rights explainers</a>
+    <a href={`${baseUrl}editorial-policy/`}>Editorial policy</a>
+  </nav>
+</BaseLayout>
