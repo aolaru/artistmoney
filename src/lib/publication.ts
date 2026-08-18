@@ -12,7 +12,11 @@ export type ResearchRecord = {
 };
 
 export const publisher = {
-  name: "How Much Music",
+  ownerName: "Andrei Olaru",
+  editorName: "Andrei Olaru",
+  tradingAs: "Made By Kreativ",
+  entityType: "Individual",
+  location: "Bucharest, Romania",
   contactEmail: "info@howmuchmusic.com",
   correctionsUrl: "/contact/"
 };

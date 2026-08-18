@@ -75,6 +75,11 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
       gtag("js", new Date());
       gtag("config", "G-8WMBDVPWEG");
     </script>
+    <script
+      is:inline
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={'{"token":"b634abe19016414bbc66aeb5bc7d5e62"}'}></script>
     {shouldLoadAds && (
       <script
         async
@@ -168,6 +173,10 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
           <p class="footer-note">
             Catalog profiles are research records, not published royalty reporting. Image licenses
             and rights notes are listed on the credits page.
+          </p>
+          <p class="footer-note">
+            Published and maintained by {publisher.ownerName}, trading as {publisher.tradingAs},
+            {" "}{publisher.entityType.toLowerCase()} in {publisher.location}.
           </p>
           <nav class="footer-nav" aria-label="Publisher information navigation">
             <a href={`mailto:${publisher.contactEmail}`}>{publisher.contactEmail}</a>

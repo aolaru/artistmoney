@@ -26,8 +26,13 @@ const jsonLd = {
   description: caseStudy.summary,
   datePublished: "2026-08-18",
   dateModified: "2026-08-18",
-  author: { "@type": "Organization", name: publisher.name },
-  publisher: { "@type": "Organization", name: publisher.name },
+  author: { "@type": "Person", name: publisher.editorName },
+  publisher: {
+    "@type": "Person",
+    name: publisher.ownerName,
+    brand: publisher.tradingAs,
+    address: { "@type": "PostalAddress", addressLocality: "Bucharest", addressCountry: "RO" }
+  },
   mainEntityOfPage: canonicalUrl
 };
 ---
@@ -46,7 +51,7 @@ const jsonLd = {
       <p class="case-study-summary">{caseStudy.summary}</p>
       <div class="case-study-meta" aria-label="Editorial details">
         <span>Reviewed {caseStudy.reviewedOn}</span>
-        <span>Published by {publisher.name}</span>
+        <span>Reviewed by {publisher.editorName}</span>
         <a href={`${baseUrl}contact/`}>Suggest a correction</a>
       </div>
     </header>
