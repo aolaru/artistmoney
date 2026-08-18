@@ -1,3 +1,6 @@
+import { resolve } from "node:path";
+import { loadExportedDataModule } from "./load-data-module.mjs";
+
 const substantiveRoles = new Set(["primary-record", "independent-reporting", "rights-context"]);
 
 function issuesFor(caseStudy) {
@@ -22,7 +25,7 @@ function issuesFor(caseStudy) {
   return issues;
 }
 
-const { caseStudies } = await import("../src/data/caseStudies.ts");
+const caseStudies = await loadExportedDataModule(resolve("src/data/caseStudies.ts"), "caseStudies");
 const invalid = caseStudies.map((caseStudy) => ({ slug: caseStudy.slug, issues: issuesFor(caseStudy) }))
   .filter((entry) => entry.issues.length > 0);
 

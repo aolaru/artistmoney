@@ -14,7 +14,7 @@ export type CaseStudy = {
   sources: EditorialSource[];
 };
 
-const copyrightContext: EditorialSource = {
+const copyrightContext = {
   label: "U.S. Copyright Office: Sound recordings and musical compositions",
   url: "https://www.copyright.gov/circs/circ56a.pdf",
   note: "Explains that a sound recording and the musical composition embodied in it are separate copyrighted works. This is general U.S. rights context, not a record of this song's agreements.",
@@ -452,5 +452,3 @@ export const caseStudies: CaseStudy[] = [
     ]
   }
 ];
-
-export const caseStudyBySlug = new Map(caseStudies.map((caseStudy) => [caseStudy.slug, caseStudy]));
