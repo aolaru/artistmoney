@@ -61,7 +61,16 @@ const jsonLd = {
       <p class="eyebrow">Documented Record</p>
       <h2 id="documented-record-title">What the linked public sources establish</h2>
       <ul class="meta-list">
-        {caseStudy.documentedRecord.map((item) => <li>{item}</li>)}
+        {caseStudy.documentedRecord.map((item, index) => {
+          const source = caseStudy.sources[caseStudy.documentedSourceIndexes?.[index] ?? index];
+
+          return (
+            <li>
+              {item}{" "}
+              {source && <a href={source.url} rel="noreferrer" target="_blank">Read source</a>}
+            </li>
+          );
+        })}
       </ul>
     </section>
 
@@ -89,6 +98,22 @@ const jsonLd = {
     </section>
 
     <EditorialSources sources={caseStudy.sources} title="Sources used for this case study" />
+
+    {caseStudy.relatedProfiles && caseStudy.relatedProfiles.length > 0 && (
+      <section aria-labelledby="related-catalog-title">
+        <p class="eyebrow">Catalog Navigation</p>
+        <h2 id="related-catalog-title">Related catalog records</h2>
+        <p>
+          These browseable records provide basic catalog context. They are not substitutes for this
+          source-backed case study.
+        </p>
+        <div class="related-link-row">
+          {caseStudy.relatedProfiles.map((profile) => (
+            <a href={`${baseUrl}${profile.type}/${profile.slug}/`}>{profile.label}</a>
+          ))}
+        </div>
+      </section>
+    )}
   </article>
 
   <nav class="related-link-row" aria-label="Continue reading">

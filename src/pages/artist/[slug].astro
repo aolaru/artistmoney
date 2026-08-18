@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { artistArticles } from "../../data/artistArticles";
+import { caseStudies } from "../../data/caseStudies";
 import {
   artists,
   getConfidenceSummary,
@@ -37,6 +38,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
 const artistSongs = getArtistTopSongs(artist);
 const linkedArtistSongs = artistSongs.filter(isSongReviewReady);
 const article = artistArticles[artist.slug];
+const relatedCaseStudies = caseStudies.filter((caseStudy) =>
+  caseStudy.relatedProfiles?.some((profile) => profile.type === "artist" && profile.slug === artist.slug)
+);
 const hasDetailedEarnings = Boolean(artist.earnings || artist.ownership);
 const artistVisual = getArtistVisual(artist);
 const imageSrc = artistVisual.src;
@@ -54,6 +58,9 @@ const articleEvidence = article?.evidence ?? [];
 const pageDescription = isReviewReady && article?.shortAnswer && article.shortAnswer.length >= 70
   ? article.shortAnswer
   : `${artist.name} catalog research profile with public career and catalog context. This page is not a published earnings case study.`;
+const pageTitle = isReviewReady && article?.seoTitle
+  ? article.seoTitle
+  : `${artist.name} Catalog Research | How Much Music`;
 const artistRank = rankedArtists.findIndex((entry) => entry.artist.slug === artist.slug) + 1;
 const artistPercentile = artistRank > 0 ? Math.max(1, Math.round((artistRank / rankedArtists.length) * 100)) : undefined;
 const activeSinceYear = artist.active_since ? Number(artist.active_since.match(/\d{4}/)?.[0]) : undefined;
@@ -302,7 +309,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
 ---
 
 <BaseLayout
-  title={article?.seoTitle ?? `${artist.name} | How Much Music`}
+  title={pageTitle}
   description={pageDescription}
   image={imageSrc}
   imageAlt={artistVisual.alt}
@@ -334,6 +341,17 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
               This page is excluded from search indexing and advertising until its sources, model inputs,
               author, review date, and limitations meet the editorial policy.
             </p>
+            {relatedCaseStudies.length > 0 && (
+              <p>
+                <strong>Published research:</strong>{" "}
+                {relatedCaseStudies.map((caseStudy, index) => (
+                  <>
+                    {index > 0 && "; "}
+                    <a href={`${baseUrl}case-studies/${caseStudy.slug}/`}>{caseStudy.title}</a>
+                  </>
+                ))}
+              </p>
+            )}
           </section>
         )}
 

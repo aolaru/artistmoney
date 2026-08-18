@@ -12,6 +12,12 @@ export type CaseStudy = {
   limitations: string[];
   reviewedOn: string;
   sources: EditorialSource[];
+  documentedSourceIndexes?: number[];
+  relatedProfiles?: Array<{
+    type: "artist" | "song";
+    slug: string;
+    label: string;
+  }>;
 };
 
 const copyrightContext = {
@@ -63,11 +69,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "blinding-lights-chart-longevity",
-    title: "Blinding Lights: chart longevity is not a royalty statement",
+    title: "How much did Blinding Lights make? Public demand is visible; royalty totals are not",
     artist: "The Weeknd",
-    focus: "Chart longevity",
+    focus: "Public earnings question",
     summary:
-      "The record for Blinding Lights is unusually strong, but a public chart achievement cannot reveal the distribution of money behind the recording and composition.",
+      "No public source in this article establishes a verified revenue total for Blinding Lights or The Weeknd. The public record does establish unusually durable demand, which is a different claim.",
     documentedRecord: [
       "Billboard Canada reported in 2021 that Blinding Lights had been named the top Billboard Hot 100 song of all time under Billboard's then-current methodology.",
       "Official Charts maintains a public UK chart history for the recording."
@@ -98,6 +104,10 @@ export const caseStudies: CaseStudy[] = [
         role: "primary-record"
       },
       copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "the-weeknd", label: "The Weeknd catalog profile" },
+      { type: "song", slug: "blinding-lights", label: "Blinding Lights catalog profile" }
     ]
   },
   {
@@ -141,11 +151,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "bohemian-rhapsody-reissues",
-    title: "Bohemian Rhapsody: a catalog life can contain more than one release moment",
+    title: "How much did Bohemian Rhapsody make? Chart history is not a royalty total",
     artist: "Queen",
-    focus: "Reissues and renewed attention",
+    focus: "Public earnings question",
     summary:
-      "The public record shows Bohemian Rhapsody returning to the top of the UK chart in different eras. That history is evidence of renewed demand, not a disclosure of its rights income.",
+      "No public source in this article establishes a verified revenue total for Bohemian Rhapsody or any Queen member. Its chart record documents renewed demand across eras, not the distribution of rights income.",
     documentedRecord: [
       "Official Charts records the song reaching number one in the UK in 1975 and again in 1991.",
       "Official Charts later placed the recording second in its list of the UK's most-streamed songs from the 1970s, 1980s, and 1990s."
@@ -176,6 +186,10 @@ export const caseStudies: CaseStudy[] = [
         role: "independent-reporting"
       },
       copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "queen", label: "Queen catalog profile" },
+      { type: "song", slug: "bohemian-rhapsody", label: "Bohemian Rhapsody catalog profile" }
     ]
   },
   {
@@ -410,7 +424,8 @@ export const caseStudies: CaseStudy[] = [
         role: "independent-reporting"
       },
       copyrightContext
-    ]
+    ],
+    documentedSourceIndexes: [0, 2]
   },
   {
     slug: "shake-it-off-version-identity",
@@ -449,6 +464,140 @@ export const caseStudies: CaseStudy[] = [
         role: "independent-reporting"
       },
       copyrightContext
+    ],
+    documentedSourceIndexes: [0, 2],
+    relatedProfiles: [
+      { type: "artist", slug: "taylor-swift", label: "Taylor Swift catalog profile" },
+      { type: "song", slug: "shake-it-off", label: "Shake It Off catalog profile" }
+    ]
+  },
+  {
+    slug: "the-weeknd-public-success-and-private-income",
+    title: "How much does The Weeknd make? Public success is visible; personal income is not",
+    artist: "The Weeknd",
+    focus: "Artist earnings question",
+    summary:
+      "No public source in this article establishes The Weeknd's verified annual music income. Public chart records can show career-scale demand; they do not disclose artist, label, publisher, or songwriter payments.",
+    documentedRecord: [
+      "Official Charts identifies Blinding Lights as The Weeknd's biggest song in the UK and records four UK number-one albums for the artist.",
+      "IFPI's Global Charts page lists The Weeknd among the top 10 global recording artists for 2025."
+    ],
+    editorialReading: [
+      "The public record supports a limited conclusion: The Weeknd's catalog has substantial chart-recognized demand across recordings and albums. That does not reveal what portion of recorded-music revenue reaches the performer, writers, publishers, labels, distributors, or other parties.",
+      "An annual-income claim would need time-specific accounting and rights information that public charts do not provide. The responsible answer is not to convert chart scale into a personal-income figure."
+    ],
+    rightsQuestion:
+      "What can public chart records show about a major artist's catalog, and what would still be needed before anyone could verify annual personal music income?",
+    limitations: [
+      "The cited chart pages do not disclose contracts, royalty statements, recoupment, or accounting periods.",
+      "A global-artist chart position is a measure of chart-recognized recorded-music performance, not a personal earnings record.",
+      "This article does not estimate The Weeknd's net worth, salary, annual income, or personal share of any recording."
+    ],
+    reviewedOn: "August 18, 2026",
+    sources: [
+      {
+        label: "Official Charts: The Weeknd artist history",
+        url: "https://www.officialcharts.com/artist/22895/weeknd/",
+        note: "Documents the UK chart context for The Weeknd, including the career context described in this article.",
+        role: "primary-record"
+      },
+      {
+        label: "IFPI: Global Charts",
+        url: "https://www.ifpi.org/our-industry/global-charts/",
+        note: "Lists the IFPI Global Recording Artist chart results referenced here. It is a chart source, not an earnings disclosure.",
+        role: "independent-reporting"
+      },
+      copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "the-weeknd", label: "The Weeknd catalog profile" },
+      { type: "song", slug: "blinding-lights", label: "Blinding Lights catalog profile" }
+    ]
+  },
+  {
+    slug: "travis-scott-public-records-and-income-limits",
+    title: "How much does Travis Scott make? Public records show scale, not personal income",
+    artist: "Travis Scott",
+    focus: "Artist earnings question",
+    summary:
+      "No public source in this article establishes Travis Scott's verified annual music income. Chart and award records can document work and public recognition, but not the private terms that determine who receives music revenue.",
+    documentedRecord: [
+      "Official Charts records Astroworld reaching number one on the UK Official Albums Streaming Chart in 2018 and appearing on that chart for 127 weeks.",
+      "The Recording Academy lists Sicko Mode as a 2019 nominee for Best Rap Song and Best Rap Performance, with separate credited contributors in the song category."
+    ],
+    editorialReading: [
+      "The chart record and award record describe different public facts: audience performance and credited work. Neither one supplies a payment ledger for the sound recording, composition, publishing, features, production, label relationship, or any other contractual participant.",
+      "This distinction matters because a high-profile recording can involve multiple credited and contractual participants. Public visibility should not be presented as proof of one person's annual income."
+    ],
+    rightsQuestion:
+      "What can public chart and award records show about a major artist's work, and why do they not establish the artist's personal annual earnings?",
+    limitations: [
+      "The cited sources do not disclose Travis Scott's recording, publishing, touring, merchandise, or endorsement agreements.",
+      "Award nominations and chart positions do not establish ownership shares or payment amounts.",
+      "This article does not estimate Travis Scott's salary, annual income, net worth, or share of Sicko Mode."
+    ],
+    reviewedOn: "August 18, 2026",
+    sources: [
+      {
+        label: "Official Charts: Travis Scott artist history",
+        url: "https://www.officialcharts.com/artist/48337/travis-scott/",
+        note: "Documents the UK chart history for Travis Scott releases, including the Astroworld streaming-chart entry cited here.",
+        role: "primary-record"
+      },
+      {
+        label: "Recording Academy: Travis Scott awards and nominations",
+        url: "https://www.grammy.com/artists/travis-scott/24827/",
+        note: "Documents the Grammy nomination records and credits referenced for Sicko Mode.",
+        role: "independent-reporting"
+      },
+      copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "travis-scott", label: "Travis Scott catalog profile" },
+      { type: "song", slug: "sicko-mode", label: "SICKO MODE catalog profile" }
+    ]
+  },
+  {
+    slug: "taylor-swift-public-success-and-income-limits",
+    title: "How much does Taylor Swift make? Public success is not a private-income record",
+    artist: "Taylor Swift",
+    focus: "Artist earnings question",
+    summary:
+      "No public source in this article establishes Taylor Swift's verified annual music income. Industry and chart records show exceptional demand, but they do not disclose all rights, costs, accounting, or personal receipts.",
+    documentedRecord: [
+      "IFPI named Taylor Swift its Global Recording Artist of the Year for 2024 and stated that The Tortured Poets Department topped four of its 2024 global album charts.",
+      "Official Charts records Taylor Swift's UK chart history, including 14 UK number-one albums on the artist page."
+    ],
+    editorialReading: [
+      "Public chart achievements can establish commercial scale and catalog reach. They cannot establish a verified annual personal-income figure because revenue and costs move through separate recordings, compositions, formats, territories, rights holders, and agreements.",
+      "A sound recording and its underlying composition are distinct works. Even a detailed public chart record cannot replace title-specific ownership records or private accounting."
+    ],
+    rightsQuestion:
+      "What do public global and national chart records establish about an artist's scale, and why are they insufficient to verify annual personal music income?",
+    limitations: [
+      "The cited sources do not disclose royalty statements, production and marketing costs, tax, recoupment, or contractual shares.",
+      "Global chart results are not a complete record of every revenue stream or every recipient.",
+      "This article does not estimate Taylor Swift's annual income, net worth, salary, or personal share of any catalog."
+    ],
+    reviewedOn: "August 18, 2026",
+    sources: [
+      {
+        label: "IFPI: Taylor Swift named Global Recording Artist of the Year 2024",
+        url: "https://www.ifpi.org/taylor-swift-makes-music-history-as-ifpis-biggest-selling-global-recording-artist-of-the-year-for-the-fifth-time/",
+        note: "Documents IFPI's 2024 Global Recording Artist recognition and the global-album-chart context cited here.",
+        role: "primary-record"
+      },
+      {
+        label: "Official Charts: Taylor Swift artist history",
+        url: "https://www.officialcharts.com/artist/5387/taylor-swift/",
+        note: "Documents the UK chart history and album-chart context cited in this article.",
+        role: "independent-reporting"
+      },
+      copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "taylor-swift", label: "Taylor Swift catalog profile" },
+      { type: "song", slug: "shake-it-off", label: "Shake It Off catalog profile" }
     ]
   }
 ];

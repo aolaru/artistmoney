@@ -5,6 +5,33 @@ import { caseStudies } from "../../data/caseStudies";
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
+const popularQuestions = [
+  {
+    question: "How much does The Weeknd make?",
+    detail: "Public success can be documented; verified personal income is not public.",
+    slug: "the-weeknd-public-success-and-private-income"
+  },
+  {
+    question: "How much did Blinding Lights make?",
+    detail: "Chart longevity is evidence of demand, not a public royalty total.",
+    slug: "blinding-lights-chart-longevity"
+  },
+  {
+    question: "How much does Travis Scott make?",
+    detail: "Award and chart records identify work and scale, not personal receipts.",
+    slug: "travis-scott-public-records-and-income-limits"
+  },
+  {
+    question: "How much does Taylor Swift make?",
+    detail: "Global chart recognition does not disclose private income or ownership terms.",
+    slug: "taylor-swift-public-success-and-income-limits"
+  },
+  {
+    question: "How much did Bohemian Rhapsody make?",
+    detail: "Multi-era chart history does not identify a royalty recipient or amount.",
+    slug: "bohemian-rhapsody-reissues"
+  }
+];
 ---
 
 <BaseLayout
@@ -30,6 +57,26 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
         <strong>3 links</strong>
         <span>minimum context on every page</span>
       </div>
+    </div>
+  </section>
+
+  <section class="editorial-basis-card" aria-labelledby="popular-questions-title">
+    <div class="editorial-basis-heading">
+      <p class="eyebrow">Popular Research Questions</p>
+      <h2 id="popular-questions-title">Start with the question, then check the evidence</h2>
+      <p>
+        These articles answer common earnings questions by separating public evidence from the private
+        records that would be needed to verify an income claim.
+      </p>
+    </div>
+    <div class="editorial-basis-grid">
+      {popularQuestions.map((item) => (
+        <article class="editorial-basis-item">
+          <strong>Question</strong>
+          <span><a href={`${baseUrl}case-studies/${item.slug}/`}>{item.question}</a></span>
+          <span>{item.detail}</span>
+        </article>
+      ))}
     </div>
   </section>
 

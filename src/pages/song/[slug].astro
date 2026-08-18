@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { songArticles } from "../../data/songArticles";
+import { caseStudies } from "../../data/caseStudies";
 import { createSongArtwork } from "../../lib/artistArtwork";
 import {
   getArtist,
@@ -43,9 +44,15 @@ const relatedSongs = (song.related_songs?.length
 const publicRelatedSongs = relatedSongs.filter(isSongReviewReady).slice(0, 3);
 const article = songArticles[song.slug];
 const isReviewReady = isSongReviewReady(song);
+const relatedCaseStudies = caseStudies.filter((caseStudy) =>
+  caseStudy.relatedProfiles?.some((profile) => profile.type === "song" && profile.slug === song.slug)
+);
 const pageDescription = isReviewReady && article?.shortAnswer && article.shortAnswer.length >= 70
   ? article.shortAnswer
   : `${song.title}${artist ? ` by ${artist.name}` : ""} catalog research profile with release and listening context. This page is not a published earnings case study.`;
+const pageTitle = isReviewReady && article?.seoTitle
+  ? article.seoTitle
+  : `${song.title}${artist ? ` by ${artist.name}` : ""} Catalog Research | How Much Music`;
 const hasDetailedEarnings = Boolean(song.earnings || song.ownership);
 const providerArtwork = song.player?.artwork;
 const providerArtworkLink = song.player?.links?.appleMusic ?? song.player?.appleMusic;
@@ -381,7 +388,7 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
 ---
 
 <BaseLayout
-  title={article?.seoTitle ?? `${song.title} | How Much Music`}
+  title={pageTitle}
   description={pageDescription}
   image={imageSrc}
   imageAlt={artist ? `${song.title} by ${artist.name}` : song.title}
@@ -413,6 +420,17 @@ const pageJsonLd = articleSchema ? [songSchema, articleSchema] : songSchema;
               This page is excluded from search indexing and advertising until its sources, model inputs,
               author, review date, and limitations meet the editorial policy.
             </p>
+            {relatedCaseStudies.length > 0 && (
+              <p>
+                <strong>Published research:</strong>{" "}
+                {relatedCaseStudies.map((caseStudy, index) => (
+                  <>
+                    {index > 0 && "; "}
+                    <a href={`${baseUrl}case-studies/${caseStudy.slug}/`}>{caseStudy.title}</a>
+                  </>
+                ))}
+              </p>
+            )}
           </section>
         )}
 
