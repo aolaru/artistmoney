@@ -23,6 +23,15 @@ export type CaseStudy = {
     slug: string;
     label: string;
   }>;
+  relatedCaseStudies?: Array<{
+    slug: string;
+    note: string;
+  }>;
+};
+
+export type CaseStudyPublicationHistory = {
+  publishedOn: string;
+  lastReviewedOn: string;
 };
 
 const copyrightContext = {
@@ -131,6 +140,16 @@ export const caseStudies: CaseStudy[] = [
     relatedProfiles: [
       { type: "artist", slug: "the-weeknd", label: "The Weeknd catalog profile" },
       { type: "song", slug: "blinding-lights", label: "Blinding Lights catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "the-weeknd-public-success-and-private-income",
+        note: "Compare the song-level evidence with the artist-level question."
+      },
+      {
+        slug: "mr-brightside-long-tail",
+        note: "Compare a second case about durable public demand over time."
+      }
     ]
   },
   {
@@ -231,6 +250,12 @@ export const caseStudies: CaseStudy[] = [
     relatedProfiles: [
       { type: "artist", slug: "queen", label: "Queen catalog profile" },
       { type: "song", slug: "bohemian-rhapsody", label: "Bohemian Rhapsody catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "mr-brightside-long-tail",
+        note: "Compare another case where a long public chart life is not an ownership record."
+      }
     ]
   },
   {
@@ -571,6 +596,12 @@ export const caseStudies: CaseStudy[] = [
     relatedProfiles: [
       { type: "artist", slug: "the-weeknd", label: "The Weeknd catalog profile" },
       { type: "song", slug: "blinding-lights", label: "Blinding Lights catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "blinding-lights-chart-longevity",
+        note: "See the recording-level evidence behind one part of the artist's public chart context."
+      }
     ]
   },
   {
@@ -632,6 +663,12 @@ export const caseStudies: CaseStudy[] = [
     relatedProfiles: [
       { type: "artist", slug: "travis-scott", label: "Travis Scott catalog profile" },
       { type: "song", slug: "sicko-mode", label: "SICKO MODE catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "lose-yourself-film-and-song-rights",
+        note: "Compare how public credits identify a work without disclosing its payment path."
+      }
     ]
   },
   {
@@ -693,6 +730,30 @@ export const caseStudies: CaseStudy[] = [
     relatedProfiles: [
       { type: "artist", slug: "taylor-swift", label: "Taylor Swift catalog profile" },
       { type: "song", slug: "shake-it-off", label: "Shake It Off catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "shake-it-off-version-identity",
+        note: "Read why identifying the precise recording comes before any rights claim."
+      }
     ]
   }
 ];
+
+const phaseTwoReviewedSlugs = new Set([
+  "blinding-lights-chart-longevity",
+  "bohemian-rhapsody-reissues",
+  "the-weeknd-public-success-and-private-income",
+  "travis-scott-public-records-and-income-limits",
+  "taylor-swift-public-success-and-income-limits"
+]);
+
+export const caseStudyPublicationHistory: Record<string, CaseStudyPublicationHistory> = Object.fromEntries(
+  caseStudies.map((caseStudy) => [
+    caseStudy.slug,
+    {
+      publishedOn: "2026-08-18",
+      lastReviewedOn: phaseTwoReviewedSlugs.has(caseStudy.slug) ? "2026-08-19" : "2026-08-18"
+    }
+  ])
+);

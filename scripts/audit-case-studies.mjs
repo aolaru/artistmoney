@@ -3,7 +3,7 @@ import { loadExportedDataModule } from "./load-data-module.mjs";
 
 const substantiveRoles = new Set(["primary-record", "independent-reporting", "rights-context"]);
 
-function issuesFor(caseStudy) {
+function issuesFor(caseStudy, publicationHistory) {
   const issues = [];
   const sourceRoles = new Set(caseStudy.sources.map((source) => source.role));
   const sourceDomains = new Set(caseStudy.sources.map((source) => new URL(source.url).hostname));
@@ -12,7 +12,11 @@ function issuesFor(caseStudy) {
   if (caseStudy.documentedRecord.length < 2) issues.push("fewer than two documented records");
   if (caseStudy.editorialReading.length < 2) issues.push("fewer than two editorial paragraphs");
   if (caseStudy.limitations.length < 3) issues.push("fewer than three explicit limitations");
-  if (!caseStudy.reviewedOn) issues.push("missing review date");
+  if (!publicationHistory?.publishedOn || !publicationHistory?.lastReviewedOn) {
+    issues.push("missing publication history");
+  } else if (!/^\d{4}-\d{2}-\d{2}$/.test(publicationHistory.publishedOn) || !/^\d{4}-\d{2}-\d{2}$/.test(publicationHistory.lastReviewedOn)) {
+    issues.push("publication history must use ISO dates");
+  }
   if (caseStudy.sources.length < 3) issues.push("fewer than three sources");
   if (sourceDomains.size < 2) issues.push("fewer than two source domains");
   if ([...sourceRoles].filter((role) => substantiveRoles.has(role)).length < 2) {
@@ -26,7 +30,14 @@ function issuesFor(caseStudy) {
 }
 
 const caseStudies = await loadExportedDataModule(resolve("src/data/caseStudies.ts"), "caseStudies");
-const invalid = caseStudies.map((caseStudy) => ({ slug: caseStudy.slug, issues: issuesFor(caseStudy) }))
+const caseStudyPublicationHistory = await loadExportedDataModule(
+  resolve("src/data/caseStudies.ts"),
+  "caseStudyPublicationHistory"
+);
+const invalid = caseStudies.map((caseStudy) => ({
+  slug: caseStudy.slug,
+  issues: issuesFor(caseStudy, caseStudyPublicationHistory[caseStudy.slug])
+}))
   .filter((entry) => entry.issues.length > 0);
 
 if (caseStudies.length < 10) {

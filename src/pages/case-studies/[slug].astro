@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EditorialSources from "../../components/EditorialSources.astro";
-import { caseStudies } from "../../data/caseStudies";
+import { caseStudies, caseStudyPublicationHistory } from "../../data/caseStudies";
 import { publisher } from "../../lib/publication";
 
 export function getStaticPaths() {
@@ -20,13 +20,23 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   : `${import.meta.env.BASE_URL}/`;
 const canonicalUrl = new URL(`case-studies/${caseStudy.slug}/`, Astro.site).toString();
 const authorUrl = new URL("author/andrei-olaru/", Astro.site).toString();
+const publicationHistory = caseStudyPublicationHistory[caseStudy.slug];
+const formatDate = (value: string) => new Intl.DateTimeFormat("en", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC"
+}).format(new Date(`${value}T00:00:00Z`));
+const relatedCaseStudies = (caseStudy.relatedCaseStudies ?? [])
+  .map((related) => ({ ...related, caseStudy: caseStudies.find((entry) => entry.slug === related.slug) }))
+  .filter((related): related is typeof related & { caseStudy: NonNullable<typeof related.caseStudy> } => Boolean(related.caseStudy));
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: caseStudy.title,
   description: caseStudy.summary,
-  datePublished: "2026-08-18",
-  dateModified: "2026-08-18",
+  datePublished: publicationHistory.publishedOn,
+  dateModified: publicationHistory.lastReviewedOn,
   author: { "@type": "Person", name: publisher.editorName, url: authorUrl },
   publisher: {
     "@type": "Person",
@@ -43,6 +53,7 @@ const jsonLd = {
   description={caseStudy.summary}
   type="article"
   jsonLd={jsonLd}
+  analyticsContext={{ contentType: "case_study", contentSlug: caseStudy.slug, contentFocus: caseStudy.focus }}
 >
   <article class="case-study-article">
     <header class="case-study-header">
@@ -51,7 +62,8 @@ const jsonLd = {
       <p class="case-study-artist">By subject: <strong>{caseStudy.artist}</strong></p>
       <p class="case-study-summary">{caseStudy.summary}</p>
       <div class="case-study-meta" aria-label="Editorial details">
-        <span>Reviewed {caseStudy.reviewedOn}</span>
+        <span>Published {formatDate(publicationHistory.publishedOn)}</span>
+        <span>Last reviewed {formatDate(publicationHistory.lastReviewedOn)}</span>
         <a href={`${baseUrl}author/andrei-olaru/`}>Reviewed by {publisher.editorName}</a>
         <a href={`${baseUrl}contact/`}>Suggest a correction</a>
       </div>
@@ -118,6 +130,30 @@ const jsonLd = {
         <div class="related-link-row">
           {caseStudy.relatedProfiles.map((profile) => (
             <a href={`${baseUrl}${profile.type}/${profile.slug}/`}>{profile.label}</a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {relatedCaseStudies.length > 0 && (
+      <section class="related-reading-card" aria-labelledby="related-case-studies-title">
+        <p class="eyebrow">Continue Reading</p>
+        <h2 id="related-case-studies-title">Related evidence questions</h2>
+        <p>These case studies examine a closely related public-record or rights question.</p>
+        <div class="related-case-study-list">
+          {relatedCaseStudies.map((related) => (
+            <article class="related-case-study-item">
+              <p class="eyebrow">{related.caseStudy.focus}</p>
+              <h3>
+                <a
+                  href={`${baseUrl}case-studies/${related.caseStudy.slug}/`}
+                  data-case-study-link
+                  data-case-study-slug={related.caseStudy.slug}
+                  data-case-study-origin="related_case_study"
+                >{related.caseStudy.title}</a>
+              </h3>
+              <p>{related.note}</p>
+            </article>
           ))}
         </div>
       </section>

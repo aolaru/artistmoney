@@ -10,6 +10,11 @@ interface Props {
   type?: "website" | "article";
   jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
   noindex?: boolean;
+  analyticsContext?: {
+    contentType: string;
+    contentSlug: string;
+    contentFocus?: string;
+  };
 }
 
 const {
@@ -19,7 +24,8 @@ const {
   imageAlt = title,
   type = "website",
   jsonLd,
-  noindex = false
+  noindex = false,
+  analyticsContext
 } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
@@ -125,7 +131,7 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
             <a class="header-search-all-link" href={`${baseUrl}search/`}>Open search page</a>
           </div>
         </form>
-        <nav aria-label="Primary navigation">
+        <nav class="primary-nav" aria-label="Primary navigation">
           <a href={baseUrl}>Home</a>
           <a href={`${baseUrl}case-studies/`}>Case studies</a>
           <a href={`${baseUrl}search/`}>Search</a>
@@ -133,6 +139,17 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
           <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
           <a href={`${baseUrl}about/`}>About</a>
         </nav>
+        <details class="mobile-nav">
+          <summary>Menu <span aria-hidden="true">+</span></summary>
+          <nav aria-label="Mobile navigation">
+            <a href={baseUrl}>Home</a>
+            <a href={`${baseUrl}case-studies/`}>Case studies</a>
+            <a href={`${baseUrl}search/`}>Search</a>
+            <a href={`${baseUrl}insights/`}>Insights</a>
+            <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
+            <a href={`${baseUrl}about/`}>About</a>
+          </nav>
+        </details>
       </div>
     </header>
 
@@ -195,7 +212,7 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
         </div>
       </div>
     </footer>
-    <script is:inline define:vars={{ searchIndexUrl, baseUrl }}>
+    <script is:inline define:vars={{ searchIndexUrl, baseUrl, analyticsContext }}>
       (() => {
         let searchItemsPromise;
 
@@ -206,6 +223,10 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
           }
         };
         window.hmmTrackEvent = trackEvent;
+
+        if (analyticsContext?.contentType === "case_study") {
+          trackEvent("case_study_opened", analyticsContext);
+        }
 
         const trackSearchSubmit = (query, location) => {
           const searchTerm = query.trim();
@@ -241,6 +262,17 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
               : "search_page";
           trackSearchSubmit(input.value, location);
         }, true);
+
+        document.addEventListener("click", (event) => {
+          if (!(event.target instanceof Element)) return;
+          const link = event.target.closest("[data-case-study-link]");
+          if (!link) return;
+          trackEvent("case_study_opened", {
+            contentType: "case_study",
+            contentSlug: link.getAttribute("data-case-study-slug") ?? "",
+            contentOrigin: link.getAttribute("data-case-study-origin") ?? "internal_link"
+          });
+        });
 
         const scoreItem = (item, query) => {
           const title = item.titleLower;

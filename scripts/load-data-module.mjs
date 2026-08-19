@@ -27,7 +27,10 @@ export async function loadExportedDataModule(filePath, exportName) {
     ""
   ].join("");
 
-  const prepared = `${convertExportedConst(transformed, exportName)}\nmodule.exports = ${exportName};\n`;
+  const executableSource = convertExportedConst(transformed, exportName)
+    .replace(/^export const\s+(\w+)\s*:[^=]+=/gm, "const $1 =")
+    .replace(/^export const\s+/gm, "const ");
+  const prepared = `${executableSource}\nmodule.exports = ${exportName};\n`;
   const context = {
     module: { exports: {} },
     exports: {}
