@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/audit-assets.mjs && node scripts/audit-page-quality.mjs && node scripts/audit-case-studies.mjs && node scripts/audit-publication-readiness.mjs && astro build && node scripts/audit-public-surface.mjs && node scripts/finalize-build.mjs",
+    "build": "node scripts/audit-assets.mjs && node scripts/audit-research-candidates.mjs && node scripts/audit-page-quality.mjs && node scripts/audit-case-studies.mjs && node scripts/audit-publication-readiness.mjs && astro build && node scripts/audit-public-surface.mjs && node scripts/finalize-build.mjs",
     "audit:quality": "node scripts/audit-page-quality.mjs",
     "audit:surface": "node scripts/audit-public-surface.mjs",
     "audit:sources": "node scripts/audit-case-study-sources.mjs",
