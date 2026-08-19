@@ -119,8 +119,9 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
     <p>
       New case studies are added one evidence question at a time. Before publication, the editor
       checks source roles, page-specific analysis, explicit limits, publication history, and the
-      correction route. The build also checks that incomplete catalog records stay noindex and out
-      of the public sitemap.
+      correction route. When a case study is updated, the editor also runs the source-link audit and
+      replaces or corrects any public link that no longer resolves. The build checks that incomplete
+      catalog records stay noindex and out of the public sitemap.
     </p>
     <p>
       Reader behavior is measured through search submissions and case-study opens to identify whether

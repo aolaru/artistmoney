@@ -1489,6 +1489,27 @@ mark {
   margin: 0;
 }
 
+.case-study-maintenance {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.35rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 18px;
+  background: rgba(255, 253, 247, 0.78);
+}
+
+.case-study-maintenance h2,
+.case-study-maintenance p {
+  margin: 0;
+}
+
+.case-study-maintenance p:not(.eyebrow) {
+  max-width: 74ch;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .case-study-question {
   color: var(--muted);
   font-size: 0.95rem;
@@ -1527,6 +1548,10 @@ mark {
 .author-case-study-list a small {
   color: var(--muted);
   line-height: 1.5;
+}
+
+.profile-case-study-bridge {
+  margin: 0;
 }
 
 .author-case-study-list a {

@@ -3,7 +3,7 @@ import { loadExportedDataModule } from "./load-data-module.mjs";
 
 const substantiveRoles = new Set(["primary-record", "independent-reporting", "rights-context"]);
 
-function issuesFor(caseStudy, publicationHistory) {
+function issuesFor(caseStudy, publicationHistory, knownSlugs) {
   const issues = [];
   const sourceRoles = new Set(caseStudy.sources.map((source) => source.role));
   const sourceDomains = new Set(caseStudy.sources.map((source) => new URL(source.url).hostname));
@@ -11,6 +11,11 @@ function issuesFor(caseStudy, publicationHistory) {
   if (!caseStudy.title || !caseStudy.artist || !caseStudy.summary) issues.push("missing identifying copy");
   if (caseStudy.documentedRecord.length < 2) issues.push("fewer than two documented records");
   if (caseStudy.editorialReading.length < 2) issues.push("fewer than two editorial paragraphs");
+  if (!caseStudy.questionAnswer) issues.push("missing direct evidence conclusion");
+  if ((caseStudy.analysisSections?.length ?? 0) < 2) issues.push("fewer than two page-specific analysis sections");
+  if (caseStudy.analysisSections?.some((section) => !section.title || section.paragraphs.length < 2)) {
+    issues.push("incomplete page-specific analysis section");
+  }
   if (caseStudy.limitations.length < 3) issues.push("fewer than three explicit limitations");
   if (!publicationHistory?.publishedOn || !publicationHistory?.lastReviewedOn) {
     issues.push("missing publication history");
@@ -25,6 +30,14 @@ function issuesFor(caseStudy, publicationHistory) {
   if (caseStudy.sources.some((source) => !source.label || !source.note || !source.url.startsWith("https://"))) {
     issues.push("incomplete source citation");
   }
+  const relatedProfileTypes = new Set((caseStudy.relatedProfiles ?? []).map((profile) => profile.type));
+  if (!relatedProfileTypes.has("artist") || !relatedProfileTypes.has("song")) {
+    issues.push("missing related artist or song record");
+  }
+  if ((caseStudy.relatedCaseStudies?.length ?? 0) < 1) issues.push("missing related case study");
+  if (caseStudy.relatedCaseStudies?.some((related) => related.slug === caseStudy.slug || !knownSlugs.has(related.slug))) {
+    issues.push("invalid related case study");
+  }
 
   return issues;
 }
@@ -34,9 +47,10 @@ const caseStudyPublicationHistory = await loadExportedDataModule(
   resolve("src/data/caseStudies.ts"),
   "caseStudyPublicationHistory"
 );
+const knownSlugs = new Set(caseStudies.map((caseStudy) => caseStudy.slug));
 const invalid = caseStudies.map((caseStudy) => ({
   slug: caseStudy.slug,
-  issues: issuesFor(caseStudy, caseStudyPublicationHistory[caseStudy.slug])
+  issues: issuesFor(caseStudy, caseStudyPublicationHistory[caseStudy.slug], knownSlugs)
 }))
   .filter((entry) => entry.issues.length > 0);
 

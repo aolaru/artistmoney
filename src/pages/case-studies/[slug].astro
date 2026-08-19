@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EditorialSources from "../../components/EditorialSources.astro";
 import { caseStudies, caseStudyPublicationHistory } from "../../data/caseStudies";
+import { getCaseStudyExplainers } from "../../lib/caseStudyReading";
 import { publisher } from "../../lib/publication";
 
 export function getStaticPaths() {
@@ -30,6 +31,7 @@ const formatDate = (value: string) => new Intl.DateTimeFormat("en", {
 const relatedCaseStudies = (caseStudy.relatedCaseStudies ?? [])
   .map((related) => ({ ...related, caseStudy: caseStudies.find((entry) => entry.slug === related.slug) }))
   .filter((related): related is typeof related & { caseStudy: NonNullable<typeof related.caseStudy> } => Boolean(related.caseStudy));
+const relatedExplainers = getCaseStudyExplainers(caseStudy);
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -44,6 +46,11 @@ const jsonLd = {
     brand: publisher.tradingAs,
     address: { "@type": "PostalAddress", addressLocality: "Bucharest", addressCountry: "RO" }
   },
+  citation: caseStudy.sources.map((source) => ({
+    "@type": "CreativeWork",
+    name: source.label,
+    url: source.url
+  })),
   mainEntityOfPage: canonicalUrl
 };
 ---
@@ -119,6 +126,24 @@ const jsonLd = {
 
     <EditorialSources sources={caseStudy.sources} title="Sources used for this case study" />
 
+    <section class="case-study-maintenance" aria-labelledby="source-maintenance-title">
+      <p class="eyebrow">Source Maintenance</p>
+      <h2 id="source-maintenance-title">How this article stays accountable</h2>
+      <p>
+        This article was last reviewed on {formatDate(publicationHistory.lastReviewedOn)} by {publisher.editorName}.
+        Its source links, factual framing, and stated limits are reconsidered when a credible public correction
+        or a material update is identified.
+      </p>
+      <p>
+        A correction can challenge a factual statement with a public, checkable source. It cannot turn a chart,
+        certification, or platform record into a private royalty statement.
+      </p>
+      <div class="related-link-row">
+        <a href={`${baseUrl}contact/`}>Suggest a correction or source</a>
+        <a href={`${baseUrl}editorial-policy/#policy-review-loop`}>Read the review process</a>
+      </div>
+    </section>
+
     {caseStudy.relatedProfiles && caseStudy.relatedProfiles.length > 0 && (
       <section aria-labelledby="related-catalog-title">
         <p class="eyebrow">Catalog Navigation</p>
@@ -158,6 +183,20 @@ const jsonLd = {
         </div>
       </section>
     )}
+
+    <section class="related-reading-card" aria-labelledby="related-explainers-title">
+      <p class="eyebrow">Research Path</p>
+      <h2 id="related-explainers-title">Understand the framework behind this case</h2>
+      <p>These explainers provide the broader rights and evidence context used to read this specific public record.</p>
+      <div class="related-case-study-list">
+        {relatedExplainers.map((explainer) => (
+          <article class="related-case-study-item">
+            <h3><a href={`${baseUrl}${explainer.href.slice(1)}`}>{explainer.label}</a></h3>
+            <p>{explainer.note}</p>
+          </article>
+        ))}
+      </div>
+    </section>
   </article>
 
   <nav class="related-link-row" aria-label="Continue reading">

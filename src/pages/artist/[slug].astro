@@ -341,17 +341,33 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
               This page is excluded from search indexing and advertising until its sources, model inputs,
               author, review date, and limitations meet the editorial policy.
             </p>
-            {relatedCaseStudies.length > 0 && (
-              <p>
-                <strong>Published research:</strong>{" "}
-                {relatedCaseStudies.map((caseStudy, index) => (
-                  <>
-                    {index > 0 && "; "}
-                    <a href={`${baseUrl}case-studies/${caseStudy.slug}/`}>{caseStudy.title}</a>
-                  </>
-                ))}
-              </p>
-            )}
+          </section>
+        )}
+
+        {relatedCaseStudies.length > 0 && (
+          <section class="related-reading-card profile-case-study-bridge" aria-labelledby="artist-case-study-title">
+            <p class="eyebrow">Published Research</p>
+            <h2 id="artist-case-study-title">Source-backed context for {artist.name}</h2>
+            <p>
+              These articles address a specific public-record question about this subject. They are separate
+              from this catalog profile and do not claim access to private earnings data.
+            </p>
+            <div class="related-case-study-list">
+              {relatedCaseStudies.map((caseStudy) => (
+                <article class="related-case-study-item">
+                  <p class="eyebrow">{caseStudy.focus}</p>
+                  <h3>
+                    <a
+                      href={`${baseUrl}case-studies/${caseStudy.slug}/`}
+                      data-case-study-link
+                      data-case-study-slug={caseStudy.slug}
+                      data-case-study-origin="artist_profile"
+                    >{caseStudy.title}</a>
+                  </h3>
+                  <p>{caseStudy.summary}</p>
+                </article>
+              ))}
+            </div>
           </section>
         )}
 

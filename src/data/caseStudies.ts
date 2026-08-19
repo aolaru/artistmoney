@@ -59,6 +59,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "Which rights are involved when one recording returns each holiday season, and which of those rights are actually controlled by the artist, writers, publishers, or record company?",
+    questionAnswer:
+      "The public record supports a conclusion about recurring chart attention and certification. It does not identify the private agreements or accounting needed to verify what any participant received.",
+    analysisSections: [
+      {
+        title: "What the seasonal record establishes",
+        paragraphs: [
+          "The Official Charts and RIAA records document two different forms of public recognition: a UK number-one run and a U.S. certification announcement. Together, they support the narrow claim that the recording has returned to public prominence and reached a documented certification milestone.",
+          "Neither record is an annual ledger. They do not show how listening, sales, publishing, or other uses were divided among the people and companies connected to the recording and composition."
+        ]
+      },
+      {
+        title: "Why a seasonal pattern is not an income figure",
+        paragraphs: [
+          "A recurring calendar pattern is useful evidence of repeat attention, but each period can contain a different mix of territories, services, uses, and rights participants. That prevents a chart pattern from serving as a reliable proxy for a personal payment.",
+          "The article therefore describes the documented recurrence and leaves any individual royalty total unanswered unless a source discloses the relevant financial record."
+        ]
+      }
+    ],
     limitations: [
       "The cited public records do not disclose streaming revenue, publishing income, label terms, or recoupment.",
       "This article does not infer Mariah Carey's personal share from the song's chart or certification history.",
@@ -79,6 +97,16 @@ export const caseStudies: CaseStudy[] = [
         role: "primary-record"
       },
       copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "mariah-carey", label: "Mariah Carey catalog profile" },
+      { type: "song", slug: "all-i-want-for-christmas-is-you", label: "All I Want for Christmas Is You catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "mr-brightside-long-tail",
+        note: "Compare a different form of long-running public demand without treating it as an ownership record."
+      }
     ]
   },
   {
@@ -169,6 +197,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "What can public evidence establish about a recording that stays active across formats, and what remains unknowable without its rights and contract history?",
+    questionAnswer:
+      "The chart record supports a conclusion about unusually long public demand. It does not disclose who owns the relevant rights or what any participant was paid.",
+    analysisSections: [
+      {
+        title: "Why the time horizon matters",
+        paragraphs: [
+          "The two Official Charts records describe the song across more than one moment: its original chart entry and a later combined sales-and-streams milestone. This makes a stronger public-demand record than a release-week result alone.",
+          "It still does not create a financial history. The sources do not identify the uses counted in any payment period or the agreements that determine who participates in them."
+        ]
+      },
+      {
+        title: "What a long-tail claim should stop short of",
+        paragraphs: [
+          "Long-running visibility can justify careful language about sustained audience attention. It cannot establish a current master owner, a publishing split, or a take-home amount for a performer or writer.",
+          "That boundary keeps the article useful: it explains why the public record is notable without presenting popularity as a substitute for contracts or accounting."
+        ]
+      }
+    ],
     limitations: [
       "The public chart record does not identify the current owners of the recording or composition.",
       "Combined sales and streams are not the same as payments to performers or writers.",
@@ -189,6 +235,16 @@ export const caseStudies: CaseStudy[] = [
         role: "independent-reporting"
       },
       copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "the-killers", label: "The Killers catalog profile" },
+      { type: "song", slug: "mr-brightside", label: "Mr Brightside catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "bohemian-rhapsody-reissues",
+        note: "Compare another recording with public demand documented across separate eras."
+      }
     ]
   },
   {
@@ -275,6 +331,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "How can a public article explain a song's scale without implying that its performer receives all of the income connected to the recording and composition?",
+    questionAnswer:
+      "The chart sources establish sustained public demand. The Copyright Office source explains why the recording and composition must be treated separately; none of these sources verifies a recipient or amount.",
+    analysisSections: [
+      {
+        title: "What the chart evidence can describe",
+        paragraphs: [
+          "The Official Charts records identify a specific number-one run and place the recording within Ed Sheeran's UK chart history. That is evidence about a defined chart system and the recording's public performance there.",
+          "It is not a complete record of every use of the recording or composition, and it does not provide a calculation for any performer, writer, publisher, or label."
+        ]
+      },
+      {
+        title: "Why the two works stay separate",
+        paragraphs: [
+          "The Copyright Office guidance provides general context for a basic research distinction: a sound recording and the musical composition embodied in it are different works. A page about a popular song should not collapse that distinction into one implied payee.",
+          "The article therefore uses the chart record to describe demand and the rights source to explain the boundary, rather than assigning the income from either work to one person."
+        ]
+      }
+    ],
     limitations: [
       "The chart record does not disclose writer shares, publisher shares, master ownership, or label terms.",
       "No earnings number is inferred from weeks at number one or from chart rank.",
@@ -295,6 +369,16 @@ export const caseStudies: CaseStudy[] = [
         role: "independent-reporting"
       },
       copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "ed-sheeran", label: "Ed Sheeran catalog profile" },
+      { type: "song", slug: "shape-of-you", label: "Shape of You catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "every-breath-you-take-rights-layers",
+        note: "Read the rights-layer explanation behind the recording-and-composition distinction."
+      }
     ]
   },
   {
@@ -314,6 +398,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "What does a public award credit establish about a song, and what additional records would be needed before making a claim about ownership or income?",
+    questionAnswer:
+      "The award record identifies credited work in a defined ceremony context, while the chart page records public performance. Neither source provides the agreements or accounting needed for an ownership or income claim.",
+    analysisSections: [
+      {
+        title: "What a public credit can identify",
+        paragraphs: [
+          "The Academy record identifies music and lyric credits in its Original Song award context. That is useful for identifying the work and the contributors named by that source.",
+          "Those credits do not amount to a complete rights or publishing record. They do not disclose later agreements, shares, sound-recording ownership, or payments connected to the film or song."
+        ]
+      },
+      {
+        title: "Why film context needs a separate question",
+        paragraphs: [
+          "The chart page and the Academy record document different public facts: performance of the recording and recognition of a song connected to a film. Combining them does not reveal the terms of any audiovisual use or music-rights agreement.",
+          "This case therefore identifies the documented credits and public chart context while leaving license fees and individual income outside the evidence."
+        ]
+      }
+    ],
     limitations: [
       "The Academy's credit record does not disclose publishing splits, master ownership, or film-license terms.",
       "The chart record does not reveal payments from streaming, sales, synchronization, or performance rights.",
@@ -334,6 +436,16 @@ export const caseStudies: CaseStudy[] = [
         role: "independent-reporting"
       },
       copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "eminem", label: "Eminem catalog profile" },
+      { type: "song", slug: "lose-yourself", label: "Lose Yourself catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "happy-soundtrack-context",
+        note: "Compare another film-connected song where public visibility does not disclose a license fee."
+      }
     ]
   },
   {
@@ -353,6 +465,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "How should a reader think about a song that is both a chart hit and connected to a film without assuming that the public record reveals a synchronization fee?",
+    questionAnswer:
+      "The public sources document film and chart context. They do not disclose the terms, amount, or recipient of a synchronization or royalty payment.",
+    analysisSections: [
+      {
+        title: "Two public contexts, not one payment record",
+        paragraphs: [
+          "The Academy source documents the song's connection to Despicable Me 2 and its award-nomination context. The Official Charts source supplies separate UK chart context. Each source supports a defined public fact rather than a financial conclusion.",
+          "Neither source identifies the commercial terms of a film use, how any music right was licensed, or how revenue related to the recording and composition was allocated."
+        ]
+      },
+      {
+        title: "What soundtrack visibility leaves unknown",
+        paragraphs: [
+          "A soundtrack association can help explain why a song had multiple forms of public exposure. It is not evidence of the fee or contractual participation behind that use.",
+          "The article keeps those questions separate, describing the documented placement and chart performance without adding a number that the public record does not contain."
+        ]
+      }
+    ],
     limitations: [
       "The Academy record identifies an award nomination, not a film-license amount.",
       "Chart performance does not disclose songwriter, publisher, label, or performer payments.",
@@ -373,6 +503,16 @@ export const caseStudies: CaseStudy[] = [
         role: "independent-reporting"
       },
       copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "pharrell-williams", label: "Pharrell Williams catalog profile" },
+      { type: "song", slug: "happy", label: "Happy catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "lose-yourself-film-and-song-rights",
+        note: "Compare how public award credits identify a work without revealing film or music payments."
+      }
     ]
   },
   {
@@ -392,6 +532,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "What does a multi-era public chart history tell us about a catalog title, and what does it leave unanswered about ownership and participation?",
+    questionAnswer:
+      "The chart sources establish public performance across distinct periods. They do not disclose current ownership, contractual shares, or a payment amount for any individual or company.",
+    analysisSections: [
+      {
+        title: "Read each era in its own context",
+        paragraphs: [
+          "The cited sources describe a 1976 UK number-one run and later chart and streaming-era context. These records are useful because they distinguish original-period recognition from later public activity.",
+          "They should not be merged into a single financial total. The sources do not identify the mix of uses, rights, territories, or participants behind any later activity."
+        ]
+      },
+      {
+        title: "What catalog recognition cannot establish",
+        paragraphs: [
+          "A familiar recording can remain publicly visible for decades, but visibility is not an ownership map. It cannot confirm who controls the relevant recording or composition rights at a given time.",
+          "This case uses the public chart history to describe the title's reach while leaving personal payouts and contractual participation outside the evidence."
+        ]
+      }
+    ],
     limitations: [
       "The cited chart sources do not disclose current ownership or contractual shares.",
       "Later streaming-chart appearances do not establish an annual revenue amount.",
@@ -412,6 +570,16 @@ export const caseStudies: CaseStudy[] = [
         role: "independent-reporting"
       },
       copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "abba", label: "ABBA catalog profile" },
+      { type: "song", slug: "dancing-queen", label: "Dancing Queen catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "bohemian-rhapsody-reissues",
+        note: "Compare a second legacy recording with public evidence from more than one era."
+      }
     ]
   },
   {
@@ -431,6 +599,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "How can public evidence show that a legacy song remains discoverable without pretending that every stream produces the same payment or reaches the same person?",
+    questionAnswer:
+      "The cited chart records show public performance in defined UK contexts. They do not establish a universal per-stream rate, a worldwide total, or any recipient's payment.",
+    analysisSections: [
+      {
+        title: "What the two chart records show",
+        paragraphs: [
+          "The sources place the recording in two different public contexts: its 1991 UK chart peak and a later UK streaming-era ranking. That supports a limited observation about continued discoverability across time.",
+          "The sources do not represent all territories or services, and they do not disclose the agreements that apply after any listener activity is counted."
+        ]
+      },
+      {
+        title: "Why a streaming ranking is not a rate",
+        paragraphs: [
+          "A ranking describes relative public performance under a defined chart methodology. It is not an accounting record and does not state the value of one play or the share of a particular recipient.",
+          "The useful conclusion is about public discoverability, not a calculation of yearly income or a universal payment rule."
+        ]
+      }
+    ],
     limitations: [
       "The cited list is a UK streaming ranking, not a worldwide royalty report.",
       "No source here discloses the recording's master or publishing agreements.",
@@ -451,6 +637,16 @@ export const caseStudies: CaseStudy[] = [
         role: "independent-reporting"
       },
       copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "nirvana", label: "Nirvana catalog profile" },
+      { type: "song", slug: "smells-like-teen-spirit", label: "Smells Like Teen Spirit catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "mr-brightside-long-tail",
+        note: "Compare another case where public longevity is not a payment record."
+      }
     ]
   },
   {
@@ -470,6 +666,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "Why should research separate the recording from the composition before discussing who may participate in music income?",
+    questionAnswer:
+      "The Copyright Office explains the general distinction between the recording and composition, while the chart record documents public performance. Neither source identifies a complete ownership chain or a payment recipient for this song.",
+    analysisSections: [
+      {
+        title: "The evidence answers two different questions",
+        paragraphs: [
+          "The Official Charts pages document public chart context for the recording and artist. The Copyright Office guidance explains a general legal distinction between a sound recording and the musical composition embodied in it.",
+          "Read together, they help a reader avoid treating one public performance record as proof that one person receives all income associated with a familiar song."
+        ]
+      },
+      {
+        title: "Why the distinction protects the reader",
+        paragraphs: [
+          "A rights discussion needs to identify which work it concerns before it can responsibly discuss ownership or participation. A chart page alone cannot provide that level of title-specific detail.",
+          "This article explains the distinction without claiming that the general legal framework reveals the private agreements for this recording."
+        ]
+      }
+    ],
     limitations: [
       "The public chart page is not a rights database or a royalty statement.",
       "The Copyright Office guidance is general legal context, not a title-specific ownership record.",
@@ -491,7 +705,17 @@ export const caseStudies: CaseStudy[] = [
       },
       copyrightContext
     ],
-    documentedSourceIndexes: [0, 2]
+    documentedSourceIndexes: [0, 2],
+    relatedProfiles: [
+      { type: "artist", slug: "the-police", label: "The Police catalog profile" },
+      { type: "song", slug: "every-breath-you-take", label: "Every Breath You Take catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "shape-of-you-demand-and-splits",
+        note: "Apply the recording-and-composition distinction to a modern chart hit."
+      }
+    ]
   },
   {
     slug: "shake-it-off-version-identity",
@@ -510,6 +734,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "What must be identified about a recording before a page can make a careful statement about the rights connected to it?",
+    questionAnswer:
+      "A source should identify the relevant recording and release context before a rights claim is considered. The cited public records do not establish ownership or income for any version of the song.",
+    analysisSections: [
+      {
+        title: "Why the title alone is not enough",
+        paragraphs: [
+          "The Official Charts record identifies a specific UK chart context for a recording released in 2014. That kind of source helps anchor a claim to a defined release-era record rather than to a title in the abstract.",
+          "It does not identify every later version, related recording, or agreement. A title match should not be treated as a complete chain-of-title review."
+        ]
+      },
+      {
+        title: "What the rights framework adds",
+        paragraphs: [
+          "The Copyright Office source explains the general separation between a musical composition and a sound recording. That distinction makes version identification a necessary first step before discussing a particular right.",
+          "The article applies that caution without claiming that the public chart page or general rights guidance proves ownership, re-recording terms, or personal income."
+        ]
+      }
+    ],
     limitations: [
       "The cited chart record does not establish the ownership of any version of the song.",
       "No claim is made about master ownership, re-recording terms, or artist income.",
@@ -535,6 +777,12 @@ export const caseStudies: CaseStudy[] = [
     relatedProfiles: [
       { type: "artist", slug: "taylor-swift", label: "Taylor Swift catalog profile" },
       { type: "song", slug: "shake-it-off", label: "Shake It Off catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "taylor-swift-public-success-and-income-limits",
+        note: "Read the artist-level case on why public recognition does not verify private annual income."
+      }
     ]
   },
   {
@@ -740,20 +988,12 @@ export const caseStudies: CaseStudy[] = [
   }
 ];
 
-const phaseTwoReviewedSlugs = new Set([
-  "blinding-lights-chart-longevity",
-  "bohemian-rhapsody-reissues",
-  "the-weeknd-public-success-and-private-income",
-  "travis-scott-public-records-and-income-limits",
-  "taylor-swift-public-success-and-income-limits"
-]);
-
 export const caseStudyPublicationHistory: Record<string, CaseStudyPublicationHistory> = Object.fromEntries(
   caseStudies.map((caseStudy) => [
     caseStudy.slug,
     {
       publishedOn: "2026-08-18",
-      lastReviewedOn: phaseTwoReviewedSlugs.has(caseStudy.slug) ? "2026-08-19" : "2026-08-18"
+      lastReviewedOn: "2026-08-19"
     }
   ])
 );
