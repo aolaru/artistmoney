@@ -225,7 +225,11 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
         window.hmmTrackEvent = trackEvent;
 
         if (analyticsContext?.contentType === "case_study") {
-          trackEvent("case_study_opened", analyticsContext);
+          trackEvent("case_study_opened", {
+            content_type: analyticsContext.contentType,
+            content_slug: analyticsContext.contentSlug,
+            content_focus: analyticsContext.contentFocus ?? ""
+          });
         }
 
         const trackSearchSubmit = (query, location) => {
@@ -266,11 +270,20 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
         document.addEventListener("click", (event) => {
           if (!(event.target instanceof Element)) return;
           const link = event.target.closest("[data-case-study-link]");
-          if (!link) return;
-          trackEvent("case_study_opened", {
-            contentType: "case_study",
-            contentSlug: link.getAttribute("data-case-study-slug") ?? "",
-            contentOrigin: link.getAttribute("data-case-study-origin") ?? "internal_link"
+          if (link) {
+            trackEvent("case_study_opened", {
+              content_type: "case_study",
+              content_slug: link.getAttribute("data-case-study-slug") ?? "",
+              content_origin: link.getAttribute("data-case-study-origin") ?? "internal_link"
+            });
+          }
+
+          const sourceLink = event.target.closest("[data-case-study-source-link]");
+          if (!sourceLink) return;
+          trackEvent("case_study_source_opened", {
+            content_type: "case_study",
+            content_slug: sourceLink.getAttribute("data-case-study-slug") ?? "",
+            source_position: sourceLink.getAttribute("data-case-study-source-index") ?? ""
           });
         });
 

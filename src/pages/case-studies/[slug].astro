@@ -124,7 +124,11 @@ const jsonLd = {
       </ul>
     </section>
 
-    <EditorialSources sources={caseStudy.sources} title="Sources used for this case study" />
+    <EditorialSources
+      sources={caseStudy.sources}
+      title="Sources used for this case study"
+      caseStudySlug={caseStudy.slug}
+    />
 
     <section class="case-study-maintenance" aria-labelledby="source-maintenance-title">
       <p class="eyebrow">Source Maintenance</p>

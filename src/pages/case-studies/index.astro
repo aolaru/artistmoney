@@ -7,29 +7,34 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   : `${import.meta.env.BASE_URL}/`;
 const popularQuestions = [
   {
-    question: "How much does The Weeknd make?",
+    question: "How much does The Weeknd make a year?",
     detail: "Public success can be documented; verified personal income is not public.",
     slug: "the-weeknd-public-success-and-private-income"
   },
   {
-    question: "How much did Blinding Lights make?",
+    question: "How much did The Weeknd make from Blinding Lights?",
     detail: "Chart longevity is evidence of demand, not a public royalty total.",
     slug: "blinding-lights-chart-longevity"
   },
   {
-    question: "How much does Travis Scott make?",
+    question: "How much does Travis Scott make a year?",
     detail: "Award and chart records identify work and scale, not personal receipts.",
     slug: "travis-scott-public-records-and-income-limits"
   },
   {
-    question: "How much does Taylor Swift make?",
+    question: "How much does Taylor Swift make a year?",
     detail: "Global chart recognition does not disclose private income or ownership terms.",
     slug: "taylor-swift-public-success-and-income-limits"
   },
   {
-    question: "How much did Bohemian Rhapsody make?",
+    question: "How much money did Queen make from Bohemian Rhapsody?",
     detail: "Multi-era chart history does not identify a royalty recipient or amount.",
     slug: "bohemian-rhapsody-reissues"
+  },
+  {
+    question: "How much money did SICKO MODE make?",
+    detail: "UK chart and award records do not disclose a revenue total or payment recipient.",
+    slug: "sicko-mode-public-record-and-income-limits"
   }
 ];
 ---
@@ -62,7 +67,7 @@ const popularQuestions = [
 
   <section class="editorial-basis-card" aria-labelledby="popular-questions-title">
     <div class="editorial-basis-heading">
-      <p class="eyebrow">Popular Research Questions</p>
+      <p class="eyebrow">Reader Questions</p>
       <h2 id="popular-questions-title">Start with the question, then check the evidence</h2>
       <p>
         These articles answer common earnings questions by separating public evidence from the private

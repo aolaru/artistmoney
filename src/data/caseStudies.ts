@@ -111,7 +111,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "blinding-lights-chart-longevity",
-    title: "How much did Blinding Lights make? Public demand is visible; royalty totals are not",
+    title: "How much did The Weeknd make from Blinding Lights? Public demand is visible; royalty totals are not",
     artist: "The Weeknd",
     focus: "Public earnings question",
     summary:
@@ -249,7 +249,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "bohemian-rhapsody-reissues",
-    title: "How much did Bohemian Rhapsody make? Chart history is not a royalty total",
+    title: "How much money did Queen make from Bohemian Rhapsody? Chart history is not a royalty total",
     artist: "Queen",
     focus: "Public earnings question",
     summary:
@@ -787,7 +787,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "the-weeknd-public-success-and-private-income",
-    title: "How much does The Weeknd make? Public success is visible; personal income is not",
+    title: "How much does The Weeknd make a year? Public success is visible; personal income is not",
     artist: "The Weeknd",
     focus: "Artist earnings question",
     summary:
@@ -853,8 +853,75 @@ export const caseStudies: CaseStudy[] = [
     ]
   },
   {
+    slug: "sicko-mode-public-record-and-income-limits",
+    title: "How much money did SICKO MODE make? Chart records are not royalty statements",
+    artist: "Travis Scott",
+    focus: "Public earnings question",
+    summary:
+      "No public source in this article establishes a verified revenue total for SICKO MODE or a payment to any participant. The linked records document chart performance and award-nomination credits, which are different facts.",
+    documentedRecord: [
+      "Official Charts records SICKO MODE reaching number nine on the UK Official Singles Chart and spending 39 weeks in the chart's Top 100.",
+      "The Recording Academy lists SICKO MODE as a 2019 nominee for Best Rap Song and Best Rap Performance, with credited contributors identified separately in the two categories."
+    ],
+    editorialReading: [
+      "The Official Charts record supports a narrow public-demand conclusion about one market and one chart system. The Recording Academy record supports a separate conclusion about recognition and credits. Neither source is a revenue ledger.",
+      "That difference is especially important for a collaborative recording. A public credit can identify participation in an award context, but it does not disclose master ownership, publishing shares, deal terms, costs, or the payment received by any person or company."
+    ],
+    rightsQuestion:
+      "What can public chart and award records establish about SICKO MODE, and what would be needed before a revenue claim for the recording could be verified?",
+    questionAnswer:
+      "The linked records establish UK chart performance, award-nomination context, and public credits. A verified revenue claim would require title-specific accounting and rights information that these sources do not disclose.",
+    analysisSections: [
+      {
+        title: "What the public record documents",
+        paragraphs: [
+          "Official Charts gives the recording a dated UK chart history, including its peak position and time on the chart. That is useful, bounded evidence of public performance in that market. It should not be expanded into a total for every territory, format, or revenue stream.",
+          "The Recording Academy's 2019 category pages identify SICKO MODE as a nominee and list contributor credits in the relevant award contexts. Those credits help explain why a single-song income question cannot be answered by looking only at the headline performer."
+        ]
+      },
+      {
+        title: "Why the money question remains unanswered",
+        paragraphs: [
+          "A payment claim needs to identify the relevant use, territory, accounting period, right, recipient, contractual share, and applicable costs. Chart placement and award recognition do not supply those inputs, even when the recording's public scale is clear.",
+          "The responsible answer is therefore not a number. The article records the public evidence, identifies its limits, and leaves revenue or participant-payment claims unanswered unless a credible source provides the necessary financial record."
+        ]
+      }
+    ],
+    limitations: [
+      "The cited sources do not disclose streaming, sales, publishing, synchronization, or other revenue totals for SICKO MODE.",
+      "The cited credits do not establish current master ownership, publishing shares, contractual participation, or payment amounts.",
+      "This article does not estimate Travis Scott's, Drake's, any writer's, or any other participant's share of the recording."
+    ],
+    reviewedOn: "August 19, 2026",
+    sources: [
+      {
+        label: "Official Charts: SICKO MODE",
+        url: "https://www.officialcharts.com/songs/travis-scott-sicko-mode/",
+        note: "Documents the recording's public UK Official Singles Chart history, including the peak and weeks cited in this article.",
+        role: "primary-record"
+      },
+      {
+        label: "Recording Academy: 2019 Best Rap Song nominees",
+        url: "https://www.grammy.com/awards/categories/best-rap-song/2019/",
+        note: "Documents the 2019 Best Rap Song nomination and credited contributors for SICKO MODE.",
+        role: "independent-reporting"
+      },
+      copyrightContext
+    ],
+    relatedProfiles: [
+      { type: "artist", slug: "travis-scott", label: "Travis Scott catalog profile" },
+      { type: "song", slug: "sicko-mode", label: "SICKO MODE catalog profile" }
+    ],
+    relatedCaseStudies: [
+      {
+        slug: "travis-scott-public-records-and-income-limits",
+        note: "Read the related artist-level question without treating chart or award context as personal income."
+      }
+    ]
+  },
+  {
     slug: "travis-scott-public-records-and-income-limits",
-    title: "How much does Travis Scott make? Public records show scale, not personal income",
+    title: "How much does Travis Scott make a year? Public records show scale, not personal income",
     artist: "Travis Scott",
     focus: "Artist earnings question",
     summary:
@@ -914,6 +981,10 @@ export const caseStudies: CaseStudy[] = [
     ],
     relatedCaseStudies: [
       {
+        slug: "sicko-mode-public-record-and-income-limits",
+        note: "Read the song-level evidence and its limits before treating a public hit as a payment record."
+      },
+      {
         slug: "lose-yourself-film-and-song-rights",
         note: "Compare how public credits identify a work without disclosing its payment path."
       }
@@ -921,7 +992,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "taylor-swift-public-success-and-income-limits",
-    title: "How much does Taylor Swift make? Public success is not a private-income record",
+    title: "How much does Taylor Swift make a year? Public success is not a private-income record",
     artist: "Taylor Swift",
     focus: "Artist earnings question",
     summary:

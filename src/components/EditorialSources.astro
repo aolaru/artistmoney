@@ -4,9 +4,10 @@ import type { EditorialSource } from "../data/editorialSources";
 interface Props {
   sources: EditorialSource[];
   title?: string;
+  caseStudySlug?: string;
 }
 
-const { sources, title = "Sources and further reading" } = Astro.props as Props;
+const { sources, title = "Sources and further reading", caseStudySlug } = Astro.props as Props;
 ---
 
 <section class="editorial-basis-card source-snapshot-card" aria-labelledby="editorial-sources-title">
@@ -16,10 +17,19 @@ const { sources, title = "Sources and further reading" } = Astro.props as Props;
     <p>Each link is included for the specific context described below. None is a private royalty statement.</p>
   </div>
   <div class="reference-list source-snapshot-list">
-    {sources.map((source) => (
+    {sources.map((source, index) => (
       <article class="reference-item">
         <p class="reference-category">{source.role.replaceAll("-", " ")}</p>
-        <h3><a href={source.url} rel="noreferrer" target="_blank">{source.label}</a></h3>
+        <h3>
+          <a
+            href={source.url}
+            rel="noreferrer"
+            target="_blank"
+            data-case-study-source-link={caseStudySlug ? "" : undefined}
+            data-case-study-slug={caseStudySlug}
+            data-case-study-source-index={caseStudySlug ? String(index + 1) : undefined}
+          >{source.label}</a>
+        </h3>
         <p>{source.note}</p>
       </article>
     ))}
