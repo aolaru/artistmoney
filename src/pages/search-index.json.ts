@@ -1,8 +1,25 @@
 import { artists, songs } from "../lib/catalog";
+import { caseStudies } from "../data/caseStudies";
 
 export const prerender = true;
 
 const searchItems = [
+  ...caseStudies.map((caseStudy) => ({
+    type: "Case study",
+    title: caseStudy.title,
+    subtitle: [caseStudy.artist, caseStudy.focus].filter(Boolean).join(" · "),
+    subject: caseStudy.artist,
+    url: `/case-studies/${caseStudy.slug}/`,
+    searchText: [
+      caseStudy.title,
+      caseStudy.artist,
+      caseStudy.focus,
+      caseStudy.summary,
+      ...caseStudy.documentedRecord
+    ].join(" "),
+    reviewed: true,
+    status: "Source-backed editorial case study"
+  })),
   ...artists.flatMap((artist) => {
     return [{
       type: "Artist",

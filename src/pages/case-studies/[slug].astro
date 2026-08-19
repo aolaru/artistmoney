@@ -80,13 +80,21 @@ const jsonLd = {
       {caseStudy.editorialReading.map((paragraph) => <p>{paragraph}</p>)}
     </section>
 
-    <section class="quick-answer-card" aria-labelledby="rights-question-title">
-      <p class="eyebrow">Rights Question</p>
-      <h2 id="rights-question-title">{caseStudy.rightsQuestion}</h2>
+    {caseStudy.analysisSections?.map((section, index) => (
+      <section class="case-study-analysis" aria-labelledby={`analysis-section-${index}`}>
+        <p class="eyebrow">Evidence in Context</p>
+        <h2 id={`analysis-section-${index}`}>{section.title}</h2>
+        {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </section>
+    ))}
+
+    <section class="quick-answer-card case-study-answer" aria-labelledby="rights-question-title">
+      <p class="eyebrow">Editorial Conclusion</p>
+      <h2 id="rights-question-title">What this evidence supports</h2>
       <p>
-        The answer requires title-specific rights and contract evidence. Where that evidence is not public,
-        this article says so rather than filling the gap with an estimate.
+        {caseStudy.questionAnswer ?? "The answer requires title-specific rights and contract evidence. Where that evidence is not public, this article says so rather than filling the gap with an estimate."}
       </p>
+      <p class="case-study-question"><strong>Research question:</strong> {caseStudy.rightsQuestion}</p>
     </section>
 
     <section aria-labelledby="case-limitations-title">

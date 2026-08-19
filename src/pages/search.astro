@@ -9,15 +9,15 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
 
 <BaseLayout
   title="Search | How Much Music"
-  description="Search How Much Music catalog research profiles and source-led explainers about music rights and ownership."
+  description="Search source-backed How Much Music case studies, artist records, and song records."
   noindex
 >
   <section class="search-page-hero">
     <p class="eyebrow">Search</p>
     <h1>Search artists and songs</h1>
     <p>
-      Search catalog research profiles by artist or song. Profiles remain available for navigation
-      while source-backed editorial case studies are prepared.
+      Search source-backed case studies first, then artist and song catalog records for further
+      navigation and comparison.
     </p>
   </section>
 
@@ -39,10 +39,11 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
     <div class="search-page-controls">
       <div class="search-filter-chips" role="tablist" aria-label="Search result type">
         <button type="button" class="search-filter-chip is-active" data-search-filter="all">All</button>
+        <button type="button" class="search-filter-chip" data-search-filter="case-study">Case studies</button>
         <button type="button" class="search-filter-chip" data-search-filter="artist">Artists</button>
         <button type="button" class="search-filter-chip" data-search-filter="song">Songs</button>
       </div>
-      <p class="results-note" data-search-status>Start typing or submit a query to search catalog profiles.</p>
+      <p class="results-note" data-search-status>Search published case studies and catalog records.</p>
     </div>
 
     <div class="search-results-shell" data-search-results></div>
@@ -79,7 +80,10 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
         if (title.includes(query)) score += 120;
         if (subtitle.startsWith(query)) score += 70;
         if (subtitle.includes(query)) score += 40;
+        if (item.subjectLower === query) score += 360;
+        if (item.subjectLower.includes(query)) score += 180;
         if (searchText.includes(query)) score += 20;
+        if (score > 0 && item.reviewed) score += 60;
         return score;
       };
 
@@ -95,9 +99,10 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
             .then((items) =>
               items.map((item) => ({
                 ...item,
-                typeKey: item.type.toLowerCase(),
+                typeKey: item.type.toLowerCase().replaceAll(" ", "-"),
                 titleLower: item.title.toLowerCase(),
                 subtitleLower: (item.subtitle ?? "").toLowerCase(),
+                subjectLower: (item.subject ?? "").toLowerCase(),
                 searchText: item.searchText.toLowerCase()
               }))
             );
@@ -121,7 +126,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
         const params = new URLSearchParams(window.location.search);
         const query = params.get("q") ?? "";
         const requestedFilter = (params.get("type") ?? "all").toLowerCase();
-        const filter = ["artist", "song"].includes(requestedFilter) ? requestedFilter : "all";
+        const filter = ["case-study", "artist", "song"].includes(requestedFilter) ? requestedFilter : "all";
         input.value = query;
 
         filterButtons.forEach((button) => {
@@ -134,8 +139,8 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
             <div class="search-start-card">
               <div>
                 <p class="eyebrow">Start Here</p>
-                <h2>Find a catalog profile.</h2>
-                <p>Catalog profiles are available for navigation. Published case studies appear only after evidence review.</p>
+                <h2>Start with a case study or catalog record.</h2>
+                <p>Source-backed case studies are shown first when they match your search. Catalog profiles remain available for further navigation.</p>
               </div>
               <div class="search-starter-grid" aria-label="Suggested searches and browse links">
                 <a href="${baseUrl}search/?q=taylor%20swift">Taylor Swift</a>
@@ -149,7 +154,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
               </div>
             </div>
           `;
-          status.textContent = "Start typing or choose one of the suggestions below.";
+          status.textContent = "Choose a suggested search or submit a question.";
           return;
         }
 
@@ -166,6 +171,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
             filter === "all" ? scoredMatches : scoredMatches.filter(({ item }) => item.typeKey === filter);
 
           const grouped = {
+            "case-study": filteredMatches.filter(({ item }) => item.typeKey === "case-study"),
             artist: filteredMatches.filter(({ item }) => item.typeKey === "artist"),
             song: filteredMatches.filter(({ item }) => item.typeKey === "song")
           };
@@ -178,7 +184,7 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
           if (total === 0) {
             resultsRoot.innerHTML = `
               <div class="trust-card">
-                <h2>No reviewed results found</h2>
+                <h2>No matching records found</h2>
                 <p>Try a shorter query, or browse the <a href="${baseUrl}artists/">artist catalog</a> and <a href="${baseUrl}songs/">song catalog</a>.</p>
               </div>
             `;
@@ -186,12 +192,13 @@ const searchIndexUrl = `${baseUrl}search-index.json`;
           }
 
           const sections = [
+            { key: "case-study", label: "Source-backed case studies", items: grouped["case-study"] },
             { key: "artist", label: "Artists", items: grouped.artist },
             { key: "song", label: "Songs", items: grouped.song }
           ]
             .filter((section) => section.items.length > 0)
             .map((section) => `
-              <section class="search-group" aria-labelledby="search-group-${section.key}">
+              <section class="search-group ${section.key === "case-study" ? "search-group-featured" : ""}" aria-labelledby="search-group-${section.key}">
                 <div class="search-group-header">
                   <h2 id="search-group-${section.key}">${section.label}</h2>
                   <span class="meta-inline">${section.items.length}</span>

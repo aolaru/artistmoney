@@ -39,6 +39,7 @@ const trustPagePaths = new Set([
   "/privacy/"
 ]);
 const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
+const homePath = new URL(baseUrl, Astro.site).pathname;
 ---
 
 <!doctype html>
@@ -80,6 +81,13 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
       type="module"
       src="https://static.cloudflareinsights.com/beacon.min.js"
       data-cf-beacon={'{"token":"b634abe19016414bbc66aeb5bc7d5e62"}'}></script>
+    <script is:inline define:vars={{ homePath }}>
+      window.googlefc = window.googlefc || {};
+      // Keep the first-read homepage unobscured; consent still appears on content pages.
+      window.googlefc.controlledMessagingFunction = (message) => {
+        message.proceed(window.location.pathname !== homePath);
+      };
+    </script>
     {shouldLoadAds && (
       <script
         async
@@ -237,6 +245,7 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
         const scoreItem = (item, query) => {
           const title = item.titleLower;
           const subtitle = item.subtitleLower ?? "";
+          const subject = item.subjectLower ?? "";
           const searchText = item.searchText;
 
           let score = 0;
@@ -245,8 +254,10 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
           if (title.includes(query)) score += 120;
           if (subtitle.startsWith(query)) score += 70;
           if (subtitle.includes(query)) score += 40;
+          if (subject === query) score += 360;
+          if (subject.includes(query)) score += 180;
           if (searchText.includes(query)) score += 20;
-          if (item.reviewed) score += 40;
+          if (score > 0 && item.reviewed) score += 40;
           return score;
         };
 
@@ -263,6 +274,7 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
                 ...item,
                 titleLower: item.title.toLowerCase(),
                 subtitleLower: (item.subtitle ?? "").toLowerCase(),
+                subjectLower: (item.subject ?? "").toLowerCase(),
                 searchText: item.searchText.toLowerCase()
               })));
           }
@@ -305,8 +317,8 @@ const shouldLoadAds = !noindex && !trustPagePaths.has(Astro.url.pathname);
               if (suggestions.length === 0) {
                 empty.hidden = false;
                 empty.textContent = query
-                  ? "No reviewed page matched. Try a shorter artist or song name, or open the full catalogs."
-                  : "Start typing to search catalog records.";
+                  ? "No matching page found. Try a shorter artist or song name, or open the full catalogs."
+                  : "Start typing to search case studies and catalog records.";
                 openPanel();
                 return;
               }

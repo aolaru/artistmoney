@@ -9,6 +9,11 @@ export type CaseStudy = {
   documentedRecord: string[];
   editorialReading: string[];
   rightsQuestion: string;
+  questionAnswer?: string;
+  analysisSections?: Array<{
+    title: string;
+    paragraphs: string[];
+  }>;
   limitations: string[];
   reviewedOn: string;
   sources: EditorialSource[];
@@ -84,6 +89,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "How should a researcher describe a globally successful recording when the public record shows demand but not the master, publishing, distributor, and performer splits?",
+    questionAnswer:
+      "Describe the demand precisely, identify the sources that support it, and stop before assigning a revenue amount or recipient that those sources do not disclose.",
+    analysisSections: [
+      {
+        title: "What the chart record answers",
+        paragraphs: [
+          "The Billboard Canada report records a specific ranking under Billboard's chart methodology. The Official Charts page supplies a separate UK chart record for the same recording. Together, those sources support a narrow conclusion: the song has been publicly documented as an unusually durable hit in more than one chart context.",
+          "That is more useful than calling the song simply successful. It identifies the kind of evidence available and the markets and chart systems it describes. It does not combine those records into a worldwide stream total, sales total, or financial valuation."
+        ]
+      },
+      {
+        title: "Why demand and payout are different questions",
+        paragraphs: [
+          "A chart measures public performance according to its own rules. A payment depends on the relevant use, territory, recording or composition right, recipient, contractual share, costs, and accounting period. Those are different evidence systems, and neither cited chart source is a payment statement.",
+          "The responsible conclusion is therefore about documented demand, not about what The Weeknd, a writer, a publisher, a label, or any other participant received."
+        ]
+      }
+    ],
     limitations: [
       "No source here provides a royalty statement, a label agreement, or a publisher agreement.",
       "The Billboard ranking is a chart-methodology result, not a financial valuation.",
@@ -166,6 +189,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "When a legacy recording returns in a later era, what public evidence distinguishes renewed audience demand from an actual financial claim?",
+    questionAnswer:
+      "Use each chart record to describe the period it covers, then keep ownership, licensing, and payment questions separate unless a source documents them directly.",
+    analysisSections: [
+      {
+        title: "One title, several public periods",
+        paragraphs: [
+          "The Official Charts sources identify more than one period of public attention: UK number-one runs in 1975 and 1991, followed by a later streaming-era ranking. These are not interchangeable records. Each describes a particular chart setting and time period.",
+          "Reading them together supports a case for multi-era public demand. It does not show that each period generated the same type of use, the same amount of revenue, or the same participants in the payment chain."
+        ]
+      },
+      {
+        title: "The missing financial record",
+        paragraphs: [
+          "A royalty total would require evidence about the uses being counted and the agreements behind them. The chart pages do not identify a master-rights recipient, publishing participants, distribution terms, recoupment, or a payment period.",
+          "That boundary matters especially for a legacy recording: later public attention is a fact about audience activity, not proof that a named performer or estate received a particular sum."
+        ]
+      }
+    ],
     limitations: [
       "Chart history does not disclose the commercial terms of any reissue, license, or later use.",
       "This article does not attribute income to any individual band member, estate, writer, publisher, or label.",
@@ -488,6 +529,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "What can public chart records show about a major artist's catalog, and what would still be needed before anyone could verify annual personal music income?",
+    questionAnswer:
+      "Public chart records can establish career-scale demand. Verifying personal income would require time-specific revenue, rights, cost, and accounting information that is not in the cited public sources.",
+    analysisSections: [
+      {
+        title: "What the artist-level evidence covers",
+        paragraphs: [
+          "The Official Charts artist page is useful for UK album and song context, while IFPI's Global Charts page supplies a separate international chart context. The sources describe public performance; neither is a consolidated financial record for the artist's catalog.",
+          "This distinction is important because an artist-level question spans more than one recording. Public chart entries can identify the scale and breadth of attention without revealing whether that attention belongs to the artist, a label, a publisher, writers, producers, or other parties in financial terms."
+        ]
+      },
+      {
+        title: "What a verified annual-income claim would need",
+        paragraphs: [
+          "An annual personal-income claim would need a defined accounting period and a record of the revenues and costs included. It would also need evidence of the relevant rights and contractual participation, rather than a chart position alone.",
+          "Because none of the sources provide that record, this article does not convert chart achievement into a yearly income estimate. The useful conclusion is about visible public demand and the limit of that evidence."
+        ]
+      }
+    ],
     limitations: [
       "The cited chart pages do not disclose contracts, royalty statements, recoupment, or accounting periods.",
       "A global-artist chart position is a measure of chart-recognized recorded-music performance, not a personal earnings record.",
@@ -531,6 +590,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "What can public chart and award records show about a major artist's work, and why do they not establish the artist's personal annual earnings?",
+    questionAnswer:
+      "The public sources establish release performance and credited work. They do not identify the contractual and accounting information needed to calculate an individual's annual music income.",
+    analysisSections: [
+      {
+        title: "Two records, two different uses",
+        paragraphs: [
+          "The Official Charts record concerns Astroworld's position and duration on a UK album chart. The Recording Academy page concerns award-nomination history and credits for Sicko Mode. Both are useful public records, but they answer different questions.",
+          "The first speaks to chart-recognized album activity; the second helps identify credited work in an award context. Neither source says how rights or revenue were divided among every participant connected to the album or recording."
+        ]
+      },
+      {
+        title: "Why a single artist-income number would mislead",
+        paragraphs: [
+          "An artist's public profile can include recordings, compositions, collaborative performances, and business activity that do not share one public payment record. Combining chart presence and award recognition into a single income claim would add information that these sources do not supply.",
+          "A careful article can document the public scale of the work while leaving personal earnings unanswered when the underlying agreements and statements are not public."
+        ]
+      }
+    ],
     limitations: [
       "The cited sources do not disclose Travis Scott's recording, publishing, touring, merchandise, or endorsement agreements.",
       "Award nominations and chart positions do not establish ownership shares or payment amounts.",
@@ -574,6 +651,24 @@ export const caseStudies: CaseStudy[] = [
     ],
     rightsQuestion:
       "What do public global and national chart records establish about an artist's scale, and why are they insufficient to verify annual personal music income?",
+    questionAnswer:
+      "The cited records establish public chart recognition in specific contexts. They do not disclose the complete rights, costs, or accounting information required for a verified personal-income total.",
+    analysisSections: [
+      {
+        title: "Read each public recognition in its own context",
+        paragraphs: [
+          "IFPI's Global Recording Artist recognition and the Official Charts artist page describe different public chart contexts. The IFPI source records global recognition for 2024; the Official Charts source records UK chart history. Neither source claims to be an earnings statement.",
+          "The sources therefore support a conclusion about exceptional public demand and catalog reach. They should not be treated as interchangeable measures or added together as though they disclosed one financial outcome."
+        ]
+      },
+      {
+        title: "Why chart scale cannot verify personal income",
+        paragraphs: [
+          "Chart evidence does not list every revenue source, every cost, the territory of each use, or the share retained by each participant. It also cannot establish the contractual treatment of a particular recording or composition.",
+          "That is why this case study does not offer a numerical answer to the headline question. The evidence is strong enough to describe public scale, but not to verify private receipts."
+        ]
+      }
+    ],
     limitations: [
       "The cited sources do not disclose royalty statements, production and marketing costs, tax, recoupment, or contractual shares.",
       "Global chart results are not a complete record of every revenue stream or every recipient.",
