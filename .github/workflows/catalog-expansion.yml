@@ -44,6 +44,7 @@ jobs:
         run: npm run build
 
       - name: Create pull request
+        id: catalog_pr
         if: steps.expansion.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
@@ -55,3 +56,11 @@ jobs:
           labels: |
             automation
             catalog-expansion
+
+      - name: Enable automatic merge
+        if: steps.expansion.outputs.changed == 'true' && steps.catalog_pr.outputs.pull-request-number != ''
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.catalog_pr.outputs.pull-request-number }}
+          merge-method: squash
