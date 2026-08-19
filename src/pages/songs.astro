@@ -1,19 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getArtist, getArtistVisual, getConfidenceSummary, getSongConfidence, rankedSongs, songs, type Artist } from "../lib/catalog";
+import { artists, getArtist, getArtistVisual, rankedSongs, songs } from "../lib/catalog";
 import { getLatestGitDate } from "../lib/freshness";
-import { isArtistReviewReady, isSongReviewReady } from "../lib/reviewReady";
 import { getCatalogUpdates } from "../lib/updates";
+import { caseStudies } from "../data/caseStudies";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const hasPublicArtistPage = (artist: Artist) => {
-  const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
-  return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
-};
-const reviewedSongs = songs.filter(isSongReviewReady);
-const reviewedSongCount = reviewedSongs.length;
 const visualSongLimit = 96;
 const visualSongs = rankedSongs.map((entry) => entry.song).slice(0, visualSongLimit);
 const visualSongSlugs = new Set(visualSongs.map((song) => song.slug));
@@ -58,15 +52,15 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
 
 <BaseLayout
   title="Songs | How Much Music"
-  description="Browse song earnings pages, with reviewed entries highlighted for stronger notes and clearer estimate limits."
+  description="Browse song catalog records and source-backed research about music rights and public evidence."
   noindex
 >
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Songs</p>
       <h1>Song catalog</h1>
-      <p>Browse song earnings pages. Reviewed entries include page-specific context, visible references, and methodology notes; the full catalog remains available for discovery.</p>
-      <p><a href={`${baseUrl}reviewed-songs/`}>Open reviewed songs only</a> or <a href={`${baseUrl}insights/methodology/`}>read the methodology</a>.</p>
+      <p>Use this directory to find a song, then open a source-backed case study where published research is available.</p>
+      <p><a href={`${baseUrl}case-studies/`}>Read published case studies</a> or <a href={`${baseUrl}insights/methodology/`}>read the methodology</a>.</p>
     </div>
     <div class="hero-panel" aria-label="Song catalog summary">
       <p class="eyebrow">Catalog Snapshot</p>
@@ -74,17 +68,17 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
         <strong>{songs.length}</strong>
         <span>song pages</span>
       </a>
-      <a class="hero-stat-pill" href={`${baseUrl}reviewed-songs/`}>
-        <strong>{reviewedSongCount}</strong>
-        <span>reviewed songs</span>
+      <a class="hero-stat-pill" href={`${baseUrl}case-studies/`}>
+        <strong>{caseStudies.length}</strong>
+        <span>published case studies</span>
       </a>
     </div>
   </section>
 
   <section class="catalog-path-grid" aria-label="Song browsing options">
-    <a class="catalog-path-card" href={`${baseUrl}reviewed-songs/`}>
+    <a class="catalog-path-card" href={`${baseUrl}case-studies/`}>
       <span class="eyebrow">Best Start</span>
-      <strong>Reviewed songs</strong>
+      <strong>Published case studies</strong>
       <span>Use these first when source depth matters.</span>
     </a>
     <a class="catalog-path-card" href={`${baseUrl}search/?type=song`}>
@@ -95,7 +89,7 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
     <a class="catalog-path-card" href="#all-songs-title">
       <span class="eyebrow">Browse</span>
       <strong>Featured catalog cards</strong>
-      <span>Filter the strongest visual set, then open the complete text list below.</span>
+      <span>Browse featured cards or open the complete text list below.</span>
     </a>
   </section>
 
@@ -141,21 +135,13 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
 
   <section aria-labelledby="all-songs-title">
     <h2 id="all-songs-title">Song Directory</h2>
-    <p class="results-note">The card grid shows the strongest {visualSongs.length} visual entries. The complete catalog remains available as a compact text list below.</p>
+    <p class="results-note">Featured song cards are shown first. The complete catalog remains available as a compact text list below.</p>
     <details class="advanced-filters">
-      <summary>Search, filter, and sort songs</summary>
+      <summary>Filter and sort songs</summary>
       <div class="filters" data-filter-root="songs">
         <label class="filter-field">
           <span>Search</span>
           <input id="song-search" type="search" placeholder="Search songs or albums" />
-        </label>
-        <label class="filter-field">
-          <span>Status</span>
-          <select id="song-status">
-            <option value="">All song pages</option>
-            <option value="reviewed">Reviewed only</option>
-            <option value="catalog">Catalog entries</option>
-          </select>
         </label>
         <label class="filter-field">
           <span>Artist</span>
@@ -176,36 +162,11 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
           </select>
         </label>
         <label class="filter-field">
-          <span>Confidence</span>
-          <select id="song-confidence">
-            <option value="">All confidence levels</option>
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
-          </select>
-        </label>
-        <label class="filter-field">
           <span>Sort</span>
           <select id="song-sort">
-            <option value="earnings">Highest earnings</option>
             <option value="alpha">Alphabetical</option>
             <option value="year">Newest release year</option>
-            <option value="confidence">Highest confidence</option>
             <option value="updated">Last updated</option>
-          </select>
-        </label>
-        <label class="filter-field">
-          <span>Split detail</span>
-          <select id="song-split">
-            <option value="">All pages</option>
-            <option value="yes">Artist-side and gross ranges shown</option>
-          </select>
-        </label>
-        <label class="filter-field">
-          <span>Image</span>
-          <select id="song-image">
-            <option value="">All image states</option>
-            <option value="yes">Sourced image only</option>
           </select>
         </label>
       </div>
@@ -218,13 +179,7 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
         const artistName = artist?.name ?? song.artist;
         const artistVisual = artist ? getArtistVisual(artist) : undefined;
         const imageSrc = !artistVisual || artistVisual.provider === "generated" ? `${baseUrl}artist-placeholder.svg` : artistVisual.src;
-        const artistIsPublic = artist ? hasPublicArtistPage(artist) : false;
-        const isReviewed = isSongReviewReady(song);
         const decade = song.year ? `${Math.floor(song.year / 10) * 10}s` : "";
-        const confidence = getSongConfidence(song);
-        const revenueMidpoint = song.normalizedRevenue?.artistSide?.midpoint ?? 0;
-        const hasSplitAware = song.earnings?.artist_or_estate_share && song.earnings?.gross_track_revenue ? "yes" : "no";
-        const hasSourcedImage = artistVisual && artistVisual.provider !== "generated" ? "yes" : "no";
         const updated = getLatestGitDate([
           `src/data/songs/${song.slug}.json`,
           "src/data/songMetadata.ts",
@@ -240,14 +195,8 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
             data-search={`${song.title} ${artistName} ${song.album ?? ""}`.toLowerCase()}
             data-artist={song.artist}
             data-decade={decade}
-            data-confidence={confidence.level}
-            data-confidence-score={confidence.score}
-            data-revenue={revenueMidpoint}
             data-year={song.year ?? 0}
             data-name={song.title.toLowerCase()}
-            data-review-status={isReviewed ? "reviewed" : "catalog"}
-            data-split-aware={hasSplitAware}
-            data-has-image={hasSourcedImage}
             data-updated={updated.replaceAll("-", "")}
           >
             <img
@@ -261,13 +210,11 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
             />
             <div class="artist-card-body">
               <p class="eyebrow">Song</p>
-              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
-              <p class="confidence-note">{getConfidenceSummary(confidence)} <a href={`${baseUrl}insights/methodology/`}>Why?</a></p>
               <h3>
                 <a href={`${baseUrl}song/${song.slug}/`}>{song.title}</a>
               </h3>
               <p class="artist-card-meta">
-                By {artist && artistIsPublic ? <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a> : artistName}
+                By {artist ? <a href={`${baseUrl}artist/${song.artist}/`}>{artistName}</a> : artistName}
               </p>
               {(song.album || song.year) && (
                 <p class="artist-card-meta">
@@ -282,12 +229,9 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
                 ) : updatedDate ? (
                   <span class="status-chip status-chip-updated">UPDATED {updatedDate}</span>
                 ) : null}
-                {hasSplitAware === "yes" && <span class="quality-chip">split-aware</span>}
-                {hasSourcedImage === "yes" && <span class="quality-chip">sourced image</span>}
-                <span class={`quality-chip ${isReviewed ? "" : "quality-chip-muted"}`}>{isReviewed ? "reviewed" : "catalog profile"}</span>
+                <span class="quality-chip quality-chip-muted">catalog record</span>
                 {updated && !newDate && !updatedDate && <span class="quality-chip">updated {updated}</span>}
               </div>
-              <p>Estimated revenue: {song.estimated_revenue}</p>
             </div>
           </article>
         );
@@ -321,13 +265,9 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
 <script is:inline>
   const initSongFilters = () => {
     const songSearchInput = document.querySelector("#song-search");
-    const songStatusSelect = document.querySelector("#song-status");
     const songArtistSelect = document.querySelector("#song-artist");
     const songDecadeSelect = document.querySelector("#song-decade");
-    const songConfidenceSelect = document.querySelector("#song-confidence");
     const songSortSelect = document.querySelector("#song-sort");
-    const songSplitSelect = document.querySelector("#song-split");
-    const songImageSelect = document.querySelector("#song-image");
     const songCards = [...document.querySelectorAll("[data-song-card]")];
     const songNote = document.querySelector("#song-results-note");
     const songGrid = document.querySelector("#song-card-grid");
@@ -336,20 +276,16 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
     const pageSize = 48;
     let visibleLimit = pageSize;
 
-    if (!songSearchInput || !songStatusSelect || !songArtistSelect || !songDecadeSelect || !songConfidenceSelect || !songSortSelect || !songSplitSelect || !songImageSelect || !songNote || !songGrid || !activeFilters || !loadMoreButton) return;
+    if (!songSearchInput || !songArtistSelect || !songDecadeSelect || !songSortSelect || !songNote || !songGrid || !activeFilters || !loadMoreButton) return;
     if (songSearchInput.dataset.filtersBound === "true") return;
 
     const syncUrl = () => {
       const url = new URL(window.location.href);
       const values = {
         q: songSearchInput.value.trim(),
-        status: songStatusSelect.value,
         artist: songArtistSelect.value,
         decade: songDecadeSelect.value,
-        confidence: songConfidenceSelect.value,
-        sort: songSortSelect.value,
-        split: songSplitSelect.value,
-        image: songImageSelect.value
+        sort: songSortSelect.value
       };
 
       Object.entries(values).forEach(([key, value]) => {
@@ -366,13 +302,9 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
     const renderActiveFilters = () => {
       const items = [];
       if (songSearchInput.value.trim()) items.push(`Search: ${songSearchInput.value.trim()}`);
-      if (songStatusSelect.value) items.push(`Status: ${songStatusSelect.selectedOptions[0]?.textContent ?? songStatusSelect.value}`);
       if (songArtistSelect.value) items.push(`Artist: ${songArtistSelect.selectedOptions[0]?.textContent ?? songArtistSelect.value}`);
       if (songDecadeSelect.value) items.push(`Decade: ${songDecadeSelect.value}`);
-      if (songConfidenceSelect.value) items.push(`Confidence: ${songConfidenceSelect.value}`);
-      if (songSplitSelect.value) items.push("Split-aware only");
-      if (songImageSelect.value) items.push("Sourced image only");
-      if (songSortSelect.value && songSortSelect.value !== "earnings") items.push(`Sort: ${songSortSelect.selectedOptions[0]?.textContent ?? songSortSelect.value}`);
+      if (songSortSelect.value && songSortSelect.value !== "alpha") items.push(`Sort: ${songSortSelect.selectedOptions[0]?.textContent ?? songSortSelect.value}`);
 
       activeFilters.innerHTML = items.length
         ? `${items.map((item) => `<span class="active-filter-chip">${item}</span>`).join("")}<button type="button" class="filter-reset" id="song-reset">Clear filters</button>`
@@ -381,13 +313,9 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
       const resetButton = document.querySelector("#song-reset");
       resetButton?.addEventListener("click", () => {
         songSearchInput.value = "";
-        songStatusSelect.value = "";
         songArtistSelect.value = "";
         songDecadeSelect.value = "";
-        songConfidenceSelect.value = "";
-        songSplitSelect.value = "";
-        songImageSelect.value = "";
-        songSortSelect.value = "earnings";
+        songSortSelect.value = "alpha";
         visibleLimit = pageSize;
         applySongFilters();
       }, { once: true });
@@ -395,25 +323,17 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
 
     const applySongFilters = () => {
       const query = songSearchInput.value.trim().toLowerCase();
-      const status = songStatusSelect.value;
       const artist = songArtistSelect.value;
       const decade = songDecadeSelect.value;
-      const confidence = songConfidenceSelect.value;
-      const split = songSplitSelect.value;
-      const image = songImageSelect.value;
       const sort = songSortSelect.value;
 
       let matched = 0;
 
       songCards.forEach((card) => {
         const matchesQuery = !query || card.dataset.search?.includes(query);
-        const matchesStatus = !status || card.dataset.reviewStatus === status;
         const matchesArtist = !artist || card.dataset.artist === artist;
         const matchesDecade = !decade || card.dataset.decade === decade;
-        const matchesConfidence = !confidence || card.dataset.confidence === confidence;
-        const matchesSplit = !split || card.dataset.splitAware === split;
-        const matchesImage = !image || card.dataset.hasImage === image;
-        const show = Boolean(matchesQuery && matchesStatus && matchesArtist && matchesDecade && matchesConfidence && matchesSplit && matchesImage);
+        const show = Boolean(matchesQuery && matchesArtist && matchesDecade);
 
         if (show) matched += 1;
         card.dataset.matchesFilter = show ? "yes" : "no";
@@ -426,21 +346,15 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
 
         if (sort === "year") {
           return Number(right.dataset.year ?? 0) - Number(left.dataset.year ?? 0)
-            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
-        }
-
-        if (sort === "confidence") {
-          return Number(right.dataset.confidenceScore ?? 0) - Number(left.dataset.confidenceScore ?? 0)
-            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+            || (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
         }
 
         if (sort === "updated") {
           return Number(right.dataset.updated ?? 0) - Number(left.dataset.updated ?? 0)
-            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+            || (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
         }
 
-        return Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0)
-          || (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
+        return (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
       });
 
       sortedCards.forEach((card) => songGrid.appendChild(card));
@@ -468,15 +382,11 @@ const latestUpdatedSongs = [...new Set(recentUpdates.flatMap((entry) =>
 
     const params = new URLSearchParams(window.location.search);
     songSearchInput.value = params.get("q") ?? "";
-    songStatusSelect.value = params.get("status") ?? "";
     songArtistSelect.value = params.get("artist") ?? "";
     songDecadeSelect.value = params.get("decade") ?? "";
-    songConfidenceSelect.value = params.get("confidence") ?? "";
-    songSplitSelect.value = params.get("split") ?? "";
-    songImageSelect.value = params.get("image") ?? "";
-    songSortSelect.value = params.get("sort") ?? "earnings";
+    songSortSelect.value = params.get("sort") ?? "alpha";
 
-    [songSearchInput, songStatusSelect, songArtistSelect, songDecadeSelect, songConfidenceSelect, songSortSelect, songSplitSelect, songImageSelect].forEach((element) => {
+    [songSearchInput, songArtistSelect, songDecadeSelect, songSortSelect].forEach((element) => {
       element.addEventListener("input", resetLimitAndApply);
       element.addEventListener("change", resetLimitAndApply);
     });

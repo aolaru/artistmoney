@@ -1,73 +1,60 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { caseStudies } from "../data/caseStudies";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
+const songCaseStudies = caseStudies.filter((caseStudy) =>
+  caseStudy.relatedProfiles?.some((profile) => profile.type === "song")
+);
 ---
 
 <BaseLayout
-  title="Song Research Queue | How Much Music"
-  description="How Much Music's research queue for song profiles awaiting source-backed editorial review."
-  noindex
+  title="Published Song Research | How Much Music"
+  description="Source-backed music case studies with song-level public records, evidence limits, and related catalog links."
 >
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">Research Queue</p>
-      <h1>Song profiles awaiting evidence review.</h1>
+      <p class="eyebrow">Published Research</p>
+      <h1>Source-backed questions about specific songs.</h1>
       <p>
-        The catalog remains available for navigation and comparison. It is not currently presented
-        as a collection of finished editorial case studies.
-      </p>
-      <p>
-        Browse the <a href={`${baseUrl}songs/`}>song catalog</a> or read the
-        <a href={`${baseUrl}editorial-policy/`}>publication standard</a>.
+        These articles use public records to explain what can be established about a song and what
+        still requires private rights or accounting information.
       </p>
     </div>
-    <div class="hero-panel" aria-label="Publication status">
-      <p class="eyebrow">Publication Status</p>
-      <div class="hero-stat-pill hero-stat-pill-primary">
-        <strong>0</strong>
-        <span>published song case studies</span>
-      </div>
+    <div class="hero-panel" aria-label="Published song research summary">
+      <p class="eyebrow">Available Now</p>
+      <a class="hero-stat-pill hero-stat-pill-primary" href={`${baseUrl}case-studies/`}>
+        <strong>{songCaseStudies.length}</strong>
+        <span>source-backed song articles</span>
+      </a>
       <a class="hero-stat-pill" href={`${baseUrl}songs/`}>
         <strong>Catalog</strong>
-        <span>browse song profiles</span>
+        <span>browse all song records</span>
       </a>
     </div>
   </section>
 
-  <section class="editorial-basis-card" aria-labelledby="song-standard-title">
-    <div class="editorial-basis-heading">
-      <p class="eyebrow">Publication Standard</p>
-      <h2 id="song-standard-title">What a published song case study must include</h2>
-      <p>
-        A page is published only when a reader can see the public evidence, the model inputs, and
-        the limits of the conclusion without relying on generic catalog copy.
-      </p>
+  <section aria-labelledby="song-case-studies-title">
+    <div class="section-heading-row">
+      <div>
+        <p class="eyebrow">Case Studies</p>
+        <h2 id="song-case-studies-title">Start with a documented question</h2>
+      </div>
+      <a class="home-action-link" href={`${baseUrl}case-studies/`}>Open all case studies</a>
     </div>
-    <div class="editorial-basis-grid">
-      <div class="editorial-basis-item">
-        <strong>Evidence</strong>
-        <span>At least three substantive public sources, across at least two evidence roles.</span>
-      </div>
-      <div class="editorial-basis-item">
-        <strong>Model record</strong>
-        <span>Inputs, assumptions, limitations, author, and review date must be visible on the page.</span>
-      </div>
-      <div class="editorial-basis-item">
-        <strong>Publication rule</strong>
-        <span>Platform and artist-homepage links help with identity but do not qualify a financial claim.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="related-reading-card" aria-labelledby="song-queue-next-title">
-    <h2 id="song-queue-next-title">What readers can use now</h2>
-    <div class="related-link-row">
-      <a href={`${baseUrl}songs/`}>Browse catalog profiles</a>
-      <a href={`${baseUrl}insights/`}>Read source-led explainers</a>
-      <a href={`${baseUrl}insights/methodology/`}>Understand the methodology</a>
+    <div class="card-grid case-study-grid">
+      {songCaseStudies.map((caseStudy) => (
+        <article class="card case-study-card">
+          <div class="artist-card-body">
+            <p class="eyebrow">{caseStudy.focus}</p>
+            <h3><a href={`${baseUrl}case-studies/${caseStudy.slug}/`}>{caseStudy.title}</a></h3>
+            <p class="card-byline">{caseStudy.artist}</p>
+            <p>{caseStudy.summary}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 </BaseLayout>

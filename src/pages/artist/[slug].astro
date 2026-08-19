@@ -333,7 +333,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
           {isReviewReady ? `${confidence.level} confidence` : "research in progress"}
         </p>
 
-        {!isReviewReady && (
+        {!isReviewReady && relatedCaseStudies.length === 0 && (
           <section class="quick-answer-card" aria-label="Research status">
             <p class="eyebrow">Publication Status</p>
             <h2>Catalog profile, not a published estimate</h2>
@@ -347,10 +347,10 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
         {relatedCaseStudies.length > 0 && (
           <section class="related-reading-card profile-case-study-bridge" aria-labelledby="artist-case-study-title">
             <p class="eyebrow">Published Research</p>
-            <h2 id="artist-case-study-title">Source-backed context for {artist.name}</h2>
+            <h2 id="artist-case-study-title">Read the published research on {artist.name}</h2>
             <p>
-              These articles address a specific public-record question about this subject. They are separate
-              from this catalog profile and do not claim access to private earnings data.
+              These articles are the published research for this artist. This catalog page remains
+              available for basic career and catalog context.
             </p>
             <div class="related-case-study-list">
               {relatedCaseStudies.map((caseStudy) => (
@@ -372,16 +372,18 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
         )}
 
         <section aria-labelledby="short-answer-title" class="song-intro-card">
-          <h2 id="short-answer-title">{isReviewReady ? "Estimate at a glance" : "Catalog profile"}</h2>
-          <p class="seo-question"><strong>{isReviewReady ? snippetQuestion : `What is documented on this ${artist.name} profile?`}</strong></p>
-          <p class="song-lead-answer"><strong>{snippetLead}</strong></p>
-          <p class="song-takeaway"><strong>Takeaway:</strong> {takeaway}</p>
+          <h2 id="short-answer-title">{isReviewReady ? "Estimate at a glance" : relatedCaseStudies.length > 0 ? "Catalog details" : "Catalog profile"}</h2>
+          <p class="seo-question"><strong>{isReviewReady ? snippetQuestion : relatedCaseStudies.length > 0 ? `Basic career and catalog context for ${artist.name}` : `What is documented on this ${artist.name} profile?`}</strong></p>
+          <p class="song-lead-answer"><strong>{relatedCaseStudies.length > 0 && !isReviewReady ? `For the source-backed answer about ${artist.name}, use the published research above.` : snippetLead}</strong></p>
+          <p class="song-takeaway"><strong>Takeaway:</strong> {relatedCaseStudies.length > 0 && !isReviewReady ? "The catalog details below are supporting context, not a second earnings article." : takeaway}</p>
           {isReviewReady ? (
             <p>{article?.shortAnswer ?? editorial.shortAnswer}</p>
           ) : (
             <p>
-              This entry records basic catalog information. It does not publish an earnings analysis until
-              the underlying evidence and editorial record are complete.
+              This entry records basic catalog information.
+              {relatedCaseStudies.length > 0
+                ? " The source-backed research above explains the evidence and its limits; the remaining details are catalog context."
+                : " It does not publish an earnings analysis until the underlying evidence and editorial record are complete."}
             </p>
           )}
 
@@ -404,7 +406,7 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
                   ))}
                 </ul>
               </div>
-            ) : (
+            ) : relatedCaseStudies.length === 0 ? (
               <div class="song-intro-panel">
                 <h3>What is still needed</h3>
                 <ul class="song-bullet-list">
@@ -412,6 +414,11 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
                   <li>Visible model inputs and limitations.</li>
                   <li>A named author and review date.</li>
                 </ul>
+              </div>
+            ) : (
+              <div class="song-intro-panel">
+                <h3>Published research</h3>
+                <p>Use the source-backed article above for the evidence and conclusion; use this page only for catalog context.</p>
               </div>
             )}
           </div>
@@ -423,9 +430,9 @@ const pageJsonLd = articleSchema ? [artistSchema, articleSchema] : artistSchema;
                 <p class="results-note">{snippetSupport}</p>
                 {lastUpdated && <p class="results-note">Last updated: {lastUpdated}</p>}
               </>
-            ) : (
+            ) : relatedCaseStudies.length === 0 ? (
               <p class="results-note"><a href={`${baseUrl}editorial-policy/`}>Read the publication standard.</a></p>
-            )}
+            ) : null}
           </div>
         </section>
 

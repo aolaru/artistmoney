@@ -1,21 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { artists, getArtistConfidence, getArtistVisual, getConfidenceSummary, rankedArtists, songs, type Artist } from "../lib/catalog";
+import { artists, getArtistVisual, rankedArtists, songs } from "../lib/catalog";
 import { getLatestGitDate } from "../lib/freshness";
-import { isArtistReviewReady } from "../lib/reviewReady";
 import { getCatalogUpdates } from "../lib/updates";
+import { caseStudies } from "../data/caseStudies";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-const hasPublicArtistPage = (artist: Artist) => {
-  const topSongs = songs.filter((song) => artist.top_songs.includes(song.slug));
-  return isArtistReviewReady(artist, topSongs) && getArtistVisual(artist).provider === "artistPhoto";
-};
-const reviewedArtistCount = artists.filter(hasPublicArtistPage).length;
 const visualArtistLimit = 96;
 const visualArtists = rankedArtists.map((entry) => entry.artist).slice(0, visualArtistLimit);
-const genres = [...new Set(artists.map((artist) => artist.genre).filter(Boolean))].sort();
 const countries = [...new Set(artists.map((artist) => artist.country).filter(Boolean))].sort();
 const recentUpdates = getCatalogUpdates(20);
 
@@ -58,15 +52,15 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
 
 <BaseLayout
   title="Artists | How Much Music"
-  description="Browse artist earnings pages, with reviewed entries highlighted for stronger notes and clearer estimate limits."
+  description="Browse artist catalog records and source-backed research about music rights and public evidence."
   noindex
 >
   <section class="hero">
     <div class="hero-copy">
       <p class="eyebrow">Artists</p>
       <h1>Artist catalog</h1>
-      <p>Browse artist earnings pages. Reviewed entries have stronger notes, ownership context, and public images; the full catalog remains available for discovery.</p>
-      <p><a href={`${baseUrl}reviewed-artists/`}>Open reviewed artists only</a> or <a href={`${baseUrl}insights/methodology/`}>read the methodology</a>.</p>
+      <p>Use this directory to find an artist, then open a source-backed case study where published research is available.</p>
+      <p><a href={`${baseUrl}case-studies/`}>Read published case studies</a> or <a href={`${baseUrl}insights/methodology/`}>read the methodology</a>.</p>
     </div>
     <div class="hero-panel" aria-label="Artist catalog summary">
       <p class="eyebrow">Catalog Snapshot</p>
@@ -74,17 +68,17 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
         <strong>{artists.length}</strong>
         <span>artist pages</span>
       </a>
-      <a class="hero-stat-pill" href={`${baseUrl}reviewed-artists/`}>
-        <strong>{reviewedArtistCount}</strong>
-        <span>reviewed artists</span>
+      <a class="hero-stat-pill" href={`${baseUrl}case-studies/`}>
+        <strong>{caseStudies.length}</strong>
+        <span>published case studies</span>
       </a>
     </div>
   </section>
 
   <section class="catalog-path-grid" aria-label="Artist browsing options">
-    <a class="catalog-path-card" href={`${baseUrl}reviewed-artists/`}>
+    <a class="catalog-path-card" href={`${baseUrl}case-studies/`}>
       <span class="eyebrow">Best Start</span>
-      <strong>Reviewed artists</strong>
+      <strong>Published case studies</strong>
       <span>Use these first when source depth matters.</span>
     </a>
     <a class="catalog-path-card" href={`${baseUrl}search/?type=artist`}>
@@ -95,7 +89,7 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
     <a class="catalog-path-card" href="#all-artists-title">
       <span class="eyebrow">Browse</span>
       <strong>Featured artist cards</strong>
-      <span>Filter the strongest visual set, then open the complete text list below.</span>
+      <span>Browse featured cards or open the complete text list below.</span>
     </a>
   </section>
 
@@ -131,30 +125,13 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
 
   <section aria-labelledby="all-artists-title">
     <h2 id="all-artists-title">Artist Directory</h2>
-    <p class="results-note">The card grid shows the strongest {visualArtists.length} visual entries. The complete catalog remains available as a compact text list below.</p>
+    <p class="results-note">Featured artist cards are shown first. The complete catalog remains available as a compact text list below.</p>
     <details class="advanced-filters">
-      <summary>Search, filter, and sort artists</summary>
+      <summary>Filter and sort artists</summary>
       <div class="filters" data-filter-root="artists">
         <label class="filter-field">
           <span>Search</span>
           <input id="artist-search" type="search" placeholder="Search artists" />
-        </label>
-        <label class="filter-field">
-          <span>Status</span>
-          <select id="artist-status">
-            <option value="">All artist pages</option>
-            <option value="reviewed">Reviewed only</option>
-            <option value="catalog">Catalog entries</option>
-          </select>
-        </label>
-        <label class="filter-field">
-          <span>Genre</span>
-          <select id="artist-genre">
-            <option value="">All genres</option>
-            {genres.map((genre) => (
-              <option value={genre}>{genre}</option>
-            ))}
-          </select>
         </label>
         <label class="filter-field">
           <span>Country</span>
@@ -166,35 +143,10 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
           </select>
         </label>
         <label class="filter-field">
-          <span>Confidence</span>
-          <select id="artist-confidence">
-            <option value="">All confidence levels</option>
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
-          </select>
-        </label>
-        <label class="filter-field">
           <span>Sort</span>
           <select id="artist-sort">
-            <option value="earnings">Highest earnings</option>
             <option value="alpha">Alphabetical</option>
-            <option value="confidence">Highest confidence</option>
             <option value="updated">Last updated</option>
-          </select>
-        </label>
-        <label class="filter-field">
-          <span>Split detail</span>
-          <select id="artist-split">
-            <option value="">All pages</option>
-            <option value="yes">Artist and label shares shown</option>
-          </select>
-        </label>
-        <label class="filter-field">
-          <span>Image</span>
-          <select id="artist-image">
-            <option value="">All image states</option>
-            <option value="yes">Public photo only</option>
           </select>
         </label>
       </div>
@@ -206,11 +158,6 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
         (() => {
           const artistVisual = getArtistVisual(artist);
           const imageSrc = artistVisual.provider === "generated" ? `${baseUrl}artist-placeholder.svg` : artistVisual.src;
-          const confidence = getArtistConfidence(artist);
-          const isReviewed = hasPublicArtistPage(artist);
-          const revenueMidpoint = artist.normalizedRevenue?.artistSide?.midpoint ?? 0;
-          const hasSplitAware = artist.earnings?.artist_or_estate_share && artist.earnings?.label_share ? "yes" : "no";
-          const hasRealImage = artistVisual.provider === "artistPhoto" ? "yes" : "no";
           const updated = getLatestGitDate([
             `src/data/artists/${artist.slug}.json`,
             "src/data/artistMetadata.ts",
@@ -223,15 +170,8 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
           class="card artist-card"
           data-artist-card
           data-search={`${artist.name} ${artist.genre ?? ""} ${artist.country ?? ""}`.toLowerCase()}
-          data-genre={artist.genre ?? ""}
           data-country={artist.country ?? ""}
-          data-confidence={confidence.level}
-          data-confidence-score={confidence.score}
-          data-revenue={revenueMidpoint}
           data-name={artist.name.toLowerCase()}
-          data-review-status={isReviewed ? "reviewed" : "catalog"}
-          data-split-aware={hasSplitAware}
-          data-has-real-image={hasRealImage}
           data-updated={updated.replaceAll("-", "")}
         >
           <img
@@ -245,8 +185,6 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
           />
           <div class="artist-card-body">
               <p class="eyebrow">Artist</p>
-              <p class={`confidence-badge confidence-${confidence.level}`}>{confidence.level} confidence</p>
-              <p class="confidence-note">{getConfidenceSummary(confidence)} <a href={`${baseUrl}insights/methodology/`}>Why?</a></p>
               <h3>
               <a href={`${baseUrl}artist/${artist.slug}/`}>{artist.name}</a>
             </h3>
@@ -259,12 +197,9 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
               ) : updatedDate ? (
                 <span class="status-chip status-chip-updated">UPDATED {updatedDate}</span>
               ) : null}
-              {hasSplitAware === "yes" && <span class="quality-chip">split-aware</span>}
-              {hasRealImage === "yes" && <span class="quality-chip">real photo</span>}
-              <span class={`quality-chip ${isReviewed ? "" : "quality-chip-muted"}`}>{isReviewed ? "reviewed" : "catalog profile"}</span>
+              <span class="quality-chip quality-chip-muted">catalog record</span>
               {updated && !newDate && !updatedDate && <span class="quality-chip">updated {updated}</span>}
             </div>
-            <p>Estimated income: {artist.estimated_income}</p>
           </div>
         </article>
           );
@@ -294,13 +229,8 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
 <script is:inline>
   const initArtistFilters = () => {
     const artistSearchInput = document.querySelector("#artist-search");
-    const artistStatusSelect = document.querySelector("#artist-status");
-    const artistGenreSelect = document.querySelector("#artist-genre");
     const artistCountrySelect = document.querySelector("#artist-country");
-    const artistConfidenceSelect = document.querySelector("#artist-confidence");
     const artistSortSelect = document.querySelector("#artist-sort");
-    const artistSplitSelect = document.querySelector("#artist-split");
-    const artistImageSelect = document.querySelector("#artist-image");
     const artistCards = [...document.querySelectorAll("[data-artist-card]")];
     const artistNote = document.querySelector("#artist-results-note");
     const artistGrid = document.querySelector("#artist-card-grid");
@@ -309,7 +239,7 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
     const pageSize = 48;
     let visibleLimit = pageSize;
 
-    if (!artistSearchInput || !artistStatusSelect || !artistGenreSelect || !artistCountrySelect || !artistConfidenceSelect || !artistSortSelect || !artistSplitSelect || !artistImageSelect || !artistNote || !artistGrid || !activeFilters || !loadMoreButton) return;
+    if (!artistSearchInput || !artistCountrySelect || !artistSortSelect || !artistNote || !artistGrid || !activeFilters || !loadMoreButton) return;
     if (artistSearchInput.dataset.filtersBound === "true") return;
 
     const syncUrl = () => {
@@ -317,13 +247,8 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
       const params = url.searchParams;
       const values = {
         q: artistSearchInput.value.trim(),
-        status: artistStatusSelect.value,
-        genre: artistGenreSelect.value,
         country: artistCountrySelect.value,
-        confidence: artistConfidenceSelect.value,
-        sort: artistSortSelect.value,
-        split: artistSplitSelect.value,
-        image: artistImageSelect.value
+        sort: artistSortSelect.value
       };
 
       Object.entries(values).forEach(([key, value]) => {
@@ -340,13 +265,8 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
     const renderActiveFilters = () => {
       const items = [];
       if (artistSearchInput.value.trim()) items.push(`Search: ${artistSearchInput.value.trim()}`);
-      if (artistStatusSelect.value) items.push(`Status: ${artistStatusSelect.selectedOptions[0]?.textContent ?? artistStatusSelect.value}`);
-      if (artistGenreSelect.value) items.push(`Genre: ${artistGenreSelect.value}`);
       if (artistCountrySelect.value) items.push(`Country: ${artistCountrySelect.value}`);
-      if (artistConfidenceSelect.value) items.push(`Confidence: ${artistConfidenceSelect.value}`);
-      if (artistSplitSelect.value) items.push("Split-aware only");
-      if (artistImageSelect.value) items.push("Real photo only");
-      if (artistSortSelect.value && artistSortSelect.value !== "earnings") items.push(`Sort: ${artistSortSelect.selectedOptions[0]?.textContent ?? artistSortSelect.value}`);
+      if (artistSortSelect.value && artistSortSelect.value !== "alpha") items.push(`Sort: ${artistSortSelect.selectedOptions[0]?.textContent ?? artistSortSelect.value}`);
 
       activeFilters.innerHTML = items.length
         ? `${items.map((item) => `<span class="active-filter-chip">${item}</span>`).join("")}<button type="button" class="filter-reset" id="artist-reset">Clear filters</button>`
@@ -355,13 +275,8 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
       const resetButton = document.querySelector("#artist-reset");
       resetButton?.addEventListener("click", () => {
         artistSearchInput.value = "";
-        artistStatusSelect.value = "";
-        artistGenreSelect.value = "";
         artistCountrySelect.value = "";
-        artistConfidenceSelect.value = "";
-        artistSplitSelect.value = "";
-        artistImageSelect.value = "";
-        artistSortSelect.value = "earnings";
+        artistSortSelect.value = "alpha";
         visibleLimit = pageSize;
         applyArtistFilters();
       }, { once: true });
@@ -369,25 +284,15 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
 
     const applyArtistFilters = () => {
       const query = artistSearchInput.value.trim().toLowerCase();
-      const status = artistStatusSelect.value;
-      const genre = artistGenreSelect.value;
       const country = artistCountrySelect.value;
-      const confidence = artistConfidenceSelect.value;
-      const split = artistSplitSelect.value;
-      const image = artistImageSelect.value;
       const sort = artistSortSelect.value;
 
       let matched = 0;
 
       artistCards.forEach((card) => {
         const matchesQuery = !query || card.dataset.search?.includes(query);
-        const matchesStatus = !status || card.dataset.reviewStatus === status;
-        const matchesGenre = !genre || card.dataset.genre === genre;
         const matchesCountry = !country || card.dataset.country === country;
-        const matchesConfidence = !confidence || card.dataset.confidence === confidence;
-        const matchesSplit = !split || card.dataset.splitAware === split;
-        const matchesImage = !image || card.dataset.hasRealImage === image;
-        const show = Boolean(matchesQuery && matchesStatus && matchesGenre && matchesCountry && matchesConfidence && matchesSplit && matchesImage);
+        const show = Boolean(matchesQuery && matchesCountry);
 
         if (show) matched += 1;
         card.dataset.matchesFilter = show ? "yes" : "no";
@@ -398,18 +303,12 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
           return (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
         }
 
-        if (sort === "confidence") {
-          return Number(right.dataset.confidenceScore ?? 0) - Number(left.dataset.confidenceScore ?? 0)
-            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
-        }
-
         if (sort === "updated") {
           return Number(right.dataset.updated ?? 0) - Number(left.dataset.updated ?? 0)
-            || Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0);
+            || (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
         }
 
-        return Number(right.dataset.revenue ?? 0) - Number(left.dataset.revenue ?? 0)
-          || (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
+        return (left.dataset.name ?? "").localeCompare(right.dataset.name ?? "");
       });
 
       sortedCards.forEach((card) => artistGrid.appendChild(card));
@@ -437,15 +336,10 @@ const latestUpdatedArtists = [...new Set(recentUpdates.flatMap((entry) =>
 
     const params = new URLSearchParams(window.location.search);
     artistSearchInput.value = params.get("q") ?? "";
-    artistStatusSelect.value = params.get("status") ?? "";
-    artistGenreSelect.value = params.get("genre") ?? "";
     artistCountrySelect.value = params.get("country") ?? "";
-    artistConfidenceSelect.value = params.get("confidence") ?? "";
-    artistSplitSelect.value = params.get("split") ?? "";
-    artistImageSelect.value = params.get("image") ?? "";
-    artistSortSelect.value = params.get("sort") ?? "earnings";
+    artistSortSelect.value = params.get("sort") ?? "alpha";
 
-    [artistSearchInput, artistStatusSelect, artistGenreSelect, artistCountrySelect, artistConfidenceSelect, artistSortSelect, artistSplitSelect, artistImageSelect].forEach((element) => {
+    [artistSearchInput, artistCountrySelect, artistSortSelect].forEach((element) => {
       element.addEventListener("input", resetLimitAndApply);
       element.addEventListener("change", resetLimitAndApply);
     });

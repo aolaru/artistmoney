@@ -135,8 +135,9 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
           <a href={baseUrl}>Home</a>
           <a href={`${baseUrl}case-studies/`}>Case studies</a>
           <a href={`${baseUrl}search/`}>Search</a>
+          <a href={`${baseUrl}artists/`}>Artists</a>
+          <a href={`${baseUrl}songs/`}>Songs</a>
           <a href={`${baseUrl}insights/`}>Insights</a>
-          <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
           <a href={`${baseUrl}about/`}>About</a>
         </nav>
         <details class="mobile-nav">
@@ -145,8 +146,9 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
             <a href={baseUrl}>Home</a>
             <a href={`${baseUrl}case-studies/`}>Case studies</a>
             <a href={`${baseUrl}search/`}>Search</a>
+            <a href={`${baseUrl}artists/`}>Artists</a>
+            <a href={`${baseUrl}songs/`}>Songs</a>
             <a href={`${baseUrl}insights/`}>Insights</a>
-            <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
             <a href={`${baseUrl}about/`}>About</a>
           </nav>
         </details>
@@ -174,12 +176,9 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
             <a href={`${baseUrl}search/`}>Search</a>
             <a href={`${baseUrl}artists/`}>Artists</a>
             <a href={`${baseUrl}songs/`}>Songs</a>
-            <a href={`${baseUrl}reviewed-songs/`}>Research queue</a>
             <a href={`${baseUrl}insights/`}>Insights</a>
-            <a href={`${baseUrl}insights/methodology/`}>Methodology</a>
             <a href={`${baseUrl}about/`}>About</a>
             <a href={`${baseUrl}contact/`}>Contact</a>
-            <a href={`${baseUrl}credits/`}>Credits</a>
           </nav>
         </div>
 
@@ -287,6 +286,20 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
           });
         });
 
+        document.addEventListener("click", async (event) => {
+          if (!(event.target instanceof Element)) return;
+          const button = event.target.closest("[data-copy-email]");
+          if (!(button instanceof HTMLButtonElement)) return;
+          const email = button.dataset.copyEmail;
+          if (!email || !navigator.clipboard) return;
+          try {
+            await navigator.clipboard.writeText(email);
+            button.textContent = "Email address copied";
+          } catch {
+            button.textContent = email;
+          }
+        });
+
         const scoreItem = (item, query) => {
           const title = item.titleLower;
           const subtitle = item.subtitleLower ?? "";
@@ -302,7 +315,8 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
           if (subject === query) score += 360;
           if (subject.includes(query)) score += 180;
           if (searchText.includes(query)) score += 20;
-          if (score > 0 && item.reviewed) score += 40;
+          // Research articles should lead a broad query when a catalog record and article match.
+          if (score > 0 && item.reviewed) score += 240;
           return score;
         };
 
