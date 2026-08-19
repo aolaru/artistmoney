@@ -2879,7 +2879,7 @@
     "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "The Cars",
       "slug": "the-cars",
@@ -2935,7 +2935,8 @@
           "drive"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,
