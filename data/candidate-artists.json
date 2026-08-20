@@ -2939,7 +2939,7 @@
     "checked_note": "Added to catalog by daily automation."
   },
   {
-    "checked": false,
+    "checked": true,
     "artist": {
       "name": "The B-52's",
       "slug": "the-b-52-s",
@@ -2995,7 +2995,8 @@
           "love-shack"
         ]
       }
-    ]
+    ],
+    "checked_note": "Added to catalog by daily automation."
   },
   {
     "checked": false,
