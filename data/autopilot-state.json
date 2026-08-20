@@ -1,9 +1,9 @@
 {
   "version": 1,
   "cursors": {
-    "artist": 0,
-    "song": 0,
-    "album": 107
+    "artist": 2,
+    "song": 3,
+    "album": 108
   },
   "lastTouched": {
     "artist": {
@@ -107,7 +107,8 @@
       "pet-shop-boys": "2026-07-01T07:39:50.947Z",
       "tom-petty": "2026-07-01T18:46:21.711Z",
       "the-who": "2026-07-02T07:15:46.547Z",
-      "talking-heads": "2026-07-16T08:18:13.234Z"
+      "talking-heads": "2026-07-16T08:18:13.234Z",
+      "blondie": "2026-08-20T06:50:17.061Z"
     },
     "song": {
       "505": "2026-04-15T06:43:23.685Z",
@@ -391,7 +392,10 @@
       "this-charming-man": "2026-07-02T07:15:46.547Z",
       "you-really-got-me": "2026-07-02T19:28:40.226Z",
       "once-in-a-lifetime": "2026-07-16T08:18:13.234Z",
-      "psycho-killer": "2026-07-16T08:18:13.234Z"
+      "psycho-killer": "2026-07-16T08:18:13.234Z",
+      "call-me": "2026-08-20T06:50:17.061Z",
+      "drive": "2026-08-20T06:50:17.061Z",
+      "heart-of-glass": "2026-08-20T06:50:17.061Z"
     },
     "album": {
       "4-non-blondes-bigger-better-faster-more": "2026-04-15T06:43:23.685Z",
@@ -487,6 +491,10 @@
   },
   "recentRuns": [
     {
+      "timestamp": "2026-08-20T06:50:17.061Z",
+      "summary": "artist:blondie, song:call-me, song:drive, song:heart-of-glass"
+    },
+    {
       "timestamp": "2026-07-16T08:18:13.234Z",
       "summary": "artist:talking-heads, song:once-in-a-lifetime, song:psycho-killer"
     },
@@ -521,10 +529,6 @@
     {
       "timestamp": "2026-06-29T07:56:09.346Z",
       "summary": "artist:ramones, artist:the-beach-boys, song:its-a-sin, song:london-calling, song:love-will-tear-us-apart"
-    },
-    {
-      "timestamp": "2026-06-28T18:31:08.817Z",
-      "summary": "artist:leonard-cohen, song:free-fallin, song:god-only-knows, song:good-vibrations"
     }
   ]
 }
