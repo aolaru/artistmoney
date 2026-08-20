@@ -21,10 +21,15 @@ const existingCatalogSlugs = new Set(
 );
 const publishQueueSlugs = new Set(publishQueue.map((candidate) => candidate.artist?.slug));
 const seen = new Set();
+const validStatuses = new Set(["pending-research", "research-published"]);
 
 for (const candidate of researchQueue.candidates) {
-  if (!candidate.name || !candidate.slug || candidate.status !== "pending-research" || !candidate.addedAt) {
+  if (!candidate.name || !candidate.slug || !validStatuses.has(candidate.status) || !candidate.addedAt) {
     throw new Error(`Invalid research candidate: ${JSON.stringify(candidate)}`);
+  }
+
+  if (candidate.status === "research-published" && (!candidate.researchedOn || !candidate.caseStudy)) {
+    throw new Error(`Published research candidate needs a review date and case study: ${candidate.name}`);
   }
 
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(candidate.slug)) {
@@ -38,4 +43,4 @@ for (const candidate of researchQueue.candidates) {
   seen.add(candidate.slug);
 }
 
-console.log(`Research candidate audit: ${researchQueue.candidates.length} pending artists validated.`);
+console.log(`Research candidate audit: ${researchQueue.candidates.length} research candidates validated.`);

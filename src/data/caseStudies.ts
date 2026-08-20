@@ -23,6 +23,10 @@ export type CaseStudy = {
     slug: string;
     label: string;
   }>;
+  researchCandidate?: {
+    slug: string;
+    label: string;
+  };
   relatedCaseStudies?: Array<{
     slug: string;
     note: string;
@@ -1054,6 +1058,82 @@ export const caseStudies: CaseStudy[] = [
       {
         slug: "shake-it-off-version-identity",
         note: "Read why identifying the precise recording comes before any rights claim."
+      }
+    ]
+  },
+  {
+    slug: "amy-winehouse-back-to-black-public-record",
+    title: "Amy Winehouse's Back to Black: public recognition is not a royalty record",
+    artist: "Amy Winehouse",
+    focus: "Awards, certification, and preservation",
+    summary:
+      "Public records document recognition for Back to Black across an award, certification, and preservation context. They do not disclose revenue, rights ownership, or payments to any participant.",
+    documentedRecord: [
+      "The Library of Congress records the 2006 recording Back to Black as added to the National Recording Registry in 2025.",
+      "RIAA's Gold & Platinum search lists separate Back to Black album and single certification records for Amy Winehouse, dated 2008 and 2015 respectively.",
+      "The Recording Academy's 2008 awards record lists Back To Black as the Best Pop Vocal Album winner and identifies Amy Winehouse as the songwriter for Rehab in the Song of the Year category."
+    ],
+    editorialReading: [
+      "These are three distinct public records. The Library of Congress entry concerns a specific recording's preservation status; the RIAA page distinguishes an album record from a single record; and the Recording Academy page records awards and credits. They should not be combined into one implied sales, ownership, or income figure.",
+      "The Song of the Year credit for Rehab is useful evidence of a songwriting credit in that award context. It does not establish current publishing ownership, master ownership, contractual participation, or a payment to any person or company."
+    ],
+    rightsQuestion:
+      "What can public award, certification, and preservation records establish about Amy Winehouse's Back to Black era, and what remains unknown about the money it generated?",
+    questionAnswer:
+      "The cited sources establish specific recognition, certification, and credit facts. They do not provide the rights, contract, territory, accounting-period, cost, or recipient information needed to verify revenue or anyone's share of it.",
+    analysisSections: [
+      {
+        title: "Keep the album and recording evidence separate",
+        paragraphs: [
+          "The RIAA search page presents Back to Black as both an album and a single entry, each with its own certification date. The Library of Congress document, by contrast, identifies the 2006 recording Back to Black. Those labels matter because an album, a single recording, and an award category are not interchangeable units of analysis.",
+          "A careful reader can use the records to describe documented public recognition. The sources do not supply a common unit that would allow the entries to be added together, converted into streams, or treated as a financial ledger."
+        ]
+      },
+      {
+        title: "Why recognition does not identify a revenue recipient",
+        paragraphs: [
+          "The Recording Academy's awards page identifies album-production credits and a songwriting credit for Rehab. Credits identify work in the context of an award record; they do not identify every right connected to the recording or composition, the terms governing those rights, or the amount received by any credited person.",
+          "A verified payment claim would need records for the relevant use, territory, accounting period, contractual share, costs, and recipient. None of the cited sources provides that accounting, so this case study does not infer revenue, ownership, or personal income from public recognition."
+        ]
+      }
+    ],
+    limitations: [
+      "The cited sources do not disclose royalty statements, contract terms, recoupment, costs, or payments for Back to Black or Rehab.",
+      "The award credits identify work in an award context; they do not establish current master ownership, publishing ownership, or contractual shares.",
+      "The RIAA entries and National Recording Registry record do not provide a complete worldwide sales, streaming, licensing, or revenue history.",
+      "This article does not estimate Amy Winehouse's income, an estate's income, catalog value, or any participant's share."
+    ],
+    reviewedOn: "August 20, 2026",
+    sources: [
+      {
+        label: "Library of Congress: Back to Black National Recording Registry essay",
+        url: "https://www.loc.gov/static/programs/national-recording-preservation-board/documents/Back-to-Black_Sounes.pdf",
+        note: "Records the 2006 recording Back to Black as added to the National Recording Registry in 2025. It is a preservation record, not a revenue source.",
+        role: "primary-record"
+      },
+      {
+        label: "RIAA Gold & Platinum: Amy Winehouse, Back to Black",
+        url: "https://www.riaa.com/gold-platinum/?ar=Amy+Winehouse&tab_active=default-award&ti=Back+to+Black",
+        note: "Lists separate album and single certification records for Back to Black. Certification records do not disclose royalty payments.",
+        role: "primary-record"
+      },
+      {
+        label: "Recording Academy: 50th Annual Grammy Awards",
+        url: "https://www.grammy.com/awards/50th-annual-grammy-awards/",
+        note: "Documents the 2008 award results and credits cited for Back To Black and Rehab. It is not a rights or accounting record.",
+        role: "primary-record"
+      },
+      copyrightContext
+    ],
+    documentedSourceIndexes: [0, 1, 2],
+    researchCandidate: {
+      slug: "amy-winehouse",
+      label: "Amy Winehouse research record"
+    },
+    relatedCaseStudies: [
+      {
+        slug: "taylor-swift-public-success-and-income-limits",
+        note: "Compare how public recognition can document scale without verifying an artist's private income."
       }
     ]
   }

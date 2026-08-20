@@ -164,6 +164,18 @@ const jsonLd = {
       </section>
     )}
 
+    {caseStudy.researchCandidate && (
+      <section class="editorial-basis-card" aria-labelledby="research-record-title">
+        <p class="eyebrow">Research Record</p>
+        <h2 id="research-record-title">Source-backed research published before a catalog profile</h2>
+        <p>
+          {caseStudy.researchCandidate.label} is represented here by this reviewed case study. A browseable catalog
+          profile has not been published because the public evidence used here does not support a defensible earnings
+          or ownership claim.
+        </p>
+      </section>
+    )}
+
     {relatedCaseStudies.length > 0 && (
       <section class="related-reading-card" aria-labelledby="related-case-studies-title">
         <p class="eyebrow">Continue Reading</p>

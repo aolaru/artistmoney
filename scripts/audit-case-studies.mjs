@@ -1,9 +1,10 @@
+import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { loadExportedDataModule } from "./load-data-module.mjs";
 
 const substantiveRoles = new Set(["primary-record", "independent-reporting", "rights-context"]);
 
-function issuesFor(caseStudy, publicationHistory, knownSlugs) {
+function issuesFor(caseStudy, publicationHistory, knownSlugs, researchCandidateSlugs) {
   const issues = [];
   const sourceRoles = new Set(caseStudy.sources.map((source) => source.role));
   const sourceDomains = new Set(caseStudy.sources.map((source) => new URL(source.url).hostname));
@@ -31,8 +32,12 @@ function issuesFor(caseStudy, publicationHistory, knownSlugs) {
     issues.push("incomplete source citation");
   }
   const relatedProfileTypes = new Set((caseStudy.relatedProfiles ?? []).map((profile) => profile.type));
-  if (!relatedProfileTypes.has("artist") || !relatedProfileTypes.has("song")) {
-    issues.push("missing related artist or song record");
+  const hasRelatedProfiles = relatedProfileTypes.has("artist") && relatedProfileTypes.has("song");
+  if (!hasRelatedProfiles && !caseStudy.researchCandidate) {
+    issues.push("missing related artist and song records or research candidate");
+  }
+  if (caseStudy.researchCandidate && !researchCandidateSlugs.has(caseStudy.researchCandidate.slug)) {
+    issues.push("references an unknown research candidate");
   }
   if ((caseStudy.relatedCaseStudies?.length ?? 0) < 1) issues.push("missing related case study");
   if (caseStudy.relatedCaseStudies?.some((related) => related.slug === caseStudy.slug || !knownSlugs.has(related.slug))) {
@@ -48,9 +53,11 @@ const caseStudyPublicationHistory = await loadExportedDataModule(
   "caseStudyPublicationHistory"
 );
 const knownSlugs = new Set(caseStudies.map((caseStudy) => caseStudy.slug));
+const researchCandidates = JSON.parse(await readFile(resolve("data/research-candidates.json"), "utf8")).candidates ?? [];
+const researchCandidateSlugs = new Set(researchCandidates.map((candidate) => candidate.slug));
 const invalid = caseStudies.map((caseStudy) => ({
   slug: caseStudy.slug,
-  issues: issuesFor(caseStudy, caseStudyPublicationHistory[caseStudy.slug], knownSlugs)
+  issues: issuesFor(caseStudy, caseStudyPublicationHistory[caseStudy.slug], knownSlugs, researchCandidateSlugs)
 }))
   .filter((entry) => entry.issues.length > 0);
 

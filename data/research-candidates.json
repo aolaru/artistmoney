@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "description": "Artist candidates awaiting source-led research before they can enter the catalog publishing queue.",
   "candidates": [
-    { "name": "Amy Winehouse", "slug": "amy-winehouse", "status": "pending-research", "addedAt": "2026-08-20" },
+    { "name": "Amy Winehouse", "slug": "amy-winehouse", "status": "research-published", "addedAt": "2026-08-20", "researchedOn": "2026-08-20", "caseStudy": "amy-winehouse-back-to-black-public-record" },
     { "name": "Avicii", "slug": "avicii", "status": "pending-research", "addedAt": "2026-08-20" },
     { "name": "B.B. King", "slug": "bb-king", "status": "pending-research", "addedAt": "2026-08-20" },
     { "name": "Barry White", "slug": "barry-white", "status": "pending-research", "addedAt": "2026-08-20" },

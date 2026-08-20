@@ -17,11 +17,13 @@ async function main() {
     readJson(legacyQueuePath)
   ]);
   const pending = researchQueue.candidates.filter((candidate) => candidate.status === "pending-research");
+  const published = researchQueue.candidates.filter((candidate) => candidate.status === "research-published");
   const unpublishedLegacyCandidates = legacyQueue.filter((candidate) => candidate.checked !== true);
   const result = {
     generatedAt: new Date().toISOString(),
     mode: "read-only",
     pendingResearchCandidates: pending.length,
+    publishedResearchCandidates: published.length,
     legacyCandidatesBlockedFromPublishing: unpublishedLegacyCandidates.length,
     nextResearchCandidates: pending.slice(0, 10).map(({ name, slug }) => ({ name, slug }))
   };
@@ -29,8 +31,9 @@ async function main() {
     "# Research queue report",
     "",
     "- Mode: read-only",
-    "- Public pages created: 0",
+    "- Automated public pages created: 0",
     `- Pending source-led research: ${result.pendingResearchCandidates}`,
+    `- Published source-backed research records: ${result.publishedResearchCandidates}`,
     `- Legacy candidates blocked from automated publishing: ${result.legacyCandidatesBlockedFromPublishing}`,
     "",
     "## Next research candidates",
@@ -48,7 +51,7 @@ async function main() {
     writeFile(path.join(outputDir, "research-queue-result.json"), `${JSON.stringify(result, null, 2)}\n`, "utf8"),
     writeFile(path.join(outputDir, "research-queue-summary.md"), `${lines.join("\n")}\n`, "utf8")
   ]);
-  console.log(`Research queue: ${pending.length} pending; no public pages created.`);
+console.log(`Research queue: ${pending.length} pending; no catalog pages created.`);
 }
 
 main().catch((error) => {
