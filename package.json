@@ -9,7 +9,6 @@
     "audit:quality": "node scripts/audit-page-quality.mjs",
     "audit:surface": "node scripts/audit-public-surface.mjs",
     "audit:sources": "node scripts/audit-case-study-sources.mjs",
-    "update:platform-metrics": "node scripts/update-platform-metrics.mjs",
     "preview": "astro preview"
   },
   "dependencies": {
