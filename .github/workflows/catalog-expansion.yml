@@ -1,4 +1,4 @@
-name: Daily Catalog Expansion
+name: Research Queue Audit
 
 on:
   schedule:
@@ -6,15 +6,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  actions: write
-  contents: write
+  contents: read
 
 concurrency:
-  group: daily-catalog-expansion
-  cancel-in-progress: true
+  group: repository-maintenance
+  cancel-in-progress: false
 
 jobs:
-  expand:
+  audit:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,30 +29,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Add next candidate artist
-        run: node scripts/autopilot-expand-catalog.mjs
+      - name: Validate the publication gate
+        run: node scripts/audit-research-candidates.mjs
 
-      - name: Read expansion result
-        id: expansion
+      - name: Report research queue
+        run: node scripts/report-research-queue.mjs
+
+      - name: Publish research report
+        if: always()
         run: |
-          changed=$(node -e 'const fs=require("fs"); const data=JSON.parse(fs.readFileSync(".autopilot/catalog-result.json","utf8")); process.stdout.write(data.changes.length ? "true" : "false")')
-          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          if [ -f .autopilot/research-queue-summary.md ]; then
+            cat .autopilot/research-queue-summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "## Research queue audit failed before a report was written." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
-      - name: Validate build
-        if: steps.expansion.outputs.changed == 'true'
-        run: npm run build
-
-      - name: Commit catalog expansion
-        if: steps.expansion.outputs.changed == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/candidate-artists.json src/data/artists src/data/songs
-          git commit -m "Add daily catalog expansion candidate"
-          git push origin HEAD:main
-
-      - name: Trigger Pages deployment
-        if: steps.expansion.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run deploy.yml --ref main
+      - name: Upload research report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-queue-report
+          path: |
+            .autopilot/research-queue-summary.md
+            .autopilot/research-queue-result.json
+          if-no-files-found: error

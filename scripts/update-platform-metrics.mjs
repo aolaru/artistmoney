@@ -1,10 +1,13 @@
-import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { loadExportedDataModule } from "./load-data-module.mjs";
 
 const METRICS_PATH = resolve("src/data/platformMetrics.ts");
 const SONG_DIR = resolve("src/data/songs");
 const ARTIST_DIR = resolve("src/data/artists");
+const REPORT_DIR = resolve(".autopilot");
+const REPORT_PATH = resolve(REPORT_DIR, "platform-metrics-result.json");
+const SUMMARY_PATH = resolve(REPORT_DIR, "platform-metrics-summary.md");
 const limit = Number.parseInt(process.env.PLATFORM_METRICS_LIMIT ?? "50", 10);
 const today = new Date().toISOString().slice(0, 10);
 
@@ -90,10 +93,14 @@ async function fetchSpotifyTrack(trackId, token) {
 }
 
 async function refreshSpotifyMetrics(metrics, songs, artistMap) {
-  const token = await getSpotifyToken();
-  if (!token) {
-    console.log("Spotify refresh skipped: SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET are not set.");
-    return 0;
+  const result = { configured: true, attempted: 0, updated: 0, failures: [] };
+  let token;
+
+  try {
+    token = await getSpotifyToken();
+  } catch (error) {
+    result.failures.push(`Token request failed: ${error.message}`);
+    return result;
   }
 
   const orderedSongs = [...songs].sort((left, right) => {
@@ -110,12 +117,12 @@ async function refreshSpotifyMetrics(metrics, songs, artistMap) {
       left.slug.localeCompare(right.slug)
     );
   });
-  let updated = 0;
   for (const song of orderedSongs.slice(0, limit)) {
     const artistName = artistMap.get(song.artist)?.name ?? song.artist;
     const current = metrics[song.slug] ?? {};
 
     try {
+      result.attempted += 1;
       const track = current.spotifyTrackId
         ? await fetchSpotifyTrack(current.spotifyTrackId, token)
         : await searchSpotifyTrack(song, artistName, token);
@@ -128,20 +135,21 @@ async function refreshSpotifyMetrics(metrics, songs, artistMap) {
         spotifyPopularity: track.popularity,
         lastChecked: today
       };
-      updated += 1;
+      result.updated += 1;
     } catch (error) {
       console.warn(`Spotify refresh skipped for ${song.slug}: ${error.message}`);
+      result.failures.push(`${song.slug}: ${error.message}`);
     }
   }
 
-  return updated;
+  return result;
 }
 
 async function refreshYouTubeMetrics(metrics) {
   const apiKey = process.env.YOUTUBE_API_KEY;
   if (!apiKey) {
     console.log("YouTube refresh skipped: YOUTUBE_API_KEY is not set.");
-    return 0;
+    return { configured: false, attempted: 0, updated: 0, failures: [] };
   }
 
   const entries = Object.entries(metrics)
@@ -153,7 +161,7 @@ async function refreshYouTubeMetrics(metrics) {
       return rightNeedsViews - leftNeedsViews || leftSlug.localeCompare(rightSlug);
     })
     .slice(0, limit);
-  let updated = 0;
+  const result = { configured: true, attempted: entries.length, updated: 0, failures: [] };
 
   for (let index = 0; index < entries.length; index += 50) {
     const chunk = entries.slice(index, index + 50);
@@ -179,14 +187,15 @@ async function refreshYouTubeMetrics(metrics) {
           youtubeViews,
           lastChecked: today
         };
-        updated += 1;
+        result.updated += 1;
       }
     } catch (error) {
       console.warn(`YouTube refresh skipped for video batch ${index / 50 + 1}: ${error.message}`);
+      result.failures.push(`Batch ${index / 50 + 1}: ${error.message}`);
     }
   }
 
-  return updated;
+  return result;
 }
 
 function formatString(value) {
@@ -241,26 +250,60 @@ ${body}
   writeFileSync(METRICS_PATH, source);
 }
 
+function writeRunReport(result) {
+  const configuredProviders = [result.youtube, result.spotify].filter((provider) => provider.configured).length;
+  const failures = [...result.youtube.failures, ...result.spotify.failures];
+  const status = configuredProviders === 0 ? "skipped" : failures.length > 0 ? "degraded" : "refreshed";
+  const report = { ...result, status, configuredProviders, failures };
+  const providerLine = (name, provider) =>
+    `- ${name}: ${provider.configured ? "configured" : "not configured"}; ${provider.updated}/${provider.attempted} records updated; ${provider.failures.length} failures`;
+  const lines = [
+    "# Platform metrics refresh",
+    "",
+    `- Status: **${status}**`,
+    `- Checked: ${today}`,
+    providerLine("YouTube", result.youtube),
+    providerLine("Spotify", result.spotify),
+    ""
+  ];
+
+  if (status === "skipped") {
+    lines.push("No provider credentials were available. No metric data was refreshed.", "");
+  }
+  if (failures.length > 0) {
+    lines.push("## Failures", "", ...failures.map((failure) => `- ${failure}`), "");
+  }
+
+  mkdirSync(REPORT_DIR, { recursive: true });
+  writeFileSync(REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`);
+  writeFileSync(SUMMARY_PATH, `${lines.join("\n")}\n`);
+
+  if (status === "skipped" || status === "degraded") {
+    console.warn(`::warning::Platform metrics refresh ${status}. See the workflow summary for details.`);
+  }
+}
+
 async function main() {
   if (!existsSync(METRICS_PATH)) {
     throw new Error(`Missing metrics file: ${METRICS_PATH}`);
   }
 
   const metrics = await loadExportedDataModule(METRICS_PATH, "songPlatformMetrics");
-  const youtubeUpdates = await refreshYouTubeMetrics(metrics);
-  let spotifyUpdates = 0;
+  const youtube = await refreshYouTubeMetrics(metrics);
+  let spotify = { configured: false, attempted: 0, updated: 0, failures: [] };
 
   if (process.env.SPOTIFY_CLIENT_ID && process.env.SPOTIFY_CLIENT_SECRET) {
     const songs = readJsonCollection(SONG_DIR);
     const artists = readJsonCollection(ARTIST_DIR);
     const artistMap = new Map(artists.map((artist) => [artist.slug, artist]));
-    spotifyUpdates = await refreshSpotifyMetrics(metrics, songs, artistMap);
+    spotify = await refreshSpotifyMetrics(metrics, songs, artistMap);
   } else {
     console.log("Spotify refresh skipped: SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET are not set.");
   }
 
   writeMetrics(metrics);
-  console.log(`Updated platform metrics: ${youtubeUpdates} YouTube, ${spotifyUpdates} Spotify.`);
+  writeRunReport({ youtube, spotify });
+  console.log(`Updated platform metrics: ${youtube.updated} YouTube, ${spotify.updated} Spotify.`);
 }
 
 main().catch((error) => {

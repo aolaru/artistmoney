@@ -7,11 +7,12 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
-  group: platform-metrics
-  cancel-in-progress: true
+  group: repository-maintenance
+  cancel-in-progress: false
 
 jobs:
   refresh:
@@ -36,6 +37,25 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+
+      - name: Publish refresh health
+        if: always()
+        run: |
+          if [ -f .autopilot/platform-metrics-summary.md ]; then
+            cat .autopilot/platform-metrics-summary.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "## Platform metrics refresh failed before a health report was written." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload refresh report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: platform-metrics-report
+          path: |
+            .autopilot/platform-metrics-summary.md
+            .autopilot/platform-metrics-result.json
+          if-no-files-found: warn
 
       - name: Detect metric changes
         id: diff
@@ -65,3 +85,9 @@ jobs:
       - name: Push to main
         if: steps.diff.outputs.changed == 'true'
         run: git push origin HEAD:main
+
+      - name: Trigger Pages deployment
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main
