@@ -1,12 +1,18 @@
 ---
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import { archivedSiteUpdates, recentSiteUpdates } from "../data/siteUpdates";
+import { archivedSiteUpdates, recentSiteUpdates, updateHighlights } from "../data/siteUpdates";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
-
+const allSiteUpdates = [...recentSiteUpdates, ...archivedSiteUpdates];
+const kindCounts = Object.fromEntries(
+  ["Release", "New", "Updated", "Fixed"].map((kind) => [
+    kind,
+    allSiteUpdates.filter((update) => update.kind === kind).length
+  ])
+) as Record<"Release" | "New" | "Updated" | "Fixed", number>;
 const updateDescription = "A curated record of meaningful How Much Music additions, improvements, and fixes.";
 const jsonLd = {
   "@context": "https://schema.org",
@@ -25,74 +31,93 @@ const jsonLd = {
 >
   <Breadcrumbs items={[{ label: "Home", href: baseUrl }, { label: "Updates" }]} />
 
-  <section class="hero">
+  <section class="hero updates-hero">
     <div class="hero-copy">
       <p class="eyebrow">Site Updates</p>
-      <h1>What changed at How Much Music</h1>
+      <h1>Latest updates</h1>
       <p>
-        A curated record of meaningful additions, improvements, and fixes. This page does not repeat
-        raw repository activity or treat a catalog import as a published article.
+        Use this page as the site log. To explore music rights research, start with case studies or
+        search the catalog rather than reading the changelog first.
       </p>
+      <div class="updates-hero-meta" aria-label="Update log scope">
+        <span>Curated recent highlights</span>
+        <span>Earlier launch log archived below</span>
+      </div>
+      <div class="related-link-row">
+        <a href={`${baseUrl}case-studies/`}>Browse case studies</a>
+        <a href={`${baseUrl}search/`}>Search the catalog</a>
+      </div>
     </div>
-    <div class="hero-panel" aria-label="Update page scope">
-      <p class="eyebrow">Update Standard</p>
+    <div class="hero-panel" aria-label="Update totals">
+      <p class="eyebrow">Update Log</p>
       <div class="hero-stat-pill hero-stat-pill-primary">
-        <strong>{recentSiteUpdates.length}</strong>
-        <span>recent site changes</span>
+        <strong>{allSiteUpdates.length}</strong>
+        <span>documented site changes</span>
       </div>
       <div class="hero-stat-pill">
-        <strong>Curated</strong>
-        <span>visitor-facing changes only</span>
+        <strong>Since April</strong>
+        <span>2026 public launch</span>
       </div>
     </div>
   </section>
 
-  <section class="editorial-basis-card" aria-labelledby="updates-guide-title">
+  <section class="updates-highlight-section" aria-labelledby="highlights-title">
+    <div class="section-heading-row">
+      <div>
+        <p class="eyebrow">Current Direction</p>
+        <h2 id="highlights-title">What has changed most</h2>
+      </div>
+    </div>
+    <div class="editorial-grid">
+      {updateHighlights.map((highlight) => (
+        <article class="card editorial-card updates-highlight-card">
+          <div class="artist-card-body">
+            <h3>{highlight.title}</h3>
+            <p>{highlight.detail}</p>
+            <a class="home-action-link" href={`${baseUrl}${highlight.href.slice(1)}`}>{highlight.label}</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="updates-type-section" aria-labelledby="change-types-title">
     <div class="editorial-basis-heading">
-      <p class="eyebrow">How To Read This Page</p>
-      <h2 id="updates-guide-title">Changes that matter to readers stay visible.</h2>
+      <p class="eyebrow">Change Types</p>
+      <h2 id="change-types-title">What this log covers</h2>
       <p>
-        Each entry identifies whether something is new, improved, or fixed. Links point to the
-        relevant public page when there is one. Routine maintenance and raw catalog-file activity
-        are not listed as releases.
+        Only meaningful public changes are recorded. Routine catalog imports and small copy edits are
+        grouped into the nearest relevant entry rather than presented as separate releases.
       </p>
     </div>
     <div class="editorial-basis-grid">
-      <div class="editorial-basis-item">
-        <strong>New</strong>
-        <span>A public article, reader tool, or accountability feature was added.</span>
-      </div>
-      <div class="editorial-basis-item">
-        <strong>Updated</strong>
-        <span>An existing page, process, or reader path was materially improved.</span>
-      </div>
-      <div class="editorial-basis-item">
-        <strong>Fixed</strong>
-        <span>A publication, discovery, or scope issue was corrected.</span>
-      </div>
+      <div class="editorial-basis-item"><strong>Release · {kindCounts.Release}</strong><span>Major public milestones or new site sections.</span></div>
+      <div class="editorial-basis-item"><strong>New · {kindCounts.New}</strong><span>New public articles, pages, or reader features.</span></div>
+      <div class="editorial-basis-item"><strong>Updated · {kindCounts.Updated}</strong><span>Meaningful improvements to content, navigation, or standards.</span></div>
+      <div class="editorial-basis-item"><strong>Fixed · {kindCounts.Fixed}</strong><span>Corrections to publication scope, discovery, or interface behavior.</span></div>
     </div>
   </section>
 
-  <section aria-labelledby="recent-updates-title">
+  <section class="updates-log-section" aria-labelledby="recent-updates-title">
     <div class="section-heading-row">
       <div>
         <p class="eyebrow">Recent Log</p>
-        <h2 id="recent-updates-title">Latest updates</h2>
+        <h2 id="recent-updates-title">Newest changes first</h2>
+        <p class="results-note">The most recent direction stays visible here; the launch history remains available below.</p>
       </div>
-      <a class="home-action-link" href={`${baseUrl}case-studies/`}>Browse case studies</a>
     </div>
-    <div class="updates-list">
+    <div class="changelog-list">
       {recentSiteUpdates.map((update) => (
-        <article class="card update-card">
-          <div class="artist-card-body">
-            <div class="update-header">
-              <span class="rank-badge">{update.kind}</span>
-              <p class="update-date">{update.date}</p>
-            </div>
+        <article class="changelog-entry">
+          <div class="changelog-stamp">
+            <time>{update.date}</time>
+            <span class="rank-badge">{update.kind}</span>
+          </div>
+          <div>
             <h3>{update.title}</h3>
             <p>{update.detail}</p>
             {update.links && (
-              <div class="related-link-row update-related-links" aria-label={`${update.title} links`}>
+              <div class="related-link-row changelog-links" aria-label={`${update.title} links`}>
                 {update.links.map((link) => <a href={`${baseUrl}${link.href.slice(1)}`}>{link.label}</a>)}
               </div>
             )}
@@ -103,15 +128,15 @@ const jsonLd = {
   </section>
 
   <details class="article-section archive-panel updates-archive">
-    <summary>Earlier 2026 updates</summary>
-    <div class="updates-list">
+    <summary>Earlier launch log</summary>
+    <div class="changelog-list changelog-list-archive">
       {archivedSiteUpdates.map((update) => (
-        <article class="card update-card">
-          <div class="artist-card-body">
-            <div class="update-header">
-              <span class="rank-badge">{update.kind}</span>
-              <p class="update-date">{update.date}</p>
-            </div>
+        <article class="changelog-entry">
+          <div class="changelog-stamp">
+            <time>{update.date}</time>
+            <span class="rank-badge">{update.kind}</span>
+          </div>
+          <div>
             <h3>{update.title}</h3>
             <p>{update.detail}</p>
           </div>
