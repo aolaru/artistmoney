@@ -132,20 +132,17 @@ const homePath = new URL(baseUrl, Astro.site).pathname;
           </div>
         </form>
         <nav class="primary-nav" aria-label="Primary navigation">
-          <a href={baseUrl}>Home</a>
           <a href={`${baseUrl}case-studies/`}>Case studies</a>
-          <a href={`${baseUrl}search/`}>Search</a>
           <a href={`${baseUrl}artists/`}>Artists</a>
           <a href={`${baseUrl}songs/`}>Songs</a>
           <a href={`${baseUrl}insights/`}>Insights</a>
+          <a href={`${baseUrl}updates/`}>Updates</a>
           <a href={`${baseUrl}about/`}>About</a>
         </nav>
         <details class="mobile-nav">
           <summary>Menu <span aria-hidden="true">+</span></summary>
           <nav aria-label="Mobile navigation">
-            <a href={baseUrl}>Home</a>
             <a href={`${baseUrl}case-studies/`}>Case studies</a>
-            <a href={`${baseUrl}search/`}>Search</a>
             <a href={`${baseUrl}artists/`}>Artists</a>
             <a href={`${baseUrl}songs/`}>Songs</a>
             <a href={`${baseUrl}insights/`}>Insights</a>
